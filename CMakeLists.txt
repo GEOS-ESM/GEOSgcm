@@ -3,7 +3,7 @@ cmake_policy (SET CMP0053 NEW)
 cmake_policy (SET CMP0054 NEW)
 
 project (
-  GEOSadas
+  GEOSgcm
   VERSION 5.25.0
   LANGUAGES Fortran CXX C)  # Note - CXX is required for ESMF
 
