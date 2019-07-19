@@ -1,6 +1,6 @@
-# GEOS ADAS Fixture
+# GEOS GCM Fixture
 
-## How to build GEOS ADAS
+## How to build GEOS GCM
 
 ### Preliminary Steps
 
@@ -106,7 +106,3 @@ Once the model has built successfully, you will have an `install/` directory in 
 cd install/bin
 ./gcm_setup
 ```
-
-### Run the ADAS
-
-Like the AGCM step above, the ADAS setup scripts are also `install/bin/`
