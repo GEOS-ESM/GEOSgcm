@@ -27,7 +27,7 @@ set (DOING_GEOS5 YES)
 set (ACG_FLAGS -v)
 set (F2PYEXT .so)
 set (F2PY_SUFFIX .so)
-set (FV_PRECISION R4)
+set (FV_PRECISION R4R8)
 
 list (APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/@cmake")
 include (esma)
