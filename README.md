@@ -11,7 +11,7 @@ In your `.bashrc` or `.tcshrc` or other rc file add a line:
 ##### NCCS (SLES11)
 
 ```
-module use -a /discover/nobackup/projects/gmao/sit/modulefiles-SLES11
+module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES11
 ```
 
 ##### NAS
