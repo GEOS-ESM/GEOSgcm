@@ -16,6 +16,15 @@ endif
 set srcdir = `pwd`
 setenv ESMADIR $srcdir
 
+setenv external = ""
+while ($#argv)
+   if ("$1" == "-develop") then
+      setenv external "-e Develop.cfg"
+   endif
+
+   shift
+end
+
 if (! -d ${ESMADIR}/@env) then
    if ($?PBS_JOBID || $?SLURM_JOBID) then
       echo " checkout_externals must be run!"
@@ -24,7 +33,7 @@ if (! -d ${ESMADIR}/@env) then
       exit 1
    else
       echo " Running checkout_externals"
-      checkout_externals
+      checkout_externals $external
    endif
 endif
 
