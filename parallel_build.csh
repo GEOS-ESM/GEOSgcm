@@ -16,7 +16,11 @@ endif
 set srcdir = `pwd`
 setenv ESMADIR $srcdir
 
-setenv external = ""
+# Save the original argv because I'm not a good
+# tcsh script maker
+set origargv = "$argv"
+
+setenv external ""
 while ($#argv)
    if ("$1" == "-develop") then
       setenv external "-e Develop.cfg"
@@ -36,6 +40,9 @@ if (! -d ${ESMADIR}/@env) then
       checkout_externals $external
    endif
 endif
+
+# Now reset argv
+set argv = "$origargv"
 
 if ( -d ${ESMADIR}/@env ) then
    ${ESMADIR}/@env/build.csh -esmadir $ESMADIR $argv
