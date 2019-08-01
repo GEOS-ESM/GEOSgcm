@@ -47,6 +47,13 @@ git clone git@github.com:GEOS-ESM/GEOSgcm.git
 
 If all you wish is to build the model, you can run `parallel_build.csh` from a head node. Doing so will checkout all the external repositories of the model and build it. When done, the resulting model build will be found in `build/` and the installation will be found in `install/` with setup scripts like `gcm_setup` and `fvsetup` in `install/bin`.
 
+#### Develop Version of GEOS
+
+The user will notice two files in the main directory: `Externals.cfg` and `Develop.cfg`. The difference between these two is that `Externals.cfg` always refers to stable tested released subrepositories. The `Develop.cfg` points to the `develop` branch of `@GEOSgcm_GridComp` and `@GEOSgcm_App`. This is equivalent in the CVS days of the difference between `Jason-3_1` and `Jason-UNSTABLE`. In order to build the `Develop.cfg` version of the model with `parallel_build.csh` do:
+```
+parallel_build.csh -develop
+```
+
 #### Debug Version of GEOS
 
 To obtain a debug version, you can run `parallel_build.csh -debug` which will build with debugging flags. This will build in `build-Debug/` and install into `install-Debug/`.
@@ -61,6 +68,11 @@ The steps detailed below are essentially those that `parallel_build.csh` perform
 ```
 cd GEOSgcm
 checkout_externals
+```
+###### Checking out develop 
+To use the `Develop.cfg` file, run:
+```
+checkout_externals -e Develop.cfg
 ```
 
 #### Build the Model
