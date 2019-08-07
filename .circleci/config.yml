@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: gmao/geos-build-env:3.0.0
+    working_directory: /root/project
+    steps:
+      - checkout
+      - run:
+          name: "Versions etc"
+          command: mpirun --version && gfortran --version && echo $BASEDIR && pwd && ls
+      - run:
+          name: "Checkout external repos"
+          command: |
+            checkout_externals
+            # Hardcode Matt's fix for the first "green build"
+            cd ./src/Applications/\@UMD_Etc/
+            git checkout feature/mathomp4/enable-gcc-build
+      - run:
+          name: "Build"
+          command: |
+            mkdir build
+            cd build
+            cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=gfortran
+            make -j2 install
