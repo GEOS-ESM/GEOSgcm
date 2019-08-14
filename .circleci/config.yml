@@ -13,9 +13,6 @@ jobs:
           name: "Checkout external repos"
           command: |
             checkout_externals
-            # Hardcode Matt's fix for the first "green build"
-            cd ./src/Applications/\@UMD_Etc/
-            git checkout feature/mathomp4/enable-gcc-build
       - run:
           name: "Build"
           command: |

@@ -1,4 +1,5 @@
 # GEOS GCM Fixture
+[![CircleCI](https://circleci.com/gh/GEOS-ESM/GEOSgcm.svg?style=svg)](https://circleci.com/gh/GEOS-ESM/GEOSgcm)
 
 ## How to build GEOS GCM
 
