@@ -50,7 +50,7 @@ If all you wish is to build the model, you can run `parallel_build.csh` from a h
 
 #### Develop Version of GEOS
 
-The user will notice two files in the main directory: `Externals.cfg` and `Develop.cfg`. The difference between these two is that `Externals.cfg` always refers to stable tested released subrepositories. The `Develop.cfg` points to the `develop` branch of `@GEOSgcm_GridComp` and `@GEOSgcm_App`. This is equivalent in the CVS days of the difference between `Jason-3_1` and `Jason-UNSTABLE`. In order to build the `Develop.cfg` version of the model with `parallel_build.csh` do:
+The user will notice two files in the main directory: `Externals.cfg` and `Develop.cfg`. The difference between these two is that `Externals.cfg` always refers to stable tested released subrepositories. The `Develop.cfg` points to the `develop` branch of `@GEOSgcm_GridComp` and `@GEOSgcm_App`. This is equivalent in the CVS days of the difference between a stable `Jason-X_Y` tag and the development `Jason-UNSTABLE` tag. In order to build the `Develop.cfg` version of the model with `parallel_build.csh` do:
 ```
 parallel_build.csh -develop
 ```
