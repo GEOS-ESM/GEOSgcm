@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: gmao/geos-build-env:3.0.0
+    working_directory: /root/project
+    steps:
+      - checkout
+      - run:
+          name: "Versions etc"
+          command: mpirun --version && gfortran --version && echo $BASEDIR && pwd && ls
+      - run:
+          name: "Checkout external repos"
+          command: |
+            checkout_externals
+      - run:
+          name: "Build"
+          command: |
+            mkdir build
+            cd build
+            cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=gfortran -DCMAKE_BUILD_TYPE=Debug
+            make -j2 install
