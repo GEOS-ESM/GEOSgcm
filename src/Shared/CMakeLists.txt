@@ -2,6 +2,7 @@ esma_add_subdirectories (
   @MAPL
   @GMAO_Shared
   @NCEP_Shared
+  @GSW-Fortran
   )
 
 # Special case - GFDL_fms is built twice with two
