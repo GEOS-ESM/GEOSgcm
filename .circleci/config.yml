@@ -12,7 +12,7 @@ jobs:
       - run:
           name: "Checkout external repos"
           command: |
-            checkout_externals
+            checkout_externals -e Develop.cfg
       - run:
           name: "Build"
           command: |
