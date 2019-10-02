@@ -1,0 +1,2609 @@
+                   NASA/Goddard Space Flight Center
+                Global Modeling and Assimilation Office
+ 
+                      GEOS GCM Model Development 
+
+                           REVISION HISTORY
+
+IMPORTANT: This file can only be updated by the Model Development Group.
+########################################################################
+
+xxxxxxxxx, Rabenhorst,    GIT Branch: develop
+
+==========================================================================
+
+==========================================================================
+01Oct2019, Rabenhorst,    GIT Tag: v10.3.4 (zero diff to Jason-3_2)
+                       Fixture: GEOSgcm
+------------------------------------------------------------------------------
+
+1. Fields out of the MTR bundle came in the "wrong" order and affected the Henry's law constants. Hotfix to fetch field by name instead of by index.
+
+2. Fixed triangular pdf option in SHUW.
+
+3. Update chemistry to v1.0.2 to run GMI and Stratchem. Updated the StratChem and GMIchem setup scripts to better match gcm_setup.
+
+4. Hotfix in fv_tracer2d.F90 to compare to ksplt instead of nsplt.
+
+5. FVdycoreCubed_GridComp moved to separate repository.
+
+6. FMS moved to separate repository and renamed GFDL_fms to fms
+
+7. getco2.F90 moved to @GMAO_Shared.
+
+8. Adapted GuestOcean_GridComp to select DATASEA, MOM5 or MOM6 at runtime.
+
+9. Changes to enable LDAS to start using the develop branch:
+	* ensemble ID width for LDAS
+	* added co2 file for CatchCN support
+	* bug fix that only affects New Land when snow impurity model is active
+
+10. Updates from S2S-3 CVS tag:
+	* Includes dual ocean code
+	* Update to precip correction and additional coupled diagnostics
+
+11. MERRA2_EMISSIONS_DIRECTORY path bugfix for gcm_run.j and regress.j
+
+12. Updates from CVS GEOSadas-5_25_2 tag.
+
+13. Updated plots.
+
+14. Enhancements to scm_setup script.
+
+Restart Changes: None.
+
+
+==========================================================================
+02Aug2019, Takacs,    CVS Tag: Jason-3_2 (non-zero diff to Jason-3_1)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Changes in FV3 related to Horizontal Advection choices. (from Bill: JU_20190722_WMP)
+2) Changes in FV3 dddmp (from 0.1 to 0.2, to improve stability)
+3) Changes in MOIST related to ICE-FALL. (from Bill: JU_20190722_WMP)
+4) Updates to GEOS_OpenWaterGridComp.F90 and GEOS_DataSeaGridComp.F90 to modify
+   the original Coupled/Merged System to include Santha's reformulated ice/melt.
+   (from Santha:  sakella-GEOSadas-5_25_0_DV_in_MIZ_SSTunderIceFix)
+5) Many updates related to CMAKE for upcoming GIT repository.
+6) The addition of ERA5 to QUICKPLOT.
+7) Modified STATS for NPO, SPO, and XPO regions.  Modified Montage plots.
+
+Restart Changes: None.
+
+
+==========================================================================
+13Jun2019, Takacs,    CVS Tag: Jason-3_1 (non-zero diff to Jason-3_0)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Updates to GuestOcean_GridComp.F90 to re-sync OCEAN clock with ATMOS clock
+   when running Regular REPLAY together with DataOcean.  (non-zero diff)
+2) Introduced code in MAPL_CFIO for HISTORY which corresponds to the "fix_undef"
+   utility used in MERRA-2 post-processing.  This creates consistency between
+   horizontally transformed and vertically interpolated quantities and the target
+   output level (i.e., values below surface are UNDEF).
+3) MKIAU has been modified to allow for REPLAYing to different vertical resolution.
+   Results are zero-diff to previous versions if vertical resolution is the same.
+4) Updates to mk_restarts for Land/Catch.  Zero-diff when regrid.pl points to
+   standard (old-land) Icarus/Jason boundary area.
+
+Restart Changes: None.
+
+
+==========================================================================
+03May2019, Takacs,    CVS Tag: Jason-3_0 (non-zero diff to Jason-2_2)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Zero-Diff update to FV3 dynamics to allow FV3+ADV option
+2) Updates from Mike Manyin to his tag:  Jason-2_2_MEM_2
+3) This tag primarily is a Merge between Jason-2_2 and Andrea Molod's coupled tag.
+   This produces a non-zero diff to Jason-2_2 due to a modified surface layer interface.
+
+Restart Changes: None. However, due to changes in import states and diagnostics, these
+                       restarts have changed but are passive to the prognostic restarts:
+
+                       irrad_internal_rst 
+                       surf_import_rst
+                       tr_internal_rst
+                       turb_import_rst
+
+==========================================================================
+25Apr2019, Takacs,    CVS Tag: Jason-2_2 (zero diff to Jason-2_1 in Default Mode)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) StratChem updated to tag: Jason-2_0_MEM_2, as well as updates to GEOS-Chem and HEMCO
+   from Mike Manyin
+2) CARMA updated to tag: prc+asd-AeroChem-Icarus-3_3_p2+a1-v7 from Pete Colarco
+   (with minor mods in DustEmissionMod.F90 because of an interface differences)
+3) GIT related updates.
+
+Restart Changes: None, except for a Long-Name change in TR restart
+
+==========================================================================
+17Apr2019, Takacs,    CVS Tag: Jason-2_1 (zero diff to Jason-2_0 in Default Mode)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Retuning when using NewLand.
+2) Addition of Optional RRTMPG (off by Default).
+3) Modifications for New RRTMG diagnostics.
+4) Updates for regrid.pl and related code.
+5) StratChem updated to tag: Jason-2_0_MEM_1
+6) GIT related updates.
+
+Restart Changes:    turb_import_rst,  Simply Bootstrap.
+                    surf_import_rst,  Simply Bootstrap.
+                 irrad_internal_rst (passive, for clear-sky diagnostics only), Simply Bootstrap
+
+==========================================================================
+04Mar2019, Takacs,    CVS Tag: Jason-UNSTABLE/Jason-2_0 (non-zero diff to Jason-1_1)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) This is a MAJOR update to include updated moist processes based on the tag: merge_JDB7p1_retuned
+   It uses RRTMG for BOTH Shortwave and Longwave radiation.
+   It uses the GF Convection Scheme, as well as the UW Shallow Cumulus scheme.
+   It uses dynamics tunings based on the DYAMOND experiments.
+2) Option included for running Stochastic Physics.
+3) 2nd-Moment Cloud MicroPhysics updated to tag: b_Jason_2_0_donifan
+
+Restart Changes: solar_internal_rst (for RRTMG).  Simply Bootstrap.
+
+==========================================================================
+23Jan2019, Takacs,    CVS Tag: Jason-1_1 (non-zero diff to Jason-1_0_BETA)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) An error was found related to GOCART and TR regarding the TR and GOCART IMPORT restarts.
+This error was introduced going from Icarus-1_0_p1 to Icarus-2_0 with the splitting of GOCART into
+RUN1 and RUN2 methods.  Essentially, the ordering in PHYSICS is:  SURF,CHEM,TURB RUN1, followd by
+SURF,TURB,CHEM RUN2.  Emissions are computed in CHEM RUN1 based on LWI locations.  However, LWI
+is not computed until SURF RUN2.  Therefore, LWI is required on the GOCART IMPORT.  But this variable
+was labeled as RESTART_SKIP.  The TR IMPORT did contain LWI, thus when TR was Enabled, GOCART saw
+the proper LWI.  But when TR was Disabled, LWI was no longer available for GOCART, and resulted in 
+non-zero differences.  The quick solution was to label LWI as non-skip on the GOCART IMPORT restart.
+
+2) An error was found related to the TH_for_CHEM within the SYNC-TQ sequence.  The error was fixed, but
+experiments showed negligible impact due to its second-order influence.
+
+3) Modifications to the STATS plotting package to include Mean-Square-Error decompostion.
+
+Restart Changes: YES (but bootstrappable)
+                 GOCART IMPORT was modified by adding LWI and FRACI to be non-skip
+                 TR     IMPORT was modified by removing ALL but CLDTT (from RAD), since TR is run after SURF RUN(1,2)
+                 Note:  When TR adopts a 2-phase approach, additional IMPORT variables from SURF will need to be included.
+
+==========================================================================
+17Sep2018, Takacs,    CVS Tag: Jason-1_0_BETA (zero diff to Jason-gitintegration from SI Team)
+                       Module: GEOSagcm       (non-zero diff to Icarus-3_4_ESMF7)
+------------------------------------------------------------------------------
+1) Saltwater split => openwater and seaicethermo. 
+   This means saltwater_internal is now two files: openwater_internal and seaicethermo_internal. saltwater_import remains.
+   Regridding utility (regrid.pl) will always produce the split ocean with this tag.  You can, however, provide the single
+   saltwater_internal as input.
+2) Sponge Layer fix in FV3 to include damping between top model layer and bottom of sponge.
+3) Regridding in MAPL now done in a new abstract/OO paradigm
+   This leads to the new grid definitions in AGCM.rc
+4) New HISTORY.rc grid_label definitions.  This HISTORY is designated as VERSION: 1
+   Older HISTORY files (using resolution attribute) will still work provided VERSION = 0.
+5) QUICKPLOT updates to produce automated "closeness" plots.
+
+Restart Changes: Saltwater_internal ==> openwater_internal & seaicethermo_internal
+
+==========================================================================
+13Jul2018, Takacs,    CVS Tag: Icarus-3_4_ESMF7 (zero-diff to Icarus-3_4)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Modifications needed for use of ESMF7
+2) Mods for RRTMG Longwave to enable zero-diff partitioning
+
+Restart Changes: none
+
+==========================================================================
+13Jul2018, Takacs,    CVS Tag: Icarus-3_4 (zero-diff to Icarus-3_3_p3)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Updates to StratChem using tag: Icarus-3_2_p9_MEM_MERGE_3
+                              and  Icarus-3_2_p9_MEM_MERGE_3-r1 
+2) Updates using tags: GEOSldas_m4-17_UNSTABLE
+                       32_GOSWIM_BUG_FIX
+                       b_LANDUPD-change
+3) Updates to regrid.pl (and supporting code) to ALLOW split ocean restarts
+4) Updates for Icarus-3_3_p3 (i.e., sync with GEOSadas-5_21_2)
+
+Restart Changes: none (for standard model)
+
+==========================================================================
+13Jul2018, Takacs,    CVS Tag: Icarus-3_3_p3 (zero-diff to GEOSadas-5_21_2)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1. This is the model tag used for GEOSadas-5_21_2
+2. It is zero-diff to Icarus-3_3_p2, EXCEPT for:
+         a) GOCART runs on Heartbeat
+         b) DUST emissions have been retuned (updated DU rc files)
+
+Restart Changes: none
+
+==========================================================================
+26Apr2018, Takacs,    CVS Tag: Icarus-3_3_p2 (non-zero diff to Icarus-3_3_p1)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1. Changed fvcore_layout_rc to REMAP using Temperature with DZ Filtering
+           remap_option =  0
+              fv_sg_adj = 450
+2. Update to plots.
+
+Restart Changes: none
+
+==========================================================================
+05Apr2018, Takacs,    CVS Tag: Icarus-3_3_p1 (non-zero diff to Icarus-3_3)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1. Changed MIN_RI      in MOIST from 20 to 15 microns
+2. Changed ANV_ICEFALL in MOIST from 0.5 to 1.0
+3. Changed fvcore_layout_rc to REMAP using Total Energy with NO DZ Filtering
+           remap_option =  2
+              fv_sg_adj = -1
+4. Modified MAPL_PI to use MAPL_R8 structure. This fixes AREA calculation withing DYCORE.
+5. On DISCOVER, Uses:  Intel-18.0.1.163, MPT-2.17
+6. "FAST" compiler options used only for FV3 (Note: zero-diff to SLOW options)
+
+Restart Changes: none
+
+==========================================================================
+27Mar2018, Takacs,    CVS Tag: Icarus-3_3 (non-zero diff to Icarus-3_2_p9)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1. Changed MIN_RI for MOIST from 6 to 20 microns
+2. Changed to Intel18 with "FAST" compiler options.
+3. Changed FV Dynamics to REAL*4.
+4. Modified FV and PHYSICS for better conservation of Dry Mass.
+
+Restart Changes: moist_import_rst   (if binary format, simply Bootstrap)
+
+==========================================================================
+20Feb2018, Takacs,    CVS Tag: Icarus-3_2_p9 (non-zero diff to Icarus-3_2_p8)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1. Set optics tables Chou-Suarez for SW and and RRTMG for LW.
+2. Set HEARTBEAT to a minimum of 450 seconds.
+3. Updated Cloud Water and Cloud Ice effective Radii.
+4. New Methodology for IAU.  Default:  Traditional P3C6T6_DF
+                               4DIAU:  REPLAY_MODE: Exact_4D
+                                       CORRECTOR_DURATION: 10800 (3-hours)
+
+Restart Changes: irrad_internal_rst (for RRTMG).  Simply Bootstrap.
+
+==========================================================================
+19Jan2018, Takacs,    CVS Tag: Icarus-3_2_p8 (non-zero diff to Icarus-3_2_p7)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1. Enhancement to the diffusion directly in the sponge layer.
+2. Set optics tables back to Chou-Suarez for both SW and LW.
+
+Restart Changes: solar_internal_rst (Back to Chou-Suarez).  Simply Bootstrap.
+
+==========================================================================
+08Jan2018, Takacs,    CVS Tag: Icarus-3_2_p7 (non-zero diff to Icarus-3_2_p6)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1. Modified GEOS_MoistGridComp.F90 to have RAS settings behave like x0027_ctl DAS experiments.
+   No resolution dependency for AGCM.rc file.
+
+Restart Changes: none
+
+==========================================================================
+15Dec2017, Takacs,    CVS Tag: Icarus-3_2_p6 (non-zero diff to Icarus-3_2_p5)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1. A bug fix in RRTMG shortwave found by Max that will fix the SW Albedo issues Gary has seen in x0029 (Land & Radiation Consistency)
+2. An update in FV3 that allows us to use the non-monotonic advection schemes for momentum and thermodynamic 
+   variables without any degradation in edge effects, plus the truly linear PPM schemes in the sponge layers.
+
+Restart Changes: none
+
+==========================================================================
+06Dec2017, Takacs,    CVS Tag: Icarus-3_2_p5 (non-zero diff to Icarus-3_2)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Updates to FV3 dynamics.  Resolution dependency is automatic.
+2) CBL_TPERT = 0 by default.  Brings back PBL heights.
+3) Revert REPLAY parameters back to version from GEOSadas-5_18_0 (x0029 configuration)
+
+Restart Changes: none
+
+==========================================================================
+__Nov2017, Takacs,    CVS Tag: Icarus-3_2 (zero-diff to Icarus-3_1 when NOT running Brown Carbon)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Merge with tag:  asd+Icarus-3_0_UNSTABLE-a2  to allow option for Brown Carbon
+2) Enable IAU_DIGITAL_FILTER as default for DAS and REPLAY modes. (non-zero diff)
+3) Changed BKGAVE default to 0 (from 2/3 * CORRECTOR_DURATION).   (non-zero diff)
+   A better approach is to use:  IAU_DIGITAL_FILTER: YES
+
+Restart Changes: none
+
+==========================================================================
+__Nov2017, Takacs,    CVS Tag: Icarus-3_1 (zero-diff to Icarus-3_0 when NOT running NewLand)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Implement Code to enable option for running NewLand
+
+
+==========================================================================
+04Oct2017, Takacs,    CVS Tag: Icarus-3_0 (non-zero diff to Icarus-2_0_p1)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Implement R8 version of FV3 VLAB p3 dynamics. Note, current R4 version loses Dry-Mass. R8 version conserves.
+2) Updated Single-Moment Physics (MOIST Processes)
+3) AGCM now runs RRTMG Shortwave Radiation and Chou-Suarez Longwave Radiation by default (NOTE: cannot use old solar_internal restarts)
+4) Implement cubic time-interpolation option for MKIAU in REPLAY (Default: Linear)
+5) Updates to MAPL_Base and MAPL_cfio
+6) Updates to QuickPlots
+7) Implement bugfix to cloudnew.F90 as in Icarus-1_0_p2
+8) Changed Dry-Mass value in rs_scale.F90 from 983.24 mb (MERRA-2 value) to 983.05 mb due to use of GMTED topography.
+   Mean TOPO difference:  1.58436898227561 meters
+   Note: 983.05 mb is very similar to value based on ERA-Interim data.
+9) Modified GEOS_TurbulenceGridComp.F90 with more REAL*8 code to improve Dry-Mass Conservation
+10) Due to updated FVCORE, GWD BGSTRESSMAX Default changed from 1.2 to 0.9 for 72-levels (Note: 132-levels probably requires re-tuning).
+
+NOTE:  Regular REPLAY to itself FAILS under certain Predictor/Corrector configurations.
+      (Reason UNKNOWN)  P3_C6 and P0_C1 seem to work properly.
+
+Restart Changes: YES
+                 RRTMG requires new solar_internal restart.
+                 Simply delete old restart, and bootstrap new RRTMG restart.
+
+
+==========================================================================
+24Aug2017, Takacs,    CVS Tag: Icarus-2_0_p1 (non-zero diff to Icarus-2_0)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Implement bugfix to cloudnew.F90.
+   A "typo" error was introduced into Icarus-1_0 when incorporating Tag: mjs100__msuarez to inhibit SNOW during thunderstorms.
+   The impact of the error directly affected cloud-liquid water and low-level optical depths.
+2) Changed Dry-Mass value in rs_scale.F90 from 983.24 mb (MERRA-2 value) to 983.05 mb due to use of GMTED topography.
+   Mean TOPO difference:  1.58436898227561 meters
+   Note: 983.05 mb is very similar to value based on ERA-Interim data.
+
+Restart Changes: none
+
+
+==========================================================================
+24Aug2017, Takacs,    CVS Tag: Icarus-1_0_p2 (non-zero diff to Icarus-1_0_p1)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Implement bugfix to cloudnew.F90.
+   A "typo" error was introduced into Icarus-1_0 when incorporating Tag: mjs100__msuarez to inhibit SNOW during thunderstorms.
+   The impact of the error directly affected cloud-liquid water and low-level optical depths.
+2) Changed Dry-Mass value in rs_scale.F90 from 983.24 mb (MERRA-2 value) to 983.05 mb due to use of GMTED topography.
+   Mean TOPO difference:  1.58436898227561 meters
+   Note: 983.05 mb is very similar to value based on ERA-Interim data.
+
+Restart Changes: none
+
+
+==========================================================================
+12Jun2017, Takacs,    CVS Tag: Icarus-2_0 (non-zero diff to Icarus-1_0_p1)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Updates from E.Nielsen to remove TR dependence on GMI.
+2) GMI Updates to Stratospheric ICE fall speeds.
+3) Introduce new terminology for Regular REPLAY (REPLAY_PREDICTOR, REPLAY_CORRECTOR, etc.)
+4) Implement Anton's 2-Phase GOCART Tag: asd-Icarus-UNSTABLE-a3
+5) Modified PHYSICS dry-mass dwdt calculation to reduce roundoff error
+6) Implement Ensemble AMIP (EMIP) strategy within gcm_run.j
+7) Modified MKIAU to allow creating Increments on BKG grid.  Default is: GRIDINC = ANA
+
+Restart Changes: YES
+        Additional IMPORT Restart: gocart_import_rst (Bootstrappable)
+
+
+==========================================================================
+10Apr2017, Takacs,    CVS Tag: Icarus-1_0_p1 (non-zero diff to Icarus-1_0)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Implement fix to stop the convective transport of the NI tracers by RAS.
+   RAS is producing negative constituents which may cause the Radiation to crash when GOCART is not called on the HeartBeat.
+2) Implement essentially zero-diff updates from Pete Colarco for CO.  (Anton's tag: asd-Icarus-UNSTABLE-a0)
+   Differences arising from change in order-of-operations.
+3) Implement fix for the liquid radii limits as well as integrated Dongmin's ICEFLAG=4 changes for MODIS C6
+4) Move to using MPT.
+
+Restart Changes: none
+
+Note: Compiling/Building on dali is no longer supported due to use of MPT !!!
+
+
+==========================================================================
+28Mar2017, Takacs,    CVS Tag: Icarus-1_0 (non-zero diff to Heracles-5_4_p3)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Modified Constraints to NOT include QV updates from Chemistry
+2) Modified Constraints to act only where mass in layer has changed
+3) Update Eric Nielson's Chemistry to tag: Heracles-5_4_p3_JEN_GMI-r2 (-r3 for TR directory)
+4) Minor modification to GEOS_GcmGridComp.F90 to allow for Regular REPLAY of 4DIAU algorithm
+5) Zero-diff Update to Anton Tag: asd-Heracles-UNSTABLE+multi_dust-a3
+6) Implement Anton's Tag for GOCART Alarms: asd-Heracles-UNSTABLE+H2O2_HNO3_RECYCLE_ALARMS
+7) Hardwire SOLAR_DT, IRRAD_DT, GOCART_DT to 3600
+8) Implement Icarus Boundary Area to use GMTED TOPO data.
+9) Updated and re-tuned GWD and Turbulence for used with Icarus/GMTED TOPO variances.
+10) Added NUDGING option for Regular REPLAY.
+11) Incorporated EnADAS-5_16_7p1 updates for Chem_Aod.F90 and GOCART_GridComp.F90
+12) Updated Tag: mjs100__msuarez of cloudnew.F90 to inhibit SNOW during thunderstorms.
+13) Modified AREAMEAN calls to use fast method. This regresses correctly, but needs testing for 
+    dry mass conservation.
+14) Modified defaults for GWD Parameters: BGSTRESSMAX=2.25 and PGWV=8 for LM=132 case.
+15) Modified CAPE diagnostic and Bouyancy calculation in MOIST.
+16) Re-introduce code in GOCART to compute GOCART_REFERENCE_TIME based on GOCART_DT and HEARTBEAT.
+
+Restart Changes: YES. ALL RESTARTS require require REGRIDDING (or BOOTSTRAP) to new Topography
+
+
+==========================================================================
+Nov092016, Takacs,    CVS Tag: Heracles-5_4_p3 (non-zero diff to Heracles-5_4_p2)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Added emission factors for sea salt and dust at C720 and finer resolutions
+2) A variety of fixes for memory leaks.
+3) Update StratChem to tag: Heracles-5_4_p2_JEN_SC
+4) Updates to QUICKPLOT
+
+Restart Changes: none
+
+
+==========================================================================
+Oct162016, Takacs,    CVS Tag: Heracles-5_4_p2 (non-zero diff to Heracles-5_4_p1)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Implement CallBack method between GOCART and 2-Moment Microphysics (zero-diff for single-moment microphysics)
+2) Updates/corrections to GMIChem
+3) Removed moving of Large-Scale Precip/Precip_Flux for Chemistry with the Single-Moment Microphysics.
+   The 2nd-Momemt Microphysics moves the Large-Scale Precip/Precip_Flux for Chemistry as in Heracles-5_4_p1.
+4) 2nd-Moment Microphysics updated to tag: t_H54p1_donifan_0
+5) New format for Native Cube nc4 output (cube faces are now ensemble members)
+6) Grads Utility (dc.gs) has been updated to read both Old and New Native Cube formats.
+
+Restart Changes: none
+
+
+==========================================================================
+28Sep2016, Takacs,    CVS Tag: Heracles-5_4_p1 (non-zero diff to Heracles-5_4)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Update to surfacelayer.F90 to fix incorrect approximation when using increased vertical levels (non-zero diff). 
+2) Corrected error in Heracles-5_3 and Heracles-5_4 to properly move 3-D Precip Flux for Aerosol Scavenging
+3) New Physics Tunings for improved NPW Skill
+4) Added updated 132 Levels for set_eta
+5) Modified AGCM and MKIAU for:
+     a) Zero-diff when replaying to itself
+     b) Implement 4D option
+6) Updates to StratChem:  Extention from 35 to 52 species now includes all major CFCs, Halons, HCFCs, 
+                          very short-lived bromocarbons, and two transport tracers. 
+7) Updates to GMIChem
+
+Restart Changes: none
+
+
+==========================================================================
+08Sep2016, Takacs,    CVS Tag: Heracles-5_4 (non-zero diff to Heracles-5_3)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) MAJOR update to Single-Moment Microphysics producing improved C360 NWP Skill
+2) Change to default fvcore_layout_rc to REMAP using local gmao_cubic on Total Energy
+3) Merge with Yuri to provide baseline coupled model tag. (zero-diff to Heracles-5_3)
+4) Fix bug for UNDEF treatment within CubeToLatLon.F90 and  MAPL_HorzTransform.F90 (non-zero diff to H53)
+5) Updated TURB code for zero-diff rewrite plus added TKE diagnostic
+6) Removed unnecesssary RESTART TYPE from AGCM.rc.  Changed logic for CHECKPOINT TYPE.
+   a) Use CHECKPOINT_TYPE if it exists
+   b) Use Model Default if CHECKPOINT_TYPE does not exist or if CHECKPOINT_TYPE = 'default'
+   c) Implement AGCM.rc parameter: DEFAULT_CHECKPOINT_TYPE (pnc4)
+
+
+Restart Changes: none
+
+
+==========================================================================
+30Jun2016, Takacs,    CVS Tag: Heracles-5_3 (pushed,     zero diff)
+29Jun2016, Takacs,    CVS Tag: Heracles-5_3 (pushed, non-zero diff)
+27Jun2016, Takacs,    CVS Tag: Heracles-5_3 (pushed,     zero diff)
+24Jun2016, Takacs,    CVS Tag: Heracles-5_3 (        non-zero diff to Heracles-5_2_p1)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Updates to Aerosols (following: AeroChem-Heracles-5_2-b9), including tag: b_AMM_H521MOPS_move2d 
+   for single moment diagnostic partition of precip, and tag: AMM_H53U_moistforFP for updated 2-Moment
+2) Updates to GMI, StratChem, and Tr_GridComp (zero-diff for default case)
+3) Updates to QUICKSTAT
+
+4) Pushed on 27Jun2016 to correct CLOUDNEW diagnostic and to add MAPL_SKIP to TR_GridComp IMPORT SPEC (Zero-Diff)
+5) Pushed on 29Jun2016 to correct REGRESSION for GOCART OPS Sulfates (Non-Zero Diff, minor error)
+6) Pushed on 29Jun2016 to correct error in Chem_RegistryMod.F90 in accounting GOCART components
+   Note:  Binary GOCART Restarts will be incorrect if using original Heracles-5_3 tag (prior to 29Jun2016)
+7) Pushed on 30Jun2016 to update  Chem_BundleMod.F90 (Zero-Diff, new optional arguments)
+
+Restart Changes: yes
+        Additional Internals to: gocart_internal_rst (Bootstrappable)
+        Additional Imports   to: tr_import_rst       (Bootstrappable)
+
+
+==========================================================================
+08Jun2016, Takacs,    CVS Tag: Heracles-5_2_p1 (non-zero diff to Heracles-5_2)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Updates to ADD_INCS, PHYSICS, and AGCM GridComp to perform proper mass-weighted Temperature tendencies.
+2) Added option for mass-weighting Analysis Temperature Tendencies (ANA_IS_WEIGHTED, DEFAULT=NO)
+3) Updates to QUICKPLOT
+
+Restart Changes: none
+
+
+==========================================================================
+25May2016, Takacs,    CVS Tag: Heracles-5_2 (AKA: Heracles-5_2_BETA_1MOPS, non-zero diff to Heracles-5_1)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Updates to 2-Moment Microphysics
+2) Revert back to Single-Moment Microphysics of e5131_fp (Ganymed-4_1),but with fixed bug in PRECIP3 argument list
+3) Merge LAND with tag: SM-LDASsa_m3-16_0_p2_CatchCatchCN_for_MERRA3
+4) Fix to CO2 Emission Files
+5) Merge to incorporate Yury's Heracles-4_3_UNSTABLE-CICE_thermo (zero diff when running DataSeaIce)
+6) Changed default for BKGAVE in Regular REPLAY to (2/3)xREPLAY_FREQUENCY (Nominally 4 hours)
+7) Fixed averaging interval related to BKGAVE in Regular REPLAY (bug caused -3hr endpoint to be omitted in average)
+8) Fixed bug in GWD Mid-Layer GeoPotential Height Calculation
+9) Updates to QUICKPLOT
+10) Updates to MAPL
+11) Updates to GMI
+12) Changed ROTATE from TRUE to FALSE for Dump_&_Splash WIND INCREMENTS in DyCorGridComp
+13) Updates to fvcore_layout.rc (defaults to so-called "2b3b" case based on H52 Forecast Layout Experiments)
+14) Updates to sw_core.F90 and tp_core.F90 associated with fvlayout "2b3b"
+15) Changed Defaults to Regular REPLAY Grid Transforms within MKIAU Source Code to BiLinary Interpolaton:
+            BKG2ANACNSRV: 0 ( Note: Conservative Transformation creates Non-Wavenumber 1 Winds at Poles )
+            ANA2BKGCNSRV: 0 ( Note: Conservative Transformation creates Non-Wavenumber 1 Winds at Poles )
+16) NOTE: Lat/Lon version of GEOSagcm no-longer regresses.  Last known version which regresses is Heracles-4_3
+          Investigation still in progress to determine cause.
+
+Restart Changes: none
+
+
+==========================================================================
+12Jan2016, Takacs,    CVS Tag: Heracles-5_1 (non-zero diff to Heracles-5_0)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Updates to CO emissions
+2) Updates to GMIchem_GridComp
+3) Updates to TR_GridComp
+4) Default to Use SST Cool Layer
+5) Changed Defaults for SST and Regular REPLAY Grid Transform parameteres within AGCM.rc:
+           INTERPOLATE_SST: 0 or 1 ( Defaults are now model decisions based on grid resolution comparisons )
+              BKG2ANACNSRV: 0 or 1 ( Defaults are now model decisions based on grid resolution comparisons )
+              ANA2BKGCNSRV: 0 or 1 ( Defaults are now model decisions based on grid resolution comparisons )
+
+Restart Changes: yes
+        Additional Imports to: tr_import_rst (Bootstrappable)
+
+
+==========================================================================
+07Dec2015, Takacs,    CVS Tag: Heracles-5_0
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Updates to 2nd-moment microphysics
+2) Updates GMIchem_GridComp to tag: Heracles-UNSTABLE_GMI as of 10Nov2015
+3) Update  to tag: mat-HU-FixRRTMGLW-v_1 to fix regression issue in RRTMG
+4) Updates to QUICKSTAT to compute Confidence
+5) Updates to QUICKPLOT
+6) Fixed Reverse Order Argument List error for cloudnew.F90 (wrt: VFALLRN & VFALLSN)
+7) Implemented RASPARAM.F90 and CLDPARAM.F90 for clarity. (zero-diff)
+8) Updated DUST Optical Tables from v14.2 to v15.3
+   Note: This change affects ALL Emission Types: OPS, MERRA2, PIESA, etc.
+   The only way to get the original MERRA2 emission files is to run with the MERRA2 Tag.
+9) Fixed SS_GridComp to maskout emissions over Great Lakes and Capsian Sea.
+10) Changed Default Parameters:  SYNCTQ = 1    (ON)
+                                 PRECIPRAD = 1 (ON)
+                                 CLDMICRO  = 2MOMENT
+11) Changed Single-Moment MicroPhysics behavior. (Note: Default is 2-Moment)
+
+Restart Changes: none
+
+
+==========================================================================
+21Sep2015, Takacs,    CVS Tag: Heracles-4_3 (zero-diff to Heracles-4_2)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Implemented new saltwater merge with CICE  (zero-diff if disabled)
+2) Updates to 2nd-moment microphysics, tag: b_HR42_091015_2M 
+3) Updates Surface/Shared/Raster from Sarith for latest BC development
+
+4) Pushed Tag on 22Oct2015 to correct small bug in cldmacro.F90 for 2-Moment Microphysics (non-zero diff)
+
+Restart Changes: none
+
+==========================================================================
+14Aug2015, Takacs,    CVS Tag: Heracles-4_2 (zero-diff to Heracles-4_1)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Added AGCM.rc parameter:  MAPL_ENABLE_BOOTSTRAP
+
+   The Default valus is "NO", which means that ALL restart files must exist and 
+   the must contain ALL variables used by the model.
+
+   By setting MAPL_ENABLE_BOOTSTRAP: YES
+   the model will bootstrap all missing variables from the restarts which 
+   are classified as OPTIONAL.  This works for both binary and nc4 files.
+   Currently, all variables within the model restarts are OPTIONAL (by default) 
+   except for:
+
+     1) ALL variables within fvcore_internal_rst (except DZ and W)
+     2) Q-Vapor       within  moist_internal_rst
+     3) All variables within  catch_internal_rst
+
+   You can still bootstrap individual restarts by placing the "+" or "-"
+   as before, together with MAPL_ENABLE_BOOTSTRAP: NO
+   However, there is no mechanism to bootstrap REQUIRED variables.
+   Only variables that are classified as OPTIONAL are bootstrappable.
+
+Restart Changes: none
+           Note: +/- notation no longer needed
+
+==========================================================================
+04Aug2015, Takacs,    CVS Tag: Heracles-4_1 (non-zero-diff to Heracles-4_0)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Modified GOCART to use ExtData for IMPORTS
+2) Updates to QUICKPLOT
+3) Fixed LandIce ALBEDO diagnostic (zero-diff)
+4) Added GCMICHEM and STRATCHEM setups and HISTORY
+5) Added rs_numtiles(.F90, .x) to check ocean tiles for consistency with BCs
+
+Restart Changes: none
+           Note: Converts to NC4 Restarts automatically
+
+==========================================================================
+19Jun2015, Takacs,    CVS Tag: Heracles-4_0 (non-zero-diff to Heracles-3_0)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Added MERRA2-DD option within GOCART Chemistry
+2) Implemented CMPOPS (MERRA-1 and MERRA-2) within Quickplot, plus other plot updates
+3) Modified Constituent Scaling to Preserve Dry Mass Mixing Ratio
+4) Used REAL*8 selectively within Turbulence to preserve Constituent Mass during mixing
+5) Added option for Triangular Truncation within MKIAU
+6) Corrected subtle error related to REPLAY_Q = NO within MKIAU_GridComp
+7) Added feature to write AGCM_IMPORT files during Regular REPLAY.  
+   This results in Zero-Diff when using those files to force an EXACT REPLAY.
+8) Merged updates from 2nd-Moment Microphysics, tag: t_HR051815_2M_updated
+   Merged updates from branch: b_HR051815_donifan as of June 19, 2015
+   (default, zero-diff when not used)
+9) GMIchem: ExtData.rc is now used to import emissions, replacing Chem_UtilMPread.  
+   When GMICHEM is the AERO_PROVIDER, the aerosols now populate the AEROSOLS bundle in the AERO state. 
+10) B.Putman's updates to COSP Simulator 
+11) M2R12K FV3 Dynamics
+12) Convert to NC4 Restats automatically
+13) Spread surface diffusion over lowest 50-meters
+
+Restart Changes: none
+           Note: Converts to NC4 Restarts automatically
+
+==========================================================================
+====                           New TAG Names                          ====
+==========================================================================
+20Mar2015, Takacs Heracles-3_0  (zero diff to Heracles-2_1 but with Anton's New GOCART)
+                                 non-zero diff when running GOCART.data (formally known as PCHEM)
+           Module: GEOSagcm
+ 
+Heracles-2_1   (aka Heracles-1_0_BETA3)   (Like Heracles-1_0_BETA2 but with CATCH fix and SOLAR Round-off update)
+Heracles-2_0   (aka Heracles-1_0_BETA2)   (zero diff to Heracles-1_0_BETA1 but with added TRACER Component)
+Heracles-1_1   (aka Heracles-1_0_BETA1)   (zero diff to Ganymed-4_1)
+Heracles-1_0   (aka Heracles-1_0_BETA0)   (zero diff to Ganymed-4_0)
+
+with development under:  Heracles_UNSTABLE
+
+Restart Changes: none
+
+==========================================================================
+17Mar2015, Takacs,    CVS Tag: Heracles-1_0_BETA3 (non-zero-diff to Heracles-1_0_BETA2)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Fix to GEOS_CatchGridComp.F90 to set SCALE4Z0 in RUN2.  This was inadvertently omitted in Ganymed-4_1 (non-zero diff).
+2) Minor order-of-operation change in GEOS_SolarGridComp.F90 to be compliant with upcoming GOCART changes (round-off).
+3) Updates to RRTMG to fix blow-up when running C360 (non-zero diffs).
+
+Restart Changes: none
+
+==========================================================================
+04Mar2015, Takacs,    CVS Tag: Heracles-1_0_BETA2 (zero-diff to Heracles-1_0_BETA1)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Includes the addition of the Passive Tracer Component:  GEOSchem_GridComp/TR_GridComp
+2) Updates to MAPL
+3) Updates to facillitate Cycled REPLAY with Forecasts
+
+Restart Changes: yes
+
+    New Boot_Strappable Restarts for Tracer Component:
+        a) tr_internal_rst
+        b) tr_import_rst
+
+==========================================================================
+09Feb2015, Takacs,    CVS Tag: Heracles-1_0_BETA1 (pushed)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Include SKIN_SST algorithm from Santha Akella (Zero-diff when disabled, Default: off)
+2) Changed default timestep for C24, C48, and a72, b72 resolutions from 1800 to 900.
+
+Restart Changes: none
+
+==========================================================================
+26Jan2015, Takacs,    CVS Tag: Heracles-1_0_BETA1 (zero diffs from Ganymed-4_1)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Moved to use MVAPICH2 2.1a at NCCS, Open MPI 1.8.1 on the desktop, MPT 2.10r6 at NAS, and some updates for Janus.
+2) Moves to Baselibs 4.0.6 since that is the best supported (in the case of Open MPI, only supported) by newer MPI stacks.
+3) Removed vestigial import SWNDSRF from SOLAR to simplify interface with RadAPP (Anton Darmenov).
+4) Added new no-aerosol fluxes within IRRAD (Pete Colarco).
+5) Added New MicroPhysics option (Default is FALSE).  This updated affects moist internal and import restarts.
+6) Updates to QUICKPLOT enables option for Regional plots.
+7) Correction within REGULAR REPLAY now cycles OCEAN and ATMOSPHERE within PREDICTOR step. Previous versions only cycled ATMOSPHERE.
+8) Updates to StratChem
+
+Restart Changes: yes
+   a) irrad_internal_rst
+   b) solar_import_rst
+   c) moist_internal_rst
+   d) moist_import_rst
+
+Note: To create restarts you should convert/regrid existing restarts to nc4.
+      However, you could also prefix the restart names with a "+" in the AGCM.rc
+
+      eg.) MOIST_INTERNAL_RESTART_FILE:            +moist_internal_rst
+           MOIST_INTERNAL_RESTART_TYPE:            pbinary
+           MOIST_INTERNAL_CHECKPOINT_FILE:         moist_internal_checkpoint
+           MOIST_INTERNAL_CHECKPOINT_TYPE:         pbinary
+
+==========================================================================
+11Dec2014, Takacs,    CVS Tag: Ganymed-4_1 (non-zero diffs from Ganymed-4_0_p1)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Modified default values for drag parameterizations:
+      TURBULENCE_C_B: 1.02e-7
+      EFFGWORO: 0.25
+      SCALE4Z0: 2.
+2) Correction within REGULAR REPLAY now cycles OCEAN and ATMOSPHERE within PREDICTOR step. Previous versions only cycled ATMOSPHERE.
+
+Restart Changes: none
+
+==========================================================================
+10Nov2014, Takacs,    CVS Tag: Ganymed-4_0_p1 (non-zero diffs from Ganymed-4_0)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Implement New Spectral Laplacian Solver for WINDFIX when running DAS or REPLAY.
+2) Implement proper vector horztransform for cube within MKIAU.
+   Ganymed-4_0 used a kludge which treated winds as tracers, and then did a pole fix.
+3) Implemented optional Conservative HorzTransform for REPLAY
+4) Implemented optional BKGAVE for REPLAY
+5) Added VECTOR_TYPE to Wind Tendency Exports (for HISTORY)
+6) Updated GEOS_Util/plots
+7) Updates to gcm_setup and corresponding gcm_[scripts]:
+              gcm_archive.j
+              gcm_convert.j
+              gcm_forecast.tmpl
+              gcm_post.j
+              gcm_regress.j
+              gcm_run.j
+              gcm_setup
+
+Restart Changes: none
+
+==========================================================================
+
+29Sep2014, Takacs,    CVS Tag: Heracles-1_0_BETA0 (zero diffs from Ganymed-4_0)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) This tag is a zero-diff baseline from Ganymed-4_0 for Heracles development.
+   It includes changes necessary for the gfortran compiler, as well as updates
+   to the REGRID procedures to make them "netcdf aware".
+   Other changes have also been included but result in a "zero-diff" if run in default mode.
+
+Restart Changes: none
+
+==========================================================================
+11Jul2014, Takacs,    CVS Tag: Ganymed-4_0 (zero diffs from Ganymed-4_0_BETA12 
+                       Module: GEOSagcm     except when using RRTMG and/or ExtData)
+------------------------------------------------------------------------------
+1) General edits to g5_modules, Config/, and Applications/GEOSgcm_App to
+   allow running on GMAO desktops
+2) Added cloning capability to gcm_setup. This should allow one to clone a
+   previous G40 (or later) experiment
+3) Added RRTMG (GPU enabled) code for shortwave radiation and updated to
+   RRTMGPU code for longwave (enabled via AGCM.rc flag)
+4) Changes to Mie table handling to improve performance (zero-diff)
+5) Compile diaglist.o in Chem_Shared at -O0 to improve compilation time (zero-diff)
+6) Merge changes from pchakrab-docfix for documentation.
+7) Keep preprocessed *___.f90 files from .P90 processing for debugging. Also
+   change .P90 preprocessing for Mac OS X
+8) Edits to MAPL_LoadBalance.F90:
+   a) Require communicator to be passed into BalanceCreate
+	b) Standardize naming for Handles
+9) Edits to FVdycoreCubed Make system for PGI and TAU
+10) General edits to Physics to enable CUDA 5 and cleanup of CUDA code
+11) Edits to Raster Make system for PGI
+12) Remove some references to older machines and compilers in g5_modules and
+    Config/ESMA_arch.mk
+13) Edits to scm_setup to allow SCM execution on desktops and at NAS.
+14) You can now ask for Fields from Bundles in HISTORY.rc, as in:
+    Bundle%Field. History will get the appropriate field from the bundle
+	 specified.
+15) Changes to ExtData:
+    a) ExtData.rc has changed: new fields (conservative regridding)
+    b) Behavior when specifying non-zero time template has changed (non-zero-diff 
+	    from previous ExtData)
+	 c) New capabilities and bug fixes
+16) New options for MAPL_CFIORead (conservative, voting, ignoreCase)
+17) Option for SYNCTQ (Default: 0, OFF)
+18) Updated GMIchem and StratChem to Tag: Ganymed-4_0_BETA11_JEN
+19) Updates to regrid.pl and its underlying source codes:
+    a) When going cube to cube, regrid.pl now allows you to go from course to fine resolution.
+    b) When going cube to cube, pchem_internal, gocart_internal, and pchem_internal are now handled with interp_restarts.x instead of c2c.x
+    c) If the final resolution is cubed, regrid.pl prompts asks for what number of vertical levels you are going to (72 or 137) and invokes interp_restarts.x properly 
+       to go to the requested number of levels on output.  The fvcore_internal and moist_internal are zero diff, but the others will not since they are now done with a different utility
+       which utilizes the vertical remapping algorithm.
+
+Restart Changes: none
+
+==========================================================================
+12Aug2014, Takacs,    CVS Tag: MERRA-2_AGCM_p2 (zero diffs from MERRA-2_AGCM_p1)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Patch to GEOS_LakeGridComp.F90 for MERRA-2_AGCM_p1 to remove SPECS for TAUXW and TAUYW
+
+Restart Changes: none
+
+==========================================================================
+05Aug2014, Takacs,    CVS Tag: MERRA-2_AGCM_p1 (zero diffs from MERRA-2_AGCM)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Patch for MERRA-2_AGCM to include new diagnostics:  TSKINW and TSKINI
+   for use in the OCN Collection.
+2) Added: fix_undef.F90 utility to fix UNDEF values below topography for PRS collections.
+
+Restart Changes: none
+
+==========================================================================
+12May2014, Takacs,    CVS Tag: MERRA-2_AGCM (zero diffs from Ganymed-4_0_BETA12)
+                       Module: GEOSagcm
+------------------------------------------------------------------------------
+1) Identical to GEOS AGCM used for MERRA-2
+
+Restart Changes: none
+
+==========================================================================
+12May2014, Takacs,    CVS Tag: Ganymed-4_0_BETA12 (zero diffs from Ganymed-4_0_BETA11)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Updated HISTORY_MERRA2.rc.tmpl
+2) Updates in GEOS_Util/plots to accommodate forecasts longer than 5 days
+
+Restart Changes: none
+
+==========================================================================
+
+11Apr2014, Takacs,    CVS Tag: Ganymed-4_0_BETA11 (zero diffs from Ganymed-4_0_BETA10)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Added new PRLAND diagnostic for Precip over Land (A.Molod)
+2) Fixed bug in diagnostic in StieglitzSnow.F90  (B.Zhao)
+3) Fixed bug in GFIO_remap.f90 (M.Thompson and A.Molod)
+4) Updates to post and plots package (L.Takacs)
+5) Added 137-level option in GMAO_Shared/GMAO_hermes/m_set_eta.F90
+   Note: set_eta.F90 in GEOS_Util/post and m_set_eta.F90 GMAO_hermes need to be synced (at a future date) into one area.
+
+6) Note: Pushed Tag on April 15 to accomodate modified MERRA-2 LAND Collection diagnostics
+
+Restart Changes: none
+
+==========================================================================
+13Mar2014, Takacs,    CVS Tag: Ganymed-4_0_BETA10 (non-zero diffs from Ganymed-4_0_BETA9 when using GOCART)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Updates to SU_GridComp resource files to use new version of volcanic emissions
+2) Moved SatSim to the HEAD (zero-diff)
+3) Updates to QUICKPLOT package
+4) Sync with GEOSadas-5_12_3_UNSTABLE for shared utilities
+5) Bug fix in MAPL_CFIO.F90 (specifically for vector HISTORY output using ":" syntax at same resolution)
+6) Switch to using Baselibs/v4.0.3 (zero-diff)
+7) Modified HISTORY.rc for MERRA2
+
+
+Restart Changes: none
+
+==========================================================================
+25Feb2014, Takacs,    CVS Tag: Ganymed-4_0_BETA9 (non-zero diffs from Ganymed-4_0_BETA8)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Proper horizontal transform for d-grid winds for cube-to-cube 
+   (the winds components must be specified with a semicolon (;) separator in the collection. 
+   Otherwise, this has no effect. This is relevant to the output of trajectories for the tangent-linear model.
+2) Fixed a memory leak in MAPL_LocStreamTransform (in XformCreate)
+3) Overwrote the lats and lons with indices if the output is on cubed-sphere
+4) "fixed" improper handling of U_CGRID and V_CGRID in the FV3 (now the code does not die, and the these are 0)
+5) Fixed a bug in HorzTransform (not exercised in the current model) 
+6) Implemented GraDs utility (dc.gs) to display cubed-sphere data directly
+7) From Arlindo, updates to Optical Tables.                               
+8) Modified WindFix and MKIAU to use MAPL rather than G3 Utilities for Gather/Scatter (zero-diff).
+9) Update to SatSim tag: b_afe_G-4_0_B6_ss_20140225
+10) Added diagnostics to PHYSICS and MOIST
+
+
+Restart Changes: none
+
+==========================================================================
+03Feb2014, Takacs,    CVS Tag: Ganymed-4_0_BETA8 (non-zero diffs from Ganymed-4_0_BETA7)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Another Minor modification to CONSTRAIN_DAS=1 for pressure increment scaling.
+   This change properly scales DELP Increments to provide optimum adjustments in a least-squares sense.
+2) Changed value of MAPL_GRAV from 9.8 to WMO's "exact" value of 9.80665
+3) Changed value of MAPL_EARTH_RADIUS from 6376.0E3 to 6371.0E3
+4) Modified SOLAR and IRRAD to use MAPL_GRAV rather than 9.81
+5) Updates to plots and post to use MAPL_Constants
+6) Updates to MAPL:
+   a) ability to use IO server - defaults to not use it
+   b) changing TM in History to do a "smart" default: unlimited time dimension for nc4 files except for Single Column
+   c) Several changes to MAPL_AreaMean :
+      i) minor tweek on original version, producing better efficiency but still guaranteed to be bit-reproducible
+     ii) a new faster version where all PEs compute their local partial sum, a the final result is computed by MPI_AllReduce. This is now the default.
+         Due to strategic real*4 and real*8 declarations, this is still zero diff to original version.
+   d) Minor change in MAPL_IO to have consistent untis for CFIO and memory units
+7) A fix for C2C regridding (we were missing A2D for the winds in interp_restarts, resulting in a small shift for winds in fvdycore_internal restart)
+
+
+Restart Changes: none
+
+==========================================================================
+08Jan2014, Takacs,    CVS Tag: Ganymed-4_0_BETA7 (non-zero diffs from Ganymed-4_0_BETA6)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Updates to GOCART to allow Stratospheric Aerosol sedimentation.
+2) Updates with Raster/src for SMAP related code.  Zero-Diff for Ganymed-4_0
+3) Updates to StratChem Code
+4) Minor modification to CONSTRAIN_DAS=1 for pressure increment scaling
+
+
+Restart Changes: none
+
+==========================================================================
+22Nov2013, Takacs,    CVS Tag: Ganymed-4_0_BETA6 (zero diffs from Ganymed-4_0_BETA5)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Minor updates to MAPL_HorzTransform fnd MAPL_CFIO (zero-diffs)
+2) Updated GEOS_Util/pre directories for preprocessing of SST/ICE used for MERRA2
+3) Minor plots updates
+4) Updates to GCM scripts for better through-put within new SLURM environment
+5) HISTORY_MERRA2.rc.tmpl changes
+6) Fixed SPEC for Z0 and WW Internal State vaiables within GEOS_SaltWaterGridComp.F90
+
+
+Restart Changes: none
+
+==========================================================================
+13Nov2013, Takacs,    CVS Tag: Ganymed-4_0_BETA5 (zero diffs from Ganymed-4_0_BETA4)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) New GOCART RC files for MERRA-2 Emmissions
+2) New Diagnostics in Dynamics and Surface
+3) Updates to StratChem
+4) Updates to MAPL/HISTORY to allow conservative regridding for Output
+5) Updates to Raster/src for creating boundary conditions.  Default changed from
+   using HWSD: Merged NGDC-HWSD-STATSGO soil properties on 43200x21600 with Woesten Parameters
+   to    NGDC: Reynolds soil texture clsses on 4320x2160 with Cosby parameters
+   This only affects the creation of new restarts.  Albedos, LAI, etc remain the same.
+
+
+Restart Changes: none
+
+==========================================================================
+29Oct2013, Takacs,    CVS Tag: Ganymed-4_0_BETA4 (non-zero diffs from Ganymed-4_0_BETA3 due to RASAL1 Default value)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Changed Default Value of RASAL1 from the HEARTBEAT to 1800 seconds.
+2) Implement C2C Regridding.
+
+
+Restart Changes: none
+
+==========================================================================
+30Sep2013, Takacs,    CVS Tag: Ganymed-4_0_BETA3 (zero diffs from Ganymed-4_0_BETA2)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Minor bug fixes in MAPL.
+
+2) Implemented new behavior for MINMAX variables.  In this version, ANY current EXPORT can be made 
+   a MINMAX variable within the HISTORY.rc by specifying a new name (alias) for the export AND adding 
+   a fourth column with the string 'MIN' or 'MAX'.  MERRA-2 HISTORY.rc has been modified accordingly.
+
+3) Implement REPLAY_SHUTOFF for Regular Replay.  This allows IAU-based G5NCEP and G5ECMWF forecasts.
+
+
+Restart Changes: none
+
+==========================================================================
+13Sep2013, Takacs,    CVS Tag: Ganymed-4_0_BETA2 (non-zero diffs from Ganymed-4_0_BETA1 in Regular REPLAY mode)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Fix GEOS_MKIAU_GridComp related to incorrect logic for cubed-sphere IM_World and JM_World.
+   This is a non-zero diff change, although the original code did produce reasonable results.
+
+2) Updates to gcm_setup and gcm_run. The updated script allows for YEAR boundary crossings using OSTIA datasets. 
+
+3) Merge with DAS Tag:  EnADAS-5_12_0
+
+
+Restart Changes: none
+
+==========================================================================
+04Sep2013, Takacs,    CVS Tag: Ganymed-4_0_BETA1 (non-zero diffs from Ganymed-3_0_p1)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Updated GEOS_SurfaceGridComp.F90 and GEOS_SaltWaterGridComp.F90 for WARM layer (Default: OFF)
+   Note: This requires additional variables within saltwater_internal_rst.
+   These variables may be bootstrapped by using -saltwater_internal_rst together with type: nc4
+   OR ... +saltwater_internal_rst together with type: binary
+
+2) Updates to Moist Physics and bug fixes:
+
+	a) b_AMM_snowdiag_Gan30:
+           branch to add the "heat flux into deep snow layer" budget term.
+           subroutines are from surface to catch, and to land ice (also calls snow model).
+           Surface grid comp, Land grid comp, Catch grid comp, Land Ice Grid comp, stieglitz.F90 (in Shared)
+	b) b_AMM_radtosurf_Gan30:
+           branch to correct bug in the communication between radiation (irrad) and surface.
+           code changes are to radiation, irrad and physics, but physics correction is in branch below.
+           Radiation Grid Comp, Irrad grid comp
+	c) b_AMM_newhyst_Gan30:
+          branch to correct hystpdf iteration and code for RAS diagnostic.
+          code changes are to cloudnew, ras and moist, but moist change is in branch below.
+          ras.F90, cloudnew.F90
+	d) b_AMM_turbtomst_Gan30:
+          branch to change how ras sets cloud base layer - get level of pbl from turb.
+          code changes are to turb, moist and physics (connectivity).  moist includes changes
+          from the newhyst set of changes, physics includes changes from radiation stuff.
+          Turb grid comp, Moist grid comp, Physics grid comp
+
+          NOTE: this is the change that affects the moist import.  must bootstrap or
+          be sure that the import called KPBL is bootstrapped.
+
+3) Changed Catchment Parameter SURFLAY default from 20 to 50.  Note, this tag is to be used with Ganymed-4_0 (or later)
+   boundary conditions.
+
+4) Updated source code under SURF/Shared/Raster to construct new SOIL and Land Surface parameters consistent with:
+
+          LAI:  GSWP2
+          Albedo:  MODIS2
+          Soil Data: HWSD
+
+   together with SURFLAY = 50.
+
+   NOTE: This model version may be used with older restarts and older boundary condition files PROVIDED that the
+   AGCM.rc contains:  SURFLAY: 20
+
+5) The FV3 core is now compiled REAL*8.  The previous REAL*4 version may be obtained through a modification 
+   to the FV3 GNUmakefile.
+
+6) RESTARTS generated using regrid.pl will now be rescaled to contain a dry-mass value of 983.24 mb.
+   To do this on the CUBE, the grid-cell AREA file must be read from the Shared BCs directory.
+   A warning will result if the AREA file cannot be found.
+
+7) Pressure tendencies are now generated from Moist Phyiscs.
+
+8) Modifications were made to details of Regular REPLAY.  The MKIAU Gridded Component now mimics the procedure
+   used for the complete DAS system.
+
+
+Restart Changes: saltwater_internal_rst
+           Note: Old saltwater_internal_rst may be used a "+" is added to the filename within AGCM.rc
+            eg.: SALTWATER_INTERNAL_RESTART_FILE:  +saltwater_internal_rst
+            The "+" will tell the model to add/bootstrap the additional variables needed for this version.
+
+==========================================================================
+
+
+04Jun2013, Takacs,    CVS Tag: Ganymed-3_0_p1 (zero diffs from Ganymed-2_1_p6)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Corrected TimeStep Scaling bug related to SnowMelt in GEOS_LandIceGridComp.F90 and StieglitzSnow.F9
+2) Updated REGRID utilities to latest versions (performing a 2-step process for all cases; 1) first without CLSM data, followed by 2) with CLSM data)
+3) Updated Scale_Catch.F90 to be consistent with latest REGRID utilities
+4) Corrected source files in /Raster used in creating boundary conditions.  Fixed bugs in time-header in boundary files.
+5) Updated GAAS_GridComp/LDE_Mod.F90 for MPI scalability (zero-diffs)
+6) Updated MAPL (zero-diffs)
+7) Updated gfio and CFIO to fix bug in reading time (hour) information within CO and CO2 emission files
+8) Updated GMI code
+9) Updated Quickplot Plots & Utilities
+
+Restart Changes: none
+
+==========================================================================
+
+
+05Apr2013, Takacs,    CVS Tag: Ganymed-3_0 (zero diffs from Ganymed-2_1_p5)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Updated to ESMF-5
+2) Modified Exact and Regular Replay RC parameters
+
+Restart Changes: none
+
+==========================================================================
+
+30May2013, Takacs,    CVS Tag: Ganymed-2_1_p6 (non-zero diffs from Ganymed-2_1_p5)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Corrected TimeStep Scaling bug related to SnowMelt in GEOS_LandIceGridComp.F90 and StieglitzSnow.F9
+2) Updated REGRID utilities to latest versions (performing a 2-step process for all cases; 1) first without CLSM data, followed by 2) with CLSM data)
+3) Updated Scale_Catch.F90 to be consistent with latest REGRID utilities
+
+Restart Changes: none
+
+==========================================================================
+
+20Mar2013, Takacs,    CVS Tag: Ganymed-2_1_p5 (zero diffs from Ganymed-2_1_p4)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Modified diagnostic names in LANDICE for snow depth and snow mass
+   to avoid blending within SURFACE
+
+Restart Changes: none
+
+==========================================================================
+
+15Mar2013, Takacs,    CVS Tag: Ganymed-2_1_p4 (zero diffs from Ganymed-2_1_p3)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Added diagnostic PRECTOT = PCU+PLS+SNO from SURFACE
+2) Added GET_RESOURCE for Regular Replay Aliases:  TV, TH, and THV
+3) Modified Regular Replay Comments in AGCM.rc.tmpl
+
+Restart Changes: none
+
+==========================================================================
+
+28Feb2013, Takacs,    CVS Tag: Ganymed-2_1_p3 (zero diffs from Ganymed-2_1_p2 for HEARTBEAT=900 at 1/2-deg)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Changed Default Value of HEARTBEAT from 900 to 450 for 1/2-deg resolution.
+   This improves surface temperature bias vs 1/4-deg results.
+2) Fixed H1000 diagnostic in FV3.
+3) Modified Intermittent Replay in DynCore_GridCompMod.F90 and AGCM.rc.tmpl to work in Cube.
+
+Restart Changes: none
+
+==========================================================================
+
+15Feb2013, Takacs,    CVS Tag: Ganymed-2_1_p2 (zero diffs from Ganymed-2_1_p1 for MAXDALLOWED=700 at 1/2-deg)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Changed Default Value of MAXDALLOWED from 1000 to 700 for 1/2-deg resolution.
+2) Updated plots.
+
+Restart Changes: none
+
+==========================================================================
+
+07Feb2013, Takacs,    CVS Tag: Ganymed-2_1_p1 (non-zero diffs from Ganymed-2_1)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Modified Chemistry (GOCART, GAAS) to correct for regression problem in CUBE for layout changes.
+2) Modified MAPL for Shared Memory usage in HorzTransforms.
+3) Updated DU_OPTICS: ExtData/@CHEMDIR/x/opticsBands_DU.v11_2.nc  in AGCM.rc
+4) Implemented option for getting Ozone from GOCART (Default: disabled)
+5) Modified SURFACE for PRECIP File.  Now you can use a latitudinal taper and have UNDEF locations.
+6) Implemented option for new CO2 CMS Emission files (Default: disabled)
+
+Restart Changes: none
+
+==========================================================================
+
+16Jan2013, Takacs,    CVS Tag: Ganymed-2_1 (non-zero diffs from Ganymed-2_0)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Updates to Landice Model (non-zero diffs) to correct surface energy balance.
+2) Updates to MAPL_BASE and Chem_Shared/Chem_UtilMod.F90 to perform conservative remapping of GOCART and GAAS emmision files
+   for Cubed-Sphere.
+3) Updates to QUICKPLOT for Aerosol comparisons and RMS stats for forecasts.
+
+Restart Changes: none
+
+==========================================================================
+
+31Dec2012, Takacs,    CVS Tag: Ganymed-2_0 (non-zero diffs from Ganymed-1_0_p3)
+16Jan2013, Takacs, Pushed Tag: Ganymed-2_0 (zero diffs from Ganymed-2_0)
+                       Module: Ganymed
+!!! Warning:  This tag does not regress with Layout Changes when running GOCART on the Cube !!!
+------------------------------------------------------------------------------
+1) Updates to use new Landice Model (non-zero diffs)
+2) Updates to use latest GFLD_fms (zero-diffs)
+
+Restart Changes: landice_internal_rst
+
+Note: LANDICE_INTERNAL_RST requires new information that cannot be BOOTSTRAPPED.
+      Our current strategy will be to combine regridded restarts from other sources (MERRA, Ops, etc) 
+      with the regridded LANDICE_INTERNAL_RST from my AMIP experiment:
+
+      /archive/u/ltakacs/GEOS5.0/G10_ICE/restarts 
+
+      Also Note, Ganymed-2_0 was "pushed" on 16Jan2013 to add protection in .../GMAO_Shared/Chem_Shared/SulfateChemDriverMod.F90
+                 for range of COSINE(ZTH) to be -1 to 1.  This is a zero-diff update unless the previous version crashes.
+
+==========================================================================
+
+28Feb2013, Takacs,    CVS Tag: Ganymed-1_0_p7 (zero diffs from Ganymed-1_0_p6 for HEARTBEAT=900 at 1/2-deg)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Changed Default Value of HEARTBEAT from 900 to 450 for 1/2-deg resolution.
+   This improves surface temperature bias vs 1/4-deg results.
+2) Fixed H1000 diagnostic in FV3.
+3) Modified Intermittent Replay in DynCore_GridCompMod.F90 and AGCM.rc.tmpl to work in Cube.
+
+Restart Changes: none
+
+==========================================================================
+
+15Feb2013, Takacs,    CVS Tag: Ganymed-1_0_p6 (zero diffs from Ganymed-1_0_p5 for MAXDALLOWED=700 at 1/2-deg)
+                       Module: Ganymed
+------------------------------------------------------------------------------
+1) Changed Default Value of MAXDALLOWED from 1000 to 700 for 1/2-deg resolution.
+2) Updated plots.
+3) Modified Regular Replay to work at 1/4-deg Latlon Resolution.
+
+Restart Changes: none
+
+==========================================================================
+
+30Jan2013, Takacs, CVS Tag: Ganymed-1_0_p5 (non-zero diffs from Ganymed-1_0_p4)
+                    Module: Ganymed
+------------------------------------------------------------------------------
+1) Modified Chemistry (GOCART, GAAS) to correct for regression problem in CUBE for layout changes.
+2) Modified MAPL for Shared Memory usage in HorzTransforms.
+3) Updated DU_OPTICS: ExtData/@CHEMDIR/x/opticsBands_DU.v11_2.nc  in AGCM.rc
+
+Restart Changes: none
+
+==========================================================================
+
+16Jan2013, Takacs, CVS Tag: Ganymed-1_0_p4 (zero diffs from Ganymed-1_0_p3 for Lat/Lon Grid,
+                                            non-zero diffs for Cubed-Sphere when running GOCART)
+                    Module: Ganymed
+------------------------------------------------------------------------------
+1) Modified MAPL_BASE and Chem_Shared/Chem_UtilMod.F90 to perform conservative remapping of GOCART and GAAS emmision files
+   for Cubed-Sphere.
+2) Added protection in .../GMAO_Shared/Chem_Shared/SulfateChemDriverMod.F90 for range of COSINE(ZTH) to be -1 to 1
+
+Restart Changes: none
+
+==========================================================================
+
+31Dec2012, Takacs, CVS Tag: Ganymed-1_0_p3 (zero diffs from Ganymed-1_0_p2 for Lat/Lon Grid,
+                                            non-zero diffs for Cubed-Sphere when running GOCART)
+                    Module: Ganymed
+------------------------------------------------------------------------------
+1) Modified GMAO_Shared/Chem_Shared/Chem_UtilMod.F90 to match shifting strategy in MAPL_CFIO.
+   This corrects a bug in Ganymed-1_0_p2 when running Cubed-Sphere with GOCART.
+   GOCART Emission Files with a beginning longitude of 0-degrees where shifted incorrectly.
+
+Restart Changes: none
+
+==========================================================================
+
+20Dec2012, Takacs, CVS Tag: Ganymed-1_0_p2 (zero diffs from Ganymed-1_0_p1)
+                    Module: Ganymed
+------------------------------------------------------------------------------
+1) Modified MAPL_HistoryGridComp.F90 to loop over collections (in groups of 10)
+   to reduce swapping for large numbers of collections (e.g., Forward Processing)
+2) Update to grads version: v2.0.1.oga.1 in GEOS_Util/plots
+3) Fixed diagnostic: QVIT:PHYSICS (was inadvertently disconnected)
+4) Changed VertInterp within Cubed-Sphere Dycore Gridded Component to NOT extrapolate below 
+   lowest model layer.
+5) Forced Interpolation consistency between EXPORTS TS_FOUND and TW in GEOS_OgcmGridComp.F90
+
+Note: Ganymed-1_0_p1 was created soon after Ganymed-1_0 (zero diffs) to fix Cubed-Sphere related issues.
+      Most noticably, MAPL_HorzTransform.F90 was modified to create and store Transform for each output resolution
+      rather than creating a Transform for each collection. 
+
+Restart Changes: none
+
+==========================================================================
+
+07Nov2012, Takacs, CVS Tag: Ganymed-1_0 (non-zero diffs from Fortuna-2_5_p6)
+                    Module: Ganymed
+------------------------------------------------------------------------------
+1) Updates to GMAO_Shared/Chem_Shared/Chem_UtilMod.F90
+              GMAO_Shared/MAPL_Base/MAPL_CFIO.F90
+              GMAO_Shared/MAPL_Base/MAPL_HorzTransform.F90
+   to correct bug when running Climatology aerosols with PCHEM for the Cubed-Sphere. 
+2) Major changes to quickplot utilities to run with GrADS v2.0.
+3) Updates to gcm_setup to allow Cubed-Sphere experiments.
+4) Updates to Boundary Condition datasets (topo,lai,green,etc).
+5) Updated Climatology Aerosol Files:
+             dR_MERRA-AA-r1.aer_Nv.%y4%m2clm.nc4
+             dR_MERRA-AA-r1.del_aer_Nv.%y4%m2clm.nc4
+             YEAR: 2008
+6) Updates to FV3 for sponge layer, and resolution-based parameter defaults
+7) Updates to FV3 for Cubic Remapping of TE (analogous to FV Lat/Lon)
+8) Implement changes for HISTORY Mathematical Parsing algorithm.
+9) Merged with Yuri (starting from yuri-datasea-Fortuna-2_5_p5) for Coupled Ocean:
+
+ |-------------|------------------------------------------------------------
+ |   Newest    |
+ |-------------|                     File Name
+ | Here | Tag  |  
+ |------|------|------------------------------------------------------------
+ |  x   |      | GEOSgcs_GridComp/GNUmakefile
+ |  x   |      | GEOSgcs_GridComp/GEOS_GcsGridComp.F90
+ |-------------|
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GNUmakefile
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOS_GcmGridComp.F90
+ |-------------|
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSogcm_GridComp/GNUmakefile
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSogcm_GridComp/GEOS_OgcmGridComp.F90
+ |-------------|
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/GEOSdataseaice_GridComp/GEOS_DataSeaIceGridComp.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSsurface_GridComp/GEOSlake_GridComp/GEOS_LakeGridComp.F90
+ |------|------|------------------------------------------------------------
+
+  Note: GEOS_DataSeaIceGridComp.F90 and GEOS_LakeGridComp.F90 have #if statements to force zero-diffs with previous Ganymed tag.
+        These should be removed for final Ganymed tag.
+
+10) Updated to Matt's GPU code for GWD.
+11) Updates to Matt's New GETTAU routines, etc.
+    ---------------------------------------------------------------------------------------------------------
+    a) Introduce new routines to GEOS_RadiationShared: getvistau, getnirtau, and
+       getirtau. These replace the various cloud optical depth codes in Solar, Irrad, 
+       and Satsim Gridded Components. (NON-ZERO DIFF)
+    b) Consolidate all constants relevant to the cloud optical depth codes into a
+       new file, radconstants.F90, in GEOS_RadiationShared. These constants are then
+       removed from irradconstants.F90 and soradconstants.F90 and the corresponding
+       USE statements in the Irrad and Solar Gridded Components are similarly
+       altered. Some constants renamed (_nir, _vis, _ir) to better distinguish
+       their application.
+    c) Changes to Satsim merged from Fortuna-2_5_p2
+    d) Remove the superfluous downward fluxes from the Solar Internal State. 
+    e) Integrate RRTMG code into Irrad Gridded Component. Controlled via
+       USE_RRTMG_IRRAD flag in AGCM.rc. RRTMG is *not* by default on. Includes
+       edits to GNUmakefiles and GMAO_base.mk to integrate RRTMG.
+    f) Add more verbose USE, ONLY statements to GEOS_SolarGridComp.F90, sorad.F90,
+       GEOS_IrradGridComp.F90, irrad.F90, GEOS_MoistGridComp.F90, and
+       cloudnew.F90 for CPU/GPU clarity.
+    g) Convert Irrad and Solar Gridded Components to use older-style aerosol table
+       lookups passing in to irrad.F90 and sorad.F90 the calculated properties
+       rather than the base table parameters themselves.
+    h) Move some GPU Constants (i.e., in GPU constant memory space) to parameters 
+       in Irrad and Moist Gridded Components. 
+    i) In cloudnew.F90, explicitly use MAPL_ constants instead of renamed
+       constants
+    j) Add new perband surface fluxes to the Solar Gridded Component for use in
+       the coupled model. 
+    k) Minor updates to gcm_setup for non-discover clusters. Changes to GPU
+       compilation options in ESMA_arch.mk.
+    l) Add new lightning flash routines to GEOS_MoistGridComp.F90
+    m) Use new shared Solar Constant code in GEOS_SolarGridComp.F90
+
+12) Merge in Eric Nielson's Chemistry updates (GMI, StratChem, etc)
+13) Fixed bug in clock related to CLOCK associated with Solar Insolation Updates within PCHEM. (non-zero diff)
+14) Fixed bug in GOCART related to ZLE and PBL for CO and CO2 biomass burning.  Previous code assumed ZLE was height above ground,
+    but in actuality was height above Sea-Level.
+15) Changed the DEFAULT values for CO2 and Solar Constant to:  -1.
+    This will force the model to use time-dependent values based on CMIP5 data.
+16) Modified MAPL and HISTORY to provide near-wave-one values of wind at the poles for cube-to-latlon output.
+17) Updated W.Chao's SHVC parameterization within GEOS_TurbulenceGridComp.F90. (Default is OFF)
+
+
+Restart Changes: yes
+                 catch,lake,landice,saltwater have been updated based on new tile bcs.
+	         solar_internal_rst (removed superfluous down fluxes, added
+                                     new perband surface fluxes, may be bootstrapped)
+                 moist_import_rst (added FROCEAN, ZPBL, may be bootstrapped)
+                 saltwater_import_rst (surface temperature analysis variables, may be bootstrapped)
+
+==========================================================================
+
+28Mar2012, Takacs, CVS Tag: Fortuna-2_5_pp2 (zero-diff to model used in DAS Tag: GEOSadas-5_7_2_p3)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) The following files were UPDATED from tag GEOSadas-5_7_2_p3 to enable new diagnostics for more complete
+   budgets of Land Forcing as required by the Land Group (see Rolf Reichle):
+
+    a) Applications/GEOSgcm_App/HISTORY.rc.tmpl
+    b) .../GEOSsurface_GridComp/GEOS_SurfaceGridComp.F90
+    c) .../GEOSsurface_GridComp/GEOSland_GridComp/GEOS_LandGridComp.F90
+    d) .../GEOSsurface_GridComp/GEOSland_GridComp/GEOScatch_GridComp/GEOS_CatchGridComp.F90
+
+2) The following updates were made to filter the EPV diagnostics within FVCore:
+
+    a)  GMAO_Shared/GEOS_Shared/G3_MPI_Util_Mod.F90'
+    b)  GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/FVdycore_GridComp/FVdycore_GridCompMod.F90
+    c)  GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/FVdycore_GridComp/dynamics_vars.F90
+    d)  GMAO_Shared/GEOS_Shared/GNUmakefile
+
+Restart Changes: none
+
+==========================================================================
+
+20Mar2012, Takacs, CVS Tag: Fortuna-2_5_p6 (zero-diff to Fortuna-2_5_p5 for AMIP-style Run)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) Merge in the updates from Tag: Fortuna-2_5_pp2 to enable new diagnostics for more complete
+   budgets of Land Forcing as required by the Land Group (see Rolf Reichle):
+
+    a) Applications/GEOSgcm_App/HISTORY.rc.tmpl
+    b) .../GEOSsurface_GridComp/GEOS_SurfaceGridComp.F90
+    c) .../GEOSsurface_GridComp/GEOSland_GridComp/GEOS_LandGridComp.F90
+    d) .../GEOSsurface_GridComp/GEOSland_GridComp/GEOScatch_GridComp/GEOS_CatchGridComp.F90
+
+2) The following updates were made to filter the EPV diagnostics within FVCore:
+
+    a)  GMAO_Shared/GEOS_Shared/G3_MPI_Util_Mod.F90'
+    b)  GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/FVdycore_GridComp/FVdycore_GridCompMod.F90
+    c)  GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/FVdycore_GridComp/dynamics_vars.F90
+    d)  GMAO_Shared/GEOS_Shared/GNUmakefile
+
+3) Modified blending algorithm used in Regular Replay within MKIAU to blend Heights rather than Temperature.
+4) Added Vertically-Integrated Mass-Divergence Constraint to Regular Replay within MKIAU.
+
+Restart Changes: none
+
+==========================================================================
+
+16Feb2012, Takacs, CVS Tag: Fortuna-2_5_p5 (zero-diff from Fortuna-2_5_p4 for AMIP-style Run)
+                    Module: Fortuna
+------------------------------------------------------------------------------
+1) Modified GEOS_SurfaceGridComp.F90 to use the forcing precip files as they were written.
+   This results in non-zero differences when using forced precip.
+2) Fixed diagnostic units on CNV_TOPP
+
+Restart Changes: none
+
+==========================================================================
+
+25Jan2012, Takacs, CVS Tag: Fortuna-2_5_p4 (non-zero-diff from Fortuna-2_5_p3)
+                    Module: Fortuna
+------------------------------------------------------------------------------
+1) Fixed Chem_Shared/SulfateChemDriverMod.F90 to prevent regression problem in Fortuna-2_5_p3 with GOCART.
+   This results in small non-zero differences.
+2) Major changes to job procedures for quickplot and its utilities to allow a more efficient and robust execution.
+3) Updates to gcmpost.script to allow launching of plots.
+4) Updates to GMAO_Shared/MAPL_Base/MAPL_Generic.F90 to correct bug related to IMPORT defaults.
+       (Basically, this is a zero-diff change.  Fortuna-2_5_p4 was pushed on Jan 31, 2012)
+
+Restart Changes: none
+
+==========================================================================
+
+14Dec2011, Takacs, CVS Tag: Fortuna-2_5_p3 (zero-diff from Fortuna-2_5_p2 for Restarts, non-zero diff for diagnostics)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) Added Land/Water mask for SatSim Gridded Component and PHYS connectivity.
+2) Import Model TS for SatSim Gridded Component.
+
+Restart Changes: none
+
+==========================================================================
+
+08Dec2011, Takacs, CVS Tag: Fortuna-2_5_p2 (zero-diff from Fortuna-2_5_p1for Restarts, non-zero diff for diagnostics)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) Fixed several bugs in SatSim Gridded Component.
+2) Fixed diagnostics  in Moist  Gridded Component.
+3) Added protection in CFC_GridCompMod.F90 for COSZ > 1 due to roundoff.
+
+Restart Changes: none
+
+==========================================================================
+
+04Oct2011, Takacs, CVS Tag: Fortuna-2_5_p1 (zero-diff from Fortuna-2_5)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) Added time-dimension to output collections (rather than UNLIMITED) through MAPL and History updates.
+2) Added long_name and units for NetCDF restarts.
+3) Implemented "quickstats" plotting package.
+4) Updates to parse HISTORY.rc into smaller collection.rc files to prevent ESMF buffer overflow.
+5) Updates to GOCART_GridCompMod.F90 to allow configuration for running without solids.
+6) Update to gfioCF.F to properly address the 2-D coordinate variables LON & LAT in nc4 files for generalized grids.
+7) Zero-Diff updates (mainly CUDA related) to:
+             GEOS_PhysicsGridComp.F90
+             GEOSmoist_GridComp/GEOS_MoistGridComp.F90
+             GEOSmoist_GridComp/cloudnew.F90
+             GEOSradiation_GridComp/GEOSirrad_GridComp/GEOS_IrradGridComp.F90
+             GEOSradiation_GridComp/GEOSsolar_GridComp/GEOS_SolarGridComp.F90
+             GEOSradiation_GridComp/GEOSsolar_GridComp/sorad.F90
+   Also, Split BASE_REVAP_FAC into separate rain and ice knobs keeping the defaults at one to maintain zero-diff
+8) Update to gcm_setup (and ancillary files) to provide option for coupled ocean/atmos experiments.
+9) Added scm_setup and scm_util/* to .../src/Applications/GEOSgcm_App
+
+Restart Changes: none
+
+==========================================================================
+
+08Jul2011, Takacs, CVS Tag: Fortuna-2_5 (zero-diff from Fortuna-2_5_BETA0)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) Fix bug in MAPL_LocStreamMod.F90 for coupled atmos/ocean version.
+2) Update Raster routines for runoff.
+3) Use @BOOT variable instead of hard-wired dash (-) in AGCM.rc for restarts.
+4) Modification to MAPL_Comms.P90 and optimization of the GAAS_GridComp for improved parallel performance.
+5) Fixed memory leak in Cubed Sphere code:  DynCore_GridCompMod.F90
+
+Restart Changes: none
+
+==========================================================================
+
+23Jun2011, Takacs, CVS Tag: Fortuna-2_5_BETA0 (non-zero diff to Fortuna-2_4_p2)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) Fix bug in MAPL_LocStreamMod.F90 for reading ASCII tile file in SCM. (zero-diff for binary file)
+2) Removed unused exports within GEOS_LandIceGridComp.F90, added RUNOFF export.
+3) Fixed initialization of PLE export to be tied to FV restart.  Bootstrapped Physics Imports will no
+   longer zero-out PLE export.
+4) Use updated MAPL_GetResource (rather than ESMF_GetAttribute) in GEOS_TurbulenceGridComp.F90.
+5) Modified plots and post utilities.
+6) Added "ramps" to cloudnew.F90 (non-zero diff)
+7) Added and modified default RC parameters in GEOS_MoistGridComp:
+
+         MINRHCRIT:  80%   2-deg
+                     90%   1-deg
+                     93%   0.5 -deg
+                     95%   0.25-deg
+                     97% < 0.25-deg
+
+8) Fix error in SFCEM diagnostic (improper updating in LW_DRIVER).  zero-diff for binary files
+9)  Implemented updated MoistGridComp and PrognoCloud (based on CUDA implementation).  Minor numerical, non-scientific, differences.
+10) Implemented updated Radiation Code (Solar and Irrad, based on CUDA implementation).  (zero-diff, new solar_internal_rst for diagnostic fluxes)
+11) Implemented GOCART changes based on tag:  ams-GEOSadas-5_7_1_p2  (zero-diff for PCHEM w/clim aerosols)
+12) Modified MAPL for default TWO-SIDED COMMUNICATION.  (zero-diff)
+13) Modified MAPL_CAP to load EXPID and EXPDSC into AGCM.rc.
+14) Modified HISTORY_GridComp to allow reading output levels from a file.
+15) Modified CATCH, LANDICE, LAKE, SALTWATER, SURFACELAYER to allow more options for new Z0 parameterization:
+
+     CHOOSEZ0 - INTEGER FLAG: 0 - Large & Pond Z0,                  NO high wind limit (MERRA)
+                              1 - Edson        Z0 for mom. and heat,   high wind limit
+                              2 - Large & Pond Z0,                     high wind limit
+                              3 - Edson        Z0 for mom. only,       high wind limit (default)
+
+Restart Changes: solar_internal_rst (for diagnostic fluxes only, may be bootstrapped)
+
+==========================================================================
+
+10May2011, Takacs, CVS Tag: Fortuna-2_4_p2 (zero diff to Fortuna-2_4_p1)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) Reverted MAPL_HistoryGridComp.F90 back to Fortuna-2_4_BETA1 for psize algorithm.
+   Newer version was buggy and causing OPS to crash at 1/4-deg.
+2) Modified gcmpost.script and g5_modules to know about "bridge" on pleiades
+
+Restart Changes: none
+
+==========================================================================
+
+03May2011, Takacs, CVS Tag: Fortuna-2_4_p1 (non-zero diff to Fortuna-2_4)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) Updated GEOS_OgcmGridComp.F90 to the odas-4_03 tag to properly terminate selected exports.
+2) Updates and bug fixes to plotting package.
+3) Added post.rc to select 3-month climatologies to produce in GCM Post-Processing.
+4) Changed units for EXPORT within MOIST, CO2(GOCART), and O3(GOCART) for FILESPEC
+5) Modified MAPL_HistoryGridComp.F90 to be kinder to COMMA notation in HISTORY.rc
+6) Adopt gxyat for grads-generated gif images
+7) Added utility to generate initial conditions for G5ECMWF.
+8) Correction to RDC formulation in GEOS_CatchGridComp.F90 and catchment.F90 -Randy Koster, 4/1/2011
+9) Changed GEOS_MoistGridComp defaults:
+   TANHRHCRIT = 1 (enables use of a resolution-dependent Slingo-Ritter RHCRIT profiles)
+   TURNRHCRIT = 750 (mb)
+
+   Note:  Previous version had NO default for TANHRHCRIT.
+          The fv_setup and gcm_setup scripts supplied TANHRHCRIT values in the AGCM.rc
+          Previous version setup values:  TANHRHCRIT = 0  (DAS):Use MERRA-Style profiles
+                                          TANHRHCRIT = 1  (GCM):Use Slingo-Ritter Style profiles
+
+Restart Changes: none
+
+==========================================================================
+
+13Apr2011, Takacs, CVS Tag: Fortuna-2_4 (non-zero diff to Fortuna-2_4_BETA2 for GOCART)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) Updated to GOCART version:  AeroChem-Fortuna-2_4-b4
+2) Updates to plots.
+3) Fixed bug in ./GEOSsurface_GridComp/Shared/Raster/src/mkCatchParam.F90
+                ./GEOSsurface_GridComp/Shared/Raster/src/rmTinyCatchParaMod.F90
+   which affected the clsm/catchment.def file for offline purposes.
+4) Added Clear-Sky RH diagnostic to MOIST.
+
+Known Issues:  Under certain conditions (i.e. MPI versions impi-4 ot mvapich2) the 
+               asynchronous communications could produce unpredictable results due to race 
+               conditions caused by the freeing the storage for the temporary copies of 
+               the MPI call arguments by fortran before completion of the asynchronous 
+               communication.
+
+Restart Changes: none
+
+==========================================================================
+
+08Apr2011, Takacs, CVS Tag: Fortuna-2_4_BETA2 (non-zero diff to Fortuna-2_4_BETA1_p1)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) Added ability to run PERPETUAL cases (MAPL_CAP, etc).
+2) Updates to MAPL_Base.
+3) Modified CATCH, LANDICE, LAKE, SALTWATER to allow option for new Z0 parameterization (CHOOSEZ0: 0 or 1 Default(0))
+4) Modified RHCRIT Default Values for Cubed-Sphere resolutions.
+5) Modified PCHEM to read nc4 species files for improved memory management (zero-diff).
+6) Updates to CO and CO2 GridComps for GOCART.r improved memory management (non-zero-diff).
+   The purpose is to clean up the CO2 code by removing the GEOS-4 references, 
+   and for both CO and CO2 rewrite the PBL partitioning for biomass burning emissions because it was messy and inefficient.  
+   Some hard-coded emission amplification factors were moved out of the FORTRAN and into the RC files.
+   The new PBL partitioning uses ZLE to get layer depths and compare with ZPBL.  Since the old code used pressures, 
+   the results when using the new versions will not be zero diff.  After running for 10 days, the surface and ~850 hPa 
+   concetrations are quite close (about 1 part in 500 to 1 part in 1000 difference in the maximums). 
+7) Updates to post and plots utilities.
+
+Restart Changes: none
+
+==========================================================================
+
+11Mar2011, Takacs, CVS Tag: Fortuna-2_4_BETA1_p1 (zero diff to Fortuna-2_4_BETA1)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) Added GAAS_GridComp under Chemistry for Aerosol assimilation
+2) Updated to latest top GNUmakefile ( Working revision:    1.88 )
+3) Minor fix to allow debug compilation of GMAO_Shared/Chem_Base/Chem_MieTableMod.F90
+4) Update to GMAO_Shared/GEOS_Util/plots/fcst/pltdmap.gs
+
+Restart Changes: none
+
+==========================================================================
+
+09Mar2011, Takacs, CVS Tag: Fortuna-2_4_BETA1 (non-zero diff to Fortuna-2_4_BETA0)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) Modified diagnostic units for filespec (zero-diff)
+2) Updates to AeroChem:  These modifications update the sea salt emission (cuts if by nearly half) and increases the dust scavenging. 
+        * update SU volcanic emissions
+        * modify SS resource file particle sizes and emission efficiency
+        * change SS optical lookup tables to v3
+3) Implemented resolution dependent RHCRIT value when using TANHRHCRIT=1
+4) Implemented code to enable new z0 formulation (Default: old formulation).
+5) Updates to quickplot to allow plots of ALL HISTORY.rc exports.
+6) Removed begdate/enddate from monthly mean climatology files (to facillitate plotting).
+
+Restart Changes: none
+
+==========================================================================
+
+23Feb2011, Takacs, CVS Tag: Fortuna-2_4_BETA0 (non-zero diff to Fortuna-2_3_p1)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) Modified MoistGridComp and cloudnew for cloud treatment over polar ice (for CICE model).  non-zero diff
+   Set default: TURNRHCRIT: 800.0
+2) Updates to GEOS_GcsGridComp.F90, GEOS_GcmGridComp.F90 and GEOS_OgcmGridComp.F90 for coupled ocean/atmos consistency (zero-diff).
+3) Updates to GEOS_SurfaceGridComp.F90 and its children (Lake, LandIce, Salt, Catch) for AR5 diagnostics (zero-diff).
+4) Updates to satsim.
+5) Updates to MAPL to reduce overhead in MAPL_LocStreamXformCreate in the TWO_SIDED_COMM case. (zero-diff)
+   Updades for ESMF_5_1_1r. (zero-diff)
+6) Updates to post and plots utilities.
+7) Updates to GMI Chemistry components (zero-diff on PCHEM/GOCART).
+8) Fixed bug in GEOS_IrradGridComp.F90 to correct time-truncation error for updates (off by one step) non-zero diff
+9) Modified gcm_setup to allow for choice of vertical resolution and FV/FV3.
+10) New Aerosol files for optional vertical resolutions.
+11) Added FILL_Q routine within FVDycore to fill negative tracers resulting from advection (non-zero diff).
+
+Restart Changes: yes
+   IRRAD_INTERNAL_RESTART_FILE (may be bootstrapped)
+
+==========================================================================
+
+10Jan2011, Takacs, CVS Tag: Fortuna-2_3_p1 (non-zero diff to Fortuna-2_3)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) Modified surfacelayer.F90 to prevent creation of negative RHO due to small inconsistencies in sea-ice dataset.
+2) Updates to MAPL to correct treatment on UNDEF values in time-averages within coupled-OCEAN and CICE models.
+3) Updates to GEOS_DatmoDynGridComp.F90.
+4) Updates to post and plots utilities.
+
+Restart Changes: none
+
+==========================================================================
+
+09Dec2010, Takacs, CVS Tag: Fortuna-2_3 (non-zero diff to Fortuna-2_2_p2)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) Fixed bug in surfacelayer.F90 and associated components to include viscous sub-layer 
+   over LAKE, LANDICE, and SEA-ICE.  This produces small but not necessarily systematic differences during a 7-year AMIP run.
+2) Updates to MAPL, OGCM, and GCM for Integration purposes.
+3) Updates to plots utilities.
+4) Set MTR bundle to FALSE for MOIST_IMPORT_RESTART (Not Needed for Re-Producibility)
+5) Modified GET_CO2 utility to use CMIP5 defined values
+6) Modified link to use updated CMIP5 1870-2097 pchem species file (228 years)
+7) Modified most GNUmakefiles to use new format for generalized platforms.
+8) Fixed bug in ShaveMantissa.c which zero-ed out small but significant numbers (eg: z0m, z0h)
+9) Updates to GEOS_CatchGridComp and catchment.F90 to fix SNOW_DEPTH and SNOW_WATER_EQUIV interface error (non-zero diff).
+10) Updates to catchment.F90 and catch_constants.f90 to provide MAPL_Constants consistency (non-zero diff).
+11) Fixed bug in CO_GridCompMod.F90 which used non-initialed scaling variables (caused non-reproducibility and possible crashes).
+12) Fixed bug in GOCART total extinction and scattering coefficients diagnostic (zero-diff).
+13) Modified RHCRIT profile to have different values over Land and Ocean.
+14) Implemented option for time-varying solar constant (Default: Solar Constant = 1365).
+15) Set Default CO2 = 380e-6 in AGCM.rc
+16) Force setting of TANHRHCRIT in AGCM.rc to differentiate between GCM (=1) and DAS (=0) run.
+17) Updates for AR5 Model Diagnostics Compliance.
+18) Updates to FV3.
+
+Restart Changes: none
+
+==========================================================================
+
+01Nov2010, Takacs, CVS Tag: Fortuna-2_2_p2 (non-zero diff to Fortuna-2_2_p1)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) Fixed bug in surfacelayer.F90 and associated components to include viscous sub-layer 
+   over LAKE, LANDICE, and SEA-ICE.  This produces small but not necessarily systematic differences during a 7-year AMIP run.
+2) Updates to post and plots utilities.
+3) Set MTR bundle to FALSE for MOIST_IMPORT_RESTART (Not Needed for Re-Producibility)
+   Note: This will change the size of the MOIST_IMPORT_RESTART.  However, old restarts
+   are still usable by this version.  In addition, new restarts created by this version
+   can be used in older versions.
+4) Modified GET_CO2 utility to use CMIP5 defined values
+5) Fixed bug in ShaveMantissa.c which zero-ed out small but significant numbers (eg: z0m, z0h)
+6) Updates to GEOS_CatchGridComp, catchment.F90, and catch_constants.f90 to allow easier off-line development (zero-diff).
+
+Restart Changes: none
+
+==========================================================================
+
+12Oct2010, Takacs, CVS Tag: Fortuna-2_2_p1 (non-zero diff to Fortuna-2_2)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) Added guard in surfacelayer.F90 to prevent division by zero.  (non-zero diff)
+   Differences are very small due to limiting cases invoked when division by zero occured.
+2) Update IRRAD code to CUDA implementation.  Also, updates to SOLAR CUDA code.
+3) Updates for AR5 output compliance.
+4) Updates to MAPL.
+5) Updates to allow separate VM for simultanious Analysis computation within GCS.
+6) Updates to FV3.
+7) Updates to post and plots utilities.
+8) Updates to gcm_setup for GOCART/CMIP simulations.
+9) Added @CHEMDIR variable in AGCM.tmpl.rc for chemistry data location (Default: g5chem)
+
+Restart Changes: none
+
+==========================================================================
+
+24Sep2010, Takacs, CVS Tag: Fortuna-2_2  (non-zero diff to Fortuna-2_1_p3)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) Changed default behavior of HISTORY attribute:  duration.  The NEW default is:  duration = frequency
+   This means that the default behavior will produce 1 time-record per file.
+   This creates a more robust environment (using gcm_setup) for the post-processing to correctly compute monthly means.
+   Choosing durations other than the output frequency can create problems for the monthly mean scripts.
+2) Corrected bug in using the topo_TRB_var dateset (related to Turbulence VARFLT).  
+   The model had compensating errors which reduced the impact of using
+   the variance**2 (rather than the variance).
+   Also, added 5 m/sec maximum wind speed for VARFLT calculation to limit instabilities.
+3) Updates to PCHEM to use Yearly Varying AeroChem Species datafile.  In addition, default RC parameters where modified
+   to use a 3-day relaxation time (rather than instantaneous) and to make the species Friendly to Dynamics, Turbulence, and Moist
+   Processes.
+4) CATCH: Removed viscous sub-layer over LAND.
+5) Update SOLAR code to new CUDA implementation.
+6) Update to FVdycore_GridComp to allow global rescaling of Tracers when running Intermittent Replay
+7) Go back to using Intel MPI (Zero diff vs MVAPICH2, but much faster).
+8) Updates to post, plots, and gcm_setup
+9) Updates to MAPL, cfio, gfio, part of which is to allow 2-D coordinate variables.
+10) Updates to SatSim
+11) Updates to GEOS_GcmGridComp.F90, GEOS_OgcmGridComp.F90, and GEOS_SurfaceGridComp.F90 to enable CICE inclusion.
+12) Updates to PCHEM, GOCART, and GMIchem:
+    Added CH4_GridComp to GOCART, enabling tagged methane with flux boundary conditions.
+    Above GOCART, accounting for CH4 was introduced into the Chem_Base Registry, and added to
+    Applications/GEOSgcm_App/GNUmakefile.
+
+    AREA is an import to CH4_GridComp, which required the following two mods:
+    1. GEOS_SuperdynGridComp.F90: Add AREA to exports promoted from DYN
+    2. GEOS_AgcmGridComp.F90: Add AREA connectivity from SDYN to PHYS
+
+    In StratChem and GMIChem, QCTOT is now imported so the chemistry sees total
+    water.  Connectivity added in Physics.  GMI codes not used in GEOS-5 
+   (met fields, communications, netcdf) no longer part of checkout.
+13) Implement extracted sulfate chemistry module in GOCART SU component (including volcanic emisions)
+    See also GMAO_Shared/Chem_Shared/SulfateChemDriverMod.F90
+14) Implement blending method of intermittent replay
+15) Export u10n and v10n in GEOS_PhysicsGridCompMod.F90
+16) Fixed Bug in Determination of PBL TOP for use in turbulent length-scale calculation (non-zero DIFF)
+17) Changed Default value of Tokioka Parameter for 1/4-deg resolution or finer (700 to 450).
+	
+
+Restart Changes: none
+
+==========================================================================
+
+24Jun2010, Takacs, CVS Tag: Fortuna-2_1_p3  (non-zero diff to Fortuna-2_1_p2)
+                    Module: Fortuna
+-----------------------------------------------------------------------------
+1) Added 500 m/s/day tendency limit to GWD forcing
+
+Restart Changes: none
+
+
+24Jun2010, Takacs, CVS Tag: Fortuna-2_1_p2  (zero diff to Fortuna-2_1_p1 when Fortuna-2_1_p1 doesn't crash)
+                    Module: Fortuna
+---------------------------------------------------------------------------------------------------------
+1) Fixed possible divide-by-zero diagnostics in MOIST_GridComp and CLOUDNEW.
+2) Updates within MAPL_BASE.
+3) Updates to plots and post.
+4) Updates to Single-Column-Model.
+
+Restart Changes: none
+
+==========================================================================
+
+18May2010, Takacs, CVS Tag: Fortuna-2_1_p1  (non-zero diff to Fortuna-2_1 when running PCHEM 
+                    Module: Fortuna          due to recalculation of MAPL grid for DLAT/DLON consistency)
+---------------------------------------------------------------------------------------------------------
+1) Fixed initialization of IMPORTs when defaults are specified.  In particular, GOCART's
+   initialization (in Fortuna-2_1) with MAPL_UNDEF defaults created errors for FRLAKE, 
+   causing LWI to have no land points for GOCART.
+2) The time_ave.F program was updated with a optional input parameters:  begdate, begtime, enddate, endtime
+   to further control the time-averaging period within a file.
+3) Updates to gcm_setup and quickplot utilities.
+4) Updates to MOIST diagnostics.
+5) Modified MAPL grid calculation (real*8) to create DLAT/DLON consistency in output files.
+6) Updates to GMIchem_GridComp
+7) Fixed bug in the grads control file when writing flat-binary output (eg., for SCM).
+   This bug was introduced in Fortuna-2_1.
+8) Fixed bug PRINTSPEC (introduced in Fortuna-2_1).
+9) Updates to Single Column Model.
+
+   Using "cvscmp" utility, the changes from Fortuna-2_1 include:
+ |-------------|------------------------------------------------------------
+ |   Newest    |
+ |-------------|                     File Name
+ | Here | Tag  |  
+ |------|------|------------------------------------------------------------
+ |  x   |  -   | `GMAO_Shared/GEOS_Util/plots/formulas/O3.gs'
+ |  x   |  -   | `GMAO_Shared/GEOS_Util/plots/grads_util/getfile.gs'
+ |  x   |  -   | `GMAO_Shared/GEOS_Util/plots/quad/VERIFICATION.ERA40.rc'
+ |  x   |  -   | `GMAO_Shared/GEOS_Util/plots/quad/VERIFICATION.MERRA.rc'
+ |  x   |  -   | `GMAO_Shared/GEOS_Util/plots/zcmp1/VERIFICATION.ERA40.rc'
+ |  x   |      | Applications/GEOSgcm_App/AGCM.rc.tmpl
+ |  x   |      | Applications/GEOSgcm_App/ChangeLog
+ |  x   |      | Applications/GEOSgcm_App/gcm_run.j.tmpl
+ |  x   |      | Applications/GEOSgcm_App/gcm_setup
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOS_AgcmGridComp.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSchem_GridComp/GMIchem_GridComp/GMIchem_GridCompMod.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSchem_GridComp/GMIchem_GridComp/GMI_GridComp/
+                 GmiChemistry/GmiChemistryMethod_mod.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSchem_GridComp/GMIchem_GridComp/GMI_GridComp/
+                 GmiChemistry/chem_update.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSchem_GridComp/GMIchem_GridComp/GMI_GridComp/
+                 GmiShared/GmiIOutilities/GmiASCIIoperations_mod.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSchem_GridComp/GMIchem_GridComp/GMI_GridComp/
+                 GmiShared/GmiIOutilities/GmiFileUnit_mod.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSchem_GridComp/GMIchem_GridComp/GMI_GridComp/
+                 GmiSpeciesConcentration/spcConcentrationMethod/GmiSpcConcentrationMethod_mod.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSchem_GridComp/GOCART_GridComp/GOCART_GridCompMod.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSmoist_GridComp/GEOS_MoistGridComp.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSmoist_GridComp/cloudnew.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSmoist_GridComp/ras.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSsurface_GridComp/GEOS_SurfaceGridComp.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSsurface_GridComp/GEOSland_GridComp/GEOS_LandGridComp.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/ARIESg3_GridComp/ARIESg3_GridCompMod.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/FVdycoreCubed_GridComp/DynCore_GridCompMod.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/FVdycore_GridComp/FVdycore_GridCompMod.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/GEOSdatmodyn_GridComp/GEOS_DatmoDynGridComp.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/GEOSdatmodyn_GridComp/reader.F90
+ |  x   |      | GMAO_Shared/GEOS_Util/plots/configure
+ |  x   |      | GMAO_Shared/GEOS_Util/plots/landscape.script
+ |  x   |      | GMAO_Shared/GEOS_Util/plots/portrait.script
+ |  x   |      | GMAO_Shared/GEOS_Util/plots/quickplot
+ |  x   |      | GMAO_Shared/GEOS_Util/plots/grads_util/getobs.gs
+ |  x   |      | GMAO_Shared/GEOS_Util/plots/grads_util/getvar.gs
+ |  x   |      | GMAO_Shared/GEOS_Util/plots/grads_util/grepfile
+ |  x   |      | GMAO_Shared/GEOS_Util/plots/grads_util/plot.rc
+ |  x   |      | GMAO_Shared/GEOS_Util/plots/hcmp/VERIFICATION.ERA40.rc
+ |  x   |      | GMAO_Shared/GEOS_Util/plots/quad/hplot
+ |  x   |      | GMAO_Shared/GEOS_Util/plots/quad/lplot
+ |  x   |      | GMAO_Shared/GEOS_Util/plots/quad/zplot
+ |  x   |      | GMAO_Shared/GEOS_Util/plots/quad/zquad
+ |  x   |      | GMAO_Shared/GEOS_Util/plots/zcmp/VERIFICATION.ERA40.rc
+ |  x   |      | GMAO_Shared/GEOS_Util/post/flat2hdf.F
+ |  x   |      | GMAO_Shared/GEOS_Util/post/gcmpost.script
+ |  x   |      | GMAO_Shared/GEOS_Util/post/time_ave.F
+ |  x   |      | GMAO_Shared/MAPL_Base/MAPL_Base.F90
+ |  x   |      | GMAO_Shared/MAPL_Base/MAPL_CFIO.F90
+ |  x   |      | GMAO_Shared/MAPL_Base/MAPL_Cap.F90
+ |  x   |      | GMAO_Shared/MAPL_Base/MAPL_Generic.F90
+ |  x   |      | GMAO_Shared/MAPL_Base/MAPL_HistoryGridComp.F90
+ |  x   |      | GMAO_Shared/MAPL_Base/MAPL_LocStreamMod.F90
+ |  x   |      | GMAO_Shared/MAPL_Base/hinterp.F
+ |------|------|------------------------------------------------------------
+
+
+Restart Changes: none
+
+==========================================================================
+
+30Apr2010, Takacs, CVS Tag: Fortuna-2_1  (non-zero diff to Fortuna-2_0)
+                    Module: Fortuna
+----------------------------------------------------------------------------------
+1) Fix updating of Analysis Increment of Ozone.  Previous versions (including MERRA)
+   incorrectly assumed Analysis Increment was in mass-mixing-ratio.  However, the 
+   Analysis provides increments of Ozone in volume-mixing-ratio.  (Non-Zero Diff within DAS)
+2) Fix Intermittent REPLAY of Ozone in FVDYCORE (same problem as above).  (Non-Zero Diff within Intermittent REPLAY)
+3) Fix bug in PCHEM for Ozone updates across year boundary.  (Non-Zero Diff when crossing year boundary)
+4) Modified FVDycore to produce consistent Energy Budget Diagnostics.  In previous versions, 
+   some energy budget diagnostics would be incorrectly calculated if the complete collection
+   of energy terms was not turned on in the HISTORY.rc. The updated code prevents this from
+   happening.  You must either ask for the complete set of energy diagnostics, or turn off 
+   selected terms.  The running code informs you of your options.  (Zero Diff)
+5) Fix driver for hinterp.F utility to eliminate round-off errors when interpolating two quantities of the same resolution.
+6) Updates to gcm_setup for running model simulations.  Current version now uses AGCM.rc and CAP.rc from the Applications directory.
+7) Experiment run directory now used resource files with .rc extenstion.
+8) Updates to plots and post.
+9) Migration to ESMF version 4_0_0rp1 (Zero Diffs). This has fairly minimal impact on the syntax of the gridded components. 
+   One notable ESMF change that affects parent components with multi-phase run method of their children, is the PHASE numbering now starts at 1
+10) MAPL now uses 2-d ESMF grids for efficiency reasons, improving the performance of ESMF_StateReconcile, ESMF_RedistStore and ESMF_Redist (Zero Diffs)
+11) Fixed bug to improve termination upon errors (Zero Diffs) 
+12) Add option to use mid-layer exports for HISTORY Output vertical interpolation (eg., TH surfaces).
+13) Incorporated new versions of Aerosol Optic Bands from Arlindo (non-zero diffs).
+14) Created Fortuna-2_1 boundary datasets which include an updated topography over Greenland, and new lai_green, nirdf, and visdf datasets.
+    New Shared and clsm directories for creating new tile files and regridding restarts.
+15) Migration to new module environment.
+       On Discover:   1) comp/intel-11.0.083   2) other/mpi/mvapich2-1.4.1/intel-11.0.083
+16) Implement new Gravity Wave Drag Parameterization.  This scheme is capable of producing a QBO.
+	
+Restart Changes: Fortuna-2_1 can use Fortuna-2_0 restarts provided the Fortuna-2_0 boundary datasets are also used.
+                 The preferred mode, however, is to use Fortuna-2_1 boundary datasets together with re-gridded land restarts.
+                 (See item 14)
+
+==========================================================================
+
+30Oct2009, Takacs, CVS Tag: Fortuna-2_0  (non-zero diff to Fortuna-1_4)
+                    Module: Fortuna
+----------------------------------------------------------------------------------
+1) Includes options to run one of 4 Dynamical Cores:
+       1) FV (lat-lon)
+       2) FV (cubed sphere)
+       3) ARIES (lat-lon)
+       4) DATMO (data model for single column physics)
+2) Fix to produce consistency between MAPL_CFIO and MAPL_CAP grids (for HDF meta-data).
+3) Changes in Physics:
+   a) Moist - Prog Cloud : Increase rain re-evap, change behavior of autoconversion and radiative forcing
+   b) Moist - RAS: Stochastic Tokioka trigger, controlling parameter set as function of horizontal resolution
+   c) Turb:  Incorporate response to wind shear in Lock/Louis mix, new Louis turb length scale
+   d) Surface - Change default to Monin-Obukhov surface layer
+   e) Catch  - Minor changes is default data statement values.
+4) Changes in CHEM:
+   Connect GOCART BC, DU, OC, SS, and SU to GMICHEM, and GMICHEM oxidants 
+5) Changes in CHEM:
+   NO3, OH, and H2O2 to SU in GOCART. Specification of ANALYSIS_OX_PROVIDER 
+   in AGCM.tmpl to satisfy ASSERT(NumFriendly == 2) in AgcmGridComp. Target 
+   RATs connectivities in PhysicsGridComp to RATS_PROVIDER.  Create only 
+   those chemistry children that are requested by the Chem_Registry.rc. 
+   STRATCHEM updated to JPL2006.
+6) REPLAY Changes:
+   Regular      Replay now requires A-GRID input files (A-Grid versions of ANA.ETA and BKG.ETA).
+   Intermittent Replay may use A-GRID or D-GRID  files.
+   A conversion utility has been created (convert_eta.x) which will convert MERRA-Style ANA.ETA and BKG.ETA files
+   to an A-Grid structure.
+7) AGCM.rc Changes.  You must use the AGCM.rc.tmpl that comes with the tag!
+8) Boundary Condition Changes.  Fortuna-2_0 is meant to be used with new Land Surface Tile Files.
+   A mk_Restarts utility is provided to convert old Land Surface files to the newer versions.
+9) Modifications to the gcm_setup script.
+
+
+Restart Changes: yes
+   CATCH_INTERNAL_RESTART_FILE
+   TURBULENCE_INTERNAL_RESTART_FILE
+   TURBULENCE_IMPORT_RESTART_FILE
+
+   VEGDYN_INTERNAL_RESTART_FILE:  No longer a restart file that is carried from run to run.
+   This file simply points to a boundary condition dataset:  vegdyn.data
+   Checkpoints are no longer needed.
+
+==========================================================================
+
+05May2009, Takacs, CVS Tag: Fortuna-1_4           (non-zero diff to Fortuna-1_3)
+                    Module: Fortuna
+----------------------------------------------------------------------------------
+1) Includes files to perform offline CATCH (etc.) resolution interpolations
+2) Updates to include Monin-Obukhov surface layer option
+3) Updates to time_ave.F to attach input file extention to output files
+4) Updates to land surface routines to provide NCEP ITY for FDDA
+5) Updates to QuickPlot for efficiency
+6) Updates to MAPL_BASE and MAPL_CFIO to write output collections in parallel
+
+   !! Note: Non-zero diff to RESTARTS and Model Output due to use of HorzTransform 
+            (rather than hinterp) for interpolation
+
+7) Implement parallel RESTARTs (read and write for horiz lat/lon gridded format)
+8) Updates to GNUmakefiles required by JAGUAR at ORNL
+9) Updates to makeiau.F for FDDA Analysis (Backwards Compatible)
+10) Fix EXACT replay error (in previous tags) by terminating PHYSICS TURB and MOIST bundles from the AGCM_IMPORT
+11) Fix problem for case when CAP.rc:BEG_DATE = cap_restart date.
+
+Restart Changes: none
+
+==========================================================================
+
+13Feb2009, Takacs, CVS Tag: Fortuna-1_3     (zero diff to GEOSagcm_m3-Fortuna_1_2)
+                    Module: Fortuna
+----------------------------------------------------------------------------------
+1) Updates to MAPL_Base using ESMF v3.1.0rp2
+2) Updates to Radiation and Moist for Aerosol Diagnostics (from Pete Colarco)
+3) Updates to Timers in various places
+4) Updates to top level GCM and AGCM Gridded Components for Bundle Connectivity
+5) Updates for Parallel HISTORY Regridding and Shaving
+6) Updates to include Exports required for FDDA Analysis
+
+Restart Changes: none
+
+==========================================================================
+
+27Jan2009, Takacs, CVS Tag: GEOSagcm_m3-Fortuna_1_2 (non-zero diff to GEOSagcm_m3-Fortuna_1_1 using GOCART)
+-----------------------------------------------------------------------------------------------------------
+1) Updates to GMAO_Shared/Chem_Shared/Chem_SettlingMod.F90
+2) Updates to GOCART RC Files
+3) Updates to LockEntrain.F90 (for efficiency, zero-diff)
+4) Modified GMAO_Shared/GEOS_Util/plots/configure to use gradsnc4 (for HDF5 Files)
+
+Restart Changes: none
+
+==========================================================================
+
+22Jan2009, Takacs, CVS Tag: GEOSagcm_m3-Fortuna_1_1 (non-zero diff to GEOSagcm_m3-Fortuna_1_0)
+----------------------------------------------------------------------------------------------
+1) Updates to begin merge with FV Cubed Sphere (changes in MAPL_Base, Solar, and PChem)
+   PChem changes are non-zero diff due to truncation error using new interpolation scheme.
+2) Updates to GEOS_RadiationGridComp.F90 to reduce complexity of multiple grid definitions.
+3) Updates to MAPL_Constants, catch_constants, getcdh.code and catchment.F90 
+   These updates attempt to reduce extreme cold temperatures over snow during clear-sky night-time conditions.
+   Also, Latent Heat of Fusion constants have been updated to more accurate values.
+4) Minor change in FVdycore_GridCompMod.F90 for standard_output purposes.
+
+Restart Changes: none
+
+==========================================================================
+
+07Jan2009, Takacs, CVS Tag: GEOSagcm_m3-Fortuna_1_0 (non-zero diff to GEOSagcm-Eros_7_25)
+-----------------------------------------------------------------------------------------
+1) Restructured Surface Layer Implementation, involving: 
+                GEOS_SurfaceGridComp.F90
+                GEOS_SaltwaterGridComp.F90
+                GEOS_LandIceGridComp.F90
+                GEOS_LakeGridComp.F90
+                GEOS_LandGridComp.F90
+                GEOS_CatchGridComp.F90
+                GEOS_PhysicsGridComp.F90
+   and the new routine:
+                surfacelayer.F90 in GEOS_Shared
+2) Updates to plots and post utilities.
+3) Updates to gcm_setup utilities.
+4) Updates to g5_modules, baselibs, mpi, and compiler.
+5) Updates to ESMF Libraries (uses ESMF-3.1).
+6) Updates to use  NetCDF4   (HDF5)
+7) Updates to LocStream to use Binary Tile Dataset.
+
+Restart Changes: YES: 
+          surface_import_restart (must be cold-started)
+        saltwater_import_restart (must be cold-started)
+
+==========================================================================
+
+02Dec2008, Takacs, CVS Tag: GEOSagcm-Eros_7_25 (non-zero diff to GEOSagcm-MERRA_p1)
+-----------------------------------------------------------------------------------
+1) Implement Interactive GOCART Aerosols.  Significant updates to Chemistry GridComp.
+2) Updates to Physics (eliminate separate PCHEM and AEROCHEM calls, now single Chemistry Driver).
+3) Updates to g5_modules, baselibs, mpi, and compiler.
+4) Updates to plots and post utilities.
+5) Updates to gcm_setup utilities.
+
+Restart Changes:  CHEMISTRY_INTERNAL_RESTART becomes PCHEM_INTERNAL_RESTART in AGCM.rc
+
+==========================================================================
+
+08Dec2008, Takacs, CVS Tag: GEOSagcm-MERRA_p2 (zero diff to GEOSagcm Tags: MERRA (aka GEOSagcm-Eros_7_24) and GEOSagcm-MERRA_p1)
+----------------------------------------------------------------------------------------------------------------------
+1) Fixed SPSNOW (Spurious Snow) diagnostic within Land_GridComp.F90.
+
+Restart Changes: none
+
+==========================================================================
+
+06Nov2008, Takacs, CVS Tag: MERRA_p1 (zero diff to GEOSagcm Tag: MERRA (aka GEOSagcm-Eros_7_24))
+----------------------------------------------------------------------------------------------------------------------
+1) Added Exports in GEOS_SaltWaterGridComp.F90 and GEOS_SurfaceGridComp.F90 for diagnostics over Ocean and SeaIce.
+2) Updates to HISTORY_MERRA_CFIO.rc.tmpl for new Ocean Output Stream.
+3) Updates to g5_modules to use basedir=/usr/local/other_old/baselibs/v2_2rp2_213_9.1.042meta_new to avoid HDF bug.
+4) Updates to plots and post utilities.
+5) Updates to gcm_setup utilities.
+
+Restart Changes: none
+
+==========================================================================
+
+28Apr2008, Takacs, CVS Tag: GEOSagcm-Eros_7_24 (non-zero diff to GEOSagcm-Eros_7_23. This tag will be used for MERRA.)
+----------------------------------------------------------------------------------------------------------------------
+1) Fix bug in PCHEM for time-interpolation of climatology aerosols.                          (non-zero diff)
+2) Fix energy budget in catchment.F90 in addition to small mod in CATDEF calculation.        (non-zero diff)
+3) Fix energy budget in MOIST (Update TH with RH_CLEANUP heating).                           (non-zero diff)
+4) Fix TH => T conversion in PHYSICS (from MOIST) using consistent P**KAPPA calc with MOIST. (non-zero diff)
+5) Modified heating from GWD to use (u+0.5du)*du for Budget consistency.                     (non-zero diff)
+6) Implement new diagnostics in AGCM and FVCORE for MERRA Budgets.
+7) Implement REPLAY "Exact"   option to replay from AGCM_IMPORT     files.
+8) Implement REPLAY "Regular" option to replay from ANA.ETA-BKG.ETA files.
+9) Updates to AGM.rc and CAP.rc files.
+10) Removed need for fvcore_layout.rc (get info from AGCM.rc)
+
+Restart Changes: none
+
+==========================================================================
+
+13Mar2008, Takacs, CVS Tag: GEOSagcm-Eros_7_23 (zero-diff to GEOSagcm-Eros_7_22, MERRA)
+---------------------------------------------------------------------------------------
+1) Implement connectivity in PHYSICS (needed by ARCTAS/Aerosols).
+2) Implement REPLAY option in FVCORE for Dump_&_Splash mode.
+3) Updates to plots and post utilities.
+4) Updates to AGM.rc for REPLAY option.
+
+Note: This version is zero-diff with GEOSagcm-Eros_7_22 when no Aerosols are used.
+      This tag was pushed on March 18, 2008 and March 20, 2008 to update (zero-diff with no Aerosols):
+
+      1) Fixed bug in FVdycore_GridCompMod.F9 for D-Grid V-Wind at South Pole when NX=NY=1
+      2) Added SLRSFNA and SLRSFCNA diagnostics to GEOS_SolarGridComp.F90
+
+      |-------------|------------------------------------------------------------
+      |   Newest    |
+      |-------------|                     File Name
+      | Here | Tag  |
+      |------|------|------------------------------------------------------------
+      |  x   |  -   | GMAO_Shared/GEOS_Util/plots/tseries/pme.stk0
+      |  x   |      | Applications/GEOSdas_App/fvsetup
+      |  x   |      | Applications/GEOSgcm_App/GCMPROG.rc.tmpl
+      |  x   |      | Applications/GEOSgcm_App/HISTORY.rc.tmpl
+      |  x   |      | Applications/GEOSgcm_App/edhist.pl
+      |  x   |      | Applications/GEOSgcm_App/fcst.script
+      |  x   |      | Applications/GEOSgcm_App/replay.script
+      |  x   |      | Applications/GEOSgcm_App/run.script.tmpl
+      |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/
+                                       GEOSchem_GridComp/GOCART_GridComp/CO_GridComp/CO_GridCompMod.F90
+      |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/
+                                       GEOSradiation_GridComp/GEOSsolar_GridComp/GEOS_SolarGridComp.F90
+      |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/
+                                       FVdycore_GridComp/FVdycore_GridCompMod.F90
+      |  x   |      | GMAO_Shared/Chem_Base/Chem_Registry.rc
+      |  x   |      | GMAO_Shared/GEOS_Util/plots/quickplot
+      |  x   |      | GMAO_Shared/GEOS_Util/plots/tseries/pme
+      |  x   |      | GMAO_Shared/GEOS_Util/plots/tseries/pme.stk2
+      |  x   |      | GMAO_Shared/GEOS_Util/plots/tseries/pme_1
+      |  x   |      | GMAO_Shared/GEOS_Util/plots/tseries/ps_1
+      |  x   |      | GMAO_Shared/GEOS_Util/plots/tseries/ke.stk
+      |  x   |      | GMAO_Shared/GEOS_Util/plots/tseries/ke_1
+      |  x   |      | GMAO_Shared/GEOS_Util/plots/tseries/ps
+      |  x   |      | GMAO_Shared/GEOS_Util/plots/tseries/ps_1
+      |  x   |      | GMAO_Shared/GMAO_etc/obsys-nas.rc
+      |------|------|------------------------------------------------------------
+
+Restart Changes: none
+
+==========================================================================
+
+05Mar2008, Takacs, CVS Tag: GEOSagcm-Eros_7_22
+----------------------------------------------------------------------
+
+1) Implement D-Grid Definition for KE-Budgets and Conservation.  This creates non-zero differences
+   compared with the previous A-Grid definition.
+2) Implement changes in FVCORE routines to compute KE Budgets (zero-diff).
+3) Protect DQIDT and DQLDT from underflows (hopefully).
+4) Changed Diagnostic GST=SQRT(GST+UCN) to GST=sqrt(max(GST+UCN,0.0)) in SALT.
+5) Corrected Pressure Level Interpolation in MAPL_CFIO (was performing linear in P rather than linear in Log(P)).
+6) Modified PHYSICS GRID_COMP (adding a borrowed export O3PPMV from PCHEM) for RePlay (atanas).  Zero-Diff
+7) Updates to plots and post utilities.
+8) Updates to MERRA HISTORY RC Files.
+
+Restart Changes: none  (non-zero diff vs GEOSagcm-Eros_7_21)
+
+==========================================================================
+
+01Feb2008, Takacs, CVS Tag: GEOSagcm-Eros_7_21
+----------------------------------------------------------------------
+
+ The following files need to be UPDATED for tag GEOSdas-2_0_5
+
+ |-------------|------------------------------------------------------------
+ |   Newest    |
+ |-------------|                     File Name
+ | Here | Tag  |
+ |------|------|------------------------------------------------------------
+ |  x   |  -   | Applications/GEOSdas_App/CVSTAG_install.pl
+ |  x   |      | Applications/GEOSgcm_App/ChangeLog
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSturbulence_GridComp/LockEntrain.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/FVdycore_GridComp/FVdycore_GridCompMod.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/FVdycore_GridComp/FVdycore_wrapper.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/FVdycore_GridComp/cd_core.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/FVdycore_GridComp/dynamics_vars.F90
+ |  x   |      | GEOSgcs_GridComp/GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/FVdycore_GridComp/te_map.F90
+ |------|------|------------------------------------------------------------
+
+1) Implement new diagnostic calculations for OMEGA, KEGEN, and CONVCPT.
+2) Implement reasonable V_DGRID pole values based on V_AGRID.  The pole values of V_DGRID are
+   not predicted within the FVCore, thus these are purely diagnostic.  However, they are
+   now reproducible across processor configurations and can now be used by utilities outside
+   the model.
+3) Protect EKM and EKH from going negative in LockEntrain.F90 within the Turbulence.
+
+Restart Changes: none  (zero-diff vs GEOSagcm-Eros_7_20)
+
+==========================================================================
+
+24Jan2008, Takacs, CVS Tag: GEOSagcm-Eros_7_20
+----------------------------------------------------------------------
+
+1) Changes to Fortran Code include:
+
+  Zero-Diff:
+  ----------
+  ../GEOSagcm_GridComp/GEOSphysics_GridComp/GEOS_PhysicsGridComp.F90
+  ../GEOSagcm_GridComp/GEOSsuperdyn_GridComp/FVdycore_GridComp/FVdycore_GridCompMod.F90
+  ../GEOSagcm_GridComp/GEOSsuperdyn_GridComp/FVdycore_GridComp/FVdycore_wrapper.F90
+  ../GEOSagcm_GridComp/GEOSsuperdyn_GridComp/FVdycore_GridComp/cd_core.F90
+  ../GEOSagcm_GridComp/GEOSsuperdyn_GridComp/FVdycore_GridComp/sw_core.F90
+  ../GEOSagcm_GridComp/GEOSsuperdyn_GridComp/FVdycore_GridComp/trac2d.F90
+  ../GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSsurface_GridComp/GEOSlandice_GridComp/GEOS_LandIceGridComp.F90
+  ../GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSsurface_GridComp/GEOSsaltwater_GridComp/GEOS_SaltWaterGridComp.F90
+  ../GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSsurface_GridComp/GEOS_SurfaceGridComp.F90
+  ../GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSsurface_GridComp/GEOSland_GridComp/GEOScatch_GridComp/catchment.F90
+
+  Non-Zero-Diff:
+  --------------
+  ../GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSmoist_GridComp/GEOS_MoistGridComp.F90
+  ../GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSmoist_GridComp/cloudnew.F90
+  ../GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSsurface_GridComp/GEOSland_GridComp/GEOScatch_GridComp/GEOS_CatchGridComp.F90
+
+2) Fixed bug in cloudnew.F90 related to wind-shear pdf
+3) Changed Maximum RADQL & RADQI to 1 g/kg (rather than 40 g/kg)
+4) Added rain from RH_CLEANUP to various budget diagnostics in MOIST
+5) Moved updating of FR in GEOS_CatchGridComp.F90 to AFTER DTS and DQS are computed.  This provided
+   consistency with Randy's calculations and prevented excessively large DTS and DQS values.
+6) Fixed budgets computed in catchment.f90
+7) Fixed FRACI diagnostic to be correctly outputted on first timestep
+8) Added negative protection of Q2M and Q10M
+9) Made updates to MERRA FileSpec:
+   Added diagnostics DQLDTANAINT, DQIDTANAINT, SPWATR, FRACI, and AREA
+   Changed QIIT and QLIT to QILSIT and QLLSIT
+   Changed U10N and V10N in products to be U10M and V10M (to provide cleaner pole values)
+   Kept    U10N and V10N in BKG File (to provide zero-diff)
+10) Implemented KEADV, KEPG, and KEDP diagnosics in FVDYCORE
+11) Updates to plots and post utilities.
+
+Restart Changes: none
+
+==========================================================================
+
+19Dec2007, Takacs, CVS Tag: GEOSagcm-Eros_7_19
+----------------------------------------------------------------------
+
+1) Fix to MAPL_HistoryGridComp.F90 to correct logic for end_date and end_time
+2) Fix to MAPL_HorzTransform.F90 to correct linear interpolation to higher resolution
+3) Changed LANDICEALBEDO to 0.775 (from 0.8)
+4) Fixed bug in MOIST to pressure weight DTDTFRIC
+5) Changed ADD_INCS to adjust THETA with both DELT and DELP increments
+6) Modified PHYSICS to set zero fluxes at surface for Turbulence Diffusion of QI and QL tracers
+7) Implemented TROPP_THERMAL, TROPP_EPV, and TROPP_BLENDED options for Tropopause Pressure.
+8) Mass-Weighted Tv Variable for Omega*Alpha Calculation.
+9) Changed CO2 Value in AGCM.rc to be negative (thereby using historical CO2 record)
+10) Changed opticsBands_DU dataset in AGCM.rc back to original version (rather than .V2 version)
+11) Updates to plots and post utilities.
+
+Restart Changes: none
+
+==========================================================================
+
+14Nov2007, Takacs, CVS Tag: GEOSagcm-Eros_7_18
+----------------------------------------------------------------------
+
+1) Fix to MAPL_GenericCplComp.F90 to correct time-averaged diagnostics.
+2) Fix to GEOS_SolarGridComp.F90 and sorad.F to correct ALBEDO and SLRSFC calculations.
+3) Updates in cloudnew.F90
+	a)Thicker cold low-level clouds
+	b)RH lower limits in re-evaporation  
+4) Relative humidity trigger ramp changed in ras.F90 to [0.5,0.65] from [.6,.8] (in 7_17)
+5) Updates in GEOS_MoistGridComp.F90 for different TPERT over land and ocean. Defaults to
+   2K over ocean, 4K over land. Controllable through .rc file	
+6) Updates from Randy in catchment.F90 for diagnostics and F90 structure.
+7) Updates in GEOS_PhysicsGridComp.F90 to enable forgotten diagnostics.
+8) Updates in GEOS_AgcmGridComp.F90 and FVdycore_GridCompMod.F90 to more accurately compute
+   budget diagnostics of analysis tendencies.
+9) Updates in GEOS_AgcmGridComp.F90 to perform final negative SPHU and OX check and to 
+   compute TPW (Note: TO3 is still computed in CHEMISTRY).
+10)Updates to plots and post utilities.
+
+Restart Changes: none
+
+==========================================================================
+
+22Oct2007, Takacs, CVS Tag: GEOSagcm-Eros-beta7p17
+----------------------------------------------------------------------
+
+1) Add more MERRA diagnostics 
+2) Implemented Julio's DAS Tag gAdas-1_5beta10p19 changes
+3) Updates from Randy in catchment.F90 for negative runoff
+4) Implemented GWD Heating Correction based on energy conversion from waves (rather than mean flow)
+5) Added LANDICE and SEAICE skin temperature changes to allow for diurnal cycle
+6) Moved CLDTMP and CLDPRS to SOLAR (to eliminate undefined values at startup)
+7) Close GFIO files immediately after WRITE when frequency == duration
+8) Modifications to KE Budget (KEDYN, KEPHY, KEANA all computed from DYN).
+9) Updates to Quickplot
+
+Restart Changes: none
+
+==========================================================================
+
+28Sep2007, Trayanov/Takacs, CVS Tag: GEOSagcm-Eros-beta7p13-mapl
+----------------------------------------------------------------------
+
+0) Produces zero-diff with GEOSagcm-Eros-beta7p13
+1) Replace GEOS Library with MAPL Library everywhere.
+2) Implement new HISTORY format using Collections.
+
+Restart Changes:
+1) OCEAN_INTERNAL_RESTART_FILE no longer needed
+2) FVCORE keywords changed to DYN:
+   DYN_INTERNAL_RESTART_FILE:              fvcore_internal_restart
+   DYN_INTERNAL_CHECKPOINT_FILE:           fvcore_internal_checkpoint
+   DYN_INTERNAL_HEADER:                    1
+   DYN_LAYOUT_FILE:                        fvcore_layout.rc
+
+==========================================================================
+
+28Sep2007, Takacs, CVS Tag: GEOSagcm-Eros-beta7p13
+----------------------------------------------------------------------
+
+1) Call ADD_INCS with IAU first within FVCORE, then call ADD_INCS with PHYSICS Increments using RUN2.
+2) Replace Moist ADD_INCS with Dry ADD_INCS (for now).
+3) Move GWD from SuperDynamics to Physics. This allows for a more accurate energy budget diagnostic
+   due to simplified partitioning in Physics.
+4) Includes updates to catchment.F90: Increased capacity of canopy interception reservoir by a factor of 5.
+                                      Added line reducing strength of interception loss when FCAN 
+                                      (the fraction of the canopy interception reservoir filled with water) is less than 0.1
+5) Includes updates in MOIST (GridComp, RAS, CloudNew) for modified cloud optical properties and KE Dissipative Heating.
+6) Includes new formulation for OMEGA within FVCORE.
+7) Replaces syntax for GetAttribute SOLAR_DT and SOLARAvrg to be consistent with IRRAD syntax.
+8) Updates to GEOS_Util/plots and GEOS_Util/post utilities.
+9) Modifications for MERRA diagnostics.
+
+Restart Changes: None
+
+==========================================================================
+
+07Aug2007, Takacs, CVS Tag: GEOSagcm-Eros-beta7p12
+----------------------------------------------------------------------
+
+x) Change ADD_INCS to update Virtual Temperature adjustments from Physics and Analysis.
+   This corrects a systematic error in adjustment updates.
+1) Small modifications to ensure no negative Q or RH from MOIST.
+2) Zero-diff update to FV sw_core and cd_core for refactorying and ProTEx.
+3) Updated GOCART routines to tag:  gAdas-1_5beta10p15.
+4) Update m_GFIO_GetFld.f (tag: gAdas-1_5beta10p15) to handle double precision lon value.
+5) Round-off differences in PCHEM to simplify and create required diagnostics.
+6) Modifications for CFIO_GRADS write utilities.
+7) Modifications for MERRA diagnostics.
+8) Implement makexp utility under Applications to create run.script and regress.script for GCM model runs.
+
+Restart Changes: None
+
+==========================================================================
+
+02Jul2007, Takacs, CVS Tag: GEOSagcm-Eros-beta7p11
+----------------------------------------------------------------------
+
+1) The reproducibility error (wrt Processor configuration) in FV is fixed.
+   The error was due to an incomplete ghosting after a polar FFT update.
+2) CFIO can now output flat GRADS files using the HISTORY.rc attribute list%format: "GRADS"
+3) Several MERRA diagnostics have been corrected.
+
+Restart Changes: None
+
+==========================================================================
+
+21Jun2007, Takacs, CVS Tag: GEOSagcm-Eros-beta7p10
+----------------------------------------------------------------------
+
+This tag is based on GEOSagcm-Eros-beta7p9, and includes updates from J.Bacmeister which contain:
+
+1) KH/Land Tuning for Lock surface turbulence different over ocean and land - higher over land.  
+2) RAS/topo RAS time scale shorter when surface pressure below 900 hPa   
+3) CRF/stratus Effective radius for low warm clouds restored to 15 um   
+
+   Fortran Physics changes:  GEOS_PhysicsGridComp.F90, GEOS_MoistGridComp.F90, cloudnew.F90,    
+                             GEOS_TurbulenceGridComp.F90, LockEntrain.F90
+
+Restart Changes: None
+
+==========================================================================
+
+20Jun2007, Takacs, CVS Tag: GEOSagcm-Eros-beta7p9
+-------------------------------------------------
+
+This tag includes:
+
+1) New FV Polar Filter to remove stratospheric jet pole problem during N.Hemisphere Winter.
+   Note: Current version does not pass reproducibility test for different Processor combinations !!
+         Differences look like round-off.  Needs more investigation.
+2) New calculation of Diagnostic OMEGA which is more energetically consistent with d(KE)/dt and d(CpT)/dt calculations.
+3) Put an upper limit (2) on the Richardson Number Ri.
+4) Changed Default REF_TIME to be the BEG_TIME from the CLOCK (rather than 0z).
+5) Zero-Diff changes to fix memory leaks.
+6) Modified Solar, Surface, Catch, Salt, and Physics to fix inconsistency in solar fluxes.
+   Note: Current version may produce small inconsistencies of Net_SW_at_Ground between SOLAR and SURFACE.
+7) Changed SNOMAS export from Surface to mm (from meters).
+8) Fixed mass conservation for tracers within RAS.
+9) Updates to MERRA HISTORY.rc file.
+10) Updates to GEOS_Util/post 
+11) Updates to GEOS_Util/plots
+
+Restart Changes:
+1) SURFACE_IMPORT_RESTART
+2) TURBULENCE_IMPORT_RESTART
+
+==========================================================================
+
+20Apr2007, Takacs, CVS Tag: GEOSagcm-Eros-beta7p8
+-------------------------------------------------
+
+This tag includes:
+
+1) Fixed MAJOR bug in irrad.f introduced in previous tag (GEOSagcm-Eros-beta7p7).
+2) Updates to Arlindo daSilva's latest Aerosol code.
+3) Updates to MOIST for Arlindo daSilva's aerosol scavenging. (Default, no scavenging, zero-diffs).
+4) Computed U10N and V10N which better represents 10-meter winds assuming neutral stability.
+5) Implemented vertical interpolation to pressure for output files.
+6) Fixed bug in vertical interpolation within FV (for U50M and V50M).
+7) Updates to FV on the HEAD.  The FILL parameter is set to FALSE.  The Polar Filter has been
+   switched to use an FFT everywhere (rather than an Algebraic version farther away from poles).
+8) Updated to Ricardo Todling's TURBULENCE tag (GEOSpert-gAdrt-b11p1-2spmd) for Adjoint diagnostics, 
+   with minor (zero-diff) changes for efficiency.
+9) The topography datasets have been modified by multiplicative factors to adjust the global mean
+   value to 231.5m (which is the mean of GTOPO30).  This should remove most of the difference 
+   between our dry mass and EC's.
+10) Updates to GEOS_Util/plots
+11) Updates to MOIST CRF parameters (MAX_RI, MIN_RL) in cloudnew.F90, and MOIST_RASPBL algorithm using
+    30 minutes to 12 hours timescales.
+
+==========================================================================
+
+06Apr2007, Takacs/Suarez, CVS Tag: GEOSagcm-Eros-beta7p7
+-----------------------------------------------------------
+
+Description:
+
+Intended for fairly clean test of new aks and bks. Includes
+diagnostic fixes and additions. Aside from the new levels, it has a new LWI
+definition and slightly modified limits on ocean Reynolds numbers.
+Post p6 changes in the moist physics, which have been in testing
+in DAS mode (e.g., crf runs) have not been included.
+ 
+-----------------------------------------------------------
+
+This tag includes:
+
+1) Computed DelDot( V DelP ) using 2nd-Order with Vbar and DelPbar in Windfix.
+2) Switched from FFT DtoA to Simple Average in Makeiau.
+3) Added protection for LOG(DZ...) in Catchment for thinner levels.
+4) Updates to GEOS_Util/plots
+5) Corrected out of bounds in logical in FV: mapz (no effect on calculation)
+6) FVwrapper (diagnostics only)
+	Added energetics diagnostics, including KE, etc tracers
+	Disabled v dot del in omega calc
+7) FVdycore_GridComp
+	Zero diff code restructuring (first pass at MAPLizing)
+	Added budget and flux diagnostics
+	Added single level diagnostics
+	added u50 and v50
+8) Corrected catchment.F90 uninitialized variable HSNACC (diagnostic only)
+9) Added land budget diagnostics
+10) Fixed out-of-bounds array in irrad.f
+11) Modified HISTORY.rc to get U50M, V50M from Dynamics Component
+12) Changes LWI definition: 
+	water=frland+frlake>.6; 
+	ice=water & (frice>0.5 or T<-1.7)
+13) Changed SNOMAS over glacier---now fixed at 4 m in landice.
+14) put limits on Re (1000,0.4 -> 50,0.1) in over salt water.
+15) added seaice fraction diagnostic to surface (FRACI).
+    added reynolds number diagnostic to surface (RE).
+
+==========================================================================
+
+31Jan2007, Takacs, CVS Tag: GEOSagcm-Eros-beta7p6
+-----------------------------------------------------------
+
+This tag includes:
+
+1) Updates to FV on the HEAD for 1x1 reproducibility
+2) Updates to Randy's catchment for diffusivities
+3) Corrected ALBEDO bcs (Version V5)
+4) Updated LandIce Albedo (0.75)
+5) Updates to GEOS_Util/plots
+6) Updates to scripts and resource files under Application to include Aerosols
+
+==========================================================================
+
+06Dec2006, Takacs, CVS Tag: GEOSagcm-Eros-beta7p5
+-----------------------------------------------------------
+
+This tag includes:
+
+1) Updates to FV on the HEAD
+2) Fixed diagnostics and budgets
+3) Updates to Julio's Physics (cloudnew, lock, saltwater)
+4) Randy's catchment fix to heat capacity plus bug fix to hcorr
+5) Modified AGCM grid component to check for negative Friendlies
+6) Updates to scripts and resource files under Application
+
+==========================================================================
+
+31Oct2006, Trayanov, Takacs, CVS Tag: GEOSagcm-Eros-beta7p4
+-----------------------------------------------------------
+
+This tag includes:
+
+1) Updates to FV on the HEAD
+2) Fixed diagnostics and budgets
+3) Updates to Arlindo's AEROCHEM
+4) A modified AGCM grid component which allows IAU w/Memory
+5) Updates to MAPL
+6) Updates to scripts and resource files under Application
+
+==========================================================================
+
+25Sep2006, Trayanov, Takacs, CVS Tag: GEOSagcm-Eros-beta7p3
+-----------------------------------------------------------
+
+This tag includes:
+
+1) A modified AGCM grid component which simplifies the IAU coding.
+2) A fix to the ADD_INCS subroutine which corrects diagnostic budgets.
+3) Updates to Julio's physics which goes back to an older, simpler version.
+4) Updates to Arlindo's AEROCHEM
+5) Updates to used MAPL
+6) Updates to use NATIVE (rather than BIG_ENDIAN) for RESTARTS and BCS.
+7) Updates to scripts and resource files under Application
+
+The BASELINE for the new TAG incorporated the DAS Tag:  gAdas-1_5beta10p1
+
+The BIG_ENDIAN to NATIVE (little_endian) conversion has been tested to give zero diffs.
+
+A conversion utility is included in:  GEOS_Util
+which can be used to convert existing RESTARTS.  The conversion utility is called:  swapendian
+The utility uses two programs, 1) swapendian_RST.f90, and 2) swapendian_FV.f90,
+Both programs are also included in GEOS_Util. 
+
+All boundary datasets that existed in my:  /share/ltakacs/geos5/bcs/V3 directory have been converted to little_endian.
+The new boundary datasets are located in:  /share/ltakacs/geos5/bcs/V4
+
+The SST boundary conditions which existed in:  /share/ltakacs/geos5/bcs/SST
+have also been converted and exist in:  /share/ltakacs/geos5/bcs/V4/SST
+
+NOTE: 
+1) SST little_endian boundary datasets listed above are static.  OPS needs to promote future updates to the SST files to be little_endian.
+
+==========================================================================
+
+28Apr2005, Trayanov, Takacs, CVS Tag: cerebus
+---------------------------------------------
+Summary of Changes between Boreas and Cerebus versions
+=======================================================
+- Using the NCAR CAM version of Pilgrim
+- added more diagnostics
+- corrected instability problem in cachment.f 
+- corrected negative optical thickness problem (Moist)
+- radiation component could run now on a different schedule
+- added ability to produce CFIO output on a different resolution
+- added optional list of selected ouput levels for CFO files
+- added Parametrized Chemistry Gridded Comp
+- improved timing for DataOcean
+- added ability to write BKG.eta and BKG.sfc for the analysis
+- several bug fixes
+
+pre_Eros changes:
+===================
+- added thin "saltwater" relaxation layer
+- several bug fixed in SOLAR
+- new version of PCHEM: seven species, including stratospheric water
+- new scheme for QSAT
+- latest version of FVdycore (same as NCAR)
