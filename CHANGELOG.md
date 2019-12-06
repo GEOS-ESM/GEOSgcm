@@ -235,4 +235,4 @@ work provided VERSION = 0.
 
 ## Previous Versions
 
-For previous changes please see (ChangeLog-PreJason.txt)
+For previous changes please see [ChangeLog-PreJason.txt](ChangeLog-PreJason.txt)
