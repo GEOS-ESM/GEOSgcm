@@ -7,23 +7,15 @@
 ### Restart Changes: NO
 
 1. Enable reading netCDF increments during EXACT replay.
-
 2. Fixed issues affecting the MOIST aerosol diagnostics:
    1. incorrect mapping of tracer names to diagnostics
    2. sign of the diagnostics by not allowing negative values.
-
 3. New approach for increment diagnostics discussed in GEOSchem_GridComp v1.0.3.
-
 4. OXIT and OXIM replaced with MTRI%PCHEM::OXIM and TRI%PCHEM::OXIT in most HISTORY files. OX increments due to moist and turblence are now computed using BundleIncrementMod.F90 and their names have been changed.
-
 5. Implemented increments to land surface variables in the ADAS.
-
 6. Fixed GUST for AMIP vs no-inc REPLAY difference in HISTORY.
-
 7. Removed shallow.F90 which is no longer used.
-
 8. Updated `gcm_regress.j` to be able to test both agcm and coupled models.
-
 9. Remove references to `gcm_stats.j` in setup.
 
 ## [10.3.4] - 2019-10-01
