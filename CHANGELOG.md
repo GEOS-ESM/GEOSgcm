@@ -1,5 +1,19 @@
 # Changelog
 
+## [10.3.6] - 2020-01-02
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+1. Compute decomposition in MKIAU GridComp
+2. Use esma_set_this in GCs
+3. Allows GEOS-Chem (v12.4.0) chemistry to be setup and run "out of the box".
+4. INTERNAL and IMPORT restarts for GEOS-Chem are now in AGCM.rc.tmpl.
+5. GEOS-Chem timestep is set to be 2 x HEARTBEAT by default.
+6. Enforces GOCART_DT==HEARTBEAT_DT so all species work correctly.
+7. Bug fix for comments using GNU compilers with Ninja.
+
 ## [10.3.5] - 2019-11-07
 
 ### Zero-diff to previous release: YES
