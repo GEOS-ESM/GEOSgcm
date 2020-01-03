@@ -7,6 +7,7 @@ ESMA_cmake:
   local: ./@cmake
   remote: git@github.com:GEOS-ESM/ESMA_cmake.git
   tag: v1.0.11
+  develop: develop
 
 ecbuild:
   local: ./@cmake/@ecbuild
@@ -49,16 +50,19 @@ FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: git@github.com:GEOS-ESM/FVdycoreCubed_GridComp.git
   tag: v1.0.8
+  develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: git@github.com:GEOS-ESM/GFDL_atmos_cubed_sphere.git
   tag: geos/v1.0.2
+  develop: geos/develop
 
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: git@github.com:GEOS-ESM/GEOSchem_GridComp.git
   tag: v1.0.4
+  develop: develop
 
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM_GEOS5PlugMod/@mom
@@ -69,6 +73,7 @@ GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: git@github.com:GEOS-ESM/GEOSgcm_App.git
   tag: v1.0.6
+  develop: develop
 
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
