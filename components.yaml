@@ -6,7 +6,7 @@ ESMA_env:
 ESMA_cmake:
   local: ./@cmake
   remote: git@github.com:GEOS-ESM/ESMA_cmake.git
-  tag: v1.0.10
+  tag: v1.0.11
 
 ecbuild:
   local: ./@cmake/@ecbuild
@@ -33,17 +33,17 @@ GSW-Fortran:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: git@github.com:GEOS-ESM/MAPL.git
-  tag: v1.1.11
+  tag: v1.1.13
 
 FMS:
   local: ./src/Shared/@FMS
   remote: git@github.com:GEOS-ESM/FMS.git
-  tag: geos/orphan/v1.0.2
+  tag: geos/orphan/v1.0.3
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: git@github.com:GEOS-ESM/GEOSgcm_GridComp.git
-  tag: v1.0.4
+  tag: v1.0.5
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
@@ -68,12 +68,12 @@ mom:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: git@github.com:GEOS-ESM/GEOSgcm_App.git
-  tag: v1.0.5
+  tag: v1.0.6
 
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
   remote: git@github.com:GEOS-ESM/UMD_Etc.git
-  tag: v1.0.1
+  tag: v1.0.2
 
 CPLFCST_Etc:
   local: ./src/Applications/@CPLFCST_Etc
