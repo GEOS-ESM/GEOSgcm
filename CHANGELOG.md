@@ -1,5 +1,27 @@
 # Changelog
 
+## [10.4.0] - 2020-01-13
+
+### Zero-diff to previous release: YES (with defaults and without regridding)
+
+### Restart Changes: YES (land regridding)
+
+* Non-zero-diff updates for:
+	1. Regridding land restarts
+	2. Running Chou-Suarez longwave radiation.
+
+1. Update FV3 to latest version v1.0.9 which fixed UH25 diagnostic to build in both R4 and R8.
+2. Land Updates:
+	1. Clarified LONG_NAME of "snow depth" variable.
+	2. Added wemin wemout options.
+	3. Add PEATMAP data processing (disabled by default).
+	4. GEOSsurface_GridComp changed values of pi to MAPL_PI.
+	5. Added 8 more climatological (fPAR, VISDF, NIRDF stats for CATCHCN) data files and new clsm/country_and _state_code.data file.
+	6. Extra column on soil_param.* files.
+3. Non-zero-diif bug fix in Chou-Suarez for erroneous cloud contamination in OLR-OLRNA (aerosol forcing).
+4. Fixed MAPL bug with vector regridding of winds in CTM.
+5. Workaround fix building FMS on macOS.
+
 ## [10.3.6] - 2020-01-02
 
 ### Zero-diff to previous release: YES
