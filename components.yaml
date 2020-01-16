@@ -12,7 +12,7 @@ ESMA_cmake:
 ecbuild:
   local: ./@cmake/@ecbuild
   remote: git@github.com:GEOS-ESM/ecbuild.git
-  branch: feature/FindMKL-portability-improvement
+  tag: geos/v1.0.0
 
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
