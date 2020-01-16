@@ -7,7 +7,6 @@ ESMA_cmake:
   local: ./@cmake
   remote: git@github.com:GEOS-ESM/ESMA_cmake.git
   tag: v2.1.1
-  develop: develop
 
 ecbuild:
   local: ./@cmake/@ecbuild
@@ -35,7 +34,6 @@ MAPL:
   local: ./src/Shared/@MAPL
   remote: git@github.com:GEOS-ESM/MAPL.git
   branch: release/2.0.0
-  develop: develop
 
 FMS:
   local: ./src/Shared/@FMS
@@ -52,19 +50,16 @@ FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: git@github.com:GEOS-ESM/FVdycoreCubed_GridComp.git
   branch: dev/MAPL-2.0
-  develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: git@github.com:GEOS-ESM/GFDL_atmos_cubed_sphere.git
   branch: geos/MAPL-2.0
-  develop: geos/develop
 
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: git@github.com:GEOS-ESM/GEOSchem_GridComp.git
   branch: dev/MAPL-2.0
-  develop: develop
 
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM_GEOS5PlugMod/@mom
