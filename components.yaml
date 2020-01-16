@@ -2,11 +2,13 @@ ESMA_env:
   local: ./@env
   remote: git@github.com:GEOS-ESM/ESMA_env.git
   branch: dev/MAPL-2.0
+  develop: master
 
 ESMA_cmake:
   local: ./@cmake
   remote: git@github.com:GEOS-ESM/ESMA_cmake.git
   tag: v2.1.1
+  develop: develop
 
 ecbuild:
   local: ./@cmake/@ecbuild
@@ -18,12 +20,14 @@ NCEP_Shared:
   remote: git@github.com:GEOS-ESM/NCEP_Shared.git
   tag: v1.0.0
   sparse: ./config/NCEP_Shared.sparse
+  develop: master
 
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: git@github.com:GEOS-ESM/GMAO_Shared.git
   branch: dev/MAPL-2.0
   sparse: ./config/GMAO_Shared.sparse
+  develop: master
 
 GSW-Fortran:
   local: ./src/Shared/@GSW
@@ -34,11 +38,13 @@ MAPL:
   local: ./src/Shared/@MAPL
   remote: git@github.com:GEOS-ESM/MAPL.git
   branch: release/2.0.0
+  develop: develop
 
 FMS:
   local: ./src/Shared/@FMS
   remote: git@github.com:GEOS-ESM/FMS.git
   tag: geos/orphan/v1.0.3
+  develop: geos/orphan
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
@@ -50,21 +56,25 @@ FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: git@github.com:GEOS-ESM/FVdycoreCubed_GridComp.git
   branch: dev/MAPL-2.0
+  develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: git@github.com:GEOS-ESM/GFDL_atmos_cubed_sphere.git
   branch: geos/MAPL-2.0
+  develop: geos/develop
 
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: git@github.com:GEOS-ESM/GEOSchem_GridComp.git
   branch: dev/MAPL-2.0
+  develop: develop
 
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM_GEOS5PlugMod/@mom
   remote: git@github.com:GEOS-ESM/MOM5.git
   tag: geos/v1.0.1
+  develop: geos5
 
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
@@ -76,8 +86,10 @@ UMD_Etc:
   local: ./src/Applications/@UMD_Etc
   remote: git@github.com:GEOS-ESM/UMD_Etc.git
   tag: v1.0.2
+  develop: master
 
 CPLFCST_Etc:
   local: ./src/Applications/@CPLFCST_Etc
   remote: git@github.com:GEOS-ESM/CPLFCST_Etc.git
   tag: v1.0.1
+  develop: master
