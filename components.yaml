@@ -7,7 +7,7 @@ ESMA_env:
 ESMA_cmake:
   local: ./@cmake
   remote: git@github.com:GEOS-ESM/ESMA_cmake.git
-  tag: v2.1.1
+  tag: v2.1.2
   develop: develop
 
 ecbuild:
