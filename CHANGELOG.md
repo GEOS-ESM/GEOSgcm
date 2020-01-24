@@ -9,19 +9,19 @@
 1. Hotfixed a bug to enable regridding of catchement restarts from MERRA2
 2. REPLAY updates:
 
-  * The REPLAY algorithm within the GEOSagcm has been modified to enable a 4DIAU methodology consistent with that used in DAS mode. Prior to this release, REPLAY could only incorporate one analysis increment within the CORRECTORY_DURATION window (nominally 6-hours). The 4DIAU update allows for multiple analysis increments to be used within the CORRECTOR window. The number of increments that wiil be used is determined by the settings of the REPLAY_FILE_FREQUENCY (in nnnnnn seconds format) and the REPLAY_FILE_REFERENCE_TIME (in HHMMSS format). Based on these two settings, the code will determine how many analysis increments will properly fit within the CORRECTOR window. Note: the previous setting of PREDICTOR_DURATION is no longer needed since the code computes the required length automatically.
+   The REPLAY algorithm within the GEOSagcm has been modified to enable a 4DIAU methodology consistent with that used in DAS mode. Prior to this release, REPLAY could only incorporate one analysis increment within the CORRECTOR_DURATION window (nominally 6-hours). The 4DIAU update allows for multiple analysis increments to be used within the CORRECTOR window. The number of increments that wiil be used is determined by the settings of the REPLAY_FILE_FREQUENCY (in nnnnnn seconds format) and the REPLAY_FILE_REFERENCE_TIME (in HHMMSS format). Based on these two settings, the code will determine how many analysis increments will properly fit within the CORRECTOR window. Note: the previous setting of PREDICTOR_DURATION is no longer needed since the code computes the required length automatically.
 
-  * The updated algorthm allows for 2 types of REPLAY:
+   The updated algorthm allows for 2 types of REPLAY:
 
-    1. Exact     (Uses Archived Increment Files)
-    2. Regular  (Uses Archived Analysis/Assimilation Files)
+     1. Exact     (Uses Archived Increment Files)
+     
+        Exact REPLAYs identically reproduce (bit-for-bit) a previous GEOS DAS experiment by simply using the archived IAU forcing from the DAS experiment. For these cases, only the CORRECTOR step is employed and is, therefore, as efficient as a stand-alone model run.
+     
+     2. Regular  (Uses Archived Analysis/Assimilation Files)
 
+        Regular REPLAYs are used to mimic the original IAU methodology, i.e., both the PREDICTOR and the CORRECTOR steps are employed. The key difference being that the Analysis is based on archived datasets. These Analyses may be from the GEOS DAS system, or from any other source that is written using the appropriate GEOS DAS ana.eta data format.
 
-  * Exact REPLAYs identically reproduce (bit-for-bit) a previous GEOS DAS experiment by simply using the archived IAU forcing from the DAS experiment. For these cases, only the CORRECTOR step is employed and is, therefore, as efficient as a stand-alone model run.
-
-  * Regular REPLAYs are used to mimic the original IAU methodology, i.e., both the PREDICTOR and the CORRECTOR steps are employed. The key difference being that the Analysis is based on archived datasets. These Analyses may be from the GEOS DAS system, or from any other source that is written using the appropriate GEOS DAS ana.eta data format.
-
-  * For more detailed information, please see the comments within the AGCM.rc.tmpl file.
+   For more detailed information, please see the comments within the AGCM.rc.tmpl file.
 
 ## [10.4.0] - 2020-01-13
 
