@@ -67,7 +67,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: git@github.com:GEOS-ESM/GEOSchem_GridComp.git
-  tag: v1.1.0
+  tag: v1.0.15
   develop: develop
 
 mom:
