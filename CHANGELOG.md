@@ -1,5 +1,18 @@
 # Changelog
 
+## [10.6.0] - 2020-01-31
+
+### Zero-diff to previous release: NO
+
+### Restart Changes: NO
+
+1. Atmospheric constituents (aersols, co, co2, etc) are now transported through moist/GF. This is equivalent to the way transport is handled in f525land_fpp/f525_fp.
+2. Added exports for nitrate tendency and other fluxes related to GF convection.
+3. Added nitrate tendency to history templates.
+4. Upgraded to GEOSchem_GridComp to v1.1.0.
+5. Set the default k_split = 2.
+6. Fixed gcm_convert.j to work consistent with how gcm_setup and gcm_run.j interact.
+
 ## [10.5.0] - 2020-01-24
 
 ### Zero-diff to previous release: YES (but user must setup experiment differently)
