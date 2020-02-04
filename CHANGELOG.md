@@ -1,5 +1,17 @@
 # Changelog
 
+## [10.7.0] - 2020-02-04
+
+### Zero-diff to previous release: NO
+
+### Zero-diff to CVS tag Jason-3_5_aoil
+
+### Restart Changes: NO
+
+1. Correction to RRTMG Shortwave 'layreffr' variable to reduce stratospheric cold bias.
+2. Stats plots updates to produce stratospheric forecast statistics up to 1mb.
+3. Correction to gcm_run.j & gcm_forecast.tmpl related to REPLAY with GAAS aod files.
+
 ## [10.6.0] - 2020-01-31
 
 ### Zero-diff to previous release: NO
