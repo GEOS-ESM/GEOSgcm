@@ -1,13 +1,13 @@
 ESMA_env:
   local: ./@env
   remote: git@github.com:GEOS-ESM/ESMA_env.git
-  tag: v1.4.1
+  branch: dev/MAPL-2.0
   develop: master
 
 ESMA_cmake:
   local: ./@cmake
   remote: git@github.com:GEOS-ESM/ESMA_cmake.git
-  tag: v1.0.11
+  tag: v2.1.2
   develop: develop
 
 ecbuild:
@@ -25,7 +25,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: git@github.com:GEOS-ESM/GMAO_Shared.git
-  tag: v1.0.16
+  branch: dev/MAPL-2.0
   sparse: ./config/GMAO_Shared.sparse
   develop: master
 
@@ -37,7 +37,7 @@ GSW-Fortran:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: git@github.com:GEOS-ESM/MAPL.git
-  tag: v1.1.13
+  branch: release/2.0.0
   develop: develop
 
 FMS:
@@ -49,25 +49,25 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: git@github.com:GEOS-ESM/GEOSgcm_GridComp.git
-  tag: v1.5.0
+  branch: dev/MAPL-2.0
   develop: develop
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: git@github.com:GEOS-ESM/FVdycoreCubed_GridComp.git
-  tag: v1.0.9
+  branch: dev/MAPL-2.0
   develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: git@github.com:GEOS-ESM/GFDL_atmos_cubed_sphere.git
-  tag: geos/v1.0.2
+  branch: geos/MAPL-2.0
   develop: geos/develop
 
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: git@github.com:GEOS-ESM/GEOSchem_GridComp.git
-  tag: v1.1.0
+  branch: dev/MAPL-2.0
   develop: develop
 
 mom:
@@ -79,7 +79,7 @@ mom:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: git@github.com:GEOS-ESM/GEOSgcm_App.git
-  tag: v1.2.1
+  branch: dev/MAPL-2.0
   develop: develop
 
 UMD_Etc:
