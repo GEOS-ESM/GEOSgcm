@@ -1,5 +1,19 @@
 # Changelog
 
+## [10.8.0] - 2020-02-06
+
+### Zero-diff to previous release: NO
+
+### Restart Changes: NO (only if AOIL_COMP_SWITCH=ON)
+
+Recoded atmosphere-ocean interface layer (AOIL). Provides an option to exercise old/new versions of the AOIL.
+
+1. Old version (AOIL_COMP_SWITCH = ON):
+Default. Using the old interface is still non-zero diff to x0039, however, shown to be statistically insignificant in terms of forecast skill scores. Restarts with old interface can be used as is.
+
+2. New version (AOIL_COMP_SWITCH = OFF):
+If the new interface is turned on, then the user must provide additional fields in the internal state. Contact Santha Akella for a utility to do that.
+
 ## [10.7.0] - 2020-02-04
 
 ### Zero-diff to previous release: NO
