@@ -37,7 +37,7 @@ GSW-Fortran:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: git@github.com:GEOS-ESM/MAPL.git
-  branch: release/2.0.0
+  branch: master
   develop: develop
 
 FMS:
