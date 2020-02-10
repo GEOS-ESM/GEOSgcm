@@ -1,7 +1,7 @@
 ESMA_env:
   local: ./@env
   remote: git@github.com:GEOS-ESM/ESMA_env.git
-  branch: dev/MAPL-2.0
+  tag: v2.0.0
   develop: master
 
 ESMA_cmake:
