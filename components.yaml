@@ -55,7 +55,7 @@ GEOSgcm_GridComp:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: git@github.com:GEOS-ESM/FVdycoreCubed_GridComp.git
-  branch: dev/MAPL-2.0
+  tag: v1.1.0
   develop: develop
 
 fvdycore:
