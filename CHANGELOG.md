@@ -1,5 +1,23 @@
 # Changelog
 
+## [10.9.0] - 2020-02-13
+
+### Zero-diff to previous release: NO
+
+### Restart Changes: NO
+
+This release is equivalent in physics to v10.8.0 but now uses [MAPL
+2.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.0.0). The release
+is non-zero-diff due to the use of ESMF regridding for History and
+ExtData.
+
+Also, this version of GEOSgcm now uses the new PFIO IO server to handle
+History and ExtData file access and writing. By default, these IO
+servers run on the same resources (i.e., nodes) as the application.
+However, `gcm_setup` and `gcm_run.j` have been altered so that, by
+default, at high-resolution (C180+) the IO servers are on separate nodes
+for performance and memory reasons. 
+
 ## [10.8.0] - 2020-02-06
 
 ### Zero-diff to previous release: NO
