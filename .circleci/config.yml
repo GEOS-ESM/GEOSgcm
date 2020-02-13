@@ -19,4 +19,4 @@ jobs:
             mkdir build
             cd build
             cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=gfortran -DCMAKE_BUILD_TYPE=Debug
-            make -j2 install
+            make -j2 install VERBOSE=1
