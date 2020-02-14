@@ -14,6 +14,10 @@ jobs:
           command: |
             checkout_externals -e Develop.cfg
       - run:
+          name: "Convert to static esmf"
+          command: |
+            sed -i -e 's#esmf_fullylinked#${BASEDIR}/lib/libesmf.a#' ./@cmake/FindBaselibs.cmake
+      - run:
           name: "Build"
           command: |
             mkdir build
