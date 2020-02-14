@@ -21,8 +21,8 @@ jobs:
           name: "Fix linker flags"
           command: |
             sed -i -e '$aset(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS}    -Wl,--allow-shlib-undefined")' ./@cmake/GNU.cmake
-            sed -i -e '$aset(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--allow-shlib-undefined")' ./@cmake/GNU.cmake
-            sed -i -e '$aset(CMAKE_STATIC_LINKER_FLAGS "${CMAKE_STATIC_LINKER_FLAGS} -Wl,--allow-shlib-undefined")' ./@cmake/GNU.cmake
+            #sed -i -e '$aset(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--allow-shlib-undefined")' ./@cmake/GNU.cmake
+            #sed -i -e '$aset(CMAKE_STATIC_LINKER_FLAGS "${CMAKE_STATIC_LINKER_FLAGS} -Wl,--allow-shlib-undefined")' ./@cmake/GNU.cmake
       - run:
           name: "CMake"
           command: |
