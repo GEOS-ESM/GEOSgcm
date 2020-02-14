@@ -14,15 +14,9 @@ jobs:
           command: |
             checkout_externals -e Develop.cfg
       - run:
-          name: "Convert to static esmf"
-          command: |
-            sed -i -e 's#esmf_fullylinked#${BASEDIR}/lib/libesmf.a#' ./@cmake/FindBaselibs.cmake
-      - run:
           name: "Fix linker flags"
           command: |
-            sed -i -e '$aset(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS}    -Wl,--allow-shlib-undefined")' ./@cmake/GNU.cmake
-            #sed -i -e '$aset(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--allow-shlib-undefined")' ./@cmake/GNU.cmake
-            #sed -i -e '$aset(CMAKE_STATIC_LINKER_FLAGS "${CMAKE_STATIC_LINKER_FLAGS} -Wl,--allow-shlib-undefined")' ./@cmake/GNU.cmake
+            sed -i -e '$aset(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS}    -Wl,--unresolved-symbols=ignore-all")' ./@cmake/GNU.cmake
       - run:
           name: "CMake"
           command: |
@@ -33,4 +27,4 @@ jobs:
           name: "Build"
           command: |
             cd build
-            make -j1 GFIO_mean_r8.x VERBOSE=1
+            make -j2 install
