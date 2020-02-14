@@ -18,9 +18,12 @@ jobs:
           command: |
             sed -i -e 's#esmf_fullylinked#${BASEDIR}/lib/libesmf.a#' ./@cmake/FindBaselibs.cmake
       - run:
-          name: "Build"
+          name: "CMake"
           command: |
             mkdir build
             cd build
             cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=gfortran -DCMAKE_BUILD_TYPE=Debug
-            make -j1 install VERBOSE=1
+      - run:
+          name: "Build"
+          command: |
+            make -j1 GFIO_mean_r8.x VERBOSE=1
