@@ -26,4 +26,5 @@ jobs:
       - run:
           name: "Build"
           command: |
+            cd build
             make -j1 GFIO_mean_r8.x VERBOSE=1
