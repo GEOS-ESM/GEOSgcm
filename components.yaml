@@ -43,8 +43,8 @@ MAPL:
 FMS:
   local: ./src/Shared/@FMS
   remote: git@github.com:GEOS-ESM/FMS.git
-  tag: geos/orphan/v1.0.3
-  develop: geos/orphan
+  tag: geos/2019.01.01
+  develop: geos/master
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
