@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: gmao/geos-build-env:6.0.2
+      - image: gmao/geos-build-env:6.0.4
     working_directory: /root/project
     steps:
       - checkout
@@ -10,13 +10,24 @@ jobs:
           name: "Versions etc"
           command: mpirun --version && gfortran --version && echo $BASEDIR && pwd && ls
       - run:
-          name: "Checkout external repos"
+          name: "Mepo clone external repos"
           command: |
-            checkout_externals -e Develop.cfg
+            mepo init
+            mepo clone
+            mepo develop GEOSgcm_App GEOSgcm_GridComp
+            mepo status
       - run:
-          name: "Build"
+          name: "Fix linker flags"
+          command: |
+            sed -i -e '$aset(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS}    -Wl,--unresolved-symbols=ignore-all")' ./@cmake/GNU.cmake
+      - run:
+          name: "CMake"
           command: |
             mkdir build
             cd build
             cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=gfortran -DCMAKE_BUILD_TYPE=Debug
+      - run:
+          name: "Build"
+          command: |
+            cd build
             make -j2 install
