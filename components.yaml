@@ -49,6 +49,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: git@github.com:GEOS-ESM/GEOSgcm_GridComp.git
+  tag: v1.5.0_patch/sdrabenh/#214-rrtmgsw-410
   develop: v1.5.0_patch/sdrabenh/#214-rrtmgsw-410
 
 FVdycoreCubed_GridComp:
