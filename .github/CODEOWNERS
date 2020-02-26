@@ -3,10 +3,12 @@
 # Order is important; the last matching pattern takes the most
 # precedence.
 
-# GCM Gatekeepers should own the externals files
-Externals.cfg @GEOS-ESM/gcm-gatekeepers
-Develop.cfg   @GEOS-ESM/gcm-gatekeepers
+# Everything in GEOSgcm should be owned by the GCM Gatekeepers
+* @GEOS-ESM/gcm-gatekeepers
 
 # The GEOS CMake Team is the CODEOWNER for the CMakeLists.txt files in this repository
 CMakeLists.txt @GEOS-ESM/cmake-team
 
+# The GEOS CMake Team should be notified about CircleCI and config changes
+/.circleci/    @GEOS-ESM/cmake-team
+/config/       @GEOS-ESM/cmake-team
