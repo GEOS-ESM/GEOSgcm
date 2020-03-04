@@ -1,5 +1,37 @@
 # Changelog
 
+## [10.11.0] - 2020-03-04
+
+### Zero-diff to previous release: NO
+
+### Restart Changes: NO
+
+Major changes are:
+
+1. RRTMG_SW:
+   Updates RRTMG_SW in GEOS to be equivalent to RRTMG_SW v4.10. This fix increases the heating rates near the stratospause region and is a non zero-diff change.
+   
+2. RAS_NO_NEG:
+   Provides an optional flag that ensures RAS results are non-negative. This is an important fix for chemical species that was extremely useful in the Icarus but did not make it into Jason. The fix is "off" by default and therefore zero-diff.
+   
+3. Plots:
+ * Enable additional upper levels for forecast stats plots.
+ * Add QITOT & QLTOT to horizontal plots.
+ * Add aerosols to time series plots.
+
+Other updates:
+   * Remove #PBS pragmas at NCCS to use #SBATCH.
+   * Brought the chem setup scripts in line with gcm_setup.
+   * Bug fixes for gcm_run and gcm_forecast scripts.
+
+## [10.10.0] - 2020-02-20
+
+### Zero-diff to previous release: NO
+
+### Restart Changes: NO
+
+This release is equivalent to the [NOAA 2019.01.01 Release](https://github.com/NOAA-GFDL/FMS/releases/tag/2019.01.01) but with the addition of GEOS constants controlled by `-DMAPL_MODE`. Additional changes allow building with CMake.
+
 ## [10.9.0] - 2020-02-13
 
 ### Zero-diff to previous release: NO
