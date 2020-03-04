@@ -1,10 +1,10 @@
-ESMA_env:
+env:
   local: ./@env
   remote: git@github.com:GEOS-ESM/ESMA_env.git
   tag: v2.0.2
   develop: master
 
-ESMA_cmake:
+cmake:
   local: ./@cmake
   remote: git@github.com:GEOS-ESM/ESMA_cmake.git
   tag: v2.1.2
