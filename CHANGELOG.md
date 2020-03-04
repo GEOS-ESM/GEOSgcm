@@ -15,9 +15,9 @@ Major changes are:
    Provides an optional flag that ensures RAS results are non-negative. This is an important fix for chemical species that was extremely useful in the Icarus but did not make it into Jason. The fix is "off" by default and therefore zero-diff.
    
 3. Plots:
-   * Enable additional upper levels for forecast stats plots.
-   * Add QITOT & QLTOT to horizontal plots.
-   * Add aerosols to time series plots.
+ * Enable additional upper levels for forecast stats plots.
+ * Add QITOT & QLTOT to horizontal plots.
+ * Add aerosols to time series plots.
 
 Other updates:
    * Remove #PBS pragmas at NCCS to use #SBATCH.
