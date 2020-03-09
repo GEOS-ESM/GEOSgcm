@@ -1,30 +1,30 @@
 env:
   local: ./@env
-  remote: ..//ESMA_env.git
+  remote: ../ESMA_env.git
   tag: v2.0.2
   develop: master
 
 cmake:
   local: ./@cmake
-  remote: ..//ESMA_cmake.git
+  remote: ../ESMA_cmake.git
   tag: v2.1.2
   develop: develop
 
 ecbuild:
   local: ./@cmake/@ecbuild
-  remote: ..//ecbuild.git
+  remote: ../ecbuild.git
   tag: geos/v1.0.0
 
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
-  remote: ..//NCEP_Shared.git
+  remote: ../NCEP_Shared.git
   tag: v1.0.0
   sparse: ./config/NCEP_Shared.sparse
   develop: master
 
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
-  remote: ..//GMAO_Shared.git
+  remote: ../GMAO_Shared.git
   tag: v1.1.1
   sparse: ./config/GMAO_Shared.sparse
   develop: master
@@ -36,60 +36,60 @@ GSW-Fortran:
 
 MAPL:
   local: ./src/Shared/@MAPL
-  remote: ..//MAPL.git
+  remote: ../MAPL.git
   tag: v2.0.1
   develop: develop
 
 FMS:
   local: ./src/Shared/@FMS
-  remote: ..//FMS.git
+  remote: ../FMS.git
   tag: geos/2019.01.01
   develop: geos/master
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
-  remote: ..//GEOSgcm_GridComp.git
+  remote: ../GEOSgcm_GridComp.git
   tag: v1.7.0
   develop: develop
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
-  remote: ..//FVdycoreCubed_GridComp.git
+  remote: ../FVdycoreCubed_GridComp.git
   tag: v1.1.0
   develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
-  remote: ..//GFDL_atmos_cubed_sphere.git
+  remote: ../GFDL_atmos_cubed_sphere.git
   tag: geos/v1.1.0
   develop: geos/develop
 
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
-  remote: ..//GEOSchem_GridComp.git
+  remote: ../GEOSchem_GridComp.git
   tag: v1.2.0
   develop: develop
 
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM_GEOS5PlugMod/@mom
-  remote: ..//MOM5.git
+  remote: ../MOM5.git
   tag: geos/v1.0.1
   develop: geos5
 
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
-  remote: ..//GEOSgcm_App.git
+  remote: ../GEOSgcm_App.git
   tag: v1.3.1
   develop: develop
 
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
-  remote: ..//UMD_Etc.git
+  remote: ../UMD_Etc.git
   tag: v1.0.2
   develop: master
 
 CPLFCST_Etc:
   local: ./src/Applications/@CPLFCST_Etc
-  remote: ..//CPLFCST_Etc.git
+  remote: ../CPLFCST_Etc.git
   tag: v1.0.1
   develop: master
