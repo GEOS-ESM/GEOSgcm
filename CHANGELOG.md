@@ -1,5 +1,17 @@
 # Changelog
 
+## [10.12.0] - 2020-03-09
+
+### Zero-diff to previous release: NO
+
+### Restart Changes: NO
+
+Major changes are:
+
+1. Fixed "zero-diff" issue related to GF evaporation vs total rain, fixed GF cloud-mass-flux scaling issue.
+
+2. Move ShallowCu contribution to mass flux and add scale-dependent stochastics to convection.
+
 ## [10.11.0] - 2020-03-04
 
 ### Zero-diff to previous release: NO
