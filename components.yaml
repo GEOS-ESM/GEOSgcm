@@ -25,9 +25,9 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: git@github.com:GEOS-ESM/GMAO_Shared.git
-  tag: v1.0.16
+  tag: JM_v10.8.0_GF+SW_fix
   sparse: ./config/GMAO_Shared.sparse
-  develop: master
+  develop: JM_v10.8.0_GF+SW_fix
 
 GSW-Fortran:
   local: ./src/Shared/@GSW
@@ -49,8 +49,8 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: git@github.com:GEOS-ESM/GEOSgcm_GridComp.git
-  tag: v1.5.0
-  develop: develop
+  tag: JM_v10.8.0_GF+SW_fix
+  develop: JM_v10.8.0_GF+SW_fix
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
@@ -67,8 +67,8 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: git@github.com:GEOS-ESM/GEOSchem_GridComp.git
-  tag: v1.1.0
-  develop: develop
+  tag: JM_v10.8.0_GF+SW_fix
+  develop: JM_v10.8.0_GF+SW_fix
 
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM_GEOS5PlugMod/@mom
