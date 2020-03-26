@@ -31,7 +31,7 @@ GMAO_Shared:
 
 GSW-Fortran:
   local: ./src/Shared/@GSW
-  remote: git@github.com:JCSDA/GSW-Fortran.git
+  remote: https://github.com/JCSDA/GSW-Fortran.git
   branch: develop
 
 MAPL:
