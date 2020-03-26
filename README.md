@@ -15,6 +15,12 @@ In your `.bashrc` or `.tcshrc` or other rc file add a line:
 module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES11
 ```
 
+##### NCCS (SLES12)
+
+```
+module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
+```
+
 ##### NAS
 ```
 module use -a /nobackup/gmao_SIteam/modulefiles
@@ -84,7 +90,7 @@ Using the `checkout_externals` command to compose the model is done by:
 cd GEOSgcm
 checkout_externals
 ```
-i###### Checking out develop 
+###### Checking out develop 
 To use the `Develop.cfg` file, run:
 ```
 checkout_externals -e Develop.cfg
