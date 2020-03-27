@@ -49,7 +49,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.8.0
+  tag: v1.8.2
   develop: develop
 
 FVdycoreCubed_GridComp:
@@ -67,7 +67,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.2.0
+  tag: v1.3.2
   develop: develop
 
 mom:
@@ -79,7 +79,7 @@ mom:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.3.1
+  tag: v1.3.2
   develop: develop
 
 UMD_Etc:
