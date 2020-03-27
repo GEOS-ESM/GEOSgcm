@@ -9,7 +9,7 @@
 Major changes are:
 
 1. Broader support for various computing environments including SLES12. Adds a new question to gcm_setup (and other setup scripts) that asks a user what type of processor to run on. It then uses the "default" number of cores per those processors to better figure out how to handle the IOserver nodes.
-2. Changes that enable MAPL2 GEOS to work with MPT at NCCS (but still not SLES12 Haswell).
+2. Changes that enable MAPL2 GEOS to work with MPT at NCCS.
 3. Changed REPLAY_Shutoff alarm from NON-STICKY to STICKY, and used it in GAAS to stop updates in forecasts during REPLAY mode.
 4. Updates to moist and GOCART using 2MOMENT microphysics and MG3. These are 0-diff when running the default 1MOMENT microphysics.
 5. Modified gcmpost.script to only operate on pressure-level collections.
