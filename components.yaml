@@ -7,13 +7,13 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v2.1.2
+  tag: v2.2.1
   develop: develop
 
 ecbuild:
   local: ./@cmake/@ecbuild
   remote: ../ecbuild.git
-  tag: geos/v1.0.0
+  tag: geos/v1.0.1
 
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
@@ -25,7 +25,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.1.1
+  tag: v1.1.2
   sparse: ./config/GMAO_Shared.sparse
   develop: master
 
@@ -37,7 +37,7 @@ GSW-Fortran:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.0.2
+  tag: v2.0.3
   develop: develop
 
 FMS:
@@ -85,7 +85,7 @@ GEOSgcm_App:
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
   remote: ../UMD_Etc.git
-  tag: v1.0.2
+  tag: v1.0.3
   develop: master
 
 CPLFCST_Etc:
