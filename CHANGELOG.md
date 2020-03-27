@@ -1,5 +1,24 @@
 # Changelog
 
+## [10.12.1] - 2020-03-27
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO except moist_internal has an additional 3 fields: NGRAUPEL, NRAIN, NSNOW
+
+Major changes are:
+
+1. Broader support for various computing environments including SLES12. Adds a new question to gcm_setup (and other setup scripts) that asks a user what type of processor to run on. It then uses the "default" number of cores per those processors to better figure out how to handle the IOserver nodes.
+2. Changes that enable MAPL2 GEOS to work with MPT at NCCS.
+3. Changed REPLAY_Shutoff alarm from NON-STICKY to STICKY, and used it in GAAS to stop updates in forecasts during REPLAY mode.
+4. Updates to moist and GOCART using 2MOMENT microphysics and MG3. These are 0-diff when running the default 1MOMENT microphysics.
+5. Modified gcmpost.script to only operate on pressure-level collections.
+6. Fixes issues where systems do not have either ImageMagick or F2Py. If F2Py is not found, then F2Py targets are not built.
+7. Changes to GMAO_hermes:
+   * Split off the independent sections of module m_topo_remap used by FV core into shared_topo_remap
+   * write_eta.F90 added to prepare for a config file which eventually will replace m_set_eta module
+   * Add option to build HERMES_LIGHT
+
 ## [10.12.0] - 2020-03-09
 
 ### Zero-diff to previous release: NO
