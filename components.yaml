@@ -37,7 +37,7 @@ GSW-Fortran:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.0.4
+  tag: v2.0.5
   develop: develop
 
 FMS:
