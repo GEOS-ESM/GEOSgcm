@@ -1,13 +1,13 @@
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v2.0.4
+  tag: v2.1.0
   develop: master
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v2.2.1
+  tag: v3.0.0
   develop: develop
 
 ecbuild:
@@ -37,7 +37,7 @@ GSW-Fortran:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.0.5
+  tag: v2.1.0
   develop: develop
 
 FMS:
