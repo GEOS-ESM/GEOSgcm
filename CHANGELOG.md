@@ -1,5 +1,25 @@
 # Changelog
 
+## [10.12.2] - 2020-04-16
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO except moist_import has an additional field: FRACI
+
+Major changes are:
+
+1. Added connectivity from MOIST to CHEM for 2 fields (RI and RL).
+2. Updates to the obio component which was in the CVS Icarus-2.0 tag.
+3. Bugfix for coupled mode renaming TSKINI to TSKINICE.
+4. Bugfix for DTDT_moist which was initially set to temperature but never updated to provide tendency.
+5. Compute the lightning flash rate (LFR) online following the approach used by GEOSCHEMchem_GridComp. The LFR is calculated in MOIST and then made available to other components as a new export field (LFR_GCC).
+6. Modified the mk_Restarts script to run on SLES-12.
+7. Update RRTMGP to Pincus 2020-Feb-12.
+8. New Surface parameter resource file (GEOSsurface_GridComp/Shared/GEOS_SurfaceGridComp.rc) to avoid having to add new parameters into AGCM.rc.tmpl and prepare for further science development.
+9. Correcting the following issues with the single column model: (1) GF imports from DYN were not filled; (2) scm_setup incompletely adjusted for L132; (3) SST file for cfmip_s11 case was incorrect.
+10. Allows regrid.pl to run on SLES-12
+11. Enabled compilation of convert_aerosols.x as R8
+
 ## [10.12.1] - 2020-03-27
 
 ### Zero-diff to previous release: YES
