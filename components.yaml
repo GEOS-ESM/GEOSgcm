@@ -7,7 +7,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v2.2.1
+  tag: v2.2.2
   develop: develop
 
 ecbuild:
@@ -49,7 +49,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.8.2
+  tag: v1.8.3
   develop: develop
 
 FVdycoreCubed_GridComp:
