@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: gmao/geos-build-env-gcc-source:6.0.4
+      - image: gmao/geos-build-env-gcc-source:6.0.11
     working_directory: /root/project
     steps:
       - checkout
