@@ -1,5 +1,18 @@
 # Changelog
 
+## [10.12.3] - 2020-04-21
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+Major changes are:
+* Add monthly mean feature.
+
+Fixed:
+* Added a default initialization clause for pFlogger so that INFO messages go to console.
+* Workaround for MPT 2.17 build bug with `MPI_Comm_set_errhandler`.
+
 ## [10.12.2] - 2020-04-16
 
 ### Zero-diff to previous release: YES
