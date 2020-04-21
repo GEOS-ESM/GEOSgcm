@@ -7,11 +7,9 @@
 ### Restart Changes: NO
 
 Major changes are:
-* Add monthly mean feature.
-
-Fixed:
-* Added a default initialization clause for pFlogger so that INFO messages go to console.
-* Workaround for MPT 2.17 build bug with `MPI_Comm_set_errhandler`.
+* Update to MAPL 2.1 which includes both fixes from [MAPL v2.1.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.1.0) and [MAPL v2.1.1](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.1.1)
+  * With this is included updating to latest releases of [ESMA_env](https://github.com/GEOS-ESM/ESMA_env/releases) and [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake/blob/master/CHANGELOG.md) needed by MAPL 2.1
+  * Add monthly mean features
 
 ## [10.12.2] - 2020-04-16
 
