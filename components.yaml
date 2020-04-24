@@ -76,6 +76,12 @@ mom:
   tag: geos/v1.0.1
   develop: geos5
 
+mit:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MIT_GEOS5PlugMod/@mit
+  remote: ../MITgcm.git
+  tag: checkpoint67q
+  develop: master
+
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
