@@ -12,5 +12,5 @@
 # The GEOS CMake Team is the CODEOWNER for the CMakeLists.txt files in this repository
 CMakeLists.txt @GEOS-ESM/cmake-team
 
-# The GEOS CMake Team should be notified about CircleCI and config changes
+# The GEOS CMake Team should be notified about and approve config changes
 /config/       @GEOS-ESM/cmake-team
