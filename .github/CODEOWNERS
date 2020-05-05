@@ -6,9 +6,11 @@
 # Everything in GEOSgcm should be owned by the GCM Gatekeepers
 * @GEOS-ESM/gcm-gatekeepers
 
+# The GCM gatekeepers and CMake should know/approve these
+/.circleci/    @GEOS-ESM/cmake-team @GEOS-ESM/gcm-gatekeepers
+
 # The GEOS CMake Team is the CODEOWNER for the CMakeLists.txt files in this repository
 CMakeLists.txt @GEOS-ESM/cmake-team
 
-# The GEOS CMake Team should be notified about CircleCI and config changes
-/.circleci/    @GEOS-ESM/cmake-team
+# The GEOS CMake Team should be notified about and approve config changes
 /config/       @GEOS-ESM/cmake-team
