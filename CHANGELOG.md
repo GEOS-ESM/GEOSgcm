@@ -1,5 +1,23 @@
 # Changelog
 
+## [10.12.4] - 2020-05-15
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+Major changes are:
+1. Brings RRTMGP code up to date with recent Pincus Master changes as of 3 May 2020
+2. Add ability to run setup scripts in another's install directory
+3. Support for new surface parameter resource file for land
+4. Fixes issues with the scm_setup
+5. Update CircleCI to use Baselibs 6.0.12
+6. Use different ALLREDUCE algorithm for Intel MPI
+7. Change Intel MPI GATHERV algorithm so GEOSgcm does not lock up on skylakes at checkpoint
+8. Add a commented out setenv for the FOR_IGNORE_EXCEPTIONS in MPT
+9. Add option to symlink GEOSgcm.x in experiment directory
+10. FSEGMENT bug fix in gcm_forecast.setup
+
 ## [10.12.3] - 2020-04-21
 
 ### Zero-diff to previous release: YES
