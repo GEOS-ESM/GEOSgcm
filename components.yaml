@@ -85,7 +85,7 @@ mit:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.3.2
+  branch: feature/udistr/MITgcm-DYAMOND
   develop: develop
 
 UMD_Etc:
