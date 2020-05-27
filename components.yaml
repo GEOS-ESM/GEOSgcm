@@ -1,13 +1,13 @@
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v2.1.3
+  tag: v2.1.5
   develop: master
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.0.2
+  tag: v3.0.3
   develop: develop
 
 ecbuild:
@@ -37,14 +37,14 @@ GSW-Fortran:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.1.3
+  tag: v2.1.4
   develop: develop
 
 FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
   tag: geos/2019.01.01
-  develop: geos/master
+  develop: geos/release/2019.01
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
