@@ -44,7 +44,7 @@ FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
   tag: geos/2019.01.01
-  develop: geos/master
+  develop: geos/release/2019.01
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
