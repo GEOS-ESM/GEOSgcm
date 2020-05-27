@@ -1,7 +1,7 @@
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v2.1.4
+  tag: v2.1.5
   develop: master
 
 cmake:
