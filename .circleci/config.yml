@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: gmao/geos-build-env-gcc-source:6.0.12
+      - image: gmao/geos-build-env-gcc-source:6.0.13-openmpi_4.0.3-gcc_9.3.0
     working_directory: /root/project
     steps:
       - checkout
