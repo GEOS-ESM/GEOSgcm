@@ -7,13 +7,13 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.0.3
+  tag: v3.0.4
   develop: develop
 
 ecbuild:
   local: ./@cmake/@ecbuild
   remote: ../ecbuild.git
-  tag: geos/v1.0.1
+  tag: geos/v1.0.5
 
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
