@@ -1,5 +1,20 @@
 # Changelog
 
+## [10.12.5] - 2020-06-05
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+Changes include:
+1. Uptick the versions of many sub-repos (MAPL,cmake,env,GEOSchem_GridComp,GEOSgcm_GridComp,GEOSgcm_App,GMAO_Shared).
+2. Bugfix for array bounds in RRTMG LW.
+3. Rolls back the constraint on gcmpost.script to only operate on pressure-level collections.
+4. Added ignore_nan option for time_ave.F (off by default).
+5. Enables correct post proccessing of MAPL monthly collections.
+6. CICE updates for reading binary grid files.
+7. MIN_FREEZE_SALINITY added to AGCM.rc in coupled mode.
+
 ## [10.12.4] - 2020-05-15
 
 ### Zero-diff to previous release: YES
