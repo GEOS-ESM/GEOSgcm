@@ -73,7 +73,7 @@ GEOSchem_GridComp:
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM_GEOS5PlugMod/@mom
   remote: ../MOM5.git
-  tag: geos/v1.0.1
+  tag: geos/v1.0.2
   develop: geos5
 
 GEOSgcm_App:
