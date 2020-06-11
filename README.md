@@ -20,6 +20,24 @@ module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES11
 ```
 module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
 ```
+###### Auto detection of OS
+To better automate this, you can have for bash:
+```
+if [[ -e /etc/os-release ]]
+then
+   module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
+else
+   module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES11
+fi
+```
+or for tcsh:
+```
+if (-e /etc/os-release) then
+   module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
+else
+   module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES11
+endif
+```
 
 ##### NAS
 ```
