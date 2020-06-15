@@ -29,11 +29,6 @@ GMAO_Shared:
   sparse: ./config/GMAO_Shared.sparse
   develop: master
 
-GSW-Fortran:
-  local: ./src/Shared/@GSW
-  remote: https://github.com/JCSDA/GSW-Fortran.git
-  branch: develop
-
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
