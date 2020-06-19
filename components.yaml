@@ -67,7 +67,7 @@ GEOSchem_GridComp:
 HEMCO:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@HEMCO_GridComp
   remote: ../HEMCO.git
-  branch: master
+  branch: feature/wjamieson/GMAO_HEMCO_GridComp_updates
 
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM_GEOS5PlugMod/@mom
