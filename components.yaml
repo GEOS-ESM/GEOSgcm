@@ -2,7 +2,7 @@ env:
   local: ./@env
   remote: ../ESMA_env.git
   tag: v2.1.5
-  develop: master
+  develop: main
 
 cmake:
   local: ./@cmake
@@ -20,14 +20,14 @@ NCEP_Shared:
   remote: ../NCEP_Shared.git
   tag: v1.0.0
   sparse: ./config/NCEP_Shared.sparse
-  develop: master
+  develop: main
 
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
   tag: v1.1.4
   sparse: ./config/GMAO_Shared.sparse
-  develop: master
+  develop: main
 
 MAPL:
   local: ./src/Shared/@MAPL
@@ -81,10 +81,10 @@ UMD_Etc:
   local: ./src/Applications/@UMD_Etc
   remote: ../UMD_Etc.git
   tag: v1.0.3
-  develop: master
+  develop: main
 
 CPLFCST_Etc:
   local: ./src/Applications/@CPLFCST_Etc
   remote: ../CPLFCST_Etc.git
   tag: v1.0.1
-  develop: master
+  develop: main
