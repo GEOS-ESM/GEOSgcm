@@ -38,7 +38,7 @@ MAPL:
 FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
-  tag: geos/2019.01.01
+  tag: geos/2019.01.02
   develop: geos/release/2019.01
 
 GEOSgcm_GridComp:
@@ -68,7 +68,7 @@ GEOSchem_GridComp:
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM_GEOS5PlugMod/@mom
   remote: ../MOM5.git
-  tag: geos/v1.0.2
+  tag: geos/v1.0.3
   develop: geos5
 
 GEOSgcm_App:
