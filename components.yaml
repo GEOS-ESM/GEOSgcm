@@ -45,7 +45,7 @@ GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
   branch : feature/sanAkel/final-stress-rebase-with-develop-2020Jun16
-  develop: feature/sanAkel/final-stress-rebase-with-develop-2020Jun16
+  develop: develop
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
@@ -68,20 +68,21 @@ GEOSchem_GridComp:
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM_GEOS5PlugMod/@mom
   remote: ../MOM5.git
-  branch: feature/sanAkel/add-MOM6
-  develop: feature/sanAkel/add-MOM6
+  tag: geos/5.1.0+1.1.0
+  develop: geos5
 
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
   tag: geos/v1.0.0
+  develop: geos
   recurse_submodules: True
 
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
   branch: final-stress-rebase-with-develop-2020Jun16
-  develop: final-stress-rebase-with-develop-2020Jun16
+  develop: develop
 
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
