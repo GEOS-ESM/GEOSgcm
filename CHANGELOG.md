@@ -1,5 +1,23 @@
 # Changelog
 
+## [10.13.0] - 2020-06-26
+
+### Zero-diff to previous release: ONLY 72L 1-MOMENT DEFAULT CONFIG
+
+### Restart Changes: NO
+
+Only 0-diff for 72-level 1-MOMENT default configuration. Non-0-diff for ALL others. Major changes include:
+1. Support for increased vertical resolution and updates in FV3 and GFDL. New 71, 91, and 181-level options which have eta distributions similar to the ECMWF 137-level option. New 127-level option is similar to NCEP. Retuned surface mixing results in non-0-diff changes to the 132-level option.
+2. Updated MPI Settings for running at NCCS.
+3. New updates from S2S3 tag in CVS.
+4. Updates to coupled plotting package (coupled_diagnostics)
+5. Fixed MOM_GEOS5Plug MAPL Timers for RUN2.
+6. River routing updates.
+7. SLES12 bugfix reading LAI, GRN, NIRDF, VISDF and NDVI in (LDAS) ensemble mode.
+8. CatchCN now gets daylength from MAPL sun code abstractly so it works with the new procession including type of orbit.
+9. Updated to Chemistry v1.3.5.
+10. Added lines to AGCM.rc.tmpl to run RRTMGP (disabled by default).
+
 ## [10.12.5] - 2020-06-05
 
 ### Zero-diff to previous release: YES
