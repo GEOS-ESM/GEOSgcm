@@ -1,5 +1,25 @@
 # Changelog
 
+## [10.14.0] - 2020-07-17
+
+### Zero-diff to previous release: YES - for default 72L-1MOM configuration
+
+### Restart Changes: YES - gwd_import_checkpoint has been added
+
+Major changes include:
+1. Added MOM6 plug
+2. Added NCAR GWD
+3. Updated GFDL microphysics
+4. Updated MOM5
+5. Run time switch between MOM5 or MOM6
+6. Updates for JEDI Integration
+7. Updated FMS
+8. Sparsed out FVdycore_GridComp and ARIESg3_GridComp dynamical cores. Sparsed out GMAO_pilgrim from GEOSgcm_GridComp.
+9. Update Aerosol Chemistry BCs to match new vertical levels.
+10. Additional question in setup scripts for:
+	1. Chosing microphysics option
+	2. Chosing hydrostatic/non-hydrostatic mode
+
 ## [10.13.0] - 2020-06-26
 
 ### Zero-diff to previous release: ONLY 72L 1-MOMENT DEFAULT CONFIG
