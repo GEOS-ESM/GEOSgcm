@@ -82,7 +82,7 @@ mom6:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  branch: final-stress-rebase-with-develop-2020Jun16
+  tag: v1.3.6
   develop: develop
 
 UMD_Etc:
