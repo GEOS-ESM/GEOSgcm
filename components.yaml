@@ -32,13 +32,13 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.1.5
+  tag: v2.1.6
   develop: develop
 
 FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
-  tag: geos/2019.01.02
+  tag: geos/2019.01.02+noaff
   develop: geos/release/2019.01
 
 GEOSgcm_GridComp:
@@ -50,13 +50,13 @@ GEOSgcm_GridComp:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.1.3
+  tag: v1.1.4
   develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: geos/v1.1.2
+  tag: geos/v1.1.3
   develop: geos/develop
 
 GEOSchem_GridComp:
