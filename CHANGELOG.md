@@ -1,5 +1,21 @@
 # Changelog
 
+## [10.14.1] - 2020-07-23
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+Major changes include:
+
+1. Allows EMIPs to work with New Land restart files. These files do not necessarily occur on the same day of the month. The modified code will search for files within a given year-month and start an EMIP member from that date.
+2. Fixed gcm_regress.j such that it allows to run regression test on coupled model with MOM5 and MOM6 ocean.
+3. Removed S2S history template with confusing name.
+4. Adds an fv3_setup and fv3.j script for the FV3 Standalone.
+5. Allows the JCAP functionality to work again in mkiau gridcomp as that needs the r4 version of ncesp_sp in gmao_transf.
+6. Modify mpirun flags for Open MPI 4.0.4.
+7. Updates to plots.
+
 ## [10.14.0] - 2020-07-17
 
 ### Zero-diff to previous release: YES - for default 72L-1MOM configuration
