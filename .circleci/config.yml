@@ -1,8 +1,9 @@
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
       - image: gmao/geos-build-env-gcc-source:6.0.13-openmpi_4.0.3-gcc_9.3.0
+    resource_class: 2xlarge
     working_directory: /root/project
     steps:
       - checkout
@@ -26,4 +27,4 @@ jobs:
           name: "Build"
           command: |
             cd build
-            make -j2 install
+            make -j"$(nproc)" install
