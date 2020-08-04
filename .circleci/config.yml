@@ -23,6 +23,7 @@ jobs:
       - run:
           name: "CMake"
           command: |
+            id
             ls -ltr
             mkdir build
             ls -ltr
