@@ -3,12 +3,9 @@ jobs:
   build:
     docker:
       - image: gmao/ubuntu20-geos-env-mkl:6.0.13-openmpi_4.0.4-gcc_10.2.0
-    resource_class: medium
+    resource_class: xlarge
     steps:
       - checkout
-      - run:
-          name: "chown"
-          command: chown -R $USER:$USER /root/project
       - run:
           name: "Versions etc"
           command: mpirun --version && gfortran --version && echo $BASEDIR && pwd && ls
@@ -18,19 +15,16 @@ jobs:
             mepo init
             mepo clone
             mepo develop GEOSgcm_App GEOSgcm_GridComp
-            mepo checkout feature/mathomp4/download-fix-ubuntu cmake
+            mepo checkout main cmake
             mepo status
       - run:
           name: "CMake"
           command: |
-            id
-            ls -ltr
             mkdir build
-            ls -ltr
             cd build
             cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=gfortran -DCMAKE_BUILD_TYPE=Debug
-      #- run:
-          #name: "Build"
-          #command: |
-            #cd build
-            #make -j"$(nproc)" install
+      - run:
+          name: "Build"
+          command: |
+            cd build
+            make -j"$(nproc)" install
