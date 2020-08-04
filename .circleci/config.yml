@@ -4,7 +4,6 @@ jobs:
     docker:
       - image: gmao/ubuntu20-geos-env-mkl:6.0.13-openmpi_4.0.4-gcc_10.2.0
     resource_class: medium
-    working_directory: /root/project
     steps:
       - checkout
       - run:
