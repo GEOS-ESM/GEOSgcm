@@ -18,6 +18,7 @@ jobs:
             mepo init
             mepo clone
             mepo develop GEOSgcm_App GEOSgcm_GridComp
+            mepo checkout feature/mathomp4/download-fix-ubuntu cmake
             mepo status
       - run:
           name: "CMake"
