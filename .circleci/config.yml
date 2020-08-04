@@ -8,6 +8,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: "chown"
+          command: chown -R $USER:$USER /root/project
+      - run:
           name: "Versions etc"
           command: mpirun --version && gfortran --version && echo $BASEDIR && pwd && ls
       - run:
