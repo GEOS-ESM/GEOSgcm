@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: gmao/ubuntu20-geos-env-mkl:6.0.13-openmpi_4.0.4-gcc_10.2.0
-    resource_class: xlarge
+    resource_class: medium
     working_directory: /root/project
     steps:
       - checkout
@@ -25,9 +25,10 @@ jobs:
           command: |
             mkdir build
             cd build
+            ls -ltr
             cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=gfortran -DCMAKE_BUILD_TYPE=Debug
-      - run:
-          name: "Build"
-          command: |
-            cd build
-            make -j"$(nproc)" install
+      #- run:
+          #name: "Build"
+          #command: |
+            #cd build
+            #make -j"$(nproc)" install
