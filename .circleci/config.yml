@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: "Versions etc"
-          command: mpirun --version && gfortran --version && echo $BASEDIR && pwd && ls
+          command: mpirun --version && gfortran --version && echo $BASEDIR
       - run:
           name: "Mepo clone external repos"
           command: |
