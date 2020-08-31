@@ -25,9 +25,8 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.1.8
   sparse: ./config/GMAO_Shared.sparse
-  develop: main
+  branch: feature/wjamieson/GOCARTrefactor
 
 MAPL:
   local: ./src/Shared/@MAPL
