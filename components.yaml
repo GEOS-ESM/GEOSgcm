@@ -66,6 +66,7 @@ GEOSchem_GridComp:
 GOCART2G_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART2G_GridComp
   remote: ../GOCART
+  sparse: ./config/GOCART2G.sparse
   branch: feature/2G
 
 mom:
