@@ -1,7 +1,7 @@
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v2.1.6
+  branch: feature/mathomp4/intel1912
   develop: main
 
 cmake:
