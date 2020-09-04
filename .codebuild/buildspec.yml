@@ -2,6 +2,7 @@
 version: 0.2
 
 phases:
+  # This phase is weirdly named for a Fortran project
   install:
     commands:
       - mpirun --version && gfortran --version && echo $BASEDIR && pwd && ls
