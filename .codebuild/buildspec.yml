@@ -15,6 +15,7 @@ phases:
       - mepo status
     finally:
       - echo "Mepo clone external repos" 
+  # This phase builds it
   build:
     commands: |
       mkdir build
