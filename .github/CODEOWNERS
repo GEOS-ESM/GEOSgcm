@@ -7,7 +7,9 @@
 * @GEOS-ESM/gcm-gatekeepers
 
 # The GCM gatekeepers and CMake should know/approve these
+/.github/    @GEOS-ESM/cmake-team @GEOS-ESM/gcm-gatekeepers
 /.circleci/    @GEOS-ESM/cmake-team @GEOS-ESM/gcm-gatekeepers
+/.codebuild/    @GEOS-ESM/cmake-team @GEOS-ESM/gcm-gatekeepers
 
 # The GEOS CMake Team is the CODEOWNER for the CMakeLists.txt files in this repository
 CMakeLists.txt @GEOS-ESM/cmake-team
