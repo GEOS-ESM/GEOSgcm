@@ -1,0 +1,31 @@
+# Building GEOSgcm
+version: 0.2
+
+phases:
+  # This phase is weirdly named for a Fortran project
+  install:
+    commands:
+      - mpirun --version && gfortran --version && echo $BASEDIR && pwd && ls
+    finally:
+      - echo "versions etc"
+  pre_build:
+    commands:
+      - mepo clone
+      - mepo develop GEOSgcm_App GEOSgcm_GridComp
+      - mepo status
+    finally:
+      - echo "Mepo clone external repos" 
+  # This phase builds it
+  build:
+    commands: |
+      mkdir build
+      cd build
+      cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=gfortran -DCMAKE_BUILD_TYPE=Debug -DUSE_F2PY=OFF
+      cd build
+      make -j"$(nproc)" install
+    finally:
+      - echo "Build phase"
+  post_build:
+    commands:
+      - echo Entered the post_build phase...
+      - echo Build completed on `date`
