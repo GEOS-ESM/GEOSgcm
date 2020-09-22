@@ -7,7 +7,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.1.4
+  tag: v3.2.0
   develop: develop
 
 ecbuild:
@@ -18,7 +18,7 @@ ecbuild:
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
   remote: ../NCEP_Shared.git
-  tag: v1.0.0
+  tag: v1.0.1
   sparse: ./config/NCEP_Shared.sparse
   develop: main
 
