@@ -1,5 +1,17 @@
 # Changelog
 
+## [10.15.0] - 2020-09-25
+
+### Zero-diff to previous release: NO
+
+### Restart Changes: YES for values; NO for entries/structure
+
+Major non-0-diff changes include:
+1. The GEOSadas-5_27_0 version of GEOS_Shared/GEOS_Utilities.F90 has slightly different code, `nint()` instead of `int()`. This brings git up to date.
+2. Bugfix for computations in uwshcu.F90 that involved `MAPL_UNDEF`
+3. Bug fix for GCC 10 with `DRHOS0`
+4. Upgrade to GEOSchem_GridComp v1.4.1
+
 ## [10.14.2] - 2020-09-25
 
 ### Zero-diff to previous release: YES
