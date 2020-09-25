@@ -1,5 +1,34 @@
 # Changelog
 
+## [10.14.2] - 2020-09-25
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+Changes include:
+
+1. Update to FVdycoreCubed_Gridcomp v1.2.5
+2. Update RRTMGP to master aug2020
+3. Add logging capability
+4. Fixes for setup scripts
+5. Remove Latlon atmosphere in setup
+6. Updates for coupled model setup
+7. Add section for AWS SLURM
+8. Allow SCM to run with 91, 137 and 181 levels
+9. Restore use of SHARE CHMDIR at NCCS for all levels
+10. NCL scripts added to generate MERRA2 forcing for SCM
+11. Remove clock rewind only in replay logic for GuestOcean
+12. Add melt_potential and fix Orphan Points for MOM6 plug/Guest ocean
+13. Subroutines called from within OPENWATERCORE of GEOS_OpenWaterGridComp.F90 have been moved GMAO_Shared to be shared across applications/components
+14. Clean up/simplify AOIL
+15. Clean up of Saltwater's children
+16. Genericize NCAR GWD Beres file location
+17. PRECIPFRAC functionality for Catch and CatchCN
+18. Updates to allow GEOS to build without MKL
+19. Run binarytile.x without MPI dur to Intel issues
+20. Update CircleCi
+
 ## [10.14.1] - 2020-07-23
 
 ### Zero-diff to previous release: YES
