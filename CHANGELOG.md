@@ -7,10 +7,23 @@
 ### Restart Changes: YES for values; NO for entries/structure
 
 Major non-0-diff changes include:
-1. The GEOSadas-5_27_0 version of GEOS_Shared/GEOS_Utilities.F90 has slightly different code, `nint()` instead of `int()`. This brings git up to date.
-2. Bugfix for computations in uwshcu.F90 that involved `MAPL_UNDEF`
-3. Bug fix for GCC 10 with `DRHOS0`
-4. Upgrade to GEOSchem_GridComp v1.4.1
+1. Update to ESMA_env v3.0.0 (NOTE: ***SLES 11 Support at NCCS is Removed***)
+  * ESMA Baselibs 6.0.16
+  * Use a new Python Stack: GEOSpyD/Min4.8.3_py2.7
+  * Update compilers and MPI stacks
+    * NCCS
+      * Intel Fortran 19.1.2
+      * Intel MPI 19.1.2
+    * NAS
+      * Intel Fortran 2020.2.254 (aka 19.1.2)
+      * MPT 2.17 (same as before)
+    * GMAO Desktop
+      * Intel Fortran 19.1.2
+      * Open MPI 4.0.4
+2. The GEOSadas-5_27_0 version of GEOS_Shared/GEOS_Utilities.F90 has slightly different code, `nint()` instead of `int()`. This brings git up to date.
+3. Bugfix for computations in uwshcu.F90 that involved `MAPL_UNDEF`
+4. Bug fix for GCC 10 with `DRHOS0`
+5. Upgrade to GEOSchem_GridComp v1.4.1
 
 ## [10.14.2] - 2020-09-25
 
