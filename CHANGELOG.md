@@ -27,7 +27,7 @@ Changes include:
 17. PRECIPFRAC functionality for Catch and CatchCN
 18. Updates to allow GEOS to build without MKL
 19. Run binarytile.x without MPI dur to Intel issues
-20. Subrepo upticks
+20. Upticks of other subrepo/component versions
 
 ## [10.14.1] - 2020-07-23
 
