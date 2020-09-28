@@ -5,3 +5,5 @@
 !/ESMF/Apps
 !/ESMF/GOCART_GridComp
 !/ESMF/NUOPC
+!/ESMF/Shared/Chem_Shared
+!/ESMF/Shared/Chem_Base
