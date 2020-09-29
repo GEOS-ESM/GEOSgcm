@@ -1,5 +1,13 @@
 # Changelog
 
+## [10.16.0] - 2020-09-28
+
+### Zero-diff to previous release: NO
+
+### Restart Changes: NO
+
+The only change in this release is moving back to using `int()` not `nint()` in GEOS_Shared/GEOS_Utilities.F90 which may cause crashes if the Debugging flags are on. Nevertheless, this is a non zero-diff change to the gcm.
+
 ## [10.15.0] - 2020-09-25
 
 ### Zero-diff to previous release: NO
