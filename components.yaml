@@ -67,7 +67,7 @@ GEOSchem_GridComp:
 HEMCO:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Shared/HEMCO/@HEMCO
   remote: ../HEMCO.git
-  branch: dev/GC_13.0.0
+  branch: feature/wjamieson/GEOSCHEMchem_v13.0.0_testing
 
 GEOS-chem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/GEOSCHEMchem_GridComp/@geos-chem
