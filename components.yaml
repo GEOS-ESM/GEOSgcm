@@ -67,12 +67,12 @@ GEOSchem_GridComp:
 HEMCO:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@HEMCO_GridComp
   remote: ../HEMCO.git
-  branch: feature/wjamieson/GEOSCHEMchem_v13.0.0_testing
+  branch: feature/wjamieson/GEOSCHEMchem_v13.0.0
 
 GEOS-chem:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/GEOSCHEMchem_GridComp/@GEOSCHEMchem_GridComp
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GEOSCHEMchem_GridComp
   remote: ../geos-chem.git
-  branch: feature/wjamieson/GEOSCHEMchem_v13.0.0_testing
+  branch: feature/wjamieson/GEOSCHEMchem_v13.0.0
 
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM_GEOS5PlugMod/@mom
