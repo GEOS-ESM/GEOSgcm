@@ -27,7 +27,7 @@ GMAO_Shared:
   remote: ../GMAO_Shared.git
   tag: v1.1.9
   sparse: ./config/GMAO_Shared.sparse
-  develop: main
+  develop: feature/adarmenov/#122-wmma
 
 MAPL:
   local: ./src/Shared/@MAPL
