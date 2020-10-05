@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: gmao/ubuntu20-geos-env-mkl:6.0.13-openmpi_4.0.4-gcc_10.2.0
+      - image: gmao/ubuntu20-geos-env-mkl:6.0.16-openmpi_4.0.5-gcc_10.2.0
     resource_class: xlarge
     steps:
       - checkout

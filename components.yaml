@@ -1,13 +1,13 @@
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v2.1.6
+  tag: v3.0.0
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.1.3
+  tag: v3.2.1
   develop: develop
 
 ecbuild:
@@ -18,14 +18,14 @@ ecbuild:
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
   remote: ../NCEP_Shared.git
-  tag: v1.0.0
+  tag: v1.0.1
   sparse: ./config/NCEP_Shared.sparse
   develop: main
 
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.1.9
+  tag: v1.3.0
   sparse: ./config/GMAO_Shared.sparse
   develop: feature/adarmenov/#122-wmma
 
@@ -44,14 +44,14 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.10.2
+  tag: v1.11.0
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/adarmenov/#347-wmma
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.2.3
+  tag: v1.2.5
   develop: develop
 
 fvdycore:
@@ -63,7 +63,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.3.5
+  tag: v1.4.1
   develop: develop
 
 mom:
@@ -89,7 +89,7 @@ ww3:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.3.7
+  tag: v1.3.8
   develop: develop
 
 UMD_Etc:
