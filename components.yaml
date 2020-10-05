@@ -79,6 +79,13 @@ mom6:
   develop: geos
   recurse_submodules: True
 
+ww3:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSwgcm_GridComp/GEOSwavewatch_GridComp/@ww3
+  remote: https://github.com/NOAA-EMC/WW3.git
+  tag: 6.07.1
+  develop: develop
+  recurse_submodules: True
+
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
