@@ -46,7 +46,7 @@ GEOSgcm_GridComp:
   remote: ../GEOSgcm_GridComp.git
   tag: v1.10.2
   sparse: ./config/GEOSgcm_GridComp.sparse
-  develop: develop
+  develop: feature/adarmenov/#347-wmma
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
