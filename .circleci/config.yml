@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: gmao/ubuntu20-geos-env-mkl:6.0.16-openmpi_4.0.5-gcc_10.2.0
-    #resource_class: xlarge
+    resource_class: xlarge
     steps:
       - checkout
       - run:
