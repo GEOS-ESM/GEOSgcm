@@ -1,13 +1,13 @@
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v2.1.6
+  tag: v3.0.0
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.1.3
+  tag: v3.2.1
   develop: develop
 
 ecbuild:
@@ -18,13 +18,14 @@ ecbuild:
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
   remote: ../NCEP_Shared.git
-  tag: v1.0.0
+  tag: v1.0.1
   sparse: ./config/NCEP_Shared.sparse
   develop: main
 
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
+  tag: v1.3.0
   sparse: ./config/GMAO_Shared.sparse
   branch: feature/wjamieson/GOCARTrefactor
 
@@ -48,7 +49,7 @@ GEOSgcm_GridComp:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.2.3
+  tag: v1.2.5
   develop: develop
 
 fvdycore:
@@ -76,14 +77,14 @@ mom:
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
-  tag: geos/v1.0.0
+  tag: geos/v1.1.0
   develop: geos
   recurse_submodules: True
 
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.3.7
+  tag: v1.3.8
   develop: develop
 
 UMD_Etc:
