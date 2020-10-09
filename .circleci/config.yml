@@ -26,5 +26,5 @@ jobs:
           name: "Build"
           command: |
             cd build
-            #make -j"$(nproc)" install
-            make -j2 install
+            make -j"$(nproc)" install
+            #make -j2 install
