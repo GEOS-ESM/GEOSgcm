@@ -27,7 +27,6 @@ GMAO_Shared:
   remote: ../GMAO_Shared.git
   tag: v1.3.0
   sparse: ./config/GMAO_Shared.sparse
-  branch: feature/wjamieson/GOCARTrefactor
 
 MAPL:
   local: ./src/Shared/@MAPL
