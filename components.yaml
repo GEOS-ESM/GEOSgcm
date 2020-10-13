@@ -65,7 +65,8 @@ GEOSchem_GridComp:
 GOCART2G_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART2G_GridComp
   remote: ../GOCART
-  branch: feature/esherman/gocart2g
+  sparse: ./config/GOCART2G.sparse
+  branch: feature/esherman/gocart2g_develop
 
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM_GEOS5PlugMod/@mom
