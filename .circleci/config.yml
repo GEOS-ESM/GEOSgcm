@@ -27,4 +27,3 @@ jobs:
           command: |
             cd build
             make -j"$(nproc)" install
-            #make -j2 install
