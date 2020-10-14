@@ -1,7 +1,7 @@
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v3.0.0
+  tag: v3.0.1
   develop: main
 
 cmake:
@@ -25,14 +25,14 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.3.0
+  tag: v1.3.2
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.1.6
+  tag: v2.3.2
   develop: develop
 
 FMS:
