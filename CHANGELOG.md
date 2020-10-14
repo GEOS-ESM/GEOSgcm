@@ -10,11 +10,11 @@ Major updates include:
 1. Add TOA RRTMG Band6 (window region) IR diagnostics.
 2. Include new diagnostics for the constraints and new plots for them.
 3. Clean up clumsy logic in GEOS_OpenWaterGridComp.F90 [Issue #356](https://github.com/GEOS-ESM/GEOSgcm_GridComp/issues/356)
-   a. removes the `AOIL_COMP_SWITCH`
-   b. AOIL now properly works with the coupled model (**non 0-diff**)
-   c. maintains 0-diff for uncoupled mode
-   d. computations to update the state variables (TW, SW, HW and other internals) are now performed via a call to `AOIL_v0`.
-   e. `AOIL_v0` also provides following two options that are turned OFF by default:
+   1. removes the `AOIL_COMP_SWITCH`
+   2. AOIL now properly works with the coupled model (**non 0-diff**)
+   3. maintains 0-diff for uncoupled mode
+   4. computations to update the state variables (TW, SW, HW and other internals) are now performed via a call to `AOIL_v0`.
+   5. `AOIL_v0` also provides following two options that are turned OFF by default:
       * provide a more gradual decay of diurnal warming as observed in nature: `WARM_LAYER_GRAD_DECAY`
       * update turbulent heat fluxes after the state variables have been updated: `UPDATE_FLUXES_AOIL_SECOND_STEP`
 4. Upgrade to MAPL 2.3 with a number of changes listed [here](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.3.0).
