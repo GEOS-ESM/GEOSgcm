@@ -3,6 +3,9 @@ jobs:
   build:
     docker:
       - image: gmao/ubuntu20-geos-env-mkl:6.0.16-openmpi_4.0.5-gcc_10.2.0
+        auth:
+          username: $DOCKERHUB_USER
+          password: $DOCKERHUB_AUTH_TOKEN
     resource_class: xlarge
     steps:
       - checkout
