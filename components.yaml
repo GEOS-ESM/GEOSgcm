@@ -81,10 +81,15 @@ mom6:
 
 ww3:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSwgcm_GridComp/GEOSwavewatch_GridComp/@ww3
-  remote: https://github.com/NOAA-EMC/WW3.git
+  remote: ../WW3.git
   tag: 6.07.1
   develop: develop
-  recurse_submodules: True
+
+umwm:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSwgcm_GridComp/GEOSumwm_GridComp/@umwm
+  remote: ../umwm.git
+  tag: geos
+  develop: geos
 
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
