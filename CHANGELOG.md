@@ -1,5 +1,22 @@
 # Changelog
 
+## [10.16.2] - 2020-10-28
+
+### Zero-diff to previous release: YES for default catchment, NO for CatchmentCN
+
+### Restart Changes: NO
+
+The latest release is a 0-diff change when running the default catchment. However, it is a non-0-diff change when running CatchmentCN.
+1. Updates to land:
+	1. SurfParams: Introduced separate parameter collections for different land model choices that are being cross-checked against the land model choice.
+	2. Updates to reproduce Fanwei Zeng’s LDASsa Catchment-CN simulations (science-validated, published) using the 'CN_CLM4' option.
+2. Restructure/Refactor `DO_OBIO` (see [Issue #362](https://github.com/GEOS-ESM/GEOSgcm_GridComp/issues/362))
+3. Add Docker authentication for pulls.
+4. Add logger for NaN detection (at a WARNING level) for QSAT and DQSAT codes.
+5. Make plots/configure portable when using someone else's build.
+6. Allow longer job names for PBS/SLURM.
+7. Update to MAPL.
+
 ## [10.16.1] - 2020-10-14
 
 ### Zero-diff to previous release: YES for AGCM, NO for coupled model
