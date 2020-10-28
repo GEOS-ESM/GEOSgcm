@@ -15,6 +15,7 @@ The latest release is a 0-diff change when running the default catchment. Howeve
 4. Add logger for NaN detection (at a WARNING level) for QSAT and DQSAT codes.
 5. Make plots/configure portable when using someone else's build.
 6. Allow longer job names for PBS/SLURM.
+7. Update to MAPL.
 
 ## [10.16.1] - 2020-10-14
 
