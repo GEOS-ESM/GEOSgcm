@@ -1,3 +1,7 @@
+GEOSgcm:
+  fixture: true
+  develop: main
+
 env:
   local: ./@env
   remote: ../ESMA_env.git
