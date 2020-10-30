@@ -85,7 +85,7 @@ GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
   tag: v1.3.8
-  develop: feature/esherman/gocart2g_develop
+  branch: feature/esherman/gocart2g_develop
 
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
