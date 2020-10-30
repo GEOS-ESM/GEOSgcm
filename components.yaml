@@ -31,7 +31,7 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  branch: develop
+  branch: feature/atrayano/split_ungrid
 
 FMS:
   local: ./src/Shared/@FMS
@@ -85,7 +85,7 @@ GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
   tag: v1.3.8
-  develop: develop
+  develop: feature/esherman/gocart2g_develop
 
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
