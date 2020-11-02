@@ -1,5 +1,15 @@
 # Changelog
 
+## [10.16.3] - 2020-11-02
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+Changes include:
+
+1. Added fixture section to `components.yaml`
+
 ## [10.16.2] - 2020-10-28
 
 ### Zero-diff to previous release: YES for default catchment, NO for CatchmentCN
