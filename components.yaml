@@ -36,7 +36,7 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.3.4
+  branch: feature/wjiang/mom_dso
   develop: develop
 
 FMS:
@@ -48,7 +48,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.11.2
+  branch: feature/wjiang/mom_dso
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
