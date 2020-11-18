@@ -18,6 +18,10 @@ jobs:
             mepo init
             mepo clone
             mepo develop GEOSgcm_App GEOSgcm_GridComp
+            if [ "${CIRCLE_BRANCH}" != "develop" ] && [ "${CIRCLE_BRANCH}" != "master" ] && [ "${CIRCLE_BRANCH}" != "main" ]
+            then
+               mepo checkout-if-exists ${CIRCLE_BRANCH}
+            fi
             mepo status
       - run:
           name: "CMake"
