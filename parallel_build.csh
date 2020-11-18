@@ -38,7 +38,11 @@ end
 
 if (! -d ${ESMADIR}/@env) then
    if ($?PBS_JOBID || $?SLURM_JOBID) then
-      echo " checkout_externals must be run!"
+      if ( "$USEMEPO" == "TRUE") then
+         echo " mepo clone must be run!"
+      else
+         echo " checkout_externals must be run!"
+      endif
       echo " This requires internet access but you are on a compute node"
       echo " Please run from a head node"
       exit 1
@@ -54,6 +58,13 @@ if (! -d ${ESMADIR}/@env) then
       else
          echo " Running checkout_externals"
          checkout_externals $external
+      endif
+   endif
+else
+   if ( "$USEMEPO" == "TRUE") then
+      if ( "$DEVELOP" == "TRUE" ) then
+         echo "Checking out development branches of GEOSgcm_GridComp and GEOSgcm_App"
+         mepo develop GEOSgcm_GridComp GEOSgcm_App
       endif
    endif
 endif
