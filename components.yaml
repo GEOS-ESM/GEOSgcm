@@ -22,7 +22,7 @@ ecbuild:
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
   remote: ../NCEP_Shared.git
-  tag: v1.0.1
+  tag: v1.1.0
   sparse: ./config/NCEP_Shared.sparse
   develop: main
 
@@ -42,7 +42,7 @@ MAPL:
 FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
-  tag: geos/2019.01.02+noaff.1
+  tag: geos/2019.01.02+noaff.2
   develop: geos/release/2019.01
 
 GEOSgcm_GridComp:
