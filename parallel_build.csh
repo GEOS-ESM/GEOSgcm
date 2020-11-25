@@ -33,7 +33,6 @@ end
 if (! -d ${ESMADIR}/@env) then
    if ($?PBS_JOBID || $?SLURM_JOBID) then
       echo " mepo clone must be run!"
-      endif
       echo " This requires internet access but you are on a compute node"
       echo " Please run from a head node"
       exit 1
