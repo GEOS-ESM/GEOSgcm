@@ -80,9 +80,12 @@ The steps detailed below are essentially those that `parallel_build.csh` perform
 
 #### Mepo
 
-To checkout the full model with the [`mepo`](https://github.com/GEOS-ESM/mepo) tool, you run:
+The GEOS GCM is comprised of a set of sub-repositories. These are
+managed by a tool called [mepo](https://github.com/GEOS-ESM/mepo). To
+clone all the sub-repos, you can run `mepo clone` inside the fixture:
 
 ```
+cd GEOSgcm
 mepo clone
 ```
 
