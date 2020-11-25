@@ -1,13 +1,13 @@
 # Changelog
 
-## [10.16.4] - 2020-11-25
+## [10.17.0] - 2020-11-25
 
 ### Zero-diff to previous release: YES
 
 ### Restart Changes: NO
 
 Major changes include:
-1. Manage externals is no longer supported. Mepo is now the default and replacement manager for multiple repositories.
+1. The way the model is build has changed. Manage externals is no longer supported. Mepo is now the default and replacement manager for multiple repositories.
 2. Add dependency to turn on `BUILD_SHARED_LIBS` for NCEP_Shared.
 3. Splits the RRTMG k_g tables into separate files.
 4. Bugfix to change Intel Debug flags for MOM6 and FMS.
