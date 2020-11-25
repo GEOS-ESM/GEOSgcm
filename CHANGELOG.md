@@ -1,5 +1,21 @@
 # Changelog
 
+## [10.17.0] - 2020-11-25
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+Major changes include:
+1. The way the model is build has changed. Manage externals is no longer supported. Mepo is now the default and replacement manager for multiple repositories.
+2. Add dependency to turn on `BUILD_SHARED_LIBS` for NCEP_Shared.
+3. Splits the RRTMG k_g tables into separate files.
+4. Bugfix to change Intel Debug flags for MOM6 and FMS.
+5. gcm_run.j bugfix for tile_hist running MOM6.
+6. Update plots and stats to be consistent with recent CVS tags.
+7. Bugfix for C99 compliance on MacOS.
+8. Updates to CI and other subrepos.
+
 ## [10.16.3] - 2020-11-02
 
 ### Zero-diff to previous release: YES
