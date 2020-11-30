@@ -1,13 +1,17 @@
+GEOSgcm:
+  fixture: true
+  develop: main
+
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v3.0.0
+  tag: v3.1.1
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.2.0
+  tag: v3.3.1
   develop: develop
 
 ecbuild:
@@ -18,13 +22,14 @@ ecbuild:
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
   remote: ../NCEP_Shared.git
-  tag: v1.0.1
+  tag: v1.1.1
   sparse: ./config/NCEP_Shared.sparse
   develop: main
 
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
+  tag: v1.3.4
   sparse: ./config/GMAO_Shared.sparse
   branch: feature/wjamieson/GOCARTrefactor
 
@@ -36,20 +41,20 @@ MAPL:
 FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
-  tag: geos/2019.01.02+noaff.1
+  tag: geos/2019.01.02+noaff.3
   develop: geos/release/2019.01
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.11.0
+  tag: v1.11.3
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.2.5
+  tag: v1.2.6
   develop: develop
 
 fvdycore:
@@ -85,7 +90,7 @@ mom6:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.3.8
+  tag: v1.3.11
   develop: develop
 
 UMD_Etc:

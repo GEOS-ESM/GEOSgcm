@@ -1,5 +1,74 @@
 # Changelog
 
+## [10.17.0] - 2020-11-25
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+Major changes include:
+1. The way the model is build has changed. Manage externals is no longer supported. Mepo is now the default and replacement manager for multiple repositories.
+2. Add dependency to turn on `BUILD_SHARED_LIBS` for NCEP_Shared.
+3. Splits the RRTMG k_g tables into separate files.
+4. Bugfix to change Intel Debug flags for MOM6 and FMS.
+5. gcm_run.j bugfix for tile_hist running MOM6.
+6. Update plots and stats to be consistent with recent CVS tags.
+7. Bugfix for C99 compliance on MacOS.
+8. Updates to CI and other subrepos.
+
+## [10.16.3] - 2020-11-02
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+Changes include:
+
+1. Added fixture section to `components.yaml`
+
+## [10.16.2] - 2020-10-28
+
+### Zero-diff to previous release: YES for default catchment, NO for CatchmentCN
+
+### Restart Changes: NO
+
+The latest release is a 0-diff change when running the default catchment. However, it is a non-0-diff change when running CatchmentCN.
+1. Updates to land:
+	1. SurfParams: Introduced separate parameter collections for different land model choices that are being cross-checked against the land model choice.
+	2. Updates to reproduce Fanwei Zeng’s LDASsa Catchment-CN simulations (science-validated, published) using the 'CN_CLM4' option.
+2. Restructure/Refactor `DO_OBIO` (see [Issue #362](https://github.com/GEOS-ESM/GEOSgcm_GridComp/issues/362))
+3. Add Docker authentication for pulls.
+4. Add logger for NaN detection (at a WARNING level) for QSAT and DQSAT codes.
+5. Make plots/configure portable when using someone else's build.
+6. Allow longer job names for PBS/SLURM.
+7. Update to MAPL.
+
+## [10.16.1] - 2020-10-14
+
+### Zero-diff to previous release: YES for AGCM, NO for coupled model
+
+### Restart Changes: YES (`OLRB06RG` and `TBRB06RG` variables added to `irrad_internal` restart)
+
+Major updates include:
+1. Add TOA RRTMG Band6 (window region) IR diagnostics.
+2. Include new diagnostics for the constraints and new plots for them.
+3. Clean up clumsy logic in GEOS_OpenWaterGridComp.F90 [Issue #356](https://github.com/GEOS-ESM/GEOSgcm_GridComp/issues/356)
+   1. removes the `AOIL_COMP_SWITCH`
+   2. AOIL now properly works with the coupled model (**non 0-diff**)
+   3. maintains 0-diff for uncoupled mode
+   4. computations to update the state variables (TW, SW, HW and other internals) are now performed via a call to `AOIL_v0`.
+   5. `AOIL_v0` also provides following two options that are turned OFF by default:
+      * provide a more gradual decay of diurnal warming as observed in nature: `WARM_LAYER_GRAD_DECAY`
+      * update turbulent heat fluxes after the state variables have been updated: `UPDATE_FLUXES_AOIL_SECOND_STEP`
+4. Upgrade to MAPL 2.3 with a number of changes listed [here](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.3.0).
+5. Fixed regrid_forcing.x and regrid_forcing_esmf.x so they will work with MAPL2.2 and beyond.
+6. Logging config improvements and bugfixes.
+7. Fixed a bug in ExtData when extrapolating on a Leap Day.
+8. Added a deflate and bit shaving option to `Regrid_Util.x`.
+9. Fix bug with using coarse grids in History and ExtData.
+10. Lowers the amount of jobs used during `make -jN install` in `build.csh` to mitigate possible segfaults.
+11. Updated the NCPUs detection in various post scripts to be SLURM-aware.
+
 ## [10.16.0] - 2020-09-28
 
 ### Zero-diff to previous release: NO

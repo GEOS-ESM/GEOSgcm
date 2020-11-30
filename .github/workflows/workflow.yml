@@ -1,0 +1,59 @@
+name: Build Tests
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+
+jobs:
+  build_gcm:
+    name: Build GEOSgcm
+    if: "!contains(github.event.pull_request.labels.*.name, '0 diff trivial')"
+    runs-on: ubuntu-latest
+    container:
+      image: gmao/ubuntu20-geos-env-mkl:v6.0.22-openmpi_4.0.5-gcc_10.2.0
+      credentials:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    env:
+      LANGUAGE: en_US.UTF-8
+      LC_ALL: en_US.UTF-8
+      LANG: en_US.UTF-8
+      LC_TYPE: en_US.UTF-8 
+      OMPI_ALLOW_RUN_AS_ROOT: 1
+      OMPI_ALLOW_RUN_AS_ROOT_CONFIRM: 1
+      OMPI_MCA_btl_vader_single_copy_mechanism: none
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.5.0
+        with:
+          access_token: ${{ github.token }}
+      - name: Checkout GCM
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: Versions etc.
+        run: |
+          gfortran --version
+          mpirun --version
+          echo $BASEDIR
+      - name: Mepo clone external repos
+        run: |
+          mepo clone
+          mepo status
+          mepo develop GEOSgcm_GridComp GEOSgcm_App
+          mepo status
+      - name: Update other branches
+        if:
+          "!contains('refs/heads/main,refs/heads/develop', github.ref)"
+        run: |
+          mepo checkout-if-exists ${GITHUB_HEAD_REF}
+          mepo status
+      - name: CMake
+        run: |
+          mkdir build
+          cd build
+          cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=gfortran -DCMAKE_BUILD_TYPE=Debug -DMPIEXEC_PREFLAGS='--oversubscribe'
+      - name: Build
+        run: |
+          cd build
+          make -j4 install
