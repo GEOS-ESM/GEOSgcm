@@ -6,6 +6,7 @@ jobs:
         auth:
           username: $DOCKERHUB_USER
           password: $DOCKERHUB_AUTH_TOKEN
+    #XLARGE# resource_class: xlarge
     resource_class: medium
     steps:
       - checkout
@@ -38,4 +39,5 @@ jobs:
           name: "Build"
           command: |
             cd build
-            make -j 4 install
+            #XLARGE# make -j"$(nproc)" install
+            make -j4 install
