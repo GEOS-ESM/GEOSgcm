@@ -21,6 +21,11 @@ workflows:
       - build-GEOSgcm:
           context:
             - docker-hub-creds
+      - make-FV3-experiment:
+          context:
+            - docker-hub-creds
+          requires:
+            - build-GEOSgcm
 
 jobs:
   build-GEOSgcm:
@@ -59,3 +64,50 @@ jobs:
             cd build
             #XLARGE# make -j"$(nproc)" install
             make -j4 install
+      # We need to persist the install for the next step
+      - persist_to_workspace:
+          root: workspace
+          paths:
+            - install-GEOSgcm
+
+  make-FV3-experiment:
+    executor: gcc-build-env
+    working_directory: /root/project
+    steps:
+      - attach_workspace:
+          at: workspace
+      - run:
+          name: "Run fv3_setup"
+          command: |
+            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/install-GEOSgcm/bin
+
+            INPUT_FOR_SETUP=$(cat \<<END_HEREDOC
+            test-fv3-c12
+            test-fv3-c12
+            12
+            72
+            NO
+            NO
+            ${CIRCLE_WORKING_DIRECTORY}/workspace/test-fv3-c12
+            NULL
+            END_HEREDOC
+            )
+            echo "$INPUT_FOR_SETUP" > /tmp/input.txt
+
+            cat /tmp/input.txt | ./fv3_setup
+      - run:
+          name: "Change FV_NX, FV_NY, and RUN_CMD"
+          command: |
+            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-fv3-c12
+            sed -i.bak -e '/set FV_NX/ s/\([0-9]\+\)/1/' -e '/set FV_NY/ s/\([0-9]\+\)/6/' -e '/set RUN_CMD/ c\set RUN_CMD = "mpirun -np "' fv3.j
+      - run:
+          name: "Cat fv3.j"
+          command: |
+            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-fv3-c12
+            cat fv3.j
+
+      # We need to persist the install for the next step
+      - persist_to_workspace:
+          root: workspace
+          paths:
+            - test-fv3-c12
