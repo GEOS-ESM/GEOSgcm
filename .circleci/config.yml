@@ -27,20 +27,22 @@ jobs:
     executor: gcc-build-env
     working_directory: /root/project
     steps:
-      - checkout
+      - checkout:
+          path: GEOSgcm
       - run:
           name: "Versions etc"
           command: mpirun --version && gfortran --version && echo $BASEDIR && pwd && ls
       - run:
           name: "Mepo clone external repos"
           command: |
-            mepo init
+            cd ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm
             mepo clone
             mepo develop GEOSgcm_App GEOSgcm_GridComp
             mepo status
       - run:
           name: "Mepo checkout-if-exists"
           command: |
+            cd ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm
             echo "${CIRCLE_BRANCH}"
             if [ "${CIRCLE_BRANCH}" != "develop" ] && [ "${CIRCLE_BRANCH}" != "master" ] && [ "${CIRCLE_BRANCH}" != "main" ]
             then
@@ -50,6 +52,7 @@ jobs:
       - run:
           name: "CMake"
           command: |
+            cd ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm
             mkdir build
             cd build
             cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=gfortran -DCMAKE_BUILD_TYPE=Debug
