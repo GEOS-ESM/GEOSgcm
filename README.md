@@ -1,5 +1,7 @@
 # GEOS GCM Fixture
 
+This is a new line
+
 ## CI Status
 
 | CI Provider | Status |
