@@ -82,8 +82,8 @@ mom6:
 ww3:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSwgcm_GridComp/GEOSwavewatch_GridComp/@ww3
   remote: ../WW3.git
-  tag: 6.07.1
-  develop: develop
+  tag: geos/6.07.1
+  develop: geos
 
 umwm:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSwgcm_GridComp/GEOSumwm_GridComp/@umwm
