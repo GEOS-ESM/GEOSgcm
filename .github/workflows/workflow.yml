@@ -8,6 +8,9 @@ on:
       - "**.md"
       - "ChangeLog-PreJason.txt"
       - "parallel_build.csh"
+      - ".github/CODEOWNERS"
+      - ".codebuild/**"
+      - ".circleci/**"
 
 jobs:
   build_gcm:
