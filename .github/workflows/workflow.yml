@@ -3,6 +3,14 @@ name: Build Tests
 on:
   pull_request:
     types: [opened, synchronize, reopened, labeled, unlabeled]
+    # Do not run if the only files changed cannot affect the build
+    paths-ignore:
+      - "**.md"
+      - "ChangeLog-PreJason.txt"
+      - "parallel_build.csh"
+      - ".github/CODEOWNERS"
+      - ".codebuild/**"
+      - ".circleci/**"
 
 jobs:
   build_gcm:
