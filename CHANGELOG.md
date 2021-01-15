@@ -1,5 +1,29 @@
 # Changelog
 
+## [10.17.1] - 2021-01-12
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+### History Changes: YES - Roundoff differences in `TSOIL1` and `TSOIL2`
+
+Major changes include:
+
+1. Soil temperatures export variables (TP's) are now in units of Kelvin throughout the Catch and CatchCN. Note: this has introduced roundoff differences in `TSOIL1` and `TSOIL2` output.
+2. New MOM6 configuration (OM4), and a bug fix in MOM6_Plug.
+3. Update default coupled model surf collection with a few addition fields.
+4. Fix `saltwater_internal` splitting to work with in AMIP and EMIP mode.
+5. Add ASSERTs to RRTMG to test input sanity.
+6. Adds a `-partition` option to `mk_restarts` so that there can be a `-partition` option in `regrid.pl`.
+7. Fix `gcm_convert.j` which was broken.
+8. Added flag to `regrid_forcing_esmf.x` to force a 0 to 1 range when regridding files that should use fractions.
+9. Update flags for `zonal.f` to match CVS and fixed a bug in `res/zonal.gs` for `zonal.x` location.
+10. Updates to ignores CI if non-essential files are updated (only).
+11. Use CONFIGURE_DEPENDS flag to check if any globbed files changed when re-running cmake.
+12. Allow use of aggressive flags with GEOS.
+
+
 ## [10.17.0] - 2020-11-25
 
 ### Zero-diff to previous release: YES
