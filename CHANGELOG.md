@@ -1,5 +1,19 @@
 # Changelog
 
+## [10.17.2] - 2021-01-29
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+### History Changes: NO
+
+Major changes include:
+1. Upgrade to MAPL 2.5.0
+2. Updates to plots and stats package.
+3. Updated PBS Batch handling at NAS.
+4. Addded `CODE_OF_CONDUCT.md`
+
 ## [10.17.1] - 2021-01-12
 
 ### Zero-diff to previous release: YES
