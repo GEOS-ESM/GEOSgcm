@@ -1,5 +1,25 @@
 # Changelog
 
+## [10.17.3] - 2021-02-12
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+### History Changes: NO
+
+Major changes include:
+
+1. Performance modification for surface rc file in run methods.
+2. Relocation of mk_restarts and Raster.
+3. Bugfix for running Catchment-CN with constant CO2.
+4. Fixed land BCs in coupled mode
+5. Added optional PCHEM species file with prod/loss of strat water vapor
+6. Added support for the new Rome nodes at NAS named like `r201c2t1n4`
+7. Plots and stats updates.
+8. Eliminated references to MAPL_COMM - these are no longer used and will be deleted in future releases of MAPL.
+9. Upgrade to MAPL v2.6.0
+
 ## [10.17.2] - 2021-01-29
 
 ### Zero-diff to previous release: YES
