@@ -29,14 +29,14 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.3.7
+  branch: feature/tclune/#344-refactor-generic
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.5.0
+  branch: feature/tclune/#344-refactor-generic
   develop: develop
 
 FMS:
