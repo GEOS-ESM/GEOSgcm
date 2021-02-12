@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  branch: feature/tclune/#344-refactor-generic
+  tag: v1.3.8
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
