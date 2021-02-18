@@ -1,5 +1,79 @@
 # Changelog
 
+## [10.17.3] - 2021-02-12
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+### History Changes: NO
+
+Major changes include:
+
+1. Performance modification for surface rc file in run methods.
+2. Relocation of mk_restarts and Raster.
+3. Bugfix for running Catchment-CN with constant CO2.
+4. Fixed land BCs in coupled mode
+5. Added optional PCHEM species file with prod/loss of strat water vapor
+6. Added support for the new Rome nodes at NAS named like `r201c2t1n4`
+7. Plots and stats updates.
+8. Eliminated references to MAPL_COMM - these are no longer used and will be deleted in future releases of MAPL.
+9. Upgrade to MAPL v2.6.0
+
+## [10.17.2] - 2021-01-29
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+### History Changes: NO
+
+Major changes include:
+1. Upgrade to MAPL 2.5.0
+2. Updates to plots and stats package.
+3. Updated PBS Batch handling at NAS.
+4. Addded `CODE_OF_CONDUCT.md`
+
+## [10.17.1] - 2021-01-12
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+### History Changes: YES - Roundoff differences in `TSOIL1` and `TSOIL2`
+
+Major changes include:
+
+1. Soil temperatures export variables (TP's) are now in units of Kelvin throughout the Catch and CatchCN. Note: this has introduced roundoff differences in `TSOIL1` and `TSOIL2` output.
+2. New MOM6 configuration (OM4), and a bug fix in MOM6_Plug.
+3. Update default coupled model surf collection with a few addition fields.
+4. Fix `saltwater_internal` splitting to work with in AMIP and EMIP mode.
+5. Add ASSERTs to RRTMG to test input sanity.
+6. Adds a `-partition` option to `mk_restarts` so that there can be a `-partition` option in `regrid.pl`.
+7. Fix `gcm_convert.j` which was broken.
+8. Added flag to `regrid_forcing_esmf.x` to force a 0 to 1 range when regridding files that should use fractions.
+9. Update flags for `zonal.f` to match CVS and fixed a bug in `res/zonal.gs` for `zonal.x` location.
+10. Updates to ignores CI if non-essential files are updated (only).
+11. Use CONFIGURE_DEPENDS flag to check if any globbed files changed when re-running cmake.
+12. Allow use of aggressive flags with GEOS.
+
+
+## [10.17.0] - 2020-11-25
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+Major changes include:
+1. The way the model is build has changed. Manage externals is no longer supported. Mepo is now the default and replacement manager for multiple repositories.
+2. Add dependency to turn on `BUILD_SHARED_LIBS` for NCEP_Shared.
+3. Splits the RRTMG k_g tables into separate files.
+4. Bugfix to change Intel Debug flags for MOM6 and FMS.
+5. gcm_run.j bugfix for tile_hist running MOM6.
+6. Update plots and stats to be consistent with recent CVS tags.
+7. Bugfix for C99 compliance on MacOS.
+8. Updates to CI and other subrepos.
+
 ## [10.16.3] - 2020-11-02
 
 ### Zero-diff to previous release: YES
