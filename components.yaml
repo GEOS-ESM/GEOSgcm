@@ -42,7 +42,7 @@ MAPL:
 FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
-  branch: feature/wjiang/mom_dso
+  tag: geos/2019.01.02+noaff.4
   develop: geos/release/2019.01
 
 GEOSgcm_GridComp:
@@ -86,7 +86,7 @@ mom6:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.3.13
+  tag: v1.3.14
   develop: develop
 
 UMD_Etc:
