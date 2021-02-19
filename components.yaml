@@ -45,6 +45,12 @@ FMS:
   tag: geos/2019.01.02+noaff.3
   develop: geos/release/2019.01
 
+FKB:
+  local: ./src/Shared/@FKB
+  remote: ../FKB.git
+  branch: geos/master
+  develop: geos/master
+
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
