@@ -73,7 +73,8 @@ GOCART_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART_GridComp
   remote: ../GOCART
   sparse: ./config/GOCART.sparse
-  branch: feature/wjamieson/GOCART_legacy_changes
+  tag: v1.0.0-beta
+  develop: develop
 
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM_GEOS5PlugMod/@mom
