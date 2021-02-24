@@ -42,3 +42,16 @@ include_directories(${MPI_Fortran_INCLUDE_PATH})
 add_subdirectory (@env)
 add_subdirectory (src)
 
+# https://www.scivision.dev/cmake-auto-gitignore-build-dir/
+# --- auto-ignore build directory
+if(NOT EXISTS ${PROJECT_BINARY_DIR}/.gitignore)
+  file(WRITE ${PROJECT_BINARY_DIR}/.gitignore "*")
+endif()
+
+# Piggyback that file into install
+install(
+   FILES ${PROJECT_BINARY_DIR}/.gitignore
+   DESTINATION ${CMAKE_INSTALL_PREFIX}
+   )
+
+
