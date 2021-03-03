@@ -93,7 +93,7 @@ mom6:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  branch: feature/esherman/gocart2g_develop
+  branch: feature/esherman/gocart2g_develop_WilliamUpdate
   develop: develop
 
 UMD_Etc:
