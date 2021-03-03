@@ -73,7 +73,7 @@ GEOSchem_GridComp:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  sparse: ./config/GOCART2G.sparse
+  sparse: ./config/GOCART.sparse
   branch: feature/esherman/gocart2g_develop_MAPLconst
   develop: develop
 
