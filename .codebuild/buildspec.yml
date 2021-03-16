@@ -11,6 +11,7 @@ phases:
   pre_build:
     commands:
       - mepo clone
+      - mepo status
       - mepo develop GEOSgcm_App GEOSgcm_GridComp
       - mepo status
     finally:
