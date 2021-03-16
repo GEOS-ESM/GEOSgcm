@@ -42,13 +42,13 @@ MAPL:
 FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
-  tag: geos/2019.01.02+noaff.4
+  tag: geos/2019.01.02+noaff.5
   develop: geos/release/2019.01
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.11.5
+  branch: feature/sanAkel/test_PR_gfdl-fms2
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -79,7 +79,7 @@ mom:
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
-  tag: geos/v1.1.0
+  tag: geos/v2.0.0
   develop: geos
   recurse_submodules: True
 
