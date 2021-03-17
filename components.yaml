@@ -67,7 +67,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  branch: feature/wjamieson/GOCART_legacy_changes
+  tag: v1.4.2
   develop: develop
 
 GOCART:
