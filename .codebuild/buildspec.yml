@@ -11,9 +11,8 @@ phases:
   pre_build:
     commands:
       - mepo clone
-      - mepo status
       - mepo develop GEOSgcm_App GEOSgcm_GridComp
-      - mepo status
+      #- mepo status
     finally:
       - echo "Mepo clone external repos" 
   # This phase builds it
