@@ -67,7 +67,14 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.4.2
+  tag: v1.4.4
+  develop: develop
+
+GOCART:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
+  remote: ../GOCART.git
+  sparse: ./config/GOCART.sparse
+  tag: v1.0.0
   develop: develop
 
 mom:
