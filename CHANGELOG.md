@@ -1,5 +1,27 @@
 # Changelog
 
+## [10.17.4] - 2021-03-17
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+Major changes include:
+
+1. Fixed MOM6 diagnostics to use correct netcdf reference year.
+2. Fix bug in gustiness calculations.
+3. Fixed a bug in rotation angle for surface ocean stress.
+4. DSO's for mom5 and mom6.
+5. Update to MOM6 `geos/v2.0.0` and update to FMS `geos/2019.01.02+noaff.6`
+6. `GAAS` Replay fix.
+7. Add `MOM.res.nc` to the list of restarts that are checked in regression testing.
+8. Remove `OCEAN_PRELOAD` since it is not needed with the DSO.
+9. Change path names to support "automatic" MERRA-2 Regular Replay at NAS.
+10. Remove `CMIP_1977_1982` directory in `GEOS_Util/pre/NSIDC-OSTIA_SST-ICE_blend`.
+11. Update `binarytile.x` for river routing.
+12. Bug fix for edge level arrays out-of-bounds in `Lighting_mod`.
+13. Plot updates for stats.
+
 ## [10.17.3] - 2021-02-12
 
 ### Zero-diff to previous release: YES
