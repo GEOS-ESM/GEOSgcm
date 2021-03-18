@@ -3,24 +3,27 @@
 ## [10.17.4] - 2021-03-17
 
 ### Zero-diff to previous release: YES
-
+### Zero-diff to regridding: NO for agcm_import_rst
 ### Restart Changes: NO
+### History Changes: NO
 
 Major changes include:
 
-1. Fixed MOM6 diagnostics to use correct netcdf reference year.
-2. Fix bug in gustiness calculations.
-3. Fixed a bug in rotation angle for surface ocean stress.
-4. DSO's for mom5 and mom6.
-5. Update to MOM6 `geos/v2.0.0` and update to FMS `geos/2019.01.02+noaff.6`
-6. `GAAS` Replay fix.
-7. Add `MOM.res.nc` to the list of restarts that are checked in regression testing.
-8. Remove `OCEAN_PRELOAD` since it is not needed with the DSO.
-9. Change path names to support "automatic" MERRA-2 Regular Replay at NAS.
-10. Remove `CMIP_1977_1982` directory in `GEOS_Util/pre/NSIDC-OSTIA_SST-ICE_blend`.
-11. Update `binarytile.x` for river routing.
-12. Bug fix for edge level arrays out-of-bounds in `Lighting_mod`.
-13. Plot updates for stats.
+1. Moved GOCART legacy to be sourced from separate GOCART repository.
+2. Update to MOM6 `geos/v2.0.0` and update to FMS `geos/2019.01.02+noaff.6`
+3. Bug fix for regrid.pl which can cause non-0-diff regridding for agcm_import_rst.
+4. Fixed MOM6 diagnostics to use correct netcdf reference year.
+5. Fix bug in gustiness calculations.
+6. Fixed a bug in rotation angle for surface ocean stress.
+7. DSO's for mom5 and mom6.
+8. `GAAS` Replay fix.
+9. Add `MOM.res.nc` to the list of restarts that are checked in regression testing.
+10. Remove `OCEAN_PRELOAD` since it is not needed with the DSO.
+11. Change path names to support "automatic" MERRA-2 Regular Replay at NAS.
+12. Remove `CMIP_1977_1982` directory in `GEOS_Util/pre/NSIDC-OSTIA_SST-ICE_blend`.
+13. Update `binarytile.x` for river routing.
+14. Bug fix for edge level arrays out-of-bounds in `Lighting_mod`.
+15. Plot updates for stats.
 
 ## [10.17.3] - 2021-02-12
 
