@@ -25,7 +25,7 @@ set (DOING_GEOS5 YES)
 
 # Should find a better place for this - used in Chem component
 set (ACG_FLAGS -v)
-set (FV_PRECISION R4R8)
+set (FV_PRECISION "R4R8" CACHE STRING "Precision of FV3 core (R4, R4R8, R8)")
 
 list (APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/@cmake")
 include (esma)
