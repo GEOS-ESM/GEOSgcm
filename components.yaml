@@ -93,7 +93,7 @@ mom6:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.3.15
+  tag: v1.3.16
   develop: develop
 
 UMD_Etc:
