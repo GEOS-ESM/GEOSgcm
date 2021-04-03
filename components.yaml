@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v3.1.3
+  tag: v3.1.4
   develop: main
 
 cmake:
@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.3.9
+  tag: v1.3.10
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -55,13 +55,13 @@ GEOSgcm_GridComp:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.2.10
+  tag: v1.2.11
   develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: geos/v1.1.4
+  tag: geos/v1.1.5
   develop: geos/develop
 
 GEOSchem_GridComp:
@@ -74,7 +74,7 @@ GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
   sparse: ./config/GOCART.sparse
-  tag: v1.0.0
+  tag: v1.0.1
   develop: develop
 
 mom:
@@ -93,7 +93,7 @@ mom6:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.3.15
+  tag: v1.3.16
   develop: develop
 
 UMD_Etc:
