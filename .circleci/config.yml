@@ -55,7 +55,7 @@ jobs:
             cd ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm
             mkdir build
             cd build
-            cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=gfortran -DCMAKE_BUILD_TYPE=Debug
+            cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=gfortran -DCMAKE_BUILD_TYPE=Debug -DUSE_F2PY=OFF
       - run:
           name: "Build"
           command: |
