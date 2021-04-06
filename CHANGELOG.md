@@ -9,7 +9,7 @@
 
 Major changes include:
 
-1. Upgrade to ESMA_env v3.2.0 which is needed for MAPL development. All testing has shown it zero-diff to GEOSgcm with ESMF 8.0.1. Tests were run from C12 to C720 as well as Replay and MOM6. However, ESMF notes that there is a change in some regridding which *could* produce non-zero-diff results.
+1. Upgrade to ESMA_env v3.2.0 whose main change is updating to ESMF 8.1.0, which is needed for MAPL development. All testing has shown it zero-diff to GEOSgcm with ESMF 8.0.1. Tests were run from C12 to C720 as well as Replay and MOM6. However, ESMF notes that there are [changes in some regridding situations which *could* produce non-zero-diff results](https://github.com/esmf-org/esmf/releases/tag/ESMF_8_1_0).
 
 ## [10.17.5] - 2021-04-06
 
