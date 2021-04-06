@@ -1,5 +1,19 @@
 # Changelog
 
+## [10.17.5] - 2021-04-06
+
+### Zero-diff to previous release: YES for hydrostatic, NO for nonhydrostatic
+### Zero-diff to regridding: YES
+### Restart Changes: NO
+### History Changes: NO
+
+Major changes include:
+
+1. parallel_build.csh now accepts a `-hydrostatic` or `-nonhydrostatic` argument during building. If no argument is provided the model will build hydrostatically as before. Therefore, setup scripts were modified depending on what -DHYDROSTATIC option was supplied to CMake. If -DHYDROSTATIC=ON then it will assume the user wants to use hydrostatic dynamics options and vice versa. 
+2. Fixed decomposition regression for nonhydrostatic model.
+3. Updates from ADAS 5.27 folded into git GMAO_Shared v1.3.9. This brings the GEOSadas code closer to the current GEOSgcm.
+4. Upticks in MOM6, MAPL, env and other repositiories.
+
 ## [10.17.4] - 2021-03-17
 
 ### Zero-diff to previous release: YES
