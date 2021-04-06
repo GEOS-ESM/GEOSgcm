@@ -36,7 +36,7 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.6.3
+  branch: develop
   develop: develop
 
 FMS:
@@ -48,7 +48,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.11.6
+  branch: feature/esherman/gocart2g_develop_WilliamUpdate
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -67,14 +67,14 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.4.4
+  branch: feature/esherman/gocart2g_develop_v2
   develop: develop
 
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  sparse: ./config/GOCART.sparse
-  tag: v1.0.0
+#  sparse: ./config/GOCART.sparse
+  branch: feature/esherman/gocart2g_develop_v2
   develop: develop
 
 mom:
@@ -93,7 +93,7 @@ mom6:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.3.15
+  branch: feature/esherman/gocart2g_develop_WilliamUpdate
   develop: develop
 
 UMD_Etc:
