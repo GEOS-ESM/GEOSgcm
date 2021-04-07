@@ -48,7 +48,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.11.6
+  branch: feature/pcolarco/#1-geosmoist-updates
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -67,14 +67,14 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.4.4
+  branch: feature/pcolarco/#5-aerochem-updates
   develop: develop
 
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
   sparse: ./config/GOCART.sparse
-  tag: v1.0.1
+  branch: feature/pcolarco/#1-gocart-legacy
   develop: develop
 
 mom:
@@ -93,7 +93,7 @@ mom6:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.3.16
+  branch: feature/pcolarco/#1-aerochem-updates
   develop: develop
 
 UMD_Etc:
