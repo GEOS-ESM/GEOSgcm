@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.3.7
+  tag: v3.3.9
   develop: develop
 
 ecbuild:
@@ -55,13 +55,13 @@ GEOSgcm_GridComp:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.2.11
+  tag: v1.2.12
   develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: geos/v1.1.5
+  tag: geos/v1.1.6
   develop: geos/develop
 
 GEOSchem_GridComp:
