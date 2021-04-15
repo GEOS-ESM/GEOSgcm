@@ -1,5 +1,24 @@
 # Changelog
 
+## [10.18.0] - 2021-04-15
+
+### Zero-diff to previous release: NO
+### Restart Changes: YES
+### History Changes: YES
+
+Major Non-0-diff changes include:
+1. Modified PCHEM interpolation that fixes the problem of negative PCHEM tracers.
+2. A bug fix to atmOcnIntlayer consistent with what was applied to GEOS-FP GEOS-5.27.1 (02/2021) which mitigates anomalous spikes in `TSKINWTR` and related fields when the sea ice fraction departs 100%.
+3. Changed scaling and cleaned up Henry's law code in ConvPar_GF_GEOS5 (bug fix, non-zero diff for GOCART).
+4. Update to use the 2020 NRL Solar file.
+
+Major 0-diff changes include:
+1. Fix DUAL_OCEAN options in coupled model to only work with MOM5 (It does not and can not work with MOM6).
+2. Added diagnostic output for NH3, NH4A convective scavenging to GEOS_MoistGridComp used for GOCART evaluation.
+3. Revive OceanBioGeoChem.
+4. Fixed CMake bugs for DAS build only libraries.
+5. Upticks of FVdycoreCubed_GridComp, fvdycore, and cmake repos.
+
 ## [10.17.6] - 2021-04-06
 
 ### Zero-diff to previous release: YES
