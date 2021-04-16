@@ -70,6 +70,16 @@ GEOSchem_GridComp:
   tag: v1.5.0
   develop: develop
 
+HEMCO:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Shared/HEMCO/@HEMCO
+  remote: ../HEMCO.git
+  branch: GEOS/main
+
+GEOS-chem:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/GEOSCHEMchem_GridComp/@geos-chem
+  remote: ../geos-chem.git
+  branch: feature/cakelle2/GCC_v13.0.0 
+
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
