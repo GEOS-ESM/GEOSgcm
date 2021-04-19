@@ -13,4 +13,4 @@ are covered by other agreements and do not need to sign a CLA.
 ## License
 
 By contributing to GEOS-ESM projects, you agree your contributions will be
-licensed under the [NASA Open Source Aggrement (NOSA) License](LICENSE.md)
+licensed under the [NASA Open Source Agreement (NOSA) License](LICENSE.md)
