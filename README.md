@@ -44,9 +44,64 @@ which obtains the latest `git`, `CMake`, and `mepo` modules.
 
 #### Obtain the Model
 
+On GitHub, there are three ways to clone the model: SSH, HTTPS, or GitHub CLI.
+The first two are "git protocols" which determine how `git` communicates with
+GitHub: either through https or ssh. (The latter is a CLI that uses either ssh or
+https protocol underneath.)
+
+For developers of GEOS, the SSH git protocol is recommended as it can avoid some issues if
+[two-factor authentication
+(2FA)](https://docs.github.com/en/github/authenticating-to-github/securing-your-account-with-two-factor-authentication-2fa)
+is enabled on GitHub.
+
+##### SSH
+
+To clone the GEOSgcm using the SSH url (starts with `git@github.com`), you run:
 ```
 git clone git@github.com:GEOS-ESM/GEOSgcm.git
 ```
+
+###### Permission denied (publickey)
+
+If this is your first time using GitHub with any SSH URL, you might get this
+error:
+```
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+```
+
+If you do see this, you need to [upload an ssh
+key](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
+to your GitHub account. This needs to be done on any machine that you want to
+use the SSH URL through.
+
+
+##### HTTPS
+
+To clone the model through HTTPS you run:
+
+```
+git clone https://github.com/GEOS-ESM/GEOSgcm.git
+```
+
+Note that if you use the HTTPS URL and have 2FA set up on GitHub, you will need
+to use [personal access
+tokens](https://docs.github.com/en/github/authenticating-to-github/accessing-github-using-two-factor-authentication#authenticating-on-the-command-line-using-https)
+as a password.
+
+##### GitHub CLI
+
+You can also use the [GitHub CLI](https://cli.github.com/) with:
+```
+gh repo clone GEOS-ESM/GEOSgcm
+```
+
+Note that when you first use `gh`, it will ask what your preferred git protocol
+is (https or ssh) to use "underneath". The caveats above will apply to whichever
+you choose.
 
 ---
 
