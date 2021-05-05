@@ -2,7 +2,7 @@ name: Build Tests
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, labeled, unlabeled]
+    types: [opened, synchronize, reopened]
     # Do not run if the only files changed cannot affect the build
     paths-ignore:
       - "**.md"
