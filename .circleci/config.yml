@@ -11,7 +11,7 @@ executors:
       OMPI_ALLOW_RUN_AS_ROOT: 1
       OMPI_ALLOW_RUN_AS_ROOT_CONFIRM: 1
       OMPI_MCA_btl_vader_single_copy_mechanism: none
-    resource_class: xlarge
+    resource_class: large
     #MEDIUM# resource_class: medium
 
 workflows:
