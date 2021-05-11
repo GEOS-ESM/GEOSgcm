@@ -11,8 +11,8 @@ executors:
       OMPI_ALLOW_RUN_AS_ROOT: 1
       OMPI_ALLOW_RUN_AS_ROOT_CONFIRM: 1
       OMPI_MCA_btl_vader_single_copy_mechanism: none
-    #XLARGE# resource_class: xlarge
-    resource_class: medium
+    resource_class: large
+    #MEDIUM# resource_class: medium
 
 workflows:
   version: 2.1
@@ -60,5 +60,5 @@ jobs:
           name: "Build"
           command: |
             cd ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm/build
-            #XLARGE# make -j"$(nproc)" install
-            make -j4 install
+            make -j"$(nproc)" install
+            #MEDIUM# make -j4 install
