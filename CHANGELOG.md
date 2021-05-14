@@ -1,5 +1,26 @@
 # Changelog
 
+## [10.19.0] - 2021-05-14
+
+### Zero-diff to previous release: NO
+### Restart Changes: NO
+### History Changes: YES
+
+Major Non-0-diff changes include:
+1. Updates the DEFAULT Land BCs of GEOSgcm to be Icarus-NLv3. Also applies a fix to GEOS_SurfaceGridComp.rc to correctly implement it.
+Major 0-diff changes include:
+1. Updates `GMAO_psas` to work with MAPL2.
+2. Rename `LANL_cice` to `CICE4` that is located at `LANL_Shared/`
+3. Remove `BULK_SST` alias for `TS_FOUND` in HISTORies used in model (only) simulations.
+4. Updates to use Python2 and Python3 at same time.
+5. Fixed the `-wemin` and `-wemout` options in `regrid.pl` so that they will accept integer values.
+6. Bugfix to detect if saltwater splitting is needed in more files.
+7. Add `IOSERVER` code into `gcm_forecast.tmpl`.
+8. Updates needed for `GEOSadas` to work with MAPL2.
+9. Add GEOS-Chem and HEMCO as external repositories. 
+10. Chem fix*
+11. Uptick of MAPL and FMS repositories.
+
 ## [10.18.0] - 2021-04-15
 
 ### Zero-diff to previous release: NO
