@@ -70,6 +70,18 @@ GEOSchem_GridComp:
   tag: v1.5.0
   develop: develop
 
+HEMCO:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Shared/HEMCO/@HEMCO
+  remote: ../HEMCO.git
+  tag: geos/v2.2.0
+  develop: geos/develop 
+
+geos-chem:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/GEOSCHEMchem_GridComp/@geos-chem
+  remote: ../geos-chem.git
+  tag: geos/v13.0.0-rc1
+  develop: geos/develop
+
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
