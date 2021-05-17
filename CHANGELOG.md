@@ -8,6 +8,7 @@
 
 Major Non-0-diff changes include:
 1. Updates the DEFAULT Land BCs of GEOSgcm to be Icarus-NLv3. Also applies a fix to GEOS_SurfaceGridComp.rc to correctly implement it.
+
 Major 0-diff changes include:
 1. Updates `GMAO_psas` to work with MAPL2.
 2. Rename `LANL_cice` to `CICE4` that is located at `LANL_Shared/`
