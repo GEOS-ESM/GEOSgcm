@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.4.1
+  tag: v3.4.2
   develop: develop
 
 ecbuild:
@@ -73,7 +73,7 @@ GEOSchem_GridComp:
 HEMCO:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Shared/HEMCO/@HEMCO
   remote: ../HEMCO.git
-  tag: geos/v2.2.0
+  tag: geos/v2.2.1
   develop: geos/develop 
 
 geos-chem:
