@@ -18,8 +18,8 @@ Major 0-diff changes include:
 6. Bugfix to detect if saltwater splitting is needed in more files.
 7. Add `IOSERVER` code into `gcm_forecast.tmpl`.
 8. Updates needed for `GEOSadas` to work with MAPL2.
-9. Add GEOS-Chem and HEMCO as external repositories. 
-10. Chem fix*
+9. Add GEOS-Chem and HEMCO as separate external repositories. 
+10. GMI is now set to import RI and RL only when running Cloud-J. This is a work-around for a CTM issue.
 11. Uptick of MAPL and FMS repositories.
 
 ## [10.18.0] - 2021-04-15
