@@ -1,7 +1,10 @@
 *~
 /@cmake/
-/@modules/
+/cmake/
+/cmake@/
 /@env/
+/env/
+/env@/
 /.mepo/
 parallel_build.o*
 log.*
