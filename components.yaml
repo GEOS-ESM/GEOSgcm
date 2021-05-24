@@ -48,7 +48,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  branch: develop
+  tag: v1.12.0
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
