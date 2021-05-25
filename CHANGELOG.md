@@ -1,5 +1,16 @@
 # Changelog
 
+## [10.19.1] - 2021-05-25
+
+### Zero-diff to previous release: NO
+### Restart Changes: NO
+### History Changes: NO
+
+Major changes include:
+
+1. Upgrade to MAPL v2.7.0 which changes how programs set up command line options.
+2. Update to FVdycoreCubed_GridComp v1.2.15 and GEOSgcm_App v1.5.1 for compatibility with MAPL v2.7.0.
+
 ## [10.19.0] - 2021-05-14
 
 ### Zero-diff to previous release: NO
