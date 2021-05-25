@@ -1,5 +1,23 @@
 # Changelog
 
+## [10.19.1] - 2021-05-25
+
+### Zero-diff to previous release: YES
+### Restart Changes: NO
+### History Changes: YES
+
+Major changes include:
+
+1. Upgrade to MAPL v2.7.0 which changes how programs set up command line options.
+2. Update to FVdycoreCubed_GridComp v1.2.15 and GEOSgcm_App v1.5.1 for compatibility with MAPL v2.7.0.
+3. Enable GEOSgcm to output the configuration values in `GEOS_SurfaceGridComp.rc`.
+4. Fixes a bug in the export of `SSKINW` (an internal state of Openwater) that was being filled incorrectly leading to `MAPL_UNDEF`. Now there are actual values.
+5. Merged changes present in GEOSadas-5_27_1_p3 that never made it into the GIT repo: revised stochastic perturbation tendency exports.
+6. A bug fix to prevent a seg-fault during the calculation of the GEOS-Chem lightning flash rate due to an array size mismatch.
+7. Add ability to write out energy components to file.
+8. Update gitignore for mepo updates.
+9. Follow MAPL's change to add a new `MAPL_CapOptions` constructor.
+
 ## [10.19.0] - 2021-05-14
 
 ### Zero-diff to previous release: NO
