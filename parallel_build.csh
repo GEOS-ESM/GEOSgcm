@@ -30,7 +30,7 @@ while ($#argv)
    shift
 end
 
-if (! -d ${ESMADIR}/@env) then
+if (! -d ${ESMADIR}/@env || ! -d ${ESMADIR}/env@ || ! -d ${ESMADIR}/env) then
    if ($?PBS_JOBID || $?SLURM_JOBID) then
       echo " mepo clone must be run!"
       echo " This requires internet access but you are on a compute node"
@@ -57,5 +57,9 @@ set argv = "$origargv"
 
 if ( -d ${ESMADIR}/@env ) then
    ${ESMADIR}/@env/build.csh -esmadir $ESMADIR $argv
+else if ( -d ${ESMADIR}/env@ ) then
+   ${ESMADIR}/env@/build.csh -esmadir $ESMADIR $argv
+else if ( -d ${ESMADIR}/env ) then
+   ${ESMADIR}/env/build.csh -esmadir $ESMADIR $argv
 endif
 
