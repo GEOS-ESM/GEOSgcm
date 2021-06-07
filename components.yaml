@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v3.2.1
+  branch: feature/mathomp4/enable-gfe-namespace
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.4.2
+  branch: feature/mathomp4/enable-gfe-namespace
   develop: develop
 
 ecbuild:
