@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  branch: feature/mathomp4/enable-gfe-namespace
+  tag: v3.3.0
   develop: main
 
 cmake:
