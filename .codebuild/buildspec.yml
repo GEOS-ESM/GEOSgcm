@@ -10,6 +10,10 @@ phases:
       - echo "versions etc"
   pre_build:
     commands:
+      - git status
+      - git branch
+      - echo "CODEBUILD_RESOLVED_SOURCE_VERSION: $CODEBUILD_RESOLVED_SOURCE_VERSION"
+      - git checkout $CODEBUILD_RESOLVED_SOURCE_VERSION
       - mepo clone
       - mepo develop GEOSgcm_App GEOSgcm_GridComp
       #- mepo status
