@@ -17,7 +17,7 @@
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                               | [geos/v1.0.6](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.0.6)                       |
 | [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                       | [v1.1.1](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.1.1)                               |
 | [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                       | [v1.4.2](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.4.2)                               |
-| [MAPL](https://github.com/GEOS-ESM/MAPL)                                     | [v2.7.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.7.0)                                      |
+| [MAPL](https://github.com/GEOS-ESM/MAPL)                                     | [v2.7.1](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.7.1)                                      |
 | [FMS](https://github.com/GEOS-ESM/FMS)                                       | [geos/2019.01.02+noaff.7](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.7) |
 | [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)             | [v1.12.2](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v1.12.2)                        |
 | [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp) | [v1.2.15](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.2.15)                  |
