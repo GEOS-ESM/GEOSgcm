@@ -1,5 +1,21 @@
 # Changelog
 
+## [10.19.2] - 2021-06-11
+
+### Zero-diff to previous release: YES
+### Restart Changes: NO
+
+Changes include:
+
+1. Upgrade to Baselibs 6.2.4 and cmake v3.5.0.
+2. Upgrade to MAPL v2.7.1.
+3. Update parallel_build to use GMAO_Shared main if develop.
+4. Created a new grid comp `GEOS_SeaiceGridComp` as a top level container component serving sea ice sub-components to `OGCM`. This new structure mirrors the existing `GuestOcean/MOMPlug` relationship for the ocean model hierarchy.
+5. Bug fix that makes sure that diagnostics `CNV_MFC` still works when the UW shallow convection code is disabled.
+6. Add changes consistent with what is in GEOSadas 5.28.
+7. Addition of variables for analysis in two RC files and correction in `IAU` `reftime` consistent with GEOSadas.
+8. Fixes for `IOSERVER` on Rome.
+
 ## [10.19.1] - 2021-05-25
 
 ### Zero-diff to previous release: YES
