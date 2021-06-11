@@ -10,27 +10,27 @@
 
 ## Current State of GEOSgcm Subrepos
 
-| Repository                                                                   | Version                                                                                             |
-| ----------                                                                   | -------                                                                                             |
-| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                             | [v3.3.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v3.3.0)                                  |
-| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                         | [v3.5.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.5.0)                                |
-| [ecbuild](https://github.com/GEOS-ESM/ecbuild)                               | [geos/v1.0.6](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.0.6)                       |
-| [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                       | [v1.1.1](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.1.1)                               |
-| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                       | [v1.4.2](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.4.2)                               |
-| [MAPL](https://github.com/GEOS-ESM/MAPL)                                     | [v2.7.1](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.7.1)                                      |
-| [FMS](https://github.com/GEOS-ESM/FMS)                                       | [geos/2019.01.02+noaff.7](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.7) |
-| [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)             | [v1.12.2](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v1.12.2)                        |
-| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp) | [v1.2.15](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.2.15)                  |
-| [fvdycore](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere)              | [geos/v1.1.6](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.1.6)       |
-| [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)           | [v1.6.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.6.0)                         |
-| [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                   | [geos/v2.2.1](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.1)                         |
-| [geos-chem](https://github.com/GEOS-ESM/geos-chem)                           | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)           |
-| [GOCART](https://github.com/GEOS-ESM/GOCART)                                 | [v1.0.1](https://github.com/GEOS-ESM/GOCART/releases/tag/v1.0.1)                                    |
-| [mom](https://github.com/GEOS-ESM/MOM5)                                      | [geos/5.1.0+1.1.1](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B1.1.1)              |
-| [mom6](https://github.com/GEOS-ESM/MOM6)                                     | [geos/v2.0.1](https://github.com/GEOS-ESM/MOM6/releases/tag/geos%2Fv2.0.1)                          |
-| [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                       | [v1.5.1](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v1.5.1)                               |
-| [UMD_Etc](https://github.com/GEOS-ESM/UMD_Etc)                               | [v1.0.4](https://github.com/GEOS-ESM/UMD_Etc/releases/tag/v1.0.4)                                   |
-| [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                       | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                               |
+| Repository                                                                     | Version                                                                                             |
+| ----------                                                                     | -------                                                                                             |
+| [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                               |
+| [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v1.0.6](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.0.6)                       |
+| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.5.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.5.0)                                |
+| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v3.3.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v3.3.0)                                  |
+| [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.7](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.7) |
+| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v1.2.15](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.2.15)                  |
+| [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)           |
+| [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.6.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.6.0)                         |
+| [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v1.5.1](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v1.5.1)                               |
+| [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v1.12.2](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v1.12.2)                        |
+| [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v1.1.6](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.1.6)       |
+| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.4.2](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.4.2)                               |
+| [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v1.0.1](https://github.com/GEOS-ESM/GOCART/releases/tag/v1.0.1)                                    |
+| [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.1](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.1)                         |
+| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.7.1](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.7.1)                                      |
+| [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+1.1.1](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B1.1.1)              |
+| [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v2.0.1](https://github.com/GEOS-ESM/MOM6/releases/tag/geos%2Fv2.0.1)                          |
+| [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.1.1](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.1.1)                               |
+| [UMD_Etc](https://github.com/GEOS-ESM/UMD_Etc)                                 | [v1.0.4](https://github.com/GEOS-ESM/UMD_Etc/releases/tag/v1.0.4)                                   |
 
 ## How to build GEOS GCM
 
