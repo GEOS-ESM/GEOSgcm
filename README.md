@@ -12,8 +12,8 @@
 
 | Repository                                                                   | Version                                                                                             |
 | ----------                                                                   | -------                                                                                             |
-| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                             | [v3.2.1](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v3.2.1)                                  |
-| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                         | [v3.4.2](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.4.2)                                |
+| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                             | [v3.3.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v3.3.0)                                  |
+| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                         | [v3.5.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.5.0)                                |
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                               | [geos/v1.0.6](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.0.6)                       |
 | [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                       | [v1.1.1](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.1.1)                               |
 | [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                       | [v1.4.2](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.4.2)                               |
