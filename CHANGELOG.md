@@ -6,7 +6,6 @@
 ### Restart Changes: NO
 
 Changes include:
-
 1. Upgrade to Baselibs 6.2.4 and cmake v3.5.0.
 2. Upgrade to MAPL v2.7.1.
 3. Created a new grid comp `GEOS_SeaiceGridComp` as a top level container component serving sea ice sub-components to `OGCM`. This new structure mirrors the existing `GuestOcean/MOMPlug` relationship for the ocean model hierarchy.
