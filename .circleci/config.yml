@@ -3,7 +3,7 @@ version: 2.1
 executors:
   gcc-build-env:
     docker:
-      - image: gmao/ubuntu20-geos-env-mkl:v6.1.0-openmpi_4.0.5-gcc_10.2.0
+      - image: gmao/ubuntu20-geos-env-mkl:v6.2.4-openmpi_4.0.5-gcc_10.3.0
         auth:
           username: $DOCKERHUB_USER
           password: $DOCKERHUB_AUTH_TOKEN
