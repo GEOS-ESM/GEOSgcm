@@ -29,7 +29,7 @@
 | [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.7.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.7.0)                                      |
 | [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+1.1.1](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B1.1.1)              |
 | [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v2.0.1](https://github.com/GEOS-ESM/MOM6/releases/tag/geos%2Fv2.0.1)                          |
-| [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v5.29.0](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v5.29.0)                             |
+| [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.2.0](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.2.0)                              |
 | [UMD_Etc](https://github.com/GEOS-ESM/UMD_Etc)                                 | [v1.0.4](https://github.com/GEOS-ESM/UMD_Etc/releases/tag/v1.0.4)                                   |
 
 ## How to build GEOS GCM
