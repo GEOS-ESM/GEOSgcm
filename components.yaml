@@ -100,7 +100,7 @@ mom6:
   remote: ../MOM6.git
   tag: geos/v2.0.1
   develop: dev/gfdl
-  recurse_submodules: True
+  recurse_submodules: true
 
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
