@@ -55,7 +55,7 @@ GEOSgcm_GridComp:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.2.15
+  branch: feature/mathomp4/cascade-lake-nccs
   develop: develop
 
 fvdycore:
@@ -105,7 +105,7 @@ mom6:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.5.2
+  branch: feature/mathomp4/cascade-lake-nccs
   develop: develop
 
 UMD_Etc:
