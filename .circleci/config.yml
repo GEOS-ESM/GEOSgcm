@@ -11,7 +11,7 @@ executors:
       OMPI_ALLOW_RUN_AS_ROOT: 1
       OMPI_ALLOW_RUN_AS_ROOT_CONFIRM: 1
       OMPI_MCA_btl_vader_single_copy_mechanism: none
-    resource_class: large
+    resource_class: xlarge
     #MEDIUM# resource_class: medium
 
   ifort:
@@ -20,7 +20,7 @@ executors:
         auth:
           username: $DOCKERHUB_USER
           password: $DOCKERHUB_AUTH_TOKEN
-    resource_class: large
+    resource_class: xlarge
     #MEDIUM# resource_class: medium
 
 workflows:
