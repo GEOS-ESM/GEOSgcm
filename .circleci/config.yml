@@ -1,7 +1,20 @@
 version: 2.1
 
 executors:
-  gfortran:
+  gfortran-large:
+    docker:
+      - image: gmao/ubuntu20-geos-env-bcs:v6.2.4-openmpi_4.0.5-gcc_10.3.0-bcs_v10.19.2
+        auth:
+          username: $DOCKERHUB_USER
+          password: $DOCKERHUB_AUTH_TOKEN
+    environment:
+      OMPI_ALLOW_RUN_AS_ROOT: 1
+      OMPI_ALLOW_RUN_AS_ROOT_CONFIRM: 1
+      OMPI_MCA_btl_vader_single_copy_mechanism: none
+    resource_class: large
+    #MEDIUM# resource_class: medium
+
+  gfortran-xlarge:
     docker:
       - image: gmao/ubuntu20-geos-env-bcs:v6.2.4-openmpi_4.0.5-gcc_10.3.0-bcs_v10.19.2
         auth:
@@ -14,7 +27,16 @@ executors:
     resource_class: xlarge
     #MEDIUM# resource_class: medium
 
-  ifort:
+  ifort-large:
+    docker:
+      - image: gmao/ubuntu20-geos-env-bcs:v6.2.4-intelmpi_2021.2.0-intel_2021.2.0-bcs_v10.19.2
+        auth:
+          username: $DOCKERHUB_USER
+          password: $DOCKERHUB_AUTH_TOKEN
+    resource_class: large
+    #MEDIUM# resource_class: medium
+
+  ifort-xlarge:
     docker:
       - image: gmao/ubuntu20-geos-env-bcs:v6.2.4-intelmpi_2021.2.0-intel_2021.2.0-bcs_v10.19.2
         auth:
@@ -48,7 +70,7 @@ jobs:
     parameters:
       compiler:
         type: string
-    executor: << parameters.compiler >>
+    executor: << parameters.compiler >>-large
     working_directory: /root/project
     steps:
       - checkout:
@@ -99,7 +121,7 @@ jobs:
     parameters:
       compiler:
         type: string
-    executor: << parameters.compiler >>
+    executor: << parameters.compiler >>-xlarge
     working_directory: /root/project
     steps:
       - attach_workspace:
@@ -133,9 +155,5 @@ jobs:
                echo "EGRESS not found!"
                exit 1
             fi
-      - run:
-          name: "Cat log file"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-gcm-c12
-
-            cat *.log
+      - store_artifacts:
+          path: ${CIRCLE_WORKING_DIRECTORY}/workspace/test-gcm-c12/run.log
