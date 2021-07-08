@@ -33,6 +33,15 @@ workflows:
               compiler: [gfortran, ifort]
           context: 
             - docker-hub-creds
+      - run-gcm-exp:
+          name: run-gcm-exp-on-<< matrix.compiler >>
+          matrix:
+            parameters:
+              compiler: [gfortran, ifort]
+          context:
+            - docker-hub-creds
+          requires:
+            - build-GEOSgcm-on-<< matrix.compiler >>
 
 jobs:
   build-GEOSgcm:
@@ -84,7 +93,7 @@ jobs:
           paths:
             - install-GEOSgcm
 
-  make-gcm-exp:
+  run-gcm-exp:
     parameters:
       compiler:
         type: string
