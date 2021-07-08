@@ -100,16 +100,19 @@ jobs:
       - run:
           name: "CMake"
           command: |
+            mkdir -p /logfiles
             cd ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm
             mkdir -p  ${CIRCLE_WORKING_DIRECTORY}/workspace/build-GEOSgcm
             cd ${CIRCLE_WORKING_DIRECTORY}/workspace/build-GEOSgcm
-            cmake ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=<< parameters.compiler >> -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=${CIRCLE_WORKING_DIRECTORY}/workspace/install-GEOSgcm -DUSE_F2PY=OFF 
+            cmake ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=<< parameters.compiler >> -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=${CIRCLE_WORKING_DIRECTORY}/workspace/install-GEOSgcm -DUSE_F2PY=OFF |& tee /logfiles/cmake.log
       - run:
           name: "Build and install"
           command: |
             cd ${CIRCLE_WORKING_DIRECTORY}/workspace/build-GEOSgcm
-            make -j"$(nproc)" install
-            #MEDIUM# make -j4 install
+            make -j"$(nproc)" install |& tee /logfiles/make.log
+            #MEDIUM# make -j4 install |& tee /logfiles/make.log
+      - store_artifacts:
+          path: /logfiles
       # We need to persist the install for the next step
       # but only if we are running gcm tests
       - persist_to_workspace:
@@ -140,7 +143,8 @@ jobs:
           name: "Run gcm_run.j"
           command: |
             cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-gcm-c12
-            ./gcm_run.j |& tee run.log
+            mkdir -p /logfiles
+            ./gcm_run.j |& tee /logfiles/gcm_run.log
       - run:
           name: "Check for EGRESS"
           command: |
@@ -156,4 +160,4 @@ jobs:
                exit 1
             fi
       - store_artifacts:
-          path: ${CIRCLE_WORKING_DIRECTORY}/workspace/test-gcm-c12/run.log
+          path: /logfiles
