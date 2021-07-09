@@ -165,6 +165,7 @@ clone all the sub-repos, you can run `mepo clone` inside the fixture:
 
 ```
 cd GEOSgcm
+mepo init
 mepo clone
 ```
 
