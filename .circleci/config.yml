@@ -84,8 +84,6 @@ jobs:
             cd ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm
             mepo clone
             mepo develop GEOSgcm_App GEOSgcm_GridComp GMAO_Shared
-            # Looks like we need MAPL develop for the memutils fix
-            mepo develop MAPL
             mepo status
       - run:
           name: "Mepo checkout-if-exists"
