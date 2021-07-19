@@ -44,8 +44,6 @@ jobs:
         run: |
           mepo clone
           mepo status
-          mepo develop GEOSgcm_GridComp GEOSgcm_App
-          mepo status
       - name: Update other branches
         if:
           "!contains('refs/heads/main,refs/heads/develop', github.ref)"
