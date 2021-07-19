@@ -23,13 +23,13 @@
 | [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v1.5.2](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v1.5.2)                               |
 | [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v1.12.3](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v1.12.3)                        |
 | [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v1.1.6](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.1.6)       |
-| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.4.3](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.4.3)                               |
+| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.4.5](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.4.5)                               |
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v1.0.1](https://github.com/GEOS-ESM/GOCART/releases/tag/v1.0.1)                                    |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.1](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.1)                         |
 | [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.7.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.7.0)                                      |
 | [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+1.1.1](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B1.1.1)              |
 | [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v2.0.1](https://github.com/GEOS-ESM/MOM6/releases/tag/geos%2Fv2.0.1)                          |
-| [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.1.1](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.1.1)                               |
+| [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.2.0](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.2.0)                              |
 | [UMD_Etc](https://github.com/GEOS-ESM/UMD_Etc)                                 | [v1.0.4](https://github.com/GEOS-ESM/UMD_Etc/releases/tag/v1.0.4)                                   |
 
 ## How to build GEOS GCM
