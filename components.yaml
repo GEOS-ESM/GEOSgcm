@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.5.0
+  tag: v3.5.2
   develop: develop
 
 ecbuild:
@@ -22,14 +22,14 @@ ecbuild:
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
   remote: ../NCEP_Shared.git
-  tag: v1.1.1
+  tag: v1.2.0
   sparse: ./config/NCEP_Shared.sparse
   develop: main
 
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.4.3
+  tag: v1.4.5
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -85,8 +85,8 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  sparse: ./config/GOCART.sparse
   tag: v1.0.1
+  sparse: ./config/GOCART.sparse
   develop: develop
 
 mom:
@@ -100,7 +100,7 @@ mom6:
   remote: ../MOM6.git
   tag: geos/v2.0.1
   develop: dev/gfdl
-  recurse_submodules: True
+  recurse_submodules: true
 
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
