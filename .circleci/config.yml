@@ -1,9 +1,9 @@
 version: 2.1
 
 executors:
-  gcc-build-env:
+  gfortran-large:
     docker:
-      - image: gmao/ubuntu20-geos-env-mkl:v6.2.4-openmpi_4.0.5-gcc_10.3.0
+      - image: gmao/ubuntu20-geos-env-bcs:v6.2.4-openmpi_4.0.5-gcc_10.3.0-bcs_v10.19.2
         auth:
           username: $DOCKERHUB_USER
           password: $DOCKERHUB_AUTH_TOKEN
@@ -14,24 +14,70 @@ executors:
     resource_class: large
     #MEDIUM# resource_class: medium
 
+  gfortran-xlarge:
+    docker:
+      - image: gmao/ubuntu20-geos-env-bcs:v6.2.4-openmpi_4.0.5-gcc_10.3.0-bcs_v10.19.2
+        auth:
+          username: $DOCKERHUB_USER
+          password: $DOCKERHUB_AUTH_TOKEN
+    environment:
+      OMPI_ALLOW_RUN_AS_ROOT: 1
+      OMPI_ALLOW_RUN_AS_ROOT_CONFIRM: 1
+      OMPI_MCA_btl_vader_single_copy_mechanism: none
+    resource_class: xlarge
+    #MEDIUM# resource_class: medium
+
+  ifort-large:
+    docker:
+      - image: gmao/ubuntu20-geos-env-bcs:v6.2.4-intelmpi_2021.2.0-intel_2021.2.0-bcs_v10.19.2
+        auth:
+          username: $DOCKERHUB_USER
+          password: $DOCKERHUB_AUTH_TOKEN
+    resource_class: large
+    #MEDIUM# resource_class: medium
+
+  ifort-xlarge:
+    docker:
+      - image: gmao/ubuntu20-geos-env-bcs:v6.2.4-intelmpi_2021.2.0-intel_2021.2.0-bcs_v10.19.2
+        auth:
+          username: $DOCKERHUB_USER
+          password: $DOCKERHUB_AUTH_TOKEN
+    resource_class: xlarge
+    #MEDIUM# resource_class: medium
+
 workflows:
-  version: 2.1
   build-test:
     jobs:
       - build-GEOSgcm:
+          name: build-GEOSgcm-on-<< matrix.compiler >>
+          matrix:
+            parameters:
+              compiler: [gfortran, ifort]
+          context: 
+            - docker-hub-creds
+      - run-gcm-exp:
+          name: run-gcm-exp-on-<< matrix.compiler >>
+          matrix:
+            parameters:
+              compiler: [gfortran, ifort]
           context:
             - docker-hub-creds
+          requires:
+            - build-GEOSgcm-on-<< matrix.compiler >>
 
 jobs:
   build-GEOSgcm:
-    executor: gcc-build-env
+    parameters:
+      compiler:
+        type: string
+    executor: << parameters.compiler >>-large
     working_directory: /root/project
     steps:
       - checkout:
           path: GEOSgcm
       - run:
           name: "Versions etc"
-          command: mpirun --version && gfortran --version && echo $BASEDIR && pwd && ls
+          command: mpirun --version && << parameters.compiler>> --version && echo $BASEDIR && pwd && ls
       - run:
           name: "Mepo clone external repos"
           command: |
@@ -43,7 +89,7 @@ jobs:
           command: |
             cd ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm
             echo "${CIRCLE_BRANCH}"
-            if [ "${CIRCLE_BRANCH}" != "develop" ] && [ "${CIRCLE_BRANCH}" != "master" ] && [ "${CIRCLE_BRANCH}" != "main" ]
+            if [ "${CIRCLE_BRANCH}" != "develop" ] && [ "${CIRCLE_BRANCH}" != "main" ]
             then
                mepo checkout-if-exists ${CIRCLE_BRANCH}
             fi
@@ -51,13 +97,64 @@ jobs:
       - run:
           name: "CMake"
           command: |
+            mkdir -p /logfiles
             cd ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm
-            mkdir build
-            cd build
-            cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=gfortran -DCMAKE_BUILD_TYPE=Debug -DUSE_F2PY=OFF
+            mkdir -p  ${CIRCLE_WORKING_DIRECTORY}/workspace/build-GEOSgcm
+            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/build-GEOSgcm
+            cmake ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=<< parameters.compiler >> -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=${CIRCLE_WORKING_DIRECTORY}/workspace/install-GEOSgcm -DUSE_F2PY=OFF |& tee /logfiles/cmake.log
       - run:
-          name: "Build"
+          name: "Build and install"
           command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm/build
-            make -j"$(nproc)" install
-            #MEDIUM# make -j4 install
+            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/build-GEOSgcm
+            make -j"$(nproc)" install |& tee /logfiles/make.log
+            #MEDIUM# make -j4 install |& tee /logfiles/make.log
+      - store_artifacts:
+          path: /logfiles
+      # We need to persist the install for the next step
+      # but only if we are running gcm tests
+      - persist_to_workspace:
+          root: workspace
+          paths:
+            - install-GEOSgcm
+
+  run-gcm-exp:
+    parameters:
+      compiler:
+        type: string
+    executor: << parameters.compiler >>-xlarge
+    working_directory: /root/project
+    steps:
+      - attach_workspace:
+          at: workspace
+      - run:
+          name: "Run gcm_setup"
+          command: |
+            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/install-GEOSgcm/bin
+            /TinyBCs-GitV10/scripts/create_expt.py test-gcm-c12 --expdir ${CIRCLE_WORKING_DIRECTORY}/workspace
+      - run:
+          name: "Run makeoneday"
+          command: |
+            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-gcm-c12
+            /TinyBCs-GitV10/scripts/makeoneday.bash 6hr nxy 1 6
+      - run:
+          name: "Run gcm_run.j"
+          command: |
+            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-gcm-c12
+            mkdir -p /logfiles
+            ./gcm_run.j |& tee /logfiles/gcm_run.log
+      - run:
+          name: "Check for EGRESS"
+          command: |
+            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-gcm-c12
+
+            SCRDIR=$(find . -type d -name 'scratch*')
+
+            if [[ -f $SCRDIR/EGRESS ]]
+            then
+               echo "EGRESS found!"
+            else
+               echo "EGRESS not found!"
+               exit 1
+            fi
+      - store_artifacts:
+          path: /logfiles
