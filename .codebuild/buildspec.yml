@@ -15,7 +15,7 @@ phases:
       - echo CODEBUILD_RESOLVED_SOURCE_VERSION is ${CODEBUILD_RESOLVED_SOURCE_VERSION}
       - git checkout ${CODEBUILD_RESOLVED_SOURCE_VERSION}
       - mepo clone
-      - mepo status
+      #- mepo status
     finally:
       - echo "Mepo clone external repos" 
   # This phase builds it
