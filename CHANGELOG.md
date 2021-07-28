@@ -1,5 +1,24 @@
 # Changelog
 
+## [10.19.3] - 2021-07-21
+
+### Zero-diff to previous release: MOSTLY
+### Restart Changes: NO
+
+Potential Non-0-diff Change:
+
+1. Upgrade to MAPL v2.8.0. For the MERRA2 GOCART Emissions, all testing shows it is zero-diff. But for the Ops GOCART Emissions, it there are very small roundoff differences. The results are non-zero-diff due to a bug fix (to a race condition) in this version of MAPL on how grids are handled.
+
+Major 0-diff Changes:
+1. Detect MERRA2OX date violation during setup.
+2. Make species consistent with emissions choice.
+3. Only allow Rome nodes at NAS if built on Rome.
+5. Updates for MVAPICH2, enable multigroup by default.
+6. Bugfix for correct day when running EMIPs.
+7. Update ldas increment alarm setting in CatchGC.
+8. Updates to plots package.
+9. Update to fvdycore v1.1.7.
+
 ## [10.19.2] - 2021-06-11
 
 ### Zero-diff to previous release: YES
