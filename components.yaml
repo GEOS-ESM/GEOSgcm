@@ -90,13 +90,13 @@ GOCART:
   develop: develop
 
 mom:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM_GEOS5PlugMod/@mom
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOS_OceanGridComp/MOM_GEOS5PlugMod/@mom
   remote: ../MOM5.git
   tag: geos/5.1.0+1.1.1
   develop: geos5
 
 mom6:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM6_GEOSPlug/@mom6
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
   tag: geos/v2.0.1
   develop: dev/gfdl
