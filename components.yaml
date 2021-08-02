@@ -67,14 +67,13 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  branch: feature/esherman/gocart2g_develop_v2_aerochemUpdates
+  branch: feature/pcolarco/#1-gocart2g-updates
   develop: develop
 
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-#  sparse: ./config/GOCART.sparse
-  branch: feature/esherman/gocart2g_develop_v2_aerochemUpdates
+  branch: feature/pcolarco/#1-gocart2g-updates
   develop: develop
 
 mom:
@@ -88,7 +87,7 @@ mom6:
   remote: ../MOM6.git
   tag: geos/v2.0.1
   develop: dev/gfdl
-  recurse_submodules: True
+  recurse_submodules: true
 
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
