@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.3.7
+  tag: v3.3.9
   develop: develop
 
 ecbuild:
@@ -36,7 +36,7 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.6.4
+  tag: v2.6.8
   develop: develop
 
 FMS:
@@ -48,7 +48,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.11.6
+  branch: feature/esherman/gocart2g_develop_v2
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -67,14 +67,13 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.4.4
+  branch: feature/pcolarco/#1-gocart2g-updates
   develop: develop
 
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  sparse: ./config/GOCART.sparse
-  tag: v1.0.1
+  tag: v2.0.0-rc.1
   develop: develop
 
 mom:
@@ -88,12 +87,12 @@ mom6:
   remote: ../MOM6.git
   tag: geos/v2.0.1
   develop: dev/gfdl
-  recurse_submodules: True
+  recurse_submodules: true
 
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.3.16
+  branch: feature/esherman/gocart2g_develop_v2_aerochemUpdates
   develop: develop
 
 UMD_Etc:

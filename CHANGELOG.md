@@ -1,5 +1,7 @@
 # Changelog
 
+# This is based off of 10.17.6, but runs MAPL v.2.6.8 so GAAS2G can work. Also has GOCART2G.
+
 ## [10.17.6] - 2021-04-06
 
 ### Zero-diff to previous release: YES
