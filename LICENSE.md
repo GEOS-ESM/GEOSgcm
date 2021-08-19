@@ -1,7 +1,9 @@
 ```
-Copyright (c) 2003-2018 United States Government as represented by 
-the Admistrator of the National Aeronautics and Space Administration.  
-All Rights Reserved.
+
+    	NASA OPEN SOURCE SOFTWARE AGREEMENT
+	
+
+NASA OPEN SOURCE AGREEMENT VERSION 1.3
 
 THIS OPEN  SOURCE  AGREEMENT  ("AGREEMENT") DEFINES  THE  RIGHTS  OF USE,
 REPRODUCTION,  DISTRIBUTION,  MODIFICATION AND REDISTRIBUTION OF CERTAIN 
@@ -129,7 +131,7 @@ manner on or through a medium customarily used for software exchange.
 B.  Each Recipient must ensure that the following copyright notice
 appears prominently in the Subject Software:
 
-Copyright © 2003-2007 United States Government as represented by the
+Copyright © 2003-2018 United States Government as represented by the
 Administrator of the National Aeronautics and Space Administration.  All
 Rights Reserved.
 
