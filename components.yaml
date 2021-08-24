@@ -48,7 +48,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.12.2
+  branch: feature/atrayano/MITgcm-DYAMOND
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -89,6 +89,13 @@ GOCART:
   tag: v1.0.1
   develop: develop
 
+mit:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MIT_GEOS5PlugMod/@mit
+  remote: ../MITgcm.git
+  tag: checkpoint67q
+  develop: master
+
+
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM_GEOS5PlugMod/@mom
   remote: ../MOM5.git
@@ -105,7 +112,7 @@ mom6:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.5.1
+  branch: feature/atrayano/MITgcm-DYAMOND
   develop: develop
 
 UMD_Etc:
