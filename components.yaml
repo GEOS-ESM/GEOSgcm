@@ -118,7 +118,7 @@ GEOSgcm_App:
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
   remote: ../UMD_Etc.git
-  tag: v1.0.4
+  tag: v1.0.3
   develop: main
 
 CPLFCST_Etc:
