@@ -17,7 +17,7 @@
 | [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.5.2](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.5.2)                                |
 | [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v3.3.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v3.3.0)                                  |
 | [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.7](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.7) |
-| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v1.2.15](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.2.15)                  |
+| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v1.2.16](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.2.16)                  |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)           |
 | [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.6.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.6.0)                         |
 | [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v1.5.2](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v1.5.2)                               |
