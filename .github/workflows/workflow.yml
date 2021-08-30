@@ -6,6 +6,7 @@ on:
     # Do not run if the only files changed cannot affect the build
     paths-ignore:
       - "**.md"
+      - "**.json"
       - "ChangeLog-PreJason.txt"
       - "parallel_build.csh"
       - ".github/CODEOWNERS"
