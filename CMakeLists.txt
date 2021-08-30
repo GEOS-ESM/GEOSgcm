@@ -54,4 +54,5 @@ install(
    DESTINATION ${CMAKE_INSTALL_PREFIX}
    )
 
-
+# Adds abiilty to tar source
+include (esma_cpack)
