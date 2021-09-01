@@ -39,12 +39,6 @@ MAPL:
   tag: v2.8.0
   develop: develop
 
-FMS:
-  local: ./src/Shared/@FMS
-  remote: ../FMS.git
-  tag: geos/2019.01.02+noaff.7
-  develop: geos/release/2019.01
-
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
