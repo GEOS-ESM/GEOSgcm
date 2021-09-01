@@ -119,3 +119,9 @@ CPLFCST_Etc:
   remote: ../CPLFCST_Etc.git
   tag: v1.0.1
   develop: main
+
+ccpp-physics:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GFSmoist_GridComp/@ccpp-physics
+  remote: ../ccpp-physics.git
+  tag: v5.0.0
+  develop: main
