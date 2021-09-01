@@ -48,7 +48,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.12.4
+  branch: feature/aoloso/ccpp
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
