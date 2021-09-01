@@ -3,7 +3,7 @@ version: 2.1
 executors:
   gfortran-large:
     docker:
-      - image: gmao/ubuntu20-geos-env-bcs:v6.2.4-openmpi_4.0.5-gcc_10.3.0-bcs_v10.19.2
+      - image: gmao/ubuntu20-geos-env-bcs:v6.2.7-openmpi_4.0.6-gcc_11.2.0-bcs_v10.19.3
         auth:
           username: $DOCKERHUB_USER
           password: $DOCKERHUB_AUTH_TOKEN
@@ -16,7 +16,7 @@ executors:
 
   gfortran-xlarge:
     docker:
-      - image: gmao/ubuntu20-geos-env-bcs:v6.2.4-openmpi_4.0.5-gcc_10.3.0-bcs_v10.19.2
+      - image: gmao/ubuntu20-geos-env-bcs:v6.2.7-openmpi_4.0.6-gcc_11.2.0-bcs_v10.19.3
         auth:
           username: $DOCKERHUB_USER
           password: $DOCKERHUB_AUTH_TOKEN
@@ -29,7 +29,7 @@ executors:
 
   ifort-large:
     docker:
-      - image: gmao/ubuntu20-geos-env-bcs:v6.2.4-intelmpi_2021.2.0-intel_2021.2.0-bcs_v10.19.2
+      - image: gmao/ubuntu20-geos-env-bcs:v6.2.7-intelmpi_2021.2.0-intel_2021.2.0-bcs_v10.19.3
         auth:
           username: $DOCKERHUB_USER
           password: $DOCKERHUB_AUTH_TOKEN
@@ -38,7 +38,7 @@ executors:
 
   ifort-xlarge:
     docker:
-      - image: gmao/ubuntu20-geos-env-bcs:v6.2.4-intelmpi_2021.2.0-intel_2021.2.0-bcs_v10.19.2
+      - image: gmao/ubuntu20-geos-env-bcs:v6.2.7-intelmpi_2021.2.0-intel_2021.2.0-bcs_v10.19.3
         auth:
           username: $DOCKERHUB_USER
           password: $DOCKERHUB_AUTH_TOKEN
