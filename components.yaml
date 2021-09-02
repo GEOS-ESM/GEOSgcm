@@ -86,13 +86,13 @@ GOCART:
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM_GEOS5PlugMod/@mom
   remote: ../MOM5.git
-  branch: feature/mathomp4/fms-baselibs
+  tag: geos/5.1.0+1.2.0
   develop: geos5
 
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
-  branch: dev/gfdl
+  tag: geos/v2.0.1
   develop: dev/gfdl
   recurse_submodules: true
 
