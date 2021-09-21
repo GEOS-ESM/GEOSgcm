@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v3.3.0
+  tag: v3.3.1
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.5.2
+  tag: v3.5.5
   develop: develop
 
 ecbuild:
@@ -36,7 +36,7 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.8.0
+  tag: v2.8.4
   develop: develop
 
 FMS:
@@ -55,7 +55,7 @@ GEOSgcm_GridComp:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.2.15
+  tag: v1.2.16
   develop: develop
 
 fvdycore:
@@ -92,7 +92,7 @@ GOCART:
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOS_OceanGridComp/MOM_GEOS5PlugMod/@mom
   remote: ../MOM5.git
-  tag: geos/5.1.0+1.1.1
+  tag: geos/5.1.0+1.2.0
   develop: geos5
 
 mom6:
