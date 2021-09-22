@@ -4,7 +4,7 @@ cmake_policy (SET CMP0054 NEW)
 
 project (
   GEOSgcm
-  VERSION 10.19.1
+  VERSION 10.19.3
   LANGUAGES Fortran CXX C)  # Note - CXX is required for ESMF
 
 if ("${PROJECT_SOURCE_DIR}" STREQUAL "${PROJECT_BINARY_DIR}")
@@ -18,7 +18,7 @@ if (NOT CMAKE_BUILD_TYPE)
   set (CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build." FORCE)
   # Set the possible values of build type for cmake-gui
   set_property (CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS
-    "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
+    "Debug" "Release" "Aggressive")
 endif ()
 
 set (DOING_GEOS5 YES)
@@ -54,4 +54,5 @@ install(
    DESTINATION ${CMAKE_INSTALL_PREFIX}
    )
 
-
+# Adds abiilty to tar source
+include (esma_cpack)

@@ -1,5 +1,39 @@
 # Changelog
 
+## [10.19.3] - 2021-07-21
+
+### Zero-diff to previous release: MOSTLY
+### Restart Changes: NO
+
+Potential Non-0-diff Change:
+
+1. Upgrade to MAPL v2.8.0. For the MERRA2 GOCART Emissions, all testing shows it is zero-diff. But for the Ops GOCART Emissions, it there are very small roundoff differences. The results are non-zero-diff due to a bug fix (to a race condition) in this version of MAPL on how grids are handled.
+
+Major 0-diff Changes:
+1. Detect MERRA2OX date violation during setup.
+2. Make species consistent with emissions choice.
+3. Only allow Rome nodes at NAS if built on Rome.
+5. Updates for MVAPICH2, enable multigroup by default.
+6. Bugfix for correct day when running EMIPs.
+7. Update ldas increment alarm setting in CatchGC.
+8. Updates to plots package.
+9. Update to fvdycore v1.1.7.
+
+## [10.19.2] - 2021-06-11
+
+### Zero-diff to previous release: YES
+### Restart Changes: NO
+
+Changes include:
+
+1. Upgrade to Baselibs 6.2.4 and cmake v3.5.0.
+2. Update parallel_build to use GMAO_Shared main if develop.
+3. Created a new grid comp `GEOS_SeaiceGridComp` as a top level container component serving sea ice sub-components to `OGCM`. This new structure mirrors the existing `GuestOcean/MOMPlug` relationship for the ocean model hierarchy.
+4. Bug fix that makes sure that diagnostics `CNV_MFC` still works when the UW shallow convection code is disabled.
+5. Add changes consistent with what is in GEOSadas 5.28.
+6. Addition of variables for analysis in two RC files and correction in `IAU` `reftime` consistent with GEOSadas.
+7. Fixes for `IOSERVER` on Rome.
+
 ## [10.19.1] - 2021-05-25
 
 ### Zero-diff to previous release: YES
