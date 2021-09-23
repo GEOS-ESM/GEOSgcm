@@ -28,12 +28,7 @@ set (ACG_FLAGS -v)
 set (FV_PRECISION "R4R8" CACHE STRING "Precision of FV3 core (R4, R4R8, R8)")
 
 # mepo can now clone subrepos in three styles
-set (ESMA_CMAKE_DIRS
-  cmake
-  @cmake
-  cmake@
-  )
-foreach (dir IN LISTS ESMA_CMAKE_DIRS)
+foreach (dir cmake @cmake cmake@)
   if (EXISTS ${CMAKE_CURRENT_LIST_DIR}/${dir})
     list (APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/${dir}")
   endif ()
