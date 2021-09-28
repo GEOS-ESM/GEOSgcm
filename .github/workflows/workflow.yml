@@ -6,6 +6,7 @@ on:
     # Do not run if the only files changed cannot affect the build
     paths-ignore:
       - "**.md"
+      - "**.json"
       - "ChangeLog-PreJason.txt"
       - "parallel_build.csh"
       - ".github/CODEOWNERS"
@@ -18,7 +19,7 @@ jobs:
     if: "!contains(github.event.pull_request.labels.*.name, '0 diff trivial')"
     runs-on: ubuntu-latest
     container:
-      image: gmao/ubuntu20-geos-env-mkl:v6.2.4-openmpi_4.0.5-gcc_10.3.0
+      image: gmao/ubuntu20-geos-env-mkl:v6.2.7-openmpi_4.0.6-gcc_11.2.0
       credentials:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
