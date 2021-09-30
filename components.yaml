@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  branch: feature/mathomp4/cascade-lake-nccs
+  tag: v3.3.2
   develop: main
 
 cmake:
