@@ -5,7 +5,7 @@ phases:
   # This phase is weirdly named for a Fortran project
   install:
     commands:
-      - mpirun --version && gfortran --version && echo $BASEDIR && pwd && ls
+      - mpirun --version && ifort --version && echo $BASEDIR && pwd && ls
     finally:
       - echo "versions etc"
   pre_build:
@@ -14,8 +14,8 @@ phases:
       - git branch
       - echo CODEBUILD_RESOLVED_SOURCE_VERSION is ${CODEBUILD_RESOLVED_SOURCE_VERSION}
       - git checkout ${CODEBUILD_RESOLVED_SOURCE_VERSION}
+      - mepo init
       - mepo clone
-      - mepo status
     finally:
       - echo "Mepo clone external repos" 
   # This phase builds it
@@ -23,7 +23,7 @@ phases:
     commands: |
       mkdir build
       cd build
-      cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=gfortran -DCMAKE_BUILD_TYPE=Debug -DUSE_F2PY=OFF
+      cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=ifort -DCMAKE_BUILD_TYPE=Debug -DUSE_F2PY=OFF
       cd build
       make -j"$(nproc)" install
     finally:
