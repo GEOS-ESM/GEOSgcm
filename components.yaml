@@ -105,7 +105,7 @@ mom6:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  branch: feature/mathomp4/cascade-lake-nccs
+  tag: v1.5.4
   develop: develop
 
 UMD_Etc:
