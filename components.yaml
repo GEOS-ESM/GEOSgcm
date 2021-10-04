@@ -73,7 +73,7 @@ GEOSchem_GridComp:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  branch: feature/geos-v10.17.6/gocart2g/v2.0.1
+  tag: feature/#328/geos-v10.17.6/gocart2g/new-extdata/v2.0.1
   develop: develop
 
 mom:
@@ -92,7 +92,7 @@ mom6:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: feature/#328/geos-v10.17.6/gocart/emissions_configuration-remove-legacy
+  tag: feature/#328/geos-v10.17.6/gocart2g/new-extdata/v2.0.1
   develop: develop
 
 UMD_Etc:
