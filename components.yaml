@@ -67,7 +67,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  hash: 5ebfd7c9042983a4b98a8745b6af3c7333c6bce6
+  tag: feature/#328/geos-v10.17.6/gocart2g/new-extdata/v2.0.1
   develop: develop
 
 GOCART:
