@@ -2,10 +2,11 @@ name: Build Tests
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, labeled, unlabeled]
+    types: [opened, synchronize, reopened]
     # Do not run if the only files changed cannot affect the build
     paths-ignore:
       - "**.md"
+      - "**.json"
       - "ChangeLog-PreJason.txt"
       - "parallel_build.csh"
       - ".github/CODEOWNERS"
@@ -18,15 +19,11 @@ jobs:
     if: "!contains(github.event.pull_request.labels.*.name, '0 diff trivial')"
     runs-on: ubuntu-latest
     container:
-      image: gmao/ubuntu20-geos-env-mkl:v6.0.22-openmpi_4.0.5-gcc_10.2.0
+      image: gmao/ubuntu20-geos-env-mkl:v6.2.7-openmpi_4.0.6-gcc_11.2.0
       credentials:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     env:
-      LANGUAGE: en_US.UTF-8
-      LC_ALL: en_US.UTF-8
-      LANG: en_US.UTF-8
-      LC_TYPE: en_US.UTF-8 
       OMPI_ALLOW_RUN_AS_ROOT: 1
       OMPI_ALLOW_RUN_AS_ROOT_CONFIRM: 1
       OMPI_MCA_btl_vader_single_copy_mechanism: none
@@ -48,8 +45,6 @@ jobs:
         run: |
           mepo clone
           mepo status
-          mepo develop GEOSgcm_GridComp GEOSgcm_App
-          mepo status
       - name: Update other branches
         if:
           "!contains('refs/heads/main,refs/heads/develop', github.ref)"
@@ -60,7 +55,7 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=gfortran -DCMAKE_BUILD_TYPE=Debug -DMPIEXEC_PREFLAGS='--oversubscribe'
+          cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=gfortran -DCMAKE_BUILD_TYPE=Debug -DMPIEXEC_PREFLAGS='--oversubscribe' -DUSE_F2PY=OFF
       - name: Build
         run: |
           cd build

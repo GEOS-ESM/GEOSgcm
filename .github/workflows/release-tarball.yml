@@ -1,0 +1,38 @@
+name: Create Complete Release Tarball
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: ${{ github.event.repository.name }}-${{ github.event.release.tag_name }}
+
+      - name: Checkout mepo
+        uses: actions/checkout@v2
+        with:
+          repository: GEOS-ESM/mepo
+          path: mepo
+
+      - name: Run mepo
+        run : |
+          cd ${GITHUB_WORKSPACE}/${{ github.event.repository.name }}-${{ github.event.release.tag_name }}
+          ${GITHUB_WORKSPACE}/mepo/mepo clone
+
+      - name: Create tarball
+        run: |
+          tar --exclude-vcs --exclude=.mepo -cf ${{ github.event.repository.name }}-${{ github.event.release.tag_name }}.COMPLETE.tar ${{ github.event.repository.name }}-${{ github.event.release.tag_name }}
+          xz -T6 ${{ github.event.repository.name }}-${{ github.event.release.tag_name }}.COMPLETE.tar
+
+      - name: Upload tarball
+        run: |
+          gh release upload ${{ github.event.release.tag_name }} ${{ github.event.repository.name }}-${{ github.event.release.tag_name }}.COMPLETE.tar.xz -R ${{ github.repository_owner }}/${{ github.event.repository.name }}
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+

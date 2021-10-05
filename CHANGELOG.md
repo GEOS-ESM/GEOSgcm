@@ -1,5 +1,148 @@
 # Changelog
 
+## [10.19.3] - 2021-07-21
+
+### Zero-diff to previous release: MOSTLY
+### Restart Changes: NO
+
+Potential Non-0-diff Change:
+
+1. Upgrade to MAPL v2.8.0. For the MERRA2 GOCART Emissions, all testing shows it is zero-diff. But for the Ops GOCART Emissions, it there are very small roundoff differences. The results are non-zero-diff due to a bug fix (to a race condition) in this version of MAPL on how grids are handled.
+
+Major 0-diff Changes:
+1. Detect MERRA2OX date violation during setup.
+2. Make species consistent with emissions choice.
+3. Only allow Rome nodes at NAS if built on Rome.
+5. Updates for MVAPICH2, enable multigroup by default.
+6. Bugfix for correct day when running EMIPs.
+7. Update ldas increment alarm setting in CatchGC.
+8. Updates to plots package.
+9. Update to fvdycore v1.1.7.
+
+## [10.19.2] - 2021-06-11
+
+### Zero-diff to previous release: YES
+### Restart Changes: NO
+
+Changes include:
+
+1. Upgrade to Baselibs 6.2.4 and cmake v3.5.0.
+2. Update parallel_build to use GMAO_Shared main if develop.
+3. Created a new grid comp `GEOS_SeaiceGridComp` as a top level container component serving sea ice sub-components to `OGCM`. This new structure mirrors the existing `GuestOcean/MOMPlug` relationship for the ocean model hierarchy.
+4. Bug fix that makes sure that diagnostics `CNV_MFC` still works when the UW shallow convection code is disabled.
+5. Add changes consistent with what is in GEOSadas 5.28.
+6. Addition of variables for analysis in two RC files and correction in `IAU` `reftime` consistent with GEOSadas.
+7. Fixes for `IOSERVER` on Rome.
+
+## [10.19.1] - 2021-05-25
+
+### Zero-diff to previous release: YES
+### Restart Changes: NO
+### History Changes: YES
+
+Major changes include:
+
+1. Upgrade to MAPL v2.7.0 which changes how programs set up command line options.
+2. Update to FVdycoreCubed_GridComp v1.2.15 and GEOSgcm_App v1.5.1 for compatibility with MAPL v2.7.0.
+3. Enable GEOSgcm to output the configuration values in `GEOS_SurfaceGridComp.rc`.
+4. Fixes a bug in the export of `SSKINW` (an internal state of Openwater) that was being filled incorrectly leading to `MAPL_UNDEF`. Now there are actual values.
+5. Merged changes present in GEOSadas-5_27_1_p3 that never made it into the GIT repo: revised stochastic perturbation tendency exports.
+6. A bug fix to prevent a seg-fault during the calculation of the GEOS-Chem lightning flash rate due to an array size mismatch.
+7. Add ability to write out energy components to file.
+8. Update gitignore for mepo updates.
+9. Follow MAPL's change to add a new `MAPL_CapOptions` constructor.
+
+## [10.19.0] - 2021-05-14
+
+### Zero-diff to previous release: NO
+### Restart Changes: NO
+### History Changes: YES
+
+Major Non-0-diff changes include:
+1. Updates the DEFAULT Land BCs of GEOSgcm to be Icarus-NLv3. Also applies a fix to GEOS_SurfaceGridComp.rc to correctly implement it.
+
+Major 0-diff changes include:
+1. Updates `GMAO_psas` to work with MAPL2.
+2. Rename `LANL_cice` to `CICE4` that is located at `LANL_Shared/`
+3. Remove `BULK_SST` alias for `TS_FOUND` in HISTORies used in model (only) simulations.
+4. Updates to use Python2 and Python3 at same time.
+5. Fixed the `-wemin` and `-wemout` options in `regrid.pl` so that they will accept integer values.
+6. Bugfix to detect if saltwater splitting is needed in more files.
+7. Add `IOSERVER` code into `gcm_forecast.tmpl`.
+8. Updates needed for `GEOSadas` to work with MAPL2.
+9. Add GEOS-Chem and HEMCO as separate external repositories. 
+10. GMI is now set to import RI and RL only when running Cloud-J. This is a work-around for a CTM issue.
+11. Uptick of MAPL and FMS repositories.
+
+## [10.18.0] - 2021-04-15
+
+### Zero-diff to previous release: NO
+### Restart Changes: YES
+### History Changes: YES
+
+Major Non-0-diff changes include:
+1. Modified PCHEM interpolation that fixes the problem of negative PCHEM tracers.
+2. A bug fix to atmOcnIntlayer consistent with what was applied to GEOS-FP GEOS-5.27.1 (02/2021) which mitigates anomalous spikes in `TSKINWTR` and related fields when the sea ice fraction departs 100%.
+3. Changed scaling and cleaned up Henry's law code in ConvPar_GF_GEOS5 (bug fix, non-zero diff for GOCART).
+4. Update to use the 2020 NRL Solar file.
+
+Major 0-diff changes include:
+1. Fix DUAL_OCEAN options in coupled model to only work with MOM5 (It does not and can not work with MOM6).
+2. Added diagnostic output for NH3, NH4A convective scavenging to GEOS_MoistGridComp used for GOCART evaluation.
+3. Revive OceanBioGeoChem.
+4. Fixed CMake bugs for DAS build only libraries.
+5. Upticks of FVdycoreCubed_GridComp, fvdycore, and cmake repos.
+
+## [10.17.6] - 2021-04-06
+
+### Zero-diff to previous release: YES
+### Zero-diff to regridding: YES
+### Restart Changes: NO
+### History Changes: NO
+
+Major changes include:
+
+1. Upgrade to ESMA_env v3.2.0 whose main change is updating to ESMF 8.1.0, which is needed for MAPL development. All testing has shown it zero-diff to GEOSgcm with ESMF 8.0.1. Tests were run from C12 to C720 as well as Replay and MOM6. However, ESMF notes that there are [changes in some regridding situations which *could* produce non-zero-diff results](https://github.com/esmf-org/esmf/releases/tag/ESMF_8_1_0).
+
+## [10.17.5] - 2021-04-06
+
+### Zero-diff to previous release: YES for hydrostatic, NO for nonhydrostatic
+### Zero-diff to regridding: YES
+### Restart Changes: NO
+### History Changes: NO
+
+Major changes include:
+
+1. parallel_build.csh now accepts a `-hydrostatic` or `-nonhydrostatic` argument during building. If no argument is provided the model will build hydrostatically as before. Therefore, setup scripts were modified depending on what -DHYDROSTATIC option was supplied to CMake. If -DHYDROSTATIC=ON then it will assume the user wants to use hydrostatic dynamics options and vice versa. 
+2. Fixed decomposition regression for nonhydrostatic model.
+3. Updates from ADAS 5.27 folded into git GMAO_Shared v1.3.9. This brings the GEOSadas code closer to the current GEOSgcm.
+4. Upticks in MOM6, MAPL, env and other repositiories.
+
+## [10.17.4] - 2021-03-17
+
+### Zero-diff to previous release: YES
+### Zero-diff to regridding: NO for agcm_import_rst
+### Restart Changes: NO
+### History Changes: NO
+
+Major changes include:
+
+1. Moved GOCART legacy to be sourced from separate GOCART repository.
+2. Update to MOM6 `geos/v2.0.0` and update to FMS `geos/2019.01.02+noaff.6`
+3. Bug fix for regrid.pl which can cause non-0-diff regridding for agcm_import_rst.
+4. Fixed MOM6 diagnostics to use correct netcdf reference year.
+5. Fix bug in gustiness calculations.
+6. Fixed a bug in rotation angle for surface ocean stress.
+7. DSO's for mom5 and mom6.
+8. `GAAS` Replay fix.
+9. Add `MOM.res.nc` to the list of restarts that are checked in regression testing.
+10. Remove `OCEAN_PRELOAD` since it is not needed with the DSO.
+11. Change path names to support "automatic" MERRA-2 Regular Replay at NAS.
+12. Remove `CMIP_1977_1982` directory in `GEOS_Util/pre/NSIDC-OSTIA_SST-ICE_blend`.
+13. Update `binarytile.x` for river routing.
+14. Bug fix for edge level arrays out-of-bounds in `Lighting_mod`.
+15. Plot updates for stats.
+
 ## [10.17.3] - 2021-02-12
 
 ### Zero-diff to previous release: YES
