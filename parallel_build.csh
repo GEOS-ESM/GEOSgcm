@@ -30,7 +30,12 @@ while ($#argv)
    shift
 end
 
-if (! -d ${ESMADIR}/@env || ! -d ${ESMADIR}/env@ || ! -d ${ESMADIR}/env) then
+if (-d ${ESMADIR}/@env || -d ${ESMADIR}/env@ || -d ${ESMADIR}/env) then
+   if ( "$DEVELOP" == "TRUE" ) then
+      echo "Checking out development branches of GEOSgcm_GridComp, GEOSgcm_App, and GMAO_Shared"
+      mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared
+   endif
+else
    if ($?PBS_JOBID || $?SLURM_JOBID) then
       echo " mepo clone must be run!"
       echo " This requires internet access but you are on a compute node"
@@ -44,11 +49,6 @@ if (! -d ${ESMADIR}/@env || ! -d ${ESMADIR}/env@ || ! -d ${ESMADIR}/env) then
          echo "Checking out development branches of GEOSgcm_GridComp, GEOSgcm_App, and GMAO_Shared"
          mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared
       endif
-   endif
-else
-   if ( "$DEVELOP" == "TRUE" ) then
-      echo "Checking out development branches of GEOSgcm_GridComp, GEOSgcm_App, and GMAO_Shared"
-      mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared
    endif
 endif
 
