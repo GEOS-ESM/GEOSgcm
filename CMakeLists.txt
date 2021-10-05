@@ -31,7 +31,12 @@ set (ACG_FLAGS -v)
 # and so the linker can only link to one FMS library.
 set (FV_PRECISION "R4R8" CACHE STRING "Precision of FV3 core (R4, R4R8, R8)")
 
-list (APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/@cmake")
+# mepo can now clone subrepos in three styles
+foreach (dir cmake @cmake cmake@)
+  if (EXISTS ${CMAKE_CURRENT_LIST_DIR}/${dir})
+    list (APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/${dir}")
+  endif ()
+endforeach ()
 include (esma)
 
 ecbuild_declare_project()
@@ -42,8 +47,9 @@ add_definitions(-Dsys${CMAKE_SYSTEM_NAME} -DESMA64)
 add_definitions(${MPI_Fortran_COMPILE_FLAGS})
 include_directories(${MPI_Fortran_INCLUDE_PATH})
 
+esma_mepo_style(env env_dir)
+esma_add_subdirectory (${env_dir})
 # Recursively build source tree
-add_subdirectory (@env)
 add_subdirectory (src)
 
 # https://www.scivision.dev/cmake-auto-gitignore-build-dir/
