@@ -2,7 +2,7 @@
 
 ## [10.19.4] - 2021-10-07
 
-### Zero-diff to previous release: YES for AGCM, NO for OGCM
+### Zero-diff to previous release: YES for default AGCM, YES for OGCM for single moment MP
 ### Restart Changes: NO
 
 Major 0-diff Changes:
