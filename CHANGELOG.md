@@ -1,5 +1,26 @@
 # Changelog
 
+## [10.19.4] - 2021-10-07
+
+### Zero-diff to previous release: YES for default AGCM, YES for OGCM for single moment MP
+### Restart Changes: NO
+
+Major 0-diff Changes:
+1. Restructuring under GEOSocean_GridComp by @yvikhlya in [#448](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/448)
+2. Updates to support two versions of Catchment-CN: Catchment-CN.4.0 and Catchment-CN.4.5 by @gmao-jkolassa in [#368](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/368)
+3. Compile time choice of CN model by @weiyuan-jiang in [#370](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/370)
+4. Runtime choice for clm4.0 and clm4.5 by @weiyuan-jiang in [#373](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/373)
+5. mk_GEOSldasRestart can now take restart hour and restart name by @weiyuan-jiang in [#449](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/449)
+6. Fixes to enable mepo variant styles by @tclune in [#334](https://github.com/GEOS-ESM/GEOSgcm/pull/334)
+7. Updates needed for Cascade Lake at NCCS by @mathomp4 in [#335](https://github.com/GEOS-ESM/GEOSgcm/pull/335)
+8. Updates and corrections for the trajectory file created for JEDI. Variables for proper diurnal layer, TS, and CO2 have been added by @rtodling in [#257](https://github.com/GEOS-ESM/GEOSgcm_App/pull/257)
+9. Null out WSUB_NATURE for 1MOM and GFDL physics by @mathomp4 in [#251](https://github.com/GEOS-ESM/GEOSgcm_App/pull/251)
+10. Cleanup gcm_run and sync forecast scripts by @sdrabenh in [#256](https://github.com/GEOS-ESM/GEOSgcm_App/pull/256)
+11. Fixes for SCM Setup on macOS by @mathomp4 in [#253](https://github.com/GEOS-ESM/GEOSgcm_App/pull/253)
+12. Updated suite of PRs for GEOSadas by @mathomp4 in [v1.4.10](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.4.10)
+13. Bug fix for CICE4 segfault by @mathomp4 in [#215](https://github.com/GEOS-ESM/GMAO_Shared/pull/215)
+14. Add pyrob_CF script by @mathomp4 in [#208](https://github.com/GEOS-ESM/GMAO_Shared/pull/208)
+
 ## [10.19.3] - 2021-07-21
 
 ### Zero-diff to previous release: MOSTLY
