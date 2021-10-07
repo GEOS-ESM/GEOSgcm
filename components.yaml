@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.6.1
+  tag: v3.6.2
   develop: develop
 
 ecbuild:
@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.4.8
+  tag: v1.4.9
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -105,7 +105,7 @@ mom6:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.5.4
+  tag: v1.5.5
   develop: develop
 
 UMD_Etc:
