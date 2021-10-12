@@ -5,13 +5,15 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v3.4.0
+  #tag: v3.4.0
+  branch: feature/mathomp4/postinstall
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.6.2
+  #tag: v3.6.2
+  branch: feature/mathomp4/postinstall
   develop: develop
 
 ecbuild:
@@ -105,7 +107,8 @@ mom6:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.5.5
+  #tag: v1.5.5
+  branch: feature/mathomp4/postinstall
   develop: develop
 
 UMD_Etc:
