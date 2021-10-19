@@ -19,13 +19,6 @@ ecbuild:
   remote: ../ecbuild.git
   tag: geos/v1.0.6
 
-NCEP_Shared:
-  local: ./src/Shared/@NCEP_Shared
-  remote: ../NCEP_Shared.git
-  tag: v1.2.0
-  sparse: ./config/NCEP_Shared.sparse
-  develop: main
-
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
@@ -48,7 +41,8 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.12.6
+  #tag: v1.12.6
+  branch: feature/atrayano/heldsuarez
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -64,58 +58,10 @@ fvdycore:
   tag: geos/v1.1.7
   develop: geos/develop
 
-GEOSchem_GridComp:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
-  remote: ../GEOSchem_GridComp.git
-  tag: v1.6.0
-  develop: develop
-
-HEMCO:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Shared/HEMCO/@HEMCO
-  remote: ../HEMCO.git
-  tag: geos/v2.2.1
-  develop: geos/develop 
-
-geos-chem:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/GEOSCHEMchem_GridComp/@geos-chem
-  remote: ../geos-chem.git
-  tag: geos/v13.0.0-rc1
-  develop: geos/develop
-
-GOCART:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
-  remote: ../GOCART.git
-  tag: v1.0.1
-  sparse: ./config/GOCART.sparse
-  develop: develop
-
-mom:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOS_OceanGridComp/MOM_GEOS5PlugMod/@mom
-  remote: ../MOM5.git
-  tag: geos/5.1.0+1.2.0
-  develop: geos5
-
-mom6:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
-  remote: ../MOM6.git
-  tag: geos/v2.0.1
-  develop: dev/gfdl
-  recurse_submodules: true
-
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.5.5
+  #tag: v1.5.5
+  branch: feature/atrayano/heldsuarez
   develop: develop
 
-UMD_Etc:
-  local: ./src/Applications/@UMD_Etc
-  remote: ../UMD_Etc.git
-  tag: v1.0.4
-  develop: main
-
-CPLFCST_Etc:
-  local: ./src/Applications/@CPLFCST_Etc
-  remote: ../CPLFCST_Etc.git
-  tag: v1.0.1
-  develop: main
