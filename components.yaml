@@ -36,13 +36,13 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.6.8
+  tag: v2.8.6
   develop: develop
 
 FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
-  tag: geos/2019.01.02+noaff.6
+  tag: geos/2019.01.02+noaff.7
   develop: geos/release/2019.01
 
 GEOSgcm_GridComp:
