@@ -36,7 +36,7 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: feature/#328/geos-v10.17.6/gocart2g/new-extdata/v2.0.5
+  tag: v2.10.0
   develop: develop
 
 FMS:
