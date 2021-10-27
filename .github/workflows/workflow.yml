@@ -19,7 +19,7 @@ jobs:
     if: "!contains(github.event.pull_request.labels.*.name, '0 diff trivial')"
     runs-on: ubuntu-latest
     container:
-      image: gmao/ubuntu20-geos-env-mkl:v6.2.7-openmpi_4.0.6-gcc_11.2.0
+      image: gmao/ubuntu20-geos-env-mkl:v6.2.8-openmpi_4.0.6-gcc_11.2.0
       credentials:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
