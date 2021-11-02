@@ -48,7 +48,8 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.12.6
+  # tag: v1.12.6
+  branch: feature/#328/geos-v10.19.4/gocart2g
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -67,7 +68,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.6.0
+  tag: v1.7.0
   develop: develop
 
 HEMCO:
@@ -85,9 +86,8 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: v1.0.1
-  sparse: ./config/GOCART.sparse
-  develop: develop
+  tag: v2.0.1
+  develop: develop 
 
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOS_OceanGridComp/MOM_GEOS5PlugMod/@mom
