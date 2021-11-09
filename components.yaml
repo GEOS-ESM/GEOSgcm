@@ -105,8 +105,7 @@ mom6:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  #tag: v1.5.5
-  branch: feature/mathomp4/postinstall
+  tag: v1.5.6
   develop: develop
 
 UMD_Etc:
