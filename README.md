@@ -17,18 +17,18 @@
 | [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.7.2](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.7.2)                                |
 | [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v3.6.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v3.6.0)                                  |
 | [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.7](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.7) |
-| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v1.2.17](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.2.17)                  |
+| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v1.3.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.3.0)              |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)           |
 | [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.6.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.6.0)                         |
 | [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v1.5.5](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v1.5.5)                               |
-| [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v1.12.6](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v1.12.6)                        |
-| [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v1.1.7](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.1.7)       |
+| [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v1.2.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.2.0)       |
+| [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v1.12.7](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v1.12.7)                        |
 | [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.4.10](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.4.10)                               |
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v1.0.1](https://github.com/GEOS-ESM/GOCART/releases/tag/v1.0.1)                                    |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.1](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.1)                         |
-| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.8.6](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.8.6)                                      |
+| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.12.1](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.12.1)                                    |
 | [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+1.2.0](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B1.2.0)              |
-| [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v2.0.1](https://github.com/GEOS-ESM/MOM6/releases/tag/geos%2Fv2.0.1)                          |
+| [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v2.0.2](https://github.com/GEOS-ESM/MOM6/releases/tag/geos%2Fv2.0.1)                          |
 | [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.2.0](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.2.0)                               |
 | [UMD_Etc](https://github.com/GEOS-ESM/UMD_Etc)                                 | [v1.0.4](https://github.com/GEOS-ESM/UMD_Etc/releases/tag/v1.0.4)                                   |
 
@@ -216,6 +216,14 @@ This will install to a directory parallel to your `build` directory. If you pref
 -DCMAKE_INSTALL_PREFIX=<path>
 ```
 and CMake will install there.
+
+###### Create and install source tarfile
+
+Note that running with `parallel_build.csh` will create and install a tarfile of the source code at build time. But if CMake is run by hand, this is not the default action (as many who build with CMake by hand are developers and not often running experiments). In order to enable this at install time, add:
+```
+-DINSTALL_SOURCE_TARFILE=ON
+```
+to your CMake command.
 
 ##### Build and Install with Make
 ```
