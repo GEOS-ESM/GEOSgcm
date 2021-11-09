@@ -217,6 +217,14 @@ This will install to a directory parallel to your `build` directory. If you pref
 ```
 and CMake will install there.
 
+###### Create and install source tarfile
+
+Note that running with `parallel_build.csh` will create and install a tarfile of the source code at build time. But if CMake is run by hand, this is not the default action (as many who build with CMake by hand are developers and not often running experiments). In order to enable this at install time, add:
+```
+-DINSTALL_SOURCE_TARFILE=ON
+```
+to your CMake command.
+
 ##### Build and Install with Make
 ```
 make -jN install
