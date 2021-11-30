@@ -2,8 +2,14 @@
 
 ## [10.19.5] - 2021-11-30
 
-### Zero-diff to previous release: YES
+### Zero-diff to previous release: YES (except for comparing some HISTORY output)
 ### Restart Changes: NO
+
+Possible History changes:
+
+1. Bug fix for MAPL wherein non-default duration in HISTORY.rc was not being correctly handled. For example, if a collection has a duration of 24 hours and a frequency of 12 hours, MAPL now correctly writes a file with *two* timesteps in it. Before, MAPL was handling this incorrectly. Note that the *data* is still the same as 10.19.4, but now is contained within one file.
+
+Major 0-diff changes:
 
 1. Fix mom5 mom6 for das by @mathomp4 in [#270](https://github.com/GEOS-ESM/GEOSgcm_App/pull/270)
 2. Allow gcm_setup to run anywhere by @mathomp4 in [#261](https://github.com/GEOS-ESM/GEOSgcm_App/pull/261)
@@ -20,6 +26,9 @@
 13. Update CI to Baselibs 6.2.8 by @mathomp4 in [#225](https://github.com/GEOS-ESM/GMAO_Shared/pull/225)
 14. Add Cascade knob to `g5fcst_stats.pl` and `regrid.pl`; revised `dyn_blob`; make sure `echorc.x` exits with success code when applicable; by @rtodling in [#226](https://github.com/GEOS-ESM/GMAO_Shared/pull/226)
 15. Add OpenMP support for fvdycore by @mathomp4 in [#44](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/pull/44)
+16. ESMA_env: Update to Baselibs 6.2.8 needed for MAPL and move to use MPT 2.25 at NAS
+17. ESMA_cmake: Add ability to create source tarball after install, various cleanup and fixes
+18. MAPL: Requires gFTL 1.5.1 (Baselibs 6.2.8), added option to flip vertical orientation of checkpoints, various 0-diff bug fixes for compilers, refactored code
 
 ## [10.19.4] - 2021-10-07
 
