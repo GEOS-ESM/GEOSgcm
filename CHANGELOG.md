@@ -1,5 +1,26 @@
 # Changelog
 
+## [10.19.5] - 2021-11-30
+
+### Zero-diff to previous release: YES
+### Restart Changes: NO
+
+1. Fix mom5 mom6 for das by @mathomp4 in [#270](https://github.com/GEOS-ESM/GEOSgcm_App/pull/270)
+2. Allow gcm_setup to run anywhere by @mathomp4 in [#261](https://github.com/GEOS-ESM/GEOSgcm_App/pull/261)
+3. `WSUB` fix in gmichem_setup by @mmanyin in [#263](https://github.com/GEOS-ESM/GEOSgcm_App/pull/263)
+4. Make runtime and setup variable consistent for GCM by @rtodling in [#265](https://github.com/GEOS-ESM/GEOSgcm_App/pull/265)
+5. Add code to install source tarfile by @mathomp4 in [#262](https://github.com/GEOS-ESM/GEOSgcm_App/pull/262)
+6. Replace `_RETURN(_SUCCESS)` by @weiyuan-jiang in [#484](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/484)
+7. Add error checking in mk_restarts executables by @weiyuan-jiang in [#467](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/467)
+8. Support update for MOM6 by @sanAkel in [#468](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/468)
+9. Add logic to allow guest oceans to be stubbed by @tclune in [#474](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/474)
+10. Add ability to get timing from MOM6 modules by @sanAkel in [#477](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/477)
+11. Add in support of quarter degree MOM6 to ADAS by @rtodling in [#478](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/478)
+12. Updated `pyrob` to work with GEOS-IT files by @mathomp4 in [#224](https://github.com/GEOS-ESM/GMAO_Shared/pull/224)
+13. Update CI to Baselibs 6.2.8 by @mathomp4 in [#225](https://github.com/GEOS-ESM/GMAO_Shared/pull/225)
+14. Add Cascade knob to `g5fcst_stats.pl` and `regrid.pl`; revised `dyn_blob`; make sure `echorc.x` exits with success code when applicable; by @rtodling in [#226](https://github.com/GEOS-ESM/GMAO_Shared/pull/226)
+15. Add OpenMP support for fvdycore by @mathomp4 in [#44](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/pull/44)
+
 ## [10.19.4] - 2021-10-07
 
 ### Zero-diff to previous release: YES for default AGCM, YES for OGCM for single moment MP
