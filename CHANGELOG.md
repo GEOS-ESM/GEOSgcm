@@ -23,12 +23,11 @@ Major 0-diff changes:
 10. Add ability to get timing from MOM6 modules by @sanAkel in [#477](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/477)
 11. Add in support of quarter degree MOM6 to ADAS by @rtodling in [#478](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/478)
 12. Updated `pyrob` to work with GEOS-IT files by @mathomp4 in [#224](https://github.com/GEOS-ESM/GMAO_Shared/pull/224)
-13. Update CI to Baselibs 6.2.8 by @mathomp4 in [#225](https://github.com/GEOS-ESM/GMAO_Shared/pull/225)
-14. Add Cascade knob to `g5fcst_stats.pl` and `regrid.pl`; revised `dyn_blob`; make sure `echorc.x` exits with success code when applicable; by @rtodling in [#226](https://github.com/GEOS-ESM/GMAO_Shared/pull/226)
-15. Add OpenMP support for fvdycore by @mathomp4 in [#44](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/pull/44)
-16. ESMA_env: Update to Baselibs 6.2.8 needed for MAPL and move to use MPT 2.25 at NAS
-17. ESMA_cmake: Add ability to create source tarball after install, various cleanup and fixes
-18. MAPL: Requires gFTL 1.5.1 (Baselibs 6.2.8), added option to flip vertical orientation of checkpoints, various 0-diff bug fixes for compilers, refactored code
+13. Add Cascade knob to `g5fcst_stats.pl` and `regrid.pl`; revised `dyn_blob`; make sure `echorc.x` exits with success code when applicable; by @rtodling in [#226](https://github.com/GEOS-ESM/GMAO_Shared/pull/226)
+14. Add OpenMP support for fvdycore by @mathomp4 in [#44](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/pull/44)
+15. ESMA_env: Update to Baselibs 6.2.8 needed for MAPL and move to use MPT 2.25 at NAS. [full list of changes](https://github.com/GEOS-ESM/ESMA_env/compare/v3.4.0...v3.6.0)
+16. ESMA_cmake: Add ability to create source tarball after install, various cleanup and fixes. [full list of changes](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.6.2...v3.7.2)
+17. MAPL: Requires gFTL 1.5.1 (Baselibs 6.2.8), added option to flip vertical orientation of checkpoints, various 0-diff bug fixes for compilers, refactored code. [full list of changes](https://github.com/GEOS-ESM/MAPL/compare/v2.8.6...v2.12.1)
 
 ## [10.19.4] - 2021-10-07
 
