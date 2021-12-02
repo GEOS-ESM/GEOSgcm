@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v3.6.0
+  tag: v3.6.0+py23
   develop: main
 
 cmake:
@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.4.11
+  branch: feature/wjiang/add_regrid_py
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
