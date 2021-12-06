@@ -15,7 +15,7 @@
 | [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                               |
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v1.0.6](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.0.6)                       |
 | [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.7.2](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.7.2)                                |
-| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v3.6.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v3.6.0)                                  |
+| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v3.7.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v3.7.0)                                  |
 | [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.7](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.7) |
 | [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v1.3.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.3.0)              |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)           |
@@ -150,6 +150,11 @@ mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared
 #### Debug Version of GEOS GCM
 
 To obtain a debug version, you can run `parallel_build.csh -debug` which will build with debugging flags. This will build in `build-Debug/` and install into `install-Debug/`.
+
+#### Do not create and install source tarfile with parallel_build
+
+Note that running with `parallel_build.csh` will create and install a tarfile of the source code at build time. If you wish to avoid
+this, run `parallel_build.csh` with the `-no-tar` option.
 
 ---
 
