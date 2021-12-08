@@ -106,7 +106,7 @@ mom6:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.5.5
+  branch: feature/#328/geos-v10.17.6/gocart2g/new-extdata
   develop: develop
 
 UMD_Etc:
