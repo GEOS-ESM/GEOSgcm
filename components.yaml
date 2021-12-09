@@ -29,14 +29,14 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.4.11
+  tag: v1.4.12
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.12.1
+  tag: v2.13.0
   develop: develop
 
 FMS:
@@ -48,7 +48,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.12.8
+  tag: v1.12.9
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -105,7 +105,7 @@ mom6:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.5.6
+  tag: v1.5.7
   develop: develop
 
 UMD_Etc:

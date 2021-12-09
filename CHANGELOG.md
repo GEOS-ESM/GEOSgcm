@@ -1,5 +1,21 @@
 # Changelog
 
+## [10.19.6] - 2021-12-09
+
+### Zero-diff to previous release: YES
+### Restart Changes: NO
+
+Major 0-diff changes:
+
+1. 5deg ocean (MOM6) configuration by @sanAkel in [#488](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/488)
+2. Fixed missing verify status of iDUAL_OCEAN in GEOS_OceanGridComp.F90  by @sanAkel in [#491](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/491)
+3. Cleaned up CircleCI by @mathomp4 in [#493](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/493)
+4. Make big 5-d buffer in Moist optional by @mathomp4 in [#496](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/496)
+5. The `idcheck.pl` script was updated for changes in SemperPy by @gmao-jstassi in [#233](https://github.com/GEOS-ESM/GMAO_Shared/pull/233)
+6. Update `regrid.pl` for Ocean Model Questions by @mathomp4 in [#222](https://github.com/GEOS-ESM/GMAO_Shared/pull/222)
+7. Added `HISTORY_GEOSIT.rc.tmpl` by @rtodling in [#273](https://github.com/GEOS-ESM/GEOSgcm_App/pull/273)
+8. Uptick to MAPL v2.13.0  [full list of changes](https://github.com/GEOS-ESM/MAPL/compare/v2.12.1...v2.13.0)
+
 ## [10.19.5] - 2021-11-30
 
 ### Zero-diff to previous release: YES (except for comparing some HISTORY output)
