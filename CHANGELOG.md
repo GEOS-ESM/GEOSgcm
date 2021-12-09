@@ -14,6 +14,7 @@ Major 0-diff changes:
 5. The `idcheck.pl` script was updated for changes in SemperPy by @gmao-jstassi in [#233](https://github.com/GEOS-ESM/GMAO_Shared/pull/233)
 6. Update `regrid.pl` for Ocean Model Questions by @mathomp4 in [#222](https://github.com/GEOS-ESM/GMAO_Shared/pull/222)
 7. Added `HISTORY_GEOSIT.rc.tmpl` by @rtodling in [#273](https://github.com/GEOS-ESM/GEOSgcm_App/pull/273)
+8. Uptick to MAPL v2.13.0  [full list of changes](https://github.com/GEOS-ESM/MAPL/compare/v2.12.1...v2.13.0)
 
 ## [10.19.5] - 2021-11-30
 
