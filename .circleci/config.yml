@@ -29,7 +29,7 @@ executors:
 
   ifort-large:
     docker:
-      - image: gmao/ubuntu20-geos-env-bcs:v6.2.8-intelmpi_2021.2.0-intel_2021.2.0-bcs_v10.19.4
+      - image: gmao/ubuntu20-geos-env-bcs:v6.2.8-intelmpi_2021.3.0-intel_2021.3.0-bcs_v10.19.4
         auth:
           username: $DOCKERHUB_USER
           password: $DOCKERHUB_AUTH_TOKEN
@@ -38,7 +38,7 @@ executors:
 
   ifort-xlarge:
     docker:
-      - image: gmao/ubuntu20-geos-env-bcs:v6.2.8-intelmpi_2021.2.0-intel_2021.2.0-bcs_v10.19.4
+      - image: gmao/ubuntu20-geos-env-bcs:v6.2.8-intelmpi_2021.3.0-intel_2021.3.0-bcs_v10.19.4
         auth:
           username: $DOCKERHUB_USER
           password: $DOCKERHUB_AUTH_TOKEN
