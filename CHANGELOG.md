@@ -1,5 +1,35 @@
 # Changelog
 
+## [10.20.0] - 2021-12-17
+
+### Zero-diff to previous release: NO
+### Restart Changes: YES for TR
+
+Major Non-Zero-Diff Changes:
+
+1. Uptick to [GEOSchem_GridComp v1.7.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.7.0)
+   * Wet deposition for CO, CO2 and CH4 is disabled, while a bug-fix is developed.
+   * GMI and TR have cleaner units handling.
+2. make_bcs fixes issues with "old land" choices by @smahanam in [#438](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/438)
+   * Old land BCS files have the same science but won't be binary-equivalent due to bug fixes (e.g., "Mali bug")
+3. Adds code to Satsim to choose subcolumns based on horizontal resolution by @mathomp4 in [#459](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/459)
+   * This is zero-diff for resolutions C720 and coarser but not for higher resolutions
+4. Uptick to [ESMA_env v3.8.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v3.8.0) to use Intel 2021.3 which helps alleviate issues with LDAS amd NAS.
+5. Uptick to [ESMA_cmake v3.8.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.8.0) to change default vectorization flag for Intel Fortran.
+
+Major Zero-Diff Changes:
+
+1. Updated `regrid.pl` for GOCART-2G by @bena-nasa in [#231](https://github.com/GEOS-ESM/GMAO_Shared/pull/231)
+2. Plot Updates from L. Takacs by @sdrabenh in [#235](https://github.com/GEOS-ESM/GMAO_Shared/pull/235)
+   * Added supports to plot aerosols from GOCART-2G.
+   * Three-Corner-Hat (3CH) analysis tools were added.
+   * Enhancements and bugfixes to quickplot and quickstat utilities.
+3. Lightning module has been re-located and revamped.  [#451](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/451)  [#212](https://github.com/GEOS-ESM/GMAO_Shared/pull/212)  [#141](https://github.com/GEOS-ESM/GEOSchem_GridComp/pull/141)
+4. HEMCO config files for GOCART and GMI have been updated for v2.2 [GEOSchem_GridComp v1.7.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.7.0)
+5. Uptick to [MAPL v2.14.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.14.0)
+6. Refactoring of `interp_restart` code necessitated an uptick to [fvdycore geos/v1.3.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.3.0)
+7. Regridding fix and `read_topo` fix code necessitated an uptick to [FVdycoreCubed_GridComp v1.4.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.4.1)
+
 ## [10.19.6] - 2021-12-09
 
 ### Zero-diff to previous release: YES
