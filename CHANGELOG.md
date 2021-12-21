@@ -1,8 +1,29 @@
 # Changelog
 
+## [10.21.0] - 2021-12-21
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: YES (see below)
+
+Major Non-Zero-Diff Changes:
+1. Changed the default config to use new orbit parameters by @sdrabenh in [#277](https://github.com/GEOS-ESM/GEOSgcm_App/pull/277)
+2. Refactored RRTMG long-wave and short-wave radiation by @dr0cloud in [#492](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/492)
+3. Adding SHOC+EDMF updates by @narnold1 in [#479](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/479).
+   All restarts and variables within remain 0-diff except for the following:
+   1. moist_import
+      * added: EDMF_FRC, HL2, HL3, HLQT, QT2, QT3, W2, W3, WHL, WQT
+   2. moist_internal
+      * added: PDF_A
+   3. turb_import
+      * added: PHIS, SH, WTHV2
+   4. turb_internal
+      * added: QT2, QT3
+      * removed: BRUNTSHOC, CLD, DQDT_SHC, DQIDT_SHC, DQLDT_SHC, DTDT_SHC, LSHOC, SHEARSHOC, TKEBUOY, TKEDISS, TKESHEAR, TKETRANS, WTHV2
+      * changed: TKH "lev" coordinate to "edge" coordinate
+
 ## [10.20.0] - 2021-12-17
 
-### Zero-diff to previous release: NO
+### Zero-diff to Previous Release: NO
 ### Restart Changes: YES for TR
 
 Major Non-Zero-Diff Changes:
