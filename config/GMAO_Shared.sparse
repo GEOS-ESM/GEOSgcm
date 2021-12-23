@@ -7,3 +7,6 @@
 !/arpack
 !/pnagpack
 !/GMAO_pilgrim
+!/LANL_Shared
+!/GMAO_transf
+!/GMAO_stoch
