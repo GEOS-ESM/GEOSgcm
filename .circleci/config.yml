@@ -113,7 +113,7 @@ jobs:
       - run:
           name: "Compress artifacts"
           command: |
-            gzip /logfiles/*
+            gzip -9 /logfiles/*
       - store_artifacts:
           path: /logfiles
       # We need to persist the install for the next step
