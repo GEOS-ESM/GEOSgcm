@@ -55,15 +55,17 @@ workflows:
               compiler: [gfortran, ifort]
           context: 
             - docker-hub-creds
-      - run-gcm-exp:
-          name: run-gcm-exp-on-<< matrix.compiler >>
-          matrix:
-            parameters:
-              compiler: [gfortran, ifort]
-          context:
-            - docker-hub-creds
-          requires:
-            - build-GEOSgcm-on-<< matrix.compiler >>
+      ##################################################
+      # - run-gcm-exp:                                 #
+      #     name: run-gcm-exp-on-<< matrix.compiler >> #
+      #     matrix:                                    #
+      #       parameters:                              #
+      #         compiler: [gfortran, ifort]            #
+      #     context:                                   #
+      #       - docker-hub-creds                       #
+      #     requires:                                  #
+      #       - build-GEOSgcm-on-<< matrix.compiler >> #
+      ##################################################
 
 jobs:
   build-GEOSgcm:
@@ -108,14 +110,20 @@ jobs:
             cd ${CIRCLE_WORKING_DIRECTORY}/workspace/build-GEOSgcm
             make -j"$(nproc)" install |& tee /logfiles/make.log
             #MEDIUM# make -j4 install |& tee /logfiles/make.log
+      - run:
+          name: "Compress artifacts"
+          command: |
+            gzip /logfiles/*
       - store_artifacts:
           path: /logfiles
       # We need to persist the install for the next step
       # but only if we are running gcm tests
-      - persist_to_workspace:
-          root: workspace
-          paths:
-            - install-GEOSgcm
+      ###########################
+      # - persist_to_workspace: #
+      #     root: workspace     #
+      #     paths:              #
+      #       - install-GEOSgcm #
+      ###########################
 
   run-gcm-exp:
     parameters:
