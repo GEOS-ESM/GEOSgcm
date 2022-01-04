@@ -4,7 +4,7 @@ cmake_policy (SET CMP0054 NEW)
 
 project (
   GEOSgcm
-  VERSION 10.17.6
+  VERSION 10.21.0
   LANGUAGES Fortran CXX C)  # Note - CXX is required for ESMF
 
 if ("${PROJECT_SOURCE_DIR}" STREQUAL "${PROJECT_BINARY_DIR}")
@@ -18,16 +18,26 @@ if (NOT CMAKE_BUILD_TYPE)
   set (CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build." FORCE)
   # Set the possible values of build type for cmake-gui
   set_property (CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS
-    "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
+    "Debug" "Release" "Aggressive")
 endif ()
 
 set (DOING_GEOS5 YES)
 
 # Should find a better place for this - used in Chem component
 set (ACG_FLAGS -v)
+
+# This flag at R4R8 means that FV3 is compiled at R4 but *linked* to 
+# FMS built at R8. This is needed as MOM6 is currently compiled as R8
+# and so the linker can only link to one FMS library.
 set (FV_PRECISION "R4R8" CACHE STRING "Precision of FV3 core (R4, R4R8, R8)")
 
-list (APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/@cmake")
+# mepo can now clone subrepos in three styles
+foreach (dir cmake @cmake cmake@)
+  if (EXISTS ${CMAKE_CURRENT_LIST_DIR}/${dir})
+    list (APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/${dir}")
+    set (ESMA_CMAKE_PATH "${CMAKE_CURRENT_LIST_DIR}/${dir}" CACHE PATH "Path to ESMA_cmake code")
+  endif ()
+endforeach ()
 include (esma)
 
 ecbuild_declare_project()
@@ -38,8 +48,9 @@ add_definitions(-Dsys${CMAKE_SYSTEM_NAME} -DESMA64)
 add_definitions(${MPI_Fortran_COMPILE_FLAGS})
 include_directories(${MPI_Fortran_INCLUDE_PATH})
 
+esma_mepo_style(env env_dir)
+esma_add_subdirectory (${env_dir})
 # Recursively build source tree
-add_subdirectory (@env)
 add_subdirectory (src)
 
 # https://www.scivision.dev/cmake-auto-gitignore-build-dir/
@@ -54,4 +65,14 @@ install(
    DESTINATION ${CMAKE_INSTALL_PREFIX}
    )
 
+# Adds ability to tar source
+include (esma_cpack)
 
+# This installs a tarball of the source code
+# in the installation directory.
+# MUST BE THE LAST CODE IN THIS FILE
+option(INSTALL_SOURCE_TARFILE "Create and install source tarfile" OFF)
+if(INSTALL_SOURCE_TARFILE)
+  install(CODE "set(CMAKE_PROJECT_NAME \"${CMAKE_PROJECT_NAME}\")")
+  install(SCRIPT "${ESMA_CMAKE_PATH}/esma_postinstall.cmake")
+endif()

@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v3.4.0
+  tag: v3.10.0
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.6.2
+  tag: v3.8.0
   develop: develop
 
 ecbuild:
@@ -29,46 +29,45 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.4.10
+  tag: v1.5.0
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.10.0
+  tag: v2.14.1
   develop: develop
 
 FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
-  tag: geos/2019.01.02+noaff.6
+  tag: geos/2019.01.02+noaff.7
   develop: geos/release/2019.01
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-# branch: feature/esherman/gocart2g_develop_v2
-  tag: feature/#328/geos-v10.17.6/gocart2g/new-extdata/v2.0.4
+  branch: feature/#328/geos-v10.19.4/gocart2g
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.2.17
+  tag: v1.5.0
   develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: geos/v1.1.7
+  tag: geos/v1.3.0
   develop: geos/develop
 
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: feature/#328/geos-v10.17.6/gocart2g/new-extdata/v2.0.5
+  branch: feature/#328/geos-v10.19.4/gocart2g
   develop: develop
 
 HEMCO:
@@ -98,14 +97,14 @@ mom:
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
-  tag: geos/v2.0.1
+  tag: geos/v2.0.2
   develop: dev/gfdl
   recurse_submodules: true
 
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: feature/#328/geos-v10.17.6/gocart2g/new-extdata/v2.0.4
+  branch: feature/#328/geos-v10.17.6/gocart2g/new-extdata
   develop: develop
 
 UMD_Etc:

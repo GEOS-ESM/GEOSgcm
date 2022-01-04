@@ -2,10 +2,11 @@ name: Build Tests
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, labeled, unlabeled]
+    types: [opened, synchronize, reopened]
     # Do not run if the only files changed cannot affect the build
     paths-ignore:
       - "**.md"
+      - "**.json"
       - "ChangeLog-PreJason.txt"
       - "parallel_build.csh"
       - ".github/CODEOWNERS"
@@ -18,7 +19,7 @@ jobs:
     if: "!contains(github.event.pull_request.labels.*.name, '0 diff trivial')"
     runs-on: ubuntu-latest
     container:
-      image: gmao/ubuntu20-geos-env-mkl:v6.1.0-openmpi_4.0.5-gcc_10.2.0
+      image: gmao/ubuntu20-geos-env-mkl:v6.2.8-openmpi_4.0.6-gcc_11.2.0
       credentials:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -43,8 +44,6 @@ jobs:
       - name: Mepo clone external repos
         run: |
           mepo clone
-          mepo status
-          mepo develop GEOSgcm_GridComp GEOSgcm_App
           mepo status
       - name: Update other branches
         if:
