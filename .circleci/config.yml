@@ -33,7 +33,8 @@ executors:
         auth:
           username: $DOCKERHUB_USER
           password: $DOCKERHUB_AUTH_TOKEN
-    resource_class: large
+    resource_class: xlarge
+    #LARGE# resource_class: large
     #MEDIUM# resource_class: medium
 
   ifort-xlarge:
@@ -53,7 +54,7 @@ workflows:
           matrix:
             parameters:
               compiler: [gfortran, ifort]
-          context: 
+          context:
             - docker-hub-creds
       ##################################################
       # - run-gcm-exp:                                 #
