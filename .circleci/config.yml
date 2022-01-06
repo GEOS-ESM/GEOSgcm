@@ -53,7 +53,7 @@ workflows:
           matrix:
             parameters:
               compiler: [gfortran, ifort]
-          context: 
+          context:
             - docker-hub-creds
       ##################################################
       # - run-gcm-exp:                                 #
@@ -110,6 +110,13 @@ jobs:
             cd ${CIRCLE_WORKING_DIRECTORY}/workspace/build-GEOSgcm
             make -j"$(nproc)" install |& tee /logfiles/make.log
             #MEDIUM# make -j4 install |& tee /logfiles/make.log
+      - run:
+          name: "Retry build and install after failure"
+          command: |
+            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/build-GEOSgcm
+            make -j"$(nproc)" install |& tee /logfiles/make-retry.log
+            #MEDIUM# make -j4 install |& tee /logfiles/make-retry.log
+          when: on_fail
       - run:
           name: "Compress artifacts"
           command: |
