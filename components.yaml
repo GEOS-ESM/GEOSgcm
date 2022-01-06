@@ -36,7 +36,7 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.15.0
+  tag: v2.15.1
   develop: develop
 
 FMS:
