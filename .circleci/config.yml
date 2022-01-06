@@ -33,8 +33,7 @@ executors:
         auth:
           username: $DOCKERHUB_USER
           password: $DOCKERHUB_AUTH_TOKEN
-    resource_class: xlarge
-    #LARGE# resource_class: large
+    resource_class: large
     #MEDIUM# resource_class: medium
 
   ifort-xlarge:
@@ -111,6 +110,13 @@ jobs:
             cd ${CIRCLE_WORKING_DIRECTORY}/workspace/build-GEOSgcm
             make -j"$(nproc)" install |& tee /logfiles/make.log
             #MEDIUM# make -j4 install |& tee /logfiles/make.log
+      - run:
+          name: "Retry build and install after failure"
+          command: |
+            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/build-GEOSgcm
+            make -j"$(nproc)" install |& tee /logfiles/make-retry.log
+            #MEDIUM# make -j4 install |& tee /logfiles/make-retry.log
+          when: on_fail
       - run:
           name: "Compress artifacts"
           command: |
