@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.3.10
+  branch: feature/mmanyin/CCM_benchmark_F
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -48,14 +48,14 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.11.6
+  branch: feature/mmanyin/CCM_benchmark_F
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.2.11
+  branch: feature/mmanyin/CCM_benchmark_F
   develop: develop
 
 fvdycore:
@@ -67,14 +67,14 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.4.4
+  branch: feature/mmanyin/CCM_benchmark_F
   develop: develop
 
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
   sparse: ./config/GOCART.sparse
-  tag: v1.0.1
+  branch: feature/mmanyin/CCM_benchmark_F
   develop: develop
 
 mom:

@@ -1,0 +1,12 @@
+1.6.22
+Edited the VERIFICATION file for MERRA2, under plots/lcmp  (both in src and install) to set the start date for MERRA2 to Jan 1980.
+This fixes a problem in some of the quickplots.
+
+1.10.22
+These repo's are now set to use brach   feature/mmanyin/CCM_benchmark_F:
+@GEOSgcm_GridComp
+@GEOSchem_GridComp
+@GOCART
+@FVdycoreCubed_GridComp
+@GMAO_Shared
+
