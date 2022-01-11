@@ -5,8 +5,14 @@ This fixes a problem in some of the quickplots.
 1.10.22
 These repo's are now set to use brach   feature/mmanyin/CCM_benchmark_F:
 @GEOSgcm_GridComp
+   Modified nitrate scavenging, Henry's law constants, added some convective tendency diagnostics, and overpass diagnostics from Agcm.
 @GEOSchem_GridComp
+   Bug fix for condensation of HNO3 and H2O; print GMI timestep and Heartbeat
 @GOCART
+   Added Overpass diagnostics; added coupling of HNO3 with GMI
 @FVdycoreCubed_GridComp
+   Compute W when HYDROSTATIC=TRUE
 @GMAO_Shared
-
+   Using CO2 from RCP6
+   Keep source code for 3 different RCP options for CO2
+   Quickplots fix for MERRA and MERRA2 comparisons (lcmp)
