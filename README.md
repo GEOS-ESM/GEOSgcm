@@ -14,21 +14,21 @@
 | ----------                                                                     | -------                                                                                             |
 | [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                               |
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v1.0.6](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.0.6)                       |
-| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.5.4](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.5.4)                                |
-| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v3.3.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v3.3.0)                                  |
+| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.8.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.8.0)                                |
+| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v3.10.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v3.10.0)                                |
 | [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.7](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.7) |
-| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v1.2.15](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.2.15)                  |
+| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v1.6.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.6.0)                    |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)           |
-| [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.6.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.6.0)                         |
-| [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v1.5.2](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v1.5.2)                               |
-| [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v1.12.3](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v1.12.3)                        |
-| [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v1.1.7](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.1.7)       |
-| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.4.5](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.4.5)                               |
+| [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.7.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.7.0)                         |
+| [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v1.6.1](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v1.6.1)                               |
+| [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v1.14.0](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v1.14.0)                        |
+| [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v1.3.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.3.0)       |
+| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.5.0](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.5.0)                              |
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v1.0.1](https://github.com/GEOS-ESM/GOCART/releases/tag/v1.0.1)                                    |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.1](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.1)                         |
-| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.8.4](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.8.4)                                      |
+| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.15.1](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.15.1)                                    |
 | [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+1.2.0](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B1.2.0)              |
-| [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v2.0.1](https://github.com/GEOS-ESM/MOM6/releases/tag/geos%2Fv2.0.1)                          |
+| [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v2.0.2](https://github.com/GEOS-ESM/MOM6/releases/tag/geos%2Fv2.0.2)                          |
 | [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.2.0](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.2.0)                               |
 | [UMD_Etc](https://github.com/GEOS-ESM/UMD_Etc)                                 | [v1.0.4](https://github.com/GEOS-ESM/UMD_Etc/releases/tag/v1.0.4)                                   |
 
@@ -151,6 +151,11 @@ mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared
 
 To obtain a debug version, you can run `parallel_build.csh -debug` which will build with debugging flags. This will build in `build-Debug/` and install into `install-Debug/`.
 
+#### Do not create and install source tarfile with parallel_build
+
+Note that running with `parallel_build.csh` will create and install a tarfile of the source code at build time. If you wish to avoid
+this, run `parallel_build.csh` with the `-no-tar` option.
+
 ---
 
 ### Multiple Steps for Building the Model
@@ -217,6 +222,14 @@ This will install to a directory parallel to your `build` directory. If you pref
 ```
 and CMake will install there.
 
+###### Create and install source tarfile
+
+Note that running with `parallel_build.csh` will create and install a tarfile of the source code at build time. But if CMake is run by hand, this is not the default action (as many who build with CMake by hand are developers and not often running experiments). In order to enable this at install time, add:
+```
+-DINSTALL_SOURCE_TARFILE=ON
+```
+to your CMake command.
+
 ##### Build and Install with Make
 ```
 make -jN install
@@ -230,3 +243,13 @@ Once the model has built successfully, you will have an `install/` directory in 
 cd install/bin
 ./gcm_setup
 ```
+
+## Contributing
+
+Please check out our [contributing guidelines](CONTRIBUTING.md).
+
+## License
+
+All files are currently licensed under the Apache-2.0 license, see [`LICENSE`](LICENSE).
+
+Previously, the code was licensed under the [NASA Open Source Agreement, Version 1.3](LICENSE-NOSA).

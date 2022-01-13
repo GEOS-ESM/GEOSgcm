@@ -1,1 +1,1 @@
-add_subdirectory (@GEOSgcm_GridComp)
+esma_add_subdirectory (GEOSgcm_GridComp)
