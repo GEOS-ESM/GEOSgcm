@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  branch: develop
+  branch: main
   develop: main
 
 cmake:
