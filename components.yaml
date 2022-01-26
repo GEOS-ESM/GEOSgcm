@@ -42,7 +42,7 @@ MAPL:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  branch: feature/mathomp4/fms-baselibs
+  tag: v1.14.0
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
