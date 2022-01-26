@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v3.10.0
+  tag: v3.11.0
   develop: main
 
 cmake:
@@ -17,7 +17,7 @@ cmake:
 ecbuild:
   local: ./@cmake/@ecbuild
   remote: ../ecbuild.git
-  tag: geos/v1.0.6
+  tag: geos/v1.1.0
 
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
@@ -36,7 +36,7 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.15.1
+  tag: v2.17.0
   develop: develop
 
 FMS:
