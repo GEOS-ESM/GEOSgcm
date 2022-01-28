@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  circleci-tools: geos-esm/circleci-tools@0.5.0
+  circleci-tools: geos-esm/circleci-tools@0.6.0
 
 workflows:
   build-test:
@@ -32,7 +32,7 @@ jobs:
         type: string
     executor:
       name: circleci-tools/<< parameters.compiler >>
-      resource_class: xlarge
+      resource_class: large
     working_directory: /root/project
     steps:
       - checkout:
@@ -40,16 +40,7 @@ jobs:
       - circleci-tools/versions:
           compiler: << parameters.compiler >>
       - circleci-tools/mepoclone
-      - run:
-          name: "Mepo checkout-if-exists"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm
-            echo "${CIRCLE_BRANCH}"
-            if [ "${CIRCLE_BRANCH}" != "develop" ] && [ "${CIRCLE_BRANCH}" != "main" ]
-            then
-               mepo checkout-if-exists ${CIRCLE_BRANCH}
-            fi
-            mepo status
+      - circleci-tools/checkout_if_exists
       - circleci-tools/cmake:
           compiler: << parameters.compiler >>
       - circleci-tools/buildinstall
