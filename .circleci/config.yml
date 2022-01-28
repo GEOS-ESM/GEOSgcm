@@ -30,8 +30,9 @@ jobs:
     parameters:
       compiler:
         type: string
-    executor: circleci-tools/<< parameters.compiler >>
-    resource_class: xlarge
+    executor:
+      name: circleci-tools/<< parameters.compiler >>
+      resource_class: xlarge
     working_directory: /root/project
     steps:
       - checkout:
