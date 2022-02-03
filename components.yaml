@@ -112,7 +112,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.6.1
+  branch: feature/pnorris/#522-incorporate-RRTMGP-v1.5
   develop: develop
 
 UMD_Etc:
