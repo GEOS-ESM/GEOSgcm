@@ -105,7 +105,7 @@ mom6:
 RRTMGP:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSradiation_GridComp/GEOS_RadiationShared/@RRTMGP
   remote: ../rte-rrtmgp.git
-  tag: v1.5
+  tag: geos/v1.5+1.0.0
   develop: geos/develop
   sparse: ./config/RRTMGP.sparse
 
