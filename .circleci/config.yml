@@ -1,49 +1,7 @@
 version: 2.1
 
-executors:
-  gfortran-large:
-    docker:
-      - image: gmao/ubuntu20-geos-env-bcs:v6.2.7-openmpi_4.0.6-gcc_11.2.0-bcs_v10.19.3
-        auth:
-          username: $DOCKERHUB_USER
-          password: $DOCKERHUB_AUTH_TOKEN
-    environment:
-      OMPI_ALLOW_RUN_AS_ROOT: 1
-      OMPI_ALLOW_RUN_AS_ROOT_CONFIRM: 1
-      OMPI_MCA_btl_vader_single_copy_mechanism: none
-    resource_class: large
-    #MEDIUM# resource_class: medium
-
-  gfortran-xlarge:
-    docker:
-      - image: gmao/ubuntu20-geos-env-bcs:v6.2.7-openmpi_4.0.6-gcc_11.2.0-bcs_v10.19.3
-        auth:
-          username: $DOCKERHUB_USER
-          password: $DOCKERHUB_AUTH_TOKEN
-    environment:
-      OMPI_ALLOW_RUN_AS_ROOT: 1
-      OMPI_ALLOW_RUN_AS_ROOT_CONFIRM: 1
-      OMPI_MCA_btl_vader_single_copy_mechanism: none
-    resource_class: xlarge
-    #MEDIUM# resource_class: medium
-
-  ifort-large:
-    docker:
-      - image: gmao/ubuntu20-geos-env-bcs:v6.2.7-intelmpi_2021.2.0-intel_2021.2.0-bcs_v10.19.3
-        auth:
-          username: $DOCKERHUB_USER
-          password: $DOCKERHUB_AUTH_TOKEN
-    resource_class: large
-    #MEDIUM# resource_class: medium
-
-  ifort-xlarge:
-    docker:
-      - image: gmao/ubuntu20-geos-env-bcs:v6.2.7-intelmpi_2021.2.0-intel_2021.2.0-bcs_v10.19.3
-        auth:
-          username: $DOCKERHUB_USER
-          password: $DOCKERHUB_AUTH_TOKEN
-    resource_class: xlarge
-    #MEDIUM# resource_class: medium
+orbs:
+  circleci-tools: geos-esm/circleci-tools@0.6.0
 
 workflows:
   build-test:
@@ -55,67 +13,48 @@ workflows:
               compiler: [gfortran, ifort]
           context: 
             - docker-hub-creds
-      - run-gcm-exp:
-          name: run-gcm-exp-on-<< matrix.compiler >>
-          matrix:
-            parameters:
-              compiler: [gfortran, ifort]
-          context:
-            - docker-hub-creds
-          requires:
-            - build-GEOSgcm-on-<< matrix.compiler >>
+      ##################################################
+      # - run-gcm-exp:                                 #
+      #     name: run-gcm-exp-on-<< matrix.compiler >> #
+      #     matrix:                                    #
+      #       parameters:                              #
+      #         compiler: [gfortran, ifort]            #
+      #     context:                                   #
+      #       - docker-hub-creds                       #
+      #     requires:                                  #
+      #       - build-GEOSgcm-on-<< matrix.compiler >> #
+      ##################################################
 
 jobs:
   build-GEOSgcm:
     parameters:
       compiler:
         type: string
-    executor: << parameters.compiler >>-large
+    executor:
+      name: circleci-tools/<< parameters.compiler >>
+      resource_class: large
     working_directory: /root/project
     steps:
       - checkout:
           path: GEOSgcm
-      - run:
-          name: "Versions etc"
-          command: mpirun --version && << parameters.compiler>> --version && echo $BASEDIR && pwd && ls
-      - run:
-          name: "Mepo clone external repos"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm
-            mepo clone
-            mepo status
-      - run:
-          name: "Mepo checkout-if-exists"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm
-            echo "${CIRCLE_BRANCH}"
-            if [ "${CIRCLE_BRANCH}" != "develop" ] && [ "${CIRCLE_BRANCH}" != "main" ]
-            then
-               mepo checkout-if-exists ${CIRCLE_BRANCH}
-            fi
-            mepo status
-      - run:
-          name: "CMake"
-          command: |
-            mkdir -p /logfiles
-            cd ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm
-            mkdir -p  ${CIRCLE_WORKING_DIRECTORY}/workspace/build-GEOSgcm
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/build-GEOSgcm
-            cmake ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=<< parameters.compiler >> -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=${CIRCLE_WORKING_DIRECTORY}/workspace/install-GEOSgcm -DUSE_F2PY=OFF |& tee /logfiles/cmake.log
-      - run:
-          name: "Build and install"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/build-GEOSgcm
-            make -j"$(nproc)" install |& tee /logfiles/make.log
-            #MEDIUM# make -j4 install |& tee /logfiles/make.log
+      - circleci-tools/versions:
+          compiler: << parameters.compiler >>
+      - circleci-tools/mepoclone
+      - circleci-tools/checkout_if_exists
+      - circleci-tools/cmake:
+          compiler: << parameters.compiler >>
+      - circleci-tools/buildinstall
+      - circleci-tools/compress_artifacts
       - store_artifacts:
           path: /logfiles
       # We need to persist the install for the next step
       # but only if we are running gcm tests
-      - persist_to_workspace:
-          root: workspace
-          paths:
-            - install-GEOSgcm
+      ###########################
+      # - persist_to_workspace: #
+      #     root: workspace     #
+      #     paths:              #
+      #       - install-GEOSgcm #
+      ###########################
 
   run-gcm-exp:
     parameters:
