@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.5.0
+  tag: v1.5.1
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -112,7 +112,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  branch: feature/pnorris/#522-incorporate-RRTMGP-v1.5
+  tag: v1.6.2
   develop: develop
 
 UMD_Etc:
