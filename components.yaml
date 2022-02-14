@@ -48,7 +48,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  branch: feature/mathomp4/add-rrtmgp-fork
+  tag: v1.14.1
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
