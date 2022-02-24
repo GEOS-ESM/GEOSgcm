@@ -1,10 +1,11 @@
 *~
 /@cmake/
-/@modules/
+/cmake/
+/cmake@/
 /@env/
-/BUILD/
-/build*/
-/install*/
+/env/
+/env@/
 /.mepo/
 parallel_build.o*
 log.*
+CMakeUserPresets.json

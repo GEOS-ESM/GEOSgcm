@@ -1,5 +1,351 @@
 # Changelog
 
+## Unreleased
+
+## [10.21.1] - 2022-02-14
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+Major Zero-Diff Changes:
+1. Add CLDXXSW diagnostics and many cosmetic changes to Solar GC by @dr0cloud in [#510](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/510)
+2. Add additional radiation RRTMG tau and water path diagnostics by @dr0cloud in [#519](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/519)
+3. Simple fix to prevent negative tauaer in RRTMG LW by @dr0cloud in [#521](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/521)
+4. Add RRTMGP as a fork in GEOS by @mathomp4 in [#528](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/528)
+5. Update RRTMGP file locations and half gpoints by @mathomp4 in [#294](https://github.com/GEOS-ESM/GEOSgcm_App/pull/294)
+6. Cleanup of Catchment model constants by @gmao-rreichle in [#525](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/525)
+7. Removed redundant code: DQS calc, QC constraint, RA calc by @gmao-rreichle in [#518](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/518)
+8. Fix `mk_GEOSldasRestart` for `catchcnclm45` by @weiyuan-jiang in [#516](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/516)
+9. `make_bcs` clarification of options by @biljanaorescanin in [#517](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/517)
+10. Bug fix for `RUNSRF` units in Catchment by @gmao-rreichle in [#535](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/535)
+11. Cleanup of `gndtmp[_cn]()` by @gmao-jkolassa in [#536](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/536)
+12. New peat hydrology (PEATCLSM) by @biljanaorescanin in [#524](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/524)
+13. Add `LDAS_INCR` to `AGCM.rc.tmpl` for land-atmos coupled das by @saraqzhang in [#288](https://github.com/GEOS-ESM/GEOSgcm_App/pull/288)
+14. Fixes for C12 MOM6 by @mathomp4 in [#](https://github.com/GEOS-ESM/GEOSgcm_App/pull/285)
+15. Updates for handling CS ocean by @mathomp4 in [#287](https://github.com/GEOS-ESM/GEOSgcm_App/pull/287)
+16. Update for NAS Runs by @mathomp4 in [#291](https://github.com/GEOS-ESM/GEOSgcm_App/pull/291)
+17. Compress CircleCI Artifacts by @mathomp4 in [#513](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/513)
+18. Use circleci-tools orb for CI by @mathomp4 in [#242](https://github.com/GEOS-ESM/GMAO_Shared/pull/242)
+
+
+## [10.21.0] - 2021-12-21
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: YES (see below)
+
+Major Non-Zero-Diff Changes:
+1. Changed the default config to use new orbit parameters by @sdrabenh in [#277](https://github.com/GEOS-ESM/GEOSgcm_App/pull/277)
+2. Refactored RRTMG long-wave and short-wave radiation by @dr0cloud in [#492](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/492)
+3. Adding SHOC+EDMF updates by @narnold1 in [#479](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/479).
+   All restarts and variables within remain 0-diff except for the following:
+   1. moist_import
+      * added: EDMF_FRC, HL2, HL3, HLQT, QT2, QT3, W2, W3, WHL, WQT
+   2. moist_internal
+      * added: PDF_A
+   3. turb_import
+      * added: PHIS, SH, WTHV2
+   4. turb_internal
+      * added: QT2, QT3
+      * removed: BRUNTSHOC, CLD, DQDT_SHC, DQIDT_SHC, DQLDT_SHC, DTDT_SHC, LSHOC, SHEARSHOC, TKEBUOY, TKEDISS, TKESHEAR, TKETRANS, WTHV2
+      * changed: TKH "lev" coordinate to "edge" coordinate
+
+## [10.20.0] - 2021-12-17
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: YES for TR
+
+Major Non-Zero-Diff Changes:
+
+1. Uptick to [GEOSchem_GridComp v1.7.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.7.0)
+   * Wet deposition for CO, CO2 and CH4 is disabled, while a bug-fix is developed.
+   * GMI and TR have cleaner units handling.
+2. make_bcs fixes issues with "old land" choices by @smahanam in [#438](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/438)
+   * Old land BCS files have the same science but won't be binary-equivalent due to bug fixes (e.g., "Mali bug")
+3. Adds code to Satsim to choose subcolumns based on horizontal resolution by @mathomp4 in [#459](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/459)
+   * This is zero-diff for resolutions C720 and coarser but not for higher resolutions
+4. Uptick to [ESMA_env v3.8.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v3.8.0) to use Intel 2021.3 which helps alleviate issues with LDAS amd NAS.
+5. Uptick to [ESMA_cmake v3.8.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.8.0) to change default vectorization flag for Intel Fortran.
+
+Major Zero-Diff Changes:
+
+1. Updated `regrid.pl` for GOCART-2G by @bena-nasa in [#231](https://github.com/GEOS-ESM/GMAO_Shared/pull/231)
+2. Plot Updates from L. Takacs by @sdrabenh in [#235](https://github.com/GEOS-ESM/GMAO_Shared/pull/235)
+   * Added supports to plot aerosols from GOCART-2G.
+   * Three-Corner-Hat (3CH) analysis tools were added.
+   * Enhancements and bugfixes to quickplot and quickstat utilities.
+3. Lightning module has been re-located and revamped.  [#451](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/451)  [#212](https://github.com/GEOS-ESM/GMAO_Shared/pull/212)  [#141](https://github.com/GEOS-ESM/GEOSchem_GridComp/pull/141)
+4. HEMCO config files for GOCART and GMI have been updated for v2.2 [GEOSchem_GridComp v1.7.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.7.0)
+5. Uptick to [MAPL v2.14.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.14.0)
+6. Refactoring of `interp_restart` code necessitated an uptick to [fvdycore geos/v1.3.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.3.0)
+7. Regridding fix and `read_topo` fix code necessitated an uptick to [FVdycoreCubed_GridComp v1.4.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.4.1)
+
+## [10.19.6] - 2021-12-09
+
+### Zero-diff to previous release: YES
+### Restart Changes: NO
+
+Major 0-diff changes:
+
+1. 5deg ocean (MOM6) configuration by @sanAkel in [#488](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/488)
+2. Fixed missing verify status of iDUAL_OCEAN in GEOS_OceanGridComp.F90  by @sanAkel in [#491](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/491)
+3. Cleaned up CircleCI by @mathomp4 in [#493](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/493)
+4. Make big 5-d buffer in Moist optional by @mathomp4 in [#496](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/496)
+5. The `idcheck.pl` script was updated for changes in SemperPy by @gmao-jstassi in [#233](https://github.com/GEOS-ESM/GMAO_Shared/pull/233)
+6. Update `regrid.pl` for Ocean Model Questions by @mathomp4 in [#222](https://github.com/GEOS-ESM/GMAO_Shared/pull/222)
+7. Added `HISTORY_GEOSIT.rc.tmpl` by @rtodling in [#273](https://github.com/GEOS-ESM/GEOSgcm_App/pull/273)
+8. Uptick to MAPL v2.13.0  [full list of changes](https://github.com/GEOS-ESM/MAPL/compare/v2.12.1...v2.13.0)
+
+## [10.19.5] - 2021-11-30
+
+### Zero-diff to previous release: YES (except for comparing some HISTORY output)
+### Restart Changes: NO
+
+Possible History changes:
+
+1. Bug fix for MAPL wherein non-default duration in HISTORY.rc was not being correctly handled. For example, if a collection has a duration of 24 hours and a frequency of 12 hours, MAPL now correctly writes a file with *two* timesteps in it. Before, MAPL was handling this incorrectly. Note that the *data* is still the same as 10.19.4, but now is contained within one file.
+
+Major 0-diff changes:
+
+1. Fix mom5 mom6 for das by @mathomp4 in [#270](https://github.com/GEOS-ESM/GEOSgcm_App/pull/270)
+2. Allow gcm_setup to run anywhere by @mathomp4 in [#261](https://github.com/GEOS-ESM/GEOSgcm_App/pull/261)
+3. `WSUB` fix in gmichem_setup by @mmanyin in [#263](https://github.com/GEOS-ESM/GEOSgcm_App/pull/263)
+4. Make runtime and setup variable consistent for GCM by @rtodling in [#265](https://github.com/GEOS-ESM/GEOSgcm_App/pull/265)
+5. Add code to install source tarfile by @mathomp4 in [#262](https://github.com/GEOS-ESM/GEOSgcm_App/pull/262)
+6. Replace `_RETURN(_SUCCESS)` by @weiyuan-jiang in [#484](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/484)
+7. Add error checking in mk_restarts executables by @weiyuan-jiang in [#467](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/467)
+8. Support update for MOM6 by @sanAkel in [#468](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/468)
+9. Add logic to allow guest oceans to be stubbed by @tclune in [#474](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/474)
+10. Add ability to get timing from MOM6 modules by @sanAkel in [#477](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/477)
+11. Add in support of quarter degree MOM6 to ADAS by @rtodling in [#478](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/478)
+12. Updated `pyrob` to work with GEOS-IT files by @mathomp4 in [#224](https://github.com/GEOS-ESM/GMAO_Shared/pull/224)
+13. Add Cascade knob to `g5fcst_stats.pl` and `regrid.pl`; revised `dyn_blob`; make sure `echorc.x` exits with success code when applicable; by @rtodling in [#226](https://github.com/GEOS-ESM/GMAO_Shared/pull/226)
+14. Add OpenMP support for fvdycore by @mathomp4 in [#44](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/pull/44)
+15. ESMA_env: Update to Baselibs 6.2.8 needed for MAPL and move to use MPT 2.25 at NAS. [full list of changes](https://github.com/GEOS-ESM/ESMA_env/compare/v3.4.0...v3.6.0)
+16. ESMA_cmake: Add ability to create source tarball after install, various cleanup and fixes. [full list of changes](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.6.2...v3.7.2)
+17. MAPL: Requires gFTL 1.5.1 (Baselibs 6.2.8), added option to flip vertical orientation of checkpoints, various 0-diff bug fixes for compilers, refactored code. [full list of changes](https://github.com/GEOS-ESM/MAPL/compare/v2.8.6...v2.12.1)
+
+## [10.19.4] - 2021-10-07
+
+### Zero-diff to previous release: YES for default AGCM, YES for OGCM for single moment MP
+### Restart Changes: NO
+
+Major 0-diff Changes:
+1. Restructuring under GEOSocean_GridComp by @yvikhlya in [#448](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/448)
+2. Updates to support two versions of Catchment-CN: Catchment-CN.4.0 and Catchment-CN.4.5 by @gmao-jkolassa in [#368](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/368)
+3. Compile time choice of CN model by @weiyuan-jiang in [#370](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/370)
+4. Runtime choice for clm4.0 and clm4.5 by @weiyuan-jiang in [#373](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/373)
+5. mk_GEOSldasRestart can now take restart hour and restart name by @weiyuan-jiang in [#449](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/449)
+6. Fixes to enable mepo variant styles by @tclune in [#334](https://github.com/GEOS-ESM/GEOSgcm/pull/334)
+7. Updates needed for Cascade Lake at NCCS by @mathomp4 in [#335](https://github.com/GEOS-ESM/GEOSgcm/pull/335)
+8. Updates and corrections for the trajectory file created for JEDI. Variables for proper diurnal layer, TS, and CO2 have been added by @rtodling in [#257](https://github.com/GEOS-ESM/GEOSgcm_App/pull/257)
+9. Null out WSUB_NATURE for 1MOM and GFDL physics by @mathomp4 in [#251](https://github.com/GEOS-ESM/GEOSgcm_App/pull/251)
+10. Cleanup gcm_run and sync forecast scripts by @sdrabenh in [#256](https://github.com/GEOS-ESM/GEOSgcm_App/pull/256)
+11. Fixes for SCM Setup on macOS by @mathomp4 in [#253](https://github.com/GEOS-ESM/GEOSgcm_App/pull/253)
+12. Updated suite of PRs for GEOSadas by @mathomp4 in [v1.4.10](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.4.10)
+13. Bug fix for CICE4 segfault by @mathomp4 in [#215](https://github.com/GEOS-ESM/GMAO_Shared/pull/215)
+14. Add pyrob_CF script by @mathomp4 in [#208](https://github.com/GEOS-ESM/GMAO_Shared/pull/208)
+
+## [10.19.3] - 2021-07-21
+
+### Zero-diff to previous release: MOSTLY
+### Restart Changes: NO
+
+Potential Non-0-diff Change:
+
+1. Upgrade to MAPL v2.8.0. For the MERRA2 GOCART Emissions, all testing shows it is zero-diff. But for the Ops GOCART Emissions, it there are very small roundoff differences. The results are non-zero-diff due to a bug fix (to a race condition) in this version of MAPL on how grids are handled.
+
+Major 0-diff Changes:
+1. Detect MERRA2OX date violation during setup.
+2. Make species consistent with emissions choice.
+3. Only allow Rome nodes at NAS if built on Rome.
+5. Updates for MVAPICH2, enable multigroup by default.
+6. Bugfix for correct day when running EMIPs.
+7. Update ldas increment alarm setting in CatchGC.
+8. Updates to plots package.
+9. Update to fvdycore v1.1.7.
+
+## [10.19.2] - 2021-06-11
+
+### Zero-diff to previous release: YES
+### Restart Changes: NO
+
+Changes include:
+
+1. Upgrade to Baselibs 6.2.4 and cmake v3.5.0.
+2. Update parallel_build to use GMAO_Shared main if develop.
+3. Created a new grid comp `GEOS_SeaiceGridComp` as a top level container component serving sea ice sub-components to `OGCM`. This new structure mirrors the existing `GuestOcean/MOMPlug` relationship for the ocean model hierarchy.
+4. Bug fix that makes sure that diagnostics `CNV_MFC` still works when the UW shallow convection code is disabled.
+5. Add changes consistent with what is in GEOSadas 5.28.
+6. Addition of variables for analysis in two RC files and correction in `IAU` `reftime` consistent with GEOSadas.
+7. Fixes for `IOSERVER` on Rome.
+
+## [10.19.1] - 2021-05-25
+
+### Zero-diff to previous release: YES
+### Restart Changes: NO
+### History Changes: YES
+
+Major changes include:
+
+1. Upgrade to MAPL v2.7.0 which changes how programs set up command line options.
+2. Update to FVdycoreCubed_GridComp v1.2.15 and GEOSgcm_App v1.5.1 for compatibility with MAPL v2.7.0.
+3. Enable GEOSgcm to output the configuration values in `GEOS_SurfaceGridComp.rc`.
+4. Fixes a bug in the export of `SSKINW` (an internal state of Openwater) that was being filled incorrectly leading to `MAPL_UNDEF`. Now there are actual values.
+5. Merged changes present in GEOSadas-5_27_1_p3 that never made it into the GIT repo: revised stochastic perturbation tendency exports.
+6. A bug fix to prevent a seg-fault during the calculation of the GEOS-Chem lightning flash rate due to an array size mismatch.
+7. Add ability to write out energy components to file.
+8. Update gitignore for mepo updates.
+9. Follow MAPL's change to add a new `MAPL_CapOptions` constructor.
+
+## [10.19.0] - 2021-05-14
+
+### Zero-diff to previous release: NO
+### Restart Changes: NO
+### History Changes: YES
+
+Major Non-0-diff changes include:
+1. Updates the DEFAULT Land BCs of GEOSgcm to be Icarus-NLv3. Also applies a fix to GEOS_SurfaceGridComp.rc to correctly implement it.
+
+Major 0-diff changes include:
+1. Updates `GMAO_psas` to work with MAPL2.
+2. Rename `LANL_cice` to `CICE4` that is located at `LANL_Shared/`
+3. Remove `BULK_SST` alias for `TS_FOUND` in HISTORies used in model (only) simulations.
+4. Updates to use Python2 and Python3 at same time.
+5. Fixed the `-wemin` and `-wemout` options in `regrid.pl` so that they will accept integer values.
+6. Bugfix to detect if saltwater splitting is needed in more files.
+7. Add `IOSERVER` code into `gcm_forecast.tmpl`.
+8. Updates needed for `GEOSadas` to work with MAPL2.
+9. Add GEOS-Chem and HEMCO as separate external repositories. 
+10. GMI is now set to import RI and RL only when running Cloud-J. This is a work-around for a CTM issue.
+11. Uptick of MAPL and FMS repositories.
+
+## [10.18.0] - 2021-04-15
+
+### Zero-diff to previous release: NO
+### Restart Changes: YES
+### History Changes: YES
+
+Major Non-0-diff changes include:
+1. Modified PCHEM interpolation that fixes the problem of negative PCHEM tracers.
+2. A bug fix to atmOcnIntlayer consistent with what was applied to GEOS-FP GEOS-5.27.1 (02/2021) which mitigates anomalous spikes in `TSKINWTR` and related fields when the sea ice fraction departs 100%.
+3. Changed scaling and cleaned up Henry's law code in ConvPar_GF_GEOS5 (bug fix, non-zero diff for GOCART).
+4. Update to use the 2020 NRL Solar file.
+
+Major 0-diff changes include:
+1. Fix DUAL_OCEAN options in coupled model to only work with MOM5 (It does not and can not work with MOM6).
+2. Added diagnostic output for NH3, NH4A convective scavenging to GEOS_MoistGridComp used for GOCART evaluation.
+3. Revive OceanBioGeoChem.
+4. Fixed CMake bugs for DAS build only libraries.
+5. Upticks of FVdycoreCubed_GridComp, fvdycore, and cmake repos.
+
+## [10.17.6] - 2021-04-06
+
+### Zero-diff to previous release: YES
+### Zero-diff to regridding: YES
+### Restart Changes: NO
+### History Changes: NO
+
+Major changes include:
+
+1. Upgrade to ESMA_env v3.2.0 whose main change is updating to ESMF 8.1.0, which is needed for MAPL development. All testing has shown it zero-diff to GEOSgcm with ESMF 8.0.1. Tests were run from C12 to C720 as well as Replay and MOM6. However, ESMF notes that there are [changes in some regridding situations which *could* produce non-zero-diff results](https://github.com/esmf-org/esmf/releases/tag/ESMF_8_1_0).
+
+## [10.17.5] - 2021-04-06
+
+### Zero-diff to previous release: YES for hydrostatic, NO for nonhydrostatic
+### Zero-diff to regridding: YES
+### Restart Changes: NO
+### History Changes: NO
+
+Major changes include:
+
+1. parallel_build.csh now accepts a `-hydrostatic` or `-nonhydrostatic` argument during building. If no argument is provided the model will build hydrostatically as before. Therefore, setup scripts were modified depending on what -DHYDROSTATIC option was supplied to CMake. If -DHYDROSTATIC=ON then it will assume the user wants to use hydrostatic dynamics options and vice versa. 
+2. Fixed decomposition regression for nonhydrostatic model.
+3. Updates from ADAS 5.27 folded into git GMAO_Shared v1.3.9. This brings the GEOSadas code closer to the current GEOSgcm.
+4. Upticks in MOM6, MAPL, env and other repositiories.
+
+## [10.17.4] - 2021-03-17
+
+### Zero-diff to previous release: YES
+### Zero-diff to regridding: NO for agcm_import_rst
+### Restart Changes: NO
+### History Changes: NO
+
+Major changes include:
+
+1. Moved GOCART legacy to be sourced from separate GOCART repository.
+2. Update to MOM6 `geos/v2.0.0` and update to FMS `geos/2019.01.02+noaff.6`
+3. Bug fix for regrid.pl which can cause non-0-diff regridding for agcm_import_rst.
+4. Fixed MOM6 diagnostics to use correct netcdf reference year.
+5. Fix bug in gustiness calculations.
+6. Fixed a bug in rotation angle for surface ocean stress.
+7. DSO's for mom5 and mom6.
+8. `GAAS` Replay fix.
+9. Add `MOM.res.nc` to the list of restarts that are checked in regression testing.
+10. Remove `OCEAN_PRELOAD` since it is not needed with the DSO.
+11. Change path names to support "automatic" MERRA-2 Regular Replay at NAS.
+12. Remove `CMIP_1977_1982` directory in `GEOS_Util/pre/NSIDC-OSTIA_SST-ICE_blend`.
+13. Update `binarytile.x` for river routing.
+14. Bug fix for edge level arrays out-of-bounds in `Lighting_mod`.
+15. Plot updates for stats.
+
+## [10.17.3] - 2021-02-12
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+### History Changes: NO
+
+Major changes include:
+
+1. Performance modification for surface rc file in run methods.
+2. Relocation of mk_restarts and Raster.
+3. Bugfix for running Catchment-CN with constant CO2.
+4. Fixed land BCs in coupled mode
+5. Added optional PCHEM species file with prod/loss of strat water vapor
+6. Added support for the new Rome nodes at NAS named like `r201c2t1n4`
+7. Plots and stats updates.
+8. Eliminated references to MAPL_COMM - these are no longer used and will be deleted in future releases of MAPL.
+9. Upgrade to MAPL v2.6.0
+
+## [10.17.2] - 2021-01-29
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+### History Changes: NO
+
+Major changes include:
+1. Upgrade to MAPL 2.5.0
+2. Updates to plots and stats package.
+3. Updated PBS Batch handling at NAS.
+4. Addded `CODE_OF_CONDUCT.md`
+
+## [10.17.1] - 2021-01-12
+
+### Zero-diff to previous release: YES
+
+### Restart Changes: NO
+
+### History Changes: YES - Roundoff differences in `TSOIL1` and `TSOIL2`
+
+Major changes include:
+
+1. Soil temperatures export variables (TP's) are now in units of Kelvin throughout the Catch and CatchCN. Note: this has introduced roundoff differences in `TSOIL1` and `TSOIL2` output.
+2. New MOM6 configuration (OM4), and a bug fix in MOM6_Plug.
+3. Update default coupled model surf collection with a few addition fields.
+4. Fix `saltwater_internal` splitting to work with in AMIP and EMIP mode.
+5. Add ASSERTs to RRTMG to test input sanity.
+6. Adds a `-partition` option to `mk_restarts` so that there can be a `-partition` option in `regrid.pl`.
+7. Fix `gcm_convert.j` which was broken.
+8. Added flag to `regrid_forcing_esmf.x` to force a 0 to 1 range when regridding files that should use fractions.
+9. Update flags for `zonal.f` to match CVS and fixed a bug in `res/zonal.gs` for `zonal.x` location.
+10. Updates to ignores CI if non-essential files are updated (only).
+11. Use CONFIGURE_DEPENDS flag to check if any globbed files changed when re-running cmake.
+12. Allow use of aggressive flags with GEOS.
+
+
 ## [10.17.0] - 2020-11-25
 
 ### Zero-diff to previous release: YES

@@ -1,0 +1,143 @@
+﻿{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 21,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base-configure",
+      "hidden": true,
+      "displayName": "Base Configure Settings",
+      "description": "Sets build and install directories",
+      "binaryDir": "${sourceDir}/build-${presetName}",
+      "cacheVariables": {
+        "BASEDIR": "$env{BASEDIR}",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/install-${presetName}"
+      }
+    },
+    {
+      "name": "base-gnu",
+      "hidden": true,
+      "inherits": "base-configure",
+      "displayName": "Base GNU Make Config",
+      "description": "Sets GNU Make generator",
+      "generator": "Unix Makefiles"
+    },
+    {
+      "name": "base-ninja",
+      "hidden": true,
+      "inherits": "base-configure",
+      "displayName": "Base Ninja Config",
+      "description": "Sets Ninja generator",
+      "generator": "Ninja"
+    },
+    {
+      "name": "Release",
+      "inherits": "base-gnu",
+      "displayName": "Release Configure",
+      "description": "Release build using GNU Make generator",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "Debug",
+      "inherits": "base-gnu",
+      "displayName": "Debug Configure",
+      "description": "Debug build using GNU Make generator",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "Aggressive",
+      "inherits": "base-gnu",
+      "displayName": "Aggressive Configure",
+      "description": "Aggressive build using GNU Make generator",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Aggressive"
+      }
+    },
+    {
+      "name": "Release-Ninja",
+      "inherits": "base-ninja",
+      "displayName": "Release Ninja Configure",
+      "description": "Release build using Ninja generator",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "Debug-Ninja",
+      "inherits": "base-ninja",
+      "displayName": "Debug Ninja Configure",
+      "description": "Debug build using Ninja generator",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "Aggressive-Ninja",
+      "inherits": "base-ninja",
+      "displayName": "Aggressive Ninja Configure",
+      "description": "Aggressive build using Ninja generator",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Aggressive"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "base-build",
+      "hidden": true,
+      "displayName": "Base Build Config",
+      "description": "Sets default build options",
+      "jobs": 6,
+      "targets": ["install"]
+    },
+    {
+      "name": "Release",
+      "configurePreset": "Release",
+      "inherits": "base-build",
+      "displayName": "Release Build",
+      "description": "Release build using GNU Make generator"
+    },
+    {
+      "name": "Debug",
+      "configurePreset": "Debug",
+      "inherits": "base-build",
+      "displayName": "Debug Build",
+      "description": "Debug build using GNU Make generator"
+    },
+    {
+      "name": "Aggressive",
+      "configurePreset": "Aggressive",
+      "inherits": "base-build",
+      "displayName": "Aggressive Build",
+      "description": "Aggressive build using GNU Make generator"
+    },
+    {
+      "name": "Release-Ninja",
+      "configurePreset": "Release-Ninja",
+      "inherits": "base-build",
+      "displayName": "Release Ninja Build",
+      "description": "Release build using Ninja generator"
+    },
+    {
+      "name": "Debug-Ninja",
+      "configurePreset": "Debug-Ninja",
+      "inherits": "base-build",
+      "displayName": "Debug Ninja Build",
+      "description": "Debug build using Ninja generator"
+    },
+    {
+      "name": "Aggressive-Ninja",
+      "configurePreset": "Aggressive-Ninja",
+      "inherits": "base-build",
+      "displayName": "Aggressive Ninja Build",
+      "description": "Aggressive build using Ninja generator"
+    }
+  ]
+}
