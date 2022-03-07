@@ -1,5 +1,33 @@
 # Changelog
 
+## Unreleased
+
+## [10.21.1] - 2022-02-14
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+Major Zero-Diff Changes:
+1. Add CLDXXSW diagnostics and many cosmetic changes to Solar GC by @dr0cloud in [#510](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/510)
+2. Add additional radiation RRTMG tau and water path diagnostics by @dr0cloud in [#519](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/519)
+3. Simple fix to prevent negative tauaer in RRTMG LW by @dr0cloud in [#521](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/521)
+4. Add RRTMGP as a fork in GEOS by @mathomp4 in [#528](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/528)
+5. Update RRTMGP file locations and half gpoints by @mathomp4 in [#294](https://github.com/GEOS-ESM/GEOSgcm_App/pull/294)
+6. Cleanup of Catchment model constants by @gmao-rreichle in [#525](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/525)
+7. Removed redundant code: DQS calc, QC constraint, RA calc by @gmao-rreichle in [#518](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/518)
+8. Fix `mk_GEOSldasRestart` for `catchcnclm45` by @weiyuan-jiang in [#516](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/516)
+9. `make_bcs` clarification of options by @biljanaorescanin in [#517](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/517)
+10. Bug fix for `RUNSRF` units in Catchment by @gmao-rreichle in [#535](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/535)
+11. Cleanup of `gndtmp[_cn]()` by @gmao-jkolassa in [#536](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/536)
+12. New peat hydrology (PEATCLSM) by @biljanaorescanin in [#524](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/524)
+13. Add `LDAS_INCR` to `AGCM.rc.tmpl` for land-atmos coupled das by @saraqzhang in [#288](https://github.com/GEOS-ESM/GEOSgcm_App/pull/288)
+14. Fixes for C12 MOM6 by @mathomp4 in [#](https://github.com/GEOS-ESM/GEOSgcm_App/pull/285)
+15. Updates for handling CS ocean by @mathomp4 in [#287](https://github.com/GEOS-ESM/GEOSgcm_App/pull/287)
+16. Update for NAS Runs by @mathomp4 in [#291](https://github.com/GEOS-ESM/GEOSgcm_App/pull/291)
+17. Compress CircleCI Artifacts by @mathomp4 in [#513](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/513)
+18. Use circleci-tools orb for CI by @mathomp4 in [#242](https://github.com/GEOS-ESM/GMAO_Shared/pull/242)
+
+
 ## [10.21.0] - 2021-12-21
 
 ### Zero-diff to Previous Release: NO
