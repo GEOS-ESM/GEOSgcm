@@ -90,7 +90,7 @@ GOCART:
   develop: develop
 
 mit:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSocean_GridComp/GuestOcean_GridComp/MIT_GEOS5PlugMod/@mit
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOS_OceanGridComp/MIT_GEOS5PlugMod/@mit
   remote: ../MITgcm.git
   tag: checkpoint67q
   develop: master
