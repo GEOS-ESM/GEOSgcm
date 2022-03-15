@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+## [10.22.0] - 2022-03-15
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: YES
+
+Summary of changes for the refactored GOCART-2G:
+
+* This is the first release of GEOSgcm that includes GOCART-2G, a refactoring of the GOCART component that adopts the ESMF for every child component and refactors the multi-instantiation mechanism. GOCART-2G only includes aerosols; other trace gases are not included by design.
+* This release also includes new science, including the inclusion of secondary organic aerosols (SOAs) and Brown Carbon. In this implementation, Brown Carbon is comprise of that portion of Organic Carbon emitted by biomass burning, having absorptive properties.
+* This release also introduces the notion of a "Process Library" which replaces what used to be found under Chem_Shared; it also eliminates any dependency on Chem_Base. The @GOCART repository is shared with NOAA and has been implemented in the UFS.
+* Several new restarts (achem,cabc,cabr,caoc,du,ni,ss,su) have been added since the gridded components of GOCART-2G have been split out accordingly.
+* GOCART-2G required changes in many other sub-repositories. Users are encouraged to look through those individually for a detailed list of changes.
+
 ## [10.21.1] - 2022-02-14
 
 ### Zero-diff to Previous Release: YES
