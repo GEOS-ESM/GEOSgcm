@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v3.12.0
+  tag: v3.13.0
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.11.0
+  tag: v3.12.0
   develop: develop
 
 ecbuild:
@@ -36,7 +36,7 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.18.0
+  tag: v2.18.3
   develop: develop
 
 FMS:
@@ -48,7 +48,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.15.0
+  tag: v1.15.2
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -88,14 +88,20 @@ GOCART:
   tag: v2.0.5
   develop: develop
 
+GEOS_OceanGridComp:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
+  remote: ../GEOS_OceanGridComp.git
+  tag: v1.0.0
+  develop: develop
+
 mom:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOS_OceanGridComp/MOM_GEOS5PlugMod/@mom
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM_GEOS5PlugMod/@mom
   remote: ../MOM5.git
   tag: geos/5.1.0+1.2.0
   develop: geos5
 
 mom6:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
   tag: geos/v2.0.2
   develop: dev/gfdl
