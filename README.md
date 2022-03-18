@@ -24,7 +24,7 @@
 | [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v1.15.2](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v1.15.2)                        |
 | [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v1.0.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v1.0.0)                        |
 | [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v1.3.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.3.0)       |
-| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.5.2](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.5.2)                               |
+| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.5.3](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.5.3)                               |
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.0.5](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.0.5)                                    |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.3](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.3)                         |
 | [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.19.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.19.0)                                    |
