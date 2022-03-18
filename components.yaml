@@ -91,7 +91,7 @@ GOCART:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  branch: main
+  tag: v1.0.0
   develop: develop
 
 mom:
