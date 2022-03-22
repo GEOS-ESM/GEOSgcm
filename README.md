@@ -22,14 +22,14 @@
 | [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.9.1](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.9.1)                         |
 | [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v1.7.2](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v1.7.2)                               |
 | [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v1.15.2](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v1.15.2)                        |
-| [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v1.0.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v1.0.0)                        |
+| [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v1.0.1](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v1.0.1)                        |
 | [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v1.3.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.3.0)       |
 | [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.5.3](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.5.3)                               |
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.0.5](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.0.5)                                    |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.3](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.3)                         |
 | [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.19.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.19.0)                                    |
 | [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+1.2.0](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B1.2.0)              |
-| [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v2.0.2](https://github.com/GEOS-ESM/MOM6/releases/tag/geos%2Fv2.0.2)                          |
+| [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v2.0.3](https://github.com/GEOS-ESM/MOM6/releases/tag/geos%2Fv2.0.3)                          |
 | [CICE](https://github.com/GEOS-ESM/CICE)                                       | [geos/v0.0.1](https://github.com/GEOS-ESM/CICE/releases/tag/geos%2Fv0.0.1)                          |
 | [SIS2](https://github.com/GEOS-ESM/SIS2)                                       | [geos/v0.0.1](https://github.com/GEOS-ESM/SIS2/releases/tag/geos%2Fv0.0.1)                          |
 | [RRTMGP](https://github.com/GEOS-ESM/rte-rrtmgp)                               | [geos/v1.5+1.0.0](https://github.com/GEOS-ESM/rte-rrtmgp/releases/tag/geos%2Fv1.5%2B1.0.0)          |
