@@ -104,7 +104,7 @@ mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
   tag: geos/v2.0.2
-  develop: dev/gfdl
+  develop: main
   recurse_submodules: true
 
 cice6:
