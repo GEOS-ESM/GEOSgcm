@@ -1,99 +1,32 @@
 version: 2.1
 
 orbs:
-  circleci-tools: geos-esm/circleci-tools@0.11.0
+  ci: geos-esm/circleci-tools@1
 
 workflows:
   build-test:
     jobs:
-      - build-GEOSgcm:
+      - ci/build:
           name: build-GEOSgcm-on-<< matrix.compiler >>
-          matrix:
-            parameters:
-              compiler: [gfortran, ifort]
           context:
             - docker-hub-creds
+          matrix:
+            parameters:
+              compiler:
+                - gfortran
+                - ifort
+          repo: GEOSgcm
+          checkout_fixture: true
+          persist_workspace: false # Needs to be true to run fv3/gcm experiment, costs extra
       ##################################################
-      # - run-gcm-exp:                                 #
-      #     name: run-gcm-exp-on-<< matrix.compiler >> #
+      # - ci/run_gcm:                                  #
+      #     name: run-GCM-on-<< matrix.compiler >>     #
+      #     context:                                   #
+      #       - docker-hub-creds                       #
       #     matrix:                                    #
       #       parameters:                              #
       #         compiler: [gfortran, ifort]            #
-      #     context:                                   #
-      #       - docker-hub-creds                       #
       #     requires:                                  #
       #       - build-GEOSgcm-on-<< matrix.compiler >> #
+      #     repo: GEOSgcm                              #
       ##################################################
-
-jobs:
-  build-GEOSgcm:
-    parameters:
-      compiler:
-        type: string
-    executor:
-      name: circleci-tools/<< parameters.compiler >>
-      resource_class: large
-    working_directory: /root/project
-    steps:
-      - checkout:
-          path: GEOSgcm
-      - circleci-tools/versions:
-          compiler: << parameters.compiler >>
-      - circleci-tools/mepoclone
-      - circleci-tools/checkout_if_exists
-      - circleci-tools/cmake:
-          compiler: << parameters.compiler >>
-      - circleci-tools/buildinstall
-      - circleci-tools/compress_artifacts
-      - store_artifacts:
-          path: /logfiles
-      # We need to persist the install for the next step
-      # but only if we are running gcm tests
-      ###########################
-      # - persist_to_workspace: #
-      #     root: workspace     #
-      #     paths:              #
-      #       - install-GEOSgcm #
-      ###########################
-
-  run-gcm-exp:
-    parameters:
-      compiler:
-        type: string
-    executor: << parameters.compiler >>-xlarge
-    working_directory: /root/project
-    steps:
-      - attach_workspace:
-          at: workspace
-      - run:
-          name: "Run gcm_setup"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/install-GEOSgcm/bin
-            /TinyBCs-GitV10/scripts/create_expt.py test-gcm-c12 --expdir ${CIRCLE_WORKING_DIRECTORY}/workspace
-      - run:
-          name: "Run makeoneday"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-gcm-c12
-            /TinyBCs-GitV10/scripts/makeoneday.bash 6hr nxy 1 6
-      - run:
-          name: "Run gcm_run.j"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-gcm-c12
-            mkdir -p /logfiles
-            ./gcm_run.j |& tee /logfiles/gcm_run.log
-      - run:
-          name: "Check for EGRESS"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-gcm-c12
-
-            SCRDIR=$(find . -type d -name 'scratch*')
-
-            if [[ -f $SCRDIR/EGRESS ]]
-            then
-               echo "EGRESS found!"
-            else
-               echo "EGRESS not found!"
-               exit 1
-            fi
-      - store_artifacts:
-          path: /logfiles

@@ -2,6 +2,40 @@
 
 ## Unreleased
 
+## [10.22.1] - 2022-03-18
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+Major Zero-Diff Changes:
+* `tskinice` real fix by @rtodling in [#547](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/547)  [#297](https://github.com/GEOS-ESM/GEOSgcm_App/pull/297)
+* Update geosit history by @rtodling in [#301](https://github.com/GEOS-ESM/GEOSgcm_App/pull/301)
+* Add option to read ocean _data_ using `ExtData` by @sanAkel in [#562](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/562)
+* Support for ocean datasets using ExtData by @sanAkel in [#245](https://github.com/GEOS-ESM/GMAO_Shared/pull/245)
+* Gather memory and detailed timing information for coupled model by @sanAkel in [#289](https://github.com/GEOS-ESM/GEOSgcm_App/pull/289)
+* Reynolds ONLY SST and Ice Concentration with a land-sea mask from @rcullath by @sanAkel in [#239](https://github.com/GEOS-ESM/GMAO_Shared/pull/239)
+* Remove Ocean Grid Comp by @mathomp4 in [#551](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/551)  [#379](https://github.com/GEOS-ESM/GEOSgcm/pull/379)
+* For sea ice development: add CICE6 and SIS2 sea ice models  by @sanAkel in [#558](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/558)  [#385](https://github.com/GEOS-ESM/GEOSgcm/pull/385)
+* Run History in predictor by @bena-nasa in [#546](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/546)
+* Updates for using cubed sphere observed precip files by @lltakacs in [#559](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/559)
+* Profiling with pflogger by @tclune in [#307](https://github.com/GEOS-ESM/GEOSgcm_App/pull/307)
+* `chckhist.new` update to fix plotting for OPS HISTORY.rc, minor 3CH bugfix by @lltakacs in [#252](https://github.com/GEOS-ESM/GMAO_Shared/pull/252)
+* Updates to support Spack by @mathomp4 in several repositories.
+* Upticks in MAPL, ESMA_cmake, ESMA_env, and GEOSchem_GridComp.
+
+## [10.22.0] - 2022-03-15
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: YES
+
+Summary of changes for the refactored GOCART-2G:
+
+* This is the first release of GEOSgcm that includes GOCART-2G, a refactoring of the GOCART component that adopts the ESMF for every child component and refactors the multi-instantiation mechanism. GOCART-2G only includes aerosols; other trace gases are not included by design.
+* This release also includes new science, including the inclusion of secondary organic aerosols (SOAs) and Brown Carbon. In this implementation, Brown Carbon is comprise of that portion of Organic Carbon emitted by biomass burning, having absorptive properties.
+* This release also introduces the notion of a "Process Library" which replaces what used to be found under Chem_Shared; it also eliminates any dependency on Chem_Base. The @GOCART repository is shared with NOAA and has been implemented in the UFS.
+* Several new restarts (achem,cabc,cabr,caoc,du,ni,ss,su) have been added since the gridded components of GOCART-2G have been split out accordingly.
+* GOCART-2G required changes in many other sub-repositories. Users are encouraged to look through those individually for a detailed list of changes.
+
 ## [10.21.1] - 2022-02-14
 
 ### Zero-diff to Previous Release: YES
