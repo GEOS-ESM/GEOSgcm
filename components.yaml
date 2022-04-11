@@ -89,6 +89,11 @@ GOCART:
   sparse: ./config/GOCART.sparse
   develop: develop
 
+mit:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOS_OceanGridComp/MIT_GEOS5PlugMod/@mit
+  remote: ../MITgcm.git
+  tag: checkpoint67q
+
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOS_OceanGridComp/MOM_GEOS5PlugMod/@mom
   remote: ../MOM5.git
