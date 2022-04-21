@@ -124,7 +124,7 @@ GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
   tag: v1.7.0
-  develop: develop
+  develop: feature/adarmenov/#318-wmma
 
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
