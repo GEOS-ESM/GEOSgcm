@@ -16,7 +16,6 @@ workflows:
                 - gfortran
                 - ifort
           repo: GEOSgcm
-          checkout_fixture: true
           persist_workspace: false # Needs to be true to run fv3/gcm experiment, costs extra
       ##################################################
       # - ci/run_gcm:                                  #
