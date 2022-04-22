@@ -107,7 +107,12 @@ cice6:
   remote: ../CICE.git
   tag: geos/v0.0.1
   develop: geos/main
-  recurse_submodules: true
+
+icepack:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug/@cice6/icepack
+  remote: ../Icepack.git
+  tag: geos/v0.0.1
+  develop: geos/main
 
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
