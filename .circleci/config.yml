@@ -15,6 +15,7 @@ workflows:
               compiler:
                 - gfortran
                 - ifort
+          baselibs_version: v7.0.0
           repo: GEOSgcm
           persist_workspace: false # Needs to be true to run fv3/gcm experiment, costs extra
       ##################################################
