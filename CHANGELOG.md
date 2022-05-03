@@ -2,6 +2,28 @@
 
 ## Unreleased
 
+## [10.22.2] - 2022-05-03
+
+### Zero-diff to Previous Release: YES except for 4DIAU Replays
+### Restart Changes: NO
+
+Major Zero-Diff Changes:
+* Hotfix to [GOCART](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.0.7) and [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.9.2) to allow proper functioning and regression of 4D-IAU.
+* Hotfix to [GOCART](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.0.6) using non-default klid.
+* Emissions handling now uses experiment RC directory by @mathomp4 in [#320](https://github.com/GEOS-ESM/GEOSgcm_App/pull/320)
+* Set collection's `monthly` attribute by default for most collections by @sdrabenh in [#316](https://github.com/GEOS-ESM/GEOSgcm_App/pull/316)  [#259](https://github.com/GEOS-ESM/GMAO_Shared/pull/259)
+* Removed connectivities from MOIST to CHEM that are no longer needed by @mmanyin in [#572](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/572)
+* Defined replay predictor duration by @lltakacs in [#581](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/581)
+* Initialize arrays in mkiau GC by @mathomp4 in [#574](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/574)
+* Add fstats customized for screen-level Q and T with "land only" option  by @saraqzhang in [#246](https://github.com/GEOS-ESM/GMAO_Shared/pull/246)
+* Clean up Optics in `AGCM.rc.tmpl` by @mathomp4 in [#319](https://github.com/GEOS-ESM/GEOSgcm_App/pull/319)
+* Update tags in `regrid.pl` by @mathomp4 in [#257](https://github.com/GEOS-ESM/GMAO_Shared/pull/257)
+* Default to 72x36 for c12 mom6 by @mathomp4 in [#314](https://github.com/GEOS-ESM/GEOSgcm_App/pull/314)
+* Updates for Spack Support, Round 2 by @mathomp4 in [#568](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/568)  [#312](https://github.com/GEOS-ESM/GEOSgcm_App/pull/312)
+* Update CI to use v1 orb and job by @mathomp4 in [#578](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/578)
+* Minor CMake change for mod file by @mathomp4 in [#258](https://github.com/GEOS-ESM/GMAO_Shared/pull/258)
+* Upticks in [MAPL](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.20.0)  [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v1.1.0)  [MOM6](https://github.com/GEOS-ESM/MOM6/releases/tag/geos%2Fv2.0.3)  [CICE](https://github.com/GEOS-ESM/CICE/releases/tag/geos%2Fv0.0.1)
+
 ## [10.22.1] - 2022-03-18
 
 ### Zero-diff to Previous Release: YES
