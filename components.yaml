@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.5.3
+  tag: v1.5.4
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -42,7 +42,7 @@ MAPL:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.15.2
+  tag: v1.15.3
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -61,7 +61,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.9.1
+  tag: v1.9.2
   develop: develop
 
 HEMCO:
@@ -79,7 +79,7 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: v2.0.5
+  tag: v2.0.7
   develop: develop
 
 GEOS_OceanGridComp:
@@ -124,7 +124,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.7.2
+  tag: v1.7.3
   develop: develop
 
 UMD_Etc:
