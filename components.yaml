@@ -1,5 +1,6 @@
 GEOSgcm:
   fixture: true
+  branch:  feature/sdrabenh/J223_G2G-v2.0.8-rc1
   develop: main
 
 env:
@@ -67,7 +68,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.9.2
+  tag: v1.9.4
   develop: develop
 
 HEMCO:
@@ -85,7 +86,7 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: v2.0.7
+  branch:  feature/sdrabenh/J223_G2G-v2.0.8-rc1
   develop: develop
 
 GEOS_OceanGridComp:
@@ -130,7 +131,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.7.4
+  branch:  feature/sdrabenh/J223_G2G-v2.0.8-rc1
   develop: develop
 
 UMD_Etc:
