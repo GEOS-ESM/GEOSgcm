@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+## [10.22.3] - 2022-06-08
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+Zero-Diff Changes:
+* Update CMake in ADAS-only subdirs by @mathomp4 in [#262](https://github.com/GEOS-ESM/GMAO_Shared/pull/262)
+* Change restart name `geocachem_internal_rst` to `achem_internal_rst` in `regrid.pl` by @weiyuan-jiang in [#264](https://github.com/GEOS-ESM/GMAO_Shared/pull/264)
+* Fix Emissions Handling: Use copy not link by @mathomp4 in [#325](https://github.com/GEOS-ESM/GEOSgcm_App/pull/325)
+* Use correct EXPID when cloning an experiment by @sdrabenh in [#329](https://github.com/GEOS-ESM/GEOSgcm_App/pull/329)
+* New Files added to support ExtData2G by @bena-nasa in [#590](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/590)
+* Upticks to [MAPL v2.21.3](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.21.3) and [CMAKE v3.16.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.16.0)
+
 ## [10.22.2] - 2022-05-03
 
 ### Zero-diff to Previous Release: YES except for 4DIAU Replays
