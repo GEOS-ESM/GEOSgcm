@@ -1,6 +1,5 @@
 GEOSgcm:
   fixture: true
-  branch:  feature/sdrabenh/J223_G2G-v2.0.8-rc1
   develop: main
 
 env:
