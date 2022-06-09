@@ -48,7 +48,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.15.4
+  branch: feature/mathomp4/split-radiation-gridcomp
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -120,8 +120,14 @@ sis2:
   tag: geos/v0.0.1
   develop: dev/gfdl
 
+GEOSradiation_GridComp:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/GEOS_RadiationShared/@RRTMGP
+  remote: ../GEOSradiation_GridComp.git
+  branch: main
+  develop: develop
+
 RRTMGP:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSradiation_GridComp/GEOS_RadiationShared/@RRTMGP
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/GEOS_RadiationShared/@RRTMGP
   remote: ../rte-rrtmgp.git
   tag: geos/v1.5+1.0.0
   develop: geos/develop

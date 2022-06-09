@@ -23,6 +23,7 @@
 | [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.9.2](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.9.2)                         |
 | [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v1.7.4](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v1.7.4)                               |
 | [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v1.15.4](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v1.15.4)                        |
+| [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v1.0.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v1.0.0)                    |
 | [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v1.1.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v1.1.0)                        |
 | [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v1.4.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.4.0)       |
 | [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.5.5](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.5.5)                               |
