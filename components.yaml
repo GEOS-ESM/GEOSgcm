@@ -121,7 +121,7 @@ sis2:
   develop: dev/gfdl
 
 GEOSradiation_GridComp:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/GEOS_RadiationShared/@RRTMGP
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/GEOS_RadiationShared
   remote: ../GEOSradiation_GridComp.git
   branch: main
   develop: develop
