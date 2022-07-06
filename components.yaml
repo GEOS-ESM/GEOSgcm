@@ -36,7 +36,7 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  branch: feature/bmauer/check_parasing_yaml_extdata2g
+  branch: develop
   develop: develop
 
 FMS:
