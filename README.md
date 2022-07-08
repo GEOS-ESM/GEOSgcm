@@ -15,8 +15,8 @@
 | [CICE](https://github.com/GEOS-ESM/CICE)                                       | [geos/v0.0.1](https://github.com/GEOS-ESM/CICE/releases/tag/geos%2Fv0.0.1)                          |
 | [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                               |
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v1.2.0](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.2.0)                       |
-| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.16.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.16.0)                              |
-| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v3.13.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v3.13.0)                                |
+| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.17.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.17.0)                              |
+| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v4.2.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.2.0)                                  |
 | [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.8](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.8) |
 | [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v1.9.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.9.0)                    |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)           |
@@ -28,7 +28,7 @@
 | [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.5.5](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.5.5)                               |
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.0.7](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.0.7)                                    |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.3](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.3)                         |
-| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.21.3](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.21.3)                                    |
+| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.23.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.23.0)                                    |
 | [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+1.2.0](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B1.2.0)              |
 | [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v2.0.3](https://github.com/GEOS-ESM/MOM6/releases/tag/geos%2Fv2.0.3)                          |
 | [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.2.0](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.2.0)                               |
