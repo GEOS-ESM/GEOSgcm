@@ -33,9 +33,12 @@ jobs:
         with:
           access_token: ${{ github.token }}
       - name: Checkout GCM
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 1
+      - name: Set all directories as git safe
+        run: |
+          git config --global --add safe.directory '*'
       - name: Versions etc.
         run: |
           gfortran --version
