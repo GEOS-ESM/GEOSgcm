@@ -2,6 +2,30 @@
 
 ## Unreleased
 
+## [10.22.4] - 2022-07-22
+
+### Zero-diff to Previous Release: YES for Intel compilers; NO for GNU compilers
+### Restart Changes: NO
+
+Zero-Diff Changes:
+* Updates to allow ExtData2G by @bena-nasa in [#331](https://github.com/GEOS-ESM/GEOSgcm_App/pull/331)
+* Cleanup history templates for GOCART2G and updates to use convective scavenging by @acollow in [#336](https://github.com/GEOS-ESM/GEOSgcm_App/pull/336)
+* Added check for `INFINITY` and replacing with `UNDEF` by @aoloso in [#270](https://github.com/GEOS-ESM/GMAO_Shared/pull/270)
+* Added timed barrier call after `DO_UPDATE_PHY` calls by @aoloso in [#602](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/602)
+* Cleanup of Catch[CN]-related restart utilities in `./GEOSsurface_GridComp/Utils/mk_restarts` by @gmao-rreichle in [#571](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/571)
+* Update CircleCI to use Baselibs 7.5.0 by @mathomp4 in [#605](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/605) [#273](https://github.com/GEOS-ESM/GMAO_Shared/pull/273)
+* Set ks with bk in `m_set_eta` by @mathomp4 in [#271](https://github.com/GEOS-ESM/GMAO_Shared/pull/271)
+* Added more robust check for history's monthly attribute by @sdrabenh in [#274](https://github.com/GEOS-ESM/GMAO_Shared/pull/274)
+* Added python version of `regrid.pl` named `remap_restarts.py` by @weiyuan-jiang in [#238](https://github.com/GEOS-ESM/GMAO_Shared/pull/238)
+* Create test suite for `remap_restarts.py` by @weiyuan-jiang in [#267](https://github.com/GEOS-ESM/GMAO_Shared/pull/267)
+* Provide for setting up a no-aerosol GMI simulation by @mmanyin in [#333](https://github.com/GEOS-ESM/GEOSgcm_App/pull/333)
+* Uptick to GEOSchem_GridComp [v1.9.5](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.9.5)
+* Uptick to MAPL [v2.23.1](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.23.1)
+* Uptick to [v4.2.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.2.0) which uses Baselibs 7.5.0 (needed by MAPL 2.23.0)
+* Uptick to [v3.17.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.17.0) change to support GCC 12 (non-zero-diff for GNU builds)
+
+**Full list of changes for GCM fixture**: https://github.com/GEOS-ESM/GEOSgcm/compare/v10.22.3...v10.22.4
+
 ## [10.22.3] - 2022-06-08
 
 ### Zero-diff to Previous Release: YES
