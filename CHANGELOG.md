@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-## [10.22.4] - 2022-07-22
+## [10.22.4] - 2022-07-25
 
 ### Zero-diff to Previous Release: YES for Intel compilers; NO for GNU compilers
 ### Restart Changes: NO
