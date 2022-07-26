@@ -75,8 +75,7 @@ GEOSchem_GridComp:
 QuickChem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@QuickChem
   remote: ../QuickChem.git
-# feature/mmanyin/QUICKCHEM_v1 as of 7.26.22
-  hash: 8032135b211ded5836276f720ef742f80b3fd4cc
+  tag: v1.0.0
   develop: main
 
 HEMCO:
