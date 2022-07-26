@@ -48,7 +48,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-# feature/mmanyin/QUICKCHEM_v1 as of 7.11.22
+# feature/mmanyin/QUICKCHEM_v1 as of 7.26.22
   hash: fbc9b5ca145fbc163eec32bd3c82e68994f38c84
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
@@ -68,15 +68,15 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-# feature/mmanyin/QUICKCHEM_v1 as of 7.11.22
-  hash: 37459fc798d2df7f8973ad16040525be84759cdd
+# feature/mmanyin/QUICKCHEM_v1 as of 7.26.22
+  hash: c8ea72f5140786334b505f2716bf8dc2d838458d
   develop: develop
 
 QuickChem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@QuickChem
   remote: ../QuickChem.git
-# origin/main as of 7.11.22
-  hash: bb240b661c034de7309e1a05605b9ff62a6388ad
+# feature/mmanyin/QUICKCHEM_v1 as of 7.26.22
+  hash: 8032135b211ded5836276f720ef742f80b3fd4cc
   develop: main
 
 HEMCO:
@@ -94,8 +94,8 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-# feature/mmanyin/QUICKCHEM_v1 as of 7.11.22
-  hash: 3807843760bd313044d09171587a79578a74e722
+# feature/mmanyin/QUICKCHEM_v1 as of 7.26.22
+  hash: 80981f9205aad268a4254c8c64008c95a4d3aea5
   develop: develop
 
 GEOS_OceanGridComp:
@@ -140,7 +140,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-# feature/mmanyin/QUICKCHEM_v1 as of 7.11.22
+# feature/mmanyin/QUICKCHEM_v1 as of 7.26.22
   hash: 839a2696dc15592bb16fba22c9f0313b4579acaf
   develop: develop
 
