@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## [10.22.5] - 2022-07-27
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+Zero-Diff Changes:
+* Moves `GEOSradiation_GridComp` from [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp) into its own repo [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp).
+
 ## [10.22.4] - 2022-07-25
 
 ### Zero-diff to Previous Release: YES for Intel compilers; NO for GNU compilers
