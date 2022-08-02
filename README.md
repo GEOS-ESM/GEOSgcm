@@ -26,7 +26,7 @@
 | [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v1.0.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v1.0.0)                    |
 | [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v1.1.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v1.1.0)                        |
 | [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v1.4.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.4.0)       |
-| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.5.6](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.5.6)                               |
+| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.5.7](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.5.7)                               |
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.0.7](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.0.7)                                    |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.3](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.3)                         |
 | [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.23.1](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.23.1)                                    |
