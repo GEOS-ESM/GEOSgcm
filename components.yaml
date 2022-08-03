@@ -88,6 +88,12 @@ GOCART:
   tag: v2.0.7
   develop: develop
 
+QuickChem:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@QuickChem
+  remote: ../QuickChem.git
+  tag: v1.0.0
+  develop: main
+
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
