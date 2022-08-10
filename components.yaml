@@ -48,7 +48,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.16.0
+  branch: feature/mathomp4/gocartize-rad
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -129,11 +129,11 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: v1.0.0
+  branch: feature/mathomp4/gocartize-rad
   develop: develop
 
 RRTMGP:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/GEOS_RadiationShared/@RRTMGP
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/ESMF/GEOS_RadiationGridComp/Shared/@RRTMGP
   remote: ../rte-rrtmgp.git
   tag: geos/v1.5+1.0.0
   develop: geos/develop
