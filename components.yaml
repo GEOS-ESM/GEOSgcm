@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.17.0
+  tag: v3.18.0
   develop: develop
 
 ecbuild:
@@ -55,7 +55,7 @@ GEOSgcm_GridComp:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.9.0
+  tag: v1.10.0
   develop: develop
 
 fvdycore:
@@ -67,7 +67,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.9.6
+  tag: v1.10.1
   develop: develop
 
 HEMCO:

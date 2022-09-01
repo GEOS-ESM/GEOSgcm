@@ -9,3 +9,10 @@
 parallel_build.o*
 log.*
 CMakeUserPresets.json
+
+*.swp
+*.swo
+.DS_Store
+*#
+.#*
+**/CVS/
