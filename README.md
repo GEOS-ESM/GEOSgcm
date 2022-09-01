@@ -15,7 +15,7 @@
 | [CICE](https://github.com/GEOS-ESM/CICE)                                       | [geos/v0.0.1](https://github.com/GEOS-ESM/CICE/releases/tag/geos%2Fv0.0.1)                          |
 | [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                               |
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v1.2.0](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.2.0)                       |
-| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.17.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.17.0)                              |
+| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.18.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.18.0)                              |
 | [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v4.2.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.2.0)                                  |
 | [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.8](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.8) |
 | [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v1.10.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.10.0)                  |
