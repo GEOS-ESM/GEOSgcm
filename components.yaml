@@ -55,7 +55,7 @@ GEOSgcm_GridComp:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.10.0
+  tag: v1.11.0
   develop: develop
 
 fvdycore:
@@ -142,7 +142,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.7.5
+  branch: feature/mathomp4/updates-for-singularity-gcmapp
   develop: develop
 
 UMD_Etc:
