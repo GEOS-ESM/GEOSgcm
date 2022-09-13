@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+## [10.23.0] - 2022-09-12
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: NO
+
+### Non-zero-diff Changes:
+
+* Updates to GOCART-2G. Full list of changes can be fount here: [GOCART v2.1.0](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.1.0)
+* Change carbon species names in most for use with GOCART2G v2.1.0 by @vbuchard in [#624](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/624)
+* Bugfix for correct TKE initialization value in turbulence by @sanAkel in [#603](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/603)
+* Carbon species names changed in HISTORY templates for use with GOCART2G v2.1.0 by @weiyuan-jiang in [#317](https://github.com/GEOS-ESM/GEOSgcm_App/pull/317)
+* Change names for BC, BR, and OC in plots package by @sdrabenh in [#290](https://github.com/GEOS-ESM/GMAO_Shared/pull/290)
+
 ## [10.22.6] - 2022-09-08
 
 ### Zero-diff to Previous Release: YES

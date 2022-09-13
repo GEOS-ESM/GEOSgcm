@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.5.8
+  tag: v1.6.0
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -85,7 +85,7 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: v2.0.7
+  tag: v2.1.0
   develop: develop
 
 QuickChem:
