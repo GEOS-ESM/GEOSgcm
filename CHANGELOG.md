@@ -2,6 +2,85 @@
 
 ## Unreleased
 
+## [10.23.0] - 2022-09-12
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: NO
+
+### Non-zero-diff Changes:
+
+* Updates to GOCART-2G. Full list of changes can be fount here: [GOCART v2.1.0](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.1.0)
+* Change carbon species names in most for use with GOCART2G v2.1.0 by @vbuchard in [#624](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/624)
+* Bugfix for correct TKE initialization value in turbulence by @sanAkel in [#603](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/603)
+* Carbon species names changed in HISTORY templates for use with GOCART2G v2.1.0 by @weiyuan-jiang in [#317](https://github.com/GEOS-ESM/GEOSgcm_App/pull/317)
+* Change names for BC, BR, and OC in plots package by @sdrabenh in [#290](https://github.com/GEOS-ESM/GMAO_Shared/pull/290)
+
+## [10.22.6] - 2022-09-08
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: Potentially
+
+### Potential Non-zero-diff Change to restarts
+* Removed extra variables that are in ice and water restarts. If the user is starting with `saltwater_internal_rst`, then variables are changed when `SaltIntSplitter` runs. Otherwise, this change is zero-diff by @weiyuan-jiang in [#623](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/623)
+
+### Zero-diff Changes
+* Load balance changes for `CICECORE` by @aoloso in [#626](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/626)
+* Added a few connectivities in `AGCM` and `PHYS` by @mmanyin in [#613](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/613)
+* Removed extraneous declaration by @mmanyin in [#617](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/617)
+* Added OH restart files (commented out by default) by @mmanyin in [#342](https://github.com/GEOS-ESM/GEOSgcm_App/pull/342)
+* Zero-diff bug fixes in `make_bcs` package by @weiyuan-jiang in [#601](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/601)
+* Added `CircleCi` run of `GEOSgcm` by @mathomp4 in [#620](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/620)
+* Added `CircleCi` tests to `GEOSgcm_App` by @mathomp4 in [#345](https://github.com/GEOS-ESM/GEOSgcm_App/pull/345)
+* Fix missing back quote by @sdrabenh in [#351](https://github.com/GEOS-ESM/GEOSgcm_App/pull/351)
+* Added warning message to `gcm_setup` regarding MOM5 model crash by @sanAkel in [#353](https://github.com/GEOS-ESM/GEOSgcm_App/pull/353)
+* Added explicit regrid method in `HISTORY.AGCM.rc.tmpl` by @mathomp4 in [#344](https://github.com/GEOS-ESM/GEOSgcm_App/pull/344)
+* Added `LD_PRELOAD` for Coupled Model by @mathomp4 in [#341](https://github.com/GEOS-ESM/GEOSgcm_App/pull/341)
+* Added `S2Sv3` to `MOM6` test. Add YAML validator by @mathomp4 in [#281](https://github.com/GEOS-ESM/GMAO_Shared/pull/281)
+* Added command line option for `remap_restarts.py` and moved temporary directory to `out_dir` for merra2.  Additional test cases were added by @weiyuan-jiang in [#276](https://github.com/GEOS-ESM/GMAO_Shared/pull/276)
+* Fix in ncdiag for Intel 2022.1 by @mathomp4 in [#280](https://github.com/GEOS-ESM/GMAO_Shared/pull/280)
+* Updated `obsys_rc.py`, `check_obsysrc.py`, and associated unit tests to Python 3. Features added to the `cmpdir.pl` script. by @gmao-jstassi in [#279](https://github.com/GEOS-ESM/GMAO_Shared/pull/279)
+* Added new [QuickChem repo](https://github.com/GEOS-ESM/QuickChem/releases/tag/v1.0.0)
+* Upticked to:
+   1. MAPL [v2.25.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.25.0)
+   2. [cmake v3.18.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.18.0)
+   3. [env v4.4.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.4.0)
+   4. [FVdycoreCubed_GridComp v1.11.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.11.0)
+   5. [GEOSchem_GridComp v1.10.1](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.10.1)
+   6. [GEOS_OceanGridComp v1.1.1](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v1.1.1)
+   7. [mom6 v2.0.4](https://github.com/GEOS-ESM/MOM6/releases/tag/geos%2Fv2.0.4)
+
+## [10.22.5] - 2022-07-27
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+Zero-Diff Changes:
+* Moves `GEOSradiation_GridComp` from [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp) into its own repo [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp).
+
+## [10.22.4] - 2022-07-25
+
+### Zero-diff to Previous Release: YES for Intel compilers; NO for GNU compilers
+### Restart Changes: NO
+
+Zero-Diff Changes:
+* Updates to allow ExtData2G by @bena-nasa in [#331](https://github.com/GEOS-ESM/GEOSgcm_App/pull/331)
+* Cleanup history templates for GOCART2G and updates to use convective scavenging by @acollow in [#336](https://github.com/GEOS-ESM/GEOSgcm_App/pull/336)
+* Added check for `INFINITY` and replacing with `UNDEF` by @aoloso in [#270](https://github.com/GEOS-ESM/GMAO_Shared/pull/270)
+* Added timed barrier call after `DO_UPDATE_PHY` calls by @aoloso in [#602](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/602)
+* Cleanup of Catch[CN]-related restart utilities in `./GEOSsurface_GridComp/Utils/mk_restarts` by @gmao-rreichle in [#571](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/571)
+* Update CircleCI to use Baselibs 7.5.0 by @mathomp4 in [#605](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/605) [#273](https://github.com/GEOS-ESM/GMAO_Shared/pull/273)
+* Set ks with bk in `m_set_eta` by @mathomp4 in [#271](https://github.com/GEOS-ESM/GMAO_Shared/pull/271)
+* Added more robust check for history's monthly attribute by @sdrabenh in [#274](https://github.com/GEOS-ESM/GMAO_Shared/pull/274)
+* Added python version of `regrid.pl` named `remap_restarts.py` by @weiyuan-jiang in [#238](https://github.com/GEOS-ESM/GMAO_Shared/pull/238)
+* Create test suite for `remap_restarts.py` by @weiyuan-jiang in [#267](https://github.com/GEOS-ESM/GMAO_Shared/pull/267)
+* Provide for setting up a no-aerosol GMI simulation by @mmanyin in [#333](https://github.com/GEOS-ESM/GEOSgcm_App/pull/333)
+* Uptick to GEOSchem_GridComp [v1.9.5](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.9.5)
+* Uptick to MAPL [v2.23.1](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.23.1)
+* Uptick to [v4.2.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.2.0) which uses Baselibs 7.5.0 (needed by MAPL 2.23.0)
+* Uptick to [v3.17.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.17.0) change to support GCC 12 (non-zero-diff for GNU builds)
+
+**Full list of changes for GCM fixture**: https://github.com/GEOS-ESM/GEOSgcm/compare/v10.22.3...v10.22.4
+
 ## [10.22.3] - 2022-06-08
 
 ### Zero-diff to Previous Release: YES
