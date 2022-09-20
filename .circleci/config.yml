@@ -2,7 +2,7 @@ version: 2.1
 
 # Anchors to prevent forgetting to update a version
 baselibs_version: &baselibs_version v7.5.0
-bcs_version: &bcs_version v10.22.5
+bcs_version: &bcs_version v10.23.0
 
 orbs:
   ci: geos-esm/circleci-tools@1
