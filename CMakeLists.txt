@@ -40,6 +40,46 @@ foreach (dir cmake @cmake cmake@)
 endforeach ()
 include (esma)
 
+# Add CMake for when not using Baselibs
+if (NOT Baselibs_FOUND)
+  set(MPI_DETERMINE_LIBRARY_VERSION TRUE)
+  find_package(MPI)
+
+  find_package(NetCDF REQUIRED C Fortran)
+  add_definitions(-DHAS_NETCDF4)
+  add_definitions(-DHAS_NETCDF3)
+  add_definitions(-DNETCDF_NEED_NF_MPIIO)
+  add_definitions(-DHAS_NETCDF3)
+
+  find_package(HDF5 REQUIRED)
+  if(HDF5_IS_PARALLEL)
+     add_definitions(-DH5_HAVE_PARALLEL)
+  endif()
+
+  if (NOT TARGET esmf)
+    find_package(ESMF MODULE REQUIRED)
+
+    # ESMF as used in MAPL requires MPI
+    # NOTE: This looks odd because some versions of FindESMF.cmake out in the
+    #       world provide an "esmf" target while others provide "ESMF". So we
+    #       need this ugliness to support both.
+    if (TARGET esmf)
+      target_link_libraries(esmf INTERFACE MPI::MPI_Fortran)
+    else()
+      target_link_libraries(ESMF INTERFACE MPI::MPI_Fortran)
+      # MAPL and GEOS use lowercase target due to historical reasons but
+      # the latest FindESMF.cmake file from ESMF produces an ESMF target.
+      add_library(esmf ALIAS ESMF)
+    endif()
+  endif ()
+
+  find_package(GFTL_SHARED REQUIRED)
+
+  find_package(ZLIB REQUIRED)
+  # Another issue with historical reasons, old/wrong zlib target used in GEOS
+  add_library(ZLIB::zlib ALIAS ZLIB::ZLIB)
+endif ()
+
 ecbuild_declare_project()
 
 # Generic DFLAGS
