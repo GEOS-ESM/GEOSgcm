@@ -57,6 +57,16 @@ if (NOT Baselibs_FOUND)
   endif()
 
   if (NOT TARGET esmf)
+    if (DEFINED ENV{esmf_ROOT})
+      message (STATUS "Found esmf_ROOT in environment: $ENV{esmf_ROOT}")
+      find_path(ESMF_CMAKE_PATH FindESMF.cmake HINTS "$ENV{esmf_ROOT}/cmake")
+      message (STATUS "Found FindESMF.cmake in: ${ESMF_CMAKE_PATH}")
+      if (ESMF_CMAKE_PATH)
+        message (STATUS "Appending to CMAKE_PREFIX_PATH: ${ESMF_CMAKE_PATH}")
+        list (APPEND CMAKE_MODULE_PATH ${ESMF_CMAKE_PATH})
+      endif ()
+    endif ()
+
     find_package(ESMF MODULE REQUIRED)
 
     # ESMF as used in MAPL requires MPI
@@ -78,6 +88,18 @@ if (NOT Baselibs_FOUND)
   find_package(ZLIB REQUIRED)
   # Another issue with historical reasons, old/wrong zlib target used in GEOS
   add_library(ZLIB::zlib ALIAS ZLIB::ZLIB)
+
+  # Using FMS from spack requires updates to fvdycore due to interface changes
+  # in FMS 2022. This is commented for now until this transition can occur.
+  #################################################
+  # find_package(FMS QUIET COMPONENTS R4 R8)      #
+  # if (FMS_FOUND)                                #
+  #   # We need aliases due to historical reasons #
+  #   add_library(fms_r4 ALIAS FMS::fms_r4)       #
+  #   add_library(fms_r8 ALIAS FMS::fms_r8)       #
+  # endif ()                                      #
+  #################################################
+
 endif ()
 
 ecbuild_declare_project()
