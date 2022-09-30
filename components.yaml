@@ -160,7 +160,7 @@ CPLFCST_Etc:
 
 GigaTraj:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GigaTraj_GridComp/@GigaTraj
-  remote: ../../GSFC-587/GigaTraj.git 
+  remote: git@github.com:GSFC-587/GigaTraj.git
   branch: main
   develop: develop
 
