@@ -48,7 +48,8 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.17.0
+  branch: feature/wjiang/GEOS_GigaTraj
+  #tag: v1.17.0
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -156,3 +157,10 @@ CPLFCST_Etc:
   remote: ../CPLFCST_Etc.git
   tag: v1.0.1
   develop: main
+
+GigaTraj:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GigaTraj_GridComp/@GigaTraj
+  remote: ../../GSFC-587/GigaTraj.git 
+  branch: main
+  develop: develop
+
