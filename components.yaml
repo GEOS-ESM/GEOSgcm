@@ -142,7 +142,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.8.0
+  tag: CDAS_Appv1.8.0_GEOSadas-5_29_3-p0
   develop: develop
 
 UMD_Etc:
