@@ -48,7 +48,8 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.17.0
+#  tag: v1.17.0
+  branch: feature/atrayano/aquaplanet_based_on_v1.17.0
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -97,7 +98,8 @@ QuickChem:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v1.1.1
+#  tag: v1.1.1
+  branch: feature/atrayano/aquaplanet_based_on_v1.1.1
   develop: develop
 
 mom:
