@@ -88,8 +88,9 @@ is enabled on GitHub.
 
 To clone the GEOSgcm using the SSH url (starts with `git@github.com`), you run:
 ```
-git clone git@github.com:GEOS-ESM/GEOSgcm.git
+git clone -b vX.Y.Z git@github.com:GEOS-ESM/GEOSgcm.git
 ```
+where `vX.Y.Z` is a tag from a [GEOSgcm release](https://github.com/GEOS-ESM/GEOSgcm/releases). Note if you don't use `-b`, you will get the `main` branch and that can change from day-to-day.
 
 ###### Permission denied (publickey)
 
@@ -114,8 +115,9 @@ use the SSH URL through.
 To clone the model through HTTPS you run:
 
 ```
-git clone https://github.com/GEOS-ESM/GEOSgcm.git
+git clone -b vX.Y.Z https://github.com/GEOS-ESM/GEOSgcm.git
 ```
+where `vX.Y.Z` is a tag from a [GEOSgcm release](https://github.com/GEOS-ESM/GEOSgcm/releases). Note if you don't use `-b`, you will get the `main` branch and that can change from day-to-day.
 
 Note that if you use the HTTPS URL and have 2FA set up on GitHub, you will need
 to use [personal access
@@ -126,8 +128,9 @@ as a password.
 
 You can also use the [GitHub CLI](https://cli.github.com/) with:
 ```
-gh repo clone GEOS-ESM/GEOSgcm
+gh repo clone GEOS-ESM/GEOSgcm -- -b vX.Y.Z
 ```
+where `vX.Y.Z` is a tag from a [GEOSgcm release](https://github.com/GEOS-ESM/GEOSgcm/releases). Note if you don't use `-b`, you will get the `main` branch and that can change from day-to-day.
 
 Note that when you first use `gh`, it will ask what your preferred git protocol
 is (https or ssh) to use "underneath". The caveats above will apply to whichever
