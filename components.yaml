@@ -5,19 +5,19 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v3.6.0
+  tag: v4.4.0
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.7.2
+  tag: v3.18.0
   develop: develop
 
 ecbuild:
   local: ./@cmake/@ecbuild
   remote: ../ecbuild.git
-  tag: geos/v1.0.6
+  tag: geos/v1.2.0
 
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
@@ -29,52 +29,52 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.4.11
+  tag: v1.6.1
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.12.1
+  tag: v2.26.0
   develop: develop
 
 FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
-  tag: geos/2019.01.02+noaff.7
+  tag: geos/2019.01.02+noaff.8
   develop: geos/release/2019.01
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.12.7
+  tag: v1.17.0
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.3.0
+  tag: v1.12.1
   develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: geos/v1.2.0
+  tag: geos/v1.5.0
   develop: geos/develop
 
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.6.0
+  tag: v1.10.2
   develop: develop
 
 HEMCO:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Shared/HEMCO/@HEMCO
   remote: ../HEMCO.git
-  tag: geos/v2.2.1
-  develop: geos/develop 
+  tag: geos/v2.2.3
+  develop: geos/develop
 
 geos-chem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/GEOSCHEMchem_GridComp/@geos-chem
@@ -85,21 +85,32 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: v1.0.1
-  sparse: ./config/GOCART.sparse
+  tag: v2.1.0
+  develop: develop
+
+QuickChem:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@QuickChem
+  remote: ../QuickChem.git
+  tag: v1.0.0
+  develop: main
+
+GEOS_OceanGridComp:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
+  remote: ../GEOS_OceanGridComp.git
+  tag: v1.1.1
   develop: develop
 
 mom:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOS_OceanGridComp/MOM_GEOS5PlugMod/@mom
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM_GEOS5PlugMod/@mom
   remote: ../MOM5.git
   tag: geos/5.1.0+1.2.0
   develop: geos5
 
 mom6:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
-  tag: geos/v2.0.2
-  develop: dev/gfdl
+  tag: geos/v2.0.4
+  develop: main
   recurse_submodules: true
 
 cice6:
@@ -114,17 +125,35 @@ icepack:
   tag: geos/v0.0.1
   develop: geos/main
 
+sis2:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug/@sis2
+  remote: ../SIS2.git
+  tag: geos/v0.0.1
+  develop: dev/gfdl
+
+GEOSradiation_GridComp:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
+  remote: ../GEOSradiation_GridComp.git
+  tag: v1.0.0
+  develop: develop
+
+RRTMGP:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/GEOS_RadiationShared/@RRTMGP
+  remote: ../rte-rrtmgp.git
+  tag: geos/v1.5+1.0.0
+  develop: geos/develop
+  sparse: ./config/RRTMGP.sparse
+
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.5.6
-  #branch: feature/mathomp4/postinstall
+  tag: v1.8.0
   develop: develop
 
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
   remote: ../UMD_Etc.git
-  tag: v1.0.4
+  tag: v1.1.0
   develop: main
 
 CPLFCST_Etc:

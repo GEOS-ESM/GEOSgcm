@@ -1,160 +1,34 @@
 version: 2.1
 
-executors:
-  gfortran-large:
-    docker:
-      - image: gmao/ubuntu20-geos-env-bcs:v6.2.8-openmpi_4.0.6-gcc_11.2.0-bcs_v10.19.4
-        auth:
-          username: $DOCKERHUB_USER
-          password: $DOCKERHUB_AUTH_TOKEN
-    environment:
-      OMPI_ALLOW_RUN_AS_ROOT: 1
-      OMPI_ALLOW_RUN_AS_ROOT_CONFIRM: 1
-      OMPI_MCA_btl_vader_single_copy_mechanism: none
-    resource_class: large
-    #MEDIUM# resource_class: medium
+# Anchors to prevent forgetting to update a version
+baselibs_version: &baselibs_version v7.5.0
+bcs_version: &bcs_version v10.23.0
 
-  gfortran-xlarge:
-    docker:
-      - image: gmao/ubuntu20-geos-env-bcs:v6.2.8-openmpi_4.0.6-gcc_11.2.0-bcs_v10.19.4
-        auth:
-          username: $DOCKERHUB_USER
-          password: $DOCKERHUB_AUTH_TOKEN
-    environment:
-      OMPI_ALLOW_RUN_AS_ROOT: 1
-      OMPI_ALLOW_RUN_AS_ROOT_CONFIRM: 1
-      OMPI_MCA_btl_vader_single_copy_mechanism: none
-    resource_class: xlarge
-    #MEDIUM# resource_class: medium
-
-  ifort-large:
-    docker:
-      - image: gmao/ubuntu20-geos-env-bcs:v6.2.8-intelmpi_2021.2.0-intel_2021.2.0-bcs_v10.19.4
-        auth:
-          username: $DOCKERHUB_USER
-          password: $DOCKERHUB_AUTH_TOKEN
-    resource_class: large
-    #MEDIUM# resource_class: medium
-
-  ifort-xlarge:
-    docker:
-      - image: gmao/ubuntu20-geos-env-bcs:v6.2.8-intelmpi_2021.2.0-intel_2021.2.0-bcs_v10.19.4
-        auth:
-          username: $DOCKERHUB_USER
-          password: $DOCKERHUB_AUTH_TOKEN
-    resource_class: xlarge
-    #MEDIUM# resource_class: medium
+orbs:
+  ci: geos-esm/circleci-tools@1
 
 workflows:
   build-test:
     jobs:
-      - build-GEOSgcm:
+      - ci/build:
           name: build-GEOSgcm-on-<< matrix.compiler >>
-          matrix:
-            parameters:
-              compiler: [gfortran, ifort]
-          context: 
-            - docker-hub-creds
-      - run-gcm-exp:
-          name: run-gcm-exp-on-<< matrix.compiler >>
-          matrix:
-            parameters:
-              compiler: [gfortran, ifort]
           context:
             - docker-hub-creds
+          matrix:
+            parameters:
+              compiler: [ifort, gfortran]
+          baselibs_version: *baselibs_version
+          repo: GEOSgcm
+          persist_workspace: true # Needs to be true to run fv3/gcm experiment, costs extra
+      - ci/run_gcm:
+          name: run-GCM-on-<< matrix.compiler >>
+          context:
+            - docker-hub-creds
+          matrix:
+            parameters:
+              compiler: [gfortran, ifort]
+          baselibs_version: *baselibs_version
+          bcs_version: *bcs_version
           requires:
             - build-GEOSgcm-on-<< matrix.compiler >>
-
-jobs:
-  build-GEOSgcm:
-    parameters:
-      compiler:
-        type: string
-    executor: << parameters.compiler >>-large
-    working_directory: /root/project
-    steps:
-      - checkout:
-          path: GEOSgcm
-      - run:
-          name: "Versions etc"
-          command: mpirun --version && << parameters.compiler>> --version && echo $BASEDIR && pwd && ls
-      - run:
-          name: "Mepo clone external repos"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm
-            mepo clone
-            mepo status
-      - run:
-          name: "Mepo checkout-if-exists"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm
-            echo "${CIRCLE_BRANCH}"
-            if [ "${CIRCLE_BRANCH}" != "develop" ] && [ "${CIRCLE_BRANCH}" != "main" ]
-            then
-               mepo checkout-if-exists ${CIRCLE_BRANCH}
-            fi
-            mepo status
-      - run:
-          name: "CMake"
-          command: |
-            mkdir -p /logfiles
-            cd ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm
-            mkdir -p  ${CIRCLE_WORKING_DIRECTORY}/workspace/build-GEOSgcm
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/build-GEOSgcm
-            cmake ${CIRCLE_WORKING_DIRECTORY}/GEOSgcm -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=<< parameters.compiler >> -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=${CIRCLE_WORKING_DIRECTORY}/workspace/install-GEOSgcm -DUSE_F2PY=OFF |& tee /logfiles/cmake.log
-      - run:
-          name: "Build and install"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/build-GEOSgcm
-            make -j"$(nproc)" install |& tee /logfiles/make.log
-            #MEDIUM# make -j4 install |& tee /logfiles/make.log
-      - store_artifacts:
-          path: /logfiles
-      # We need to persist the install for the next step
-      # but only if we are running gcm tests
-      - persist_to_workspace:
-          root: workspace
-          paths:
-            - install-GEOSgcm
-
-  run-gcm-exp:
-    parameters:
-      compiler:
-        type: string
-    executor: << parameters.compiler >>-xlarge
-    working_directory: /root/project
-    steps:
-      - attach_workspace:
-          at: workspace
-      - run:
-          name: "Run gcm_setup"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/install-GEOSgcm/bin
-            /TinyBCs-GitV10/scripts/create_expt.py test-gcm-c12 --expdir ${CIRCLE_WORKING_DIRECTORY}/workspace
-      - run:
-          name: "Run makeoneday"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-gcm-c12
-            /TinyBCs-GitV10/scripts/makeoneday.bash 6hr nxy 1 6
-      - run:
-          name: "Run gcm_run.j"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-gcm-c12
-            mkdir -p /logfiles
-            ./gcm_run.j |& tee /logfiles/gcm_run.log
-      - run:
-          name: "Check for EGRESS"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-gcm-c12
-
-            SCRDIR=$(find . -type d -name 'scratch*')
-
-            if [[ -f $SCRDIR/EGRESS ]]
-            then
-               echo "EGRESS found!"
-            else
-               echo "EGRESS not found!"
-               exit 1
-            fi
-      - store_artifacts:
-          path: /logfiles
+          repo: GEOSgcm
