@@ -18,19 +18,19 @@
 | [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.18.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.18.0)                              |
 | [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v4.4.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.4.0)                                  |
 | [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.8](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.8) |
-| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v1.11.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.11.0)                  |
+| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v1.12.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.12.1)                  |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)           |
-| [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.10.1](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.10.1)                       |
+| [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.10.2](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.10.2)                       |
 | [QuickChem](https://github.com/GEOS-ESM/QuickChem)                             | [v1.0.0](https://github.com/GEOS-ESM/QuickChem/releases/tag/v1.0.0)                                 |
 | [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v1.8.0](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v1.8.0)                               |
 | [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v1.17.0](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v1.17.0)                        |
 | [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v1.0.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v1.0.0)                    |
 | [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v1.1.1](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v1.1.1)                        |
-| [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v1.4.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.4.0)       |
-| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.6.0](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.6.0)                               |
-| [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.1.0](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.1.0)                                    |
+| [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v1.5.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.5.0)       |
+| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.6.1](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.6.1)                               |
+| [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.1.2](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.1.2)                                    |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.3](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.3)                         |
-| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.25.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.25.0)                                    |
+| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.28.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.28.0)                                    |
 | [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+1.2.0](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B1.2.0)              |
 | [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v2.0.4](https://github.com/GEOS-ESM/MOM6/releases/tag/geos%2Fv2.0.4)                          |
 | [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.2.0](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.2.0)                               |
@@ -88,8 +88,9 @@ is enabled on GitHub.
 
 To clone the GEOSgcm using the SSH url (starts with `git@github.com`), you run:
 ```
-git clone git@github.com:GEOS-ESM/GEOSgcm.git
+git clone -b vX.Y.Z git@github.com:GEOS-ESM/GEOSgcm.git
 ```
+where `vX.Y.Z` is a tag from a [GEOSgcm release](https://github.com/GEOS-ESM/GEOSgcm/releases). Note if you don't use `-b`, you will get the `main` branch and that can change from day-to-day.
 
 ###### Permission denied (publickey)
 
@@ -114,8 +115,9 @@ use the SSH URL through.
 To clone the model through HTTPS you run:
 
 ```
-git clone https://github.com/GEOS-ESM/GEOSgcm.git
+git clone -b vX.Y.Z https://github.com/GEOS-ESM/GEOSgcm.git
 ```
+where `vX.Y.Z` is a tag from a [GEOSgcm release](https://github.com/GEOS-ESM/GEOSgcm/releases). Note if you don't use `-b`, you will get the `main` branch and that can change from day-to-day.
 
 Note that if you use the HTTPS URL and have 2FA set up on GitHub, you will need
 to use [personal access
@@ -126,8 +128,9 @@ as a password.
 
 You can also use the [GitHub CLI](https://cli.github.com/) with:
 ```
-gh repo clone GEOS-ESM/GEOSgcm
+gh repo clone GEOS-ESM/GEOSgcm -- -b vX.Y.Z
 ```
+where `vX.Y.Z` is a tag from a [GEOSgcm release](https://github.com/GEOS-ESM/GEOSgcm/releases). Note if you don't use `-b`, you will get the `main` branch and that can change from day-to-day.
 
 Note that when you first use `gh`, it will ask what your preferred git protocol
 is (https or ssh) to use "underneath". The caveats above will apply to whichever
