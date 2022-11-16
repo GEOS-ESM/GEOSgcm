@@ -30,7 +30,7 @@
 | [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.6.1](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.6.1)                               |
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.1.2](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.1.2)                                    |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.3](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.3)                         |
-| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.29.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.29.0)                                    |
+| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.30.2](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.30.2)                                    |
 | [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+1.2.0](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B1.2.0)              |
 | [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v2.0.4](https://github.com/GEOS-ESM/MOM6/releases/tag/geos%2Fv2.0.4)                          |
 | [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.2.0](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.2.0)                               |
