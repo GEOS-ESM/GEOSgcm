@@ -22,7 +22,7 @@ ecbuild:
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
   remote: ../NCEP_Shared.git
-  tag: v1.2.0
+  tag: v1.2.1
   sparse: ./config/NCEP_Shared.sparse
   develop: main
 
