@@ -142,7 +142,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  branch: feature/mathomp4/updates-for-singularity-gcmapp
+  tag: v1.8.1
   develop: develop
 
 UMD_Etc:
