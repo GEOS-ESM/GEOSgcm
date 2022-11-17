@@ -16,24 +16,24 @@
 | [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                               |
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v1.2.0](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.2.0)                       |
 | [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.19.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.19.0)                              |
-| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v4.5.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.5.0)                                  |
+| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v4.6.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.6.0)                                  |
 | [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.8](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.8) |
 | [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v1.12.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.12.1)                  |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)           |
-| [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.10.2](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.10.2)                       |
+| [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.10.4](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.10.4)                       |
 | [QuickChem](https://github.com/GEOS-ESM/QuickChem)                             | [v1.0.0](https://github.com/GEOS-ESM/QuickChem/releases/tag/v1.0.0)                                 |
 | [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v1.8.0](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v1.8.0)                               |
 | [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v1.17.0](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v1.17.0)                        |
-| [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v1.0.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v1.0.0)                    |
+| [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v1.1.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v1.1.0)                    |
 | [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v1.1.1](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v1.1.1)                        |
 | [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v1.5.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.5.0)       |
 | [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.6.1](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.6.1)                               |
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.1.2](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.1.2)                                    |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.3](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.3)                         |
-| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.29.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.29.0)                                    |
+| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.30.2](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.30.2)                                    |
 | [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+1.2.0](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B1.2.0)              |
 | [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v2.0.4](https://github.com/GEOS-ESM/MOM6/releases/tag/geos%2Fv2.0.4)                          |
-| [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.2.0](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.2.0)                               |
+| [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.2.1](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.2.1)                               |
 | [RRTMGP](https://github.com/GEOS-ESM/rte-rrtmgp)                               | [geos/v1.5+1.0.0](https://github.com/GEOS-ESM/rte-rrtmgp/releases/tag/geos%2Fv1.5%2B1.0.0)          |
 | [SIS2](https://github.com/GEOS-ESM/SIS2)                                       | [geos/v0.0.1](https://github.com/GEOS-ESM/SIS2/releases/tag/geos%2Fv0.0.1)                          |
 | [UMD_Etc](https://github.com/GEOS-ESM/UMD_Etc)                                 | [v1.1.0](https://github.com/GEOS-ESM/UMD_Etc/releases/tag/v1.1.0)                                   |
@@ -164,6 +164,21 @@ To obtain a debug version, you can run `parallel_build.csh -debug` which will bu
 
 Note that running with `parallel_build.csh` will create and install a tarfile of the source code at build time. If you wish to avoid
 this, run `parallel_build.csh` with the `-no-tar` option.
+
+#### Passing additional CMake options to `parallel_build.csh`
+
+While `parallel_build.csh` has many options, it does not cover all possible CMake options possible in GEOSgcm. If you wish to
+pass additional CMake options to `parallel_build.csh`, you can do so by using `--` and then the CMake options. Note that *anything*
+after the `--` will be interpreted as a CMake option, which could lead to build issues if not careful.
+
+For example, if you want to build a develop Debug build on Cascade Lake while turning on StratChem reduced mechanism and the CODATA
+2018 options:
+
+```
+parallel_build.csh -develop -debug -cas -- -DSTRATCHEM_REDUCED_MECHANISM=ON -DUSE_CODATA_2018_CONSTANTS=ON
+```
+
+As noted above all the "regular" `parallel_build.csh` options must be listed before the `--` flag.
 
 ---
 
