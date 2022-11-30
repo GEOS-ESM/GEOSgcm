@@ -19,7 +19,7 @@ jobs:
     if: "!contains(github.event.pull_request.labels.*.name, '0 diff trivial')"
     runs-on: ubuntu-latest
     container:
-      image: gmao/ubuntu20-geos-env-mkl:v7.5.0-openmpi_4.1.2-gcc_11.2.0
+      image: gmao/ubuntu20-geos-env:v7.7.0-intelmpi_2021.6.0-intel_2022.1.0
       credentials:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -41,7 +41,7 @@ jobs:
           git config --global --add safe.directory '*'
       - name: Versions etc.
         run: |
-          gfortran --version
+          ifort --version
           mpirun --version
           echo $BASEDIR
       - name: Mepo clone external repos
@@ -58,7 +58,7 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=gfortran -DCMAKE_BUILD_TYPE=Debug -DMPIEXEC_PREFLAGS='--oversubscribe' -DUSE_F2PY=OFF
+          cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=ifort -DCMAKE_BUILD_TYPE=Debug -DMPIEXEC_PREFLAGS='--oversubscribe' -DUSE_F2PY=OFF
       - name: Build
         run: |
           cd build
