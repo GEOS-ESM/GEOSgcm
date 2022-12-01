@@ -1,0 +1,29 @@
+name: Enforce PR Labels
+
+on:
+  pull_request:
+    types: [opened, labeled, unlabeled, edited, synchronize]
+
+jobs:
+  require-label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mheap/github-action-required-labels@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          mode: minimum
+          count: 1
+          labels: "0 diff,0 diff trivial,Non 0-diff,0 diff structural,0-diff trivial,Not 0-diff,0-diff,automatic,0-diff uncoupled"
+          add_comment: true
+  blocking-label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mheap/github-action-required-labels@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          mode: exactly
+          count: 0
+          labels: "Contingent - DNA,Needs Lead Approval,Contingent -- Do Not Approve"
+          add_comment: true
