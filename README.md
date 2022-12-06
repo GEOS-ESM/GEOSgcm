@@ -22,7 +22,7 @@ agcm --> phys(GEOSphysics_GridComp)
 agcm --> sdyn(GEOSsuperdyn_GridComp)
 sdyn --> fv3[[FVdycoreCubed_GridComp]]
 ogcm --> ocean[[GEOS_OceanGridComp]]
-click gcm href "https://github.com/GEOS-ESM/GEOSgcm_GridComp" "GCM Gridded Component" _top
+click gcm "https://github.com/GEOS-ESM/GEOSgcm_GridComp"
 ```
 
 ## Current State of GEOSgcm Subrepos
