@@ -8,6 +8,26 @@
 | AWS CodeBuild | ![CodeBuild](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiZitEZE1kODFtUUhuZU5tN1pDbHZvbDlEQUEwNWR0a2JCM1F1MmlTaWZYV1JxNWIxMjZDSThOUi9mUDJKSVBuaEVRa1FxV2FncitOcExyemNaWFFIbjVrPSIsIml2UGFyYW1ldGVyU3BlYyI6IlBudmE3N1A0MTNNR3ZhNVoiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main) |
 | GitHub | ![GitHub](https://github.com/GEOS-ESM/GEOSgcm/workflows/Build%20Tests/badge.svg) |
 
+## Mermaid Diagram
+
+```mermaid
+flowchart TB
+
+CAP --> HISTORY
+CAP --> gcm[[GEOSgcm_GridComp]]
+CAP --> ExtData
+gcm --> agcm(GEOSagcm_GridComp)
+gcm --> ogcm(GEOSogcm_GridComp)
+agcm --> phys(GEOSphysics_GridComp)
+agcm --> sdyn(GEOSsuperdyn_GridComp)
+sdyn --> fv3[[FVdycoreCubed_GridComp]]
+ogcm --> ocean[[GEOS_OceanGridComp]]
+click gcm href "https://github.com/GEOS-ESM/GEOSgcm_GridComp" "GCM Gridded Component"
+click fv3 href "https://github.com/GEOS-ESM/FVdycoreCubed_GridComp" "FV3 Gridded Component"
+click ocean href "https://github.com/GEOS-ESM/GEOS_OceanGridComp" "Ocean Gridded Component"
+
+```
+
 ## Current State of GEOSgcm Subrepos
 
 | Repository                                                                     | Version                                                                                             |
