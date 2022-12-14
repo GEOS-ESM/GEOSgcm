@@ -24,12 +24,12 @@
 | [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.10.4](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.10.4)                       |
 | [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v1.8.1](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v1.8.1)                               |
 | [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v1.17.1](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v1.17.1)                        |
-| [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v1.1.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v1.1.0)                    |
+| [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v1.2.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v1.2.0)                    |
 | [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v1.5.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.5.0)       |
-| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.6.2](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.6.2)                               |
+| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.6.3](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.6.3)                               |
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.1.2](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.1.2)                                    |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.3](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.3)                         |
-| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.31.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.31.0)                                    |
+| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.33.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.33.0)                                    |
 | [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+1.2.0](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B1.2.0)              |
 | [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v2.0.4](https://github.com/GEOS-ESM/MOM6/releases/tag/geos%2Fv2.0.4)                          |
 | [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.2.1](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.2.1)                               |
