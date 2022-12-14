@@ -36,7 +36,7 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.31.0
+  tag: v2.33.0
   develop: develop
 
 FMS:
@@ -129,7 +129,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: v1.1.0
+  tag: v1.2.0
   develop: develop
 
 RRTMGP:
