@@ -2,6 +2,33 @@
 
 ## Unreleased
 
+## [10.23.2] - 2022-12-16
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-diff Changes:
+
+* Read bcs parameters from target bc directory instead of from catchment restart file  by @weiyuan-jiang in [#670](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/670)
+* Remove `snowalb` from restart file when target bc does not have it  by @weiyuan-jiang in [#673](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/673)
+* Restore `mk_CatchRestarts` so `regrid.pl` will not work with new bcs with snowalb anymore  by @weiyuan-jiang in [#674](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/674)
+* Add adjustable tolerance to the rasterization routine  by @atrayano in [#663](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/663)
+* Add Option to Use MODIS-based Snow Albedo Climatology  by @biljanaorescanin in [#618](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/618)
+* Further cleanup and reorganization of `make_bcs`  by @weiyuan-jiang in [#634](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/634)
+* Add optional data sea ice thickness for atmosphere-only configuration  by @sanAkel in [#686](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/686)
+* Add warning about QQJ,K in the context of new GMI mechanisms  by @mmanyin in [#378](https://github.com/GEOS-ESM/GEOSgcm_App/pull/378)
+* Update path for `M2_REPLAY_ANA_LOCATION`  by @sanAkel in [#377](https://github.com/GEOS-ESM/GEOSgcm_App/pull/377)
+* `HISTORY.AOGCM-MOM5.rc.tmpl` updated to be consistent with the MOM6 and AMIP templates  by @yvikhlya in [#382](https://github.com/GEOS-ESM/GEOSgcm_App/pull/382)
+* `regrid_exch: tile_hist.data` removed from history template  by @yvikhlya in [#383](https://github.com/GEOS-ESM/GEOSgcm_App/pull/383)
+* Add a warning message for users  that `regrid.pl` is being phased out and replaced with `remap_restarts.py`  by @biljanaorescanin in [#304](https://github.com/GEOS-ESM/GMAO_Shared/pull/304)
+* Bug fix for remapping MERRA-2 from 2021-06 to 2021-09  by @mathomp4 in [#303](https://github.com/GEOS-ESM/GMAO_Shared/pull/303)
+* Make MERRA2 remapping with `remap_restarts.py` consistent with `regrid.pl`  by @mathomp4 in [#308](https://github.com/GEOS-ESM/GMAO_Shared/pull/308)
+* Modify `remap_restarts.py` to use `argparse`  by @mathomp4 in [#291](https://github.com/GEOS-ESM/GMAO_Shared/pull/291)
+* Further OBIO support added to RRTMGP and Chou-Suarez in [GEOSradiation_GridComp v1.2.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v1.2.0)
+* Upticked from MAPL v2.30.2 to [MAPL v2.33.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.33.0)
+* Upticks in `env`, `cmake`, and `ecbuild`
+
+
 ## [10.23.1] - 2022-11-17
 
 ### Zero-diff to Previous Release: YES and NO (see below)
