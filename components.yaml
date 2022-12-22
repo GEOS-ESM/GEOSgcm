@@ -97,7 +97,7 @@ QuickChem:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v1.1.1
+  tag: v1.2.1
   develop: develop
 
 mom:
