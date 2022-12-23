@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.21.0
+  branch: feature/sdrabenh/merge_v10.23.2_MSTRF
   develop: develop
 
 ecbuild:
@@ -36,7 +36,7 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.33.0
+  branch: develop
   develop: develop
 
 FMS:
@@ -48,20 +48,20 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.17.2
+  branch: feature/sdrabenh/merge_v10.23.2_MSTRF
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.12.1
+  branch: feature/sdrabenh/merge_v10.23.2_MSTRF
   develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: geos/v1.5.0
+  branch: feature/sdrabenh/merge_v10.23.2_MSTRF
   develop: geos/develop
 
 GEOSchem_GridComp:
@@ -129,7 +129,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: v1.2.0
+  branch: feature/sdrabenh/merge_v10.23.2_MSTRF
   develop: develop
 
 RRTMGP:
@@ -142,7 +142,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.8.2
+  branch: feature/sdrabenh/merge_v10.23.2_MSTRF
   develop: develop
 
 UMD_Etc:
