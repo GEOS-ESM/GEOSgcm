@@ -8,7 +8,7 @@ jobs:
   require-label:
     runs-on: ubuntu-latest
     steps:
-      - uses: mheap/github-action-required-labels@v2
+      - uses: mheap/github-action-required-labels@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -16,10 +16,12 @@ jobs:
           count: 1
           labels: "0 diff,0 diff trivial,Non 0-diff,0 diff structural,0-diff trivial,Not 0-diff,0-diff,automatic,0-diff uncoupled"
           add_comment: true
+          message: "This PR is being prevented from merging because you have not added one of our required labels: {{ provided }}. Please add one so that the PR can be merged."
+
   blocking-label:
     runs-on: ubuntu-latest
     steps:
-      - uses: mheap/github-action-required-labels@v2
+      - uses: mheap/github-action-required-labels@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -27,3 +29,5 @@ jobs:
           count: 0
           labels: "Contingent - DNA,Needs Lead Approval,Contingent -- Do Not Approve"
           add_comment: true
+          message: "This PR is being prevented from merging because you have added one of our blocking labels: {{ provided }}. You'll need to remove it before this PR can be merged."
+
