@@ -94,6 +94,24 @@ QuickChem:
   tag: v1.0.0
   develop: main
 
+TR:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@TR
+  remote: ../TR.git
+  branch: main
+  develop: develop
+
+GMI:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GMI
+  remote: ../GMI.git
+  branch: main
+  develop: develop
+
+StratChem:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@StratChem
+  remote: ../StratChem.git
+  branch: main
+  develop: develop
+
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
