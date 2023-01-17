@@ -2,6 +2,23 @@
 
 ## Unreleased
 
+## [10.23.3] - 2023-01-17
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-diff Changes:
+
+* Improved the user interface of `mk_runofftbl.F90` by @sanAkel in [#693](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/693)
+* Updates for WSTAR Calculation and plots package by @lltakacs in [#313](https://github.com/GEOS-ESM/GMAO_Shared/pull/313)
+* Upticks to additional repositories:
+  1. ESMA_cmake [v3.21.0 -> v3.24.0](https://github.com/GEOS-ESM/ESMA_cmake/releases)
+  2. MAPL [v2.33.0 -> v2.34.2](https://github.com/GEOS-ESM/MAPL/releases)
+  3. GEOSchem_GridComp [v1.11.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.11.0)
+  4. GEOS_OceanGridComp [v1.2.1](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v1.2.1)
+  5. MOM6 [geos/v2.1.0](https://github.com/GEOS-ESM/MOM6/tree/geos/v2.1.0)
+
+
 ## [10.23.2] - 2022-12-16
 
 ### Zero-diff to Previous Release: YES
