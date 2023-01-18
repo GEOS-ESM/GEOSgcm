@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+## [10.24.0] - 2023-01-18
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-diff Changes:
+
+* Moved TR, GMI, and StratChem to separate repositories by @mathomp4 in [#509](https://github.com/GEOS-ESM/GEOSgcm/pull/509)
+
 ## [10.23.3] - 2023-01-17
 
 ### Zero-diff to Previous Release: YES
