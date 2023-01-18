@@ -67,7 +67,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.11.0
+  tag: v1.12.0
   develop: develop
 
 HEMCO:
@@ -93,6 +93,24 @@ QuickChem:
   remote: ../QuickChem.git
   tag: v1.0.0
   develop: main
+
+TR:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@TR
+  remote: ../TR.git
+  tag: v1.0.0
+  develop: develop
+
+GMI:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GMI
+  remote: ../GMI.git
+  tag: v1.0.0
+  develop: develop
+
+StratChem:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@StratChem
+  remote: ../StratChem.git
+  tag: v1.0.0
+  develop: develop
 
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
