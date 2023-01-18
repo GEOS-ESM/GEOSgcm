@@ -97,19 +97,19 @@ QuickChem:
 TR:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@TR
   remote: ../TR.git
-  branch: main
+  tag: v1.0.0
   develop: develop
 
 GMI:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GMI
   remote: ../GMI.git
-  branch: main
+  tag: v1.0.0
   develop: develop
 
 StratChem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@StratChem
   remote: ../StratChem.git
-  branch: main
+  tag: v1.0.0
   develop: develop
 
 GEOS_OceanGridComp:
