@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  branch: feature/sdrabenh/merge_v10.23.2_MSTRF
+  branch: feature/sdrabenh/merge_v10.23.3_MSTRF
   develop: develop
 
 ecbuild:
@@ -29,14 +29,14 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.6.3
+  branch: feature/sdrabenh/merge_v10.23.3_MSTRF
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  branch: develop
+  tag: v2.34.1
   develop: develop
 
 FMS:
@@ -48,26 +48,26 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  branch: feature/sdrabenh/merge_v10.23.2_MSTRF
+  branch: feature/sdrabenh/merge_v10.23.3_MSTRF
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  branch: feature/sdrabenh/merge_v10.23.2_MSTRF
+  branch: feature/sdrabenh/merge_v10.23.3_MSTRF
   develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  branch: feature/sdrabenh/merge_v10.23.2_MSTRF
+  branch: feature/sdrabenh/merge_v10.23.3_MSTRF
   develop: geos/develop
 
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.10.4
+  tag: v1.11.0
   develop: develop
 
 HEMCO:
@@ -97,7 +97,7 @@ QuickChem:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v1.1.1
+  tag: v1.2.1
   develop: develop
 
 mom:
@@ -109,7 +109,7 @@ mom:
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
-  tag: geos/v2.0.4
+  tag: geos/v2.1.0
   develop: main
   recurse_submodules: true
 
@@ -129,7 +129,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  branch: feature/sdrabenh/merge_v10.23.2_MSTRF
+  branch: feature/sdrabenh/merge_v10.23.3_MSTRF
   develop: develop
 
 RRTMGP:
@@ -142,7 +142,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  branch: feature/sdrabenh/merge_v10.23.2_MSTRF
+  branch: feature/sdrabenh/merge_v10.23.3_MSTRF
   develop: develop
 
 UMD_Etc:
