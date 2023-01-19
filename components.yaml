@@ -143,7 +143,8 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.8.0
+  branch: feature/wjiang/GEOS_GigaTraj
+  #tag: v1.8.0
   develop: develop
 
 UMD_Etc:
