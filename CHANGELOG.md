@@ -2,6 +2,22 @@
 
 ## Unreleased
 
+## [10.25.0] - 2023-01-20
+
+### Zero-diff to Previous Release: Not always
+### Restart Changes: NO
+
+### Potential Non-zero-diff Changes:
+* Updated to use 2021 NRL Solar File by @mathomp4 in https://github.com/GEOS-ESM/GEOSgcm_App/pull/366
+* Updated to use ExtData2G by default by @vbuchard in https://github.com/GEOS-ESM/GEOSgcm_App/pull/381
+
+## Zero-diff Changes for Stock Configuration
+* Fixes to allow non-72-level runs to use ExtData2G by @mathomp4 in https://github.com/GEOS-ESM/GEOSgcm_App/pull/389
+* Updated `logging.yaml` by adding YAML linter by @mathomp4 in https://github.com/GEOS-ESM/GEOSgcm_App/pull/391
+
+## Structural Changes
+* Moved `GEOS_Util` out of `GMAO_Shared` into its own repository.
+
 ## [10.24.0] - 2023-01-18
 
 ### Zero-diff to Previous Release: YES
