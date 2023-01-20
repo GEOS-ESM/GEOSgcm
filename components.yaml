@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  branch: feature/mathomp4/separate-geos-util
+  tag: v1.7.0
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
