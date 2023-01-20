@@ -21,13 +21,14 @@
 | [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v1.12.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.12.1)                  |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)           |
 | [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v1.2.1](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v1.2.1)                        |
+| [GEOS_Util](https://github.com/GEOS-ESM/GEOS_Util)                             | [v1.0.1](https://github.com/GEOS-ESM/GEOS_Util/releases/tag/v1.0.1)                                 |
 | [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.12.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.12.0)                       |
-| [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v1.8.2](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v1.8.2)                               |
+| [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v1.9.0](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v1.9.0)                               |
 | [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v1.17.3](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v1.17.3)                        |
 | [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v1.2.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v1.2.0)                    |
 | [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v1.5.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.5.0)       |
 | [GMI](https://github.com/GEOS-ESM/GMI)                                         | [v1.0.0](https://github.com/GEOS-ESM/GMI/releases/tag/v1.0.0)                                       |
-| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.6.4](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.6.4)                               |
+| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.7.0](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.7.0)                               |
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.1.2](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.1.2)                                    |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.3](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.3)                         |
 | [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.34.1](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.34.1)                                    |
@@ -148,7 +149,7 @@ If all you wish is to build the model, you can run `parallel_build.csh` from a h
 #### Develop Version of GEOS GCM
 
 `parallel_build.csh` provides a special flag for checking out the
-development branches of GEOSgcm_GridComp, GEOSgcm_App, and GMAO_Shared. If you run:
+development branches of GEOSgcm_GridComp, GEOSgcm_App, GMAO_Shared, and GEOS_Util. If you run:
 
 ```
 parallel_build.csh -develop
@@ -156,7 +157,7 @@ parallel_build.csh -develop
 then `mepo` will run:
 
 ```
-mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared
+mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared GEOS_Util
 ```
 
 #### Debug Version of GEOS GCM
@@ -204,15 +205,15 @@ The first command initializes the multi-repository and the second one
 clones and assembles all the sub-repositories according to
 `components.yaml`
 
-#### Checking out develop branches of GEOSgcm_GridComp, GEOSgcm_App, and GMAO_Shared
+#### Checking out develop branches of GEOSgcm_GridComp, GEOSgcm_App, GMAO_Shared, and GEOS_Util
 
-To get development branches of GEOSgcm_GridComp, GEOSgcm_App, and GMAO_Shared (a la
+To get development branches of GEOSgcm_GridComp, GEOSgcm_App, GMAO_Shared, and GEOS_Util (a la
 the `-develop` flag for `parallel_build.csh`, one needs to run the
 equivalent `mepo` command. As mepo itself knows (via `components.yaml`) what the development branch of each
 subrepository is, the equivalent of `-develop` for `mepo` is to
-checkout the development branches of GEOSgcm_GridComp, GEOSgcm_App, and GMAO_Shared:
+checkout the development branches of GEOSgcm_GridComp, GEOSgcm_App, GMAO_Shared, and GEOS_Util:
 ```
-mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared
+mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared GEOS_Util
 ```
 
 This must be done *after* `mepo clone` as it is running a git command in
