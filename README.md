@@ -149,7 +149,7 @@ If all you wish is to build the model, you can run `parallel_build.csh` from a h
 #### Develop Version of GEOS GCM
 
 `parallel_build.csh` provides a special flag for checking out the
-development branches of GEOSgcm_GridComp, GEOSgcm_App, and GMAO_Shared. If you run:
+development branches of GEOSgcm_GridComp, GEOSgcm_App, GMAO_Shared, and GEOS_Util. If you run:
 
 ```
 parallel_build.csh -develop
@@ -157,7 +157,7 @@ parallel_build.csh -develop
 then `mepo` will run:
 
 ```
-mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared
+mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared GEOS_Util
 ```
 
 #### Debug Version of GEOS GCM
@@ -205,15 +205,15 @@ The first command initializes the multi-repository and the second one
 clones and assembles all the sub-repositories according to
 `components.yaml`
 
-#### Checking out develop branches of GEOSgcm_GridComp, GEOSgcm_App, and GMAO_Shared
+#### Checking out develop branches of GEOSgcm_GridComp, GEOSgcm_App, GMAO_Shared, and GEOS_Util
 
-To get development branches of GEOSgcm_GridComp, GEOSgcm_App, and GMAO_Shared (a la
+To get development branches of GEOSgcm_GridComp, GEOSgcm_App, GMAO_Shared, and GEOS_Util (a la
 the `-develop` flag for `parallel_build.csh`, one needs to run the
 equivalent `mepo` command. As mepo itself knows (via `components.yaml`) what the development branch of each
 subrepository is, the equivalent of `-develop` for `mepo` is to
-checkout the development branches of GEOSgcm_GridComp, GEOSgcm_App, and GMAO_Shared:
+checkout the development branches of GEOSgcm_GridComp, GEOSgcm_App, GMAO_Shared, and GEOS_Util:
 ```
-mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared
+mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared GEOS_Util
 ```
 
 This must be done *after* `mepo clone` as it is running a git command in

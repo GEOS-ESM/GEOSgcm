@@ -32,7 +32,7 @@ end
 
 if (-d ${ESMADIR}/@env || -d ${ESMADIR}/env@ || -d ${ESMADIR}/env) then
    if ( "$DEVELOP" == "TRUE" ) then
-      echo "Checking out development branches of GEOSgcm_GridComp, GEOSgcm_App, and GMAO_Shared"
+      echo "Checking out development branches of GEOSgcm_GridComp, GEOSgcm_App, GMAO_Shared, and GEOS_Util"
       mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared
    endif
 else
@@ -46,7 +46,7 @@ else
       mepo init
       mepo clone
       if ( "$DEVELOP" == "TRUE" ) then
-         echo "Checking out development branches of GEOSgcm_GridComp, GEOSgcm_App, and GMAO_Shared"
+         echo "Checking out development branches of GEOSgcm_GridComp, GEOSgcm_App, GMAO_Shared, and GEOS_Util"
          mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared
       endif
    endif
