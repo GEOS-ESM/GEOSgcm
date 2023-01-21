@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  branch: pchakrab/feature/integrate-fv3core/root-v3.3.1
+  tag: test-oacc-held-suarez
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  branch: pchakrab/feature/integrate-fv3core/root-v3.0.8
+  tag: test-oacc-held-suarez
   develop: develop
 
 ecbuild:
@@ -41,24 +41,24 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  branch: pchakrab/feature/integrate-oacc-held-suarez
+  tag: test-oacc-held-suarez
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  branch: feature/pchakrab/integrate-fv3core/root-v1.2.17
+  tag: test-oacc-held-suarez
   develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  branch: feature/pchakrab/integrate-fv3core/root-geos-v1.1.7
+  tag: test-oacc-held-suarez
   develop: geos/develop
 
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  branch: pchakrab/feature/integrate-oacc-held-suarez
+  tag: test-oacc-held-suarez
   develop: develop
