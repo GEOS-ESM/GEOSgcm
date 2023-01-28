@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v4.4.0
+  branch: feature/pchakrab/aquaplanet-integrate-gtfv3/root-v4.4.0
   develop: main
 
 cmake:
@@ -48,21 +48,20 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-#  tag: v1.17.0
-  branch: feature/atrayano/aquaplanet_based_on_v1.17.0
+  branch: feature/pchakrab/aquaplanet-integrate-gtfv3/root-v1.17.0
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.11.0
+  branch: feature/pchakrab/aquaplanet-integrate-gtfv3/root-v1.11.0
   develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: geos/v1.4.0
+  branch: feature/pchakrab/aquaplanet-integrate-gtfv3/root-geos-v1.4.0
   develop: geos/develop
 
 GEOSchem_GridComp:
