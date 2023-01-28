@@ -64,6 +64,12 @@ fvdycore:
   branch: feature/pchakrab/aquaplanet-integrate-gtfv3/root-geos-v1.4.0
   develop: geos/develop
 
+gtFV3:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@gtFV3
+  remote: ../pace.git
+  branch: debug/pchakrab/aquaplanet/root-358b60d
+  develop: geos/develop
+
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
