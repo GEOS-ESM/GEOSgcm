@@ -29,7 +29,7 @@ jobs:
       OMPI_MCA_btl_vader_single_copy_mechanism: none
     steps:
       - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.5.0
+        uses: styfle/cancel-workflow-action@0.11.0
         with:
           access_token: ${{ github.token }}
       - name: Checkout GCM
