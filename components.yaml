@@ -36,7 +36,8 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.25.0
+  #tag: v2.25.0
+  branch: feature/wjiang/GEOS_GigaTraj
   develop: develop
 
 FMS:
