@@ -10,9 +10,15 @@ updates:
     directory: "/" # Dependabot knows to look in .github/workflows for GitHub Actions
     schedule:
       interval: "daily"
+    labels:
+      - "dependencies"
+      - "github-actions"
 
   # Enable daily updates for Docker
   - package-ecosystem: "docker"
     directory: "/.docker" # Location of Dockerfile
     schedule:
       interval: "daily"
+    labels:
+      - "dependencies"
+      - "docker"
