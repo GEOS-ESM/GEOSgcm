@@ -67,7 +67,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: cakelle2/gaas_coupling_p0
+  tag: feature/cakelle2/GCC_GAAS_coupling/t0
   develop: develop
 
 HEMCO:
