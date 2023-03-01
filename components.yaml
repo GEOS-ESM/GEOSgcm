@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v4.8.0
+  branch: feature/pchakrab/aquaplanet-integrate-gtfv3/root-v4.8.0
   develop: main
 
 cmake:
@@ -54,21 +54,26 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  branch: feature/atrayano/aquaplanet_based_on_wmp_MSTRF_v13
-#  tag: wmp_MSTRF_v13
+  branch: feature/pchakrab/aquaplanet-integrate-gtfv3/root-wmp_MSTRF_v13
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: wmp_MSTRF_v13
+  branch: feature/pchakrab/aquaplanet-integrate-gtfv3/root-wmp_MSTRF_v13
   develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
   tag: wmp_MSTRF_v13
+  develop: geos/develop
+
+gtFV3:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@gtFV3
+  remote: ../pace.git
+  branch: debug/pchakrab/aquaplanet/root-358b60d
   develop: geos/develop
 
 GEOSchem_GridComp:
@@ -92,7 +97,7 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: v2.1.2
+  branch: feature/pchakrab/aquaplanet-integrate-gtfv3/root-v2.1.2
   develop: develop
 
 QuickChem:
