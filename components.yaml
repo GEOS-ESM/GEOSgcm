@@ -42,7 +42,8 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.35.0
+  #tag: v2.35.1
+  branch: hotfix/mathomp4/1997-fix-monthlyhistory
   develop: develop
 
 FMS:
