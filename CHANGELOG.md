@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+## [11.0.0-rc.1] - 2023-03-10
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: YES
+
+### Major Non-zero-diff Changes:
+
+* Refactor MoistGridComp to separate GF, UW, BACM, GFDL and MGB2 codebases into distinct interface modules and leverage shared process level code in a new moist Process_Library module (L72 defaults to BACM_1M).
+* TRB and Moist refactoring support updates to new vertical levels beyond L72 including a move to GF2020 and new cldmicro schemes (L72 defaults to GF-Legacy).
+* GWD code includes new convective background scheme and anisotropic ridge orographic scheme (L72 defaults to old schemes).
+* FV3 updated to support stretched grids and dual hydrostatic/non-hydrostatic build.
+
 ## [10.25.1] - 2023-03-08
 
 ### Zero-diff to Previous Release: YES
