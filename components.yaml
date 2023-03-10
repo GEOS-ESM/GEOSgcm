@@ -181,7 +181,7 @@ UMD_Etc:
   local: ./src/Applications/@UMD_Etc
   remote: ../UMD_Etc.git
   #tag: v1.1.0
-  branch: feature/atrayano/MITgcm-DYAMOND
+  branch: feature/atrayano/dyamond_v13
   develop: main
 
 CPLFCST_Etc:
