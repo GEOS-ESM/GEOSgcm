@@ -173,7 +173,8 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: wmp_MSTRF_v13
+  #tag: wmp_MSTRF_v13
+  branch: feature/atrayano/dyamond_v13
   develop: develop
 
 UMD_Etc:
