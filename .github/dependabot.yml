@@ -12,7 +12,7 @@ updates:
       interval: "daily"
     labels:
       - "dependencies"
-      - "github-actions"
+      - "github_actions"
 
   # Enable daily updates for Docker
   - package-ecosystem: "docker"
