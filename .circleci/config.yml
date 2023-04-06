@@ -1,8 +1,24 @@
 version: 2.1
 
+parameters:
+  GHA_Actor:
+    type: string
+    default: ""
+  GHA_Action:
+    type: string
+    default: ""
+  GHA_Event:
+    type: string
+    default: ""
+  GHA_Meta:
+    type: string
+    default: ""
+
 # Anchors to prevent forgetting to update a version
-baselibs_version: &baselibs_version v7.5.0
-bcs_version: &bcs_version v10.23.0
+os_version: &os_version ubuntu20
+baselibs_version: &baselibs_version v7.7.0
+bcs_version: &bcs_version v11.00.0
+tag_build_arg_name: &tag_build_arg_name gcmversion
 
 orbs:
   ci: geos-esm/circleci-tools@1
@@ -32,3 +48,45 @@ workflows:
           requires:
             - build-GEOSgcm-on-<< matrix.compiler >>
           repo: GEOSgcm
+  build-and-publish-docker:
+    when:
+      equal: [ "release", << pipeline.parameters.GHA_Event >> ]
+    jobs:
+      - ci/publish-docker:
+          filters:
+            tags:
+              only: /^v.*$/
+          name: publish-intel-docker-image
+          context:
+            - docker-hub-creds
+            - ghcr-creds
+          os_version: *os_version
+          baselibs_version: *baselibs_version
+          bcs_version: *bcs_version
+          container_name: geosgcm
+          mpi_name: intelmpi
+          mpi_version: 2021.6.0
+          compiler_name: intel
+          compiler_version: 2022.1.0
+          image_name: geos-env-bcs
+          tag_build_arg_name: *tag_build_arg_name
+          resource_class: xlarge
+      - ci/publish-docker:
+          filters:
+            tags:
+              only: /^v.*$/
+          name: publish-gcc-docker-image
+          context:
+            - docker-hub-creds
+            - ghcr-creds
+          os_version: *os_version
+          baselibs_version: *baselibs_version
+          bcs_version: *bcs_version
+          container_name: geosgcm
+          mpi_name: openmpi
+          mpi_version: 4.1.4
+          compiler_name: gcc
+          compiler_version: 12.1.0
+          image_name: geos-env-bcs
+          tag_build_arg_name: *tag_build_arg_name
+          resource_class: xlarge

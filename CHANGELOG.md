@@ -2,13 +2,165 @@
 
 ## Unreleased
 
+## [11.0.0-rc.1] - 2023-03-10
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: YES
+
+### Major Non-zero-diff Changes:
+
+* Refactor MoistGridComp to separate GF, UW, BACM, GFDL and MGB2 codebases into distinct interface modules and leverage shared process level code in a new moist Process_Library module (L72 defaults to BACM_1M).
+* TRB and Moist refactoring support updates to new vertical levels beyond L72 including a move to GF2020 and new cldmicro schemes (L72 defaults to GF-Legacy).
+* GWD code includes new convective background scheme and anisotropic ridge orographic scheme (L72 defaults to old schemes).
+* FV3 updated to support stretched grids and dual hydrostatic/non-hydrostatic build.
+
+## [10.25.1] - 2023-03-08
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-diff Changes:
+
+* Introducing `IGNI` as a new component that integrates fire weather observations into fuel moisture codes and fire behavior indexes based on the CFFWI system by @adarmenov in [#699](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/699) [#710](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/710) [#410](https://github.com/GEOS-ESM/GEOSgcm_App/pull/410)
+* "make boundary conditions" (`make_bcs`) package updates:
+   * Update paths to use a new inputs area by @biljanaorescanin in [#694](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/694)
+   * Cleanup and reorganization of files in `./Raster` by @gmao-rreichle in [#707](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/707)
+   * Add new 0.66 degree MOM6 grid into `make_bcs` by @yvikhlya in [#712](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/712)
+* Cleanup of Catchment-CN constants in `CatchmentCNRst.F90` by @gmao-jkolassa in [#682](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/682)
+* Removed unused code in GWD by @bena-nasa in [#705](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/705)
+* NAS updates:
+   * Allow only Rome builds to run on Romes at NAS by @mathomp4 in [#411](https://github.com/GEOS-ESM/GEOSgcm_App/pull/411)
+   * Add Rome detections to other setup scripts by @mathomp4 in [#414](https://github.com/GEOS-ESM/GEOSgcm_App/pull/414)
+* Got `AERO_PROVIDER=GMICHEM` working with necessary changes to `AGCM.rc` to run with it (aerosol optics files) by @ssteenro in [#416](https://github.com/GEOS-ESM/GEOSgcm_App/pull/416)
+* Additions to `GMAO_ods` to include trace gas support for `CoDAS`. Also includes more OMPS and AMSR support from Ricardo's `rt_g530_1.6.0_merge` tag by @briardew in [#311](https://github.com/GEOS-ESM/GMAO_Shared/pull/311)
+* Move `regrid` and `remap_restarts` from `post` directory to `pre` directory by @mathomp4 in [#3](https://github.com/GEOS-ESM/GEOS_Util/pull/3)
+* Plot updates:
+   * Updates for QBO labeling and added `MOIST` variables by @sdrabenh in [#6](https://github.com/GEOS-ESM/GEOS_Util/pull/6)
+   * `3CH` and `quickplot` updates by @lltakacs in [#8](https://github.com/GEOS-ESM/GEOS_Util/pull/8)
+* Update to Baselibs 7.8.1 (ESMF 8.4.1) to avoid possible memory corruption bug [#533](https://github.com/GEOS-ESM/GEOSgcm/pull/533)
+* Update to ESMA_cmake v3.26.0 to better handle Rome nodes [#531](https://github.com/GEOS-ESM/GEOSgcm/pull/531)
+* Updates to [MAPL 2.35.2](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.35.2) which includes:
+   * Changes from @weiyuan-jiang needed by the land group.
+   * Bug fixes for `ExtData` from @bena-nasa and fixes for UFS folks
+
+## [10.25.0] - 2023-01-20
+
+### Zero-diff to Previous Release: Not always
+### Restart Changes: NO
+
+### Potential Non-zero-diff Changes:
+* Updated to use 2021 NRL Solar File by @mathomp4 in https://github.com/GEOS-ESM/GEOSgcm_App/pull/366
+* Updated to use ExtData2G by default by @vbuchard in https://github.com/GEOS-ESM/GEOSgcm_App/pull/381
+
+## Zero-diff Changes for Stock Configuration
+* Fixes to allow non-72-level runs to use ExtData2G by @mathomp4 in https://github.com/GEOS-ESM/GEOSgcm_App/pull/389
+* Updated `logging.yaml` by adding YAML linter by @mathomp4 in https://github.com/GEOS-ESM/GEOSgcm_App/pull/391
+
+## Structural Changes
+* Moved `GEOS_Util` out of `GMAO_Shared` into its own repository.
+
+## [10.24.0] - 2023-01-18
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-diff Changes:
+
+* Moved TR, GMI, and StratChem to separate repositories by @mathomp4 in [#509](https://github.com/GEOS-ESM/GEOSgcm/pull/509)
+
+## [10.23.3] - 2023-01-17
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-diff Changes:
+
+* Improved the user interface of `mk_runofftbl.F90` by @sanAkel in [#693](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/693)
+* Updates for WSTAR Calculation and plots package by @lltakacs in [#313](https://github.com/GEOS-ESM/GMAO_Shared/pull/313)
+* Upticks to additional repositories:
+  1. MAPL [v2.33.0 -> v2.34.2](https://github.com/GEOS-ESM/MAPL/releases) highlights:
+     * Fixed the naming convention of the split field name [(#1874)](https://github.com/GEOS-ESM/MAPL/issues/1874). For this, before on split fields in History you'd get out `DU`, `DU002`, `DU003`. But now MAPL will do `DU001`, `DU002`, `DU003`
+     * Updates for better support of State Specs in GOCART (see https://github.com/GEOS-ESM/GOCART/issues/202)
+       1. Support for `*` expansion in long names
+       2. Support to fill `%d` in long names
+  2. ESMA_cmake [v3.21.0 -> v3.24.0](https://github.com/GEOS-ESM/ESMA_cmake/releases)
+  3. GEOSchem_GridComp [v1.11.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.11.0)
+  4. GEOS_OceanGridComp [v1.2.1](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v1.2.1)
+  5. MOM6 [geos/v2.1.0](https://github.com/GEOS-ESM/MOM6/tree/geos/v2.1.0)
+
+
+## [10.23.2] - 2022-12-16
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-diff Changes:
+
+* Read bcs parameters from target bc directory instead of from catchment restart file  by @weiyuan-jiang in [#670](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/670)
+* Remove `snowalb` from restart file when target bc does not have it  by @weiyuan-jiang in [#673](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/673)
+* Restore `mk_CatchRestarts` so `regrid.pl` will not work with new bcs with snowalb anymore  by @weiyuan-jiang in [#674](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/674)
+* Add adjustable tolerance to the rasterization routine  by @atrayano in [#663](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/663)
+* Add Option to Use MODIS-based Snow Albedo Climatology  by @biljanaorescanin in [#618](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/618)
+* Further cleanup and reorganization of `make_bcs`  by @weiyuan-jiang in [#634](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/634)
+* Add optional data sea ice thickness for atmosphere-only configuration  by @sanAkel in [#686](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/686)
+* Add warning about QQJ,K in the context of new GMI mechanisms  by @mmanyin in [#378](https://github.com/GEOS-ESM/GEOSgcm_App/pull/378)
+* Update path for `M2_REPLAY_ANA_LOCATION`  by @sanAkel in [#377](https://github.com/GEOS-ESM/GEOSgcm_App/pull/377)
+* `HISTORY.AOGCM-MOM5.rc.tmpl` updated to be consistent with the MOM6 and AMIP templates  by @yvikhlya in [#382](https://github.com/GEOS-ESM/GEOSgcm_App/pull/382)
+* `regrid_exch: tile_hist.data` removed from history template  by @yvikhlya in [#383](https://github.com/GEOS-ESM/GEOSgcm_App/pull/383)
+* Add a warning message for users  that `regrid.pl` is being phased out and replaced with `remap_restarts.py`  by @biljanaorescanin in [#304](https://github.com/GEOS-ESM/GMAO_Shared/pull/304)
+* Bug fix for remapping MERRA-2 from 2021-06 to 2021-09  by @mathomp4 in [#303](https://github.com/GEOS-ESM/GMAO_Shared/pull/303)
+* Make MERRA2 remapping with `remap_restarts.py` consistent with `regrid.pl`  by @mathomp4 in [#308](https://github.com/GEOS-ESM/GMAO_Shared/pull/308)
+* Modify `remap_restarts.py` to use `argparse`  by @mathomp4 in [#291](https://github.com/GEOS-ESM/GMAO_Shared/pull/291)
+* Further OBIO support added to RRTMGP and Chou-Suarez in [GEOSradiation_GridComp v1.2.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v1.2.0)
+* Upticked from MAPL v2.30.2 to [MAPL v2.33.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.33.0)
+* Upticks in `env`, `cmake`, and `ecbuild`
+
+
+## [10.23.1] - 2022-11-17
+
+### Zero-diff to Previous Release: YES and NO (see below)
+### Restart Changes: YES
+
+### Non-zero-diff Changes:
+* Uptick `GEOSradiation_GridComp` to v1.1.0. Two fields (`FSWBANDN` and `FSWBANDNAN`) in `solar_internal_rst` were previously `MAPL_UNDEF` because there was no facility in RRTMG to calculate them yet. This facility is now added and thus this restart is technically non-zero-diff but these fields now have realistic values by @mathomp4 in [#483](https://github.com/GEOS-ESM/GEOSgcm/pull/483)
+
+### Major Zero-diff Changes:
+* Upticked GEOSchem_GridCom from v1.10.1 to [v1.10.4](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.10.4)
+* Upticked MAPL from v2.25.0 to [v2.30.2](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.30.2)
+* Upticked GOCART from v2.1.0 to [v2.1.2](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.1.2)
+* RRTMG can now provide two new exports `DROBIO` and `DFOBIO` (downwelling direct and diffuse fluxes all-sky, with aerosol) in the 33 bands used by ORadBioGC. These calculations can be turned on if `RRTMG_TO_OBIO: .TRUE.` appears in `AGCM.rc` when RRTMG SW is run by @mathomp4 in [#483](https://github.com/GEOS-ESM/GEOSgcm/pull/483)
+* Updates for Spack Stack by @mathomp4 in [#643](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/643)
+* Remove CUDA macros from `GEOS_GwdGridComp` by @darianboggs in [#636](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/636)
+* Remove unused NCEP code from `GEOS_GwdGridComp` by @darianboggs in [#640](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/640)
+* Modified `RUN1` to load balance by @aoloso in [#647](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/647)
+* Support for catchcn ensemble run by @weiyuan-jiang in [#645](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/645)
+* Add `CatchCN` vars to rst by @weiyuan-jiang in [#658](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/658)
+* Correction of units for mislabeled `CatchCNCLM45` variables by @gmao-jkolassa in [#660](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/660)
+* Update HISTORY for coupled model applications by @sanAkel in [#359](https://github.com/GEOS-ESM/GEOSgcm_App/pull/359)
+* Update for `gmichem_setup` by @mmanyin in [#361](https://github.com/GEOS-ESM/GEOSgcm_App/pull/361)
+* Update Oserver calculations by @mathomp4 in [#347](https://github.com/GEOS-ESM/GEOSgcm_App/pull/347)
+* Add explicit CONTACT to History by @mathomp4 in [#367](https://github.com/GEOS-ESM/GEOSgcm_App/pull/367)
+* Fix cloning for coupled experiments by @mathomp4 in [#365](https://github.com/GEOS-ESM/GEOSgcm_App/pull/365)
+* Add `GEOSCHEMchem_ExtData.yaml` to list of yaml files for `EXTDATA2G` by @christophkeller in [#368](https://github.com/GEOS-ESM/GEOSgcm_App/pull/368)
+* Update `gmichem_setup` and `stratchem_setup` by @mmanyin in [#270](https://github.com/GEOS-ESM/GEOSgcm_App/pull/370)
+* Bugfix for forecast template and changes for default forecast HISTORY by @sdrabenh in [#373](https://github.com/GEOS-ESM/GEOSgcm_App/pull/373)
+* Add preliminary support for Singularity by @mathomp4 in [#350](https://github.com/GEOS-ESM/GEOSgcm_App/pull/350)
+* Make `GMAO_etc` to depend on `GMAO_perllib` by @mathomp4 in [#297](https://github.com/GEOS-ESM/GMAO_Shared/pull/297)
+* Update EASE grid tile file name by @weiyuan-jiang in [#295](https://github.com/GEOS-ESM/GMAO_Shared/pull/295)
+* Fix `gcmpost.script` logic to generate `xdf.tabl` for collections with `monthly:1` attribute by @sdrabenh in [#300](https://github.com/GEOS-ESM/GMAO_Shared/pull/300)
+* In addition to the apove changes, these additional repositories were upticked as well:
+   1. [cmake v3.19.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.19.0)
+   2. [env v4.6.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.6.0)
+   3. [NCEP_Shared v1.2.1](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.2.1)
+   4. [FVdycoreCubed_GridComp v1.12.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.12.1)
+   5. [fvdycore v1.5.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.5.0)
+
 ## [10.23.0] - 2022-09-12
 
 ### Zero-diff to Previous Release: NO
 ### Restart Changes: NO
 
 ### Non-zero-diff Changes:
-
 * Updates to GOCART-2G. Full list of changes can be fount here: [GOCART v2.1.0](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.1.0)
 * Change carbon species names in most for use with GOCART2G v2.1.0 by @vbuchard in [#624](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/624)
 * Bugfix for correct TKE initialization value in turbulence by @sanAkel in [#603](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/603)
