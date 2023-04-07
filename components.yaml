@@ -67,7 +67,7 @@ FVdycoreCubed_GridComp:
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: wmp_MSTRF_v13
+  tag: feature/pchakrab/aquaplanet-integrate-gtfv3/root-wmp_MSTRF_v13
   develop: geos/develop
 
 gtFV3:
