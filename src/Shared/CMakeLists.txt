@@ -1,7 +1,7 @@
 esma_add_subdirectories (
   MAPL
+  NCEP_Shared  
   GMAO_Shared
-  NCEP_Shared
   )
 
 if (NOT FMS_FOUND)
