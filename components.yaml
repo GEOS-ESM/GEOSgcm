@@ -41,7 +41,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: test-oacc-held-suarez
+  tag: pchakrab/feature/integrate-oacc-held-suarez
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
