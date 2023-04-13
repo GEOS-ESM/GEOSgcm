@@ -57,6 +57,12 @@ fvdycore:
   tag: test-oacc-held-suarez
   develop: geos/develop
 
+gtFV3:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@gtFV3
+  remote: ../pace.git
+  branch: debug/pchakrab/aquaplanet/root-358b60d
+  develop: geos/develop
+
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
