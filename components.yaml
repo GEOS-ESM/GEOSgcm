@@ -41,14 +41,14 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: pchakrab/feature/integrate-oacc-held-suarez
+  branch: pchakrab/feature/integrate-oacc-held-suarez
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: feature/pchakrab/integrate-fv3core/root-v1.2.17-60b7a69
+  branch: feature/pchakrab/integrate-fv3core/root-v1.2.17-60b7a69
   develop: develop
 
 fvdycore:
