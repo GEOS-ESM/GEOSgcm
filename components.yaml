@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  branch: pchakrab/feature/integrate-oacc-held-suarez
+  branch: pchakrab/feature/integrate-fv3core/root-v3.3.1
   develop: main
 
 cmake:
