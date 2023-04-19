@@ -2,6 +2,25 @@
 
 ## Unreleased
 
+## [10.26.0] - 2023-04-19
+
+### Zero-diff to Previous Release: YES except for minor changes below
+### Restart Changes: YES
+
+### Non-zero-diff Changes:
+1. `LONG_NAME` changes for some fields in `catch` restart 
+2. `TR` restart includes additional tracers to be used in R21C
+3. `TKM` field was added to `turb` restart
+
+### Major Changes:
+* This release brings in R21C updates
+* Added new `HISTORY_R21C.rc.tmpl`
+* Clarification of some `LONG_NAME` attributes from surface
+* Added exports for new diagnostics
+* Modified observed precip regridding to use conservative algorithm
+* Modified `ADD_INCS` to properly export wind tendencies
+* Updates for lowest-model-level forcing collections
+
 ## [10.25.1] - 2023-03-08
 
 ### Zero-diff to Previous Release: YES
