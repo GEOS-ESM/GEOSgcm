@@ -60,7 +60,7 @@ fvdycore:
 gtFV3:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@gtFV3
   remote: ../pace.git
-  branch: debug/pchakrab/aquaplanet/root-358b60d
+  tag: aquaplanet-validation-analysis
   develop: geos/develop
 
 GEOSgcm_App:
