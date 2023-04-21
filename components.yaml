@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: aquaplanet-validation-spinup
+  tag: aquaplanet-validation-analysis
   develop: main
 
 cmake:
@@ -61,7 +61,7 @@ GEOSgcm_GridComp:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: aquaplanet-validation-spinup
+  tag: aquaplanet-validation-analysis
   develop: develop
 
 fvdycore:
@@ -73,7 +73,7 @@ fvdycore:
 gtFV3:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@gtFV3
   remote: ../pace.git
-  tag: aquaplanet-validation-spinup
+  tag: aquaplanet-validation-analysis
   develop: geos/develop
 
 GEOSchem_GridComp:
