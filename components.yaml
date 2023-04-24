@@ -160,7 +160,7 @@ RRTMGP:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/GEOS_RadiationShared/@RRTMGP
   remote: ../rte-rrtmgp.git
   branch: feature/pnorris/update-to-RRTMGP-v1.6
-  develop: geos/develop
+  tag: geos/v1.6+1.1.0
   sparse: ./config/RRTMGP.sparse
 
 GEOSgcm_App:
