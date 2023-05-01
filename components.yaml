@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  branch: pchakrab/feature/integrate-fv3core/root-v3.3.1
+  tag: test-oacc-held-suarez-upd
   develop: main
 
 cmake:
@@ -41,7 +41,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  hash: 71f4228cafee4af0f470202db7e4609a0ad4a166
+  tag: test-oacc-held-suarez-upd
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
