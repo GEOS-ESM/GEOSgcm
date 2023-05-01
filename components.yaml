@@ -48,7 +48,7 @@ GEOSgcm_GridComp:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  hash: 0d6750817f215c9db80c61400a2417b2890c1acf
+  tag: test-oacc-held-suarez-upd
   develop: develop
 
 fvdycore:
