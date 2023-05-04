@@ -29,7 +29,7 @@
 | [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v2.2.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv2.2.0)       |
 | [GMI](https://github.com/GEOS-ESM/GMI)                                         | [v1.0.0](https://github.com/GEOS-ESM/GMI/releases/tag/v1.0.0)                                       |
 | [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.8.0](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.8.0)                               |
-| [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [sdr_v2.1.2.2](https://github.com/GEOS-ESM/GOCART/releases/tag/sdr_v2.1.2.2)                        |
+| [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [sdr_v2.1.2.5](https://github.com/GEOS-ESM/GOCART/releases/tag/sdr_v2.1.2.5)                        |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.3](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.3)                         |
 | [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.38.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.38.0)                                    |
 | [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+1.2.0](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B1.2.0)              |
