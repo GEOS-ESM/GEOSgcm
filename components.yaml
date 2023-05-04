@@ -169,12 +169,6 @@ GEOSgcm_App:
   tag: v2.0.0
   develop: develop
 
-UMD_Etc:
-  local: ./src/Applications/@UMD_Etc
-  remote: ../UMD_Etc.git
-  tag: v1.2.0
-  develop: main
-
 CPLFCST_Etc:
   local: ./src/Applications/@CPLFCST_Etc
   remote: ../CPLFCST_Etc.git
