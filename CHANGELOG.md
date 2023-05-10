@@ -2,6 +2,29 @@
 
 ## Unreleased
 
+## [11.0.0] - 2023-05-10
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: YES
+
+### Major Changes:
+* Updated L181 and L91 ak/bk to remove kinks in 1st derivative of DZ. Adjusted top four aks for L137.
+* Brought in changes from Hazardous Weather Testbed tags.
+* Stretched-grid updates.
+* Ability to output to generic X-Y grids (such as Lambert Conformal).
+* New output diagnostics availible.
+* Re-enabling wet scavenging tendency output.
+* Additional tunings for physics.
+* Improvements to `gcm_regress.j` for separate start-stop and layout tests.
+* More details regarding the changes can be found here:
+   * [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.0.0...v2.1.0)
+   * [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.0.0...v2.1.0)
+   * [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.0.0...v2.3.0)
+   * [fvdycore](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/compare/geos/v2.0.0...geos/v2.4.0)
+   * [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared/compare/v1.8.0...v1.9.0)
+   * [GOCART](https://github.com/GEOS-ESM/GOCART/compare/sdr_v2.1.2.1...sdr_v2.1.2.6)
+   * [MAPL](https://github.com/GEOS-ESM/MAPL/compare/v2.35.2...v2.38.1)
+
 ## [11.0.0-rc.1] - 2023-03-10
 
 ### Zero-diff to Previous Release: NO
