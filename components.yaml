@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.8.0
+  tag: v1.9.0
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
