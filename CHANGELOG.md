@@ -2,6 +2,70 @@
 
 ## Unreleased
 
+## [11.0.0] - 2023-05-11
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: YES
+
+### Major Changes:
+* Updated L181 and L91 ak/bk to remove kinks in 1st derivative of DZ. Adjusted top four aks for L137.
+* Brought in changes from Hazardous Weather Testbed tags.
+* Stretched-grid updates.
+* Ability to output to generic X-Y grids (such as Lambert Conformal).
+* New output diagnostics availible.
+* Re-enabling wet scavenging tendency output.
+* Additional tunings for physics.
+* Improvements to `gcm_regress.j` for separate start-stop and layout tests.
+* More details regarding the changes can be found here:
+   * [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.0.0...v2.1.0)
+   * [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.0.0...v2.1.0)
+   * [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.0.0...v2.3.0)
+   * [fvdycore](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/compare/geos/v2.0.0...geos/v2.4.0)
+   * [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared/compare/v1.8.0...v1.9.0)
+   * [GOCART](https://github.com/GEOS-ESM/GOCART/compare/sdr_v2.1.2.1...sdr_v2.1.2.6)
+   * [MAPL](https://github.com/GEOS-ESM/MAPL/compare/v2.35.2...v2.38.1)
+
+## [11.0.0-rc.1] - 2023-03-10
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: YES
+
+### Major Non-zero-diff Changes:
+
+* Refactor MoistGridComp to separate GF, UW, BACM, GFDL and MGB2 codebases into distinct interface modules and leverage shared process level code in a new moist Process_Library module (L72 defaults to BACM_1M).
+* TRB and Moist refactoring support updates to new vertical levels beyond L72 including a move to GF2020 and new cldmicro schemes (L72 defaults to GF-Legacy).
+* GWD code includes new convective background scheme and anisotropic ridge orographic scheme (L72 defaults to old schemes).
+* FV3 updated to support stretched grids and dual hydrostatic/non-hydrostatic build.
+
+## [10.25.1] - 2023-03-08
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-diff Changes:
+
+* Introducing `IGNI` as a new component that integrates fire weather observations into fuel moisture codes and fire behavior indexes based on the CFFWI system by @adarmenov in [#699](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/699) [#710](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/710) [#410](https://github.com/GEOS-ESM/GEOSgcm_App/pull/410)
+* "make boundary conditions" (`make_bcs`) package updates:
+   * Update paths to use a new inputs area by @biljanaorescanin in [#694](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/694)
+   * Cleanup and reorganization of files in `./Raster` by @gmao-rreichle in [#707](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/707)
+   * Add new 0.66 degree MOM6 grid into `make_bcs` by @yvikhlya in [#712](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/712)
+* Cleanup of Catchment-CN constants in `CatchmentCNRst.F90` by @gmao-jkolassa in [#682](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/682)
+* Removed unused code in GWD by @bena-nasa in [#705](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/705)
+* NAS updates:
+   * Allow only Rome builds to run on Romes at NAS by @mathomp4 in [#411](https://github.com/GEOS-ESM/GEOSgcm_App/pull/411)
+   * Add Rome detections to other setup scripts by @mathomp4 in [#414](https://github.com/GEOS-ESM/GEOSgcm_App/pull/414)
+* Got `AERO_PROVIDER=GMICHEM` working with necessary changes to `AGCM.rc` to run with it (aerosol optics files) by @ssteenro in [#416](https://github.com/GEOS-ESM/GEOSgcm_App/pull/416)
+* Additions to `GMAO_ods` to include trace gas support for `CoDAS`. Also includes more OMPS and AMSR support from Ricardo's `rt_g530_1.6.0_merge` tag by @briardew in [#311](https://github.com/GEOS-ESM/GMAO_Shared/pull/311)
+* Move `regrid` and `remap_restarts` from `post` directory to `pre` directory by @mathomp4 in [#3](https://github.com/GEOS-ESM/GEOS_Util/pull/3)
+* Plot updates:
+   * Updates for QBO labeling and added `MOIST` variables by @sdrabenh in [#6](https://github.com/GEOS-ESM/GEOS_Util/pull/6)
+   * `3CH` and `quickplot` updates by @lltakacs in [#8](https://github.com/GEOS-ESM/GEOS_Util/pull/8)
+* Update to Baselibs 7.8.1 (ESMF 8.4.1) to avoid possible memory corruption bug [#533](https://github.com/GEOS-ESM/GEOSgcm/pull/533)
+* Update to ESMA_cmake v3.26.0 to better handle Rome nodes [#531](https://github.com/GEOS-ESM/GEOSgcm/pull/531)
+* Updates to [MAPL 2.35.2](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.35.2) which includes:
+   * Changes from @weiyuan-jiang needed by the land group.
+   * Bug fixes for `ExtData` from @bena-nasa and fixes for UFS folks
+
 ## [10.25.0] - 2023-01-20
 
 ### Zero-diff to Previous Release: Not always
