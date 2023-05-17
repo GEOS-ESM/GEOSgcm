@@ -42,7 +42,7 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.38.1
+  tag: v2.39.1
   develop: develop
 
 FMS:
@@ -136,6 +136,11 @@ mom6:
   tag: geos/v2.1.0
   develop: main
   recurse_submodules: true
+
+mit:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MIT_GEOS5PlugMod/@mit
+  remote: ../MITgcm.git
+  tag: checkpoint67q
 
 cice6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug/@cice6
