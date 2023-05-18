@@ -2,6 +2,32 @@
 
 ## Unreleased
 
+## [11.0.1] - 2023-05-18
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO, with minor exception to solar mentioned below
+
+### Major Changes:
+* Merge in GEOS/mitgcm [#547](https://github.com/GEOS-ESM/GEOSgcm/pull/547) [#724](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/724) [#423](https://github.com/GEOS-ESM/GEOSgcm_App/pull/423) [#22](https://github.com/GEOS-ESM/UMD_Etc/pull/22) [GEOS_OceanGridComp v2.0.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v2.0.0)
+* Add datalake [#557](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/557)
+* Restructure `make_bcs` scripts [#740](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/740)
+* Update `make_bcs` legacy input path [#718 and associated PRs](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/718)
+* Reorganize `make_bcs` output directory [#729](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/729)
+* Bug fixes to address errors that caused fail of start-stop regression test for most Catchment-CN4.5 land tiles [#657](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/657)
+* Bug fix remapping of CatchCN restart variables (`RZMM`, `TGWM`, `SFMM`) [#741](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/741)
+* Updated `AGCM.rc.tmpl` for reordered sw cloud optics file in RRTMGP v1.6 [#446](https://github.com/GEOS-ESM/GEOSgcm_App/pull/446). The INTERNAL state of SOLAR now has `COSZSW`, `CLDxxSW`, and `TAUxxPAR` added to it.
+* Remove Rome detection at NAS, fixes for AWS and unknown [#460](https://github.com/GEOS-ESM/GEOSgcm_App/pull/460)
+* Fixture changes:
+   * [GEOSgcm_App  v2.1.0 => v2.1.2](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.1.0...v2.1.2)
+   * [GEOSgcm_GridComp  v2.0.0 => v2.1.1](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.0.0...v2.1.1)
+   * [MAPL  v2.38.1 => v2.39.1](https://github.com/GEOS-ESM/MAPL/compare/v2.38.1...v2.39.1)
+   * [GEOSradiation_GridComp  v1.3.0 => v1.4.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/compare/v1.3.0...v1.4.0)
+   * [RRTMGP  geos/v1.5+1.0.0 => geos/v1.6+1.1.0](https://github.com/GEOS-ESM/rte-rrtmgp/compare/geos%2Fv1.5%2B1.0.0...geos%2Fv1.6%2B1.1.0)
+   * [GEOS_Util  v1.1.1 => v2.0.0](https://github.com/GEOS-ESM/GEOS_Util/compare/v1.1.1...v2.0.0)
+   * [ESMA_cmake  v3.28.0 => v3.29.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.28.0...v3.29.0)
+   * [ESMA_env  v4.9.1 => v4.9.2](https://github.com/GEOS-ESM/ESMA_env/compare/v4.9.1...v4.9.2)
+   * New [MITgcm](https://github.com/GEOS-ESM/MITgcm)
+
 ## [11.0.0] - 2023-05-11
 
 ### Zero-diff to Previous Release: NO
