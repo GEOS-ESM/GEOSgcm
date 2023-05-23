@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+## [11.0.2] - 2023-05-23
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Changes:
+* Updates related to MITgcm
+  * Uptick to MITgcm to next [checkpoint](https://github.com/GEOS-ESM/MITgcm/commit/628b4a6c855aa63b5a0abd98cd35d549b969caa7)
+  * Uptick to [MOM6 geos/v2.2.0](https://github.com/GEOS-ESM/MOM6/compare/geos/v2.1.0...geos/v2.2.0)
+  * Uptick to [GEOS_OceanGridComp v2.1.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/compare/v2.0.0...v2.1.0)
+
 ## [11.0.1] - 2023-05-18
 
 ### Zero-diff to Previous Release: YES
