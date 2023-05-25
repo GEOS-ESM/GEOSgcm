@@ -136,6 +136,24 @@ DNA:
   branch: main
   develop: main
 
+CARMA:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@CARMA
+  remote: ../CARMA.git
+  branch: main
+  develop: main
+
+GAAS:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GAAS
+  remote: ../GAAS.git
+  branch: main
+  develop: main
+
+GEOSachem:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GEOSachem
+  remote: ../GEOSachem.git
+  branch: main
+  develop: main
+
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
