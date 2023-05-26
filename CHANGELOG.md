@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## [11.0.3] - 2023-05-26
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Changes:
+* Bugfix in `GEOSgcm_GridComp` to enable current Moist to run with binary restarts [#759](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/759)
+* Uptick `ESMA_env` to fix a parallel_build issue with tmpdir at NAS
+* Uptick `FVdycoreCubed_GridComp` to add an interface to `GEOS-gtFV3` as well as adding a return code and verify to DynSetup.
+
 ## [11.0.2] - 2023-05-23
 
 ### Zero-diff to Previous Release: YES
