@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: test-oacc-held-suarez-upd
+  tag: test-oacc-held-suarez-upd-location
   develop: main
 
 cmake:
