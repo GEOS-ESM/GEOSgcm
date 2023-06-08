@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v4.9.2
+  tag: v4.17.0
   develop: main
 
 cmake:
@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.9.0
+  tag: v1.9.1
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -54,20 +54,20 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v2.1.1
+  tag: v2.1.3
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v2.3.0
+  tag: v2.4.4
   develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: geos/v2.4.0
+  tag: geos/v2.4.1
   develop: geos/develop
 
 GEOSchem_GridComp:
@@ -91,7 +91,7 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: sdr_v2.1.2.6
+  tag: sdr_v2.1.2.7
   develop: develop
 
 QuickChem:
@@ -157,7 +157,7 @@ GEOSachem:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v2.1.0
+  tag: v2.1.1
   develop: develop
 
 mom:
@@ -207,7 +207,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v2.1.2
+  tag: v2.2.0
   develop: develop
 
 UMD_Etc:

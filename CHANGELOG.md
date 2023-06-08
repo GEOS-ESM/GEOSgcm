@@ -2,6 +2,46 @@
 
 ## Unreleased
 
+## [11.1.0] - 2023-06-08
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: NO
+
+### Major Non-Zero-Diff Changes:
+* Bugfix for GOCART: In dust and sea-salt, changed dimensions back to `globalCellCountPerDim` since these are needed to determine emission tuning parameters, not to allocate arrays. See changes [here](https://github.com/GEOS-ESM/GOCART/compare/sdr_v2.1.2.6...sdr_v2.1.2.7)
+* Update to use NRL 2022 Solar Cycle File. Therefore, non-zero-diff results from Y2022 onward. [#468](https://github.com/GEOS-ESM/GEOSgcm_App/pull/468)
+* Updates GEOSgcm to use [ESMA_env v4.17.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.17.0). This update mainly brings in ESMF v8.5.0b22 which is a non-zero-diff change for GEOSgcm due to precision changes in grid generation. It also brings in many new features for MAPL development.
+
+### Major Zero-Diff Changes:
+* Updates GEOSgcm to use [FVdycoreCubed_GridComp v2.4.4](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.4.4) and [GFDL_atmos_cubed_sphere geos/v2.4.1](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv2.4.1). These updates bring in fixes for the FV3 standalone allowing it to work correctly. The GEOSgcm is zero-diff to these changes.
+
+## [11.0.4] - 2023-06-07
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Changes:
+* Bugfix for vegetation type `ity` to ignore variable when reading from restart file [#757](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/757)
+* Correct `LONG_NAME` for absorbed and emitted longwave flux in Surface [#764](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/764)
+* Add Held-Suarez GridComp (`GEOShs_GridComp`) [#756](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/756)
+* Use `-O2` optimization in moist with GNU Release [#762](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/762)
+* Fix `COUPLEDIR` at NAS [#469](https://github.com/GEOS-ESM/GEOSgcm_App/pull/469)
+* Add PM fields to HISTORY [#467](https://github.com/GEOS-ESM/GEOSgcm_App/pull/467)
+* Make `CICE4` built as a shared library [#322](https://github.com/GEOS-ESM/GMAO_Shared/pull/322)
+* Brought `LANL_Shared/CICE4/source/ice_therm_vertical.F90` from `feature/atrayano/MITgcm-DYAMOND` branch to reset the ice to default profile under some error conditions [#326](https://github.com/GEOS-ESM/GMAO_Shared/pull/326)
+* Uptick to [GEOS_OceanGridComp v2.1.1](https://github.com/GEOS-ESM/GEOS_OceanGridComp/compare/v2.1.0...v2.1.1)
+* Uptick to [FVdycoreCubed_GridComp v2.4.3](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.4.0...v2.4.3)
+
+## [11.0.3] - 2023-05-26
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Changes:
+* Bugfix in `GEOSgcm_GridComp` to enable current Moist to run with binary restarts [#759](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/759)
+* Uptick `ESMA_env` to fix a parallel_build issue with tmpdir at NAS
+* Uptick `FVdycoreCubed_GridComp` to add an interface to `GEOS-gtFV3` as well as adding a return code and verify to DynSetup.
+
 ## [11.0.2] - 2023-05-23
 
 ### Zero-diff to Previous Release: YES
@@ -575,7 +615,7 @@ Major 0-diff changes include:
 6. Bugfix to detect if saltwater splitting is needed in more files.
 7. Add `IOSERVER` code into `gcm_forecast.tmpl`.
 8. Updates needed for `GEOSadas` to work with MAPL2.
-9. Add GEOS-Chem and HEMCO as separate external repositories. 
+9. Add GEOS-Chem and HEMCO as separate external repositories.
 10. GMI is now set to import RI and RL only when running Cloud-J. This is a work-around for a CTM issue.
 11. Uptick of MAPL and FMS repositories.
 
@@ -618,7 +658,7 @@ Major changes include:
 
 Major changes include:
 
-1. parallel_build.csh now accepts a `-hydrostatic` or `-nonhydrostatic` argument during building. If no argument is provided the model will build hydrostatically as before. Therefore, setup scripts were modified depending on what -DHYDROSTATIC option was supplied to CMake. If -DHYDROSTATIC=ON then it will assume the user wants to use hydrostatic dynamics options and vice versa. 
+1. parallel_build.csh now accepts a `-hydrostatic` or `-nonhydrostatic` argument during building. If no argument is provided the model will build hydrostatically as before. Therefore, setup scripts were modified depending on what -DHYDROSTATIC option was supplied to CMake. If -DHYDROSTATIC=ON then it will assume the user wants to use hydrostatic dynamics options and vice versa.
 2. Fixed decomposition regression for nonhydrostatic model.
 3. Updates from ADAS 5.27 folded into git GMAO_Shared v1.3.9. This brings the GEOSadas code closer to the current GEOSgcm.
 4. Upticks in MOM6, MAPL, env and other repositiories.
@@ -997,10 +1037,10 @@ Major changes are:
 
 1. RRTMG_SW:
    Updates RRTMG_SW in GEOS to be equivalent to RRTMG_SW v4.10. This fix increases the heating rates near the stratospause region and is a non zero-diff change.
-   
+
 2. RAS_NO_NEG:
    Provides an optional flag that ensures RAS results are non-negative. This is an important fix for chemical species that was extremely useful in the Icarus but did not make it into Jason. The fix is "off" by default and therefore zero-diff.
-   
+
 3. Plots:
  * Enable additional upper levels for forecast stats plots.
  * Add QITOT & QLTOT to horizontal plots.
@@ -1035,7 +1075,7 @@ History and ExtData file access and writing. By default, these IO
 servers run on the same resources (i.e., nodes) as the application.
 However, `gcm_setup` and `gcm_run.j` have been altered so that, by
 default, at high-resolution (C180+) the IO servers are on separate nodes
-for performance and memory reasons. 
+for performance and memory reasons.
 
 ## [10.8.0] - 2020-02-06
 
@@ -1090,9 +1130,9 @@ If the new interface is turned on, then the user must provide additional fields 
    The updated algorthm allows for 2 types of REPLAY:
 
      1. Exact     (Uses Archived Increment Files)
-     
+
         Exact REPLAYs identically reproduce (bit-for-bit) a previous GEOS DAS experiment by simply using the archived IAU forcing from the DAS experiment. For these cases, only the CORRECTOR step is employed and is, therefore, as efficient as a stand-alone model run.
-     
+
      2. Regular  (Uses Archived Analysis/Assimilation Files)
 
         Regular REPLAYs are used to mimic the original IAU methodology, i.e., both the PREDICTOR and the CORRECTOR steps are employed. The key difference being that the Analysis is based on archived datasets. These Analyses may be from the GEOS DAS system, or from any other source that is written using the appropriate GEOS DAS ana.eta data format.
@@ -1188,7 +1228,7 @@ StratChem and GMIchem setup scripts to better match gcm_setup.
 
 ### Restart Changes: NO
 
-1. Move to GMAO_Shared 1.0.4 to merge more updates from CVS for plots 
+1. Move to GMAO_Shared 1.0.4 to merge more updates from CVS for plots
 2. Updates for Travis CI
 
 ## [10.3.2 / Jason-3_2] - 2019-08-02
@@ -1242,7 +1282,7 @@ Due to changes in import states and
 diagnostics, these restarts have changed but are passive to the
 prognostic restarts:
 
-* irrad_internal_rst 
+* irrad_internal_rst
 * surf_import_rst
 * tr_internal_rst
 * turb_import_rst
@@ -1317,7 +1357,7 @@ differences)
 * GOCART IMPORT was modified by adding LWI and FRACI to be non-skip
 * TR IMPORT was modified by removing ALL but CLDTT (from RAD), since TR is run after SURF RUN(1,2)
 * Note:  When TR adopts a 2-phase approach, additional IMPORT variables from SURF will need to be included.
- 
+
 ### Model Changes
 
 1. An error was found related to GOCART and TR regarding the TR
@@ -1344,7 +1384,7 @@ due to its second-order influence.
 ### Restart Changes: YES
 
 * `saltwater_internal` ==> `openwater_internal` & `seaicethermo_internal`
- 
+
 ### Model Changes
 
 1. Saltwater split => openwater and seaicethermo.  This means
