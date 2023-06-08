@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## [11.1.0] - 2023-06-08
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: NO
+
+### Major Non-Zero-Diff Changes:
+* Bugfix for GOCART: In dust and sea-salt, changed dimensions back to `globalCellCountPerDim` since these are needed to determine emission tuning parameters, not to allocate arrays. See changes [here](https://github.com/GEOS-ESM/GOCART/compare/sdr_v2.1.2.6...sdr_v2.1.2.7)
+* Update to use NRL 2022 Solar Cycle File. Therefore, non-zero-diff results from Y2022 onward. [#468](https://github.com/GEOS-ESM/GEOSgcm_App/pull/468)
+* Updates GEOSgcm to use [ESMA_env v4.17.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.17.0). This update mainly brings in ESMF v8.5.0b22 which is a non-zero-diff change for GEOSgcm due to precision changes in grid generation. It also brings in many new features for MAPL development.
+
 ## [11.0.4] - 2023-06-07
 
 ### Zero-diff to Previous Release: YES
