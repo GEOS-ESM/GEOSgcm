@@ -91,7 +91,7 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: sdr_v2.1.2.6
+  tag: sdr_v2.1.2.7
   develop: develop
 
 QuickChem:
@@ -171,7 +171,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v2.1.2
+  tag: v2.2.0
   develop: develop
 
 UMD_Etc:
