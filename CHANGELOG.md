@@ -2,6 +2,23 @@
 
 ## Unreleased
 
+## [11.0.4] - 2023-06-07
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Changes:
+* Bugfix for vegetation type `ity` to ignore variable when reading from restart file [#757](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/757)
+* Correct `LONG_NAME` for absorbed and emitted longwave flux in Surface [#764](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/764)
+* Add Held-Suarez GridComp (`GEOShs_GridComp`) [#756](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/756)
+* Use `-O2` optimization in moist with GNU Release [#762](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/762)
+* Fix `COUPLEDIR` at NAS [#469](https://github.com/GEOS-ESM/GEOSgcm_App/pull/469)
+* Add PM fields to HISTORY [#467](https://github.com/GEOS-ESM/GEOSgcm_App/pull/467)
+* Make `CICE4` built as a shared library [#322](https://github.com/GEOS-ESM/GMAO_Shared/pull/322)
+* Brought `LANL_Shared/CICE4/source/ice_therm_vertical.F90` from `feature/atrayano/MITgcm-DYAMOND` branch to reset the ice to default profile under some error conditions [#326](https://github.com/GEOS-ESM/GMAO_Shared/pull/326)
+* Uptick to [GEOS_OceanGridComp v2.1.1](https://github.com/GEOS-ESM/GEOS_OceanGridComp/compare/v2.1.0...v2.1.1)
+* Uptick to [FVdycoreCubed_GridComp v2.4.3](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.4.0...v2.4.3)
+
 ## [11.0.3] - 2023-05-26
 
 ### Zero-diff to Previous Release: YES
