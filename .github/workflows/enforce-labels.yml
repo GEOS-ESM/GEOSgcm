@@ -8,7 +8,7 @@ jobs:
   require-label:
     runs-on: ubuntu-latest
     steps:
-      - uses: mheap/github-action-required-labels@v4
+      - uses: mheap/github-action-required-labels@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -21,7 +21,7 @@ jobs:
   blocking-label:
     runs-on: ubuntu-latest
     steps:
-      - uses: mheap/github-action-required-labels@v4
+      - uses: mheap/github-action-required-labels@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
