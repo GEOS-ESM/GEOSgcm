@@ -1,0 +1,44 @@
+Used this info to generate the feature branches in 4 repos  (feature/mmanyin/CCM_benchmark_G)
+See '>>' for the files that changed
+
+6/12/23 First crack
+
+GEOSgcm                | (t) v10.26.0 (DH)
+>>   | components.yaml: modified, not staged
+     |             EXP: untracked file
+env                    | (t) v4.9.1 (DH)
+cmake                  | (t) v3.26.0 (DH)
+ecbuild                | (t) geos/v1.3.0 (DH)
+NCEP_Shared            | (t) v1.2.1 (DH)
+GMAO_Shared            | (t) v1.7.2 (DH)
+>>   |      GEOS_Shared/getco2.F90: modified, not staged
+     | GEOS_Shared/getco2.F90.orig: untracked file
+GEOS_Util              | (t) v1.0.2 (DH)
+MAPL                   | (t) v2.35.3 (DH)
+FMS                    | (t) geos/2019.01.02+noaff.8 (DH)
+GEOSgcm_GridComp       | (t) v1.18.0 (DH)
+>>   |                                                                                    GEOSagcm_GridComp/GEOSphysics_GridComp/GEOS_PhysicsGridComp.F90: modified, not staged
+>>   |      GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSsurface_GridComp/GEOSland_GridComp/GEOScatchCN_GridComp/GEOScatchCNCLM45_GridComp/CLM45/getco2.F90: modified, not staged
+     | GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSsurface_GridComp/GEOSland_GridComp/GEOScatchCN_GridComp/GEOScatchCNCLM45_GridComp/CLM45/getco2.F90.orig: untracked file
+FVdycoreCubed_GridComp | (t) v1.13.0 (DH)
+fvdycore               | (t) geos/v1.5.0 (DH)
+GEOSchem_GridComp      | (t) v1.13.1 (DH)
+>>   |                           ChemEnv.rc: modified, not staged
+>>   |             GEOS_ChemEnvGridComp.F90: modified, not staged
+>>   |                GEOS_ChemGridComp.F90: modified, not staged
+>>   | Shared/Chem_Shared/Lightning_mod.F90: modified, not staged
+HEMCO                  | (t) geos/v2.2.3 (DH)
+geos-chem              | (t) geos/v13.0.0-rc1 (DH)
+GOCART                 | (t) v2.1.3 (DH)
+QuickChem              | (t) v1.0.0 (DH)
+TR                     | (t) v1.0.0.1 (DH)
+GMI                    | (t) v1.1.0 (DH)
+StratChem              | (t) v1.0.0 (DH)
+GEOS_OceanGridComp     | (t) v1.2.1 (DH)
+mom                    | (t) geos/5.1.0+1.2.0 (DH)
+mom6                   | (t) geos/v2.1.0 (DH)
+cice6                  | (t) geos/v0.0.1 (DH)
+sis2                   | (t) geos/v0.0.1 (DH)
+GEOSradiation_GridComp | (t) v1.2.0 (DH)
+RRTMGP                 | (t) geos/v1.5+1.0.0 (DH)
+GEOSgcm_App            | (t) v1.9.5 (DH)

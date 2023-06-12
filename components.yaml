@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.7.2
+  branch: feature/mmanyin/CCM_benchmark_G
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -54,7 +54,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.18.0
+  branch: feature/mmanyin/CCM_benchmark_G
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -73,7 +73,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.13.1
+  branch: feature/mmanyin/CCM_benchmark_G
   develop: develop
 
 HEMCO:
