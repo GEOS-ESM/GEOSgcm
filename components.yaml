@@ -145,14 +145,14 @@ mit:
 cice6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug/@cice6
   remote: ../CICE.git
-  tag: geos/v0.0.1
-  develop: geos/main
+  tag: geos/v0.0.2
+  develop: geos/develop
 
 icepack:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug/@cice6/icepack
   remote: ../Icepack.git
-  tag: geos/v0.0.1
-  develop: geos/main
+  tag: geos/v0.0.2
+  develop: geos/develop
 
 sis2:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug/@sis2
