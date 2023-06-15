@@ -1,8 +1,24 @@
 version: 2.1
 
+parameters:
+  GHA_Actor:
+    type: string
+    default: ""
+  GHA_Action:
+    type: string
+    default: ""
+  GHA_Event:
+    type: string
+    default: ""
+  GHA_Meta:
+    type: string
+    default: ""
+
 # Anchors to prevent forgetting to update a version
-baselibs_version: &baselibs_version v7.5.0
-bcs_version: &bcs_version v10.23.0
+os_version: &os_version ubuntu20
+baselibs_version: &baselibs_version v7.13.0
+bcs_version: &bcs_version v11.00.0
+tag_build_arg_name: &tag_build_arg_name gcmversion
 
 orbs:
   ci: geos-esm/circleci-tools@1
@@ -20,6 +36,8 @@ workflows:
           baselibs_version: *baselibs_version
           repo: GEOSgcm
           persist_workspace: true # Needs to be true to run fv3/gcm experiment, costs extra
+
+      # Run AMIP GCM (1 hour, no ExtData)
       - ci/run_gcm:
           name: run-GCM-on-<< matrix.compiler >>
           context:
@@ -32,3 +50,62 @@ workflows:
           requires:
             - build-GEOSgcm-on-<< matrix.compiler >>
           repo: GEOSgcm
+
+      # Run Coupled GCM (1 hour, no ExtData)
+      - ci/run_gcm:
+          name: run-coupled-GCM-on-<< matrix.compiler >>
+          context:
+            - docker-hub-creds
+          matrix:
+            parameters:
+              compiler: [gfortran, ifort]
+          baselibs_version: *baselibs_version
+          bcs_version: *bcs_version
+          requires:
+            - build-GEOSgcm-on-<< matrix.compiler >>
+          repo: GEOSgcm
+          gcm_ocean_type: MOM6
+          change_layout: false
+
+  build-and-publish-docker:
+    when:
+      equal: [ "release", << pipeline.parameters.GHA_Event >> ]
+    jobs:
+      - ci/publish-docker:
+          filters:
+            tags:
+              only: /^v.*$/
+          name: publish-intel-docker-image
+          context:
+            - docker-hub-creds
+            - ghcr-creds
+          os_version: *os_version
+          baselibs_version: *baselibs_version
+          bcs_version: *bcs_version
+          container_name: geosgcm
+          mpi_name: intelmpi
+          mpi_version: 2021.6.0
+          compiler_name: intel
+          compiler_version: 2022.1.0
+          image_name: geos-env-bcs
+          tag_build_arg_name: *tag_build_arg_name
+          resource_class: xlarge
+      - ci/publish-docker:
+          filters:
+            tags:
+              only: /^v.*$/
+          name: publish-gcc-docker-image
+          context:
+            - docker-hub-creds
+            - ghcr-creds
+          os_version: *os_version
+          baselibs_version: *baselibs_version
+          bcs_version: *bcs_version
+          container_name: geosgcm
+          mpi_name: openmpi
+          mpi_version: 4.1.4
+          compiler_name: gcc
+          compiler_version: 12.1.0
+          image_name: geos-env-bcs
+          tag_build_arg_name: *tag_build_arg_name
+          resource_class: xlarge
