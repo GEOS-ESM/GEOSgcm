@@ -1,18 +1,18 @@
 GEOSgcm:
   fixture: true
-  develop: main
+  develop: dsl/develop
 
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: 4.9.3+CUDA
-  develop: main
+  tag: 4.9.3+CUDA+GCC-reload
+  develop: dsl/develop
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
   tag: 3.29.0+OpenACC
-  develop: develop
+  develop: dsl/develop
 
 ecbuild:
   local: ./@cmake/@ecbuild
@@ -56,19 +56,19 @@ GEOSgcm_GridComp:
   remote: ../GEOSgcm_GridComp.git
   tag: v2.1.3
   sparse: ./config/GEOSgcm_GridComp.sparse
-  develop: develop
+  develop: dsl/develop
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
   tag: 2.4.3+separate-init
-  develop: develop
+  develop: dsl/develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
   tag: aquaplanet-validation-gcm-v11.0.3
-  develop: geos/develop
+  develop: geos/dsl/develop
 
 gtFV3:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@gtFV3
@@ -98,7 +98,7 @@ GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
   tag: sdr_v2.1.2.6+gocart-data-fix
-  develop: develop
+  develop: feature/pchakrab/aquaplanet
 
 QuickChem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@QuickChem
@@ -128,7 +128,7 @@ GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
   tag: 2.1.1+aquaplanet
-  develop: develop
+  develop: feature/pchakrab/aquaplanet
 
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM_GEOS5PlugMod/@mom
