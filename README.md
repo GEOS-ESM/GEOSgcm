@@ -21,7 +21,7 @@
 | [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v2.5.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.5.0)                    |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)           |
 | [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v2.1.1](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v2.1.1)                        |
-| [GEOS_Util](https://github.com/GEOS-ESM/GEOS_Util)                             | [v2.0.0](https://github.com/GEOS-ESM/GEOS_Util/releases/tag/v2.0.0)                                 |
+| [GEOS_Util](https://github.com/GEOS-ESM/GEOS_Util)                             | [v2.0.2](https://github.com/GEOS-ESM/GEOS_Util/releases/tag/v2.0.2)                                 |
 | [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.12.2](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.12.2)                       |
 | [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v2.2.0](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v2.2.0)                               |
 | [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v2.1.3](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v2.1.3)                          |
