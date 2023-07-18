@@ -42,7 +42,7 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.35.3
+  branch: feature/mmanyin/CCM_benchmark_G
   develop: develop
 
 FMS:
@@ -91,7 +91,7 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: v2.1.3
+  branch: feature/mmanyin/CCM_benchmark_G
   develop: develop
 
 QuickChem:
