@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.30.0
+  tag: v3.31.0
   develop: develop
 
 ecbuild:
@@ -42,7 +42,7 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.39.5
+  tag: v2.39.7
   develop: develop
 
 FMS:
@@ -145,9 +145,14 @@ mit:
 cice6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug/@cice6
   remote: ../CICE.git
-  tag: geos/v0.0.1
-  develop: geos/main
-  recurse_submodules: true
+  tag: geos/v0.0.2
+  develop: geos/develop
+
+icepack:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug/@cice6/icepack
+  remote: ../Icepack.git
+  tag: geos/v0.0.2
+  develop: geos/develop
 
 sis2:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug/@sis2
