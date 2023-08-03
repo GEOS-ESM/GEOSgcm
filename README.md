@@ -32,7 +32,7 @@
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [sdr_v2.1.2.7](https://github.com/GEOS-ESM/GOCART/releases/tag/sdr_v2.1.2.7)                        |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.3](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.3)                         |
 | [Icepack](https://github.com/GEOS-ESM/Icepack)                                 | [geos/v0.0.2](https://github.com/GEOS-ESM/Icepack/releases/tag/geos%2Fv0.0.2)                       |
-| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.40.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.40.0)                                    |
+| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.40.3](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.40.3)                                    |
 | [MITgcm](https://github.com/GEOS-ESM/MITgcm)                                   | [checkpoint68o](https://github.com/GEOS-ESM/MITgcm/releases/tag/checkpoint68o)                      |
 | [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+1.2.0](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B1.2.0)              |
 | [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v2.2.0](https://github.com/GEOS-ESM/MOM6/tree/geos/v2.2.0)                                    |
