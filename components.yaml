@@ -29,14 +29,14 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.9.1
+  tag: v1.9.2
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: v2.0.2
+  tag: v2.0.3
   develop: main
 
 MAPL:
