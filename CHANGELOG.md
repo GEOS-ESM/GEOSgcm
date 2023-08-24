@@ -9,29 +9,28 @@
 
 ### Major Zero-Diff Changes:
 
-* Add GEOS-Chem washout parameterization to MOIST by @christophkeller in https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/797
-* Add data atmosphere for ocean by @mfmehari in https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/799
-* Move to `MAPL_GetResource` in Moist GC by @mathomp4 in https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/796
-* Remove convert script and clean some dead variables by @mathomp4 in https://github.com/GEOS-ESM/GEOSgcm_App/pull/504
-* Add copy of `gwd_internal_rst` to SCM by @mathomp4 in https://github.com/GEOS-ESM/GEOSgcm_App/pull/499
-* Changes to better support singularity by @AnikMumssen21 in https://github.com/GEOS-ESM/GEOSgcm_App/pull/488
-* Sensible defaults for stretched grid by @mathomp4 in https://github.com/GEOS-ESM/GEOSgcm_App/pull/501
-* fixed the cmpz plots for rms and anomaly correlation by @Jcampbell-8 in https://github.com/GEOS-ESM/GEOS_Util/pull/31
-* Eliminate accidental post-processing of *.nc4-partial files by @sdrabenh in https://github.com/GEOS-ESM/GEOS_Util/pull/32
+* Add GEOS-Chem washout parameterization to MOIST [#797](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/797)
+* Add data atmosphere for ocean [#799](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/799)
+* Move to `MAPL_GetResource` in Moist GC [#796](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/796)
+* Remove convert script and clean some dead variables [#504](https://github.com/GEOS-ESM/GEOSgcm_App/pull/504)
+* Add copy of `gwd_internal_rst` to SCM [#499](https://github.com/GEOS-ESM/GEOSgcm_App/pull/499)
+* Changes to better support singularity [#488](https://github.com/GEOS-ESM/GEOSgcm_App/pull/488)
+* Sensible defaults for stretched grid [#501](https://github.com/GEOS-ESM/GEOSgcm_App/pull/501)
+* Fixed the cmpz plots for rms and anomaly correlation [#31](https://github.com/GEOS-ESM/GEOS_Util/pull/31)
+* Eliminate accidental post-processing of `*.nc4-partial` files [#32](https://github.com/GEOS-ESM/GEOS_Util/pull/32)
 * Update `CircleCI` to use Orb Default Baselibs and BCs for multiple repositories
-
 * Fixture changes:
    * ESMA_cmake  [v3.31.0 => v3.31.1](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.31.0...v3.31.1)
-   * MAPL  [v2.40.0 => v2.40.3](https://github.com/GEOS-ESM/MAPL/compare/v2.40.0...v2.40.3)
-   * GEOS_Util  [v2.0.2 => v2.0.3](https://github.com/GEOS-ESM/GEOS_Util/compare/v2.0.2...v2.0.3)
    * GMAO_Shared  [v1.9.1 => v1.9.2](https://github.com/GEOS-ESM/GMAO_Shared/compare/v1.9.1...v1.9.2)
+   * GEOS_Util  [v2.0.2 => v2.0.3](https://github.com/GEOS-ESM/GEOS_Util/compare/v2.0.2...v2.0.3)
+   * MAPL  [v2.40.0 => v2.40.3](https://github.com/GEOS-ESM/MAPL/compare/v2.40.0...v2.40.3)
    * GEOSgcm_GridComp  [v2.1.4 => v2.1.5](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.1.4...v2.1.5)
-   * GEOSgcm_App  [v2.2.1 => v2.2.2](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.2.1...v2.2.2)
+   * FVdycoreCubed_GridComp  [v2.5.0 => v2.6.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.5.0...v2.6.0)
    * GEOS_OceanGridComp  [v2.1.1 => v2.1.2](https://github.com/GEOS-ESM/GEOS_OceanGridComp/compare/v2.1.1...v2.1.2)
    * MOM6  [geos/v2.2.0 => geos/v2.2.1](https://github.com/GEOS-ESM/MOM6/compare/geos/v2.2.0...geos/v2.2.1)
-   * FVdycoreCubed_GridComp  [v2.5.0 => v2.6.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.5.0...v2.6.0)
    * icepack  [geos/v0.0.2 => geos/v0.0.3](https://github.com/GEOS-ESM/Icepack/compare/geos/v0.0.1...geos/v0.0.3)
    * GEOSradiation_GridComp  [v1.4.0 => v1.5.1](https://github.com/GEOS-ESM/GEOSradiation_GridComp/compare/v1.4.0...v1.5.1)
+   * GEOSgcm_App  [v2.2.1 => v2.2.2](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.2.1...v2.2.2)
 
 
 ## [11.1.1] - 2023-07-28
