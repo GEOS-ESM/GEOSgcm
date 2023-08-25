@@ -147,6 +147,7 @@ cice6:
   remote: ../CICE.git
   tag: geos/v0.0.2
   develop: geos/develop
+  ignore_submodules: true
 
 icepack:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug/@cice6/icepack
