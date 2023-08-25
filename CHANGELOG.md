@@ -2,6 +2,76 @@
 
 ## Unreleased
 
+## [11.1.2] - 2023-08-24
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+
+* Add GEOS-Chem washout parameterization to MOIST [#797](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/797)
+* Add data atmosphere for ocean [#799](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/799)
+* Move to `MAPL_GetResource` in Moist GC [#796](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/796)
+* Remove convert script and clean some dead variables [#504](https://github.com/GEOS-ESM/GEOSgcm_App/pull/504)
+* Add copy of `gwd_internal_rst` to SCM [#499](https://github.com/GEOS-ESM/GEOSgcm_App/pull/499)
+* Changes to better support singularity [#488](https://github.com/GEOS-ESM/GEOSgcm_App/pull/488)
+* Sensible defaults for stretched grid [#501](https://github.com/GEOS-ESM/GEOSgcm_App/pull/501)
+* Fixed the cmpz plots for rms and anomaly correlation [#31](https://github.com/GEOS-ESM/GEOS_Util/pull/31)
+* Eliminate accidental post-processing of `*.nc4-partial` files [#32](https://github.com/GEOS-ESM/GEOS_Util/pull/32)
+* Update `CircleCI` to use Orb Default Baselibs and BCs for multiple repositories
+* Fixture changes:
+   * ESMA_cmake  [v3.31.0 => v3.31.1](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.31.0...v3.31.1)
+   * GMAO_Shared  [v1.9.1 => v1.9.2](https://github.com/GEOS-ESM/GMAO_Shared/compare/v1.9.1...v1.9.2)
+   * GEOS_Util  [v2.0.2 => v2.0.3](https://github.com/GEOS-ESM/GEOS_Util/compare/v2.0.2...v2.0.3)
+   * MAPL  [v2.40.0 => v2.40.3](https://github.com/GEOS-ESM/MAPL/compare/v2.40.0...v2.40.3)
+   * GEOSgcm_GridComp  [v2.1.4 => v2.1.5](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.1.4...v2.1.5)
+   * FVdycoreCubed_GridComp  [v2.5.0 => v2.6.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.5.0...v2.6.0)
+   * GEOS_OceanGridComp  [v2.1.1 => v2.1.2](https://github.com/GEOS-ESM/GEOS_OceanGridComp/compare/v2.1.1...v2.1.2)
+   * MOM6  [geos/v2.2.0 => geos/v2.2.1](https://github.com/GEOS-ESM/MOM6/compare/geos/v2.2.0...geos/v2.2.1)
+   * icepack  [geos/v0.0.2 => geos/v0.0.3](https://github.com/GEOS-ESM/Icepack/compare/geos/v0.0.1...geos/v0.0.3)
+   * GEOSradiation_GridComp  [v1.4.0 => v1.5.1](https://github.com/GEOS-ESM/GEOSradiation_GridComp/compare/v1.4.0...v1.5.1)
+   * GEOSgcm_App  [v2.2.1 => v2.2.2](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.2.1...v2.2.2)
+
+
+## [11.1.1] - 2023-07-28
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+
+* Fix GFDL Regression issue [#782](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/782)
+* Fixes for stretched grid [#476](https://github.com/GEOS-ESM/GEOSgcm_App/pull/476)
+* Add new sea ice components for coupling to `CICE6` [#772](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/772) [#478](https://github.com/GEOS-ESM/GEOSgcm_App/pull/478)
+* Set coupled ocean DT to heartbeat (for now) [#483](https://github.com/GEOS-ESM/GEOSgcm_App/pull/483)
+* Fix issue with Ocean `TerminateImport` in Surf [#789](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/789)
+* Faster river routing [#774](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/774)
+* Add `CATCHMENT_SPINUP` mode (remove snow every Aug 1 in NH or Feb 1 in SH) [#751](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/751)
+* Bug fix to correct vegetation fraction assessment in `GetIds_carbon` (getids.F90) [#770](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/770)
+* CO2 for CatchCN [#771](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/771)
+* Added support for `READ_RESTART_BY_FACE` option [#459](https://github.com/GEOS-ESM/GEOSgcm_App/pull/459)
+* Moving catchcn CO2 file to bcs dir [#481](https://github.com/GEOS-ESM/GEOSgcm_App/pull/481)
+* Boundary conditions cleanup [#786](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/786)
+* Cleanup of `make_bcs` tools that generate raster and tile files [#763](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/763)
+* Fixes for SCM Model [#725](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/725)
+* Add new `SCM` cases [#494](https://github.com/GEOS-ESM/GEOSgcm_App/pull/494)
+* Update to new SCM file dir [#477](https://github.com/GEOS-ESM/GEOSgcm_App/pull/477)
+* Fix for cloning in setup scripts [#492](https://github.com/GEOS-ESM/GEOSgcm_App/pull/492)
+* Add `gwd_internal_rst` to `gcm_regress.j` [#475](https://github.com/GEOS-ESM/GEOSgcm_App/pull/475)
+* Update `WSUB_ExtData.yaml`[#777]( https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/777)
+* Move from `FLAP` to `fArgParse` [#441](https://github.com/GEOS-ESM/GEOSgcm_App/pull/441)
+* Updates for Singularity: Add site option [#484](https://github.com/GEOS-ESM/GEOSgcm_App/pull/484)
+* Remove Haswell at NCCS, other cleanup [#489](https://github.com/GEOS-ESM/GEOSgcm_App/pull/489)
+* Fixture changes:
+   * ESMA_env  [v4.17.0 => v4.19.0](https://github.com/GEOS-ESM/ESMA_env/compare/v4.17.0...v4.19.0)
+   * ESMA_cmake  [v3.29.0 => v3.31.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.29.0...v3.31.0)
+   * GEOS_Util  [v2.0.0 => v2.0.2](https://github.com/GEOS-ESM/GEOS_Util/compare/v2.0.0...v2.0.2)
+   * MAPL  [v2.39.1 => v2.40.0](https://github.com/GEOS-ESM/MAPL/compare/v2.39.1...v2.40.0)
+   * GEOSgcm_GridComp  [v2.1.3 => v2.1.4](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.1.3...v2.1.4)
+   * GEOSgcm_App  [v2.2.0 => v2.2.1](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.2.0...v2.2.1)
+   * FVdycoreCubed_GridComp  [v2.4.4 => v2.5.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.4.4...v2.5.0)
+   * New [icepack](https://github.com/GEOS-ESM/Icepack)
+
 ## [11.1.0] - 2023-06-08
 
 ### Zero-diff to Previous Release: NO
