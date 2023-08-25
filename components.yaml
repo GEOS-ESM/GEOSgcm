@@ -73,7 +73,7 @@ fvdycore:
 gtFV3:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@gtFV3
   remote: ../pace.git
-  tag: aquaplanet-validation-analysis
+  tag: updated-dace-build
   develop: geos/develop
 
 GEOSchem_GridComp:
