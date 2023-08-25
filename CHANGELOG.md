@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+## [11.2.0] - 2023-08-25
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: YES
+
+### Major Non-Zero-Diff Changes:
+* Extensive updates to the SHOC-EDMF turbulence parameterizations in [#783](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/783)
+* Fixes for [UW and Turb bugs](https://github.com/GEOS-ESM/GEOSgcm_GridComp/issues/800) in [#802](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/802)
+* Uptick to [GOCART v2.2.1](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.2.1) with QFED path update.
+* Uptick to [GEOSchem_GridComp v1.13.1](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.13.1) with QFED path update.
+* Uptick to [TR v1.1.0](https://github.com/GEOS-ESM/TR/releases) which is non-zero-diff for certain tracers.
+* Uptick to [GMI v1.1.0](https://github.com/GEOS-ESM/GMI/releases/tag/v1.1.0)
+
+
 ## [11.1.2] - 2023-08-24
 
 ### Zero-diff to Previous Release: YES
