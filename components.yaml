@@ -73,7 +73,7 @@ fvdycore:
 gtFV3:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@gtFV3
   remote: ../pace.git
-  tag: updated-dace-gtgpu-build
+  tag: updated-dace-gtgpu-builds
   develop: geos/develop
 
 GEOSchem_GridComp:
