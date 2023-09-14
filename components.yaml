@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: 4.9.3+CUDA+GCC-reload
+  tag: 4.9.3+CUDA+GCC-reload+Updated-GT4Py/DaCe
   develop: dsl/develop
 
 cmake:
