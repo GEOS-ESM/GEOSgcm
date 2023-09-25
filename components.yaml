@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v4.19.0
+  branch: feature/mathomp4/updates-for-milan
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.31.1
+  branch: feature/mathomp4/updates-for-milan
   develop: develop
 
 ecbuild:
@@ -61,7 +61,7 @@ GEOSgcm_GridComp:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v2.6.0
+  branch: feature/mathomp4/updates-for-milan
   develop: develop
 
 fvdycore:
@@ -177,7 +177,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v2.2.2
+  branch: feature/mathomp4/updates-for-milan
   develop: develop
 
 UMD_Etc:
