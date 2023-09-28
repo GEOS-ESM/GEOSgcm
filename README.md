@@ -12,7 +12,7 @@
 
 | Repository                                                                     | Version                                                                                             |
 | ----------                                                                     | -------                                                                                             |
-| [CICE](https://github.com/GEOS-ESM/CICE)                                       | [geos/v0.0.2](https://github.com/GEOS-ESM/CICE/releases/tag/geos%2Fv0.0.2)                          |
+| [CICE](https://github.com/GEOS-ESM/CICE)                                       | [geos/v0.1.0](https://github.com/GEOS-ESM/CICE/releases/tag/geos%2Fv0.1.0)                          |
 | [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                               |
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v1.3.0](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.3.0)                       |
 | [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.34.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.34.0)                              |
