@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+## [11.3.0] - 2023-09-29
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: NO
+
+### Major Non-Zero-Diff Changes:
+* Change default parameters to reduce 900mb T/Q forecast RMSE [#835](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/835)
+* Updates to `fv_mapz.F90` in fvdycore  [v2.5.0 => v2.6.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/compare/geos/v2.5.0...geos/v2.6.0)
+
 ## [11.2.1] - 2023-09-29
 
 ### Zero-diff to Previous Release: YES
