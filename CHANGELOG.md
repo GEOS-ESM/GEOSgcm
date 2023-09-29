@@ -2,6 +2,39 @@
 
 ## Unreleased
 
+## [11.2.1] - 2023-09-29
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+* Updates from `feature/wmputman/hwt_spring_exp` [#828](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/828) [#515](https://github.com/GEOS-ESM/GEOSgcm_App/pull/515) [#75](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/pull/75) [#253](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/pull/253)
+* Enhancements for MODIS-based snow albedo over land [#687](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/687)
+* Add stretched Cube Sphere option to BCS package [#801](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/801)
+* Combine stretched CS grid and regular CS grid [#817](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/817)
+* Correct `LONG_NAME` of `CDCR2` [#818](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/818)
+* Rename coupled grids [#695](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/695)
+* Allow for tolerance option for SSTs and seaice fractions [#823](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/823)
+* Enable `C-EVP` in `CICE6` [#824](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/824)
+* `HISTORY.rc tmpl` for `GEOS-MITgcm` coupled model [#510](https://github.com/GEOS-ESM/GEOSgcm_App/pull/510)
+* More cleanup of app scripts and add simtime to logging [#508](https://github.com/GEOS-ESM/GEOSgcm_App/pull/508)
+* Fix `WSUB` use in other scripts [#512](https://github.com/GEOS-ESM/GEOSgcm_App/pull/512)
+* Fix doubled logger output [#514](https://github.com/GEOS-ESM/GEOSgcm_App/pull/514)
+* Bugfix for handling `GAAS` in replays and forecasts [#518](https://github.com/GEOS-ESM/GEOSgcm_App/pull/518)
+* Fixture changes:
+   * ESMA_cmake  [v3.31.1 => v3.34.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.31.1...v3.34.0)
+   * GMAO_Shared  [v1.9.2 => v1.9.4](https://github.com/GEOS-ESM/GMAO_Shared/compare/v1.9.2...v1.9.4)
+   * MAPL  [v2.40.3 => v2.41.0](https://github.com/GEOS-ESM/MAPL/compare/v2.40.3...v2.41.0)
+   * GEOSgcm_GridComp  [v2.2.0 => v2.2.1](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.2.0...v2.2.1)
+   * FVdycoreCubed_GridComp  [v2.6.0 => v2.7.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.6.0...v2.7.0)
+   * fvdycore  [v2.4.1 => v2.5.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/compare/geos/v2.4.1...geos/v2.5.0)
+   * GEOS_OceanGridComp  [v2.1.2 => v2.1.3](https://github.com/GEOS-ESM/GEOS_OceanGridComp/compare/v2.1.2...v2.1.3)
+   * MOM6  [geos/v2.2.1 => geos/v2.2.2](https://github.com/GEOS-ESM/MOM6/compare/geos/v2.2.1...geos/v2.2.2)
+   * CICE6  [geos/v0.0.2 => geos/v0.1.0](https://github.com/GEOS-ESM/CICE/compare/geos/v0.0.2...geos/v0.1.0)
+   * icepack  [geos/v0.0.3 => geos/v0.1.0](https://github.com/GEOS-ESM/Icepack/compare/geos/v0.0.3...geos/v0.1.0)
+   * GEOSgcm_App  [v2.2.2 => v2.2.3](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.2.2...v2.2.3)
+
+
 ## [11.2.0] - 2023-08-25
 
 ### Zero-diff to Previous Release: NO
