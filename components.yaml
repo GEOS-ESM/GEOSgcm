@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  branch: feature/mathomp4/updates-for-milan
+  tag: v4.20.0
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  branch: feature/mathomp4/updates-for-milan
+  tag: v3.35.0
   develop: develop
 
 ecbuild:
