@@ -74,7 +74,7 @@ GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
   tag: v1.13.1
-  develop: develop
+  develop: feature/rreichle/snow_check_after_apply_LDAS_incr
 
 HEMCO:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Shared/HEMCO/@HEMCO
