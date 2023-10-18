@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  branch: feature/mathomp4/updates-for-milan
+  tag: v1.9.5
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
