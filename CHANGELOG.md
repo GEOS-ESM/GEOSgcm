@@ -7,7 +7,7 @@
 ### Zero-diff to Previous Release: YES
 ### Restart Changes: NO
 
-### Major Non-Zero-Diff Changes:
+### Major Zero-Diff Changes:
 * Updates for SCU17 [#669](https://github.com/GEOS-ESM/GEOSgcm/pull/669)
 * Patched GF2020: reverting order of plumes and allowing plume overlap and consistent autoconversion with classic GF [#838](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/838)
 * Enable `FV3_CONFIG: HWT` for NH runs, `CONVPAR_OPTION: NONE` for ultra-high-res [#521](https://github.com/GEOS-ESM/GEOSgcm_App/pull/521)
