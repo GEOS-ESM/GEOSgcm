@@ -22,7 +22,7 @@
    * MAPL  [v2.41.0 => v2.41.1](https://github.com/GEOS-ESM/MAPL/compare/v2.41.0...v2.41.1)
    * GEOSgcm_GridComp  [v2.3.0 => v2.3.1](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.3.0...v2.3.1)
    * FVdycoreCubed_GridComp  [v2.7.0 => v2.8.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.7.0...v2.8.0)
-   * CICE6  [geos/v0.1.0 => geos/v0.1.1](https://github.com/GEOS-ESM/CICE/compare/geos/v0.1.0...geos/v0.1.1)
+   * CICE6  [geos/v0.1.0 => geos/v0.1.1](https://github.com/GEOS-ESM/CICE/compare/geos/v0.1.0...geos/v0.1.2)
    * icepack  [geos/v0.1.0 => geos/v0.1.1](https://github.com/GEOS-ESM/Icepack/compare/geos/v0.1.0...geos/v0.1.1)
    * GEOSgcm_App  [v2.2.3 => v2.2.5](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.2.3...v2.2.5)
 
