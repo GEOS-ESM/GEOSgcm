@@ -4,7 +4,7 @@
 
 ## [11.3.1] - 2023-10-20
 
-### Zero-diff to Previous Release: NO
+### Zero-diff to Previous Release: YES
 ### Restart Changes: NO
 
 ### Major Non-Zero-Diff Changes:
