@@ -16,7 +16,7 @@
 | [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                               |
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v1.3.0](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.3.0)                       |
 | [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.35.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.35.0)                              |
-| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v4.20.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.20.0)                                |
+| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v4.20.3](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.20.3)                                |
 | [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.8](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.8) |
 | [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v2.8.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.8.0)                    |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)           |
@@ -53,8 +53,19 @@
 In your `.bashrc` or `.tcshrc` or other rc file add a line:
 
 ##### NCCS
+
+NCCS currently has two different OSs. So you'll need to use different modulefiles depending on which OS you are using.
+
+###### SLES 12
+
 ```
 module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
+```
+
+###### SLES 15
+
+```
+module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES15
 ```
 
 ##### NAS
@@ -147,6 +158,15 @@ you choose.
 ### Single Step Building of the Model
 
 If all you wish is to build the model, you can run `parallel_build.csh` from a head node. Doing so will checkout all the external repositories of the model and build it. When done, the resulting model build will be found in `build/` and the installation will be found in `install/` with setup scripts like `gcm_setup` and `fvsetup` in `install/bin`.
+
+#### Building at NCCS (Multiple OSs)
+
+In all the examples below, NCCS builds will act differently. Because NCCS currently has two different OSs, when you use
+`parallel_build.csh` you will see that the `build` and `install` directories will be appended with `-SLES12` or `-SLES15` depending
+on where you submitted to. When NCCS moves to a single OS again, this will be removed.
+
+Note that if you use the `-builddir` and `-installdir` options, you can override this behavior and no OS will be automatically
+appended.
 
 #### Develop Version of GEOS GCM
 
