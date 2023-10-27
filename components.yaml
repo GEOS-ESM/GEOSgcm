@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v4.20.4
+  tag: v4.20.5
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.35.0
+  tag: v3.36.0
   develop: develop
 
 ecbuild:
