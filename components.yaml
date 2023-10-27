@@ -166,7 +166,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.9.5
+  branch: feature/mmanyin/CCM_benchmark_G
   develop: develop
 
 UMD_Etc:
