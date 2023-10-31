@@ -177,7 +177,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v2.2.5
+  tag: v2.2.6
   develop: develop
 
 UMD_Etc:
