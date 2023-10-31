@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+## [11.3.2] - 2023-10-31
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+* Changes were made in this release to accomodate the newly availible SCU17 at NCCS, which introduced two separate operating systems. When running at NCCS, the `parallel_build.csh` script was changed to append `-SLES12` to the `build` and `install` directories for Skylake and Cascade Lake nodes running SLES 12. Alternatively, `parallel_build.csh -mil` can be specified to build on the Milan nodes running SLES 15. In that case, `-SLES15` will be appended to the `build` and `install` directories to avoid confusion and ensure compatibility with each respective platform. The following changes were made to the repositories to accomodate these updates:
+   * ESMA_env  [v4.20.0 => v4.20.6](https://github.com/GEOS-ESM/ESMA_env/compare/v4.20.0...v4.20.6)
+   * ESMA_cmake  [v3.35.0 => v3.36.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.35.0...v3.36.0)
+   * MAPL  [v2.41.1 => v2.42.0](https://github.com/GEOS-ESM/MAPL/compare/v2.41.1...v2.42.0)
+   * GEOSgcm_App  [v2.2.5 => v2.2.6](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.2.5...v2.2.6)
+
 ## [11.3.1] - 2023-10-20
 
 ### Zero-diff to Previous Release: YES
