@@ -2,6 +2,42 @@
 
 ## Unreleased
 
+## [11.3.2] - 2023-10-31
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+* Changes were made in this release to accomodate the newly availible SCU17 at NCCS, which introduced two separate operating systems. When running at NCCS, the `parallel_build.csh` script was changed to append `-SLES12` to the `build` and `install` directories for Skylake and Cascade Lake nodes running SLES 12. Alternatively, `parallel_build.csh -mil` can be specified to build on the Milan nodes running SLES 15. In that case, `-SLES15` will be appended to the `build` and `install` directories to avoid confusion and ensure compatibility with each respective platform. The following changes were made to the repositories to accomodate these updates:
+   * ESMA_env  [v4.20.0 => v4.20.6](https://github.com/GEOS-ESM/ESMA_env/compare/v4.20.0...v4.20.6)
+   * ESMA_cmake  [v3.35.0 => v3.36.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.35.0...v3.36.0)
+   * MAPL  [v2.41.1 => v2.42.0](https://github.com/GEOS-ESM/MAPL/compare/v2.41.1...v2.42.0)
+   * GEOSgcm_App  [v2.2.5 => v2.2.6](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.2.5...v2.2.6)
+
+## [11.3.1] - 2023-10-20
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+* Updates for SCU17 [#669](https://github.com/GEOS-ESM/GEOSgcm/pull/669)
+* Patched GF2020: reverting order of plumes and allowing plume overlap and consistent autoconversion with classic GF [#838](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/838)
+* Enable `FV3_CONFIG: HWT` for NH runs, `CONVPAR_OPTION: NONE` for ultra-high-res [#521](https://github.com/GEOS-ESM/GEOSgcm_App/pull/521)
+* Add in missing `ESMF_ConfigSetAttribute` for `SNOW_ALBEDO_INFO` [#826](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/826)
+* Add checks on snow states after application of LDAS increments; StieglitzSnow cleanup [#834](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/834)
+* Add support for cice6 dumping intermediate restart in `CICE_plug` [#841](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/841)
+* Fixes for running coupled on macOS [#526](https://github.com/GEOS-ESM/GEOSgcm_App/pull/526)
+* Fixture changes:
+   * ESMA_env  [v4.19.0 => v4.20.0](https://github.com/GEOS-ESM/ESMA_env/compare/v4.19.0...v4.20.0)
+   * ESMA_cmake  [v3.34.0 => v3.35.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.34.0...v3.35.0)
+   * GMAO_Shared  [v1.9.4 => v1.9.5](https://github.com/GEOS-ESM/GMAO_Shared/compare/v1.9.4...v1.9.5)
+   * MAPL  [v2.41.0 => v2.41.1](https://github.com/GEOS-ESM/MAPL/compare/v2.41.0...v2.41.1)
+   * GEOSgcm_GridComp  [v2.3.0 => v2.3.1](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.3.0...v2.3.1)
+   * FVdycoreCubed_GridComp  [v2.7.0 => v2.8.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.7.0...v2.8.0)
+   * CICE6  [geos/v0.1.0 => geos/v0.1.1](https://github.com/GEOS-ESM/CICE/compare/geos/v0.1.0...geos/v0.1.2)
+   * icepack  [geos/v0.1.0 => geos/v0.1.1](https://github.com/GEOS-ESM/Icepack/compare/geos/v0.1.0...geos/v0.1.1)
+   * GEOSgcm_App  [v2.2.3 => v2.2.5](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.2.3...v2.2.5)
+
 ## [11.3.0] - 2023-09-29
 
 ### Zero-diff to Previous Release: NO
