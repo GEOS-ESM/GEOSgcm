@@ -103,7 +103,7 @@ QuickChem:
 TR:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@TR
   remote: ../TR.git
-  tag: v1.0.0.1
+  branch: feature/mmanyin/CCM_benchmark_G
   develop: develop
 
 GMI:
