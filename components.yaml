@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.9.5
+  tag: v1.9.6
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -67,7 +67,7 @@ FVdycoreCubed_GridComp:
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: geos/v2.6.0
+  tag: geos/v2.7.0
   develop: geos/develop
 
 GEOSchem_GridComp:
