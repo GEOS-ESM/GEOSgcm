@@ -36,7 +36,7 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: v2.0.3
+  tag: v2.0.4
   develop: main
 
 MAPL:
@@ -54,7 +54,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v2.3.1
+  tag: v2.3.2
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -177,7 +177,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v2.2.6
+  tag: v2.2.7
   develop: develop
 
 UMD_Etc:
