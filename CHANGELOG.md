@@ -2,6 +2,29 @@
 
 ## Unreleased
 
+## [11.3.3] - 2023-11-17
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+* Merge branches `feature/wmputman/hwt_spring_exp` and `feature/donifan/KrokMG3` into `develop` [#855](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/855)
+   * Merges in the latest changes of MGB2_2M code
+   * More updates to GF2020 and GFDL
+* Update DTs in `gcm_setup` for non-stock configurations [#537](https://github.com/GEOS-ESM/GEOSgcm_App/pull/537)
+* Updated/added command line feature for `remap_restarts.py` [#19](https://github.com/GEOS-ESM/GEOS_Util/pull/19)
+* Further cleanup of boundary conditions [#846](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/846)
+* Minor land related code cleanup (coeffsib) [#845](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/845)
+* Add fv namelist entry for AIST work [#696](https://github.com/GEOS-ESM/GEOSgcm/pull/696)
+* Fixture changes:
+   * NCEP_Shared  [v1.2.1 => v1.3.0](https://github.com/GEOS-ESM/NCEP_Shared/compare/v1.2.1...v1.3.0)
+   * GMAO_Shared  [v1.9.5 => v1.9.6](https://github.com/GEOS-ESM/GMAO_Shared/compare/v1.9.5...v1.9.6)
+   * GEOS_Util  [v2.0.3 => v2.0.4](https://github.com/GEOS-ESM/GEOS_Util/compare/v2.0.3...v2.0.4)
+   * GEOSgcm_GridComp  [v2.3.1 => v2.3.2](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.3.1...v2.3.2)
+   * FVdycoreCubed_GridComp  [v2.8.0 => v2.9.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.8.0...v2.9.0)
+   * fvdycore  [v2.6.0 => v2.7.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/compare/geos/v2.6.0...geos/v2.7.0)
+   * GEOSgcm_App  [v2.2.6 => v2.2.7](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.2.6...v2.2.7)
+
 ## [11.3.2] - 2023-10-31
 
 ### Zero-diff to Previous Release: YES
