@@ -54,8 +54,14 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v2.3.2
+  branch: feature/mathomp4/separate-ncar-gwd
   sparse: ./config/GEOSgcm_GridComp.sparse
+  develop: develop
+
+ncar_gwd:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSgwd_GridComp/@ncar_gwd
+  remote: ../ncar_gwd.git
+  branch: main
   develop: develop
 
 FVdycoreCubed_GridComp:
