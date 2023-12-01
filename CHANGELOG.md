@@ -2,6 +2,31 @@
 
 ## Unreleased
 
+## [11.4.0] - 2023-12-01
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: YES (see below)
+
+* Updates to moist from `feature/wmputman/KM_v11_3_2_Moist_WMP` as of 2023-11-21 [#858](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/858). The following restarts have changed:
+   1. `moist_import_checkpoint` was cleaned up to reduce the file size by removing the following variables:
+   DQVDTDYN, DTDTDYN, OMEGA, PHIS, PLE, PLE_DYN_IN, PREF, QV_DYN_IN, T, TAUOROX, TAUOROY, T_DYN_IN, U, U_DYN_IN, V, V_DYN_IN, W, ZLE
+   2. `gocart_import_checkpoint` fixed variable: QCTOT
+* Use 3 specific `MOM6` resolutions [#542](https://github.com/GEOS-ESM/GEOSgcm_App/pull/542)
+* Added support for `CICE6` thermo state rewind for replay [#854](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/854)
+* New release of fvdycore [v2.8.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv2.8.0) fixed non-layout-reproducibility at C180 and higher which was introduced in v2.
+* Bugfix in boundary conditions for coupled T3MOM6 option [#861](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/861)
+* Add ocean version to tile file header info [#860](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/860)
+* Major fixes to enable `EASY` coupled model experiments [#538](https://github.com/GEOS-ESM/GEOSgcm_App/pull/538)
+* Sync `DT` changes from `gcm_setup` into other setup scripts [#541](https://github.com/GEOS-ESM/GEOSgcm_App/pull/541)
+* Fixture changes:
+   * ESMA_env  [v4.20.6 => v4.22.0](https://github.com/GEOS-ESM/ESMA_env/compare/v4.20.6...v4.22.0)
+   * GEOSgcm_GridComp  [v2.3.2 => v2.4.0](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.3.2...v2.4.0)
+   * fvdycore  [v2.7.0 => v2.8.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/compare/geos/v2.7.0...geos/v2.8.0)
+   * GEOS_OceanGridComp  [v2.1.3 => v2.1.4](https://github.com/GEOS-ESM/GEOS_OceanGridComp/compare/v2.1.3...v2.1.4)
+   * MOM6  [geos/v2.2.2 => geos/v2.2.3](https://github.com/GEOS-ESM/MOM6/compare/geos/v2.2.2...geos/v2.2.3)
+   * CICE6  [geos/v0.1.2 => geos/v0.1.3](https://github.com/GEOS-ESM/CICE/compare/geos/v0.1.2...geos/v0.1.3)
+   * GEOSgcm_App  [v2.2.7 => v2.2.8](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.2.7...v2.2.8)
+
 ## [11.3.3] - 2023-11-17
 
 ### Zero-diff to Previous Release: YES
