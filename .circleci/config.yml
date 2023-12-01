@@ -21,7 +21,7 @@ bcs_version: &bcs_version v11.3.0
 tag_build_arg_name: &tag_build_arg_name gcmversion
 
 orbs:
-  ci: geos-esm/circleci-tools@1
+  ci: geos-esm/circleci-tools@2
 
 workflows:
   build-test:
@@ -71,7 +71,7 @@ workflows:
     when:
       equal: [ "release", << pipeline.parameters.GHA_Event >> ]
     jobs:
-      - ci/publish-docker:
+      - ci/publish_docker:
           filters:
             tags:
               only: /^v.*$/
@@ -90,7 +90,7 @@ workflows:
           image_name: geos-env-bcs
           tag_build_arg_name: *tag_build_arg_name
           resource_class: xlarge
-      - ci/publish-docker:
+      - ci/publish_docker:
           filters:
             tags:
               only: /^v.*$/
