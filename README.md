@@ -23,8 +23,8 @@
 | [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v2.1.4](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v2.1.4)                        |
 | [GEOS_Util](https://github.com/GEOS-ESM/GEOS_Util)                             | [v2.0.4](https://github.com/GEOS-ESM/GEOS_Util/releases/tag/v2.0.4)                                 |
 | [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.13.1](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.13.1)                       |
-| [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v2.2.7](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v2.2.7)                               |
-| [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v2.3.2](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v2.3.2)                          |
+| [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v2.2.8](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v2.2.8)                               |
+| [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v2.4.0](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v2.4.0)                          |
 | [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v1.5.1](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v1.5.1)                    |
 | [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v2.8.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv2.8.0)       |
 | [GMI](https://github.com/GEOS-ESM/GMI)                                         | [v1.1.0](https://github.com/GEOS-ESM/GMI/releases/tag/v1.1.0)                                       |
