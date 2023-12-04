@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v4.8.0
+  tag: v4.8.1
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.18.0
+  tag: v3.18.1
   develop: develop
 
 ecbuild:
@@ -142,7 +142,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: CDAS_Appv1.8.0_GEOSadas-5_29_3-p1
+  tag: CDAS_Appv1.8.0_GEOSadas-5_29_3-p1_mil
   develop: develop
 
 UMD_Etc:
