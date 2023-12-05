@@ -48,7 +48,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: GCMv1.17.0+GCCv14+gsi_coupling-p1
+  tag: GCMv1.17.0+GCCv14+gsi_coupling-p2
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -67,7 +67,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: feature/cakelle2/GCC_GAAS_coupling/t2
+  tag: feature/cakelle2/gcc_rats_provider/t1
   develop: develop
 
 HEMCO:
@@ -79,7 +79,7 @@ HEMCO:
 geos-chem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/GEOSCHEMchem_GridComp/@geos-chem
   remote: ../geos-chem.git
-  tag: geoscf/CFv2/rc1/t6
+  tag: geoscf/CFv2/rc1/t7
   develop: geos/develop
 
 GOCART:
