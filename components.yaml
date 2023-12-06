@@ -121,7 +121,7 @@ GEOS_OceanGridComp:
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM_GEOS5PlugMod/@mom
   remote: ../MOM5.git
-  tag: geos/5.1.0+1.2.0
+  branch: feature/mathomp4/fms-baselibs
   develop: geos5
 
 mom6:
