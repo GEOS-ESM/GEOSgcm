@@ -36,13 +36,13 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: v2.0.4
+  tag: v2.0.5
   develop: main
 
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.42.0
+  tag: v2.42.3
   develop: develop
 
 GEOSgcm_GridComp:
