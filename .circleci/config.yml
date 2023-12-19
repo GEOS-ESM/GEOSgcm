@@ -1,99 +1,111 @@
 version: 2.1
 
+parameters:
+  GHA_Actor:
+    type: string
+    default: ""
+  GHA_Action:
+    type: string
+    default: ""
+  GHA_Event:
+    type: string
+    default: ""
+  GHA_Meta:
+    type: string
+    default: ""
+
+# Anchors to prevent forgetting to update a version
+os_version: &os_version ubuntu20
+baselibs_version: &baselibs_version v7.14.0
+bcs_version: &bcs_version v11.3.0
+tag_build_arg_name: &tag_build_arg_name gcmversion
+
 orbs:
-  circleci-tools: geos-esm/circleci-tools@0.6.0
+  ci: geos-esm/circleci-tools@1
 
 workflows:
   build-test:
     jobs:
-      - build-GEOSgcm:
+      - ci/build:
           name: build-GEOSgcm-on-<< matrix.compiler >>
+          context:
+            - docker-hub-creds
+          matrix:
+            parameters:
+              compiler: [ifort, gfortran]
+          baselibs_version: *baselibs_version
+          repo: GEOSgcm
+          persist_workspace: true # Needs to be true to run fv3/gcm experiment, costs extra
+
+      # Run AMIP GCM (1 hour, no ExtData)
+      - ci/run_gcm:
+          name: run-GCM-on-<< matrix.compiler >>
+          context:
+            - docker-hub-creds
           matrix:
             parameters:
               compiler: [gfortran, ifort]
+          baselibs_version: *baselibs_version
+          bcs_version: *bcs_version
+          requires:
+            - build-GEOSgcm-on-<< matrix.compiler >>
+          repo: GEOSgcm
+
+      # Run Coupled GCM (1 hour, no ExtData)
+      - ci/run_gcm:
+          name: run-coupled-GCM-on-<< matrix.compiler >>
           context:
             - docker-hub-creds
-      ##################################################
-      # - run-gcm-exp:                                 #
-      #     name: run-gcm-exp-on-<< matrix.compiler >> #
-      #     matrix:                                    #
-      #       parameters:                              #
-      #         compiler: [gfortran, ifort]            #
-      #     context:                                   #
-      #       - docker-hub-creds                       #
-      #     requires:                                  #
-      #       - build-GEOSgcm-on-<< matrix.compiler >> #
-      ##################################################
+          matrix:
+            parameters:
+              compiler: [gfortran, ifort]
+          baselibs_version: *baselibs_version
+          bcs_version: *bcs_version
+          requires:
+            - build-GEOSgcm-on-<< matrix.compiler >>
+          repo: GEOSgcm
+          gcm_ocean_type: MOM6
+          change_layout: false
 
-jobs:
-  build-GEOSgcm:
-    parameters:
-      compiler:
-        type: string
-    executor:
-      name: circleci-tools/<< parameters.compiler >>
-      resource_class: large
-    working_directory: /root/project
-    steps:
-      - checkout:
-          path: GEOSgcm
-      - circleci-tools/versions:
-          compiler: << parameters.compiler >>
-      - circleci-tools/mepoclone
-      - circleci-tools/checkout_if_exists
-      - circleci-tools/cmake:
-          compiler: << parameters.compiler >>
-      - circleci-tools/buildinstall
-      - circleci-tools/compress_artifacts
-      - store_artifacts:
-          path: /logfiles
-      # We need to persist the install for the next step
-      # but only if we are running gcm tests
-      ###########################
-      # - persist_to_workspace: #
-      #     root: workspace     #
-      #     paths:              #
-      #       - install-GEOSgcm #
-      ###########################
-
-  run-gcm-exp:
-    parameters:
-      compiler:
-        type: string
-    executor: << parameters.compiler >>-xlarge
-    working_directory: /root/project
-    steps:
-      - attach_workspace:
-          at: workspace
-      - run:
-          name: "Run gcm_setup"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/install-GEOSgcm/bin
-            /TinyBCs-GitV10/scripts/create_expt.py test-gcm-c12 --expdir ${CIRCLE_WORKING_DIRECTORY}/workspace
-      - run:
-          name: "Run makeoneday"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-gcm-c12
-            /TinyBCs-GitV10/scripts/makeoneday.bash 6hr nxy 1 6
-      - run:
-          name: "Run gcm_run.j"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-gcm-c12
-            mkdir -p /logfiles
-            ./gcm_run.j |& tee /logfiles/gcm_run.log
-      - run:
-          name: "Check for EGRESS"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-gcm-c12
-
-            SCRDIR=$(find . -type d -name 'scratch*')
-
-            if [[ -f $SCRDIR/EGRESS ]]
-            then
-               echo "EGRESS found!"
-            else
-               echo "EGRESS not found!"
-               exit 1
-            fi
-      - store_artifacts:
-          path: /logfiles
+  build-and-publish-docker:
+    when:
+      equal: [ "release", << pipeline.parameters.GHA_Event >> ]
+    jobs:
+      - ci/publish-docker:
+          filters:
+            tags:
+              only: /^v.*$/
+          name: publish-intel-docker-image
+          context:
+            - docker-hub-creds
+            - ghcr-creds
+          os_version: *os_version
+          baselibs_version: *baselibs_version
+          bcs_version: *bcs_version
+          container_name: geosgcm
+          mpi_name: intelmpi
+          mpi_version: 2021.6.0
+          compiler_name: intel
+          compiler_version: 2022.1.0
+          image_name: geos-env-bcs
+          tag_build_arg_name: *tag_build_arg_name
+          resource_class: xlarge
+      - ci/publish-docker:
+          filters:
+            tags:
+              only: /^v.*$/
+          name: publish-gcc-docker-image
+          context:
+            - docker-hub-creds
+            - ghcr-creds
+          os_version: *os_version
+          baselibs_version: *baselibs_version
+          bcs_version: *bcs_version
+          container_name: geosgcm
+          mpi_name: openmpi
+          mpi_version: 4.1.4
+          compiler_name: gcc
+          compiler_version: 12.1.0
+          image_name: geos-env-bcs
+          tag_build_arg_name: *tag_build_arg_name
+          resource_class: xlarge
