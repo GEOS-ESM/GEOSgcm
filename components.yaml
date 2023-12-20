@@ -177,13 +177,13 @@ RRTMGP:
 ww3:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSwgcm_GridComp/GEOSwavewatch_GridComp/@ww3
   remote: ../WW3.git
-  tag: geos/6.07.1
+  tag: v6.07.1-geos-r1
   develop: geos/develop
 
 umwm:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSwgcm_GridComp/GEOSumwm_GridComp/@umwm
   remote: ../umwm.git
-  tag: geos
+  tag: v2.0.0-geos-r1
   develop: geos
 
 GEOSgcm_App:
