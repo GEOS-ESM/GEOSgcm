@@ -31,7 +31,8 @@ GMAO_Shared:
   remote: ../GMAO_Shared.git
   tag: v1.9.6
   sparse: ./config/GMAO_Shared.sparse
-  develop: feature/adarmenov/#122-wmma
+  develop: main
+  branch: feature/adarmenov/#122-wmma
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
@@ -56,7 +57,8 @@ GEOSgcm_GridComp:
   remote: ../GEOSgcm_GridComp.git
   tag: v2.4.0
   sparse: ./config/GEOSgcm_GridComp.sparse
-  develop: feature/adarmenov/#347-wmma
+  develop: develop
+  branch: feature/adarmenov/#347-wmma
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
@@ -122,7 +124,8 @@ GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
   tag: v2.1.4
-  develop: feature/adarmenov/#53-wmma
+  develop: develop
+  branch: feature/adarmenov/#53-wmma
 
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM_GEOS5PlugMod/@mom
@@ -190,7 +193,8 @@ GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
   tag: v2.2.8
-  develop: feature/adarmenov/#318-wmma
+  develop: develop
+  branch: feature/adarmenov/#318-wmma
 
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
