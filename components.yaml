@@ -36,7 +36,7 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: cakelle2_bugfix1_v2.34.3
+  tag: cakelle2_bugfix1_v2.34.3_t2
   develop: develop
 
 FMS:
