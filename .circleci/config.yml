@@ -103,7 +103,7 @@ workflows:
           bcs_version: *bcs_version
           container_name: geosgcm
           mpi_name: openmpi
-          mpi_version: 4.1.4
+          mpi_version: 5.0.0
           compiler_name: gcc
           compiler_version: 12.1.0
           image_name: geos-env-bcs

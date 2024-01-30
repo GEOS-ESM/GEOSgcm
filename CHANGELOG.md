@@ -2,6 +2,37 @@
 
 ## Unreleased
 
+## [11.5.0] - 2024-01-23
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: NO
+
+### Major Non-Zero-Diff Changes:
+* NWP patches to get `BACM` forecast RMSE back to Jason levels [#883](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/883)
+* Changed `gcm_setup` to set `OX_RELAXTIME` to 0.0 s when using OPS emissions (consistent with DAS), otherwise it remains at 259200 s [#560](https://github.com/GEOS-ESM/GEOSgcm_App/pull/560)
+* Corresponding upgrade of [FVdycoreCubed_GridComp v2.10.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.10.0)
+* Replay import patch for ozone in tag [GOCART sdr_v2.2.1.1](https://github.com/GEOS-ESM/GOCART/releases/tag/sdr_v2.2.1.1)
+
+### Major Zero-Diff Changes:
+* Added the necessary exports for TLM/ADJ back to `MOIST` [#883](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/883)
+* Added connectivity for a few fields from `MOIST` to `CHEM` [#867](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/867)
+* Run `make_bcs` in different installation path [#870](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/870)
+* Fixes #547 - bad default target_lat [#548](https://github.com/GEOS-ESM/GEOSgcm_App/pull/548)
+* Update MPT flags for use with MAPL 2.44 (current develop) [#553](https://github.com/GEOS-ESM/GEOSgcm_App/pull/553)
+* Add tuning flags for Open MPI and Intel MPI on SLES15 at NCCS [#543](https://github.com/GEOS-ESM/GEOSgcm_App/pull/543)
+
+### Fixture Changes:
+* ESMA_env  [v4.22.0 => v4.24.0](https://github.com/GEOS-ESM/ESMA_env/compare/v4.22.0...v4.24.0)
+* GEOS_Util  [v2.0.4 => v2.0.5](https://github.com/GEOS-ESM/GEOS_Util/compare/v2.0.4...v2.0.5)
+* MAPL  [v2.42.0 => v2.43.0](https://github.com/GEOS-ESM/MAPL/compare/v2.42.0...v2.43.0)
+* GEOSgcm_GridComp  [v2.4.0 => v2.5.0](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.4.0...v2.5.0)
+* FVdycoreCubed_GridComp  [v2.9.0 => v2.10.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.9.0...v2.10.0)
+* fvdycore  [v2.8.0 => v2.8.1](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/compare/geos/v2.8.0...geos/v2.8.1)
+* GOCART [v2.2.1 => sdr_v2.2.1.1](https://github.com/GEOS-ESM/GOCART/compare/v2.2.1...sdr_v2.2.1.1)
+* GEOSradiation_GridComp [v1.5.1 => v1.6.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/compare/v1.5.1...v1.6.0)
+* GEOSgcm_App  [v2.2.8 => v2.3.0](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.2.8...v2.3.0)
+
+
 ## [11.4.0] - 2023-12-01
 
 ### Zero-diff to Previous Release: YES
