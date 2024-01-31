@@ -4,7 +4,7 @@ cmake_policy (SET CMP0054 NEW)
 
 project (
   GEOSgcm
-  VERSION 11.5.0
+  VERSION 11.5.1
   LANGUAGES Fortran CXX C)  # Note - CXX is required for ESMF
 
 if ("${PROJECT_SOURCE_DIR}" STREQUAL "${PROJECT_BINARY_DIR}")

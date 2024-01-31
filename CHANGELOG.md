@@ -2,6 +2,37 @@
 
 ## Unreleased
 
+## [11.5.1] - 2024-01-30
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+* Integration of WMMA (WAVEWATCH, UMWM, sea spray) model components. This introduced new `AGCM.rc` parameters `USE_WAVES:` and `wave_model:`. Implementing WMMA involved the following changes:
+  * [GEOSgcm #724](https://github.com/GEOS-ESM/GEOSgcm/pull/724)
+  * [GEOSgcm_GridComp #872](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/872)
+  * [GEOS_OceanGridComp #59](https://github.com/GEOS-ESM/GEOS_OceanGridComp/pull/59)
+  * [GEOSgcm_App #552](https://github.com/GEOS-ESM/GEOSgcm_App/pull/552)
+  * [GMAO_Shared #339](https://github.com/GEOS-ESM/GMAO_Shared/pull/339)
+* SHOC-EDMF updates [#879](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/879)
+* Restore the `MTRI` bundle [#881](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/881)
+* Refine check for allowable bcs versions to be run with CatchCN [#882](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/882)
+* Allow others to make coupled experiments [#558](https://github.com/GEOS-ESM/GEOSgcm_App/pull/558)
+* Minor fixes of HISTORY for ADAS [#565](https://github.com/GEOS-ESM/GEOSgcm_App/pull/565)
+* Default to Cascade Lake at NCCS for SLES12 [#556](https://github.com/GEOS-ESM/GEOSgcm_App/pull/556)
+
+### Fixture Changes:
+* ESMA_env  [v4.24.0 => v4.25.1](https://github.com/GEOS-ESM/ESMA_env/compare/v4.24.0...v4.25.1)
+* ESMA_cmake  [v3.36.0 => v3.38.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.36.0...v3.38.0)
+* GMAO_Shared  [v1.9.6 => v1.9.7](https://github.com/GEOS-ESM/GMAO_Shared/compare/v1.9.6...v1.9.7)
+* MAPL  [v2.43.0 => v2.43.1](https://github.com/GEOS-ESM/MAPL/compare/v2.43.0...v2.43.1)
+* GEOSgcm_GridComp  [v2.5.0 => v2.5.1](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.5.0...v2.5.1)
+* GEOS_OceanGridComp  [v2.1.4 => v2.1.5](https://github.com/GEOS-ESM/GEOS_OceanGridComp/compare/v2.1.4...v2.1.5)
+* GEOSgcm_App  [v2.3.0 => v2.3.1](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.3.0...v2.3.1)
+* NEW [WW3 - WAVEWATCH III](https://github.com/GEOS-ESM/WW3/releases/tag/v6.07.1-geos-r2)
+* NEW [UMWM - University of Miami Wave Model](https://github.com/GEOS-ESM/umwm/releases/tag/v2.0.0-geos-r1)
+
+
 ## [11.5.0] - 2024-01-23
 
 ### Zero-diff to Previous Release: NO
