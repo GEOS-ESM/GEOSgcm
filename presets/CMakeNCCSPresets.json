@@ -6,7 +6,7 @@
       "displayName": "Base Configure Settings",
       "description": "Sets build and install directories",
       "binaryDir": "$penv{CMAKE_BUILD_LOCATION}/${sourceDirName}/build-${presetName}",
-      "installDir": "$penv{CMAKE_INSTALL_LOCATION}/${sourceDirName}/install-${presetName}",
+      "installDir": "$penv{CMAKE_INSTALL_LOCATION}/${sourceDirName}/install-${presetName}"
     }
   ],
   "version": 7
