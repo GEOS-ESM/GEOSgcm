@@ -36,7 +36,7 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: cakelle2_bugfix1_v2.34.3_t2
+  tag: cakelle2_bugfix1_v2.34.3_t3
   develop: develop
 
 FMS:
@@ -129,7 +129,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: v1.0.0
+  tag: feature/cakelle2/v1.0.0_plus_fixes_t0 
   develop: develop
 
 RRTMGP:
