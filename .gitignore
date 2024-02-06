@@ -10,6 +10,10 @@ parallel_build.o*
 log.*
 CMakeUserPresets.json
 
+# Ignore possible symlinked directories
+build-*
+install-*
+
 *.swp
 *.swo
 .DS_Store
