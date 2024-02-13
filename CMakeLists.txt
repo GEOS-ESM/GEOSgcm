@@ -56,11 +56,19 @@ if (NOT Baselibs_FOUND)
      add_definitions(-DH5_HAVE_PARALLEL)
   endif()
 
-  find_package(ESMF MODULE REQUIRED)
-  # NOTE: We provide aliases for the ESMF target because some components
-  #       in GEOS use ESMF and/or esmf for historical reasons.
-  add_library(esmf ALIAS ESMF:ESMF)
-  add_library(ESMF ALIAS ESMF:ESMF)
+  if (NOT TARGET ESMF::ESMF)
+    find_package(ESMF 8.6.0 MODULE REQUIRED)
+    target_link_libraries(ESMF::ESMF INTERFACE MPI::MPI_Fortran)
+
+    # GEOS uses lowercase target due to historical reasons but
+    # the latest FindESMF.cmake file from ESMF produces an ESMF::ESMF target.
+    if (NOT TARGET esmf)
+      add_library(esmf ALIAS ESMF::ESMF)
+    endif ()
+    if (NOT TARGET ESMF)
+      add_library(ESMF ALIAS ESMF::ESMF)
+    endif ()
+  endif ()
 
   find_package(GFTL_SHARED REQUIRED)
 
