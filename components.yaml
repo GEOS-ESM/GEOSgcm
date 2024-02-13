@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.40.0
+  branch: hotfix/mathomp4/fix-spack-build
   develop: develop
 
 ecbuild:
@@ -42,7 +42,7 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.43.1
+  branch: hotfix/mathomp4/fix-spack-build
   develop: develop
 
 FMS:
