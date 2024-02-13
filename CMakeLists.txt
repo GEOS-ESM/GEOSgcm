@@ -56,32 +56,11 @@ if (NOT Baselibs_FOUND)
      add_definitions(-DH5_HAVE_PARALLEL)
   endif()
 
-  if (NOT TARGET esmf)
-    if (DEFINED ENV{esmf_ROOT})
-      message (STATUS "Found esmf_ROOT in environment: $ENV{esmf_ROOT}")
-      find_path(ESMF_CMAKE_PATH FindESMF.cmake HINTS "$ENV{esmf_ROOT}/cmake")
-      message (STATUS "Found FindESMF.cmake in: ${ESMF_CMAKE_PATH}")
-      if (ESMF_CMAKE_PATH)
-        message (STATUS "Appending to CMAKE_PREFIX_PATH: ${ESMF_CMAKE_PATH}")
-        list (APPEND CMAKE_MODULE_PATH ${ESMF_CMAKE_PATH})
-      endif ()
-    endif ()
-
-    find_package(ESMF MODULE REQUIRED)
-
-    # ESMF as used in MAPL requires MPI
-    # NOTE: This looks odd because some versions of FindESMF.cmake out in the
-    #       world provide an "esmf" target while others provide "ESMF". So we
-    #       need this ugliness to support both.
-    if (TARGET esmf)
-      target_link_libraries(esmf INTERFACE MPI::MPI_Fortran)
-    else()
-      target_link_libraries(ESMF INTERFACE MPI::MPI_Fortran)
-      # MAPL and GEOS use lowercase target due to historical reasons but
-      # the latest FindESMF.cmake file from ESMF produces an ESMF target.
-      add_library(esmf ALIAS ESMF)
-    endif()
-  endif ()
+  find_package(ESMF MODULE REQUIRED)
+  # NOTE: We provide aliases for the ESMF target because some components
+  #       in GEOS use ESMF and/or esmf for historical reasons.
+  add_library(esmf ALIAS ESMF:ESMF)
+  add_library(ESMF ALIAS ESMF:ESMF)
 
   find_package(GFTL_SHARED REQUIRED)
 
