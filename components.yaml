@@ -73,13 +73,13 @@ GEOSchem_GridComp:
 HEMCO:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Shared/HEMCO/@HEMCO
   remote: ../HEMCO.git
-  tag: geoscf/CFv2/rc1/t1
+  tag: geoscf/CFv2/rc1/t2
   develop: geos/develop
 
 geos-chem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/GEOSCHEMchem_GridComp/@geos-chem
   remote: ../geos-chem.git
-  tag: geoscf/CFv2/rc1/t8
+  tag: geoscf/CFv2/rc1/t9
   develop: geos/develop
 
 GOCART:
@@ -142,7 +142,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: CDAS_Appv1.8.0_GEOSadas-5_29_3-p1_mil
+  tag: feature/cakelle2/CDAS_Appv1.8.0_GEOSadas-5_29_3/t0
   develop: develop
 
 UMD_Etc:
