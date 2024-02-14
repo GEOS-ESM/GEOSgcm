@@ -82,6 +82,12 @@ geos-chem:
   branch: geos/latest_gcc 
   develop: geos/develop
 
+Cloud-J:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Cloud-J/@Cloud-J
+  remote: ../Cloud-J.git
+  branch: geos/latest_gcc 
+  develop: geos/develop
+
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
