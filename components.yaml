@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.40.0
+  tag: v3.41.0
   develop: develop
 
 ecbuild:
@@ -152,7 +152,7 @@ cice6:
 icepack:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug/@cice6/icepack
   remote: ../Icepack.git
-  tag: geos/v0.1.1
+  tag: geos/v0.2.0
   develop: geos/develop
 
 sis2:
