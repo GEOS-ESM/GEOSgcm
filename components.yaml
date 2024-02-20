@@ -42,7 +42,7 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.43.1
+  tag: v2.44.0
   develop: develop
 
 FMS:
@@ -152,7 +152,7 @@ cice6:
 icepack:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug/@cice6/icepack
   remote: ../Icepack.git
-  tag: geos/v0.1.1
+  tag: geos/v0.2.0
   develop: geos/develop
 
 sis2:
