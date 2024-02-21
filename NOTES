@@ -1,3 +1,13 @@
+2023-06-12 - Notes from making feature/mmanyin/CCM_benchmark_G, see ***
+2024-02-21 - Made feature/mmanyin/CCM_benchmark_G_SLES15 - changed these repo's to include edits from Matt Thompson:
+       @env
+       @cmake/
+       ./src/Shared/@GMAO_Shared
+       ./src/Shared/@MAPL
+       ./src/Applications/@GEOSgcm_App
+
+
+***
 Used this info to generate the feature branches in 4 repos  (feature/mmanyin/CCM_benchmark_G)
 See '>>' for the files that changed
 
