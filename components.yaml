@@ -48,7 +48,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: GCMv1.17.0+GCCv14+gsi_coupling-p2
+  tag: GCMv1.17.0+GCCv14+gsi_coupling-p3
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -79,7 +79,7 @@ HEMCO:
 geos-chem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/GEOSCHEMchem_GridComp/@geos-chem
   remote: ../geos-chem.git
-  tag: geoscf/CFv2/rc1/t9
+  tag: geoscf/CFv2/rc1/t10
   develop: geos/develop
 
 GOCART:

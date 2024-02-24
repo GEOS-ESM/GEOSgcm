@@ -2,8 +2,13 @@
 
 ## Unreleased
 
+## 2024-02-23
+* Tag GEOSCFv2/rc1/t15. Updates:
+* GEOSgcm_GridComp -> tag [GCMv1.17.0+GCCv14+gsi_coupling-p3](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/GCMv1.17.0%2BGCCv14%2Bgsi_coupling-p3): Add all GEOS-Chem wetdep species to MOIST wet scavenging diagnostics
+* geos-chem -> tag [geoscf/CFv2/rc1/t10](https://github.com/GEOS-ESM/geos-chem/releases/tag/geoscf%2FCFv2%2Frc1%2Ft10): Use MAPL_read_bundle to read analysis fields 
+
 ## 2024-02-14
-* Tag GEOSCFv2/rc1/t13. Updates:
+* Tag GEOSCFv2/rc1/t14. Updates:
 * HEMCO -> tag [geoscf/CFv2/rc1/t2](https://github.com/GEOS-ESM/HEMCO/releases/tag/geoscf%2FCFv2%2Frc1%2Ft2)
 * geos-chem -> tag [geoscf/CFv2/rc1/t9](https://github.com/GEOS-ESM/geos-chem/releases/tag/geoscf%2FCFv2%2Frc1%2Ft9)
 * GEOSgcm_App -> tag [feature/cakelle2/CDAS_Appv1.8.0_GEOSadas-5_29_3/t0](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/feature%2Fcakelle2%2FCDAS_Appv1.8.0_GEOSadas-5_29_3%2Ft0)
