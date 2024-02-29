@@ -22,16 +22,16 @@ ecbuild:
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
   remote: ../NCEP_Shared.git
-  tag: v1.2.1
+  tag: v1.3.0
   sparse: ./config/NCEP_Shared.sparse
   develop: main
 
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.7.2
+  tag: r21c_20240129
   sparse: ./config/GMAO_Shared.sparse
-  develop: main
+  develop: R21C
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
@@ -42,8 +42,8 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.35.3
-  develop: develop
+  tag: v2.35.3+R21C_v1.0.0
+  develop: R21C
 
 FMS:
   local: ./src/Shared/@FMS
@@ -54,15 +54,15 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v1.18.0
+  tag: v1.18.1
   sparse: ./config/GEOSgcm_GridComp.sparse
-  develop: develop
+  develop: release/v1
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.13.0
-  develop: develop
+  tag: v1.13.1
+  develop: release/v1
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
@@ -73,7 +73,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.12.0
+  tag: v1.13.0
   develop: develop
 
 HEMCO:
@@ -91,8 +91,8 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: v2.1.2
-  develop: develop
+  tag: v2.1.2+R21C_v1.0.0
+  develop: R21C
 
 QuickChem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@QuickChem
@@ -166,8 +166,8 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.9.5
-  develop: develop
+  tag: v1.9.6+R21C_v1.0.0
+  develop: R21C
 
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
