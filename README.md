@@ -38,7 +38,7 @@
 | [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v2.2.3](https://github.com/GEOS-ESM/MOM6/tree/geos/v2.2.3)                                    |
 | [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.3.0](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.3.0)                               |
 | [QuickChem](https://github.com/GEOS-ESM/QuickChem)                             | [v1.0.0](https://github.com/GEOS-ESM/QuickChem/releases/tag/v1.0.0)                                 |
-| [RRTMGP](https://github.com/GEOS-ESM/rte-rrtmgp)                               | [geos/v1.6+1.1.0](https://github.com/GEOS-ESM/rte-rrtmgp/releases/tag/geos%2Fv1.6%2B1.1.0)          |
+| [RRTMGP](https://github.com/GEOS-ESM/rte-rrtmgp)                               | [geos/v1.7+1.0.0](https://github.com/GEOS-ESM/rte-rrtmgp/releases/tag/geos%2Fv1.7%2B1.0.0)          |
 | [SIS2](https://github.com/GEOS-ESM/SIS2)                                       | [geos/v0.0.1](https://github.com/GEOS-ESM/SIS2/releases/tag/geos%2Fv0.0.1)                          |
 | [StratChem](https://github.com/GEOS-ESM/StratChem)                             | [v1.0.0](https://github.com/GEOS-ESM/StratChem/releases/tag/v1.0.0)                                 |
 | [TR](https://github.com/GEOS-ESM/TR)                                           | [v1.1.0](https://github.com/GEOS-ESM/TR/releases/tag/v1.1.0)                                        |
