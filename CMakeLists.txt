@@ -73,13 +73,13 @@ if (NOT Baselibs_FOUND)
     # NOTE: This looks odd because some versions of FindESMF.cmake out in the
     #       world provide an "esmf" target while others provide "ESMF". So we
     #       need this ugliness to support both.
-    if (TARGET esmf)
-      target_link_libraries(esmf INTERFACE MPI::MPI_Fortran)
-    else()
+    if (TARGET ESMF)
       target_link_libraries(ESMF INTERFACE MPI::MPI_Fortran)
+    else()
+      target_link_libraries(esmf INTERFACE MPI::MPI_Fortran)
       # MAPL and GEOS use lowercase target due to historical reasons but
       # the latest FindESMF.cmake file from ESMF produces an ESMF target.
-      add_library(esmf ALIAS ESMF)
+      add_library(ESMF ALIAS esmf)
     endif()
   endif ()
 
