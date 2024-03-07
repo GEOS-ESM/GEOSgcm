@@ -56,7 +56,7 @@ if (NOT Baselibs_FOUND)
      add_definitions(-DH5_HAVE_PARALLEL)
   endif()
 
-  if (NOT TARGET esmf)
+  if (NOT TARGET ESMF)
     if (DEFINED ENV{ESMF_ROOT})
       message (STATUS "Found ESMF_ROOT in environment: $ENV{ESMF_ROOT}")
       find_path(ESMF_CMAKE_PATH FindESMF.cmake HINTS "$ENV{ESMF_ROOT}/cmake")
