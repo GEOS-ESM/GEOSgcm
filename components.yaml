@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v4.9.1
+  branch: feature/mmanyin/CCM_benchmark_G_SLES15
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.26.0
+  tag: feature/mmanyin/CCM_benchmark_G_SLES15
   develop: develop
 
 ecbuild:
@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  branch: feature/mmanyin/CCM_benchmark_G
+  branch: feature/mmanyin/CCM_benchmark_G_SLES15
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -42,7 +42,7 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  branch: feature/mmanyin/CCM_benchmark_G
+  branch: feature/mmanyin/CCM_benchmark_G_SLES15
   develop: develop
 
 FMS:
@@ -166,7 +166,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  branch: feature/mmanyin/CCM_benchmark_G
+  branch: feature/mmanyin/CCM_benchmark_G_SLES15
   develop: develop
 
 UMD_Etc:
