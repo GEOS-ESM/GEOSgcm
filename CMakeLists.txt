@@ -38,12 +38,16 @@ foreach (dir cmake @cmake cmake@)
     set (ESMA_CMAKE_PATH "${CMAKE_CURRENT_LIST_DIR}/${dir}" CACHE PATH "Path to ESMA_cmake code")
   endif ()
 endforeach ()
+
+# We need to find MPI before we go into esma
+# for the MPI stack detection to work
+set(MPI_DETERMINE_LIBRARY_VERSION TRUE)
+find_package(MPI)
+
 include (esma)
 
 # Add CMake for when not using Baselibs
 if (NOT Baselibs_FOUND)
-  set(MPI_DETERMINE_LIBRARY_VERSION TRUE)
-  find_package(MPI)
 
   find_package(NetCDF REQUIRED C Fortran)
   add_definitions(-DHAS_NETCDF4)
