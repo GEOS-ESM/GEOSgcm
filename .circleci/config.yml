@@ -16,12 +16,12 @@ parameters:
 
 # Anchors to prevent forgetting to update a version
 os_version: &os_version ubuntu20
-baselibs_version: &baselibs_version v7.7.0
-bcs_version: &bcs_version v10.23.0
+baselibs_version: &baselibs_version v7.17.0
+bcs_version: &bcs_version v11.3.0
 tag_build_arg_name: &tag_build_arg_name gcmversion
 
 orbs:
-  ci: geos-esm/circleci-tools@1
+  ci: geos-esm/circleci-tools@2
 
 workflows:
   build-test:
@@ -36,6 +36,8 @@ workflows:
           baselibs_version: *baselibs_version
           repo: GEOSgcm
           persist_workspace: true # Needs to be true to run fv3/gcm experiment, costs extra
+
+      # Run AMIP GCM (1 hour, no ExtData)
       - ci/run_gcm:
           name: run-GCM-on-<< matrix.compiler >>
           context:
@@ -48,11 +50,28 @@ workflows:
           requires:
             - build-GEOSgcm-on-<< matrix.compiler >>
           repo: GEOSgcm
+
+      # Run Coupled GCM (1 hour, no ExtData)
+      - ci/run_gcm:
+          name: run-coupled-GCM-on-<< matrix.compiler >>
+          context:
+            - docker-hub-creds
+          matrix:
+            parameters:
+              compiler: [gfortran, ifort]
+          baselibs_version: *baselibs_version
+          bcs_version: *bcs_version
+          requires:
+            - build-GEOSgcm-on-<< matrix.compiler >>
+          repo: GEOSgcm
+          gcm_ocean_type: MOM6
+          change_layout: false
+
   build-and-publish-docker:
     when:
       equal: [ "release", << pipeline.parameters.GHA_Event >> ]
     jobs:
-      - ci/publish-docker:
+      - ci/publish_docker:
           filters:
             tags:
               only: /^v.*$/
@@ -71,7 +90,7 @@ workflows:
           image_name: geos-env-bcs
           tag_build_arg_name: *tag_build_arg_name
           resource_class: xlarge
-      - ci/publish-docker:
+      - ci/publish_docker:
           filters:
             tags:
               only: /^v.*$/
@@ -84,7 +103,7 @@ workflows:
           bcs_version: *bcs_version
           container_name: geosgcm
           mpi_name: openmpi
-          mpi_version: 4.1.4
+          mpi_version: 5.0.0
           compiler_name: gcc
           compiler_version: 12.1.0
           image_name: geos-env-bcs
