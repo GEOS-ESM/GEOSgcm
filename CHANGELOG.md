@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 2024-03-21
+* Tag GEOSCFv2/rc1/t16. Updates:
+* geos-chem -> tag [geoscf/CFv2/rc1/t11](https://github.com/GEOS-ESM/geos-chem/releases/tag/geoscf%2FCFv2%2Frc1%2Ft11): Add tagged NOx feature 
+
 ## 2024-02-23
 * Tag GEOSCFv2/rc1/t15. Updates:
 * GEOSgcm_GridComp -> tag [GCMv1.17.0+GCCv14+gsi_coupling-p3](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/GCMv1.17.0%2BGCCv14%2Bgsi_coupling-p3): Add all GEOS-Chem wetdep species to MOIST wet scavenging diagnostics
