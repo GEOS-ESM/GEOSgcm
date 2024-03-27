@@ -4,7 +4,7 @@ cmake_policy (SET CMP0054 NEW)
 
 project (
   GEOSgcm
-  VERSION 11.5.1
+  VERSION 11.5.2
   LANGUAGES Fortran CXX C)  # Note - CXX is required for ESMF
 
 if ("${PROJECT_SOURCE_DIR}" STREQUAL "${PROJECT_BINARY_DIR}")
@@ -38,12 +38,16 @@ foreach (dir cmake @cmake cmake@)
     set (ESMA_CMAKE_PATH "${CMAKE_CURRENT_LIST_DIR}/${dir}" CACHE PATH "Path to ESMA_cmake code")
   endif ()
 endforeach ()
+
+# We need to find MPI before we go into esma
+# for the MPI stack detection to work
+set(MPI_DETERMINE_LIBRARY_VERSION TRUE)
+find_package(MPI)
+
 include (esma)
 
 # Add CMake for when not using Baselibs
 if (NOT Baselibs_FOUND)
-  set(MPI_DETERMINE_LIBRARY_VERSION TRUE)
-  find_package(MPI)
 
   find_package(NetCDF REQUIRED C Fortran)
   add_definitions(-DHAS_NETCDF4)
