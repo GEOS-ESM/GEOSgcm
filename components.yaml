@@ -56,13 +56,13 @@ GEOSgcm_GridComp:
   remote: ../GEOSgcm_GridComp.git
   tag: v1.18.1
   sparse: ./config/GEOSgcm_GridComp.sparse
-  develop: release/v1
+  develop: R21C
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
   tag: v1.13.1
-  develop: release/v1
+  develop: R21C
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
