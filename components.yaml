@@ -70,12 +70,11 @@ fvdycore:
   tag: geos/v2.8.1
   develop: geos/develop
 
-gtFV3:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@gtFV3
-  remote: ../pace.git
-  tag: updated-dace-gtgpu-builds
-  develop: geos/develop
-  recurse_submodules: true
+pyFV3:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/python/@pyFV3
+  remote: https://github.com/NOAA-GFDL/PyFV3.git
+  tag: main
+  develop: develop
 
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
