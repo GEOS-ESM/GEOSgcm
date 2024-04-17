@@ -36,14 +36,14 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: v2.0.8
-  develop: main
+  tag: GCMv12_rc1
+  develop: feature/sdrabenh/gcm_v12-rc1
 
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.44.2
-  develop: develop
+  tag: GCMv12_rc1
+  develop: feature/sdrabenh/gcm_v12-rc1
 
 FMS:
   local: ./src/Shared/@FMS
@@ -54,21 +54,21 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v2.5.2
+  tag: GCMv12_rc1
   sparse: ./config/GEOSgcm_GridComp.sparse
-  develop: develop
+  develop: feature/sdrabenh/gcm_v12-rc1
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v2.11.0
-  develop: develop
+  tag: GCMv12_rc1
+  develop: feature/sdrabenh/gcm_v12-rc1
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: geos/v2.8.1
-  develop: geos/develop
+  tag: GCMv12_rc1
+  develop: feature/sdrabenh/gcm_v12-rc1
 
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
@@ -189,8 +189,8 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v2.3.2
-  develop: develop
+  tag: GCMv12_rc1
+  develop: feature/sdrabenh/gcm_v12-rc1
 
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
