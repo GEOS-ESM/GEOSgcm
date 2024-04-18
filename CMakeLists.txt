@@ -61,7 +61,7 @@ if (NOT Baselibs_FOUND)
   endif()
 
   if (NOT TARGET ESMF::ESMF)
-    find_package(ESMF 8.6.0 MODULE REQUIRED)
+    find_package(ESMF 8.6.1 MODULE REQUIRED)
     target_link_libraries(ESMF::ESMF INTERFACE MPI::MPI_Fortran)
 
     # GEOS uses lowercase target due to historical reasons but
