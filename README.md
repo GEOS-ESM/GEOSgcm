@@ -17,7 +17,7 @@
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v1.3.0](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.3.0)                       |
 | [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.45.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.45.0)                              |
 | [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v4.28.1](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.28.1)                                |
-| [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.8](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.8) |
+| [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.9](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.9) |
 | [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v2.11.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.11.1)                    |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)           |
 | [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v2.1.6](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v2.1.6)                        |
@@ -26,7 +26,7 @@
 | [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v2.3.2](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v2.3.2)                               |
 | [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v2.5.2](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v2.5.2)                          |
 | [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v1.8.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v1.8.0)                    |
-| [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v2.8.2](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv2.8.2)       |
+| [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v2.9.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv2.9.0)       |
 | [GMI](https://github.com/GEOS-ESM/GMI)                                         | [v1.1.0](https://github.com/GEOS-ESM/GMI/releases/tag/v1.1.0)                                       |
 | [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.9.7](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.9.7)                               |
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [sdr_v2.2.1.1](https://github.com/GEOS-ESM/GOCART/releases/tag/sdr_v2.2.1.1)                                    |
