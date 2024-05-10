@@ -1,22 +1,14 @@
 ﻿{
-  "version": 3,
+  "version": 7,
   "cmakeMinimumRequired": {
     "major": 3,
-    "minor": 21,
+    "minor": 27,
     "patch": 0
   },
+  "include": [
+    "presets/CMake$penv{CMAKE_PRESET_NAME}Presets.json"
+  ],
   "configurePresets": [
-    {
-      "name": "base-configure",
-      "hidden": true,
-      "displayName": "Base Configure Settings",
-      "description": "Sets build and install directories",
-      "binaryDir": "${sourceDir}/build-${presetName}",
-      "cacheVariables": {
-        "BASEDIR": "$env{BASEDIR}",
-        "CMAKE_INSTALL_PREFIX": "${sourceDir}/install-${presetName}"
-      }
-    },
     {
       "name": "base-gnu",
       "hidden": true,
