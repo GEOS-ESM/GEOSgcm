@@ -2,6 +2,274 @@
 
 ## Unreleased
 
+## [11.5.2] - 2024-03-04
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: YES (see details below)
+
+### Major Zero-Diff Changes:
+* OBIO (NOBM) is integrated into the Krok Model [#871](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/871)
+* SHOC-MF updates [#902](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/902)
+* Refactor DataSea/DataIce `IS_FCST` to `OGCM_IS_FCST` [#910](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/910) [#583](https://github.com/GEOS-ESM/GEOSgcm_App/pull/583)
+* Disable Catchment-CN4.5 land model option (LSM_CHOICE=3) for GCM simulations [#900](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/900) [#575](https://github.com/GEOS-ESM/GEOSgcm_App/pull/575)
+* `AGCM.rc` updates to support RRTMGP v1.7 [#585](https://github.com/GEOS-ESM/GEOSgcm_App/pull/585)
+* Add new history template `HISTORY.RADVAL.rc.tmpl` to support RRTMGP validation [#582](https://github.com/GEOS-ESM/GEOSgcm_App/pull/582)
+* Assorted enhancements of `remap_restarts.py` package (EASE, SLES15, NAS, lake/landice log) [#43](https://github.com/GEOS-ESM/GEOS_Util/pull/43)
+* Addition of new features to generate ocean boundary conditions for atmosphere-only forecasts [#47](https://github.com/GEOS-ESM/GEOS_Util/pull/47)
+* Do not remap restarts when it is not necessary [#53](https://github.com/GEOS-ESM/GEOS_Util/pull/53)
+* Add surface forcing  lfo_Nx+-  to HISTORY.rc.tmpl  [#578](https://github.com/GEOS-ESM/GEOSgcm_App/pull/578)
+* Plot updates for transport images and stats montage fixes [#57](https://github.com/GEOS-ESM/GEOS_Util/pull/57)
+* Bugfix in SCM #903 [#904](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/904)
+* Fix for GNU `hystpdf` crash [#899](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/899)
+* Initialize `USE_WAVES` to 0 [#569](https://github.com/GEOS-ESM/GEOSgcm_App/pull/569) [#570](https://github.com/GEOS-ESM/GEOSgcm_App/pull/570)
+* Use `nccmp`, add readers/writers test to regress [#573](https://github.com/GEOS-ESM/GEOSgcm_App/pull/573)
+* Use CMake to determine MPI Stack [#580](https://github.com/GEOS-ESM/GEOSgcm_App/pull/580)
+* Move to use cp and tar at NAS [#56](https://github.com/GEOS-ESM/GEOS_Util/pull/56)
+* Prepare for sparse checkout [#58](https://github.com/GEOS-ESM/GEOS_Util/pull/58)
+
+### Fixture Changes:
+* ESMA_cmake  [v3.38.0 => v3.41.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.38.0...v3.41.0)
+* GEOS_Util  [v2.0.5 => v2.0.7](https://github.com/GEOS-ESM/GEOS_Util/compare/v2.0.5...v2.0.7)
+* MAPL  [v2.43.1 => v2.44.0](https://github.com/GEOS-ESM/MAPL/compare/v2.43.1...v2.44.0)
+* GEOSgcm_GridComp  [v2.5.1 => v2.5.2](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.5.1...v2.5.2)
+* FVdycoreCubed_GridComp  [v2.10.0 => v2.11.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.10.0...v2.11.0)
+* GEOS_OceanGridComp  [v2.1.5 => v2.1.6](https://github.com/GEOS-ESM/GEOS_OceanGridComp/compare/v2.1.5...v2.1.6)
+* MOM6  [geos/v2.2.3 => geos/v3.1](https://github.com/GEOS-ESM/MOM6/compare/geos/v2.2.3...geos/v3.1)
+* icepack  [geos/v0.1.1 => geos/v0.2.0](https://github.com/GEOS-ESM/Icepack/compare/geos/v0.1.1...geos/v0.2.0)
+* GEOSradiation_GridComp  [v1.6.0 => v1.8.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/compare/v1.6.0...v1.8.0)
+* RRTMGP  [RRTMGP  geos/v1.6+1.1.0 => geos/v1.7+1.0.0](https://github.com/GEOS-ESM/rte-rrtmgp/compare/geos/v1.6+1.1.0...geos/v1.7+1.0.0)
+* GEOSgcm_App  [v2.3.1 => v2.3.2](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.3.1...v2.3.2)
+
+### Restart Changes:
+
+The following changes occurred in `solar_internal_rst` but the overall state of the model is zero-diff with RRTMG.
+
+- Metadata changes (`long_name`)
+  - `CLDHISW`: "high-level_cloud_area_fraction_rrtmg_sw_REFRESH" → "high-level_cloud_area_fraction_RRTMG_P_SW_REFRESH"
+  - `CLDLOSW`: "low-level_cloud_area_fraction_rrtmg_sw_REFRESH" → "low-level_cloud_area_fraction_RRTMG_P_SW_REFRESH"
+  - `CLDMDSW`: "mid-level_cloud_area_fraction_rrtmg_sw_REFRESH" → "mid-level_cloud_area_fraction_RRTMG_P_SW_REFRESH"
+  - `CLDTTSW`: "total_cloud_area_fraction_rrtmg_sw_REFRESH" → "total_cloud_area_fraction_RRTMG_P_SW_REFRESH"
+- Removed fields
+  - `TAUHIPAR`
+  - `TAULOPAR`
+  - `TAUMDPAR`
+  - `TAUTTPAR`
+- Added fields
+  - `COTDENHIPAR`
+  - `COTDENLOPAR`
+  - `COTDENMDPAR`
+  - `COTDENTTPAR` 
+  - `COTHIPAR`
+  - `COTLOPAR`
+  - `COTMDPAR`
+  - `COTTTPAR`
+  - `COTNUMHIPAR`
+  - `COTNUMLOPAR`
+  - `COTNUMMDPAR` 
+  - `COTNUMTTPAR`
+
+## [11.5.1] - 2024-01-30
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+* Integration of WMMA (WAVEWATCH, UMWM, sea spray) model components. This introduced new `AGCM.rc` parameters `USE_WAVES:` and `wave_model:`. Implementing WMMA involved the following changes:
+  * [GEOSgcm #724](https://github.com/GEOS-ESM/GEOSgcm/pull/724)
+  * [GEOSgcm_GridComp #872](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/872)
+  * [GEOS_OceanGridComp #59](https://github.com/GEOS-ESM/GEOS_OceanGridComp/pull/59)
+  * [GEOSgcm_App #552](https://github.com/GEOS-ESM/GEOSgcm_App/pull/552)
+  * [GMAO_Shared #339](https://github.com/GEOS-ESM/GMAO_Shared/pull/339)
+* SHOC-EDMF updates [#879](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/879)
+* Restore the `MTRI` bundle [#881](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/881)
+* Refine check for allowable bcs versions to be run with CatchCN [#882](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/882)
+* Allow others to make coupled experiments [#558](https://github.com/GEOS-ESM/GEOSgcm_App/pull/558)
+* Minor fixes of HISTORY for ADAS [#565](https://github.com/GEOS-ESM/GEOSgcm_App/pull/565)
+* Default to Cascade Lake at NCCS for SLES12 [#556](https://github.com/GEOS-ESM/GEOSgcm_App/pull/556)
+
+### Fixture Changes:
+* ESMA_env  [v4.24.0 => v4.25.1](https://github.com/GEOS-ESM/ESMA_env/compare/v4.24.0...v4.25.1)
+* ESMA_cmake  [v3.36.0 => v3.38.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.36.0...v3.38.0)
+* GMAO_Shared  [v1.9.6 => v1.9.7](https://github.com/GEOS-ESM/GMAO_Shared/compare/v1.9.6...v1.9.7)
+* MAPL  [v2.43.0 => v2.43.1](https://github.com/GEOS-ESM/MAPL/compare/v2.43.0...v2.43.1)
+* GEOSgcm_GridComp  [v2.5.0 => v2.5.1](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.5.0...v2.5.1)
+* GEOS_OceanGridComp  [v2.1.4 => v2.1.5](https://github.com/GEOS-ESM/GEOS_OceanGridComp/compare/v2.1.4...v2.1.5)
+* GEOSgcm_App  [v2.3.0 => v2.3.1](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.3.0...v2.3.1)
+* NEW [WW3 - WAVEWATCH III](https://github.com/GEOS-ESM/WW3/releases/tag/v6.07.1-geos-r2)
+* NEW [UMWM - University of Miami Wave Model](https://github.com/GEOS-ESM/umwm/releases/tag/v2.0.0-geos-r1)
+
+
+## [11.5.0] - 2024-01-23
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: NO
+
+### Major Non-Zero-Diff Changes:
+* NWP patches to get `BACM` forecast RMSE back to Jason levels [#883](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/883)
+* Changed `gcm_setup` to set `OX_RELAXTIME` to 0.0 s when using OPS emissions (consistent with DAS), otherwise it remains at 259200 s [#560](https://github.com/GEOS-ESM/GEOSgcm_App/pull/560)
+* Corresponding upgrade of [FVdycoreCubed_GridComp v2.10.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.10.0)
+* Replay import patch for ozone in tag [GOCART sdr_v2.2.1.1](https://github.com/GEOS-ESM/GOCART/releases/tag/sdr_v2.2.1.1)
+
+### Major Zero-Diff Changes:
+* Added the necessary exports for TLM/ADJ back to `MOIST` [#883](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/883)
+* Added connectivity for a few fields from `MOIST` to `CHEM` [#867](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/867)
+* Run `make_bcs` in different installation path [#870](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/870)
+* Fixes #547 - bad default target_lat [#548](https://github.com/GEOS-ESM/GEOSgcm_App/pull/548)
+* Update MPT flags for use with MAPL 2.44 (current develop) [#553](https://github.com/GEOS-ESM/GEOSgcm_App/pull/553)
+* Add tuning flags for Open MPI and Intel MPI on SLES15 at NCCS [#543](https://github.com/GEOS-ESM/GEOSgcm_App/pull/543)
+
+### Fixture Changes:
+* ESMA_env  [v4.22.0 => v4.24.0](https://github.com/GEOS-ESM/ESMA_env/compare/v4.22.0...v4.24.0)
+* GEOS_Util  [v2.0.4 => v2.0.5](https://github.com/GEOS-ESM/GEOS_Util/compare/v2.0.4...v2.0.5)
+* MAPL  [v2.42.0 => v2.43.0](https://github.com/GEOS-ESM/MAPL/compare/v2.42.0...v2.43.0)
+* GEOSgcm_GridComp  [v2.4.0 => v2.5.0](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.4.0...v2.5.0)
+* FVdycoreCubed_GridComp  [v2.9.0 => v2.10.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.9.0...v2.10.0)
+* fvdycore  [v2.8.0 => v2.8.1](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/compare/geos/v2.8.0...geos/v2.8.1)
+* GOCART [v2.2.1 => sdr_v2.2.1.1](https://github.com/GEOS-ESM/GOCART/compare/v2.2.1...sdr_v2.2.1.1)
+* GEOSradiation_GridComp [v1.5.1 => v1.6.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/compare/v1.5.1...v1.6.0)
+* GEOSgcm_App  [v2.2.8 => v2.3.0](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.2.8...v2.3.0)
+
+
+## [11.4.0] - 2023-12-01
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: YES (see below)
+
+* Updates to moist from `feature/wmputman/KM_v11_3_2_Moist_WMP` as of 2023-11-21 [#858](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/858). The following restarts have changed:
+   1. `moist_import_checkpoint` was cleaned up to reduce the file size by removing the following variables:
+   DQVDTDYN, DTDTDYN, OMEGA, PHIS, PLE, PLE_DYN_IN, PREF, QV_DYN_IN, T, TAUOROX, TAUOROY, T_DYN_IN, U, U_DYN_IN, V, V_DYN_IN, W, ZLE
+   2. `gocart_import_checkpoint` fixed variable: QCTOT
+* Use 3 specific `MOM6` resolutions [#542](https://github.com/GEOS-ESM/GEOSgcm_App/pull/542)
+* Added support for `CICE6` thermo state rewind for replay [#854](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/854)
+* New release of fvdycore [v2.8.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv2.8.0) fixed non-layout-reproducibility at C180 and higher which was introduced in v2.
+* Bugfix in boundary conditions for coupled T3MOM6 option [#861](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/861)
+* Add ocean version to tile file header info [#860](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/860)
+* Major fixes to enable `EASY` coupled model experiments [#538](https://github.com/GEOS-ESM/GEOSgcm_App/pull/538)
+* Sync `DT` changes from `gcm_setup` into other setup scripts [#541](https://github.com/GEOS-ESM/GEOSgcm_App/pull/541)
+* Fixture changes:
+   * ESMA_env  [v4.20.6 => v4.22.0](https://github.com/GEOS-ESM/ESMA_env/compare/v4.20.6...v4.22.0)
+   * GEOSgcm_GridComp  [v2.3.2 => v2.4.0](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.3.2...v2.4.0)
+   * fvdycore  [v2.7.0 => v2.8.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/compare/geos/v2.7.0...geos/v2.8.0)
+   * GEOS_OceanGridComp  [v2.1.3 => v2.1.4](https://github.com/GEOS-ESM/GEOS_OceanGridComp/compare/v2.1.3...v2.1.4)
+   * MOM6  [geos/v2.2.2 => geos/v2.2.3](https://github.com/GEOS-ESM/MOM6/compare/geos/v2.2.2...geos/v2.2.3)
+   * CICE6  [geos/v0.1.2 => geos/v0.1.3](https://github.com/GEOS-ESM/CICE/compare/geos/v0.1.2...geos/v0.1.3)
+   * GEOSgcm_App  [v2.2.7 => v2.2.8](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.2.7...v2.2.8)
+
+## [11.3.3] - 2023-11-17
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+* Merge branches `feature/wmputman/hwt_spring_exp` and `feature/donifan/KrokMG3` into `develop` [#855](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/855)
+   * Merges in the latest changes of MGB2_2M code
+   * More updates to GF2020 and GFDL
+* Update DTs in `gcm_setup` for non-stock configurations [#537](https://github.com/GEOS-ESM/GEOSgcm_App/pull/537)
+* Updated/added command line feature for `remap_restarts.py` [#19](https://github.com/GEOS-ESM/GEOS_Util/pull/19)
+* Further cleanup of boundary conditions [#846](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/846)
+* Minor land related code cleanup (coeffsib) [#845](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/845)
+* Add fv namelist entry for AIST work [#696](https://github.com/GEOS-ESM/GEOSgcm/pull/696)
+* Fixture changes:
+   * NCEP_Shared  [v1.2.1 => v1.3.0](https://github.com/GEOS-ESM/NCEP_Shared/compare/v1.2.1...v1.3.0)
+   * GMAO_Shared  [v1.9.5 => v1.9.6](https://github.com/GEOS-ESM/GMAO_Shared/compare/v1.9.5...v1.9.6)
+   * GEOS_Util  [v2.0.3 => v2.0.4](https://github.com/GEOS-ESM/GEOS_Util/compare/v2.0.3...v2.0.4)
+   * GEOSgcm_GridComp  [v2.3.1 => v2.3.2](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.3.1...v2.3.2)
+   * FVdycoreCubed_GridComp  [v2.8.0 => v2.9.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.8.0...v2.9.0)
+   * fvdycore  [v2.6.0 => v2.7.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/compare/geos/v2.6.0...geos/v2.7.0)
+   * GEOSgcm_App  [v2.2.6 => v2.2.7](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.2.6...v2.2.7)
+
+## [11.3.2] - 2023-10-31
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+* Changes were made in this release to accomodate the newly availible SCU17 at NCCS, which introduced two separate operating systems. When running at NCCS, the `parallel_build.csh` script was changed to append `-SLES12` to the `build` and `install` directories for Skylake and Cascade Lake nodes running SLES 12. Alternatively, `parallel_build.csh -mil` can be specified to build on the Milan nodes running SLES 15. In that case, `-SLES15` will be appended to the `build` and `install` directories to avoid confusion and ensure compatibility with each respective platform. The following changes were made to the repositories to accomodate these updates:
+   * ESMA_env  [v4.20.0 => v4.20.6](https://github.com/GEOS-ESM/ESMA_env/compare/v4.20.0...v4.20.6)
+   * ESMA_cmake  [v3.35.0 => v3.36.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.35.0...v3.36.0)
+   * MAPL  [v2.41.1 => v2.42.0](https://github.com/GEOS-ESM/MAPL/compare/v2.41.1...v2.42.0)
+   * GEOSgcm_App  [v2.2.5 => v2.2.6](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.2.5...v2.2.6)
+
+## [11.3.1] - 2023-10-20
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+* Updates for SCU17 [#669](https://github.com/GEOS-ESM/GEOSgcm/pull/669)
+* Patched GF2020: reverting order of plumes and allowing plume overlap and consistent autoconversion with classic GF [#838](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/838)
+* Enable `FV3_CONFIG: HWT` for NH runs, `CONVPAR_OPTION: NONE` for ultra-high-res [#521](https://github.com/GEOS-ESM/GEOSgcm_App/pull/521)
+* Add in missing `ESMF_ConfigSetAttribute` for `SNOW_ALBEDO_INFO` [#826](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/826)
+* Add checks on snow states after application of LDAS increments; StieglitzSnow cleanup [#834](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/834)
+* Add support for cice6 dumping intermediate restart in `CICE_plug` [#841](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/841)
+* Fixes for running coupled on macOS [#526](https://github.com/GEOS-ESM/GEOSgcm_App/pull/526)
+* Fixture changes:
+   * ESMA_env  [v4.19.0 => v4.20.0](https://github.com/GEOS-ESM/ESMA_env/compare/v4.19.0...v4.20.0)
+   * ESMA_cmake  [v3.34.0 => v3.35.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.34.0...v3.35.0)
+   * GMAO_Shared  [v1.9.4 => v1.9.5](https://github.com/GEOS-ESM/GMAO_Shared/compare/v1.9.4...v1.9.5)
+   * MAPL  [v2.41.0 => v2.41.1](https://github.com/GEOS-ESM/MAPL/compare/v2.41.0...v2.41.1)
+   * GEOSgcm_GridComp  [v2.3.0 => v2.3.1](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.3.0...v2.3.1)
+   * FVdycoreCubed_GridComp  [v2.7.0 => v2.8.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.7.0...v2.8.0)
+   * CICE6  [geos/v0.1.0 => geos/v0.1.1](https://github.com/GEOS-ESM/CICE/compare/geos/v0.1.0...geos/v0.1.2)
+   * icepack  [geos/v0.1.0 => geos/v0.1.1](https://github.com/GEOS-ESM/Icepack/compare/geos/v0.1.0...geos/v0.1.1)
+   * GEOSgcm_App  [v2.2.3 => v2.2.5](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.2.3...v2.2.5)
+
+## [11.3.0] - 2023-09-29
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: NO
+
+### Major Non-Zero-Diff Changes:
+* Change default parameters to reduce 900mb T/Q forecast RMSE [#835](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/835)
+* Updates to `fv_mapz.F90` in fvdycore  [v2.5.0 => v2.6.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/compare/geos/v2.5.0...geos/v2.6.0)
+
+## [11.2.1] - 2023-09-29
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+* Updates from `feature/wmputman/hwt_spring_exp` [#828](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/828) [#515](https://github.com/GEOS-ESM/GEOSgcm_App/pull/515) [#75](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/pull/75) [#253](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/pull/253)
+* Enhancements for MODIS-based snow albedo over land [#687](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/687)
+* Add stretched Cube Sphere option to BCS package [#801](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/801)
+* Combine stretched CS grid and regular CS grid [#817](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/817)
+* Correct `LONG_NAME` of `CDCR2` [#818](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/818)
+* Rename coupled grids [#695](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/695)
+* Allow for tolerance option for SSTs and seaice fractions [#823](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/823)
+* Enable `C-EVP` in `CICE6` [#824](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/824)
+* `HISTORY.rc tmpl` for `GEOS-MITgcm` coupled model [#510](https://github.com/GEOS-ESM/GEOSgcm_App/pull/510)
+* More cleanup of app scripts and add simtime to logging [#508](https://github.com/GEOS-ESM/GEOSgcm_App/pull/508)
+* Fix `WSUB` use in other scripts [#512](https://github.com/GEOS-ESM/GEOSgcm_App/pull/512)
+* Fix doubled logger output [#514](https://github.com/GEOS-ESM/GEOSgcm_App/pull/514)
+* Bugfix for handling `GAAS` in replays and forecasts [#518](https://github.com/GEOS-ESM/GEOSgcm_App/pull/518)
+* Fixture changes:
+   * ESMA_cmake  [v3.31.1 => v3.34.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.31.1...v3.34.0)
+   * GMAO_Shared  [v1.9.2 => v1.9.4](https://github.com/GEOS-ESM/GMAO_Shared/compare/v1.9.2...v1.9.4)
+   * MAPL  [v2.40.3 => v2.41.0](https://github.com/GEOS-ESM/MAPL/compare/v2.40.3...v2.41.0)
+   * GEOSgcm_GridComp  [v2.2.0 => v2.2.1](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.2.0...v2.2.1)
+   * FVdycoreCubed_GridComp  [v2.6.0 => v2.7.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.6.0...v2.7.0)
+   * fvdycore  [v2.4.1 => v2.5.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/compare/geos/v2.4.1...geos/v2.5.0)
+   * GEOS_OceanGridComp  [v2.1.2 => v2.1.3](https://github.com/GEOS-ESM/GEOS_OceanGridComp/compare/v2.1.2...v2.1.3)
+   * MOM6  [geos/v2.2.1 => geos/v2.2.2](https://github.com/GEOS-ESM/MOM6/compare/geos/v2.2.1...geos/v2.2.2)
+   * CICE6  [geos/v0.0.2 => geos/v0.1.0](https://github.com/GEOS-ESM/CICE/compare/geos/v0.0.2...geos/v0.1.0)
+   * icepack  [geos/v0.0.3 => geos/v0.1.0](https://github.com/GEOS-ESM/Icepack/compare/geos/v0.0.3...geos/v0.1.0)
+   * GEOSgcm_App  [v2.2.2 => v2.2.3](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.2.2...v2.2.3)
+
+
+## [11.2.0] - 2023-08-25
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: YES
+
+### Major Non-Zero-Diff Changes:
+* Extensive updates to the SHOC-EDMF turbulence parameterizations in [#783](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/783)
+* Fixes for [UW and Turb bugs](https://github.com/GEOS-ESM/GEOSgcm_GridComp/issues/800) in [#802](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/802)
+* Uptick to [GOCART v2.2.1](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.2.1) with QFED path update.
+* Uptick to [GEOSchem_GridComp v1.13.1](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.13.1) with QFED path update.
+* Uptick to [TR v1.1.0](https://github.com/GEOS-ESM/TR/releases) which is non-zero-diff for certain tracers.
+* Uptick to [GMI v1.1.0](https://github.com/GEOS-ESM/GMI/releases/tag/v1.1.0)
+
+
 ## [11.1.2] - 2023-08-24
 
 ### Zero-diff to Previous Release: YES
