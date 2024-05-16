@@ -17,7 +17,7 @@
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v1.3.0](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.3.0)                       |
 | [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.45.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.45.0)                              |
 | [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v4.28.1](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.28.1)                                |
-| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.45.1](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.45.1)                              |
+| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.45.2](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.45.2)                              |
 | [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v4.29.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.29.0)                                |
 | [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.10](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.10) |
 | [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v2.11.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.11.1)                    |
