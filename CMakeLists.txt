@@ -93,16 +93,10 @@ if (NOT Baselibs_FOUND)
   # Another issue with historical reasons, old/wrong zlib target used in GEOS
   add_library(ZLIB::zlib ALIAS ZLIB::ZLIB)
 
-  # Using FMS from spack requires updates to fvdycore due to interface changes
-  # in FMS 2022. This is commented for now until this transition can occur.
-  #################################################
-  # find_package(FMS QUIET COMPONENTS R4 R8)      #
-  # if (FMS_FOUND)                                #
-  #   # We need aliases due to historical reasons #
-  #   add_library(fms_r4 ALIAS FMS::fms_r4)       #
-  #   add_library(fms_r8 ALIAS FMS::fms_r8)       #
-  # endif ()                                      #
-  #################################################
+  find_package(FMS REQUIRED COMPONENTS R4 R8)
+  # We need aliases due to historical reasons
+  add_library(fms_r4 ALIAS FMS::fms_r4)
+  add_library(fms_r8 ALIAS FMS::fms_r8)
 
 endif ()
 
