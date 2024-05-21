@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  branch: feature/mathomp4/fms-baselibs
+  tag: v5.0.0
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  branch: feature/mathomp4/fms-baselibs
+  tag: v4.0.0
   develop: develop
 
 ecbuild:
