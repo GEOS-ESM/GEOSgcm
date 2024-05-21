@@ -61,11 +61,7 @@ FVdycoreCubed_GridComp:
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-<<<<<<< HEAD
   branch: feature/mathomp4/fms-baselibs
-=======
-  tag: geos/v2.9.0
->>>>>>> main
   develop: geos/develop
 
 GEOSchem_GridComp:
