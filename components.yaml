@@ -42,7 +42,7 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.45.0
+  tag: v2.46.1
   develop: develop
 
 GEOSgcm_GridComp:
@@ -61,7 +61,11 @@ FVdycoreCubed_GridComp:
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
+<<<<<<< HEAD
   branch: feature/mathomp4/fms-baselibs
+=======
+  tag: geos/v2.9.0
+>>>>>>> main
   develop: geos/develop
 
 GEOSchem_GridComp:
@@ -85,7 +89,7 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: sdr_v2.2.1.1
+  tag: sdr_v2.2.1.2
   develop: develop
 
 QuickChem:
