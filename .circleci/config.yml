@@ -16,12 +16,12 @@ parameters:
 
 # Anchors to prevent forgetting to update a version
 os_version: &os_version ubuntu20
-baselibs_version: &baselibs_version v7.23.0
+baselibs_version: &baselibs_version v8.0.2
 bcs_version: &bcs_version v11.3.0
 tag_build_arg_name: &tag_build_arg_name gcmversion
 
 orbs:
-  ci: geos-esm/circleci-tools@2
+  ci: geos-esm/circleci-tools@3
 
 workflows:
   build-test:
