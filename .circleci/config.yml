@@ -58,7 +58,7 @@ workflows:
             - docker-hub-creds
           matrix:
             parameters:
-              compiler: [gfortran, ifort]
+              compiler: [ifort]
           baselibs_version: *baselibs_version
           bcs_version: *bcs_version
           requires:
