@@ -5,13 +5,17 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v3.14.0
+# tag: v3.14.0
+# feature/mmanyin/QUICKCHEM_DEV as of 5.24.24
+  hash: 98d08e38825a1565f10781ee7ca2cb4b56569c42
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.17.0
+# tag: v3.17.0
+# feature/mmanyin/QUICKCHEM_DEV as of 5.24.24
+  hash: 3332e2f48bd6e8fc275e42be81d59b88519b9f76
   develop: develop
 
 ecbuild:
@@ -29,7 +33,9 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.5.3
+# tag: v1.5.3
+# feature/mmanyin/QUICKCHEM_DEV as of 5.24.24
+  hash: 0f4a07c2c058aba3908d56363ab7f0481cf4d028
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -139,8 +145,8 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-# feature/mmanyin/QUICKCHEM_DEV as of 3.6.23
-  hash: 839a2696dc15592bb16fba22c9f0313b4579acaf
+# feature/mmanyin/QUICKCHEM_DEV as of 5.23.24
+  hash: 5d884fc4249cf72093c8f243a0e6d7fcf1f18e68
   develop: develop
 
 UMD_Etc:
