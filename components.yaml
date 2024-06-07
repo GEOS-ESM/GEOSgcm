@@ -158,13 +158,13 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: GCMv12_rc2
+  branch: feature/pnorris/OSR_per_band_instrumentation-merge-scott
   develop: feature/sdrabenh/gcm_v12-rc1
 
 RRTMGP:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/GEOS_RadiationShared/@RRTMGP
   remote: ../rte-rrtmgp.git
-  tag: geos/v1.7+1.0.0
+  tag: geos/v1.8+1.0.0
   develop: geos/develop
   sparse: ./config/RRTMGP.sparse
 
