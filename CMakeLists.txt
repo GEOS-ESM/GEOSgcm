@@ -60,31 +60,18 @@ if (NOT Baselibs_FOUND)
      add_definitions(-DH5_HAVE_PARALLEL)
   endif()
 
-  if (NOT TARGET esmf)
-    if (DEFINED ENV{esmf_ROOT})
-      message (STATUS "Found esmf_ROOT in environment: $ENV{esmf_ROOT}")
-      find_path(ESMF_CMAKE_PATH FindESMF.cmake HINTS "$ENV{esmf_ROOT}/cmake")
-      message (STATUS "Found FindESMF.cmake in: ${ESMF_CMAKE_PATH}")
-      if (ESMF_CMAKE_PATH)
-        message (STATUS "Appending to CMAKE_PREFIX_PATH: ${ESMF_CMAKE_PATH}")
-        list (APPEND CMAKE_MODULE_PATH ${ESMF_CMAKE_PATH})
-      endif ()
+  if (NOT TARGET ESMF::ESMF)
+    find_package(ESMF 8.6.1 MODULE REQUIRED)
+    target_link_libraries(ESMF::ESMF INTERFACE MPI::MPI_Fortran)
+
+    # GEOS uses lowercase target due to historical reasons but
+    # the latest FindESMF.cmake file from ESMF produces an ESMF::ESMF target.
+    if (NOT TARGET esmf)
+      add_library(esmf ALIAS ESMF::ESMF)
     endif ()
-
-    find_package(ESMF MODULE REQUIRED)
-
-    # ESMF as used in MAPL requires MPI
-    # NOTE: This looks odd because some versions of FindESMF.cmake out in the
-    #       world provide an "esmf" target while others provide "ESMF". So we
-    #       need this ugliness to support both.
-    if (TARGET esmf)
-      target_link_libraries(esmf INTERFACE MPI::MPI_Fortran)
-    else()
-      target_link_libraries(ESMF INTERFACE MPI::MPI_Fortran)
-      # MAPL and GEOS use lowercase target due to historical reasons but
-      # the latest FindESMF.cmake file from ESMF produces an ESMF target.
-      add_library(esmf ALIAS ESMF)
-    endif()
+    if (NOT TARGET ESMF)
+      add_library(ESMF ALIAS ESMF::ESMF)
+    endif ()
   endif ()
 
   find_package(GFTL_SHARED REQUIRED)
@@ -93,16 +80,10 @@ if (NOT Baselibs_FOUND)
   # Another issue with historical reasons, old/wrong zlib target used in GEOS
   add_library(ZLIB::zlib ALIAS ZLIB::ZLIB)
 
-  # Using FMS from spack requires updates to fvdycore due to interface changes
-  # in FMS 2022. This is commented for now until this transition can occur.
-  #################################################
-  # find_package(FMS QUIET COMPONENTS R4 R8)      #
-  # if (FMS_FOUND)                                #
-  #   # We need aliases due to historical reasons #
-  #   add_library(fms_r4 ALIAS FMS::fms_r4)       #
-  #   add_library(fms_r8 ALIAS FMS::fms_r8)       #
-  # endif ()                                      #
-  #################################################
+  find_package(FMS REQUIRED COMPONENTS R4 R8)
+  # We need aliases due to historical reasons
+  add_library(fms_r4 ALIAS FMS::fms_r4)
+  add_library(fms_r8 ALIAS FMS::fms_r8)
 
 endif ()
 
