@@ -36,7 +36,7 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: v2.0.8
+  tag: v2.1.0
   develop: main
 
 MAPL:
@@ -54,7 +54,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v2.5.2
+  tag: v2.6.0
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -145,14 +145,14 @@ mit:
 cice6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug/@cice6
   remote: ../CICE.git
-  tag: geos/v0.1.3
+  tag: geos/v0.2.0
   develop: geos/develop
   ignore_submodules: true
 
 icepack:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug/@cice6/icepack
   remote: ../Icepack.git
-  tag: geos/v0.2.0
+  tag: geos/v0.3.0
   develop: geos/develop
 
 sis2:
@@ -189,7 +189,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v2.3.2
+  tag: v2.3.3
   develop: develop
 
 UMD_Etc:
