@@ -12,7 +12,7 @@
 
 | Repository                                                                     | Version                                                                                             |
 | ----------                                                                     | -------                                                                                             |
-| [CICE](https://github.com/GEOS-ESM/CICE)                                       | [geos/v0.1.3](https://github.com/GEOS-ESM/CICE/releases/tag/geos%2Fv0.1.3)                          |
+| [CICE](https://github.com/GEOS-ESM/CICE)                                       | [geos/v0.2.0](https://github.com/GEOS-ESM/CICE/releases/tag/geos%2Fv0.2.0)                          |
 | [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                               |
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v1.3.0](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.3.0)                       |
 | [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v4.0.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v4.0.0)                              |
@@ -22,15 +22,15 @@
 | [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v2.1.7](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v2.1.7)                        |
 | [GEOS_Util](https://github.com/GEOS-ESM/GEOS_Util)                             | [v2.0.8](https://github.com/GEOS-ESM/GEOS_Util/releases/tag/v2.0.8)                                 |
 | [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.13.1](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.13.1)                       |
-| [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v2.3.2](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v2.3.2)                               |
-| [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v2.5.2](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v2.5.2)                          |
+| [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v2.3.3](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v2.3.3)                               |
+| [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v2.6.0](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v2.6.0)                          |
 | [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v1.8.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v1.8.0)                    |
 | [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v2.9.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv2.9.0)       |
 | [GMI](https://github.com/GEOS-ESM/GMI)                                         | [v1.1.0](https://github.com/GEOS-ESM/GMI/releases/tag/v1.1.0)                                       |
 | [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.9.7](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.9.7)                               |
-| [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [sdr_v2.2.1.2](https://github.com/GEOS-ESM/GOCART/releases/tag/sdr_v2.2.1.2)                                    |
+| [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [sdr_v2.2.1.2](https://github.com/GEOS-ESM/GOCART/releases/tag/sdr_v2.2.1.2)                        |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.3](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.3)                         |
-| [Icepack](https://github.com/GEOS-ESM/Icepack)                                 | [geos/v0.2.0](https://github.com/GEOS-ESM/Icepack/releases/tag/geos%2Fv0.2.0)                       |
+| [Icepack](https://github.com/GEOS-ESM/Icepack)                                 | [geos/v0.3.0](https://github.com/GEOS-ESM/Icepack/releases/tag/geos%2Fv0.3.0)                       |
 | [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.46.1](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.46.1)                                    |
 | [MITgcm](https://github.com/GEOS-ESM/MITgcm)                                   | [checkpoint68o](https://github.com/GEOS-ESM/MITgcm/releases/tag/checkpoint68o)                      |
 | [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+2.0.0](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B2.0.0)              |
