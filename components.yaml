@@ -10,7 +10,7 @@ env:
 
 cmake:
   local: ./@cmake
-  remote: ../ESMA_cmake.git 
+  remote: ../ESMA_cmake.git
   tag: v4.0.0
   develop: develop
 
@@ -121,7 +121,7 @@ GEOS_OceanGridComp:
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM_GEOS5PlugMod/@mom
   remote: ../MOM5.git
-  tag: geos/5.1.0+2.0.0
+  tag: geos/5.1.0+2.1.0
   develop: geos5
 
 mom6:

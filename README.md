@@ -33,7 +33,7 @@
 | [Icepack](https://github.com/GEOS-ESM/Icepack)                                 | [geos/v0.3.0](https://github.com/GEOS-ESM/Icepack/releases/tag/geos%2Fv0.3.0)                       |
 | [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.46.1](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.46.1)                                    |
 | [MITgcm](https://github.com/GEOS-ESM/MITgcm)                                   | [checkpoint68o](https://github.com/GEOS-ESM/MITgcm/releases/tag/checkpoint68o)                      |
-| [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+2.0.0](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B2.0.0)              |
+| [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+2.1.0](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B2.1.0)              |
 | [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v3.1](https://github.com/GEOS-ESM/MOM6/tree/geos/v3.1)                                        |
 | [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.3.0](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.3.0)                               |
 | [QuickChem](https://github.com/GEOS-ESM/QuickChem)                             | [v1.0.0](https://github.com/GEOS-ESM/QuickChem/releases/tag/v1.0.0)                                 |
