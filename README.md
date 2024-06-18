@@ -12,31 +12,39 @@
 
 | Repository                                                                     | Version                                                                                             |
 | ----------                                                                     | -------                                                                                             |
-| [CICE](https://github.com/GEOS-ESM/CICE)                                       | [geos/v0.0.1](https://github.com/GEOS-ESM/CICE/releases/tag/geos%2Fv0.0.1)                          |
+| [CICE](https://github.com/GEOS-ESM/CICE)                                       | [geos/v0.2.0](https://github.com/GEOS-ESM/CICE/releases/tag/geos%2Fv0.2.0)                          |
 | [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                               |
-| [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v1.2.0](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.2.0)                       |
-| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.18.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.18.0)                              |
-| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v4.4.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.4.0)                                  |
-| [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.8](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.8) |
-| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v1.11.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v1.11.0)                  |
+| [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v1.3.0](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.3.0)                       |
+| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.45.2](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.45.2)                              |
+| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v4.29.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.29.0)                                |
+| [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.10](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.10) |
+| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v2.11.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.11.1)                    |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)           |
-| [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.10.1](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.10.1)                       |
-| [QuickChem](https://github.com/GEOS-ESM/QuickChem)                             | [v1.0.0](https://github.com/GEOS-ESM/QuickChem/releases/tag/v1.0.0)                                 |
-| [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v1.8.0](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v1.8.0)                               |
-| [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v1.17.0](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v1.17.0)                        |
-| [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v1.0.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v1.0.0)                    |
-| [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v1.1.1](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v1.1.1)                        |
-| [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v1.4.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv1.4.0)       |
-| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.6.0](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.6.0)                               |
-| [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.1.0](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.1.0)                                    |
+| [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v2.1.6](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v2.1.6)                        |
+| [GEOS_Util](https://github.com/GEOS-ESM/GEOS_Util)                             | [v2.1.0](https://github.com/GEOS-ESM/GEOS_Util/releases/tag/v2.1.0)                                 |
+| [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.13.1](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.13.1)                       |
+| [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v2.3.3](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v2.3.3)                               |
+| [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v2.6.0](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v2.6.0)                          |
+| [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v1.8.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v1.8.0)                    |
+| [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v2.9.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv2.9.0)       |
+| [GMI](https://github.com/GEOS-ESM/GMI)                                         | [v1.1.0](https://github.com/GEOS-ESM/GMI/releases/tag/v1.1.0)                                       |
+| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.9.7](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.9.7)                               |
+| [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [sdr_v2.2.1.2](https://github.com/GEOS-ESM/GOCART/releases/tag/sdr_v2.2.1.2)                        |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.3](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.3)                         |
-| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.25.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.25.0)                                    |
+| [Icepack](https://github.com/GEOS-ESM/Icepack)                                 | [geos/v0.3.0](https://github.com/GEOS-ESM/Icepack/releases/tag/geos%2Fv0.3.0)                       |
+| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.46.1](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.46.1)                                    |
+| [MITgcm](https://github.com/GEOS-ESM/MITgcm)                                   | [checkpoint68o](https://github.com/GEOS-ESM/MITgcm/releases/tag/checkpoint68o)                      |
 | [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+1.2.0](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B1.2.0)              |
-| [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v2.0.4](https://github.com/GEOS-ESM/MOM6/releases/tag/geos%2Fv2.0.4)                          |
-| [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.2.0](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.2.0)                               |
-| [RRTMGP](https://github.com/GEOS-ESM/rte-rrtmgp)                               | [geos/v1.5+1.0.0](https://github.com/GEOS-ESM/rte-rrtmgp/releases/tag/geos%2Fv1.5%2B1.0.0)          |
+| [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v3.1](https://github.com/GEOS-ESM/MOM6/tree/geos/v3.1)                                        |
+| [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.3.0](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.3.0)                               |
+| [QuickChem](https://github.com/GEOS-ESM/QuickChem)                             | [v1.0.0](https://github.com/GEOS-ESM/QuickChem/releases/tag/v1.0.0)                                 |
+| [RRTMGP](https://github.com/GEOS-ESM/rte-rrtmgp)                               | [geos/v1.7+1.0.0](https://github.com/GEOS-ESM/rte-rrtmgp/releases/tag/geos%2Fv1.7%2B1.0.0)          |
 | [SIS2](https://github.com/GEOS-ESM/SIS2)                                       | [geos/v0.0.1](https://github.com/GEOS-ESM/SIS2/releases/tag/geos%2Fv0.0.1)                          |
-| [UMD_Etc](https://github.com/GEOS-ESM/UMD_Etc)                                 | [v1.1.0](https://github.com/GEOS-ESM/UMD_Etc/releases/tag/v1.1.0)                                   |
+| [StratChem](https://github.com/GEOS-ESM/StratChem)                             | [v1.0.0](https://github.com/GEOS-ESM/StratChem/releases/tag/v1.0.0)                                 |
+| [TR](https://github.com/GEOS-ESM/TR)                                           | [v1.1.0](https://github.com/GEOS-ESM/TR/releases/tag/v1.1.0)                                        |
+| [UMD_Etc](https://github.com/GEOS-ESM/UMD_Etc)                                 | [v1.3.0](https://github.com/GEOS-ESM/UMD_Etc/releases/tag/v1.3.0)                                   |
+| [WW3](https://github.com/GEOS-ESM/WW3)                                         | [v6.07.1-geos-r2](https://github.com/GEOS-ESM/WW3/releases/tag/v6.07.1-geos-r2)                     |
+| [umwm](https://github.com/GEOS-ESM/umwm)                                       | [v2.0.0-geos-r1](https://github.com/GEOS-ESM/umwm/releases/tag/v2.0.0-geos-r1)                      |
 
 ## How to build GEOS GCM
 
@@ -47,8 +55,19 @@
 In your `.bashrc` or `.tcshrc` or other rc file add a line:
 
 ##### NCCS
+
+NCCS currently has two different OSs. So you'll need to use different modulefiles depending on which OS you are using.
+
+###### SLES 12
+
 ```
 module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
+```
+
+###### SLES 15
+
+```
+module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES15
 ```
 
 ##### NAS
@@ -88,8 +107,9 @@ is enabled on GitHub.
 
 To clone the GEOSgcm using the SSH url (starts with `git@github.com`), you run:
 ```
-git clone git@github.com:GEOS-ESM/GEOSgcm.git
+git clone -b vX.Y.Z git@github.com:GEOS-ESM/GEOSgcm.git
 ```
+where `vX.Y.Z` is a tag from a [GEOSgcm release](https://github.com/GEOS-ESM/GEOSgcm/releases). Note if you don't use `-b`, you will get the `main` branch and that can change from day-to-day.
 
 ###### Permission denied (publickey)
 
@@ -114,8 +134,9 @@ use the SSH URL through.
 To clone the model through HTTPS you run:
 
 ```
-git clone https://github.com/GEOS-ESM/GEOSgcm.git
+git clone -b vX.Y.Z https://github.com/GEOS-ESM/GEOSgcm.git
 ```
+where `vX.Y.Z` is a tag from a [GEOSgcm release](https://github.com/GEOS-ESM/GEOSgcm/releases). Note if you don't use `-b`, you will get the `main` branch and that can change from day-to-day.
 
 Note that if you use the HTTPS URL and have 2FA set up on GitHub, you will need
 to use [personal access
@@ -126,8 +147,9 @@ as a password.
 
 You can also use the [GitHub CLI](https://cli.github.com/) with:
 ```
-gh repo clone GEOS-ESM/GEOSgcm
+gh repo clone GEOS-ESM/GEOSgcm -- -b vX.Y.Z
 ```
+where `vX.Y.Z` is a tag from a [GEOSgcm release](https://github.com/GEOS-ESM/GEOSgcm/releases). Note if you don't use `-b`, you will get the `main` branch and that can change from day-to-day.
 
 Note that when you first use `gh`, it will ask what your preferred git protocol
 is (https or ssh) to use "underneath". The caveats above will apply to whichever
@@ -139,10 +161,19 @@ you choose.
 
 If all you wish is to build the model, you can run `parallel_build.csh` from a head node. Doing so will checkout all the external repositories of the model and build it. When done, the resulting model build will be found in `build/` and the installation will be found in `install/` with setup scripts like `gcm_setup` and `fvsetup` in `install/bin`.
 
+#### Building at NCCS (Multiple OSs)
+
+In all the examples below, NCCS builds will act differently. Because NCCS currently has two different OSs, when you use
+`parallel_build.csh` you will see that the `build` and `install` directories will be appended with `-SLES12` or `-SLES15` depending
+on where you submitted to. When NCCS moves to a single OS again, this will be removed.
+
+Note that if you use the `-builddir` and `-installdir` options, you can override this behavior and no OS will be automatically
+appended.
+
 #### Develop Version of GEOS GCM
 
 `parallel_build.csh` provides a special flag for checking out the
-development branches of GEOSgcm_GridComp, GEOSgcm_App, and GMAO_Shared. If you run:
+development branches of GEOSgcm_GridComp, GEOSgcm_App, GMAO_Shared, and GEOS_Util. If you run:
 
 ```
 parallel_build.csh -develop
@@ -150,7 +181,7 @@ parallel_build.csh -develop
 then `mepo` will run:
 
 ```
-mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared
+mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared GEOS_Util
 ```
 
 #### Debug Version of GEOS GCM
@@ -161,6 +192,21 @@ To obtain a debug version, you can run `parallel_build.csh -debug` which will bu
 
 Note that running with `parallel_build.csh` will create and install a tarfile of the source code at build time. If you wish to avoid
 this, run `parallel_build.csh` with the `-no-tar` option.
+
+#### Passing additional CMake options to `parallel_build.csh`
+
+While `parallel_build.csh` has many options, it does not cover all possible CMake options possible in GEOSgcm. If you wish to
+pass additional CMake options to `parallel_build.csh`, you can do so by using `--` and then the CMake options. Note that *anything*
+after the `--` will be interpreted as a CMake option, which could lead to build issues if not careful.
+
+For example, if you want to build a develop Debug build on Cascade Lake while turning on StratChem reduced mechanism and the CODATA
+2018 options:
+
+```
+parallel_build.csh -develop -debug -cas -- -DSTRATCHEM_REDUCED_MECHANISM=ON -DUSE_CODATA_2018_CONSTANTS=ON
+```
+
+As noted above all the "regular" `parallel_build.csh` options must be listed before the `--` flag.
 
 ---
 
@@ -183,15 +229,15 @@ The first command initializes the multi-repository and the second one
 clones and assembles all the sub-repositories according to
 `components.yaml`
 
-#### Checking out develop branches of GEOSgcm_GridComp, GEOSgcm_App, and GMAO_Shared
+#### Checking out develop branches of GEOSgcm_GridComp, GEOSgcm_App, GMAO_Shared, and GEOS_Util
 
-To get development branches of GEOSgcm_GridComp, GEOSgcm_App, and GMAO_Shared (a la
+To get development branches of GEOSgcm_GridComp, GEOSgcm_App, GMAO_Shared, and GEOS_Util (a la
 the `-develop` flag for `parallel_build.csh`, one needs to run the
 equivalent `mepo` command. As mepo itself knows (via `components.yaml`) what the development branch of each
 subrepository is, the equivalent of `-develop` for `mepo` is to
-checkout the development branches of GEOSgcm_GridComp, GEOSgcm_App, and GMAO_Shared:
+checkout the development branches of GEOSgcm_GridComp, GEOSgcm_App, GMAO_Shared, and GEOS_Util:
 ```
-mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared
+mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared GEOS_Util
 ```
 
 This must be done *after* `mepo clone` as it is running a git command in

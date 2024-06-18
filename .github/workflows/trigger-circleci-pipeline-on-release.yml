@@ -1,0 +1,12 @@
+on:
+  release:
+    types: [published]
+jobs:
+  trigger-circleci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: CircleCI Trigger on Release
+        id: docker-build
+        uses: CircleCI-Public/trigger-circleci-pipeline-action@v1.2.0
+        env:
+          CCI_TOKEN: ${{ secrets.CCI_TOKEN }}

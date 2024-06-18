@@ -4,7 +4,7 @@ cmake_policy (SET CMP0054 NEW)
 
 project (
   GEOSgcm
-  VERSION 10.23.0
+  VERSION 11.6.0
   LANGUAGES Fortran CXX C)  # Note - CXX is required for ESMF
 
 if ("${PROJECT_SOURCE_DIR}" STREQUAL "${PROJECT_BINARY_DIR}")
@@ -38,7 +38,60 @@ foreach (dir cmake @cmake cmake@)
     set (ESMA_CMAKE_PATH "${CMAKE_CURRENT_LIST_DIR}/${dir}" CACHE PATH "Path to ESMA_cmake code")
   endif ()
 endforeach ()
+
+# We need to find MPI before we go into esma
+# for the MPI stack detection to work
+set(MPI_DETERMINE_LIBRARY_VERSION TRUE)
+find_package(MPI)
+
 include (esma)
+
+# Add CMake for when not using Baselibs
+if (NOT Baselibs_FOUND)
+
+  find_package(NetCDF REQUIRED C Fortran)
+  add_definitions(-DHAS_NETCDF4)
+  add_definitions(-DHAS_NETCDF3)
+  add_definitions(-DNETCDF_NEED_NF_MPIIO)
+  add_definitions(-DHAS_NETCDF3)
+
+  find_package(HDF5 REQUIRED)
+  if(HDF5_IS_PARALLEL)
+     add_definitions(-DH5_HAVE_PARALLEL)
+  endif()
+
+  if (NOT TARGET ESMF::ESMF)
+    find_package(ESMF 8.6.1 MODULE REQUIRED)
+    target_link_libraries(ESMF::ESMF INTERFACE MPI::MPI_Fortran)
+
+    # GEOS uses lowercase target due to historical reasons but
+    # the latest FindESMF.cmake file from ESMF produces an ESMF::ESMF target.
+    if (NOT TARGET esmf)
+      add_library(esmf ALIAS ESMF::ESMF)
+    endif ()
+    if (NOT TARGET ESMF)
+      add_library(ESMF ALIAS ESMF::ESMF)
+    endif ()
+  endif ()
+
+  find_package(GFTL_SHARED REQUIRED)
+
+  find_package(ZLIB REQUIRED)
+  # Another issue with historical reasons, old/wrong zlib target used in GEOS
+  add_library(ZLIB::zlib ALIAS ZLIB::ZLIB)
+
+  # Using FMS from spack requires updates to fvdycore due to interface changes
+  # in FMS 2022. This is commented for now until this transition can occur.
+  #################################################
+  # find_package(FMS QUIET COMPONENTS R4 R8)      #
+  # if (FMS_FOUND)                                #
+  #   # We need aliases due to historical reasons #
+  #   add_library(fms_r4 ALIAS FMS::fms_r4)       #
+  #   add_library(fms_r8 ALIAS FMS::fms_r8)       #
+  # endif ()                                      #
+  #################################################
+
+endif ()
 
 ecbuild_declare_project()
 
