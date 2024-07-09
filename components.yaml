@@ -91,7 +91,8 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: sdr_v2.2.1.2
+#  tag: sdr_v2.2.1.2
+  branch: feature/pcastell/gocart_online_cf_oxidents
   develop: develop
 
 QuickChem:
