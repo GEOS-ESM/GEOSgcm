@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v4.9.1
+  tag: v4.9.4
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.26.0
+  tag: v3.26.1
   develop: develop
 
 ecbuild:
@@ -42,7 +42,7 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.35.3
+  tag: v2.35.3+sles15.0
   develop: develop
 
 FMS:
@@ -166,7 +166,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v1.9.5
+  tag: v1.9.5+sles15.0
   develop: develop
 
 UMD_Etc:
