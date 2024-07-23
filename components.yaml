@@ -36,26 +36,26 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: GCMv12_rc2
+  tag: GCMv12_rc3
   develop: feature/sdrabenh/gcm_v12-rc1
 
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: GCMv12_rc2
+  tag: GCMv12_rc3
   develop: feature/sdrabenh/gcm_v12-rc1
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: GCMv12_rc2
+  tag: GCMv12_rc3
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/sdrabenh/gcm_v12-rc1
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: GCMv12_rc2
+  tag: GCMv12_rc3
   develop: feature/sdrabenh/gcm_v12-rc1
 
 fvdycore:
@@ -67,7 +67,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: GCMv12_rc2
+  tag: GCMv12_rc3
   develop: feature/sdrabenh/gcm_v12-rc1
 
 HEMCO:
@@ -158,7 +158,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  branch: feature/sdrabenh/gcm_v12-rc1
+  tag: GCMv12_rc3
   develop: feature/sdrabenh/gcm_v12-rc1
 
 RRTMGP:
@@ -183,7 +183,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: GCMv12_rc2
+  tag: GCMv12_rc3
   develop: feature/sdrabenh/gcm_v12-rc1
 
 UMD_Etc:
