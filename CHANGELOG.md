@@ -2,6 +2,37 @@
 
 ## Unreleased
 
+## [11.6.1] - 2024-08-01
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+
+* `linkbcs` bugfix for coupled runs using v12 bcs [#623](https://github.com/GEOS-ESM/GEOSgcm_App/pull/623)
+* Exports and `LONG_NAMES` changes for land water and energy balances [#957](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/957)
+* New and renamed exports added to`HISTORY.rc.tmpl` for land water and energy balances [#621](https://github.com/GEOS-ESM/GEOSgcm_App/pull/621)
+* Update GMI and StratChem HISTORY [#627](https://github.com/GEOS-ESM/GEOSgcm_App/pull/627)
+* Routing Outlets in Boundary Conditions [#827](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/827)
+* Bugfix to remove double-counting of heat corr (`StieglitzSnow.F90`) [#946](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/946)
+* Bugfix whereby `TMPHIST` was not created during cloning [#626](https://github.com/GEOS-ESM/GEOSgcm_App/pull/626)
+* Fixes for Ninja builds [#966](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/966)
+* Added MASKFILE for time-discontinuous data for TEM diagnostics [#89](https://github.com/GEOS-ESM/GEOS_Util/pull/89)
+* Add MOM6 C90 ogrid option to `remap_utils.py` [#83](https://github.com/GEOS-ESM/GEOS_Util/pull/83)
+* Bugfix for `time_ave.rc` [#86](https://github.com/GEOS-ESM/GEOS_Util/pull/86)
+
+### Fixture Changes:
+* ESMA_cmake  [v3.45.2 => v3.48.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.45.2...v3.48.0)
+* GMAO_Shared  [v1.9.7 => v1.9.8](https://github.com/GEOS-ESM/GMAO_Shared/compare/v1.9.7...v1.9.8)
+* GEOS_Util  [v2.1.0 => v2.1.2](https://github.com/GEOS-ESM/GEOS_Util/compare/v2.1.0...v2.1.2)
+* MAPL  [v2.46.1 => v2.47.1](https://github.com/GEOS-ESM/MAPL/compare/v2.46.1...v2.47.1)
+* GEOSgcm_GridComp  [v2.6.0 => v2.6.1](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.6.0...v2.6.1)
+* GEOSchem_GridComp  [v1.13.1 => v1.14.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/compare/v1.13.1...v1.14.0)
+* TR  [v1.1.0 => v1.2.0](https://github.com/GEOS-ESM/TR/compare/v1.1.0...v1.2.0)
+* GMI  [v1.1.0 => v1.3.0](https://github.com/GEOS-ESM/GMI/compare/v1.1.0...v1.3.0)
+* GEOSgcm_App  [v2.3.3 => v2.3.4](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.3.3...v2.3.4)
+
+
 ## [11.6.0] - 2024-06-11
 
 ### Zero-diff to Previous Release: NO
