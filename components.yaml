@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v5.0.0
+  tag: v5.3.0
   develop: main
 
 cmake:
   local: ./@cmake
-  remote: ../ESMA_cmake.git 
-  tag: v4.0.0
+  remote: ../ESMA_cmake.git
+  tag: v4.4.0
   develop: develop
 
 ecbuild:
@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.9.7
+  tag: v1.9.8
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -97,13 +97,13 @@ QuickChem:
 TR:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@TR
   remote: ../TR.git
-  tag: v1.1.0
+  tag: v1.2.0
   develop: develop
 
 GMI:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GMI
   remote: ../GMI.git
-  tag: v1.1.0
+  tag: v1.3.0
   develop: develop
 
 StratChem:
@@ -115,13 +115,13 @@ StratChem:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v3.0.0
+  tag: v3.1.0
   develop: develop
 
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM_GEOS5PlugMod/@mom
   remote: ../MOM5.git
-  tag: geos/5.1.0+2.0.0
+  tag: geos/5.1.0+2.1.0
   develop: geos5
 
 mom6:
