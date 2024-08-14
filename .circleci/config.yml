@@ -84,9 +84,9 @@ workflows:
           bcs_version: *bcs_version
           container_name: geosgcm
           mpi_name: intelmpi
-          mpi_version: 2021.6.0
+          mpi_version: "2021.13"
           compiler_name: intel
-          compiler_version: 2022.1.0
+          compiler_version: "2024.2"
           image_name: geos-env-bcs
           tag_build_arg_name: *tag_build_arg_name
           resource_class: xlarge
