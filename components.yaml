@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v5.0.0
+  tag: v5.3.0
   develop: main
 
 cmake:
   local: ./@cmake
-  remote: ../ESMA_cmake.git 
-  tag: v4.0.0
+  remote: ../ESMA_cmake.git
+  tag: v4.5.0
   develop: develop
 
 ecbuild:
@@ -115,19 +115,19 @@ StratChem:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v3.0.0
+  tag: v3.3.0
   develop: develop
 
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM_GEOS5PlugMod/@mom
   remote: ../MOM5.git
-  tag: geos/5.1.0+2.0.0
+  tag: geos/5.1.0+2.1.0
   develop: geos5
 
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
-  tag: geos/v3.1
+  tag: geos/v3.2
   develop: main
   recurse_submodules: true
 

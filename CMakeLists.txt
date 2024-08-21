@@ -4,7 +4,7 @@ cmake_policy (SET CMP0054 NEW)
 
 project (
   GEOSgcm
-  VERSION 11.6.1
+  VERSION 12.0.0
   LANGUAGES Fortran CXX C)  # Note - CXX is required for ESMF
 
 if ("${PROJECT_SOURCE_DIR}" STREQUAL "${PROJECT_BINARY_DIR}")
@@ -81,9 +81,18 @@ if (NOT Baselibs_FOUND)
   add_library(ZLIB::zlib ALIAS ZLIB::ZLIB)
 
   find_package(FMS REQUIRED COMPONENTS R4 R8)
-  # We need aliases due to historical reasons
-  add_library(fms_r4 ALIAS FMS::fms_r4)
-  add_library(fms_r8 ALIAS FMS::fms_r8)
+
+  # At the moment, there is no way to know if FMS was built with YAML
+  # so we need to rely on the user to set this option.
+  option(FMS_BUILT_WITH_YAML "FMS was built with YAML" OFF)
+  if (FMS_BUILT_WITH_YAML)
+    # We use the same Findlibyaml.cmake that FMS uses
+    find_package(libyaml REQUIRED)
+    message(STATUS "LIBYAML_INCLUDE_DIR: ${LIBYAML_INCLUDE_DIR}")
+    message(STATUS "LIBYAML_LIBRARIES: ${LIBYAML_LIBRARIES}")
+    target_link_libraries(FMS::fms_r4 INTERFACE ${LIBYAML_LIBRARIES})
+    target_link_libraries(FMS::fms_r8 INTERFACE ${LIBYAML_LIBRARIES})
+  endif ()
 
 endif ()
 
