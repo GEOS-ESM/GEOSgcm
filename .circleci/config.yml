@@ -21,7 +21,7 @@ bcs_version: &bcs_version v12.0.0
 tag_build_arg_name: &tag_build_arg_name gcmversion
 
 orbs:
-  ci: geos-esm/circleci-tools@dev:9428a6bb28aa2f1623927873a863dcd381d55bd0
+  ci: geos-esm/circleci-tools@dev:f0c2c8ef70b5b840bbd8e08f6fabaa9f7bb4d5d4
   #ci: geos-esm/circleci-tools@5
 
 workflows:
@@ -66,6 +66,7 @@ workflows:
           baselibs_version: *baselibs_version
           bcs_version: *bcs_version
           gcm_ocean_type: MOM6
+          landbcs_type: NL3
           change_layout: false
 
   build-and-publish-docker:
