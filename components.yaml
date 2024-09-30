@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.46.0
+  tag: v3.45.1
   develop: develop
 
 ecbuild:
@@ -36,7 +36,7 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: v2.1.0
+  tag: v2.0.8
   develop: main
 
 MAPL:
@@ -54,7 +54,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v2.6.0
+  branch: mslong1/rrg+rad
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -73,7 +73,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.13.1
+  branch: mslong1/rrg+rad
   develop: develop
 
 HEMCO:
@@ -99,6 +99,12 @@ QuickChem:
   remote: ../QuickChem.git
   tag: v1.0.0
   develop: main
+
+RRG:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@RRG
+  remote: ../RRG.git
+  branch: main
+  develop: develop 
 
 TR:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@TR
@@ -145,14 +151,14 @@ mit:
 cice6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug/@cice6
   remote: ../CICE.git
-  tag: geos/v0.2.0
+  tag: geos/v0.1.3
   develop: geos/develop
   ignore_submodules: true
 
 icepack:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug/@cice6/icepack
   remote: ../Icepack.git
-  tag: geos/v0.3.0
+  tag: geos/v0.2.0
   develop: geos/develop
 
 sis2:
@@ -164,7 +170,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: v1.8.0
+  branch: mslong1/rrg+rad
   develop: develop
 
 RRTMGP:
@@ -189,7 +195,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v2.3.3
+  branch: mslong1/rrg+rad
   develop: develop
 
 UMD_Etc:
