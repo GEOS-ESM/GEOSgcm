@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.45.2
+  tag: v3.48.0
   develop: develop
 
 ecbuild:
@@ -29,20 +29,20 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.9.7
+  tag: v1.9.8
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: v2.1.0
+  tag: v2.1.2
   develop: main
 
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.46.1
+  tag: v2.47.1
   develop: develop
 
 FMS:
@@ -54,7 +54,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v2.6.0
+  tag: v2.6.1
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -73,7 +73,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.13.1
+  tag: v1.14.0
   develop: develop
 
 HEMCO:
@@ -104,13 +104,13 @@ QuickChem:
 TR:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@TR
   remote: ../TR.git
-  tag: v1.1.0
+  tag: v1.2.0
   develop: develop
 
 GMI:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GMI
   remote: ../GMI.git
-  tag: v1.1.0
+  tag: v1.3.0
   develop: develop
 
 StratChem:
@@ -190,7 +190,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v2.3.3
+  tag: v2.3.4
   develop: develop
 
 UMD_Etc:
