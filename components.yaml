@@ -191,7 +191,8 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v2.3.4
+#  tag: v2.3.4
+  branch: feature/pcastell/asiaaq
   develop: develop
 
 UMD_Etc:
