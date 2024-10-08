@@ -73,7 +73,8 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.14.0
+#  tag: v1.14.0
+  branch: feature/pcastell/gocart_online_cf_oxidents
   develop: develop
 
 HEMCO:
