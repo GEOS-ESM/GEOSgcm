@@ -39,6 +39,8 @@ GEOS_Util:
   tag: v2.1.2
   develop: main
 
+# When updating the MAPL version, also update the MAPL version in the
+# CMakeLists.txt file for non-Baselibs builds
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
