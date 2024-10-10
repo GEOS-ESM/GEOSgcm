@@ -42,7 +42,7 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.49.1
+  tag: v2.50.0
   develop: develop
 
 FMS:
