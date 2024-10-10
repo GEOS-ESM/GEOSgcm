@@ -39,6 +39,8 @@ GEOS_Util:
   tag: GCMv12-rc5
   develop: feature/sdrabenh/gcm_v12
 
+# When updating the MAPL version, also update the MAPL version in the
+# CMakeLists.txt file for non-Baselibs builds
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
