@@ -21,7 +21,7 @@ bcs_version: &bcs_version v12.0.0
 tag_build_arg_name: &tag_build_arg_name gcmversion
 
 orbs:
-  ci: geos-esm/circleci-tools@dev:0f743dc764062ad16fa9bb83786dfc9f47c98ec1
+  ci: geos-esm/circleci-tools@5
 
 workflows:
   build-test:
