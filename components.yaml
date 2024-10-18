@@ -56,7 +56,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v2.6.1
+  branch: mslong1/rrg+rad
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -75,7 +75,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.14.0
+  branch: mslong1/rrg+rad
   develop: develop
 
 HEMCO:
@@ -101,6 +101,12 @@ QuickChem:
   remote: ../QuickChem.git
   tag: v1.0.0
   develop: main
+
+RRG:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@RRG
+  remote: ../RRG.git
+  branch: main
+  develop: develop
 
 TR:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@TR
@@ -166,7 +172,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: v1.9.0
+  branch: mslong1/rrg+rad
   develop: develop
 
 RRTMGP:
@@ -191,7 +197,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v2.3.4
+  branch: mslong1/rrg+rad
   develop: develop
 
 UMD_Etc:
