@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.17)
+cmake_minimum_required (VERSION 3.23)
 cmake_policy (SET CMP0053 NEW)
 cmake_policy (SET CMP0054 NEW)
 
@@ -92,6 +92,11 @@ if (NOT Baselibs_FOUND)
     message(STATUS "LIBYAML_LIBRARIES: ${LIBYAML_LIBRARIES}")
     target_link_libraries(FMS::fms_r4 INTERFACE ${LIBYAML_LIBRARIES})
     target_link_libraries(FMS::fms_r8 INTERFACE ${LIBYAML_LIBRARIES})
+  endif ()
+
+  find_package(MAPL 2.50 QUIET)
+  if (MAPL_FOUND)
+    message(STATUS "Found MAPL: ${MAPL_BASE_DIR} (found version \"${MAPL_VERSION})\"")
   endif ()
 
 endif ()
