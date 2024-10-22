@@ -11,13 +11,13 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.51.0
+  tag: v3.52.0
   develop: develop
 
 ecbuild:
   local: ./@cmake/@ecbuild
   remote: ../ecbuild.git
-  tag: geos/v1.3.0
+  tag: geos/v1.4.0
 
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.9.8
+  tag: v1.9.9
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -39,10 +39,12 @@ GEOS_Util:
   tag: v2.1.2
   develop: main
 
+# When updating the MAPL version, also update the MAPL version in the
+# CMakeLists.txt file for non-Baselibs builds
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.48.0
+  tag: v2.50.1
   develop: develop
 
 FMS:
