@@ -36,7 +36,7 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: v2.1.2
+  tag: v2.1.3
   develop: main
 
 # When updating the MAPL version, also update the MAPL version in the
@@ -56,7 +56,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v2.6.1
+  tag: v2.6.2
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -191,7 +191,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v2.3.4
+  tag: v2.3.5
   develop: develop
 
 UMD_Etc:
