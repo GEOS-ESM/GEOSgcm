@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v4.8.0
+  tag: v4.29.0
   develop: main
 
 cmake:
@@ -208,8 +208,8 @@ CPLFCST_Etc:
 
 GigaTraj:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSgigatraj_GridComp/@GigaTraj
-  remote: git@github.com:GSFC-587/GigaTraj.git
+  remote: git@github.com:nasa/gigatraj.git 
   #tag: geos_gigatraj
-  branch: develop
+  branch: develop-GSFC
   develop: develop
 
