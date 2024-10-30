@@ -2,6 +2,77 @@
 
 ## Unreleased
 
+## [11.6.2] - 2024-10-23
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+
+* gcc14: Compile icepack data file at `-O0` [#982](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/982)
+* Add new C1120 resolution to BCS package [#961](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/961)
+* Add new C1120 resolution to remap restarts [#94](https://github.com/GEOS-ESM/GEOS_Util/pull/94)
+* Add GEOS-IT option for remap restarts [#96](https://github.com/GEOS-ESM/GEOS_Util/pull/96)
+* Add land constants as HISTORY export variables [#970](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/970)
+* Add definition of land constants collection into `HISTORY.rc.tmpl` [#636](https://github.com/GEOS-ESM/GEOSgcm_App/pull/636)
+* Remove filling of `WET1` (a.k.a. `GWETTOP`) with 1s over non-land [#974](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/974)
+* Fixed conversion of minimal `CAPAC` to `RUNOFF` (catchment.F90) [#991](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/991)
+* Send clear message to log when `mk_LakeLandiceSaltRestarts` fails [#1006](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1006)
+* Fixes [#984](https://github.com/GEOS-ESM/GEOSgcm_GridComp/issues/984), bug in which `ZLCL` was unfilled with BACM or MGB2 [#985](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/985)
+* Fixes [#1009](https://github.com/GEOS-ESM/GEOSgcm_GridComp/issues/1009), incorrect units in GF precip fluxes [#1010](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1010)
+* Plots package bug fixes for `EXPID` names containing periods [#103](https://github.com/GEOS-ESM/GEOS_Util/pull/103)
+* gcc14: Add int to main in `makdep.c` [#356](https://github.com/GEOS-ESM/GMAO_Shared/pull/356)
+* v11: Update Intel MPI flags [#652](https://github.com/GEOS-ESM/GEOSgcm_App/pull/652)
+* Remove executables on tmpdir [#644](https://github.com/GEOS-ESM/GEOSgcm_App/pull/644)
+* Update n4zip to fix deprecated option [#354](https://github.com/GEOS-ESM/GMAO_Shared/pull/354)
+* Update ESMF CMake target to `ESMF::ESMF` [#978](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/978) [#638](https://github.com/GEOS-ESM/GEOSgcm_App/pull/638) [#92](https://github.com/GEOS-ESM/GEOS_Util/pull/92) [#355](https://github.com/GEOS-ESM/GMAO_Shared/pull/355)
+
+### Fixture Changes:
+* ESMA_env  [v4.29.0 => v4.29.1](https://github.com/GEOS-ESM/ESMA_env/compare/v4.29.0...v4.29.1)
+* ESMA_cmake  [v3.48.0 => v3.52.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.48.0...v3.52.0)
+* ecbuild  [geos/v1.3.0 => geos/v1.4.0](https://github.com/GEOS-ESM/ecbuild/compare/geos/v1.3.0...geos/v1.4.0)
+* GMAO_Shared  [v1.9.8 => v1.9.9](https://github.com/GEOS-ESM/GMAO_Shared/compare/v1.9.8...v1.9.9)
+* GEOS_Util  [v2.1.2 => v2.1.3](https://github.com/GEOS-ESM/GEOS_Util/compare/v2.1.2...v2.1.3)
+* MAPL  [v2.47.1 => v2.50.1](https://github.com/GEOS-ESM/MAPL/compare/v2.47.1...v2.50.1)
+* GEOSgcm_GridComp  [v2.6.1 => v2.6.2](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.6.1...v2.6.2)
+* FVdycoreCubed_GridComp  [v2.11.1 => v2.12.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.11.1...v2.12.0)
+* GEOS_OceanGridComp  [v2.1.6 => v2.3.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/compare/v2.1.6...v2.3.0)
+* MOM6  [geos/v3.1 => geos/v3.3](https://github.com/GEOS-ESM/MOM6/compare/geos/v3.1...geos/v3.3)
+* GEOSradiation_GridComp  [v1.8.0 => v1.9.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/compare/v1.8.0...v1.9.0)
+* GEOSgcm_App  [v2.3.4 => v2.3.5](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.3.4...v2.3.5)
+
+
+## [11.6.1] - 2024-08-01
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+
+* `linkbcs` bugfix for coupled runs using v12 bcs [#623](https://github.com/GEOS-ESM/GEOSgcm_App/pull/623)
+* Exports and `LONG_NAMES` changes for land water and energy balances [#957](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/957)
+* New and renamed exports added to`HISTORY.rc.tmpl` for land water and energy balances [#621](https://github.com/GEOS-ESM/GEOSgcm_App/pull/621)
+* Update GMI and StratChem HISTORY [#627](https://github.com/GEOS-ESM/GEOSgcm_App/pull/627)
+* Routing Outlets in Boundary Conditions [#827](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/827)
+* Bugfix to remove double-counting of heat corr (`StieglitzSnow.F90`) [#946](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/946)
+* Bugfix whereby `TMPHIST` was not created during cloning [#626](https://github.com/GEOS-ESM/GEOSgcm_App/pull/626)
+* Fixes for Ninja builds [#966](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/966)
+* Added MASKFILE for time-discontinuous data for TEM diagnostics [#89](https://github.com/GEOS-ESM/GEOS_Util/pull/89)
+* Add MOM6 C90 ogrid option to `remap_utils.py` [#83](https://github.com/GEOS-ESM/GEOS_Util/pull/83)
+* Bugfix for `time_ave.rc` [#86](https://github.com/GEOS-ESM/GEOS_Util/pull/86)
+
+### Fixture Changes:
+* ESMA_cmake  [v3.45.2 => v3.48.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.45.2...v3.48.0)
+* GMAO_Shared  [v1.9.7 => v1.9.8](https://github.com/GEOS-ESM/GMAO_Shared/compare/v1.9.7...v1.9.8)
+* GEOS_Util  [v2.1.0 => v2.1.2](https://github.com/GEOS-ESM/GEOS_Util/compare/v2.1.0...v2.1.2)
+* MAPL  [v2.46.1 => v2.47.1](https://github.com/GEOS-ESM/MAPL/compare/v2.46.1...v2.47.1)
+* GEOSgcm_GridComp  [v2.6.0 => v2.6.1](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.6.0...v2.6.1)
+* GEOSchem_GridComp  [v1.13.1 => v1.14.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/compare/v1.13.1...v1.14.0)
+* TR  [v1.1.0 => v1.2.0](https://github.com/GEOS-ESM/TR/compare/v1.1.0...v1.2.0)
+* GMI  [v1.1.0 => v1.3.0](https://github.com/GEOS-ESM/GMI/compare/v1.1.0...v1.3.0)
+* GEOSgcm_App  [v2.3.3 => v2.3.4](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.3.3...v2.3.4)
+
+
 ## [11.6.0] - 2024-06-11
 
 ### Zero-diff to Previous Release: NO
