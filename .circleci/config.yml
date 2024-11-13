@@ -122,9 +122,9 @@ workflows:
           bcs_version: *bcs_version
           container_name: geosgcm
           mpi_name: openmpi
-          mpi_version: 5.0.2
+          mpi_version: 5.0.5
           compiler_name: gcc
-          compiler_version: 13.2.0
+          compiler_version: 14.2.0
           image_name: geos-env-bcs
           tag_build_arg_name: *tag_build_arg_name
           resource_class: xlarge
