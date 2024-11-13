@@ -16,7 +16,7 @@ parameters:
 
 # Anchors to prevent forgetting to update a version
 os_version: &os_version ubuntu20
-baselibs_version: &baselibs_version v8.6.0
+baselibs_version: &baselibs_version v8.7.0
 bcs_version: &bcs_version v12.0.0
 tag_build_arg_name: &tag_build_arg_name gcmversion
 
