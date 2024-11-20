@@ -32,7 +32,7 @@ workflows:
             - docker-hub-creds
           matrix:
             parameters:
-              compiler: [ifort, gfortran]
+              compiler: [gfortran, ifort, ifx]
           baselibs_version: *baselibs_version
           repo: GEOSgcm
           persist_workspace: true # Needs to be true to run fv3/gcm experiment, costs extra
@@ -44,7 +44,7 @@ workflows:
             - docker-hub-creds
           matrix:
             parameters:
-              compiler: [gfortran, ifort]
+              compiler: [gfortran, ifort, ifx]
           requires:
             - build-GEOSgcm-on-<< matrix.compiler >>
           repo: GEOSgcm
@@ -58,7 +58,7 @@ workflows:
             - docker-hub-creds
           matrix:
             parameters:
-              compiler: [ifort]
+              compiler: [ifort, ifx]
           requires:
             - build-GEOSgcm-on-<< matrix.compiler >>
           repo: GEOSgcm
@@ -90,25 +90,25 @@ workflows:
           image_name: geos-env-bcs
           tag_build_arg_name: *tag_build_arg_name
           resource_class: xlarge
-      #- ci/publish_docker:
-          #filters:
-            #tags:
-              #only: /^v.*$/
-          #name: publish-ifx-docker-image
-          #context:
-            #- docker-hub-creds
-            #- ghcr-creds
-          #os_version: *os_version
-          #baselibs_version: *baselibs_version
-          #bcs_version: *bcs_version
-          #container_name: geosgcm
-          #mpi_name: intelmpi
-          #mpi_version: "2021.13"
-          #compiler_name: ifx
-          #compiler_version: "2024.2"
-          #image_name: geos-env-bcs
-          #tag_build_arg_name: *tag_build_arg_name
-          #resource_class: xlarge
+      - ci/publish_docker:
+          filters:
+            tags:
+              only: /^v.*$/
+          name: publish-ifx-docker-image
+          context:
+            - docker-hub-creds
+            - ghcr-creds
+          os_version: *os_version
+          baselibs_version: *baselibs_version
+          bcs_version: *bcs_version
+          container_name: geosgcm
+          mpi_name: intelmpi
+          mpi_version: "2021.14"
+          compiler_name: ifx
+          compiler_version: "2025.0"
+          image_name: geos-env-bcs
+          tag_build_arg_name: *tag_build_arg_name
+          resource_class: xlarge
       - ci/publish_docker:
           filters:
             tags:
