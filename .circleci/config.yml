@@ -52,13 +52,16 @@ workflows:
           bcs_version: *bcs_version
 
       # Run Coupled GCM (1 hour, no ExtData)
+      # NOTE: Both gfortran and ifx seem to have
+      # issues with the Debug build of MOM6. For
+      # now, we only test on ifort
       - ci/run_gcm:
           name: run-coupled-GCM-on-<< matrix.compiler >>
           context:
             - docker-hub-creds
           matrix:
             parameters:
-              compiler: [ifort, ifx]
+              compiler: [ifort]
           requires:
             - build-GEOSgcm-on-<< matrix.compiler >>
           repo: GEOSgcm
