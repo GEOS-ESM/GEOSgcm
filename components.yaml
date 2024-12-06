@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.52.0
+  tag: v3.55.0
   develop: develop
 
 ecbuild:
@@ -44,7 +44,7 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.50.1
+  tag: v2.51.0
   develop: develop
 
 FMS:
