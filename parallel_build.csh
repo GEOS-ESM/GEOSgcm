@@ -35,6 +35,7 @@ if (-d ${ESMADIR}/@env || -d ${ESMADIR}/env@ || -d ${ESMADIR}/env) then
       echo "Checking out development branches of GEOSgcm_GridComp, GEOSgcm_App, GMAO_Shared, and GEOS_Util"
       mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared GEOS_Util
    endif
+   mepo status
 else
    if ($?PBS_JOBID || $?SLURM_JOBID) then
       echo " mepo clone must be run!"
@@ -42,13 +43,13 @@ else
       echo " Please run from a head node"
       exit 1
    else
-      echo "Running mepo initialization"
-      mepo init
+      echo "Running mepo clone"
       mepo clone
       if ( "$DEVELOP" == "TRUE" ) then
          echo "Checking out development branches of GEOSgcm_GridComp, GEOSgcm_App, GMAO_Shared, and GEOS_Util"
          mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared GEOS_Util
       endif
+      mepo status
    endif
 endif
 
