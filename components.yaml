@@ -63,8 +63,8 @@ GEOSgcm_GridComp:
 GigaTraj:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSgigatraj_GridComp/@GigaTraj
   remote: ../gigatraj.git
-  branch: develop-GSFC
-  develop: develop
+  tag: geos/v1.0.0
+  develop: develop-GSFC
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
