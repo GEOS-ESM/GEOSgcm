@@ -255,23 +255,38 @@ source @env/g5_modules.sh
 ```
 
 ##### Create Build Directory
-We currently do not allow in-source builds of GEOSgcm. So we must make a directory:
-```
-mkdir build
-```
-The advantages of this is that you can build both a Debug and Release version with the same clone if desired.
 
 ##### Run CMake
-CMake generates the Makefiles needed to build the model.
+
+CMake generates the Makefiles needed to build the model. This command:
 ```
-cd build
-cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=ifort -DCMAKE_INSTALL_PREFIX=../install
+cmake -B build -S . -DCMAKE_INSTALL_PREFIX=install
 ```
-This will install to a directory parallel to your `build` directory. If you prefer to install elsewhere change the path in:
+
+As is, this command assumes you are in the root of the GEOSgcm checkout and will create a `build/` directory in the root of the checkout and install into `install/ parallel to the `build/` directory.
+
+This command has three options:
+
+1. `-B` specifies the build directory.
+2. `-S` specifies the source directory (root of the checkout).
+3. `-DCMAKE_INSTALL_PREFIX` specifies the installation directory.
+
+If you prefer to install elsewhere change the path in:
+
 ```
--DCMAKE_INSTALL_PREFIX=<path>
+-DCMAKE_INSTALL_PREFIX=/path/to/install
 ```
 and CMake will install there.
+
+If you prefer your build somewhere else, you can specify that with:
+```
+-B /path/to/build
+```
+
+Finally, if your source is in a different directory than the current one, you can specify that with:
+```
+-S /path/to/source
+```
 
 ###### Create and install source tarfile
 
@@ -283,7 +298,7 @@ to your CMake command.
 
 ##### Build and Install with Make
 ```
-make -jN install
+cmake --build build -j N
 ```
 where `N` is the number of parallel processes. On discover head nodes, this should only be as high as 2 due to limits on the head nodes. On a compute node, you can set `N` has high as you like, though 8-12 is about the limit of parallelism in our model's make system.
 
@@ -291,7 +306,7 @@ where `N` is the number of parallel processes. On discover head nodes, this shou
 
 Once the model has built successfully, you will have an `install/` directory in your checkout. To run `gcm_setup` go to the `install/bin/` directory and run it there:
 ```
-cd install/bin
+cd /path/to/install/bin
 ./gcm_setup
 ```
 
