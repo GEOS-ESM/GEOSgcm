@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+## 2024-12-23
+* Updates to build scripts and experiment setup scripts
 
 ## 2024-03-21
 * Tag GEOSCFv2/rc1/t16. Updates:
