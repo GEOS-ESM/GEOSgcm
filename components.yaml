@@ -160,7 +160,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: GCMv12-rc9
+  tag: GCMv12-rc10
   develop: feature/sdrabenh/gcm_v12
 
 RRTMGP:
@@ -185,7 +185,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: GCMv12-rc9
+  tag: GCMv12-rc10
   develop: feature/sdrabenh/gcm_v12
 
 UMD_Etc:
