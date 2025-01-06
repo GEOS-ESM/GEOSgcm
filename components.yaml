@@ -56,7 +56,8 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  branch: feature/wjiang/GEOS_GigaTraj
+  #tag: v2.6.3
+  branch: develop
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -197,7 +198,8 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  branch: feature/wjiang/GEOS_GigaTraj
+  #tag: v2.3.6
+  branch: develop
   develop: develop
 
 UMD_Etc:
