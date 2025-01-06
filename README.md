@@ -15,10 +15,10 @@
 | [CICE](https://github.com/GEOS-ESM/CICE)                                       | [geos/v0.2.0](https://github.com/GEOS-ESM/CICE/releases/tag/geos%2Fv0.2.0)                          |
 | [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                               |
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v1.4.0](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.4.0)                       |
-| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.52.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.52.0)                              |
-| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v4.29.1](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.29.1)                                |
+| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.56.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.56.0)                              |
+| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v4.29.2](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.29.2)                                |
 | [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.10](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.10) |
-| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v2.12.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.12.0)                    |
+| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v2.13.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.13.0)                    |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)           |
 | [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v2.3.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v2.3.0)                        |
 | [GEOS_Util](https://github.com/GEOS-ESM/GEOS_Util)                             | [v2.1.3](https://github.com/GEOS-ESM/GEOS_Util/releases/tag/v2.1.3)                                 |
@@ -33,7 +33,7 @@
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [sdr_v2.2.1.2](https://github.com/GEOS-ESM/GOCART/releases/tag/sdr_v2.2.1.2)                        |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.3](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.3)                         |
 | [Icepack](https://github.com/GEOS-ESM/Icepack)                                 | [geos/v0.3.0](https://github.com/GEOS-ESM/Icepack/releases/tag/geos%2Fv0.3.0)                       |
-| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.50.1](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.50.1)                                    |
+| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.51.2](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.51.2)                                    |
 | [MITgcm](https://github.com/GEOS-ESM/MITgcm)                                   | [checkpoint68o](https://github.com/GEOS-ESM/MITgcm/releases/tag/checkpoint68o)                      |
 | [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+1.2.0](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B1.2.0)              |
 | [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v3.3](https://github.com/GEOS-ESM/MOM6/tree/geos/v3.3)                                        |
@@ -155,6 +155,20 @@ where `vX.Y.Z` is a tag from a [GEOSgcm release](https://github.com/GEOS-ESM/GEO
 Note that when you first use `gh`, it will ask what your preferred git protocol
 is (https or ssh) to use "underneath". The caveats above will apply to whichever
 you choose.
+
+### Setting up `mepo` to use blobless clones
+
+The GEOS GCM uses a Python utility called [mepo](https://github.com/GEOS-ESM/mepo/) to manage **m**ultiple git r**epo**sitories instead of using other technologies like Git
+submodules. `mepo` uses a YAML file that provides a list of components (and their versions) that are required for a particular configuration of GEOS GCM.
+
+We *highly* recommend setting up `mepo` to use [blobless clones](https://github.blog/open-source/git/get-up-to-speed-with-partial-clone-and-shallow-clone/) to speed
+up cloning of the sub-repositories, especially on discover. To do this, there is a one-time command to run:
+
+```
+mepo config set clone.partial blobless
+```
+
+This will set up `mepo` to use blobless clones for all future clones by adding an entry to `~/.mepoconfig`.
 
 ---
 
