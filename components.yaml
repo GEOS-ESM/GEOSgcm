@@ -57,7 +57,6 @@ GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
   tag: v2.6.4
-  branch: develop
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -199,7 +198,6 @@ GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
   tag: v2.3.7
-  branch: develop
   develop: develop
 
 UMD_Etc:
