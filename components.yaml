@@ -60,6 +60,12 @@ GEOSgcm_GridComp:
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
+GigaTraj:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSgigatraj_GridComp/@GigaTraj
+  remote: ../gigatraj.git
+  tag: geos/v1.0.0
+  develop: develop-GSFC
+
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
