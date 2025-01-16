@@ -30,7 +30,7 @@
 | [gigatraj](https://github.com/GEOS-ESM/gigatraj)                               | [geos/v1.0.0](https://github.com/GEOS-ESM/gigatraj/releases/tag/geos%2Fv1.0.0)       |
 | [GMI](https://github.com/GEOS-ESM/GMI)                                         | [v1.3.0](https://github.com/GEOS-ESM/GMI/releases/tag/v1.3.0)                                       |
 | [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.9.9](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.9.9)                               |
-| [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [sdr_v2.3.0](https://github.com/GEOS-ESM/GOCART/releases/tag/sdr_v2.3.0)                            |
+| [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.3.0](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.3.0)                            |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.3](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.3)                         |
 | [Icepack](https://github.com/GEOS-ESM/Icepack)                                 | [geos/v0.3.0](https://github.com/GEOS-ESM/Icepack/releases/tag/geos%2Fv0.3.0)                       |
 | [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.51.2](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.51.2)                                    |
