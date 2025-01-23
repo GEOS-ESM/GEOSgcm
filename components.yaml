@@ -129,15 +129,13 @@ StratChem:
 MAM:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@MAM
   remote: ../MAM.git
-  #tag: v1.0.0
-  branch: main
+  tag: v1.0.0
   develop: main
 
 MATRIX:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@MATRIX
   remote: ../MATRIX.git
-  #tag: v1.0.0
-  branch: main
+  tag: v1.0.0
   develop: main
 
 CARMA:
@@ -152,15 +150,13 @@ CARMA:
 GAAS:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GAAS
   remote: ../GAAS.git
-  #tag: v1.0.0
-  branch: main
+  tag: v1.0.0
   develop: develop
 
 ACHEM:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@ACHEM
   remote: ../ACHEM.git
-  #tag: v1.0.0
-  branch: main
+  tag: v1.0.0
   develop: develop
 
 GEOS_OceanGridComp:
