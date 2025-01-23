@@ -31,7 +31,7 @@
 | [GMI](https://github.com/GEOS-ESM/GMI)                                         | [v1.3.0](https://github.com/GEOS-ESM/GMI/releases/tag/v1.3.0)                                       |
 | [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.9.9](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.9.9)                               |
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.3.0](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.3.0)                            |
-| [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.3](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.3)                         |
+| [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.3.0](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.3.0)                         |
 | [Icepack](https://github.com/GEOS-ESM/Icepack)                                 | [geos/v0.3.0](https://github.com/GEOS-ESM/Icepack/releases/tag/geos%2Fv0.3.0)                       |
 | [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.52.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.52.0)                                    |
 | [MITgcm](https://github.com/GEOS-ESM/MITgcm)                                   | [checkpoint68o](https://github.com/GEOS-ESM/MITgcm/releases/tag/checkpoint68o)                      |
