@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v4.34.0
+  tag: v4.34.1
   develop: main
 
 cmake:
@@ -87,7 +87,7 @@ GEOSchem_GridComp:
 HEMCO:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Shared/HEMCO/@HEMCO
   remote: ../HEMCO.git
-  tag: geos/v2.2.3
+  tag: geos/v2.3.0
   develop: geos/develop
 
 geos-chem:
