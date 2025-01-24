@@ -2,6 +2,39 @@
 
 ## Unreleased
 
+## [11.7.0] - 2025-01-24
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: NO
+
+### Major Non-Zero-Diff Changes:
+
+* Fix for `SNOMAS` and `SRF_TYPE`. `SRF_TYPE` is extended to be 2 ==> snow and 3 ==> ice. [#1002](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1002)
+* Revised `extdata.yaml` files to account for the seasonal cycle revision to the 2021 CEDS release in [GOCART v2.3.0](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.3.0) and [GEOSchem_GridComp v1.15.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.15.0)
+* Fix to allow GEOSgcm to pass layout regression when `hemco_internal_rst` is present [HEMCO geos/v2.3.0](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.3.0)
+* Update GEOSgcm to use ESMA_env v4.34.x [#804](https://github.com/GEOS-ESM/GEOSgcm/pull/804)
+
+### Other Major Zero-Diff Changes:
+
+* Add `cas` for SLES15; Restore IMPI flags on SLES15 [#681](https://github.com/GEOS-ESM/GEOSgcm_App/pull/681)
+* Move aerosol fluxes to adg [#678](https://github.com/GEOS-ESM/GEOSgcm_App/pull/678)
+* Fix N2O bug in remap [#107](https://github.com/GEOS-ESM/GEOS_Util/pull/107)
+* Updates for `TEM_Diag` to include ALL Times [#110](https://github.com/GEOS-ESM/GEOS_Util/pull/110)
+* Patch to fix EXPIDs containing underscores [#118](https://github.com/GEOS-ESM/GEOS_Util/pull/118)
+* Update to GOCART variable long names in the `StateSpecs.rc` file to be more consistent with M21C [GOCART v2.3.0](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.3.0)
+* MAPL added a new optional start_date and start_time to control the output window for each History collection [#3278](https://github.com/GEOS-ESM/MAPL/pull/3278)
+
+### Fixture Changes:
+* ESMA_env  [v4.29.2 => v4.34.1](https://github.com/GEOS-ESM/ESMA_env/compare/v4.29.2...v4.34.1)
+* GEOS_Util  [v2.1.3 => v2.1.6](https://github.com/GEOS-ESM/GEOS_Util/compare/v2.1.3...v2.1.6)
+* MAPL  [v2.51.2 => v2.52.0](https://github.com/GEOS-ESM/MAPL/compare/v2.51.2...v2.52.0)
+* GEOSgcm_GridComp  [v2.6.4 => v2.7.0](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.6.4...v2.7.0)
+* GEOSchem_GridComp  [v1.14.0 => v1.15.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/compare/v1.14.0...v1.15.0)
+* HEMCO  [v2.2.3 => v2.3.0](https://github.com/GEOS-ESM/HEMCO/compare/geos/v2.2.3...geos/v2.3.0)
+* GOCART   [sdr_v2.2.1.2 => v2.3.0](https://github.com/GEOS-ESM/GOCART/compare/sdr_v2.2.1.2...v2.3.0)
+* GEOSgcm_App  [v2.3.5 => v2.3.7](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.3.5...v2.3.7)
+
+
 ## [11.6.3] - 2025-01-10
 
 ### Zero-diff to Previous Release: YES
