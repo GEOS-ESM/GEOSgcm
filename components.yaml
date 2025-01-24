@@ -141,10 +141,7 @@ MATRIX:
 CARMA:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@CARMA
   remote: ../CARMA.git
-  #tag: v1.0.0
-  # NOTE: Must use develop due to https://github.com/GEOS-ESM/GEOSchem_GridComp/pull/290 and since
-  # the chem branch is off develop
-  branch: develop
+  tag: v1.1.0
   develop: develop
 
 GAAS:
