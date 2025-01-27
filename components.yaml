@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v4.29.0
+  tag: v4.34.1
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.51.0
+  tag: v3.56.0
   develop: develop
 
 ecbuild:
@@ -36,13 +36,15 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: v2.1.2
+  tag: v2.1.6
   develop: main
 
+# When updating the MAPL version, also update the MAPL version in the
+# CMakeLists.txt file for non-Baselibs builds
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.49.1
+  tag: v2.52.0
   develop: develop
 
 FMS:
@@ -58,16 +60,22 @@ GEOSgcm_GridComp:
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
+GigaTraj:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSgigatraj_GridComp/@GigaTraj
+  remote: ../gigatraj.git
+  tag: geos/v1.0.0
+  develop: develop-GSFC
+
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v2.12.0
+  tag: v2.13.0
   develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: geos/v2.9.0
+  tag: geos/v2.9.1
   develop: geos/develop
 
 GEOSchem_GridComp:
@@ -79,7 +87,7 @@ GEOSchem_GridComp:
 HEMCO:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Shared/HEMCO/@HEMCO
   remote: ../HEMCO.git
-  tag: geos/v2.2.3
+  tag: geos/v2.3.0
   develop: geos/develop
 
 geos-chem:
@@ -91,7 +99,7 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: sdr_v2.2.1.2
+  tag: v2.3.0
   develop: develop
 
 QuickChem:
