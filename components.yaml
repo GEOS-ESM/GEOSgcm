@@ -111,7 +111,7 @@ QuickChem:
 RRG:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@RRG
   remote: ../RRG.git
-  branch: mslong1/rrg+rad
+  branch: feature/mathomp4/split-chem-2025Jan23-and-rrg
   develop: develop
 
 TR:
