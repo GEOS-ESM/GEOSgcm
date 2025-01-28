@@ -82,6 +82,10 @@ if (NOT Baselibs_FOUND)
 
   find_package(FMS REQUIRED COMPONENTS R4 R8)
 
+  # These aliases should be removed once the CMake in subrepos is fixed
+  add_library(fms_r4 ALIAS FMS::fms_r4)
+  add_library(fms_r8 ALIAS FMS::fms_r8)
+
   # At the moment, there is no way to know if FMS was built with YAML
   # so we need to rely on the user to set this option.
   option(FMS_BUILT_WITH_YAML "FMS was built with YAML" OFF)
