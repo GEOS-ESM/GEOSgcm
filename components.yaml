@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v5.5.1
+  tag: v5.7.1
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v4.10.0
+  tag: v4.12.0
   develop: develop
 
 ecbuild:
@@ -160,7 +160,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: GCMv12-rc10
+  tag: GCMv12-rc10b
   develop: feature/sdrabenh/gcm_v12
 
 RRTMGP:
