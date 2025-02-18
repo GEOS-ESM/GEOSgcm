@@ -208,7 +208,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  branch: feature/mathomp4/split-chem-2025Jan23-and-rrg
+  tag: v1.12.0
   develop: develop
 
 RRTMGP:
