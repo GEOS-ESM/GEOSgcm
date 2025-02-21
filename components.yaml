@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v4.34.1
+  tag: v4.35.0
   develop: main
 
 cmake:
@@ -44,7 +44,7 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.52.0
+  tag: v2.54.1
   develop: develop
 
 FMS:
@@ -172,7 +172,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: v1.10.0
+  tag: v1.11.0
   develop: develop
 
 RRTMGP:
