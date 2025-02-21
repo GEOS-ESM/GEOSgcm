@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v5.5.1
+  tag: v5.7.1
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v4.10.0
+  tag: v4.12.0
   develop: develop
 
 ecbuild:
@@ -36,7 +36,7 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: GCMv12-rc8
+  tag: GCMv12-rc11
   develop: feature/sdrabenh/gcm_v12
 
 # When updating the MAPL version, also update the MAPL version in the
@@ -44,38 +44,38 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: GCMv12-rc8
+  tag: GCMv12-rc11
   develop: feature/sdrabenh/gcm_v12
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: GCMv12-rc10
+  tag: GCMv12-rc11
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/sdrabenh/gcm_v12
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: GCMv12-rc10
+  tag: GCMv12-rc11
   develop: feature/sdrabenh/gcm_v12
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: GCMv12-rc9
+  tag: GCMv12-rc11
   develop: feature/sdrabenh/gcm_v12
 
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: GCMv12-rc10
+  tag: GCMv12-rc11
   develop: feature/sdrabenh/gcm_v12
 
 HEMCO:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Shared/HEMCO/@HEMCO
   remote: ../HEMCO.git
-  tag: geos/v2.2.3
+  tag: geos/v2.3.0
   develop: geos/develop
 
 geos-chem:
@@ -87,7 +87,7 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: GCMv12-rc8
+  tag: GCMv12-rc11
   develop: feature/sdrabenh/gcm_v12
 
 QuickChem:
@@ -160,7 +160,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: GCMv12-rc10b
+  tag: GCMv12-rc11
   develop: feature/sdrabenh/gcm_v12
 
 RRTMGP:
@@ -185,7 +185,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: GCMv12-rc10
+  tag: GCMv12-rc11
   develop: feature/sdrabenh/gcm_v12
 
 UMD_Etc:
