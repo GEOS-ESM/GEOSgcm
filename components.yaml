@@ -165,8 +165,8 @@ ACHEM:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v2.3.0
-  develop: develop
+  tag: v2.4.0
+  develop: release/v2
 
 mom:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM_GEOS5PlugMod/@mom
@@ -177,7 +177,7 @@ mom:
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
-  tag: geos/v3.3
+  tag: geos/v3.4
   develop: main
   recurse_submodules: true
 
@@ -221,7 +221,7 @@ RRTMGP:
 ww3:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSwgcm_GridComp/GEOSwavewatch_GridComp/@ww3
   remote: ../WW3.git
-  tag: v6.07.1-geos-r2
+  tag: v7.14-geos-r1
   develop: geos/develop
 
 umwm:
