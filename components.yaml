@@ -91,7 +91,7 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  branch: feature/pcolarco/CCM_benchmark_G_HT
+  branch: feature/pcolarco/CCM_Hunga_Tonga
   develop: develop
 
 QuickChem:
@@ -109,7 +109,7 @@ TR:
 GMI:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GMI
   remote: ../GMI.git
-  branch: feature/ssteenro/benchG_peteHT_GMIaeroCoupling
+  branch: feature/pcolarco/CCM_Hunga_Tonga
   develop: develop
 
 StratChem:
