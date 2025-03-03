@@ -56,7 +56,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  branch: feature/mathomp4/split-chem-2025Jan23-and-rrg
+  tag: v2.7.2
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -233,7 +233,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  branch: feature/mathomp4/split-chem-2025Jan23-and-rrg
+  tag: v2.3.10
   develop: develop
 
 UMD_Etc:
