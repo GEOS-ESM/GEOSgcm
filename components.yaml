@@ -56,7 +56,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v2.7.0
+  tag: v2.7.2
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -81,7 +81,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.15.0
+  tag: v1.16.0
   develop: develop
 
 HEMCO:
@@ -108,6 +108,12 @@ QuickChem:
   tag: v1.0.0
   develop: main
 
+RRG:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@RRG
+  remote: ../RRG.git
+  tag: v1.1.0
+  develop: main
+
 TR:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@TR
   remote: ../TR.git
@@ -123,6 +129,36 @@ GMI:
 StratChem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@StratChem
   remote: ../StratChem.git
+  tag: v1.0.0
+  develop: develop
+
+MAM:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@MAM
+  remote: ../MAM.git
+  tag: v1.0.0
+  develop: main
+
+MATRIX:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@MATRIX
+  remote: ../MATRIX.git
+  tag: v1.0.0
+  develop: main
+
+CARMA:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@CARMA
+  remote: ../CARMA.git
+  tag: v1.1.0
+  develop: develop
+
+GAAS:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GAAS
+  remote: ../GAAS.git
+  tag: v1.0.0
+  develop: develop
+
+ACHEM:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@ACHEM
+  remote: ../ACHEM.git
   tag: v1.0.0
   develop: develop
 
@@ -172,7 +208,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: v1.11.0
+  tag: v1.12.0
   develop: develop
 
 RRTMGP:
@@ -197,7 +233,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v2.3.8
+  tag: v2.3.10
   develop: develop
 
 UMD_Etc:
