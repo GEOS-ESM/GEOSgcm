@@ -131,7 +131,7 @@ mom:
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
-  tag: geos/v3.4
+  tag: geos/v3.5
   develop: main
   recurse_submodules: true
 
