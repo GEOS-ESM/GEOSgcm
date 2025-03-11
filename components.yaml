@@ -50,14 +50,15 @@ MAPL:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: GCMv12-rc11
+  #tag: GCMv12-rc11
+  branch: feature/mathomp4/v12-spack-gcm-aquaplanet
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/sdrabenh/gcm_v12
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: GCMv12-rc11
+  tag: geos/v3.0.0-rc.1
   develop: feature/sdrabenh/gcm_v12
 
 fvdycore:
