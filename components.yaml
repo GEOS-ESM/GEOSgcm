@@ -5,13 +5,15 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v4.35.0
+  #tag: v4.35.0
+  branch: feature/mathomp4/v4-remove-sles15-detection
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.56.0
+  #tag: v3.56.0
+  branch: feature/mathomp4/v3-remove-sles15-detection
   develop: develop
 
 ecbuild:
@@ -36,7 +38,8 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: v2.1.6
+  #tag: v2.1.6
+  branch: feature/mathomp4/remove-sles15-detection
   develop: main
 
 # When updating the MAPL version, also update the MAPL version in the
@@ -56,7 +59,8 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v2.7.2
+  #tag: v2.7.2
+  branch: feature/mathomp4/remove-sles15-detection
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -69,7 +73,8 @@ GigaTraj:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v2.13.0
+  #tag: v2.13.0
+  branch: feature/mathomp4/v11-remove-sles15-detection
   develop: develop
 
 fvdycore:
@@ -233,7 +238,8 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v2.3.10
+  #tag: v2.3.10
+  branch: feature/mathomp4/v11-remove-sles15-detection
   develop: develop
 
 UMD_Etc:
