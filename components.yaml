@@ -31,7 +31,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.9.9
+  tag: v2.0.0
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -40,6 +40,12 @@ GEOS_Util:
   remote: ../GEOS_Util.git
   #tag: v2.1.6
   branch: feature/mathomp4/remove-sles15-detection
+  develop: main
+
+GMAO_perllib:
+  local: ./src/Shared/@GMAO_Shared/@GMAO_perllib
+  remote: ../GMAO_perllib.git
+  tag: v1.0.0
   develop: main
 
 # When updating the MAPL version, also update the MAPL version in the
@@ -170,7 +176,7 @@ ACHEM:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v2.4.1
+  tag: v2.5.0
   develop: release/v2
 
 mom:
@@ -182,8 +188,8 @@ mom:
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
-  tag: geos/v3.4
-  develop: main
+  tag: geos/v3.5
+  develop: geos/main
   recurse_submodules: true
 
 mit:
