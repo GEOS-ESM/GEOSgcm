@@ -185,7 +185,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: GCMv12-rc11
+  tag: GCMv12-rc11+spack
   develop: feature/sdrabenh/gcm_v12
 
 UMD_Etc:
