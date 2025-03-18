@@ -11,8 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  #tag: v3.56.0
-  branch: feature/mathomp4/v3-remove-sles15-detection
+  tag: v3.57.0
   develop: develop
 
 ecbuild:
