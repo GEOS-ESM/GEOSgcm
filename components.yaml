@@ -5,8 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  #tag: v4.35.0
-  branch: feature/mathomp4/v4-remove-sles15-detection
+  tag: v4.36.0
   develop: main
 
 cmake:
