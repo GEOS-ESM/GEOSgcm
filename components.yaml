@@ -77,8 +77,7 @@ GigaTraj:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  #tag: v2.13.0
-  branch: feature/mathomp4/v11-remove-sles15-detection
+  tag: v2.14.0
   develop: develop
 
 fvdycore:
