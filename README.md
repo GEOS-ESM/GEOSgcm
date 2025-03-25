@@ -19,7 +19,7 @@
 | [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v5.7.1](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v5.7.1)                                  |
 | [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v2.11.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.11.1)                  |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)           |
-| [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v3.3.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v3.3.0)                        |
+| [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v3.5.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v3.5.0)                        |
 | [GEOS_Util](https://github.com/GEOS-ESM/GEOS_Util)                             | [v2.1.2](https://github.com/GEOS-ESM/GEOS_Util/releases/tag/v2.1.2)                                 |
 | [geos_state_bias](https://github.com/GEOS-ESM/geos_state_bias)                 | [geos/v1.0.0](https://github.com/GEOS-ESM/geos_state_bias/releases/tag/geos/v1.0.0)                 |
 | [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.14.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.14.0)                       |
@@ -30,12 +30,12 @@
 | [GMI](https://github.com/GEOS-ESM/GMI)                                         | [v1.3.0](https://github.com/GEOS-ESM/GMI/releases/tag/v1.3.0)                                       |
 | [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v1.9.8](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v1.9.8)                               |
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [sdr_v2.2.1.2](https://github.com/GEOS-ESM/GOCART/releases/tag/sdr_v2.2.1.2)                        |
-| [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.2.3](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.2.3)                         |
+| [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.3.0](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.3.0)                         |
 | [Icepack](https://github.com/GEOS-ESM/Icepack)                                 | [geos/v0.3.0](https://github.com/GEOS-ESM/Icepack/releases/tag/geos%2Fv0.3.0)                       |
 | [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.50.1](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.50.1)                                    |
 | [MITgcm](https://github.com/GEOS-ESM/MITgcm)                                   | [checkpoint68o](https://github.com/GEOS-ESM/MITgcm/releases/tag/checkpoint68o)                      |
 | [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+2.1.0](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B2.1.0)              |
-| [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v3.3](https://github.com/GEOS-ESM/MOM6/tree/geos/v3.3)                                        |
+| [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v3.5](https://github.com/GEOS-ESM/MOM6/tree/geos/v3.5)                                        |
 | [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.3.0](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.3.0)                               |
 | [QuickChem](https://github.com/GEOS-ESM/QuickChem)                             | [v1.0.0](https://github.com/GEOS-ESM/QuickChem/releases/tag/v1.0.0)                                 |
 | [RRTMGP](https://github.com/GEOS-ESM/rte-rrtmgp)                               | [geos/v1.8+1.0.0](https://github.com/GEOS-ESM/rte-rrtmgp/releases/tag/geos%2Fv1.8%2B1.0.0)          |

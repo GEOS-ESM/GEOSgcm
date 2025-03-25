@@ -123,7 +123,7 @@ StratChem:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v3.3.0
+  tag: v3.5.0
   develop: develop
 
 mom:
@@ -135,8 +135,8 @@ mom:
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
-  tag: geos/v3.3
-  develop: main
+  tag: geos/v3.5
+  develop: geos/main
   recurse_submodules: true
 
 mit:
