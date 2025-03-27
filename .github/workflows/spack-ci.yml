@@ -76,10 +76,10 @@ jobs:
       - name: Login
         shell: spack-bash {0}
         run: |
-          spack -e spack-env mirror add mapl-buildcache oci://ghcr.io/mathomp4/mapl-buildcache
-          spack -e spack-env mirror set --oci-username ${{ github.actor }} --oci-password "${{ secrets.BUILDCACHE_TOKEN }}" mapl-buildcache
+          spack -e spack-env mirror add geos-buildcache oci://ghcr.io/GEOS-ESM/geos-buildcache
+          spack -e spack-env mirror set --oci-username ${{ github.actor }} --oci-password "${{ secrets.BUILDCACHE_TOKEN }}" geos-buildcache
           spack -e spack-env mirror list
-          spack -e spack-env buildcache update-index mapl-buildcache
+          spack -e spack-env buildcache update-index geos-buildcache
           spack -e spack-env buildcache list --allarch
 
       - name: Concretize
@@ -91,14 +91,14 @@ jobs:
         shell: spack-bash {0}
         run: |
           spack -e spack-env install --add --no-check-signature --use-buildcache only \
-            esmf gftl gftl-shared fargparse pflogger pfunit yafyaml ecbuild udunits
+            esmf gftl gftl-shared fargparse pflogger pfunit yafyaml ecbuild udunits openblas
 
       - name: Build with Cmake
         shell: spack-bash {0}
         run: |
           spack env activate spack-env
           spack load \
-            esmf gftl gftl-shared fargparse pflogger pfunit yafyaml ecbuild udunits
+            esmf gftl gftl-shared fargparse pflogger pfunit yafyaml ecbuild udunits openblas
           spack find --loaded
           FC=gfortran-14 CC=gcc-14 CXX=g++-14
           cmake -B build -S . -DCMAKE_INSTALL_PREFIX=$PWD/install -DCMAKE_BUILD_TYPE=Debug -DUSE_F2PY=OFF -DCMAKE_Fortran_COMPILER=${FC} -DCMAKE_C_COMPILER=${CC} -DCMAKE_CXX_COMPILER=${CXX}
