@@ -2,11 +2,10 @@
 
 ## CI Status
 
-| CI Provider | Status |
-| ----------- | ------ |
+| CI Provider | Status                                                                                                          |
+| ----------- | ------                                                                                                          |
 | CircleCI    | [![CircleCI](https://circleci.com/gh/GEOS-ESM/GEOSgcm.svg?style=svg)](https://circleci.com/gh/GEOS-ESM/GEOSgcm) |
-| AWS CodeBuild | ![CodeBuild](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiZitEZE1kODFtUUhuZU5tN1pDbHZvbDlEQUEwNWR0a2JCM1F1MmlTaWZYV1JxNWIxMjZDSThOUi9mUDJKSVBuaEVRa1FxV2FncitOcExyemNaWFFIbjVrPSIsIml2UGFyYW1ldGVyU3BlYyI6IlBudmE3N1A0MTNNR3ZhNVoiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main) |
-| GitHub | ![GitHub](https://github.com/GEOS-ESM/GEOSgcm/workflows/Build%20Tests/badge.svg) |
+| GitHub      | ![GitHub](https://github.com/GEOS-ESM/GEOSgcm/workflows/Build%20Tests/badge.svg)                                |
 
 ## Current State of GEOSgcm Subrepos
 
@@ -145,6 +144,20 @@ where `vX.Y.Z` is a tag from a [GEOSgcm release](https://github.com/GEOS-ESM/GEO
 Note that when you first use `gh`, it will ask what your preferred git protocol
 is (https or ssh) to use "underneath". The caveats above will apply to whichever
 you choose.
+
+### Setting up `mepo` to use blobless clones
+
+The GEOS GCM uses a Python utility called [mepo](https://github.com/GEOS-ESM/mepo/) to manage **m**ultiple git r**epo**sitories instead of using other technologies like Git
+submodules. `mepo` uses a YAML file that provides a list of components (and their versions) that are required for a particular configuration of GEOS GCM.
+
+We *highly* recommend setting up `mepo` to use [blobless clones](https://github.blog/open-source/git/get-up-to-speed-with-partial-clone-and-shallow-clone/) to speed
+up cloning of the sub-repositories, especially on discover. To do this, there is a one-time command to run:
+
+```
+mepo config set clone.partial blobless
+```
+
+This will set up `mepo` to use blobless clones for all future clones by adding an entry to `~/.mepoconfig`.
 
 ---
 
