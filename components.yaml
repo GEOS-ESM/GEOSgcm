@@ -88,6 +88,11 @@ Cloud-J:
   branch: geos/latest_gcc 
   develop: geos/develop
 
+HETP:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/HETP/@HETP
+  remote: ../HETerogeneous-vectorized-or-Parallel.git
+  branch: origin/main
+
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
