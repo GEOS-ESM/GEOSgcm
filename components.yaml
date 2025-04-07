@@ -50,7 +50,7 @@ MAPL:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: GCMv12-rc12
+  branch: feature/split-chem-v12
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/sdrabenh/gcm_v12
 
@@ -75,7 +75,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: GCMv12-rc11
+  branch: feature/split-chem-v12
   develop: feature/sdrabenh/gcm_v12
 
 HEMCO:
@@ -102,6 +102,12 @@ QuickChem:
   tag: v1.0.0
   develop: main
 
+RRG:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@RRG
+  remote: ../RRG.git
+  tag: v1.1.0
+  develop: main
+
 TR:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@TR
   remote: ../TR.git
@@ -117,6 +123,36 @@ GMI:
 StratChem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@StratChem
   remote: ../StratChem.git
+  tag: v1.0.0
+  develop: develop
+
+MAM:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@MAM
+  remote: ../MAM.git
+  tag: v1.0.0
+  develop: main
+
+MATRIX:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@MATRIX
+  remote: ../MATRIX.git
+  tag: v1.0.0
+  develop: main
+
+CARMA:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@CARMA
+  remote: ../CARMA.git
+  tag: v1.1.0
+  develop: develop
+
+GAAS:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GAAS
+  remote: ../GAAS.git
+  tag: v1.0.0
+  develop: develop
+
+ACHEM:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@ACHEM
+  remote: ../ACHEM.git
   tag: v1.0.0
   develop: develop
 
@@ -166,7 +202,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: GCMv12-rc12
+  branch: feature/split-chem-v12
   develop: feature/sdrabenh/gcm_v12
 
 RRTMGP:
@@ -191,7 +227,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: GCMv12-rc12
+  branch: feature/split-chem-v12
   develop: feature/sdrabenh/gcm_v12
 
 UMD_Etc:
