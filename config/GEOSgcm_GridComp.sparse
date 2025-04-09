@@ -3,3 +3,8 @@
 !/GEOSagcm_GridComp/GEOShs_GridComp
 !/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/ARIESg3_GridComp
 !/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/FVdycore_GridComp
+
+!/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug
+
+!/GEOSwgcm_GridComp
+

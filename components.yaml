@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.56.0
+  tag: v3.58.1
   develop: develop
 
 ecbuild:
@@ -62,7 +62,8 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v2.7.2
+  #tag: v2.7.2
+  branch: feature/stripped-gcm
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -81,8 +82,10 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.16.0
+  #tag: v1.16.0
+  branch: feature/stripped-gcm
   develop: develop
+  sparse: ./config/GEOSchem_GridComp.sparse
 
 HEMCO:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Shared/HEMCO/@HEMCO
@@ -95,6 +98,12 @@ GOCART:
   remote: ../GOCART.git
   tag: v2.3.0
   develop: develop
+
+RRG:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@RRG
+  remote: ../RRG.git
+  tag: v1.1.0
+  develop: main
 
 TR:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@TR
@@ -113,6 +122,7 @@ GEOS_OceanGridComp:
   remote: ../GEOS_OceanGridComp.git
   tag: v2.5.0
   develop: release/v2
+  sparse: ./config/GEOS_OceanGridComp.sparse
 
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
