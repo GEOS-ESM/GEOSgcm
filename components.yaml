@@ -99,18 +99,6 @@ GOCART:
   tag: v2.3.0
   develop: develop
 
-RRG:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@RRG
-  remote: ../RRG.git
-  tag: v1.1.0
-  develop: main
-
-TR:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@TR
-  remote: ../TR.git
-  tag: v1.2.0
-  develop: develop
-
 ACHEM:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@ACHEM
   remote: ../ACHEM.git
