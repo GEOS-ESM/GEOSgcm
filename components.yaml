@@ -128,5 +128,6 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v2.3.10
+  #tag: v2.3.10
+  branch: feature/stripped-gcm
   develop: develop
