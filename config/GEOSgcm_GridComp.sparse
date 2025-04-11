@@ -1,10 +1,15 @@
 /*
+!/GEOSgigatraj_GridComp
+!/GEOSwgcm_GridComp
+
 !/GEOSagcm_GridComp/GEOS_AgcmSimpleGridComp.F90
 !/GEOSagcm_GridComp/GEOShs_GridComp
 !/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/ARIESg3_GridComp
 !/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/FVdycore_GridComp
 
+!/GEOSogcm_GridComp/GEOS_OradGridComp
+!/GEOSogcm_GridComp/GEOS_OradBioGridComp
+!/GEOSogcm_GridComp/GEOS_OceanBioGeoChemGridComp
+
 !/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug
-
-!/GEOSwgcm_GridComp
-
+!/GEOSogcm_GridComp/GEOSseaice_GridComp/GEOSMITDyna_GridComp
