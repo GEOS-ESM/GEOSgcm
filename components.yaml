@@ -36,7 +36,7 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  branch: feature/mathomp4/v12-remove-sles15-detection
+  branch: feature/sdrabenh/gcm_v12
   develop: feature/sdrabenh/gcm_v12
 
 # When updating the MAPL version, also update the MAPL version in the
