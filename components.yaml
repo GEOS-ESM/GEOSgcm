@@ -44,20 +44,26 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: GCMv12-rc11
+  tag: GCMv12-rc12
   develop: feature/sdrabenh/gcm_v12
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  branch: feature/mathomp4/v12-remove-sles15-detection
+  branch: feature/sdrabenh/gcm_v12
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/sdrabenh/gcm_v12
+
+geos_state_bias:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSmkiau_GridComp/pyMLINC/@geos_state_bias
+  remote: ../geos_state_bias.git
+  tag: geos/v1.0.0
+  develop : geos/develop
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  branch: feature/mathomp4/v12-remove-sles15-detection
+  branch: feature/sdrabenh/gcm_v12
   develop: feature/sdrabenh/gcm_v12
 
 fvdycore:
@@ -69,7 +75,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: GCMv12-rc11
+  branch: feature/sdrabenh/gcm_v12
   develop: feature/sdrabenh/gcm_v12
 
 HEMCO:
@@ -96,6 +102,12 @@ QuickChem:
   tag: v1.0.0
   develop: main
 
+RRG:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@RRG
+  remote: ../RRG.git
+  tag: v1.1.0
+  develop: main
+
 TR:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@TR
   remote: ../TR.git
@@ -113,6 +125,36 @@ StratChem:
   remote: ../StratChem.git
   tag: v1.0.0
   develop: develop
+
+MAM:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@MAM
+  remote: ../MAM.git
+  tag: v1.0.0
+  develop: main
+
+MATRIX:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@MATRIX
+  remote: ../MATRIX.git
+  tag: v1.0.0
+  develop: main
+
+CARMA:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@CARMA
+  remote: ../CARMA.git
+  tag: v1.1.0
+  develop: develop
+
+GAAS:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GAAS
+  remote: ../GAAS.git
+  tag: v1.0.0
+  develop: develop
+
+ACHEM:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@ACHEM
+  remote: ../ACHEM.git
+  branch: feature/sdrabenh/gcm_v12
+  develop: feature/sdrabenh/gcm_v12
 
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
@@ -160,7 +202,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: GCMv12-rc11
+  branch: feature/sdrabenh/gcm_v12
   develop: feature/sdrabenh/gcm_v12
 
 RRTMGP:
@@ -185,7 +227,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  branch: feature/mathomp4/v12-remove-sles15-detection
+  branch: feature/sdrabenh/gcm_v12
   develop: feature/sdrabenh/gcm_v12
 
 UMD_Etc:

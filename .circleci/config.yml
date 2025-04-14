@@ -32,7 +32,7 @@ workflows:
             - docker-hub-creds
           matrix:
             parameters:
-              compiler: [gfortran, ifort, ifx]
+              compiler: [gfortran, ifort]
           baselibs_version: *baselibs_version
           repo: GEOSgcm
           persist_workspace: true # Needs to be true to run fv3/gcm experiment, costs extra
@@ -44,7 +44,7 @@ workflows:
             - docker-hub-creds
           matrix:
             parameters:
-              compiler: [gfortran, ifort, ifx]
+              compiler: [gfortran, ifort]
           requires:
             - build-GEOSgcm-on-<< matrix.compiler >>
           repo: GEOSgcm
