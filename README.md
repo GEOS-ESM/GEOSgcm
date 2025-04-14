@@ -2,11 +2,10 @@
 
 ## CI Status
 
-| CI Provider | Status |
-| ----------- | ------ |
+| CI Provider | Status                                                                                                          |
+| ----------- | ------                                                                                                          |
 | CircleCI    | [![CircleCI](https://circleci.com/gh/GEOS-ESM/GEOSgcm.svg?style=svg)](https://circleci.com/gh/GEOS-ESM/GEOSgcm) |
-| AWS CodeBuild | ![CodeBuild](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiZitEZE1kODFtUUhuZU5tN1pDbHZvbDlEQUEwNWR0a2JCM1F1MmlTaWZYV1JxNWIxMjZDSThOUi9mUDJKSVBuaEVRa1FxV2FncitOcExyemNaWFFIbjVrPSIsIml2UGFyYW1ldGVyU3BlYyI6IlBudmE3N1A0MTNNR3ZhNVoiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main) |
-| GitHub | ![GitHub](https://github.com/GEOS-ESM/GEOSgcm/workflows/Build%20Tests/badge.svg) |
+| GitHub      | ![GitHub](https://github.com/GEOS-ESM/GEOSgcm/workflows/Build%20Tests/badge.svg)                                |
 
 ## Current State of GEOSgcm Subrepos
 
@@ -15,9 +14,9 @@
 | [CICE](https://github.com/GEOS-ESM/CICE)                                       | [geos/v0.2.0](https://github.com/GEOS-ESM/CICE/releases/tag/geos%2Fv0.2.0)                          |
 | [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                               |
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v1.3.0](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.3.0)                       |
-| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v4.14.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v4.14.0)                              |
+| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v4.14.1](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v4.14.1)                              |
 | [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v5.10.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v5.10.0)                                |
-| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v2.11.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.11.1)                  |
+| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v2.11.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.11.1)                    |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)           |
 | [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v3.5.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v3.5.0)                        |
 | [GEOS_Util](https://github.com/GEOS-ESM/GEOS_Util)                             | [v2.1.2](https://github.com/GEOS-ESM/GEOS_Util/releases/tag/v2.1.2)                                 |
@@ -56,26 +55,18 @@ In your `.bashrc` or `.tcshrc` or other rc file add a line:
 
 ##### NCCS
 
-NCCS currently has two different OSs. So you'll need to use different modulefiles depending on which OS you are using.
-
-###### SLES 12
-
-```
-module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
-```
-
-###### SLES 15
-
 ```
 module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES15
 ```
 
 ##### NAS
+
 ```
 module use -a /nobackup/gmao_SIteam/modulefiles
 ```
 
 ##### GMAO Desktops
+
 On the GMAO desktops, the SI Team modulefiles should automatically be
 part of running `module avail` but if not, they are in:
 
@@ -155,20 +146,30 @@ Note that when you first use `gh`, it will ask what your preferred git protocol
 is (https or ssh) to use "underneath". The caveats above will apply to whichever
 you choose.
 
+### Setting up `mepo` to use blobless clones
+
+The GEOS GCM uses a Python utility called [mepo](https://github.com/GEOS-ESM/mepo/) to manage **m**ultiple git r**epo**sitories instead of using other technologies like Git
+submodules. `mepo` uses a YAML file that provides a list of components (and their versions) that are required for a particular configuration of GEOS GCM.
+
+We *highly* recommend setting up `mepo` to use [blobless clones](https://github.blog/open-source/git/get-up-to-speed-with-partial-clone-and-shallow-clone/) to speed
+up cloning of the sub-repositories, especially on discover. To do this, there is a one-time command to run:
+
+```
+mepo config set clone.partial blobless
+```
+
+This will set up `mepo` to use blobless clones for all future clones by adding an entry to `~/.mepoconfig`.
+
 ---
 
 ### Single Step Building of the Model
 
-If all you wish is to build the model, you can run `parallel_build.csh` from a head node. Doing so will checkout all the external repositories of the model and build it. When done, the resulting model build will be found in `build/` and the installation will be found in `install/` with setup scripts like `gcm_setup` and `fvsetup` in `install/bin`.
+If all you wish is to build the model, you can run:
+```
+./parallel_build.csh
+```
 
-#### Building at NCCS (Multiple OSs)
-
-In all the examples below, NCCS builds will act differently. Because NCCS currently has two different OSs, when you use
-`parallel_build.csh` you will see that the `build` and `install` directories will be appended with `-SLES12` or `-SLES15` depending
-on where you submitted to. When NCCS moves to a single OS again, this will be removed.
-
-Note that if you use the `-builddir` and `-installdir` options, you can override this behavior and no OS will be automatically
-appended.
+from a login node. Doing so will checkout all the external repositories of the model and build it. When done, the resulting model build will be found in `build/` and the installation will be found in `install/` with setup scripts like `gcm_setup` and `fvsetup` in `install/bin`.
 
 #### Develop Version of GEOS GCM
 
@@ -246,6 +247,7 @@ each sub-repository.
 #### Build the Model
 
 ##### Load Compiler, MPI Stack, and Baselibs
+
 On tcsh:
 ```
 source @env/g5_modules
@@ -297,10 +299,13 @@ Note that running with `parallel_build.csh` will create and install a tarfile of
 ```
 to your CMake command.
 
-##### Build and Install with Make
+##### Build and Install
+
 ```
 cmake --build build -j N
+cmake --install build
 ```
+
 where `N` is the number of parallel processes. On discover head nodes, this should only be as high as 2 due to limits on the head nodes. On a compute node, you can set `N` has high as you like, though 8-12 is about the limit of parallelism in our model's make system.
 
 ### Run the GCM

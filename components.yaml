@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v4.14.0
+  tag: v4.14.1
   develop: develop
 
 ecbuild:
@@ -36,7 +36,7 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: GCMv12-rc11
+  branch: feature/sdrabenh/gcm_v12
   develop: feature/sdrabenh/gcm_v12
 
 # When updating the MAPL version, also update the MAPL version in the
@@ -63,13 +63,13 @@ geos_state_bias:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: GCMv12-rc12
+  branch: feature/sdrabenh/gcm_v12
   develop: feature/sdrabenh/gcm_v12
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: GCMv12-rc11
+  branch: feature/sdrabenh/gcm_v12
   develop: feature/sdrabenh/gcm_v12
 
 GEOSchem_GridComp:
@@ -93,7 +93,7 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: GCMv12-rc11
+  branch: feature/sdrabenh/gcm_v12
   develop: feature/sdrabenh/gcm_v12
 
 QuickChem:
