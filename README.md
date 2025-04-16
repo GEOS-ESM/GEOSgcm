@@ -16,10 +16,10 @@
 | [CICE](https://github.com/GEOS-ESM/CICE)                                       | [geos/v0.2.0](https://github.com/GEOS-ESM/CICE/releases/tag/geos%2Fv0.2.0)                            |
 | [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                                 |
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v1.4.0](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.4.0)                         |
-| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.56.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.56.0)                                |
-| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v4.35.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.35.0)                                |
+| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.58.1](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.58.1)                                |
+| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v4.36.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v4.36.0)                                |
 | [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.10](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.10) |
-| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v2.13.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.13.0)                    |
+| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v2.14.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.14.0)                    |
 | [GAAS](https://github.com/GEOS-ESM/GAAS)                                       | [v1.0.0](https://github.com/GEOS-ESM/GAAS/releases/tag/v1.0.0)                                        |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)             |
 | [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v2.5.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v2.5.0)                        |
@@ -63,26 +63,18 @@ In your `.bashrc` or `.tcshrc` or other rc file add a line:
 
 ##### NCCS
 
-NCCS currently has two different OSs. So you'll need to use different modulefiles depending on which OS you are using.
-
-###### SLES 12
-
-```
-module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
-```
-
-###### SLES 15
-
 ```
 module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES15
 ```
 
 ##### NAS
+
 ```
 module use -a /nobackup/gmao_SIteam/modulefiles
 ```
 
 ##### GMAO Desktops
+
 On the GMAO desktops, the SI Team modulefiles should automatically be
 part of running `module avail` but if not, they are in:
 
@@ -180,16 +172,12 @@ This will set up `mepo` to use blobless clones for all future clones by adding a
 
 ### Single Step Building of the Model
 
-If all you wish is to build the model, you can run `parallel_build.csh` from a head node. Doing so will checkout all the external repositories of the model and build it. When done, the resulting model build will be found in `build/` and the installation will be found in `install/` with setup scripts like `gcm_setup` and `fvsetup` in `install/bin`.
+If all you wish is to build the model, you can run:
+```
+./parallel_build.csh
+```
 
-#### Building at NCCS (Multiple OSs)
-
-In all the examples below, NCCS builds will act differently. Because NCCS currently has two different OSs, when you use
-`parallel_build.csh` you will see that the `build` and `install` directories will be appended with `-SLES12` or `-SLES15` depending
-on where you submitted to. When NCCS moves to a single OS again, this will be removed.
-
-Note that if you use the `-builddir` and `-installdir` options, you can override this behavior and no OS will be automatically
-appended.
+from a login node. Doing so will checkout all the external repositories of the model and build it. When done, the resulting model build will be found in `build/` and the installation will be found in `install/` with setup scripts like `gcm_setup` and `fvsetup` in `install/bin`.
 
 #### Develop Version of GEOS GCM
 
@@ -267,6 +255,7 @@ each sub-repository.
 #### Build the Model
 
 ##### Load Compiler, MPI Stack, and Baselibs
+
 On tcsh:
 ```
 source @env/g5_modules
@@ -277,23 +266,38 @@ source @env/g5_modules.sh
 ```
 
 ##### Create Build Directory
-We currently do not allow in-source builds of GEOSgcm. So we must make a directory:
-```
-mkdir build
-```
-The advantages of this is that you can build both a Debug and Release version with the same clone if desired.
 
 ##### Run CMake
-CMake generates the Makefiles needed to build the model.
+
+CMake generates the Makefiles needed to build the model. This command:
 ```
-cd build
-cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=ifort -DCMAKE_INSTALL_PREFIX=../install
+cmake -B build -S . -DCMAKE_INSTALL_PREFIX=install
 ```
-This will install to a directory parallel to your `build` directory. If you prefer to install elsewhere change the path in:
+
+As is, this command assumes you are in the root of the GEOSgcm checkout and will create a `build/` directory in the root of the checkout and install into `install/ parallel to the `build/` directory.
+
+This command has three options:
+
+1. `-B` specifies the build directory.
+2. `-S` specifies the source directory (root of the checkout).
+3. `-DCMAKE_INSTALL_PREFIX` specifies the installation directory.
+
+If you prefer to install elsewhere change the path in:
+
 ```
--DCMAKE_INSTALL_PREFIX=<path>
+-DCMAKE_INSTALL_PREFIX=/path/to/install
 ```
 and CMake will install there.
+
+If you prefer your build somewhere else, you can specify that with:
+```
+-B /path/to/build
+```
+
+Finally, if your source is in a different directory than the current one, you can specify that with:
+```
+-S /path/to/source
+```
 
 ###### Create and install source tarfile
 
@@ -303,17 +307,20 @@ Note that running with `parallel_build.csh` will create and install a tarfile of
 ```
 to your CMake command.
 
-##### Build and Install with Make
+##### Build and Install
+
 ```
-make -jN install
+cmake --build build -j N
+cmake --install build
 ```
+
 where `N` is the number of parallel processes. On discover head nodes, this should only be as high as 2 due to limits on the head nodes. On a compute node, you can set `N` has high as you like, though 8-12 is about the limit of parallelism in our model's make system.
 
 ### Run the GCM
 
 Once the model has built successfully, you will have an `install/` directory in your checkout. To run `gcm_setup` go to the `install/bin/` directory and run it there:
 ```
-cd install/bin
+cd /path/to/install/bin
 ./gcm_setup
 ```
 
