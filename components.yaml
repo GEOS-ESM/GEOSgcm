@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  branch: geoscf/CFv2
+  tag: geoscf/CFv2/rc1/t0
   develop: main
 
 cmake:
@@ -48,7 +48,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: GCMv1.17.0+GCCv14+gsi_coupling-p2
+  tag: GCMv1.17.0+GCCv14+gsi_coupling-p3
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -67,31 +67,31 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  branch: geos/latest_gcc 
+  branch: feature/geoscf/develop 
   develop: develop
 
 HEMCO:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Shared/HEMCO/@HEMCO
   remote: ../HEMCO.git
-  branch: geos/latest_gcc 
+  branch: geos/develop 
   develop: geos/develop
 
 geos-chem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/GEOSCHEMchem_GridComp/@geos-chem
   remote: ../geos-chem.git
-  branch: geos/latest_gcc 
+  branch: geos/develop 
   develop: geos/develop
 
 Cloud-J:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Cloud-J/@Cloud-J
   remote: ../Cloud-J.git
-  branch: geos/latest_gcc 
+  branch: geos/develop 
   develop: geos/develop
 
 HETP:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/HETP/@HETP
   remote: ../HETerogeneous-vectorized-or-Parallel.git
-  branch: origin/main
+  branch: geos/main
 
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
@@ -153,7 +153,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  branch: geoscf/CFv2
+  branch: feature/geoscf/develop
   develop: develop
 
 UMD_Etc:
