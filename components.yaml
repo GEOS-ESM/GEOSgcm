@@ -64,7 +64,7 @@ GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
   #tag: v2.7.2
-  branch: feature/mathomp4/remove-sles15-detection
+  branch: develop
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -242,7 +242,7 @@ GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
   #tag: v2.3.10
-  branch: feature/mathomp4/v11-remove-sles15-detection
+  branch: develop
   develop: develop
 
 UMD_Etc:
