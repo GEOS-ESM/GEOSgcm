@@ -22,7 +22,7 @@ ecbuild:
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
   remote: ../NCEP_Shared.git
-  tag: v1.3.0
+  tag: v1.4.0
   sparse: ./config/NCEP_Shared.sparse
   develop: main
 
@@ -37,13 +37,13 @@ GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
   #tag: v2.1.6
-  branch: feature/mathomp4/remove-sles15-detection
+  branch: main
   develop: main
 
 GMAO_perllib:
   local: ./src/Shared/@GMAO_Shared/@GMAO_perllib
   remote: ../GMAO_perllib.git
-  tag: v1.0.0
+  tag: v1.1.0
   develop: main
 
 # When updating the MAPL version, also update the MAPL version in the

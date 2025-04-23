@@ -31,7 +31,7 @@
 | [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v2.9.1](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv2.9.1)       |
 | [gigatraj](https://github.com/GEOS-ESM/gigatraj)                               | [geos/v1.0.0](https://github.com/GEOS-ESM/gigatraj/releases/tag/geos%2Fv1.0.0)       |
 | [GMI](https://github.com/GEOS-ESM/GMI)                                         | [v1.3.0](https://github.com/GEOS-ESM/GMI/releases/tag/v1.3.0)                                       |
-| [GMAO_perllib](https://github.com/GEOS-ESM/GMAO_perllib)                       | [v1.0.0](https://github.com/GEOS-ESM/GMAO_perllib/releases/tag/v1.0.0)                               |
+| [GMAO_perllib](https://github.com/GEOS-ESM/GMAO_perllib)                       | [v1.1.0](https://github.com/GEOS-ESM/GMAO_perllib/releases/tag/v1.1.0)                               |
 | [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v2.0.0](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v2.0.0)                               |
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.3.0](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.3.0)                            |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.3.0](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.3.0)                         |
@@ -42,7 +42,7 @@
 | [MITgcm](https://github.com/GEOS-ESM/MITgcm)                                   | [checkpoint68o](https://github.com/GEOS-ESM/MITgcm/releases/tag/checkpoint68o)                        |
 | [MOM5](https://github.com/GEOS-ESM/MOM5)                                       | [geos/5.1.0+1.2.0](https://github.com/GEOS-ESM/MOM5/releases/tag/geos%2F5.1.0%2B1.2.0)                |
 | [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v3.5](https://github.com/GEOS-ESM/MOM6/tree/geos/v3.5)                                        |
-| [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.3.0](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.3.0)                                 |
+| [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.4.0](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.4.0)                                 |
 | [QuickChem](https://github.com/GEOS-ESM/QuickChem)                             | [v1.0.0](https://github.com/GEOS-ESM/QuickChem/releases/tag/v1.0.0)                                   |
 | [RRG](https://github.com/GEOS-ESM/RRG)                                         | [v1.1.0](https://github.com/GEOS-ESM/RRG/releases/tag/v1.1.0)                                         |
 | [RRTMGP](https://github.com/GEOS-ESM/rte-rrtmgp)                               | [geos/v1.7+1.0.0](https://github.com/GEOS-ESM/rte-rrtmgp/releases/tag/geos%2Fv1.7%2B1.0.0)          |
