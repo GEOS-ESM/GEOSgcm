@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v4.35.0
+  tag: v4.36.0
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.56.0
+  tag: v3.58.2
   develop: develop
 
 ecbuild:
@@ -22,14 +22,14 @@ ecbuild:
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
   remote: ../NCEP_Shared.git
-  tag: v1.3.0
+  tag: v1.4.0
   sparse: ./config/NCEP_Shared.sparse
   develop: main
 
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v2.0.0
+  tag: v2.1.0
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -42,7 +42,7 @@ GEOS_Util:
 GMAO_perllib:
   local: ./src/Shared/@GMAO_Shared/@GMAO_perllib
   remote: ../GMAO_perllib.git
-  tag: v1.0.0
+  tag: v1.1.0
   develop: main
 
 # When updating the MAPL version, also update the MAPL version in the
