@@ -36,8 +36,7 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  #tag: v2.1.6
-  branch: main
+  tag: v2.1.7
   develop: main
 
 GMAO_perllib:
