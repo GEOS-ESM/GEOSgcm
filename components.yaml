@@ -159,7 +159,7 @@ ACHEM:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v3.5.0
+  branch: feature/v3-mom6-2025Apr23-update
   develop: develop
 
 mom:
@@ -171,7 +171,7 @@ mom:
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
-  tag: geos/v3.5
+  branch: geos/main
   develop: geos/main
   recurse_submodules: true
 
