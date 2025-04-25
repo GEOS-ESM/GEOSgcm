@@ -37,6 +37,7 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
+  #branch: feature/sdrabenh/gcm_v12
   branch: feature/sdrabenh/dev_into_v12_20250424
   develop: feature/sdrabenh/gcm_v12
 
@@ -57,6 +58,7 @@ MAPL:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
+  #branch: feature/sdrabenh/gcm_v12
   branch: feature/sdrabenh/dev_into_v12_20250424
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/sdrabenh/gcm_v12
@@ -240,6 +242,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
+  #branch: feature/sdrabenh/gcm_v12
   branch: feature/sdrabenh/dev_into_v12_20250424
   develop: feature/sdrabenh/gcm_v12
 
