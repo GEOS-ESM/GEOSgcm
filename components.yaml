@@ -29,15 +29,22 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: GCMv12-rc8
+  #tag: GCMv12-rc8
+  branch: feature/sdrabenh/dev_into_v12_20250424
   sparse: ./config/GMAO_Shared.sparse
   develop: feature/sdrabenh/gcm_v12
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  branch: feature/sdrabenh/gcm_v12
+  branch: feature/sdrabenh/dev_into_v12_20250424
   develop: feature/sdrabenh/gcm_v12
+
+GMAO_perllib:
+  local: ./src/Shared/@GMAO_Shared/@GMAO_perllib
+  remote: ../GMAO_perllib.git
+  tag: v1.1.0
+  develop: main
 
 # When updating the MAPL version, also update the MAPL version in the
 # CMakeLists.txt file for non-Baselibs builds
@@ -50,7 +57,7 @@ MAPL:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  branch: feature/sdrabenh/gcm_v12
+  branch: feature/sdrabenh/dev_into_v12_20250424
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/sdrabenh/gcm_v12
 
@@ -59,6 +66,12 @@ geos_state_bias:
   remote: ../geos_state_bias.git
   tag: geos/v1.0.0
   develop : geos/develop
+
+GigaTraj:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSgigatraj_GridComp/@GigaTraj
+  remote: ../gigatraj.git
+  tag: geos/v1.0.0
+  develop: develop-GSFC
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
@@ -227,7 +240,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  branch: feature/sdrabenh/gcm_v12
+  branch: feature/sdrabenh/dev_into_v12_20250424
   develop: feature/sdrabenh/gcm_v12
 
 UMD_Etc:
