@@ -92,7 +92,8 @@ jobs:
         shell: spack-bash {0}
         run: |
           spack -e spack-env install --add --no-check-signature --use-buildcache only \
-            esmf gftl gftl-shared fargparse pflogger pfunit yafyaml ecbuild udunits openblas
+            esmf gftl gftl-shared fargparse pflogger pfunit yafyaml ecbuild udunits openblas \
+            fms@2024.03
 
       - name: Build with Cmake
         shell: spack-bash {0}
