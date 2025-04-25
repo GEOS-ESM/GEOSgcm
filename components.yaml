@@ -22,35 +22,44 @@ ecbuild:
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
   remote: ../NCEP_Shared.git
-  tag: v1.3.0
+  tag: v1.4.0
   sparse: ./config/NCEP_Shared.sparse
   develop: main
 
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: GCMv12-rc8
+  #tag: GCMv12-rc8
+  branch: feature/sdrabenh/dev_into_v12_20250424
   sparse: ./config/GMAO_Shared.sparse
   develop: feature/sdrabenh/gcm_v12
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  branch: feature/sdrabenh/gcm_v12
+  #branch: feature/sdrabenh/gcm_v12
+  branch: feature/sdrabenh/dev_into_v12_20250424
   develop: feature/sdrabenh/gcm_v12
+
+GMAO_perllib:
+  local: ./src/Shared/@GMAO_Shared/@GMAO_perllib
+  remote: ../GMAO_perllib.git
+  tag: v1.1.0
+  develop: main
 
 # When updating the MAPL version, also update the MAPL version in the
 # CMakeLists.txt file for non-Baselibs builds
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: GCMv12-rc12
+  tag: v2.55.0
   develop: feature/sdrabenh/gcm_v12
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  branch: feature/sdrabenh/gcm_v12
+  #branch: feature/sdrabenh/gcm_v12
+  branch: feature/sdrabenh/dev_into_v12_20250424
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/sdrabenh/gcm_v12
 
@@ -59,6 +68,12 @@ geos_state_bias:
   remote: ../geos_state_bias.git
   tag: geos/v1.0.0
   develop : geos/develop
+
+GigaTraj:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSgigatraj_GridComp/@GigaTraj
+  remote: ../gigatraj.git
+  tag: geos/v1.0.0
+  develop: develop-GSFC
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
@@ -215,7 +230,7 @@ RRTMGP:
 ww3:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSwgcm_GridComp/GEOSwavewatch_GridComp/@ww3
   remote: ../WW3.git
-  tag: v6.07.1-geos-r2
+  tag: v7.14-geos-r1
   develop: geos/develop
 
 umwm:
@@ -227,7 +242,8 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  branch: feature/sdrabenh/gcm_v12
+  #branch: feature/sdrabenh/gcm_v12
+  branch: feature/sdrabenh/dev_into_v12_20250424
   develop: feature/sdrabenh/gcm_v12
 
 UMD_Etc:
