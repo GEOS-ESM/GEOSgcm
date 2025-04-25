@@ -93,7 +93,7 @@ jobs:
         run: |
           spack -e spack-env install --add --no-check-signature --use-buildcache only \
             esmf gftl gftl-shared fargparse pflogger pfunit yafyaml ecbuild udunits openblas \
-            fms@2024.03 ~gfs_phys +pic +yaml constants=GEOS precision=32,64 +deprecated_io ~yaml
+            fms@2024.03 ~gfs_phys +pic constants=GEOS precision=32,64 +deprecated_io ~yaml
 
       - name: Build with Cmake
         shell: spack-bash {0}
@@ -101,7 +101,7 @@ jobs:
           spack env activate spack-env
           spack load \
             esmf gftl gftl-shared fargparse pflogger pfunit yafyaml ecbuild udunits openblas \
-            fms@2024.03 ~gfs_phys +pic +yaml constants=GEOS precision=32,64 +deprecated_io ~yaml
+            fms@2024.03 ~gfs_phys +pic constants=GEOS precision=32,64 +deprecated_io ~yaml
           spack find --loaded
           FC=gfortran-14 CC=gcc-14 CXX=g++-14
           cmake -B build -S . -DCMAKE_INSTALL_PREFIX=$PWD/install -DCMAKE_BUILD_TYPE=Debug -DUSE_F2PY=OFF -DCMAKE_Fortran_COMPILER=${FC} -DCMAKE_C_COMPILER=${CC} -DCMAKE_CXX_COMPILER=${CXX}
