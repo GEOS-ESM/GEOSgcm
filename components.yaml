@@ -22,7 +22,7 @@ ecbuild:
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
   remote: ../NCEP_Shared.git
-  tag: v1.3.0
+  tag: v1.4.0
   sparse: ./config/NCEP_Shared.sparse
   develop: main
 
@@ -215,7 +215,7 @@ RRTMGP:
 ww3:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSwgcm_GridComp/GEOSwavewatch_GridComp/@ww3
   remote: ../WW3.git
-  tag: v6.07.1-geos-r2
+  tag: v7.14-geos-r1
   develop: geos/develop
 
 umwm:
