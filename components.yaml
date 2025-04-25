@@ -30,7 +30,7 @@ GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
   #tag: GCMv12-rc8
-  branch: feature/sdrabenh/dev_into_v12_20250424
+  branch: feature/sdrabenh/gcm_v12
   sparse: ./config/GMAO_Shared.sparse
   develop: feature/sdrabenh/gcm_v12
 
@@ -38,7 +38,7 @@ GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
   #branch: feature/sdrabenh/gcm_v12
-  branch: feature/sdrabenh/dev_into_v12_20250424
+  branch: feature/sdrabenh/gcm_v12
   develop: feature/sdrabenh/gcm_v12
 
 GMAO_perllib:
@@ -59,7 +59,7 @@ GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
   #branch: feature/sdrabenh/gcm_v12
-  branch: feature/sdrabenh/dev_into_v12_20250424
+  branch: feature/sdrabenh/gcm_v12
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/sdrabenh/gcm_v12
 
@@ -243,7 +243,7 @@ GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
   #branch: feature/sdrabenh/gcm_v12
-  branch: feature/sdrabenh/dev_into_v12_20250424
+  branch: feature/sdrabenh/gcm_v12
   develop: feature/sdrabenh/gcm_v12
 
 UMD_Etc:
