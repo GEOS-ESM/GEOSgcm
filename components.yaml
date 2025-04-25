@@ -44,7 +44,7 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: GCMv12-rc12
+  tag: v2.55.0
   develop: feature/sdrabenh/gcm_v12
 
 GEOSgcm_GridComp:
