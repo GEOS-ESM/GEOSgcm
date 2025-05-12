@@ -1,3 +1,12 @@
+== Build Configuration ==
+Build Type: @CMAKE_BUILD_TYPE@
+
+== System ==
+System Name: @CMAKE_SYSTEM_NAME@
+System Version: @CMAKE_SYSTEM_VERSION@
+Host System: @CMAKE_HOST_SYSTEM@
+Processor Description: @proc_description@
+
 == CMake ==
 CMake Version Used for Build: @CMAKE_VERSION@
 CMake Required Version: @CMAKE_MINIMUM_REQUIRED_VERSION@
@@ -22,17 +31,15 @@ MPI C++ Compiler: @MPI_CXX_COMPILER@
 MPI Fortran Compiler: @MPI_Fortran_COMPILER@
 MPI Version: @MPI_VERSION@
 MPI Libraries: @MPI_LIBRARIES@
+MPI Stack: @MPI_STACK@
+MPI Stack Version: @MPI_STACK_VERSION@
 
-== Build Configuration ==
-Build Type: @CMAKE_BUILD_TYPE@
-Build Timestamp: @BUILD_TIMESTAMP@
-C Flags: @CMAKE_C_FLAGS@ @CMAKE_C_FLAGS_${CMAKE_BUILD_TYPE}@
-CXX Flags: @CMAKE_CXX_FLAGS@ @CMAKE_CXX_FLAGS_${CMAKE_BUILD_TYPE}@
-Fortran Flags: @CMAKE_Fortran_FLAGS@ @CMAKE_Fortran_FLAGS_${CMAKE_BUILD_TYPE}@
+== BLAS ==
+BLAS_LIBRARIES: @BLAS_LIBRARIES@
 
-== System ==
-System Name: @CMAKE_SYSTEM_NAME@
-System Version: @CMAKE_SYSTEM_VERSION@
-Host System: @CMAKE_HOST_SYSTEM@
-Processor: @CMAKE_SYSTEM_PROCESSOR@
+== LAPACK ==
+LAPACK_LIBRARIES: @LAPACK_LIBRARIES@
 
+== ESMF ==
+ESMF_VERSION: @ESMF_VERSION@
+ESMFMKFILE: @ESMFMKFILE@
