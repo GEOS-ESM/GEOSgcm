@@ -17,7 +17,7 @@ cmake:
 ecbuild:
   local: ./@cmake/@ecbuild
   remote: ../ecbuild.git
-  tag: geos/v2.0.0
+  tag: geos/v2.1.0
 
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
