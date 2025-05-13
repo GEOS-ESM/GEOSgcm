@@ -1,0 +1,45 @@
+== Build Configuration ==
+Build Type: @CMAKE_BUILD_TYPE@
+
+== System ==
+System Name: @CMAKE_SYSTEM_NAME@
+System Version: @CMAKE_SYSTEM_VERSION@
+Host System: @CMAKE_HOST_SYSTEM@
+Processor Description: @proc_description@
+
+== CMake ==
+CMake Version Used for Build: @CMAKE_VERSION@
+CMake Required Version: @CMAKE_MINIMUM_REQUIRED_VERSION@
+
+== Git ==
+Git Version: @GIT_VERSION_STRING@
+
+== Modules ==
+@ENVIRONMENT_MODULES@
+
+== Basedir ==
+BASEDIR: @BASEDIR_WITHOUT_ARCH@
+
+== Compilers ==
+C Compiler: @CMAKE_C_COMPILER@ (ID: @CMAKE_C_COMPILER_ID@ @CMAKE_C_COMPILER_VERSION@)
+C++ Compiler: @CMAKE_CXX_COMPILER@ (ID: @CMAKE_CXX_COMPILER_ID@ @CMAKE_CXX_COMPILER_VERSION@)
+Fortran Compiler: @CMAKE_Fortran_COMPILER@ (ID: @CMAKE_Fortran_COMPILER_ID@ @CMAKE_Fortran_COMPILER_VERSION@)
+
+== MPI ==
+MPI C Compiler: @MPI_C_COMPILER@
+MPI C++ Compiler: @MPI_CXX_COMPILER@
+MPI Fortran Compiler: @MPI_Fortran_COMPILER@
+MPI Version: @MPI_VERSION@
+MPI Libraries: @MPI_LIBRARIES@
+MPI Stack: @MPI_STACK@
+MPI Stack Version: @MPI_STACK_VERSION@
+
+== BLAS ==
+BLAS_LIBRARIES: @BLAS_LIBRARIES@
+
+== LAPACK ==
+LAPACK_LIBRARIES: @LAPACK_LIBRARIES@
+
+== ESMF ==
+ESMF_VERSION: @ESMF_VERSION@
+ESMFMKFILE: @ESMFMKFILE@
