@@ -6,6 +6,45 @@
 
 * Added scripts and the topo package from NCAR to generate topography
 
+## [11.7.1] - 2025-03-17
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+
+* Move MAM, MATRIX, CARMA, GAAS, ACHEM to separate repos; Add RRG [#1060](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1060)
+* Move GMAO_perllib into its own repo [#361](https://github.com/GEOS-ESM/GMAO_Shared/pull/361)
+* Bugfix of mean land elevation & release of v13 bcs [#1049](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1049)
+* Add choice to run GEOSlandice_GridComp offline with GEOScatch_GridComp [#909](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/909)
+* Modified `make_bcs` to create an NC4-formatted tile file in addition to the ASCII-formatted tile files [#1028](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1028)
+* Turn off GOSWIM via `N_constit=0` [#1050](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1050)
+* Update WAVEWATCH [#1055](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1055)
+* Update CICE6 configs [#1058](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1058)
+* ACG-fication of GWD [#1053](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1053)
+* Fixed the perl left/right brace matching problem in `Perl_Config.pm` [#370](https://github.com/GEOS-ESM/GMAO_Shared/pull/370)
+* Remove Skylake at NCCS [#688](https://github.com/GEOS-ESM/GEOSgcm_App/pull/688)
+* Add label `@LDAS_INCR` to AGCM.rc.tmpl [#689](https://github.com/GEOS-ESM/GEOSgcm_App/pull/689)
+
+### Fixture Changes:
+* ESMA_env  [v4.34.1 => v4.35.0](https://github.com/GEOS-ESM/ESMA_env/compare/v4.34.1...v4.35.0)
+* GMAO_Shared  [v1.9.9 => v2.0.0](https://github.com/GEOS-ESM/GMAO_Shared/compare/v1.9.9...v2.0.0)
+* MAPL  [v2.52.0 => v2.54.1](https://github.com/GEOS-ESM/MAPL/compare/v2.52.0...v2.54.1)
+* GEOSgcm_GridComp  [v2.7.0 => v2.7.2](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.7.0...v2.7.2)
+* GEOSchem_GridComp  [v1.15.0 => v1.16.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/compare/v1.15.0...v1.16.0)
+* GEOS_OceanGridComp  [v2.3.0 => v2.5.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/compare/v2.3.0...v2.5.0)
+* MOM6  [geos/v3.3 => geos/v3.5](https://github.com/GEOS-ESM/MOM6/compare/geos/v3.3...geos/v3.5)
+* GEOSradiation_GridComp  [v1.10.0 => v1.12.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/compare/v1.10.0...v1.12.0)
+* ww3  [v6.07.1-geos-r2 => v7.14-geos-r1](https://github.com/GEOS-ESM/WW3/compare/v6.07.1-geos-r2...v7.14-geos-r1)
+* GEOSgcm_App  [v2.3.8 => v2.3.10](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.3.8...v2.3.10)
+* **NEW** [GMAO_perllib v1.0.0](https://github.com/GEOS-ESM/GMAO_perllib/releases/tag/v1.0.0)
+* **NEW** [RRG v1.0.0](https://github.com/GEOS-ESM/RRG/releases/tag/v1.1.0)
+* **NEW** [MAM v1.0.0](https://github.com/GEOS-ESM/MAM/releases/tag/v1.0.0)
+* **NEW** [MATRIX v1.0.0](https://github.com/GEOS-ESM/MATRIX/releases/tag/v1.0.0)
+* **NEW** [CARMA v1.0.0](https://github.com/GEOS-ESM/CARMA/releases/tag/v1.1.0)
+* **NEW** [GAAS v1.0.0](https://github.com/GEOS-ESM/GAAS/releases/tag/v1.0.0)
+* **NEW** [ACHEM v1.0.0](https://github.com/GEOS-ESM/ACHEM/releases/tag/v1.0.0)
+
 
 ## [11.7.0] - 2025-01-24
 
@@ -242,14 +281,14 @@ The following changes occurred in `solar_internal_rst` but the overall state of 
   - `COTDENHIPAR`
   - `COTDENLOPAR`
   - `COTDENMDPAR`
-  - `COTDENTTPAR` 
+  - `COTDENTTPAR`
   - `COTHIPAR`
   - `COTLOPAR`
   - `COTMDPAR`
   - `COTTTPAR`
   - `COTNUMHIPAR`
   - `COTNUMLOPAR`
-  - `COTNUMMDPAR` 
+  - `COTNUMMDPAR`
   - `COTNUMTTPAR`
 
 ## [11.5.1] - 2024-01-30
