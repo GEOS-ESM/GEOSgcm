@@ -56,7 +56,7 @@ MAPL:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: GCMv12-rc15
+  tag: GCMv12-rc16
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/sdrabenh/gcm_v12
 
@@ -81,7 +81,7 @@ FVdycoreCubed_GridComp:
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: GCMv12-rc14
+  tag: GCMv12-rc16
   develop: feature/sdrabenh/gcm_v12
 
 GEOSchem_GridComp:
@@ -105,7 +105,7 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: GCMv12-rc13
+  tag: GCMv12-rc16
   develop: feature/sdrabenh/gcm_v12
 
 QuickChem:
