@@ -171,7 +171,8 @@ ACHEM:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v3.5.0
+  #tag: v3.5.0
+  branch: feature/v12-remove-mom5
   develop: develop
 
 mom6:
@@ -233,7 +234,8 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: GCMv12-rc15
+  #tag: GCMv12-rc15
+  branch: feature/v12-remove-mom5
   develop: feature/sdrabenh/gcm_v12
 
 UMD_Etc:
