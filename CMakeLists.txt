@@ -80,7 +80,7 @@ if (NOT Baselibs_FOUND)
   # Another issue with historical reasons, old/wrong zlib target used in GEOS
   add_library(ZLIB::zlib ALIAS ZLIB::ZLIB)
 
-  find_package(MAPL 2.55 QUIET)
+  find_package(MAPL 2.56 QUIET)
   if (MAPL_FOUND)
     message(STATUS "Found MAPL: ${MAPL_BASE_DIR} (found version \"${MAPL_VERSION})\"")
   endif ()
