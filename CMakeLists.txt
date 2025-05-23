@@ -94,7 +94,7 @@ if (NOT Baselibs_FOUND)
     target_link_libraries(FMS::fms_r8 INTERFACE ${LIBYAML_LIBRARIES})
   endif ()
 
-  find_package(MAPL 2.55 QUIET)
+  find_package(MAPL 2.56 QUIET)
   if (MAPL_FOUND)
     message(STATUS "Found MAPL: ${MAPL_BASE_DIR} (found version \"${MAPL_VERSION})\"")
   endif ()
@@ -113,6 +113,9 @@ esma_mepo_style(env env_dir)
 esma_add_subdirectory (${env_dir})
 # Recursively build source tree
 add_subdirectory (src)
+
+configure_file(BUILD_INFO.rc.in BUILD_INFO.rc @ONLY)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/BUILD_INFO.rc DESTINATION etc)
 
 # https://www.scivision.dev/cmake-auto-gitignore-build-dir/
 # --- auto-ignore build directory
