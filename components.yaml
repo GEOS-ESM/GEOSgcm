@@ -50,7 +50,7 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: GCMv12-rc13
+  tag: v2.56.0
   develop: feature/sdrabenh/gcm_v12
 
 GEOSgcm_GridComp:
