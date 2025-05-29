@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  branch: geoscf/CFv2
+  tag: geoscf/CFv2/rc1/t0
   develop: main
 
 cmake:
@@ -67,7 +67,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: feature/cakelle2/gcc_rats_provider/t1
+  tag: geoscf/CFv2/rc1/t2
   develop: develop
 
 HEMCO:
@@ -79,13 +79,13 @@ HEMCO:
 geos-chem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/GEOSCHEMchem_GridComp/@geos-chem
   remote: ../geos-chem.git
-  tag: geoscf/CFv2/rc1/t11
+  tag: geoscf/CFv2/rc1/t13
   develop: geos/develop
 
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: feature/cakelle2/v2.1.0_plus_fixes/t0
+  tag: geoscf/CFv2/rc1
   develop: develop
 
 QuickChem:
@@ -142,7 +142,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  branch: geoscf/CFv2
+  tag: feature/cakelle2/CDAS_Appv1.8.0_GEOSadas-5_29_3/t0
   develop: develop
 
 UMD_Etc:
