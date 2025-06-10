@@ -32,6 +32,8 @@ workflows:
             - docker-hub-creds
           matrix:
             parameters:
+              # ifx currently can't build FMS
+              #compiler: [gfortran, ifort, ifx]
               compiler: [gfortran, ifort]
           baselibs_version: *baselibs_version
           repo: GEOSgcm
@@ -44,6 +46,8 @@ workflows:
             - docker-hub-creds
           matrix:
             parameters:
+              # ifx currently can't build FMS
+              #compiler: [gfortran, ifort, ifx]
               compiler: [gfortran, ifort]
           requires:
             - build-GEOSgcm-on-<< matrix.compiler >>
@@ -61,6 +65,8 @@ workflows:
             - docker-hub-creds
           matrix:
             parameters:
+              # ifx currently can't build FMS
+              #compiler: [ifort, ifx]
               compiler: [ifort]
           requires:
             - build-GEOSgcm-on-<< matrix.compiler >>
