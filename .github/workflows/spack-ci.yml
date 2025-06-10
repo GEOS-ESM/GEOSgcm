@@ -65,7 +65,6 @@ jobs:
       - name: Set default compiler and target
         shell: spack-bash {0}
         run: |
-          spack config add 'packages:all:compiler:[gcc@14.2.0]'
           spack config add 'packages:all:require:target=x86_64_v3'
 
       - name: Create Spack environment
@@ -91,6 +90,7 @@ jobs:
       - name: Install
         shell: spack-bash {0}
         run: |
+          spack clean -m
           spack -e spack-env install --add --no-check-signature --use-buildcache only \
             esmf gftl gftl-shared fargparse pflogger pfunit yafyaml ecbuild udunits openblas
 
