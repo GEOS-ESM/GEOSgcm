@@ -37,6 +37,7 @@ workflows:
               compiler: [gfortran, ifort]
           baselibs_version: *baselibs_version
           repo: GEOSgcm
+          mepodevelop: false
           persist_workspace: true # Needs to be true to run fv3/gcm experiment, costs extra
 
       # Run AMIP GCM (1 hour, no ExtData)
