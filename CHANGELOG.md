@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Zero-Diff Changes:
+
+* Added scripts and the topo package from NCAR to generate topography
+
 ## [11.7.1] - 2025-03-17
 
 ### Zero-diff to Previous Release: YES
@@ -277,14 +281,14 @@ The following changes occurred in `solar_internal_rst` but the overall state of 
   - `COTDENHIPAR`
   - `COTDENLOPAR`
   - `COTDENMDPAR`
-  - `COTDENTTPAR` 
+  - `COTDENTTPAR`
   - `COTHIPAR`
   - `COTLOPAR`
   - `COTMDPAR`
   - `COTTTPAR`
   - `COTNUMHIPAR`
   - `COTNUMLOPAR`
-  - `COTNUMMDPAR` 
+  - `COTNUMMDPAR`
   - `COTNUMTTPAR`
 
 ## [11.5.1] - 2024-01-30
