@@ -2,6 +2,60 @@
 
 ## Unreleased
 
+## [11.7.2] - 2025-07-02
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: YES
+
+### Restart changes (Zero-diff):
+1. `CQ:long_name` attribute in `catch_internal` changed
+2. `FRZR` and `ICE` variables were added to `saltwater_import`
+
+### Major Zero-Diff Changes:
+
+* Enable mkiau to read cubed sphere output [#1074](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1074)
+* Remove NCCS OS detection since SLES12 is now deprecated [#1076](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1076) [#703](https://github.com/GEOS-ESM/GEOSgcm_App/pull/703) [#127](https://github.com/GEOS-ESM/GEOS_Util/pull/127)
+* Fix missing connection of `ICE` and `FRZR` in some of the SURF components [#1111](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1111)
+* Add `ICEFOCN` and `SPTOT` to HISTORY [#736](https://github.com/GEOS-ESM/GEOSgcm_App/pull/736)
+* Updated default options in CICE6 at 1440x1080 configuration [#1101](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1101)
+* Added a step to check restart and configuration if certain field exist for CICE6 and set flag accordingly [#724](https://github.com/GEOS-ESM/GEOSgcm_App/pull/724)
+* Adjust tilefile for MOM that addresses an inconsistency in the land boundary conditions for the coupled atmosphere-ocean model [#1075]
+* Use nc4 tile file, if exists, when remapping restarts [#1094](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1094)
+* Use `MAPL` to read and write nc4 tile files [#1087](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1087)
+* Move the file `EASE_Conv.F90` to MAPL [#1112](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1112)
+* Adds optional numerical derivatives of Monin-Obukhov exchange coefficients over land in offline mode [#999](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/999)
+* Vectorize `helfsurface()` and related subroutines [#348](https://github.com/GEOS-ESM/GMAO_Shared/pull/348)
+(https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1075)
+* Fixed compatibility issues for MIT [#1088](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1088)
+* Fixes missing chevron-ed replacement variables in dataatm history template [#708](https://github.com/GEOS-ESM/GEOSgcm_App/pull/708)
+* Updates for startup and congestion [#721](https://github.com/GEOS-ESM/GEOSgcm_App/pull/721)
+* Add `bkg.lfo` collection & remove lfo Nx+- collection [#719](https://github.com/GEOS-ESM/GEOSgcm_App/pull/719)
+* Make sure `GEOSgcm.x` exists in experiment directory for copy [#741](https://github.com/GEOS-ESM/GEOSgcm_App/pull/741)
+* Remove `MAPLROOT_COMPNAME` in `CAP.rc` [#737](https://github.com/GEOS-ESM/GEOSgcm_App/pull/737)
+* Remapping `seaicetherom_import_rst` if it is found in the restart directory [#125](https://github.com/GEOS-ESM/GEOS_Util/pull/125)
+* Fix issue with `movestat` and multi-month seasons [#128](https://github.com/GEOS-ESM/GEOS_Util/pull/128)
+* `remap_restarts` package bug fixes [#137](https://github.com/GEOS-ESM/GEOS_Util/pull/137)
+   * Accommodate GEOSldas requirements for remapping lake/landice/saltwater restarts.
+   * Avoid inadvertent use of Catch[CN] restart file with unwanted time stamp.
+* Fix issue with saltwater in `remap_lake_landice_salt` [#144](https://github.com/GEOS-ESM/GEOS_Util/pull/144)
+* Updated `g5_modules_perl_wrapper` [#365](https://github.com/GEOS-ESM/GMAO_Shared/pull/365)
+* Updates to `cmpdir.pl` script [#374](https://github.com/GEOS-ESM/GMAO_Shared/pull/374)
+* Updates for MVAPICH 4 [#375](https://github.com/GEOS-ESM/GMAO_Shared/pull/375)
+* Fix for SLES15 and Milan and split of perllib [#372](https://github.com/GEOS-ESM/GMAO_Shared/pull/372)
+
+### Fixture Changes:
+* ESMA_env  [v4.35.0 => v4.38.0](https://github.com/GEOS-ESM/ESMA_env/compare/v4.35.0...v4.38.0)
+* ESMA_cmake  [v3.56.0 => v3.62.1](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.56.0...v3.62.1)
+* NCEP_Shared [v1.3.0 => v1.4.0](https://github.com/GEOS-ESM/NCEP_Shared/compare/v1.3.0...v1.4.0)
+* GMAO_Shared  [v2.0.0 => v2.1.2](https://github.com/GEOS-ESM/GMAO_Shared/compare/v2.0.0...v2.1.2)
+* GEOS_Util  [v2.1.6 => v2.1.9](https://github.com/GEOS-ESM/GEOS_Util/compare/v2.1.6...v2.1.9)
+* GMAO_perllib [v1.0.0 => v1.1.0](https://github.com/GEOS-ESM/GMAO_perllib/compare/v1.0.0...v1.1.0)
+* MAPL  [v2.54.1 => v2.57.0](https://github.com/GEOS-ESM/MAPL/compare/v2.54.1...v2.57.0)
+* GEOSgcm_GridComp  [v2.7.2 => v2.7.5](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.7.2...v2.7.5)
+* FVdycoreCubed_GridComp  [v2.13.0 => v2.14.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.13.0...v2.14.0)
+* GEOSgcm_App  [v2.3.10 => v2.3.12](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.3.10...v2.3.12)
+
+
 ## [11.7.1] - 2025-03-17
 
 ### Zero-diff to Previous Release: YES
