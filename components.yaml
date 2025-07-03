@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v4.18.1
+  tag: v4.19.0
   develop: develop
 
 ecbuild:
