@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  branch: feature/v12-fms2025
+  branch: feature/v12-fms2025-useifdef
   develop: develop
 
 ecbuild:
@@ -75,13 +75,13 @@ GigaTraj:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  branch: feature/v12-fms2025-try2
+  branch: feature/v12-fms2025-useifdef
   develop: feature/sdrabenh/gcm_v12
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  branch: feature/v12-fms2025-try2
+  branch: feature/v12-fms2025-useifdef
   develop: feature/sdrabenh/gcm_v12
 
 GEOSchem_GridComp:
@@ -171,14 +171,13 @@ ACHEM:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  #tag: v3.5.0
   branch: feature/v12-remove-mom5
   develop: develop
 
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
-  branch: geos/main
+  tag: geos/v3.6
   develop: geos/main
   recurse_submodules: true
 
@@ -234,7 +233,6 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  #tag: GCMv12-rc15
   branch: feature/v12-remove-mom5
   develop: feature/sdrabenh/gcm_v12
 
