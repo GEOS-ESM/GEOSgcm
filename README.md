@@ -22,7 +22,7 @@
 | [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v2.14.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.14.1)                    |
 | [GAAS](https://github.com/GEOS-ESM/GAAS)                                       | [v1.0.0](https://github.com/GEOS-ESM/GAAS/releases/tag/v1.0.0)                                        |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)             |
-| [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v2.5.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v2.5.0)                        |
+| [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v3.6.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v3.6.0)                        |
 | [GEOS_Util](https://github.com/GEOS-ESM/GEOS_Util)                             | [v2.1.8](https://github.com/GEOS-ESM/GEOS_Util/releases/tag/v2.1.8)                                 |
 | [geos_state_bias](https://github.com/GEOS-ESM/geos_state_bias)                 | [geos/v1.0.0](https://github.com/GEOS-ESM/geos_state_bias/releases/tag/geos/v1.0.0)                 |
 | [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.16.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.16.0)                         |
@@ -41,7 +41,7 @@
 | [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.56.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.56.0)                                    |
 | [MATRIX](https://github.com/GEOS-ESM/MATRIX)                                   | [v1.0.0](https://github.com/GEOS-ESM/MATRIX/releases/tag/v1.0.0)                                      |
 | [MITgcm](https://github.com/GEOS-ESM/MITgcm)                                   | [checkpoint68o](https://github.com/GEOS-ESM/MITgcm/releases/tag/checkpoint68o)                        |
-| [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v3.5](https://github.com/GEOS-ESM/MOM6/tree/geos/v3.5)                                        |
+| [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v3.6](https://github.com/GEOS-ESM/MOM6/tree/geos/v3.6)                                        |
 | [NCEP_Shared](https://github.com/GEOS-ESM/NCEP_Shared)                         | [v1.4.0](https://github.com/GEOS-ESM/NCEP_Shared/releases/tag/v1.4.0)                                 |
 | [QuickChem](https://github.com/GEOS-ESM/QuickChem)                             | [v1.0.0](https://github.com/GEOS-ESM/QuickChem/releases/tag/v1.0.0)                                   |
 | [RRG](https://github.com/GEOS-ESM/RRG)                                         | [v1.1.0](https://github.com/GEOS-ESM/RRG/releases/tag/v1.1.0)                                         |
