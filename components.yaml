@@ -51,7 +51,7 @@ MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
   tag: v2.57.0
-  develop: feature/sdrabenh/gcm_v12
+  develop: develop
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
