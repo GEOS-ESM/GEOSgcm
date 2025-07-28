@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v4.18.1
+  tag: v4.19.2
   develop: develop
 
 ecbuild:
@@ -36,7 +36,7 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: GCMv12-rc17
+  tag: GCMv12-rc18
   develop: feature/sdrabenh/gcm_v12
 
 GMAO_perllib:
@@ -50,13 +50,13 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.57.0
+  tag: v2.58.0
   develop: develop
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: GCMv12-rc17
+  tag: GCMv12-rc18
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/sdrabenh/gcm_v12
 
@@ -214,7 +214,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: GCMv12-rc14
+  tag: GCMv12-rc18
   develop: feature/sdrabenh/gcm_v12
 
 RRTMGP:
