@@ -75,13 +75,15 @@ GigaTraj:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: GCMv12-rc17
+  #tag: GCMv12-rc17
+  branch: feature/v12-fms2025-useifdef
   develop: feature/sdrabenh/gcm_v12
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: GCMv12-rc16
+  #tag: GCMv12-rc16
+  branch: feature/v12-fms2025-useifdef
   develop: feature/sdrabenh/gcm_v12
 
 GEOSchem_GridComp:
@@ -171,19 +173,14 @@ ACHEM:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v3.5.0
+  #tag: v3.6.0
+  branch: feature/v12-remove-mom5
   develop: develop
-
-mom:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM_GEOS5PlugMod/@mom
-  remote: ../MOM5.git
-  tag: geos/5.1.0+2.1.0
-  develop: geos5
 
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
-  tag: geos/v3.5
+  tag: geos/v3.6
   develop: geos/main
   recurse_submodules: true
 
@@ -239,7 +236,8 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: GCMv12-rc17
+  #tag: GCMv12-rc17
+  branch: feature/v12-remove-mom5
   develop: feature/sdrabenh/gcm_v12
 
 UMD_Etc:
