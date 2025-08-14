@@ -42,7 +42,7 @@ jobs:
         run: rm -rf /opt/hostedtoolcache
 
       - name: Checkout GCM
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 1
           filter: blob:none
