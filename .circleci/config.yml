@@ -16,12 +16,12 @@ parameters:
 
 # Anchors to prevent forgetting to update a version
 os_version: &os_version ubuntu24
-baselibs_version: &baselibs_version v7.33.0
+baselibs_version: &baselibs_version v8.18.0
 bcs_version: &bcs_version v11.6.0
 tag_build_arg_name: &tag_build_arg_name gcmversion
 
 orbs:
-  ci: geos-esm/circleci-tools@4
+  ci: geos-esm/circleci-tools@dev:0097849e3d404c1eb7ef387e85cea043f32e1348
 
 workflows:
   build-test:
