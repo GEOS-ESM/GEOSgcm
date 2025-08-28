@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v4.19.2
+  tag: v4.20.0
   develop: develop
 
 ecbuild:
@@ -50,8 +50,8 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.58.0
-  develop: feature/sdrabenh/gcm_v12
+  tag: v2.59.0
+  develop: develop
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
