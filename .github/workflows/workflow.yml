@@ -23,7 +23,7 @@ jobs:
     if: "!contains(github.event.pull_request.labels.*.name, '0 diff trivial')"
     runs-on: ubuntu-24.04
     container:
-      image: gmao/ubuntu24-geos-env:v7.33.0-intelmpi_2021.13-ifort_2021.13
+      image: gmao/ubuntu24-geos-env:v8.18.0-intelmpi_2021.13-ifort_2021.13
       # Per https://github.com/actions/virtual-environments/issues/1445#issuecomment-713861495
       # It seems like we might not need secrets on GitHub Actions which is good for forked
       # pull requests
