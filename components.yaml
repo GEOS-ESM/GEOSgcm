@@ -36,11 +36,7 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-<<<<<<< HEAD
   branch: release/MAPL-v3
-=======
-  tag: v2.1.10
->>>>>>> main
   develop: main
 
 GMAO_perllib:
