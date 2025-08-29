@@ -29,14 +29,18 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v2.1.3
+  tag: v2.1.4
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
+<<<<<<< HEAD
   branch: release/MAPL-v3
+=======
+  tag: v2.1.10
+>>>>>>> main
   develop: main
 
 GMAO_perllib:
