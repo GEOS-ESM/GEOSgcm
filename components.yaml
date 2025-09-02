@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v4.38.0
+  branch: feature/v3-add-find-issm
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.63.0
+  branch: feature/v3-add-find-issm
   develop: develop
 
 ecbuild:
