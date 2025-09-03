@@ -2,6 +2,37 @@
 
 ## Unreleased
 
+## [11.7.3] - 2025-09-03
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+* Update aerosol collections in AGCM HISTORY [#749](https://github.com/GEOS-ESM/GEOSgcm_App/pull/749)
+* Add Diagnostics for Ammonia and Ammonium Scavenging [#750](https://github.com/GEOS-ESM/GEOSgcm_App/pull/750)
+* Add new Catchment-CN5.1 remapping and provide default "zoom" value for `remap_restarts` yaml file [#149](https://github.com/GEOS-ESM/GEOS_Util/pull/149)
+* Make `CICE6` the default seaice model [#752](https://github.com/GEOS-ESM/GEOSgcm_App/pull/752)
+* Copy `ice_in` if cloning a run using `CICE6` [#754](https://github.com/GEOS-ESM/GEOSgcm_App/pull/754)
+* Update Ocean DT at runtime [#755](https://github.com/GEOS-ESM/GEOSgcm_App/pull/755)
+* Fix sed for `ice_in` [#759](https://github.com/GEOS-ESM/GEOSgcm_App/pull/759)
+* Updates to remove Python2 support [#151](https://github.com/GEOS-ESM/GEOS_Util/pull/151)
+* Expand user home path '~' [#148](https://github.com/GEOS-ESM/GEOS_Util/pull/148)
+* Updates to `cmpdir.pl` to improve its appearance and edit-ability [#385](https://github.com/GEOS-ESM/GMAO_Shared/pull/385)
+* `cmpdir.pl` script was modified so that the list of diffs to ignore and the option to edit it are not displayed if `$ignoreFLG` is off [#391](https://github.com/GEOS-ESM/GMAO_Shared/pull/391)
+* Fixes #386. Only install `gmao2ioda` if it exists [#387](https://github.com/GEOS-ESM/GMAO_Shared/pull/387)
+* Update `openmpi` in `esma_mpirun` by @mathomp4 in https://github.com/GEOS-ESM/GMAO_Shared/pull/388
+
+### Fixture Changes:
+* ESMA_cmake  [v3.62.1 => v3.63.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.62.1...v3.63.0)
+* GMAO_Shared  [v2.1.2 => v2.1.4](https://github.com/GEOS-ESM/GMAO_Shared/compare/v2.1.2...v2.1.4)
+* GEOS_Util  [v2.1.9 => v2.1.10](https://github.com/GEOS-ESM/GEOS_Util/compare/v2.1.9...v2.1.10)
+* MAPL  [v2.57.0 => v2.59.0](https://github.com/GEOS-ESM/MAPL/compare/v2.57.0...v2.59.0)
+* GEOSgcm_GridComp  [v2.7.5 => v2.7.6](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.7.5...v2.7.6)
+* GEOS_OceanGridComp  [v2.5.0 => v2.7.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/compare/v2.5.0...v2.7.0)
+* MOM6  [geos/v3.5 => geos/v3.7](https://github.com/GEOS-ESM/MOM6/compare/geos/v3.5...geos/v3.7)
+* GEOSgcm_App  [v2.3.12 => v2.3.13](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.3.12...v2.3.13)
+
+
 ## [11.7.2] - 2025-07-02
 
 ### Zero-diff to Previous Release: YES
