@@ -11,7 +11,7 @@
 
 | Repository                                                                     | Version                                                                                               |
 | ----------                                                                     | -------                                                                                               |
-| [ACHEM](https://github.com/GEOS-ESM/ACHEM)                                     | [v1.0.0](https://github.com/GEOS-ESM/ACHEM/releases/tag/v1.0.0)                                       |
+| [ACHEM](https://github.com/GEOS-ESM/ACHEM)                                     | [v1.0.1](https://github.com/GEOS-ESM/ACHEM/releases/tag/v1.0.1)                                       |
 | [CARMA](https://github.com/GEOS-ESM/CARMA)                                     | [v1.1.0](https://github.com/GEOS-ESM/CARMA/releases/tag/v1.1.0)                                       |
 | [CICE](https://github.com/GEOS-ESM/CICE)                                       | [geos/v0.2.0](https://github.com/GEOS-ESM/CICE/releases/tag/geos%2Fv0.2.0)                            |
 | [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                                 |
@@ -37,7 +37,7 @@
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.3.0](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.3.0)                            |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.3.0](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.3.0)                         |
 | [Icepack](https://github.com/GEOS-ESM/Icepack)                                 | [geos/v0.3.0](https://github.com/GEOS-ESM/Icepack/releases/tag/geos%2Fv0.3.0)                       |
-| [MAM](https://github.com/GEOS-ESM/MAM)                                         | [v1.0.0](https://github.com/GEOS-ESM/MAM/releases/tag/v1.0.0)                                         |
+| [MAM](https://github.com/GEOS-ESM/MAM)                                         | [v1.1.0](https://github.com/GEOS-ESM/MAM/releases/tag/v1.1.0)                                         |
 | [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.59.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.59.0)                                    |
 | [MATRIX](https://github.com/GEOS-ESM/MATRIX)                                   | [v1.0.0](https://github.com/GEOS-ESM/MATRIX/releases/tag/v1.0.0)                                      |
 | [MITgcm](https://github.com/GEOS-ESM/MITgcm)                                   | [checkpoint68o](https://github.com/GEOS-ESM/MITgcm/releases/tag/checkpoint68o)                        |
@@ -50,7 +50,7 @@
 | [SIS2](https://github.com/GEOS-ESM/SIS2)                                       | [geos/v0.0.1](https://github.com/GEOS-ESM/SIS2/releases/tag/geos%2Fv0.0.1)                            |
 | [StratChem](https://github.com/GEOS-ESM/StratChem)                             | [v1.0.0](https://github.com/GEOS-ESM/StratChem/releases/tag/v1.0.0)                                   |
 | [TR](https://github.com/GEOS-ESM/TR)                                           | [v1.2.0](https://github.com/GEOS-ESM/TR/releases/tag/v1.2.0)                                          |
-| [UMD_Etc](https://github.com/GEOS-ESM/UMD_Etc)                                 | [v1.3.0](https://github.com/GEOS-ESM/UMD_Etc/releases/tag/v1.3.0)                                     |
+| [UMD_Etc](https://github.com/GEOS-ESM/UMD_Etc)                                 | [v1.4.0](https://github.com/GEOS-ESM/UMD_Etc/releases/tag/v1.4.0)                                     |
 | [WW3](https://github.com/GEOS-ESM/WW3)                                         | [v7.14-geos-r1](https://github.com/GEOS-ESM/WW3/releases/tag/v7.14-geos-r1)                     |
 | [umwm](https://github.com/GEOS-ESM/umwm)                                       | [v2.0.0-geos-r1](https://github.com/GEOS-ESM/umwm/releases/tag/v2.0.0-geos-r1)                        |
 
