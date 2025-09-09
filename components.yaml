@@ -141,7 +141,7 @@ StratChem:
 MAM:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@MAM
   remote: ../MAM.git
-  tag: v1.0.0
+  tag: v1.1.0
   develop: main
 
 MATRIX:
