@@ -143,7 +143,7 @@ StratChem:
 MAM:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@MAM
   remote: ../MAM.git
-  tag: v1.0.0
+  tag: v1.1.0
   develop: main
 
 MATRIX:
@@ -167,8 +167,8 @@ GAAS:
 ACHEM:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@ACHEM
   remote: ../ACHEM.git
-  tag: GCMv12-rc13
-  develop: feature/sdrabenh/gcm_v12
+  tag: v1.0.1
+  develop: develop
 
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
@@ -243,7 +243,7 @@ GEOSgcm_App:
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
   remote: ../UMD_Etc.git
-  tag: v1.3.0
+  tag: v1.4.0
   develop: main
 
 CPLFCST_Etc:
