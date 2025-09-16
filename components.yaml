@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  branch: feature/v3-add-find-issm
+  tag: v3.64.0
   develop: develop
 
 ecbuild:
