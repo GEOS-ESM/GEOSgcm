@@ -26,7 +26,7 @@ jobs:
           git config --global --add safe.directory '*'
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.13'
 
@@ -77,9 +77,8 @@ jobs:
         shell: spack-bash {0}
         run: |
           spack -e spack-env mirror add geos-buildcache oci://ghcr.io/GEOS-ESM/geos-buildcache
-          spack -e spack-env mirror set --oci-username ${{ github.actor }} --oci-password "${{ secrets.BUILDCACHE_TOKEN }}" geos-buildcache
+          spack -e spack-env mirror set --oci-username-variable "${{ secrets.BUILDCACHE_USERNAME }}" --oci-password-variable "${{ secrets.BUILDCACHE_TOKEN }}" geos-buildcache
           spack -e spack-env mirror list
-          spack -e spack-env buildcache update-index geos-buildcache
           spack -e spack-env buildcache list --allarch
 
       - name: Concretize
