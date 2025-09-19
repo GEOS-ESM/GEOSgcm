@@ -50,7 +50,7 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.59.0
+  tag: v2.59.1
   develop: develop
 
 FMS:
@@ -62,7 +62,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v2.7.6
+  tag: v2.7.7
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -253,3 +253,10 @@ CPLFCST_Etc:
   remote: ../CPLFCST_Etc.git
   tag: v1.0.1
   develop: main
+
+Topo:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSsurface_GridComp/Utils/Raster/makebcs/@ncar_topo
+  remote: ../Topo.git
+  tag: geos/v2.1.0
+  develop: geos
+  blobless: true
