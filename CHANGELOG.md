@@ -86,7 +86,6 @@
 * FVdycoreCubed_GridComp  [v2.13.0 => v2.14.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.13.0...v2.14.0)
 * GEOSgcm_App  [v2.3.10 => v2.3.12](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.3.10...v2.3.12)
 
-
 ## [11.7.1] - 2025-03-17
 
 ### Zero-diff to Previous Release: YES
@@ -362,14 +361,14 @@ The following changes occurred in `solar_internal_rst` but the overall state of 
   - `COTDENHIPAR`
   - `COTDENLOPAR`
   - `COTDENMDPAR`
-  - `COTDENTTPAR` 
+  - `COTDENTTPAR`
   - `COTHIPAR`
   - `COTLOPAR`
   - `COTMDPAR`
   - `COTTTPAR`
   - `COTNUMHIPAR`
   - `COTNUMLOPAR`
-  - `COTNUMMDPAR` 
+  - `COTNUMMDPAR`
   - `COTNUMTTPAR`
 
 ## [11.5.1] - 2024-01-30
