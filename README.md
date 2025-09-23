@@ -19,7 +19,7 @@
 | [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.64.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.64.0)                                |
 | [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v5.13.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v5.13.0)                                |
 | [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.10](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.10) |
-| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v2.14.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.14.1)                    |
+| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v2.15.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.15.0)                    |
 | [GAAS](https://github.com/GEOS-ESM/GAAS)                                       | [v1.0.0](https://github.com/GEOS-ESM/GAAS/releases/tag/v1.0.0)                                        |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)             |
 | [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v2.7.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v2.7.0)                        |
