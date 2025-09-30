@@ -36,7 +36,7 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  branch: release/MAPL-v3
+  branch: release-v11/MAPL-v3
   develop: main
 
 GMAO_perllib:
@@ -75,13 +75,13 @@ GigaTraj:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  branch: release/MAPL-v3
+  branch: release-v11/MAPL-v3
   develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  branch: geos/release/MAPL-v3
+  branch: geos/release-v11/MAPL-v3
   develop: geos/develop
 
 GEOSchem_GridComp:
