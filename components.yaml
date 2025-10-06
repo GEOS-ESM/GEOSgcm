@@ -227,7 +227,7 @@ RRTMGP:
 ww3:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSwgcm_GridComp/GEOSwavewatch_GridComp/@ww3
   remote: ../WW3.git
-  tag: v7.14-geos-r1
+  branch: mangled-7.14
   develop: geos/develop
 
 umwm:
