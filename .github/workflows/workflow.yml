@@ -19,60 +19,17 @@ concurrency:
 
 jobs:
   build_gcm:
-    name: Build GEOSgcm
-    if: "!contains(github.event.pull_request.labels.*.name, '0 diff trivial')"
-    runs-on: ubuntu-24.04
-    container:
-      image: gmao/ubuntu24-geos-env:v8.19.0-intelmpi_2021.13-ifort_2021.13
-      # Per https://github.com/actions/virtual-environments/issues/1445#issuecomment-713861495
-      # It seems like we might not need secrets on GitHub Actions which is good for forked
-      # pull requests
-      #credentials:
-        #username: ${{ secrets.DOCKERHUB_USERNAME }}
-        #password: ${{ secrets.DOCKERHUB_TOKEN }}
+    strategy:
+      matrix:
+        compiler: [ifort, gfortran-14, gfortran-15]
+        build-type: [Debug]
+    uses: GEOS-ESM/CI-workflows/.github/workflows/geosgcm_build_tests.yml@project/geosgcm
+    with:
+      compiler: ${{ matrix.compiler }}
+      cmake-build-type: ${{ matrix.build-type }}
 
-    env:
-      OMPI_ALLOW_RUN_AS_ROOT: 1
-      OMPI_ALLOW_RUN_AS_ROOT_CONFIRM: 1
-      OMPI_MCA_btl_vader_single_copy_mechanism: none
-
-    steps:
-      # https://github.com/orgs/community/discussions/25678#discussioncomment-5242449
-      - name: Delete huge unnecessary tools folder
-        run: rm -rf /opt/hostedtoolcache
-
-      - name: Checkout GCM
-        uses: actions/checkout@v5
-        with:
-          fetch-depth: 1
-          filter: blob:none
-
-      - name: Set all directories as git safe
-        run: |
-          git config --global --add safe.directory '*'
-
-      - name: Versions etc.
-        run: |
-          ifort --version
-          mpirun --version
-          echo $BASEDIR
-
-      - name: Mepo clone external repos
-        run: |
-          mepo clone --partial blobless
-          mepo status
-
-      - name: Update other branches
-        if: ${{ github.event.pull_request.head.ref != 'main' && github.event.pull_request.head.ref != 'develop' }}
-        run: |
-          mepo checkout-if-exists ${GITHUB_HEAD_REF}
-          mepo status
-
-      - name: CMake
-        run: |
-          cmake -B build -S . --install-prefix=${pwd}/install -DCMAKE_Fortran_COMPILER=ifort -DCMAKE_BUILD_TYPE=Debug -DMPIEXEC_PREFLAGS='--oversubscribe' -DUSE_F2PY=OFF
-
-      - name: Build
-        run: |
-          cmake --build build -j 4
-          cmake --install build
+  spack_build:
+    uses: GEOS-ESM/CI-workflows/.github/workflows/spack_gcc_build.yml@project/geosgcm
+    secrets:
+      BUILDCACHE_USERNAME: ${{ secrets.BUILDCACHE_USERNAME }}
+      BUILDCACHE_TOKEN: ${{ secrets.BUILDCACHE_TOKEN }}
