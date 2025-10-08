@@ -27,9 +27,12 @@ jobs:
     with:
       compiler: ${{ matrix.compiler }}
       cmake-build-type: ${{ matrix.build-type }}
+      run-mepo-develop: false
 
   spack_build:
     uses: GEOS-ESM/CI-workflows/.github/workflows/spack_gcc_build.yml@project/geosgcm
     secrets:
       BUILDCACHE_USERNAME: ${{ secrets.BUILDCACHE_USERNAME }}
       BUILDCACHE_TOKEN: ${{ secrets.BUILDCACHE_TOKEN }}
+    with:
+      run-mepo-develop: false
