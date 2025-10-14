@@ -5,7 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: geoscf/CFv2/rc1/t0
+  tag: v4.8.1+CFv2.0.0
   develop: main
 
 cmake:
@@ -36,7 +36,7 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: cakelle2_bugfix1_v2.34.3_t3
+  tag: v2.34.3+CFv2.0.0
   develop: develop
 
 FMS:
@@ -48,7 +48,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: GCMv1.17.0+GCCv14+gsi_coupling-p3
+  tag: v1.17.0+CFv2.0.0
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -67,25 +67,25 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: geoscf/CFv2/rc1/t2
+  tag: v1.10.2+CFv2.0.0
   develop: develop
 
 HEMCO:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Shared/HEMCO/@HEMCO
   remote: ../HEMCO.git
-  tag: geoscf/CFv2/rc1/t2
+  tag: geos/v3.5.0+CFv2.0.0
   develop: geos/develop
 
 geos-chem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/GEOSCHEMchem_GridComp/@geos-chem
   remote: ../geos-chem.git
-  tag: geoscf/CFv2/rc1/t14
+  tag: geos/v14.0.0+CFv2.0.0
   develop: geos/develop
 
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: geoscf/CFv2/rc1
+  tag: v2.2.1+CFv2.0.0
   develop: develop
 
 QuickChem:
@@ -129,7 +129,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: feature/cakelle2/v1.0.0_plus_fixes_t0 
+  tag: v1.0.0+CFv2.0.0
   develop: develop
 
 RRTMGP:
@@ -142,7 +142,7 @@ RRTMGP:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: feature/cakelle2/CDAS_Appv1.8.0_GEOSadas-5_29_3/t0
+  tag: v1.8.0+CFv2.0.0
   develop: develop
 
 UMD_Etc:
