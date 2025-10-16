@@ -15,7 +15,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Run the action
-        uses: devops-infra/action-pull-request@v0.6.1
+        uses: devops-infra/action-pull-request@v1.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           source_branch: main
