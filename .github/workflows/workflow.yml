@@ -21,7 +21,7 @@ jobs:
   build_gcm:
     strategy:
       matrix:
-        compiler: [ifort, gfortran-14, gfortran-15]
+        compiler: [ifort, ifx, gfortran-14, gfortran-15]
         build-type: [Debug]
     uses: GEOS-ESM/CI-workflows/.github/workflows/geosgcm_build_tests.yml@project/geosgcm
     with:
