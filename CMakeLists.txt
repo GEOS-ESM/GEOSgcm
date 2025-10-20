@@ -77,7 +77,7 @@ if (NOT Baselibs_FOUND)
   # Another issue with historical reasons, old/wrong zlib target used in GEOS
   add_library(ZLIB::zlib ALIAS ZLIB::ZLIB)
 
-  find_package(FMS REQUIRED)
+  find_package(FMS 2025.4 REQUIRED)
 
   # At the moment, there is no way to know if FMS was built with YAML
   # so we need to rely on the user to set this option.
