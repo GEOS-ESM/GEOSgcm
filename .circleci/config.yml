@@ -16,7 +16,7 @@ parameters:
 
 # Anchors to prevent forgetting to update a version
 os_version: &os_version ubuntu24
-baselibs_version: &baselibs_version v8.18.0
+baselibs_version: &baselibs_version v8.20.0
 bcs_version: &bcs_version v11.6.0
 tag_build_arg_name: &tag_build_arg_name gcmversion
 
@@ -112,9 +112,9 @@ workflows:
           #bcs_version: *bcs_version
           #container_name: geosgcm
           #mpi_name: intelmpi
-          #mpi_version: "2021.14"
+          #mpi_version: "2021.16"
           #compiler_name: ifx
-          #compiler_version: "2025.0"
+          #compiler_version: "2025.2"
           #image_name: geos-env-bcs
           #tag_build_arg_name: *tag_build_arg_name
           #resource_class: xlarge
