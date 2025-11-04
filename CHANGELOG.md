@@ -2,6 +2,41 @@
 
 ## Unreleased
 
+## [11.8.0] - 2025-09-23
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: YES
+
+### Major Non-Zero-Diff Changes Consistent with FPP_v5.42.11 Patch:
+* Attempt to mitigate low-level warm temperatures in the high-latitudes [#1151](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1151)
+* Fix `SRF_TYPE` in moist [#1124](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1124)
+
+### Restart Changes:
+* Fixed ak/bk values in remapped restarts to be consistent with those defined in `m_set_eta.F90` [#963](https://github.com/GEOS-ESM/GEOSgcm/pull/963)
+* MAPL v2.60 fixed a bug in the Automatic Code Generator (ACG) used by GOCART to create the Fortran code for the various imports/exports/internals leading to the `DEEP_LAKES_MASK` field being removed from `ss_internal_checkpoint` [#973](https://github.com/GEOS-ESM/GEOSgcm/pull/973)
+
+### Major Zero-Diff Changes:
+* GF2020 bug fix (not the default convection scheme in GCMv11) [#1113](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1113)
+* Restored `BLEND_QV_AT_TP` option for Replay [#1148](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1148)
+* Update a couple of CICE6 forcing nml variables [#1159](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1159)
+* Fix for `gcm_regress.j` for MAPL 2.60 [#765](https://github.com/GEOS-ESM/GEOSgcm_App/pull/765)
+
+### Plots Package Updates:
+* Fix for `movestat` with files-with-dots [#141](https://github.com/GEOS-ESM/GEOS_Util/pull/141)
+* Updates to `quickstat` plotting code [#130](https://github.com/GEOS-ESM/GEOS_Util/pull/130)
+* Fix for All-Times Transport Diagnostics [#146](https://github.com/GEOS-ESM/GEOS_Util/pull/146)
+
+### Fixture Changes:
+* ESMA_env  [v4.38.0 => v5.14.0](https://github.com/GEOS-ESM/ESMA_env/compare/v4.38.0...v5.14.0)
+* ESMA_cmake  [v3.63.0 => v3.65.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.63.0...v3.65.0)
+* GEOS_Util  [v2.1.10 => v2.1.11](https://github.com/GEOS-ESM/GEOS_Util/compare/v2.1.10...v2.1.11)
+* MAPL  [v2.59.0 => v2.61.0](https://github.com/GEOS-ESM/MAPL/compare/v2.59.0...v2.61.0)
+* GEOSgcm_GridComp  [v2.7.6 => v2.8.0](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.7.6...v2.8.0)
+* FVdycoreCubed_GridComp  [v2.14.1 => v2.15.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.14.1...v2.15.0)
+* GEOSgcm_App  [v2.3.13 => v2.3.14](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.3.13...v2.3.14)
+* **NEW** [Topo geos/v2.1.0](https://github.com/GEOS-ESM/Topo/releases/tag/geos%2Fv2.1.0)
+
+
 ## [11.7.3] - 2025-09-03
 
 ### Zero-diff to Previous Release: YES
@@ -85,7 +120,6 @@
 * GEOSgcm_GridComp  [v2.7.2 => v2.7.5](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.7.2...v2.7.5)
 * FVdycoreCubed_GridComp  [v2.13.0 => v2.14.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.13.0...v2.14.0)
 * GEOSgcm_App  [v2.3.10 => v2.3.12](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.3.10...v2.3.12)
-
 
 ## [11.7.1] - 2025-03-17
 
@@ -362,14 +396,14 @@ The following changes occurred in `solar_internal_rst` but the overall state of 
   - `COTDENHIPAR`
   - `COTDENLOPAR`
   - `COTDENMDPAR`
-  - `COTDENTTPAR` 
+  - `COTDENTTPAR`
   - `COTHIPAR`
   - `COTLOPAR`
   - `COTMDPAR`
   - `COTTTPAR`
   - `COTNUMHIPAR`
   - `COTNUMLOPAR`
-  - `COTNUMMDPAR` 
+  - `COTNUMMDPAR`
   - `COTNUMTTPAR`
 
 ## [11.5.1] - 2024-01-30
