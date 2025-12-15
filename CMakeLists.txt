@@ -90,7 +90,7 @@ if (NOT Baselibs_FOUND)
     target_link_libraries(FMS::fms INTERFACE ${LIBYAML_LIBRARIES})
   endif ()
 
-  find_package(MAPL 2.62 QUIET)
+  find_package(MAPL 2.64 QUIET)
   if (MAPL_FOUND)
     message(STATUS "Found MAPL: ${MAPL_BASE_DIR} (found version \"${MAPL_VERSION})\"")
   endif ()

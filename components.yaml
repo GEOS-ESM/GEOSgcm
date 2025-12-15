@@ -17,7 +17,7 @@ cmake:
 ecbuild:
   local: ./@cmake/@ecbuild
   remote: ../ecbuild.git
-  tag: geos/v2.1.0
+  tag: geos/v3.11.0
 
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
@@ -29,14 +29,14 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: GCMv12-rc20
+  tag: GCMv12-rc21
   sparse: ./config/GMAO_Shared.sparse
   develop: feature/sdrabenh/gcm_v12
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: GCMv12-rc20
+  tag: GCMv12-rc21
   develop: feature/sdrabenh/gcm_v12
 
 GMAO_perllib:
@@ -50,13 +50,13 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.62.1
+  tag: v2.64.0
   develop: develop
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  #tag: GCMv12-rc20
+  #tag: GCMv12-rc21
   branch: feature/v12-remove-mom5
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/sdrabenh/gcm_v12
@@ -76,14 +76,14 @@ GigaTraj:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  #tag: GCMv12-rc20
+  #tag: GCMv12-rc21
   branch: feature/v12-fms2025-useifdef
   develop: feature/sdrabenh/gcm_v12
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  #tag: GCMv12-rc20
+  #tag: GCMv12-rc21
   branch: feature/v12-fms2025-useifdef
   develop: feature/sdrabenh/gcm_v12
 
@@ -237,7 +237,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  #tag: GCMv12-rc20
+  #tag: GCMv12-rc21
   branch: feature/v12-remove-mom5
   develop: feature/sdrabenh/gcm_v12
 
