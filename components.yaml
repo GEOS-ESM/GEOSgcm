@@ -56,7 +56,8 @@ MAPL:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: GCMv12-rc21
+  #tag: GCMv12-rc21
+  branch: feature/v12-remove-old-dyn
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/sdrabenh/gcm_v12
 
@@ -239,7 +240,8 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: GCMv12-rc21
+  #tag: GCMv12-rc21
+  branch: feature/v12-remove-old-dyn
   develop: feature/sdrabenh/gcm_v12
 
 UMD_Etc:
