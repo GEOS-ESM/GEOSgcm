@@ -5,8 +5,7 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  #tag: v5.16.0
-  branch: feature/v5-turin-support
+  tag: v5.17.0
   develop: main
 
 cmake:
