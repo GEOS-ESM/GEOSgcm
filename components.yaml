@@ -11,8 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  #tag: v3.68.0
-  tag: feature/v3-add-athena-support
+  tag: v3.69.0
   develop: develop
 
 ecbuild:
