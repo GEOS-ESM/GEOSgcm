@@ -29,8 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  #tag: v2.1.4
-  branch: feature/cray-mpich-support
+  tag: v2.1.5
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
