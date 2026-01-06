@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v5.16.0
+  tag: v5.17.0
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.68.0
+  tag: v3.69.0
   develop: develop
 
 ecbuild:
@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v2.1.4
+  tag: v2.1.5
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -87,7 +87,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.16.0
+  tag: v1.16.1
   develop: develop
 
 HEMCO:
@@ -129,7 +129,7 @@ TR:
 GMI:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GMI
   remote: ../GMI.git
-  tag: v1.3.0
+  tag: v1.5.1
   develop: develop
 
 StratChem:
@@ -255,7 +255,7 @@ CPLFCST_Etc:
   develop: main
 
 Topo:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSsurface_GridComp/Utils/Raster/makebcs/@ncar_topo
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSsurface_GridComp/Utils/Raster/preproc/topography/@ncar_topo
   remote: ../Topo.git
   tag: geos/v2.1.0
   develop: geos
