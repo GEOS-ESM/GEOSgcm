@@ -239,7 +239,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  branch: develop
+  tag: v2.3.14
   develop: develop
 
 UMD_Etc:
