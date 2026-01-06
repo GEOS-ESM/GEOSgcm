@@ -239,8 +239,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  #tag: v2.3.14
-  branch: feature/v11-add-turin
+  branch: develop
   develop: develop
 
 UMD_Etc:
