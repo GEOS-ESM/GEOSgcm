@@ -255,7 +255,7 @@ CPLFCST_Etc:
   develop: main
 
 Topo:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSsurface_GridComp/Utils/Raster/makebcs/@ncar_topo
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSsurface_GridComp/Utils/Raster/preproc/topography/@ncar_topo
   remote: ../Topo.git
   tag: geos/v2.1.0
   develop: geos
