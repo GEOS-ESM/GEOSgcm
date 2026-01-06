@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v5.16.0
+  tag: v5.17.0
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.68.0
+  tag: v3.69.0
   develop: develop
 
 ecbuild:
@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v2.1.4
+  tag: v2.1.5
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -50,7 +50,7 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.64.0
+  tag: v2.64.1
   develop: develop
 
 FMS:
