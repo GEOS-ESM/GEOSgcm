@@ -12,7 +12,7 @@
 
 esma_mepo_style(GenCast_GEOS-FP mepo_GenCast_GEOS_FP)
 
-install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/${mepo_GenCast_GEOS_FP}
+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/${mepo_GenCast_GEOS_FP}/
   DESTINATION GenCast_GEOS-FP
   USE_SOURCE_PERMISSIONS
   )
