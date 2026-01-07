@@ -1,3 +1,4 @@
-add_subdirectory (Shared)
-add_subdirectory (Components)
-add_subdirectory (Applications)
+add_subdirectory(Shared)
+add_subdirectory(Components)
+add_subdirectory(Applications)
+add_subdirectory(FoundationModels)
