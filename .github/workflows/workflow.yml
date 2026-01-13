@@ -31,6 +31,7 @@ jobs:
       # that have been specifically put in components.yaml for this fixture.
       # We'll need to undo this once we have updated the fixture
       run-mepo-develop: false
+      baselibs-version: v9.4.0
 
   spack_build:
     uses: GEOS-ESM/CI-workflows/.github/workflows/spack_gcc_build.yml@project/geosgcm
