@@ -50,7 +50,7 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.64.0
+  tag: v2.64.1
   develop: develop
 
 GEOSgcm_GridComp:
@@ -259,3 +259,10 @@ Topo:
   tag: geos/v2.1.0
   develop: geos
   blobless: true
+
+GenCast_GEOS-FP:
+  local: ./src/FoundationModels/@GenCast_GEOS-FP
+  remote: ../GenCast_GEOS-FP.git
+  tag: geos/v0.3.1
+  develop: geos/main
+
