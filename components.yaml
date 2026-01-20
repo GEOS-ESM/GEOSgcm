@@ -56,7 +56,7 @@ MAPL:
 FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
-  tag: geos/2019.01.02+noaff.10
+  tag: geos/2019.01.02+noaff.11
   develop: geos/release/2019.01
 
 GEOSgcm_GridComp:
