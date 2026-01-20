@@ -171,7 +171,7 @@ ACHEM:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v2.7.0
+  tag: v2.7.1
   develop: release/v2
 
 mom:
