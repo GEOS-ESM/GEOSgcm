@@ -26,10 +26,7 @@ set (DOING_GEOS5 YES)
 # Should find a better place for this - used in Chem component
 set (ACG_FLAGS -v)
 
-# This flag at R4R8 means that FV3 is compiled at R4 but *linked* to
-# FMS built at R8. This is needed as MOM6 is currently compiled as R8
-# and so the linker can only link to one FMS library.
-set (FV_PRECISION "R4R8" CACHE STRING "Precision of FV3 core (R4, R4R8, R8)")
+set (FV_PRECISION "R4" CACHE STRING "Precision of FV3 core (R4, R8)")
 
 # mepo can now clone subrepos in three styles
 foreach (dir cmake @cmake cmake@)
@@ -80,7 +77,7 @@ if (NOT Baselibs_FOUND)
   # Another issue with historical reasons, old/wrong zlib target used in GEOS
   add_library(ZLIB::zlib ALIAS ZLIB::ZLIB)
 
-  find_package(FMS REQUIRED COMPONENTS R4 R8)
+  find_package(FMS 2025.4 REQUIRED)
 
   # At the moment, there is no way to know if FMS was built with YAML
   # so we need to rely on the user to set this option.
@@ -90,8 +87,7 @@ if (NOT Baselibs_FOUND)
     find_package(libyaml REQUIRED)
     message(STATUS "LIBYAML_INCLUDE_DIR: ${LIBYAML_INCLUDE_DIR}")
     message(STATUS "LIBYAML_LIBRARIES: ${LIBYAML_LIBRARIES}")
-    target_link_libraries(FMS::fms_r4 INTERFACE ${LIBYAML_LIBRARIES})
-    target_link_libraries(FMS::fms_r8 INTERFACE ${LIBYAML_LIBRARIES})
+    target_link_libraries(FMS::fms INTERFACE ${LIBYAML_LIBRARIES})
   endif ()
 
   find_package(MAPL 2.65 QUIET)
