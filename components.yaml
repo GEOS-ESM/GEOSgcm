@@ -29,14 +29,14 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: GCMv12-rc21
+  tag: GCMv12-rc22
   sparse: ./config/GMAO_Shared.sparse
   develop: feature/sdrabenh/gcm_v12
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: GCMv12-rc21
+  tag: GCMv12-rc22
   develop: feature/sdrabenh/gcm_v12
 
 GMAO_perllib:
@@ -50,13 +50,13 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.64.1
+  tag: v2.64.2
   develop: develop
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  #tag: GCMv12-rc21
+  #tag: GCMv12-rc23
   branch: feature/v12-remove-old-dyn
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/sdrabenh/gcm_v12
@@ -88,7 +88,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: GCMv12-rc13
+  tag: GCMv12-rc22
   develop: feature/sdrabenh/gcm_v12
 
 HEMCO:
@@ -106,7 +106,7 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: GCMv12-rc20
+  tag: GCMv12-rc23
   develop: feature/sdrabenh/gcm_v12
 
 QuickChem:
@@ -172,7 +172,7 @@ ACHEM:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v3.7.0
+  tag: v3.7.1
   develop: develop
 
 mom:
@@ -240,7 +240,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  #tag: GCMv12-rc21
+  #tag: GCMv12-rc23
   branch: feature/v12-remove-old-dyn
   develop: feature/sdrabenh/gcm_v12
 
@@ -262,3 +262,10 @@ Topo:
   tag: geos/v2.1.0
   develop: geos
   blobless: true
+
+GenCast_GEOS-FP:
+  local: ./src/FoundationModels/@GenCast_GEOS-FP
+  remote: ../GenCast_GEOS-FP.git
+  tag: geos/v0.3.1
+  develop: geos/main
+
