@@ -15,9 +15,9 @@
 | [CARMA](https://github.com/GEOS-ESM/CARMA)                                     | [v1.1.0](https://github.com/GEOS-ESM/CARMA/releases/tag/v1.1.0)                                       |
 | [CICE](https://github.com/GEOS-ESM/CICE)                                       | [geos/v0.2.0](https://github.com/GEOS-ESM/CICE/releases/tag/geos%2Fv0.2.0)                            |
 | [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                                 |
-| [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v3.11.0](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv3.11.0)                       |
-| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v5.5.1](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v5.5.1)                              |
-| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v6.1.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v6.1.0)                                |
+| [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v3.13.1](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv3.13.1)                       |
+| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v4.33.1](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v4.33.1)                                |
+| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v5.17.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v5.17.0)                                  |
 | [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.10](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.10) |
 | [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v2.15.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.15.0)                    |
 | [GAAS](https://github.com/GEOS-ESM/GAAS)                                       | [v1.0.0](https://github.com/GEOS-ESM/GAAS/releases/tag/v1.0.0)                                        |
