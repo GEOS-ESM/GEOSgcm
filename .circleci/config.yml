@@ -16,12 +16,12 @@ parameters:
 
 # Anchors to prevent forgetting to update a version
 os_version: &os_version ubuntu24
-baselibs_version: &baselibs_version v8.24.0
+baselibs_version: &baselibs_version v9.4.0
 bcs_version: &bcs_version v12.0.0
 tag_build_arg_name: &tag_build_arg_name gcmversion
 
 orbs:
-  ci: geos-esm/circleci-tools@5
+  ci: geos-esm/circleci-tools@6
 
 workflows:
   build-test:
@@ -128,7 +128,7 @@ workflows:
           mpi_name: openmpi
           mpi_version: 5.0.5
           compiler_name: gcc
-          compiler_version: 14.2.0
+          compiler_version: 15.2.0
           image_name: geos-env-bcs
           tag_build_arg_name: *tag_build_arg_name
           resource_class: xlarge

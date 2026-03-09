@@ -21,13 +21,17 @@ jobs:
   build_gcm:
     strategy:
       matrix:
-        compiler: [ifort, gfortran-14, gfortran-15, ifx]
+        compiler: [ifort, gfortran-15]
         build-type: [Debug]
     uses: GEOS-ESM/CI-workflows/.github/workflows/geosgcm_build_tests.yml@project/geosgcm
     with:
       compiler: ${{ matrix.compiler }}
       cmake-build-type: ${{ matrix.build-type }}
-      fail-fast: false
+      # We need to not run mepo develop for now as it will "override" components
+      # that have been specifically put in components.yaml for this fixture.
+      # We'll need to undo this once we have updated the fixture
+      run-mepo-develop: false
+      baselibs-version: v9.4.0
 
   spack_build:
     uses: GEOS-ESM/CI-workflows/.github/workflows/spack_gcc_build.yml@project/geosgcm
