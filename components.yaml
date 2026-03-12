@@ -50,13 +50,13 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.65.0
+  tag: v2.67.0
   develop: develop
 
 FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
-  tag: geos/2019.01.02+noaff.10
+  tag: geos/2019.01.02+noaff.11
   develop: geos/release/2019.01
 
 GEOSgcm_GridComp:
@@ -171,7 +171,7 @@ ACHEM:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v2.7.0
+  tag: v2.9.0
   develop: release/v2
 
 mom:
@@ -183,7 +183,7 @@ mom:
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
-  tag: geos/v3.7
+  tag: geos/v3.8
   develop: geos/main
   recurse_submodules: true
 
