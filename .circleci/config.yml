@@ -15,13 +15,13 @@ parameters:
     default: ""
 
 # Anchors to prevent forgetting to update a version
-os_version: &os_version ubuntu20
-baselibs_version: &baselibs_version v7.17.0
-bcs_version: &bcs_version v11.3.0
+os_version: &os_version ubuntu24
+baselibs_version: &baselibs_version v8.24.0
+bcs_version: &bcs_version v11.6.0
 tag_build_arg_name: &tag_build_arg_name gcmversion
 
 orbs:
-  ci: geos-esm/circleci-tools@2
+  ci: geos-esm/circleci-tools@4
 
 workflows:
   build-test:
@@ -32,7 +32,9 @@ workflows:
             - docker-hub-creds
           matrix:
             parameters:
-              compiler: [ifort, gfortran]
+              # ifx currently can't build FMS
+              #compiler: [gfortran, ifort, ifx]
+              compiler: [gfortran, ifort]
           baselibs_version: *baselibs_version
           repo: GEOSgcm
           persist_workspace: true # Needs to be true to run fv3/gcm experiment, costs extra
@@ -44,12 +46,14 @@ workflows:
             - docker-hub-creds
           matrix:
             parameters:
+              # ifx currently can't build FMS
+              #compiler: [gfortran, ifort, ifx]
               compiler: [gfortran, ifort]
-          baselibs_version: *baselibs_version
-          bcs_version: *bcs_version
           requires:
             - build-GEOSgcm-on-<< matrix.compiler >>
           repo: GEOSgcm
+          baselibs_version: *baselibs_version
+          bcs_version: *bcs_version
 
       # Run Coupled GCM (1 hour, no ExtData)
       - ci/run_gcm:
@@ -58,12 +62,14 @@ workflows:
             - docker-hub-creds
           matrix:
             parameters:
+              # ifx currently can't build FMS
+              #compiler: [gfortran, ifort, ifx]
               compiler: [gfortran, ifort]
-          baselibs_version: *baselibs_version
-          bcs_version: *bcs_version
           requires:
             - build-GEOSgcm-on-<< matrix.compiler >>
           repo: GEOSgcm
+          baselibs_version: *baselibs_version
+          bcs_version: *bcs_version
           gcm_ocean_type: MOM6
           change_layout: false
 
@@ -75,7 +81,7 @@ workflows:
           filters:
             tags:
               only: /^v.*$/
-          name: publish-intel-docker-image
+          name: publish-ifort-docker-image
           context:
             - docker-hub-creds
             - ghcr-creds
@@ -84,12 +90,31 @@ workflows:
           bcs_version: *bcs_version
           container_name: geosgcm
           mpi_name: intelmpi
-          mpi_version: 2021.6.0
-          compiler_name: intel
-          compiler_version: 2022.1.0
+          mpi_version: "2021.13"
+          compiler_name: ifort
+          compiler_version: "2021.13"
           image_name: geos-env-bcs
           tag_build_arg_name: *tag_build_arg_name
           resource_class: xlarge
+      #- ci/publish_docker:
+          #filters:
+            #tags:
+              #only: /^v.*$/
+          #name: publish-ifx-docker-image
+          #context:
+            #- docker-hub-creds
+            #- ghcr-creds
+          #os_version: *os_version
+          #baselibs_version: *baselibs_version
+          #bcs_version: *bcs_version
+          #container_name: geosgcm
+          #mpi_name: intelmpi
+          #mpi_version: "2021.17"
+          #compiler_name: ifx
+          #compiler_version: "2025.3"
+          #image_name: geos-env-bcs
+          #tag_build_arg_name: *tag_build_arg_name
+          #resource_class: xlarge
       - ci/publish_docker:
           filters:
             tags:
@@ -103,9 +128,9 @@ workflows:
           bcs_version: *bcs_version
           container_name: geosgcm
           mpi_name: openmpi
-          mpi_version: 5.0.0
+          mpi_version: 5.0.5
           compiler_name: gcc
-          compiler_version: 12.1.0
+          compiler_version: 14.2.0
           image_name: geos-env-bcs
           tag_build_arg_name: *tag_build_arg_name
           resource_class: xlarge
