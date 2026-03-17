@@ -35,6 +35,7 @@
 | [GMAO_perllib](https://github.com/GEOS-ESM/GMAO_perllib)                       | [v1.1.0](https://github.com/GEOS-ESM/GMAO_perllib/releases/tag/v1.1.0)                                |
 | [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v2.1.6](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v2.1.6)                                 |
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.3.0](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.3.0)                                      |
+| [GOCART2G_ExtData](https://github.com/GEOS-ESM/GOCART2G_ExtData)               | [v1.0.0](https://github.com/GEOS-ESM/GOCART2G_ExtData/releases/tag/v1.0.0)                            |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.3.0](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.3.0)                           |
 | [Icepack](https://github.com/GEOS-ESM/Icepack)                                 | [geos/v0.3.0](https://github.com/GEOS-ESM/Icepack/releases/tag/geos%2Fv0.3.0)                         |
 | [MAM](https://github.com/GEOS-ESM/MAM)                                         | [v1.1.0](https://github.com/GEOS-ESM/MAM/releases/tag/v1.1.0)                                         |

@@ -105,8 +105,16 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: GCMv12-rc25
-  develop: feature/sdrabenh/gcm_v12
+  #tag: GCMv12-rc25
+  branch: feature/v12-move-extdata-yaml
+  develop: develop
+
+GOCART2G_ExtData:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART2G_ExtData
+  remote: ../GOCART2G_ExtData.git
+  #tag: GCMv12-rc25
+  branch: feature/v12-move-extdata-yaml
+  develop: develop
 
 QuickChem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@QuickChem
