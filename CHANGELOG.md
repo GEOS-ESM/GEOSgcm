@@ -2,6 +2,37 @@
 
 ## Unreleased
 
+## [11.8.1] - 2026-01-07
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+* Move topo package to new location from `Raster/makebcs/@ncar_topo` to `Raster/preproc/topography/@ncar_topo` [#989](https://github.com/GEOS-ESM/GEOSgcm/pull/989)
+* Add Topography documentation & some cleanup [#1170](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1170)
+* Improve runoff distribution [#1136](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1136) [#753](https://github.com/GEOS-ESM/GEOSgcm_App/pull/753)
+* Maintenance of GMI setup and history [#786](https://github.com/GEOS-ESM/GEOSgcm_App/pull/786)
+* Change vector declarations in `sphere.F` to satisfy GNU compiler Debug option [#398](https://github.com/GEOS-ESM/GMAO_Shared/pull/398)
+* Better support for SCM and TinyBCs [#791](https://github.com/GEOS-ESM/GEOSgcm_App/pull/791)
+* Use `RESTART_BY_OSERVER=YES` for MPT small jobs [#777](https://github.com/GEOS-ESM/GEOSgcm_App/pull/777)
+* Updates for GCC 15 and Moist (`-O1` is **non-zero-diff for GCC**) [#1176](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1176)
+* Update `TEM` as an object library to ameliorate parallel build race conditions [#166](https://github.com/GEOS-ESM/GEOS_Util/pull/166) [#158](https://github.com/GEOS-ESM/GEOS_Util/pull/158)
+* Add a message to `remap_restarts` indicating the removal of MERRA-2 restarts from `/archive` [#162](https://github.com/GEOS-ESM/GEOS_Util/pull/162)
+* Fixes [#1069](https://github.com/GEOS-ESM/GEOSgcm_GridComp/issues/1069) and cleaned up WW3 Cmake [#1072](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1072)
+
+### Fixture Changes:
+* ESMA_env  [v5.14.0 => v5.17.0](https://github.com/GEOS-ESM/ESMA_env/compare/v5.14.0...v5.17.0)
+* ESMA_cmake  [v3.65.0 => v3.69.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.65.0...v3.69.0)
+* GMAO_Shared  [v2.1.4 => v2.1.6](https://github.com/GEOS-ESM/GMAO_Shared/compare/v2.1.4...v2.1.6)
+* GEOS_Util  [v2.1.11 => v2.1.12](https://github.com/GEOS-ESM/GEOS_Util/compare/v2.1.11...v2.1.12)
+* MAPL  [v2.61.0 => v2.64.1](https://github.com/GEOS-ESM/MAPL/compare/v2.61.0...v2.64.1)
+* GEOSgcm_GridComp  [v2.8.0 => v2.8.1](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.8.0...v2.8.1)
+* GEOSchem_GridComp  [v1.16.0 => v1.16.1](https://github.com/GEOS-ESM/GEOSchem_GridComp/compare/v1.16.0...v1.16.1)
+* GMI  [v1.3.0 => v1.5.1](https://github.com/GEOS-ESM/GMI/compare/v1.3.0...v1.5.1)
+* GEOSgcm_App  [v2.3.14 => v2.3.15](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.3.14...v2.3.15)
+* Topo repository path location
+
+
 ## [11.8.0] - 2025-09-23
 
 ### Zero-diff to Previous Release: NO
