@@ -87,7 +87,8 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: GCMv12-rc25
+  #tag: GCMv12-rc25
+  branch: feature/v12-move-extdata-yaml
   develop: feature/sdrabenh/gcm_v12
 
 HEMCO:
