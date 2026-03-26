@@ -62,7 +62,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  branch: release/MAPL-v3
+  branch: release-v11/MAPL-v3
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -105,7 +105,7 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  branch: release/MAPL-v3
+  branch: release-v11/MAPL-v3
   develop: develop
 
 QuickChem:
@@ -239,7 +239,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  branch: release/MAPL-v3
+  branch: release-v11/MAPL-v3
   develop: develop
 
 UMD_Etc:
