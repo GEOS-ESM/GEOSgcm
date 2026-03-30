@@ -53,6 +53,12 @@ MAPL:
   branch: release/MAPL-v3
   develop: develop
 
+GEOS_FieldDictionary:
+  local: ./src/Shared/@MAPL/@GEOS_FieldDictionary
+  remote: ../GEOS_FieldDictionary.git
+  tag: v0.2.1
+  develop: main
+
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
