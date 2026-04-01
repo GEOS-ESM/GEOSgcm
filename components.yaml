@@ -99,13 +99,17 @@ GEOSchem_GridComp:
 HEMCO:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Shared/HEMCO/@HEMCO
   remote: ../HEMCO.git
-  tag: geos/v2.3.0
+  # NOTE: The MAPL3 branch in HEMCO is *NOT* based off of geos/develop as that is far ahead of current where GEOSgcm
+  #       is. This is based on release/geos/2.3.0 which was off of geos/v2.3.0
+  branch: release/MAPL-v3
   develop: geos/develop
 
 geos-chem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/GEOSCHEMchem_GridComp/@geos-chem
   remote: ../geos-chem.git
-  tag: geos/v13.0.0-rc1
+  # NOTE: The MAPL3 branch in geos-chem is *NOT* based off of geos/develop as that is far ahead of current where GEOSgcm
+  #       is. This is based on release/geos/v13.0.0-rc1 which was off of geos/v13.0.0-rc1
+  branch: release/MAPL-v3
   develop: geos/develop
 
 GOCART:
@@ -117,19 +121,19 @@ GOCART:
 QuickChem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@QuickChem
   remote: ../QuickChem.git
-  tag: v1.0.0
+  branch: release/MAPL-v3
   develop: main
 
 RRG:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@RRG
   remote: ../RRG.git
-  tag: v1.1.0
+  branch: release/MAPL-v3
   develop: main
 
 TR:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@TR
   remote: ../TR.git
-  tag: v1.2.0
+  branch: release/MAPL-v3
   develop: develop
 
 GMI:
@@ -153,19 +157,19 @@ MAM:
 MATRIX:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@MATRIX
   remote: ../MATRIX.git
-  tag: v1.0.0
-  develop: main
+  branch: release/MAPL-v3
+  develop: develop
 
 CARMA:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@CARMA
   remote: ../CARMA.git
-  tag: v1.1.0
+  branch: release/MAPL-v3
   develop: develop
 
 GAAS:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GAAS
   remote: ../GAAS.git
-  tag: v1.0.0
+  branch: release/MAPL-v3
   develop: develop
 
 ACHEM:
@@ -233,7 +237,7 @@ RRTMGP:
 ww3:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSwgcm_GridComp/GEOSwavewatch_GridComp/@ww3
   remote: ../WW3.git
-  tag: v7.14-geos-r1
+  branch: geos/release/MAPL-v3
   develop: geos/develop
 
 umwm:
@@ -251,7 +255,7 @@ GEOSgcm_App:
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
   remote: ../UMD_Etc.git
-  tag: v1.4.0
+  branch: release/MAPL-v3
   develop: main
 
 CPLFCST_Etc:
