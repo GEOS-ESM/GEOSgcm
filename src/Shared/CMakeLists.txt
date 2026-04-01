@@ -1,6 +1,8 @@
+# not yet ported to MAPL3 - restore when GEOS_Shared (and dependents) are ported
+# GMAO_Shared is included but restricted to HERMES_LIGHT (GMAO_mpeu + minimal GMAO_hermes)
+# NCEP_Shared is NOT needed without the full GMAO_Shared/GMAO_transf cascade
 esma_add_subdirectories (
   GMAO_Shared
-  NCEP_Shared
   )
 
 if (NOT MAPL_FOUND)
