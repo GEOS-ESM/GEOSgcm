@@ -101,7 +101,7 @@ HEMCO:
   remote: ../HEMCO.git
   # NOTE: The MAPL3 branch in HEMCO is *NOT* based off of geos/develop as that is far ahead of current where GEOSgcm
   #       is. This is based on release/geos/2.3.0 which was off of geos/v2.3.0
-  branch: release/MAPL-v3
+  branch: geos/release/MAPL-v3
   develop: geos/develop
 
 geos-chem:
@@ -109,7 +109,7 @@ geos-chem:
   remote: ../geos-chem.git
   # NOTE: The MAPL3 branch in geos-chem is *NOT* based off of geos/develop as that is far ahead of current where GEOSgcm
   #       is. This is based on release/geos/v13.0.0-rc1 which was off of geos/v13.0.0-rc1
-  branch: release/MAPL-v3
+  branch: geos/release/MAPL-v3
   develop: geos/develop
 
 GOCART:
