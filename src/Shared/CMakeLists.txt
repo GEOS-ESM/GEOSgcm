@@ -1,6 +1,6 @@
 esma_add_subdirectories (
   GMAO_Shared
-  # NCEP_Shared  # not yet ported to MAPL3 - restore when ported
+  NCEP_Shared
   )
 
 if (NOT MAPL_FOUND)
