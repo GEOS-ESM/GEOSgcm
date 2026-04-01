@@ -1,5 +1,5 @@
 esma_add_subdirectories (
-  # GMAO_Shared  # not yet ported to MAPL3 - restore when ported
+  GMAO_Shared
   # NCEP_Shared  # not yet ported to MAPL3 - restore when ported
   )
 
