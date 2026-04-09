@@ -174,7 +174,8 @@ GAAS:
 ACHEM:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@ACHEM
   remote: ../ACHEM.git
-  tag: v1.0.1
+  #tag: v1.0.1
+  branch: feature/v12-move-extdata-yaml
   develop: develop
 
 GEOS_OceanGridComp:
