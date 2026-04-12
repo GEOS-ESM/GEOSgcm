@@ -315,7 +315,7 @@ cmake --build build -j N
 cmake --install build
 ```
 
-where `N` is the number of parallel processes. On discover head nodes, this should only be as high as 2 due to limits on the head nodes. On a compute node, you can set `N` has high as you like, though 8-12 is about the limit of parallelism in our model's make system.
+where `N` is the number of parallel processes. On discover login nodes, this should only be as high as 2 due to limits on the login nodes. On a compute node, you can set `N` has high as you like, though 8-12 is about the limit of parallelism in our model's make system.
 
 ### Run the GCM
 
