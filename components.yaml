@@ -196,7 +196,10 @@ cice6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug/@cice6
   remote: ../CICE.git
   tag: geos/v0.2.0
-  develop: geos/develop
+  # GEOS currently is not in sync with mainline CICE development, so we point to a specific release branch for now.
+  # Once we are in sync with mainline CICE development, we can point to the develop branch.
+  #develop: geos/develop
+  develop: geos/release/v0
   ignore_submodules: true
 
 icepack:
