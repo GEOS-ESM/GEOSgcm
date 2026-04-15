@@ -17,14 +17,14 @@
 | [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                                 |
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v1.4.0](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv1.4.0)                         |
 | [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v2.16.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v2.16.1)                    |
-| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.74.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.74.0)                                |
-| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v5.19.1](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v5.19.1)                                  |
+| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v3.75.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v3.75.0)                                |
+| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v5.21.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v5.21.0)                                  |
 | [FMS](https://github.com/GEOS-ESM/FMS)                                         | [geos/2019.01.02+noaff.11](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.11) |
 | [GAAS](https://github.com/GEOS-ESM/GAAS)                                       | [v1.0.0](https://github.com/GEOS-ESM/GAAS/releases/tag/v1.0.0)                                        |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)             |
 | [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v2.9.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v2.9.0)                          |
 | [GEOS_Util](https://github.com/GEOS-ESM/GEOS_Util)                             | [v2.1.12](https://github.com/GEOS-ESM/GEOS_Util/releases/tag/v2.1.12)                                 |
-| [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.16.1](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.16.1)                         |
+| [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v1.16.2](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v1.16.2)                         |
 | [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v2.3.15](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v2.3.15)                               |
 | [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v2.8.1](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v2.8.1)                            |
 | [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v1.12.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v1.12.0)                    |
@@ -315,7 +315,7 @@ cmake --build build -j N
 cmake --install build
 ```
 
-where `N` is the number of parallel processes. On discover head nodes, this should only be as high as 2 due to limits on the head nodes. On a compute node, you can set `N` has high as you like, though 8-12 is about the limit of parallelism in our model's make system.
+where `N` is the number of parallel processes. On discover login nodes, this should only be as high as 2 due to limits on the login nodes. On a compute node, you can set `N` has high as you like, though 8-12 is about the limit of parallelism in our model's make system.
 
 ### Run the GCM
 
