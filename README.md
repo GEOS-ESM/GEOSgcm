@@ -15,6 +15,7 @@
 | [CARMA](https://github.com/GEOS-ESM/CARMA)                                     | [v1.1.0](https://github.com/GEOS-ESM/CARMA/releases/tag/v1.1.0)                                       |
 | [CICE](https://github.com/GEOS-ESM/CICE)                                       | [geos/v0.2.0](https://github.com/GEOS-ESM/CICE/releases/tag/geos%2Fv0.2.0)                            |
 | [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                                 |
+| [crtm](https://github.com/GEOS-ESM/crtm)                                       | [geos/v2.4.1-jedi.1+1.1.0](https://github.com/GEOS-ESM/crtm/releases/tag/geos%2Fv2.4.1-jedi.1%2B1.1.0)            |
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v3.13.1](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv3.13.1)                       |
 | [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v4.36.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v4.36.0)                                |
 | [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v5.21.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v5.21.0)                                  |

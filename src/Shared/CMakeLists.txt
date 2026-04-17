@@ -1,6 +1,7 @@
 esma_add_subdirectories (
   GMAO_Shared
   NCEP_Shared
+  JCSDA_crtm
   )
 
 if (NOT MAPL_FOUND)
