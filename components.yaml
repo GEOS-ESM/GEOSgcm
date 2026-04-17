@@ -19,6 +19,12 @@ ecbuild:
   remote: ../ecbuild.git
   tag: geos/v2.1.0
 
+crtm:
+  local: ./src/Shared/JCSDA_crtm/@crtm
+  remote: ../crtm.git
+  tag: geos/v2.4.1-jedi.1+1.1.0
+  develop: master
+
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
   remote: ../NCEP_Shared.git
