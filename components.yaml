@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v4.36.0
+  tag: v4.37.0
   develop: develop
 
 ecbuild:
@@ -22,7 +22,7 @@ ecbuild:
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
   remote: ../NCEP_Shared.git
-  tag: v1.4.0
+  tag: v1.5.0
   sparse: ./config/NCEP_Shared.sparse
   develop: main
 
@@ -159,7 +159,7 @@ CARMA:
 GAAS:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GAAS
   remote: ../GAAS.git
-  tag: v1.0.0
+  tag: v1.1.0
   develop: develop
 
 ACHEM:
@@ -248,7 +248,7 @@ GEOSgcm_App:
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
   remote: ../UMD_Etc.git
-  tag: v1.4.0
+  tag: v1.5.0
   develop: main
 
 CPLFCST_Etc:
