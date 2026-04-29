@@ -23,7 +23,7 @@ endif ()
 
 set (DOING_GEOS5 YES)
 
-# Should find a better place for this - used in Chem component
+# We Should find a better place for this - used in Chem component
 set (ACG_FLAGS -v)
 
 # This flag at R4R8 means that FV3 is compiled at R4 but *linked* to
