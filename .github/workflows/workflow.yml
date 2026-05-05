@@ -20,6 +20,7 @@ concurrency:
 jobs:
   build_gcm:
     strategy:
+      fail-fast: false
       matrix:
         compiler: [ifort, gfortran-15]
         build-type: [Debug]
@@ -31,11 +32,13 @@ jobs:
       # that have been specifically put in components.yaml for this fixture.
       # We'll need to undo this once we have updated the fixture
       run-mepo-develop: false
-      baselibs-version: v9.7.1
+      baselibs-version: v9.9.0
 
   spack_build:
     uses: GEOS-ESM/CI-workflows/.github/workflows/spack_gcc_build.yml@project/geosgcm
     secrets:
       BUILDCACHE_USERNAME: ${{ secrets.BUILDCACHE_USERNAME }}
       BUILDCACHE_TOKEN: ${{ secrets.BUILDCACHE_TOKEN }}
+    with:
+      load-fms: true
 
