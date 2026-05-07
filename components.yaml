@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v5.17.0
+  tag: v5.22.0
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.72.1
+  tag: v3.75.0
   develop: develop
 
 ecbuild:
@@ -29,14 +29,14 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v2.1.6
+  tag: v2.1.7
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: v2.1.12
+  tag: v2.1.15
   develop: main
 
 GMAO_perllib:
@@ -50,13 +50,13 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.65.0
+  tag: v2.68.0
   develop: develop
 
 FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
-  tag: geos/2019.01.02+noaff.10
+  tag: geos/2019.01.02+noaff.11
   develop: geos/release/2019.01
 
 GEOSgcm_GridComp:
@@ -75,7 +75,7 @@ GigaTraj:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v2.16.0
+  tag: v2.16.1
   develop: develop
 
 fvdycore:
@@ -87,7 +87,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.16.1
+  tag: v1.16.2
   develop: develop
 
 HEMCO:
@@ -123,13 +123,13 @@ RRG:
 TR:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@TR
   remote: ../TR.git
-  tag: v1.2.0
+  tag: v1.2.1
   develop: develop
 
 GMI:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GMI
   remote: ../GMI.git
-  tag: v1.5.1
+  tag: v1.6.0
   develop: develop
 
 StratChem:
@@ -171,7 +171,7 @@ ACHEM:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v2.7.0
+  tag: v2.9.0
   develop: release/v2
 
 mom:
@@ -183,7 +183,7 @@ mom:
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
-  tag: geos/v3.7
+  tag: geos/v3.8
   develop: geos/main
   recurse_submodules: true
 
@@ -196,7 +196,10 @@ cice6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug/@cice6
   remote: ../CICE.git
   tag: geos/v0.2.0
-  develop: geos/develop
+  # GEOS currently is not in sync with mainline CICE development, so we point to a specific release branch for now.
+  # Once we are in sync with mainline CICE development, we can point to the develop branch.
+  #develop: geos/develop
+  develop: geos/release/v0
   ignore_submodules: true
 
 icepack:

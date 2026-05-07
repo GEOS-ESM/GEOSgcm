@@ -19,12 +19,12 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           source_branch: main
-          target_branch: release/MAPL-v3
+          target_branch: release-v11/MAPL-v3
           label: automatic,MAPL3,Skip Changelog
-          template: .github/PULL_REQUEST_TEMPLATE/auto_pr_to_mapl3.md
+          template: .github/PULL_REQUEST_TEMPLATE/auto_pr_to_v11mapl3.md
           get_diff: true
           assignee: ${{ github.actor }}
           old_string: "<!-- Write your description here -->"
           new_string: ${{ github.event.commits[0].message }}
-          title: Auto PR - main → MAPL-v3 - ${{ github.event.commits[0].message }}
+          title: Auto PR - main → v11-MAPL-v3 - ${{ github.event.commits[0].message }}
 
