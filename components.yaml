@@ -62,7 +62,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v2.8.2
+  tag: v2.9.0
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -242,7 +242,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v2.3.16
+  tag: v2.3.17
   develop: develop
 
 UMD_Etc:
