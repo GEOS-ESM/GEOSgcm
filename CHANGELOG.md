@@ -2,6 +2,27 @@
 
 ## Unreleased
 
+## [11.9.0] - 2026-05-14
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: NO
+
+### Major Non-Zero-Diff Changes:
+* Long-standing bug fix for Turb impacting surf and `SYNCTQ` [#1374](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1374)
+* Upticked to GOCART v2.5.3 and ACHEM v1.1.0 containg numerous changes plus QFED3 emissions [#1029](https://github.com/GEOS-ESM/GEOSgcm/pull/1029)
+
+### Major Zero-Diff Changes:
+* Add TOPO_version_info to BCs package and route dir [#1400](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1400)
+* Fixes [#867](https://github.com/GEOS-ESM/GEOSgcm_App/issues/867). Update walltimes to 4-hours, fix `scm_setup` [#869](https://github.com/GEOS-ESM/GEOSgcm_App/pull/869)
+
+### Fixture Changes:
+* GEOSgcm_GridComp  [v2.8.2 => v2.9.0](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.8.2...v2.9.0)
+* GEOSgcm_App  [v2.3.16 => v2.3.17](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.3.16...v2.3.17)
+* GOCART  [v2.3.0 => v2.5.3](https://github.com/GEOS-ESM/GOCART/compare/v2.3.0...v2.5.3)
+* ACHEM  [v1.0.0 => v1.1.0](https://github.com/GEOS-ESM/ACHEM/compare/v1.0.0...v1.1.0)
+
+  
+
 ## [11.8.2] - 2026-05-08
 
 ### Zero-diff to Previous Release: YES
