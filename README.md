@@ -12,6 +12,7 @@
 | Repository                                                                     | Version                                                                                               |
 | ----------                                                                     | -------                                                                                               |
 | [ACHEM](https://github.com/GEOS-ESM/ACHEM)                                     | [v1.0.1](https://github.com/GEOS-ESM/ACHEM/releases/tag/v1.0.1)                                       |
+| [Aerosol_ExtData](https://github.com/GEOS-ESM/Aerosol_ExtData)                 | [v1.0.0](https://github.com/GEOS-ESM/Aerosol_ExtData/releases/tag/v1.0.0)                            |
 | [CARMA](https://github.com/GEOS-ESM/CARMA)                                     | [v1.1.0](https://github.com/GEOS-ESM/CARMA/releases/tag/v1.1.0)                                       |
 | [CICE](https://github.com/GEOS-ESM/CICE)                                       | [geos/v0.2.0](https://github.com/GEOS-ESM/CICE/releases/tag/geos%2Fv0.2.0)                            |
 | [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                                 |
