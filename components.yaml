@@ -50,7 +50,7 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.68.0
+  tag: v2.69.0
   develop: release/v2
 
 FMS:
