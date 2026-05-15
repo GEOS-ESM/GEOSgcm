@@ -51,7 +51,7 @@ MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
   tag: v2.68.0
-  develop: develop
+  develop: release/v2
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
@@ -105,7 +105,7 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: v2.6.4
+  tag: v2.6.5
   develop: develop
 
 QuickChem:
