@@ -7,6 +7,8 @@ set name = $0
 set scriptname = $name
 set BUILD_LOG_DIR = BUILD_LOG_DIR
 
+setenv EXTRA_CMAKE_FLAGS "-DBUILD_PYTHONBRIDGE=ON" # +++ awlee
+
 # change to src directory, if not already there
 #----------------------------------------------
 if ($name != $name:t) then
