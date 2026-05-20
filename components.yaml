@@ -36,7 +36,7 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: v2.1.16
+  tag: v2.1.17
   develop: main
 
 GMAO_perllib:
@@ -62,7 +62,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v2.9.0
+  tag: v2.9.1
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
