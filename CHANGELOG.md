@@ -2,6 +2,25 @@
 
 ## Unreleased
 
+## [11.9.1] - 2026-05-20
+
+### Zero-diff to Previous Release: YES
+### Restart Changes: NO
+
+### Major Zero-Diff Changes:
+* Workaround GNU bug to vectorize powf [#1420](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1420)
+* Fix the zero export bug [#1423](https://github.com/GEOS-ESM/GEOSgcm_GridComp/pull/1423)
+* Add v14 bcs and update topo path [#156](https://github.com/GEOS-ESM/GEOS_Util/pull/156)
+* Fixed speed capitalization issue in plots configure script [#224](https://github.com/GEOS-ESM/GEOS_Util/pull/224)
+* Fixed GOCART data: an issue with data-driven SU and `PSO4` [v2.5.4](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.5.4)
+
+### Fixture Changes:
+* MAPL  [v2.68.0 => v2.69.1](https://github.com/GEOS-ESM/MAPL/compare/v2.68.0...v2.69.1)
+* GEOS_Util  [v2.1.16 => v2.1.17](https://github.com/GEOS-ESM/GEOS_Util/compare/v2.1.16...v2.1.17)
+* GEOSgcm_GridComp  [v2.9.0 => v2.9.1](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.9.0...v2.9.1)
+* GOCART  [v2.5.3 => v2.5.4](https://github.com/GEOS-ESM/GOCART/compare/v2.5.3...v2.5.4)
+
+
 ## [11.9.0] - 2026-05-14
 
 ### Zero-diff to Previous Release: NO
