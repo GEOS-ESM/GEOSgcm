@@ -58,7 +58,7 @@ GEOSgcm_GridComp:
   remote: ../GEOSgcm_GridComp.git
   tag: GCMv12-rc31
   sparse: ./config/GEOSgcm_GridComp.sparse
-  develop: feature/sdrabenh/gcm_v12
+  develop: feature/rc31_coupled_dev
 
 geos_state_bias:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSmkiau_GridComp/pyMLINC/@geos_state_bias
@@ -88,7 +88,7 @@ GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
   tag: GCMv12-rc31
-  develop: feature/sdrabenh/gcm_v12
+  develop: feature/rc31_coupled_dev
 
 HEMCO:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Shared/HEMCO/@HEMCO
@@ -218,7 +218,7 @@ GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
   tag: GCMv12-rc31
-  develop: feature/sdrabenh/gcm_v12
+  develop: feature/rc31_coupled_dev
 
 RRTMGP:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/GEOS_RadiationShared/@RRTMGP
@@ -243,7 +243,7 @@ GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
   tag: GCMv12-rc31
-  develop: feature/sdrabenh/gcm_v12
+  develop: feature/rc31_coupled_dev
 
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
