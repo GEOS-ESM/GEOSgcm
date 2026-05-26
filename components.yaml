@@ -56,7 +56,7 @@ MAPL:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: GCMv12-rc31
+  tag: feature/rc31_coupled_dev
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/rc31_coupled_dev
 
@@ -87,7 +87,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: GCMv12-rc31
+  tag: feature/rc31_coupled_dev
   develop: feature/rc31_coupled_dev
 
 HEMCO:
@@ -217,7 +217,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: GCMv12-rc31
+  tag: feature/rc31_coupled_dev
   develop: feature/rc31_coupled_dev
 
 RRTMGP:
@@ -242,7 +242,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: GCMv12-rc31
+  tag: feature/rc31_coupled_dev
   develop: feature/rc31_coupled_dev
 
 UMD_Etc:
