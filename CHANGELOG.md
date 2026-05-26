@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* MAPL: Consolidated enums (StateItemAllocation, FieldBundleType_Flag) into the new `enums/` layer and introduced MAPL_ API constants for public use. A backwards-compatibility shim is included for this release, maintaining export of previous names/types; this shim will be removed in a future update. (See MAPL #4973)
+
 ## [11.8.1] - 2026-01-07
 
 ### Zero-diff to Previous Release: YES
