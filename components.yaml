@@ -29,14 +29,14 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: GCMv12-rc30
+  tag: GCMv12-rc31
   sparse: ./config/GMAO_Shared.sparse
   develop: feature/sdrabenh/gcm_v12
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: GCMv12-rc29
+  tag: GCMv12-rc31
   develop: feature/sdrabenh/gcm_v12
 
 GMAO_perllib:
@@ -56,7 +56,7 @@ MAPL:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: GCMv12-rc30
+  tag: GCMv12-rc31
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/sdrabenh/gcm_v12
 
@@ -75,19 +75,19 @@ GigaTraj:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: GCMv12-rc30
+  tag: GCMv12-rc31
   develop: feature/sdrabenh/gcm_v12
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: GCMv12-rc25
+  tag: GCMv12-rc31
   develop: feature/sdrabenh/gcm_v12
 
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: GCMv12-rc25
+  tag: GCMv12-rc31
   develop: feature/sdrabenh/gcm_v12
 
 HEMCO:
@@ -123,13 +123,13 @@ RRG:
 TR:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@TR
   remote: ../TR.git
-  tag: v1.2.0
+  tag: v1.2.1
   develop: develop
 
 GMI:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GMI
   remote: ../GMI.git
-  tag: v1.5.1
+  tag: v1.6.0
   develop: develop
 
 StratChem:
@@ -217,7 +217,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: GCMv12-rc25
+  tag: GCMv12-rc31
   develop: feature/sdrabenh/gcm_v12
 
 RRTMGP:
@@ -242,7 +242,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: GCMv12-rc30
+  tag: GCMv12-rc31
   develop: feature/sdrabenh/gcm_v12
 
 UMD_Etc:
