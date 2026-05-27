@@ -75,14 +75,14 @@ GigaTraj:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: GCMv12-rc31
-  develop: feature/sdrabenh/gcm_v12
+  tag: v3.0.0
+  develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: GCMv12-rc31
-  develop: feature/sdrabenh/gcm_v12
+  tag: geos/v3.0.0
+  develop: develop
 
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
@@ -217,8 +217,8 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: GCMv12-rc31
-  develop: feature/sdrabenh/gcm_v12
+  tag: v2.0.0
+  develop: develop
 
 RRTMGP:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/GEOS_RadiationShared/@RRTMGP
