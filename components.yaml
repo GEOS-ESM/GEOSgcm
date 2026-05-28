@@ -36,8 +36,8 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: GCMv12-rc31
-  develop: feature/sdrabenh/gcm_v12
+  tag: v3.0.0
+  develop: develop
 
 GMAO_perllib:
   local: ./src/Shared/@GMAO_Shared/@GMAO_perllib
