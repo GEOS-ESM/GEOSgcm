@@ -27,7 +27,7 @@
 | [geos_state_bias](https://github.com/GEOS-ESM/geos_state_bias)                 | [geos/v1.0.0](https://github.com/GEOS-ESM/geos_state_bias/releases/tag/geos/v1.0.0)                   |
 | [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v2.0.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v2.0.0)                           |
 | [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v3.0.0](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v3.0.0)                                 |
-| [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v2.9.1](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v2.9.1)                            |
+| [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v3.0.0](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v3.0.0)                            |
 | [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v2.0.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v2.0.0)                      |
 | [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v3.0.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv3.0.0)         |
 | [gigatraj](https://github.com/GEOS-ESM/gigatraj)                               | [geos/v1.0.0](https://github.com/GEOS-ESM/gigatraj/releases/tag/geos%2Fv1.0.0)                        |

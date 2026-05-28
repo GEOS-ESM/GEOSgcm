@@ -56,9 +56,9 @@ MAPL:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: GCMv12-rc31
+  tag: v3.0.0
   sparse: ./config/GEOSgcm_GridComp.sparse
-  develop: feature/sdrabenh/gcm_v12
+  develop: develop
 
 geos_state_bias:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSmkiau_GridComp/pyMLINC/@geos_state_bias
