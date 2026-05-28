@@ -31,13 +31,13 @@ GMAO_Shared:
   remote: ../GMAO_Shared.git
   tag: v3.0.0
   sparse: ./config/GMAO_Shared.sparse
-  develop: develop
+  develop: main
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
   tag: v3.0.0
-  develop: develop
+  develop: main
 
 GMAO_perllib:
   local: ./src/Shared/@GMAO_Shared/@GMAO_perllib
