@@ -4,7 +4,7 @@ cmake_policy (SET CMP0054 NEW)
 
 project (
   GEOSgcm
-  VERSION 11.9.1
+  VERSION 11.10.0
   LANGUAGES Fortran CXX C)  # Note - CXX is required for ESMF
 
 if ("${PROJECT_SOURCE_DIR}" STREQUAL "${PROJECT_BINARY_DIR}")
@@ -80,6 +80,20 @@ if (NOT Baselibs_FOUND)
   # Another issue with historical reasons, old/wrong zlib target used in GEOS
   add_library(ZLIB::zlib ALIAS ZLIB::ZLIB)
 
+  find_package(FMS REQUIRED COMPONENTS R4 R8)
+
+  # At the moment, there is no way to know if FMS was built with YAML
+  # so we need to rely on the user to set this option.
+  option(FMS_BUILT_WITH_YAML "FMS was built with YAML" OFF)
+  if (FMS_BUILT_WITH_YAML)
+    # We use the same Findlibyaml.cmake that FMS uses
+    find_package(libyaml REQUIRED)
+    message(STATUS "LIBYAML_INCLUDE_DIR: ${LIBYAML_INCLUDE_DIR}")
+    message(STATUS "LIBYAML_LIBRARIES: ${LIBYAML_LIBRARIES}")
+    target_link_libraries(FMS::fms_r4 INTERFACE ${LIBYAML_LIBRARIES})
+    target_link_libraries(FMS::fms_r8 INTERFACE ${LIBYAML_LIBRARIES})
+  endif ()
+
   find_package(MAPL 2.69 QUIET)
   if (MAPL_FOUND)
     message(STATUS "Found MAPL: ${MAPL_BASE_DIR} (found version \"${MAPL_VERSION})\"")
@@ -89,7 +103,7 @@ endif ()
 
 ecbuild_declare_project()
 
-# Generic DFLAGS
+# Generic definitions
 # These should be relocated and/or eliminated.
 add_definitions(-Dsys${CMAKE_SYSTEM_NAME} -DESMA64)
 add_definitions(${MPI_Fortran_COMPILE_FLAGS})
