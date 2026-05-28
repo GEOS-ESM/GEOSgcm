@@ -33,7 +33,7 @@
 | [gigatraj](https://github.com/GEOS-ESM/gigatraj)                               | [geos/v1.0.0](https://github.com/GEOS-ESM/gigatraj/releases/tag/geos%2Fv1.0.0)                        |
 | [GMI](https://github.com/GEOS-ESM/GMI)                                         | [v1.6.0](https://github.com/GEOS-ESM/GMI/releases/tag/v1.6.0)                                         |
 | [GMAO_perllib](https://github.com/GEOS-ESM/GMAO_perllib)                       | [v1.1.0](https://github.com/GEOS-ESM/GMAO_perllib/releases/tag/v1.1.0)                                |
-| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v2.1.7](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v2.1.7)                                 |
+| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v3.0.0](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v3.0.0)                                 |
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.6.5](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.6.5)                                      |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.3.0](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.3.0)                           |
 | [Icepack](https://github.com/GEOS-ESM/Icepack)                                 | [geos/v0.3.0](https://github.com/GEOS-ESM/Icepack/releases/tag/geos%2Fv0.3.0)                         |

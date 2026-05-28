@@ -29,9 +29,9 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: GCMv12-rc31
+  tag: v3.0.0
   sparse: ./config/GMAO_Shared.sparse
-  develop: feature/sdrabenh/gcm_v12
+  develop: develop
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
