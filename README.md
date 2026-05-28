@@ -22,11 +22,11 @@
 | [GAAS](https://github.com/GEOS-ESM/GAAS)                                       | [v1.1.0](https://github.com/GEOS-ESM/GAAS/releases/tag/v1.1.0)                                        |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)             |
 | [GenCast-GEOS_FP](https://github.com/GEOS-ESM/GenCast_GEOS-FP)                 | [geos/v0.3.1](https://github.com/GEOS-ESM/GenCast_GEOS-FP/releases/tag/geos%2Fv0.3.1)                 |
-| [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v3.9.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v3.9.0)                          |
+| [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v3.10.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v3.10.0)                        |
 | [GEOS_Util](https://github.com/GEOS-ESM/GEOS_Util)                             | [v2.1.17](https://github.com/GEOS-ESM/GEOS_Util/releases/tag/v2.1.17)                                 |
 | [geos_state_bias](https://github.com/GEOS-ESM/geos_state_bias)                 | [geos/v1.0.0](https://github.com/GEOS-ESM/geos_state_bias/releases/tag/geos/v1.0.0)                   |
 | [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v2.0.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v2.0.0)                           |
-| [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v2.3.17](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v2.3.17)                               |
+| [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v3.0.0](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v3.0.0)                                 |
 | [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v2.9.1](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v2.9.1)                            |
 | [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v2.0.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v2.0.0)                      |
 | [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v3.0.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv3.0.0)         |
