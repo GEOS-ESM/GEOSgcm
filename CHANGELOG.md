@@ -2,6 +2,123 @@
 
 ## Unreleased
 
+## [11.10.0] - 2026-05-29
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: NO
+
+### Overview
+* This update is the merge of the **GCM v12 codebase** into the `main` development line, which brings broad changes across physics components, component coupling, diagnostics, CI, and build configuration.
+* **NOTE:** The user's level choice during `gcm_setup` will determine the default physics configuration. The default selection is L72 and will configure the experiment to use most of the same physics options as prior versions of GEOSgcm v11. A non-L72 level selection will trigger new physics options for GEOSgcm. Running the new codebase in the L72 configuration is intended to produce similar results as previous versions of the model, however, it is still non-zero-difference delta.
+
+### Major Code Changes:
+* **Merged the GCM v12 codebase into** `develop` via PR #1436, bringing a major refresh of physics coupling, diagnostics, CI, and build infrastructure.
+* **Expanded moist-physics diagnostics (GFDL MP) and state handling to include rain, snow, and graupel** as explicit 3D and vertically integrated outputs (QRTOT/QSTOT/QGTOT, TQR/TQS/TQG, fill diagnostics, and physics/moist tendency integrals).
+* **Added robust negative-moisture cleanup and fill diagnostics** across multiple stages of the physics sequence, improving stability and budget tracking for water species.
+* **Refactored physics-driver synchronization logic** by separating `SYNCTQ` and `SYNCUV`, improving staged coupling among moist, turbulence, surface, radiation, and chemistry components.
+* **Enhanced turbulence and process diagnostics**, including TKE transport output and per-physics-component wall-clock timing diagnostics.
+* **Substantially updated gravity wave drag (NCAR GWD)** physics and infrastructure, including ACG/MAPL modernization, revised background/orographic forcing options, new diagnostics, and improved thread/config handling.
+* **Modernized moist physics / DSL integration**, especially for **UW, GFDL_1M, and GF2020,** with associated bug fixes and code cleanup.
+* **Improved replay / IAU timing controls**, including support for `REPLAY_ENDDATE` / `REPLAY_ENDTIME` and fixes such as an mkIAU memory leak.
+* **Integrated Python bridge capabilities into AGCM**, enabling new extensibility paths for Python-coupled workflows.
+* **Expanded routing, land, and BC preprocessing support**, including river routing for offline GEOSldas workflows and newer boundary condition/topography packages (Land v12 and 14).
+* Added a new **radar reflectivity module** (`compute_radar_reflectivity.F90`) and expanded `calcdbz.F` to better handle snow, graupel, hail, and liquid-skin behavior.
+* Added **L186 extended model top** in `m_set_eta.F90`.
+* Improved robustness in QSAT interpolation by adding **bounds protection** to saturation table indexing.
+* Migration from older **MAPL2-style usage to MAPL/MAPL3** interfaces.
+* Extensive updates and bufixes for the **plots package**.
+* Updates to `remap_restarts` consistent with the new model development and BCS.
+* **Upgraded CI and portability support**, including newer CircleCI/GitHub Actions workflows, GEOSldas CI, GCC 15 support, and compiler-specific stability workarounds
+
+### Major Changes to Experiment Setup
+
+#### Major changes in `gcm_setup`:
+* Non-L72 level configurations use timesteps that scalre with resolution as opposed to a fixed 450 sec DT
+* Expanded resolution support
+   * Broader cubed-sphere support including higher resolutions and stretched-grid configurations.
+   * More explicit handling of atmospheric/ocean grid combinations.
+* Explicit physics defaults
+   * gcm_setup now **differentiates defaults based on vertical level choice**:
+      * 72 levels keeps defaults consistent with GEOSgcm v11
+      * 91 / 137 / 181 levels shift defaults toward GEOSgcm v12 configuration
+   * The setup script explicitly informs users that higher-level configurations may switch defaults such as:
+      * heartbeat
+      * microphysics
+      * convection
+      * land BCS version
+      * radiation package
+* Coupled/data ocean setup is more flexible with explicit support for:
+   * MOM6 / MIT choices and multiple ocean resolutions
+   * the new MOM6-CICE6 setup uses OM4 tripolar grids with resolutions:
+      * o720 (1/2-deg,  720x576  Tripolar)
+      * o1440 (1/4-deg, 1440x1080  Tripolar) (Default)
+      * o2880 (1/8-deg, 2880x2240 Tripolar)
+   * CICE4 / CICE6
+   * data-ocean cubed-sphere options
+
+#### Major changes in `AGCM.rc.tmpl`
+* support for RRTMGP with explicit data files and switches
+* revised chemistry/convection timestep handling
+* revised replay configuration blocks
+* changes to microphysics options and resource naming
+* updated wet scavenging diagnostic sections
+* cleanup/removal of some older settings
+
+#### Major changes in `HISTORY.AGCM.rc.tmpl`:
+* History output structure was expanded significantly
+* Grid-label handling was revised
+* Many collections now target a coarser climatology grid by default
+* A large number of new diagnostics were added
+* Naming/alias cleanup continued
+* More modern regrid_method usage replaced older style in several templates
+1. New collections:
+   * tavg6_2d_flx_Nx
+   * inst3_2d_asm_Nx
+   * geosgcm_tropvar
+2. Different default output resolution for lat-lon grids:
+   * PC@HIST_IMx@HIST_JM-DC for higher-resolution products
+   * PC@CLIM_IMx@CLIM_JM-DC for coarser-resolution climate suitable for standard plots package
+3. `geosgcm_prog` includes additional variables:
+   * `W`, `EPV`, `VORT`, `DIVG`
+4. `prog.eta` and moisture fields expanded
+5. Surface and severe-weather relevant products added:
+   * 10m wind speed
+   * radar reflectivity 1km, composite, -10 celsius, and echo tops
+   * updraft and storm-relative helicity
+   * surface, mixed, and most unstable CAPE and CIN
+   * more brightness temperature channels
+   * precipitation/snow accumulations in new forecast-oriented collections
+6. Aerosol history improvements:
+   * formatting cleanup
+   * alias/name cleanup
+   * additional wet scavenging diagnostics
+   * more consistent multi-bin naming.
+
+### Fixture Changes:
+* ESMA_cmake  [v3.75.0 => v4.37.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v3.75.0...v4.37.0)
+* ecbuild  [geos/v1.4.0 => geos/v3.13.1](https://github.com/GEOS-ESM/ecbuild/compare/geos/v1.4.0...geos/v3.13.1)
+* NCEP_Shared  [v1.4.0 => v1.5.0](https://github.com/GEOS-ESM/NCEP_Shared/compare/v1.4.0...v1.5.0)
+* GMAO_Shared  [v2.1.7 => v3.0.0](https://github.com/GEOS-ESM/GMAO_Shared/compare/v2.1.7...v3.0.0)
+* GEOS_Util  [v2.1.17 => v3.0.0](https://github.com/GEOS-ESM/GEOS_Util/compare/v2.1.17...v3.0.0)
+* FMS  [**REMOVED: geos/2019.01.02+noaff.11**](https://github.com/GEOS-ESM/FMS/releases/tag/geos%2F2019.01.02%2Bnoaff.11)
+* GEOSgcm_GridComp  [v2.9.1 => v3.0.0](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v2.9.1...v3.0.0)
+* geos_state_bias  [**NEW: geos/v1.0.0**](https://github.com/GEOS-ESM/geos_state_bias/releases/tag/geos%2Fv1.0.0)
+* FVdycoreCubed_GridComp  [v2.16.1 => v3.0.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v2.16.1...v3.0.0)
+* fvdycore  [v2.10.0 => v3.0.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/compare/geos/v2.10.0...geos/v3.0.0)
+* GEOSchem_GridComp  [v1.16.2 => v2.0.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/compare/v1.16.2...v2.0.0)
+* GOCART  [v2.5.4 => v2.6.5](https://github.com/GEOS-ESM/GOCART/compare/v2.5.4...v2.6.5)
+* StratChem  [v1.0.0 => v1.1.0](https://github.com/GEOS-ESM/StratChem/compare/v1.0.0...v1.1.0)
+* MAM  [v1.0.0 => v1.1.0](https://github.com/GEOS-ESM/MAM/compare/v1.0.0...v1.1.0)
+* GAAS  [v1.0.0 => v1.1.0](https://github.com/GEOS-ESM/GAAS/compare/v1.0.0...v1.1.0)
+* GEOS_OceanGridComp  [v2.9.0 => v3.10.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/compare/v2.9.0...v3.10.0)
+* MOM  [5.1.0+1.2.0 => 5.1.0+2.1.0](https://github.com/GEOS-ESM/MOM5/compare/geos/5.1.0+1.2.0...geos/5.1.0+2.1.0)
+* GEOSradiation_GridComp  [v1.12.0 => v2.0.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/compare/v1.12.0...v2.0.0)
+* RRTMGP  [v1.7+1.0.0 => v1.8+1.0.1](https://github.com/GEOS-ESM/rte-rrtmgp/compare/geos/v1.7+1.0.0...geos/v1.8+1.0.1)
+* GEOSgcm_App  [v2.3.17 => v3.0.0](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v2.3.17...v3.0.0)
+* UMD_Etc  [v1.3.0 => v1.5.0](https://github.com/GEOS-ESM/UMD_Etc/compare/v1.3.0...v1.5.0)
+* GenCast_GEOS-FP  [**NEW: geos/v0.3.1**](https://github.com/GEOS-ESM/GenCast_GEOS-FP/releases/tag/geos%2Fv0.3.1)
+
+
 ## [11.9.1] - 2026-05-20
 
 ### Zero-diff to Previous Release: YES
