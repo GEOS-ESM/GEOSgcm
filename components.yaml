@@ -22,22 +22,22 @@ ecbuild:
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
   remote: ../NCEP_Shared.git
-  tag: v1.4.0
+  tag: v1.5.0
   sparse: ./config/NCEP_Shared.sparse
   develop: main
 
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: GCMv12-rc29
+  tag: v3.0.0
   sparse: ./config/GMAO_Shared.sparse
   develop: feature/sdrabenh/gcm_v12
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: GCMv12-rc29
-  develop: feature/sdrabenh/gcm_v12
+  tag: v3.0.0
+  develop: main
 
 GMAO_perllib:
   local: ./src/Shared/@GMAO_Shared/@GMAO_perllib
@@ -50,13 +50,13 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.68.0
-  develop: develop
+  tag: v2.69.1
+  develop: release/v2
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  #tag: GCMv12-rc29
+  #tag: v3.0.0
   branch: feature/v12-remove-mom5
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/sdrabenh/gcm_v12
@@ -76,22 +76,22 @@ GigaTraj:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  #tag: GCMv12-rc25
+  #tag: v3.0.0
   branch: feature/v12-fms2025-useifdef
-  develop: feature/sdrabenh/gcm_v12
+  develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  #tag: GCMv12-rc25
+  #tag: geos/v3.0.0
   branch: feature/v12-fms2025-useifdef
-  develop: feature/sdrabenh/gcm_v12
+  develop: develop
 
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: GCMv12-rc25
-  develop: feature/sdrabenh/gcm_v12
+  tag: v2.0.0
+  develop: develop
 
 HEMCO:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Shared/HEMCO/@HEMCO
@@ -108,8 +108,8 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: GCMv12-rc25
-  develop: feature/sdrabenh/gcm_v12
+  tag: v2.6.5
+  develop: develop
 
 QuickChem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@QuickChem
@@ -126,19 +126,19 @@ RRG:
 TR:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@TR
   remote: ../TR.git
-  tag: v1.2.0
+  tag: v1.2.1
   develop: develop
 
 GMI:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GMI
   remote: ../GMI.git
-  tag: v1.5.1
+  tag: v1.6.0
   develop: develop
 
 StratChem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@StratChem
   remote: ../StratChem.git
-  tag: v1.0.0
+  tag: v1.1.0
   develop: develop
 
 MAM:
@@ -162,19 +162,19 @@ CARMA:
 GAAS:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GAAS
   remote: ../GAAS.git
-  tag: v1.0.0
+  tag: v1.1.0
   develop: develop
 
 ACHEM:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@ACHEM
   remote: ../ACHEM.git
-  tag: v1.0.1
+  tag: v1.1.0
   develop: develop
 
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  #tag: v3.9.0
+  #tag: v3.10.0
   branch: feature/v12-remove-mom5
   develop: develop
 
@@ -215,8 +215,8 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: GCMv12-rc25
-  develop: feature/sdrabenh/gcm_v12
+  tag: v2.0.0
+  develop: develop
 
 RRTMGP:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/GEOS_RadiationShared/@RRTMGP
@@ -240,14 +240,14 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  #tag: GCMv12-rc29
+  #tag: v3.0.0
   branch: feature/v12-remove-mom5
-  develop: feature/sdrabenh/gcm_v12
+  develop: develop
 
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
   remote: ../UMD_Etc.git
-  tag: v1.4.0
+  tag: v1.5.0
   develop: main
 
 CPLFCST_Etc:

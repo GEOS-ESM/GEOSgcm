@@ -99,7 +99,7 @@ endif ()
 
 ecbuild_declare_project()
 
-# Generic DFLAGS
+# Generic definitions
 # These should be relocated and/or eliminated.
 add_definitions(-Dsys${CMAKE_SYSTEM_NAME} -DESMA64)
 add_definitions(${MPI_Fortran_COMPILE_FLAGS})
