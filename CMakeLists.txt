@@ -4,7 +4,7 @@ cmake_policy (SET CMP0054 NEW)
 
 project (
   GEOSgcm
-  VERSION 12.0.0
+  VERSION 11.10.0
   LANGUAGES Fortran CXX C)  # Note - CXX is required for ESMF
 
 if ("${PROJECT_SOURCE_DIR}" STREQUAL "${PROJECT_BINARY_DIR}")
@@ -94,7 +94,11 @@ if (NOT Baselibs_FOUND)
     target_link_libraries(FMS::fms_r8 INTERFACE ${LIBYAML_LIBRARIES})
   endif ()
 
+<<<<<<< HEAD
   find_package(MAPL 2.68 QUIET)
+=======
+  find_package(MAPL 2.69 QUIET)
+>>>>>>> main
   if (MAPL_FOUND)
     message(STATUS "Found MAPL: ${MAPL_BASE_DIR} (found version \"${MAPL_VERSION})\"")
   endif ()
@@ -103,7 +107,7 @@ endif ()
 
 ecbuild_declare_project()
 
-# Generic DFLAGS
+# Generic definitions
 # These should be relocated and/or eliminated.
 add_definitions(-Dsys${CMAKE_SYSTEM_NAME} -DESMA64)
 add_definitions(${MPI_Fortran_COMPILE_FLAGS})
