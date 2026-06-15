@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v5.21.0
+  tag: v5.22.0
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v4.36.0
+  tag: v4.37.0
   develop: develop
 
 ecbuild:
@@ -22,7 +22,7 @@ ecbuild:
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
   remote: ../NCEP_Shared.git
-  tag: v1.4.0
+  tag: v1.5.0
   sparse: ./config/NCEP_Shared.sparse
   develop: main
 
@@ -31,13 +31,13 @@ GMAO_Shared:
   remote: ../GMAO_Shared.git
   branch: release/MAPL-v3
   sparse: ./config/GMAO_Shared.sparse
-  develop: feature/sdrabenh/gcm_v12
+  develop: main
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
   branch: release/MAPL-v3
-  develop: feature/sdrabenh/gcm_v12
+  develop: main
 
 GMAO_perllib:
   local: ./src/Shared/@GMAO_Shared/@GMAO_perllib
@@ -64,7 +64,7 @@ GEOSgcm_GridComp:
   remote: ../GEOSgcm_GridComp.git
   branch: release/MAPL-v3
   sparse: ./config/GEOSgcm_GridComp.sparse
-  develop: feature/sdrabenh/gcm_v12
+  develop: develop
 
 geos_state_bias:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSmkiau_GridComp/pyMLINC/@geos_state_bias
@@ -82,19 +82,19 @@ FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
   branch: release/MAPL-v3
-  develop: feature/sdrabenh/gcm_v12
+  develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
   branch: geos/release/MAPL-v3
-  develop: feature/sdrabenh/gcm_v12
+  develop: geos/develop
 
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
   branch: release/MAPL-v3
-  develop: feature/sdrabenh/gcm_v12
+  develop: develop
 
 HEMCO:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Shared/HEMCO/@HEMCO
@@ -116,7 +116,7 @@ GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
   branch: release/MAPL-v3
-  develop: feature/sdrabenh/gcm_v12
+  develop: develop
 
 QuickChem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@QuickChem
@@ -228,7 +228,7 @@ GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
   branch: release/MAPL-v3
-  develop: feature/sdrabenh/gcm_v12
+  develop: develop
 
 RRTMGP:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/GEOS_RadiationShared/@RRTMGP
@@ -253,7 +253,7 @@ GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
   branch: release/MAPL-v3
-  develop: feature/sdrabenh/gcm_v12
+  develop: develop
 
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc

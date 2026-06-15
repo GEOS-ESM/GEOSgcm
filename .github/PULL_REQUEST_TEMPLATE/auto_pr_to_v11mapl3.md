@@ -1,4 +1,4 @@
-## :memo:  Automatic PR: `main` → `release/MAPL-v3`
+## :memo:  Automatic PR: `main` → `release-v11/MAPL-v3`
 
 ### Description
 

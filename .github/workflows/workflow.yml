@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        compiler: [ifort, gfortran-14, gfortran-15, ifx]
+        compiler: [ifort, gfortran-15, ifx]
         build-type: [Debug]
     uses: GEOS-ESM/CI-workflows/.github/workflows/geosgcm_build_tests.yml@project/geosgcm
     with:
