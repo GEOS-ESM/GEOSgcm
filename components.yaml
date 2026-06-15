@@ -217,13 +217,15 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: v2.0.0
+  branch: feature/merge-latest-main
+  #tag: v2.0.0
   develop: develop
 
 RRTMGP:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/GEOS_RadiationShared/@RRTMGP
   remote: ../rte-rrtmgp.git
-  tag: geos/v1.8+1.0.0
+  branch: feature/merge-latest-main
+  #tag: geos/v1.8+1.0.0
   develop: geos/develop
   sparse: ./config/RRTMGP.sparse
 
@@ -242,7 +244,8 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v3.0.0
+  branch: feature/merge-latest-main
+  #tag: v3.0.0
   develop: develop
 
 UMD_Etc:
