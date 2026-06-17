@@ -28,10 +28,10 @@ NCEP_Shared:
 
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
-  remote: ../GMAO_Shared.git
-  tag: v2.1.2
+  remote: https://github.com/andrew-won-lee/GMAO_Shared.git
+  tag: geos_mlt_v4_merged
   sparse: ./config/GMAO_Shared.sparse
-  develop: main
+  develop: feature/awlee/GEOS_MLT_v4
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
@@ -61,10 +61,10 @@ FMS:
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
-  remote: ../GEOSgcm_GridComp.git
-  tag: v2.7.5
+  remote: https://github.com/Andrew-won-Lee/GEOSgcm_GridComp.git
+  tag: geos_mlt_v4_merged
   sparse: ./config/GEOSgcm_GridComp.sparse
-  develop: develop
+  develop: feature/awlee/GEOS_MLT_v4
 
 GigaTraj:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSgigatraj_GridComp/@GigaTraj
@@ -80,9 +80,9 @@ FVdycoreCubed_GridComp:
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
-  remote: ../GFDL_atmos_cubed_sphere.git
-  tag: geos/v2.9.1
-  develop: geos/develop
+  remote: https://github.com/Andrew-won-Lee/GFDL_atmos_cubed_sphere.git
+  tag: geos_mlt_v4_merged
+  develop: feature/awlee/GEOS_MLT_v4_merged
 
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
@@ -213,9 +213,9 @@ sis2:
 
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
-  remote: ../GEOSradiation_GridComp.git
-  tag: v1.12.0
-  develop: develop
+  remote: https://github.com/andrew-won-lee/GEOSradiation_GridComp.git
+  tag: geos_mlt_v4_merged
+  develop: feature/awlee/GEOS_MLT_v4
 
 RRTMGP:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/GEOS_RadiationShared/@RRTMGP
@@ -238,9 +238,9 @@ umwm:
 
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
-  remote: ../GEOSgcm_App.git
-  tag: v2.3.12
-  develop: develop
+  remote: https://github.com/andrew-won-lee/GEOSgcm_App.git
+  tag: geos_mlt_v4_merged
+  develop: feature/awlee/GEOS_MLT_v4
 
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
