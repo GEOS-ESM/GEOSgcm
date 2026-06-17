@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v5.22.0
+  tag: v6.8.0
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v4.37.0
+  tag: v5.12.0
   develop: develop
 
 ecbuild:
@@ -31,7 +31,7 @@ GMAO_Shared:
   remote: ../GMAO_Shared.git
   tag: v3.0.0
   sparse: ./config/GMAO_Shared.sparse
-  develop: main
+  develop: feature/sdrabenh/gcm_v12
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
@@ -56,9 +56,10 @@ MAPL:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v3.0.0
+  #tag: v3.0.0
+  branch: feature/v12-remove-mom5
   sparse: ./config/GEOSgcm_GridComp.sparse
-  develop: develop
+  develop: feature/sdrabenh/gcm_v12
 
 geos_state_bias:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSmkiau_GridComp/pyMLINC/@geos_state_bias
@@ -75,13 +76,15 @@ GigaTraj:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v3.0.0
+  #tag: v3.0.0
+  branch: feature/v12-fms2025-useifdef
   develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: geos/v3.0.0
+  #tag: geos/v3.0.0
+  branch: feature/v12-fms2025-useifdef
   develop: develop
 
 GEOSchem_GridComp:
@@ -171,14 +174,9 @@ ACHEM:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v3.10.0
+  #tag: v3.10.0
+  branch: feature/v12-remove-mom5
   develop: develop
-
-mom:
-  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM_GEOS5PlugMod/@mom
-  remote: ../MOM5.git
-  tag: geos/5.1.0+2.1.0
-  develop: geos5
 
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
@@ -242,7 +240,8 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v3.0.0
+  #tag: v3.0.0
+  branch: feature/v12-remove-mom5
   develop: develop
 
 UMD_Etc:
