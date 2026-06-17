@@ -16,8 +16,8 @@
 | [CICE](https://github.com/GEOS-ESM/CICE)                                       | [geos/v0.2.0](https://github.com/GEOS-ESM/CICE/releases/tag/geos%2Fv0.2.0)                            |
 | [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                                 |
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v3.13.1](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv3.13.1)                       |
-| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v4.37.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v4.37.0)                                |
-| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v5.22.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v5.22.0)                                  |
+| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v4.40.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v4.40.0)                                |
+| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v5.24.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v5.24.0)                                  |
 | [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v3.0.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v3.0.0)                      |
 | [GAAS](https://github.com/GEOS-ESM/GAAS)                                       | [v1.1.0](https://github.com/GEOS-ESM/GAAS/releases/tag/v1.1.0)                                        |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)             |
