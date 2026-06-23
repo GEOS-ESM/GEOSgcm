@@ -129,10 +129,14 @@ install(
    DESTINATION ${CMAKE_INSTALL_PREFIX}
    )
 
+# Install a runtime manifest describing the installed executable/shared-library payload.
+# This should run late in the install so that bin/, lib/, and etc/ are already populated.
+install(SCRIPT "${ESMA_CMAKE_PATH}/esma_install_manifest.cmake")
+
 # Adds ability to tar source
 include (esma_cpack)
 
-# This installs a tarball of the source code
+# This installs a tarfile of the source code
 # in the installation directory.
 # MUST BE THE LAST CODE IN THIS FILE
 option(INSTALL_SOURCE_TARFILE "Create and install source tarfile" OFF)

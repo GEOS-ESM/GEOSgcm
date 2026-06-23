@@ -11,7 +11,8 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v4.40.0
+  branch: feature/experiment-install
+  #tag: v4.40.0
   develop: develop
 
 ecbuild:
@@ -242,7 +243,8 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v3.0.0
+  branch: feature/experiment-install
+  #tag: v3.0.0
   develop: develop
 
 UMD_Etc:
