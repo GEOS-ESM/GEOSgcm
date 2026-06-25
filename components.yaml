@@ -50,7 +50,7 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: https://github.com/GEOS-ESM/MAPL.git
-  branch: develop
+  hash: fface8fba45522fdaa642e556192bf103b9205e4
   develop: develop
 
 FMS:
