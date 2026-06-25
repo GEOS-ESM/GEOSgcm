@@ -1,6 +1,6 @@
 GEOSgcm:
-fixture: true
-develop: main
+  fixture: true
+  develop: main
 
 env:
   local: ./@env
