@@ -240,7 +240,7 @@ GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: https://github.com/andrew-won-lee/GEOSgcm_App.git
   tag: GEOS_MLT_v4.1m
-  develop: feature/awlee/GEOS_MLT_v4 develop: feature/awlee/GEOS_MLT_v4m 
+  develop: feature/awlee/GEOS_MLT_v4m 
 
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
