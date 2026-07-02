@@ -29,9 +29,12 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v3.0.0
+  # Because my remove-mom5 branch is based on GEOSgcm_GridComp develop, we currently
+  # need to use the main branch of GMAO_Shared
+  branch: main
+  #tag: v3.0.0
   sparse: ./config/GMAO_Shared.sparse
-  develop: feature/sdrabenh/gcm_v12
+  develop: main
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
@@ -59,7 +62,7 @@ GEOSgcm_GridComp:
   #tag: v3.0.0
   branch: feature/v12-remove-mom5
   sparse: ./config/GEOSgcm_GridComp.sparse
-  develop: feature/sdrabenh/gcm_v12
+  develop: develop
 
 geos_state_bias:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSmkiau_GridComp/pyMLINC/@geos_state_bias
