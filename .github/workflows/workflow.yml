@@ -32,6 +32,7 @@ jobs:
       # that have been specifically put in components.yaml for this fixture.
       # We'll need to undo this once we have updated the fixture
       run-mepo-develop: false
+      update-other-branches: false
       baselibs-version: v9.12.0
 
   spack_build:

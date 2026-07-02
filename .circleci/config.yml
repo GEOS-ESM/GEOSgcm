@@ -36,6 +36,9 @@ workflows:
           baselibs_version: *baselibs_version
           repo: GEOSgcm
           persist_workspace: true # Needs to be true to run fv3/gcm experiment, costs extra
+          # Special handling for this branch
+          checkout_if_exists: false
+          mepodevelop: false
 
       # Run AMIP GCM (1 hour, no ExtData)
       - ci/run_gcm:
