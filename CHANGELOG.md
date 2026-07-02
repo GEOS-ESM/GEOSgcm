@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* fixed a bug in icepack having all zero penetrative sw fluxes
+
 ## [11.10.0] - 2026-05-29
 
 ### Zero-diff to Previous Release: NO
