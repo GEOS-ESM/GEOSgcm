@@ -145,7 +145,7 @@ GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
 # tag: v1.8.0+CFv2.0.0
-  hash: edfc4594f6bb1205badc1b79b90be268f02eecd0
+  hash: 9ac86addcf165b718d8394ead5aa241903f5c822
   develop: develop
 
 UMD_Etc:
