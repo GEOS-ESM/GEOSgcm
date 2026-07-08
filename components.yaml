@@ -53,7 +53,7 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.69.1
+  tag: v2.70.0
   develop: release/v2
 
 GEOSgcm_GridComp:
