@@ -75,13 +75,13 @@ GigaTraj:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: https://github.com/Andrew-won-Lee/FVdycoreCubed_GridComp.git
-  tag: GEOS_MLT_v4.3m
+  tag: GEOS_MLT_v4.4m
   develop: feature/awlee/GEOS_MLT_v4m
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: https://github.com/Andrew-won-Lee/GFDL_atmos_cubed_sphere.git
-  tag: GEOS_MLT_v4.3m
+  tag: GEOS_MLT_v4.4m
   develop: feature/awlee/GEOS_MLT_v4m
 
 GEOSchem_GridComp:
