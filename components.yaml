@@ -11,8 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  branch: feature/experiment-install
-  #tag: v4.40.0
+  tag: v4.41.0
   develop: develop
 
 ecbuild:
