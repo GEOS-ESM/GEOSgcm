@@ -4,6 +4,56 @@
 
 * fixed a bug in icepack having all zero penetrative sw fluxes
 
+## [11.10.1] - 2026-07-16
+
+### Zero-diff to Previous Release: YES for default L72, otherwise NO
+### Restart Changes: NO
+
+### V12 Overview of Changes (non-L72 physics)
+
+* **GEOSgcm_GridComp**
+  * Added new exported diagnostic `WSPD_STABLE300M` (max wind in stable/cold lowest 300 m), wired through dynamics → physics → GWD.
+  * Major NCAR GWD update: new `NCAR_ET_USE_SPEED` option and combined frontal forcing logic using both `DQCDT_LS` + `WSPD_STABLE300M`; background stress scaling logic changed.
+  * Moist physics refactor centralizing radar diagnostics into shared `compute_radar_diagnostics(...)`; removed duplicated DBZ/REFL blocks from multiple microphysics interfaces.
+  * Extensive GF/UW/MP tuning + OpenMP/thread-safety/performance work (threadprivate state, fused loops, revised timescale/entrainment defaults).
+  * Added optional ISSM land-ice coupling path (GEOSissm_GridComp, CMake conditional build, LandIce exports/internal state integration, alarms/restart plumbing).
+  
+* **FVdycoreCubed_GridComp**
+  * Added new export `WSPD_STABLE300M` and computation in dycore run loop (stable/cold-surface 300 m wind max diagnostic).
+  * Added new public gradient utilities `fv_getGradT_2D` and `fv_getGradT_3D` in `FV_StateMod` (with halo updates and OpenMP loops).
+  * Changes with near-surface height handling (`zle` AGL adjustment placement).
+
+* **GEOSgcm_App**
+  * Set `HGT_SURFACE: 0.0` in AGCM.rc.tmpl.
+  * Added @FV_RUN_HYDROSTATIC token into `fvcore_layout.rc` to run FV hydrostatic for non-L72 and C720 or lower.
+
+### Other Changes
+
+* **GMAO_Shared**
+  * `compute_radar_reflectivity.F90`: changed hydrometeor inputs from `INTENT(INOUT)` to `INTENT(IN)` and replaced in-place negative clipping with local `MAX(0.0, ...)` handling.
+  * Added `--no-start-time` flag to `GMAO_etc/pyrob` to suppress start timestamp in frequency output.
+
+* **GEOS_Util**
+  * Expanded MOM6 restart remapping support with updates to available grids.
+  * Enhanced `stats.py` to handle multi-timestep analysis files and compute `Q2M` from `D2M` + `PS`.
+  * Improved stats/template flexibility to support arbitrary datetime tags/shifts (including minute/second granularity) plus an expid tag, with padded `stats.run` time/memory defaults.
+  * Added/updated plotting outputs, including new `geosgcm_prog` exports and IMERG precipitation plots (plus MAC-LWP RC location updates).
+  * Delivered multiple plotting correctness fixes (e.g., HadCRU treated as `T2M`, qname_not_found titles, `SPEED/UU10M` verification RCs) and additional `stats/plots` script fixes.
+  * Included platform-related updates for polar/noexec environments.
+
+### Fixture Changes:
+* ESMA_env  [v5.22.0 => v5.25.0](https://github.com/GEOS-ESM/ESMA_env/compare/v5.22.0...v5.25.0)
+* ESMA_cmake  [v4.37.0 => v4.41.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v4.37.0...v4.41.0)
+* MAPL  [v2.69.1 => v2.70.0](https://github.com/GEOS-ESM/MAPL/compare/v2.69.1...v2.70.0)
+* GMAO_Shared  [v3.0.0 => v3.0.1](https://github.com/GEOS-ESM/GMAO_Shared/compare/v3.0.0...v3.0.1)
+* GEOS_Util  [v3.0.0 => v3.0.1](https://github.com/GEOS-ESM/GEOS_Util/compare/v3.0.0...v3.0.1)
+* GEOSgcm_GridComp  [v3.0.0 => v3.0.1](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v3.0.0...v3.0.1)
+* FVdycoreCubed_GridComp  [v3.0.0 => v3.0.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v3.0.0...v3.0.1)
+* GEOSgcm_App  [v3.0.0 => v3.0.1](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v3.0.0...v3.0.1)
+* icepack  [v0.3.0 => v0.4.0](https://github.com/GEOS-ESM/Icepack/compare/geos/v0.3.0...geos/v0.4.0)
+* Topo  [v2.1.0 => v2.2.1](https://github.com/GEOS-ESM/Topo/compare/geos/v2.1.0...geos/v2.2.1)
+
+
 ## [11.10.0] - 2026-05-29
 
 ### Zero-diff to Previous Release: NO
