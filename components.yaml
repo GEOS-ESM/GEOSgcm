@@ -75,7 +75,7 @@ GigaTraj:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: https://github.com/Andrew-won-Lee/FVdycoreCubed_GridComp.git
-  tag: GEOS_MLT_v4.4m
+  tag: GEOS_MLT_v4.5m
   develop: feature/awlee/GEOS_MLT_v4m
 
 fvdycore:
