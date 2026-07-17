@@ -214,7 +214,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: https://github.com/andrew-won-lee/GEOSradiation_GridComp.git
-  tag: GEOS_MLT_v4.4m
+  tag: GEOS_MLT_v4.5m
   develop: feature/awlee/GEOS_MLT_v4m 
 
 RRTMGP:
@@ -239,7 +239,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: https://github.com/andrew-won-lee/GEOSgcm_App.git
-  tag: GEOS_MLT_v4.1m
+  tag: GEOS_MLT_v4.5m
   develop: feature/awlee/GEOS_MLT_v4m 
 
 UMD_Etc:
