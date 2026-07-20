@@ -62,7 +62,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: https://github.com/Andrew-won-Lee/GEOSgcm_GridComp.git
-  tag: GEOS_MLT_v4.1m
+  tag: GEOS_MLT_v4.5m
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/awlee/GEOS_MLT_v4m 
 
