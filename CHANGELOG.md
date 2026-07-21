@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+
+## 2026-07-20
+* Update default configuration (HISTORY, GEOS-Chem setup) --  Tag v10.23.0+CFv2.0.1
+
 ## 2024-12-23
 * Updates to build scripts and experiment setup scripts
 
