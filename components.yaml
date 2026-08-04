@@ -56,7 +56,8 @@ MAPL:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v3.0.0
+  #tag: v3.0.0
+  branch: feature/vshah5/CFv2_merge
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -100,7 +101,8 @@ HEMCO:
 geos-chem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/GEOSCHEMchem_GridComp/@geos-chem
   remote: ../geos-chem.git
-  tag: geos/v14.0.0+CFv2.0.1
+  #tag: geos/v14.0.0+CFv2.0.1
+  branch: feature/vshah/updates_for_convective_scavenging_in_MOIST
   develop: geos/develop
 
 GOCART:
