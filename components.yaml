@@ -171,7 +171,8 @@ ACHEM:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v3.10.0
+  #tag: v3.10.0
+  branch: feature/add-mom6-stoch
   develop: develop
 
 mom:
@@ -180,10 +181,17 @@ mom:
   tag: geos/5.1.0+2.1.0
   develop: geos5
 
+stochastic_physics:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@stochastic_physics
+  remote: ../stochastic_physics.git
+  tag: geos/v1.0.0
+  branch: geos/master
+  develop: geos/master
+
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
-  tag: geos/v3.8
+  tag: geos/v3.9
   develop: geos/main
   recurse_submodules: true
 
