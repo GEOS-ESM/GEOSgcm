@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: https://github.com/GEOS-ESM/GMAO_Shared.git
-  hash: 7bbe31e40d18b2dea6f51266da4b9e346daa1f9e
+  branch: feature/awlee/geos-mlt
   sparse: ./config/GMAO_Shared.sparse
   develop: feature/awlee/geos-mlt
 
@@ -62,7 +62,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: https://github.com/GEOS-ESM/GEOSgcm_GridComp.git
-  hash: d304ba573217ec7aa7826e9bc4796a61e0f05b4e
+  branch: feature/awlee/geos-mlt
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: feature/awlee/geos-mlt
 
@@ -75,13 +75,13 @@ GigaTraj:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: https://github.com/GEOS-ESM/FVdycoreCubed_GridComp.git
-  hash: 3ba736cfb6721ec008d3e38e63a527a304206eda
+  branch: feature/awlee/geos-mlt
   develop: feature/awlee/geos-mlt
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere.git
-  hash: 3da3868746801a3d49d34ce4bef548e60659ebca
+  branch: feature/awlee/geos-mlt
   develop: feature/awlee/geos-mlt
 
 GEOSchem_GridComp:
@@ -214,7 +214,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: https://github.com/GEOS-ESM/GEOSradiation_GridComp.git
-  hash: e04a858d278effe835233a2fa496d24c4a9081f0
+  branch: feature/awlee/geos-mlt
   develop: feature/awlee/geos-mlt
 
 RRTMGP:
@@ -239,7 +239,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: https://github.com/GEOS-ESM/GEOSgcm_App.git
-  hash: 8928eaac8a0e0626f905948c0d5c0170085825ed
+  branch: feature/awlee/geos-mlt
   develop: feature/awlee/geos-mlt
 
 UMD_Etc:
