@@ -28,10 +28,10 @@ NCEP_Shared:
 
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
-  remote: https://github.com/andrew-won-lee/GMAO_Shared.git
-  tag: GEOS_MLT_v4.1m
+  remote: https://github.com/GEOS-ESM/GMAO_Shared.git
+  hash: 7bbe31e40d18b2dea6f51266da4b9e346daa1f9e
   sparse: ./config/GMAO_Shared.sparse
-  develop: feature/awlee/GEOS_MLT_v4m 
+  develop: feature/awlee/geos-mlt
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
@@ -61,35 +61,35 @@ FMS:
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
-  remote: https://github.com/Andrew-won-Lee/GEOSgcm_GridComp.git
-  tag: GEOS_MLT_v4.5m
+  remote: https://github.com/GEOS-ESM/GEOSgcm_GridComp.git
+  hash: d304ba573217ec7aa7826e9bc4796a61e0f05b4e
   sparse: ./config/GEOSgcm_GridComp.sparse
-  develop: feature/awlee/GEOS_MLT_v4m 
+  develop: feature/awlee/geos-mlt
 
 GigaTraj:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSgigatraj_GridComp/@GigaTraj
   remote: https://github.com/GEOS-ESM/gigatraj.git
   tag: geos/v1.0.0
   develop: develop-GSFC
-  
+
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
-  remote: https://github.com/Andrew-won-Lee/FVdycoreCubed_GridComp.git
-  tag: GEOS_MLT_v4.6m
-  develop: feature/awlee/GEOS_MLT_v4m
+  remote: https://github.com/GEOS-ESM/FVdycoreCubed_GridComp.git
+  hash: 3ba736cfb6721ec008d3e38e63a527a304206eda
+  develop: feature/awlee/geos-mlt
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
-  remote: https://github.com/Andrew-won-Lee/GFDL_atmos_cubed_sphere.git
-  tag: GEOS_MLT_v4.6m
-  develop: feature/awlee/GEOS_MLT_v4m
+  remote: https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere.git
+  hash: 3da3868746801a3d49d34ce4bef548e60659ebca
+  develop: feature/awlee/geos-mlt
 
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: https://github.com/GEOS-ESM/GEOSchem_GridComp.git
   tag: v1.16.0
   develop: develop
-  
+
 HEMCO:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/Shared/HEMCO/@HEMCO
   remote: https://github.com/GEOS-ESM/HEMCO.git
@@ -107,7 +107,7 @@ GOCART:
   remote: https://github.com/GEOS-ESM/GOCART.git
   tag: v2.3.0
   develop: develop
-  
+
 QuickChem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@QuickChem
   remote: https://github.com/GEOS-ESM/QuickChem.git
@@ -213,9 +213,9 @@ sis2:
 
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
-  remote: https://github.com/andrew-won-lee/GEOSradiation_GridComp.git
-  tag: GEOS_MLT_v4.6m
-  develop: feature/awlee/GEOS_MLT_v4m 
+  remote: https://github.com/GEOS-ESM/GEOSradiation_GridComp.git
+  hash: e04a858d278effe835233a2fa496d24c4a9081f0
+  develop: feature/awlee/geos-mlt
 
 RRTMGP:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/GEOS_RadiationShared/@RRTMGP
@@ -238,9 +238,9 @@ umwm:
 
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
-  remote: https://github.com/andrew-won-lee/GEOSgcm_App.git
-  tag: GEOS_MLT_v4.6m
-  develop: feature/awlee/GEOS_MLT_v4m 
+  remote: https://github.com/GEOS-ESM/GEOSgcm_App.git
+  hash: 8928eaac8a0e0626f905948c0d5c0170085825ed
+  develop: feature/awlee/geos-mlt
 
 UMD_Etc:
   local: ./src/Applications/@UMD_Etc
@@ -253,4 +253,3 @@ CPLFCST_Etc:
   remote: https://github.com/GEOS-ESM/CPLFCST_Etc.git
   tag: v1.0.1
   develop: main
-
