@@ -185,7 +185,6 @@ stochastic_physics:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@stochastic_physics
   remote: ../stochastic_physics.git
   tag: geos/v1.0.0
-  branch: geos/master
   develop: geos/master
 
 mom6:
