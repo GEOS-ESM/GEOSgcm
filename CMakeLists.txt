@@ -46,61 +46,6 @@ find_package(MPI)
 
 include (esma)
 
-# Add CMake for when not using Baselibs
-if (NOT Baselibs_FOUND)
-
-  find_package(NetCDF REQUIRED C Fortran)
-  add_definitions(-DHAS_NETCDF4)
-  add_definitions(-DHAS_NETCDF3)
-  add_definitions(-DNETCDF_NEED_NF_MPIIO)
-  add_definitions(-DHAS_NETCDF3)
-
-  find_package(HDF5 REQUIRED)
-  if(HDF5_IS_PARALLEL)
-     add_definitions(-DH5_HAVE_PARALLEL)
-  endif()
-
-  if (NOT TARGET ESMF::ESMF)
-    find_package(ESMF 8.6.1 MODULE REQUIRED)
-    target_link_libraries(ESMF::ESMF INTERFACE MPI::MPI_Fortran)
-
-    # GEOS uses lowercase target due to historical reasons but
-    # the latest FindESMF.cmake file from ESMF produces an ESMF::ESMF target.
-    if (NOT TARGET esmf)
-      add_library(esmf ALIAS ESMF::ESMF)
-    endif ()
-    if (NOT TARGET ESMF)
-      add_library(ESMF ALIAS ESMF::ESMF)
-    endif ()
-  endif ()
-
-  find_package(GFTL_SHARED REQUIRED)
-
-  find_package(ZLIB REQUIRED)
-  # Another issue with historical reasons, old/wrong zlib target used in GEOS
-  add_library(ZLIB::zlib ALIAS ZLIB::ZLIB)
-
-  find_package(FMS REQUIRED COMPONENTS R4 R8)
-
-  # At the moment, there is no way to know if FMS was built with YAML
-  # so we need to rely on the user to set this option.
-  option(FMS_BUILT_WITH_YAML "FMS was built with YAML" OFF)
-  if (FMS_BUILT_WITH_YAML)
-    # We use the same Findlibyaml.cmake that FMS uses
-    find_package(libyaml REQUIRED)
-    message(STATUS "LIBYAML_INCLUDE_DIR: ${LIBYAML_INCLUDE_DIR}")
-    message(STATUS "LIBYAML_LIBRARIES: ${LIBYAML_LIBRARIES}")
-    target_link_libraries(FMS::fms_r4 INTERFACE ${LIBYAML_LIBRARIES})
-    target_link_libraries(FMS::fms_r8 INTERFACE ${LIBYAML_LIBRARIES})
-  endif ()
-
-  find_package(MAPL 2.70 QUIET)
-  if (MAPL_FOUND)
-    message(STATUS "Found MAPL: ${MAPL_BASE_DIR} (found version \"${MAPL_VERSION})\"")
-  endif ()
-
-endif ()
-
 ecbuild_declare_project()
 
 # Generic definitions
