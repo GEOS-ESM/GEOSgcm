@@ -45,8 +45,10 @@ GMAO_perllib:
   tag: v1.1.0
   develop: main
 
-# When updating the MAPL version, also update the MAPL version in the
-# CMakeLists.txt file for non-Baselibs builds
+# When updating the MAPL version, if it's a breaking
+# change, remember to update the MAPL version in
+# ESMA_cmake/external_libraries/ConfigureExternalLibraries.cmake
+# for MAPL-as-a-library builds
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
@@ -183,7 +185,7 @@ mom:
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
   remote: ../MOM6.git
-  tag: geos/v3.8
+  tag: geos/v3.9
   develop: geos/main
   recurse_submodules: true
 
