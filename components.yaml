@@ -56,7 +56,7 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-! tag: v2.7.0
+# tag: v2.7.0
   hash: 100d5dc28fcc18bc0aab1f764dcf90afddc7d848
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
