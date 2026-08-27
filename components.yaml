@@ -56,7 +56,8 @@ FMS:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v2.7.0
+! tag: v2.7.0
+  hash: 100d5dc28fcc18bc0aab1f764dcf90afddc7d848
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -81,7 +82,8 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v1.15.0
+# tag: v1.15.0
+  hash: 263f9deaf069281af12b27fd6698309b68181159
   develop: develop
 
 HEMCO:
