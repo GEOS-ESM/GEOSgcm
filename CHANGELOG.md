@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+### Added
+
+* Registered `LISF` (NASA-LIS/LISF, `v7.8.0-public`) as a mepo component, vendored under `GEOSlis_GridComp/@LISF`.
 
 ## [11.10.1] - 2026-07-16
 
