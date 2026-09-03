@@ -2,6 +2,59 @@
 
 ## Unreleased
 
+## [11.10.2] - 2026-09-03
+
+### Zero-diff to Previous Release: YES for default L72
+### Restart Changes: NO
+
+### Overview of Changes
+
+* **Physics / parameterization changes**
+  * Added a new climatological precipitation rescaling option for M21C
+  * Updated SHOCMF tuning with new exports: LOBUKHOV and EDMF_DMF
+  * Updated MGB-related changes for coupled configuration
+  * DSL updates including pyMoist v11.8.1, Aerosol Activation code, etc.
+
+* **Routing / land model updates**
+  * Added/adjusted landice and routing grid-comp ensemble averaging support
+  * Enabled River Routing (GEOSroute_GridComp) for Land in AMIP runs
+  * Added fixes for NAG compiler support in GEOSldas
+
+* **Landice / lake support**
+  * Enabled offline Lake GC use
+  * Added analytical derivatives of exchange coefficients for Lake and Landice
+  * Made ISSM GridComp naming consistent when GEOSldas has more than one ensemble member
+
+* **Boundary conditions / preprocessing**
+  * Incorporated lake information into the GEOS BCS workflow
+  * Minor bug fixes for make_bcs (including `do_schmidt` init and dateline handling)
+  * Added `ice_in` files for 1/2-degree and 1/8-degree ocean configurations for mom6-cice6
+
+* **Model/code cleanup**
+  * Removed obsolete ARIES and LatLon dynamics GCs
+  * Cleaned up obsolete `regrid.pl`-related programs
+  * Fixed various bugs in diagnostics and standard-Fortran compatibility
+  * Bugfix to corrected typo ("roue" → "route") and improved file naming in `remap_restarts`
+
+* **Plotting changes**
+  * Added instantaneous variables to `HISTORY.AGCM.rc.tmpl` for expanded verification
+  * Added `tavg1_2d_prcp` history collection to facilitate new diurnal precipitation plots
+  * Added new diurnal precip plots and python residual plots; optimized plot ordering for increased throughput
+  * Applied a -1 factor and corrected titles for aerosol scavenging (*SV) plots
+  * Corrected `genplot.gs` to avoid "qname_not_found" in plot titles
+
+### Fixture Changes:
+* ESMA_env  [v5.25.0 => v5.25.2](https://github.com/GEOS-ESM/ESMA_env/compare/v5.25.0...v5.25.2)
+* ESMA_cmake  [v4.41.0 => v4.44.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v4.41.0...v4.44.0)
+* ecbuild  [geos/v3.13.1 => geos/v3.15.2](https://github.com/GEOS-ESM/ecbuild/compare/geos/v3.13.1...geos/v3.15.2)
+* MAPL  [v2.70.0 => v2.71.0](https://github.com/GEOS-ESM/MAPL/compare/v2.70.0...v2.71.0)
+* GEOS_Util  [v3.0.1 => v3.0.2](https://github.com/GEOS-ESM/GEOS_Util/compare/v3.0.1...v3.0.2)
+* GEOSgcm_GridComp  [v3.0.1 => v3.0.2](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v3.0.1...v3.0.2)
+* GOCART  [v2.6.5 => v2.6.6](https://github.com/GEOS-ESM/GOCART/compare/v2.6.5...v2.6.6)
+* GEOS_OceanGridComp  [v3.10.0 => v3.11.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/compare/v3.10.0...v3.11.0)
+* MOM6  [geos/v3.8 => geos/v3.9](https://github.com/GEOS-ESM/MOM6/compare/geos/v3.8...geos/v3.9)
+* GEOSgcm_App  [v3.0.1 => v3.0.2](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v3.0.1...v3.0.2)
+
 
 ## [11.10.1] - 2026-07-16
 

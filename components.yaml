@@ -30,14 +30,14 @@ GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
   branch: feature/stoch-quad-precision-fallback
-  #tag: v3.0.1
+  #tag: v3.0.2
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: v3.0.1
+  tag: v3.0.2
   develop: main
 
 GMAO_perllib:
@@ -59,7 +59,7 @@ MAPL:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  #tag: v3.0.1
+  #tag: v3.0.2
   branch: feature/v12-remove-mom5
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
@@ -243,7 +243,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  #tag: v3.0.1
+  #tag: v3.0.2
   branch: feature/v12-remove-mom5
   develop: develop
 
