@@ -177,7 +177,7 @@ ACHEM:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  #tag: v3.11.0
+  #tag: v3.12.0
   branch: feature/v12-remove-mom5
   develop: develop
 
