@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v5.25.2
+  tag: v5.26.0
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v4.44.0
+  tag: v4.45.0
   develop: develop
 
 ecbuild:
@@ -58,7 +58,7 @@ MAPL:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v3.0.2
+  branch: feature/pchakrab/integrate-lis-into-v11
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -272,3 +272,8 @@ GenCast_GEOS-FP:
   tag: geos/v0.3.1
   develop: geos/main
 
+LISF:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/LIS_GridComp/@LISF
+  remote: https://github.com/NASA-LIS/LISF.git
+  tag: v7.8.0-public
+  develop: master
