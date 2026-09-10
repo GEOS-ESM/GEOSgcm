@@ -58,7 +58,7 @@ MAPL:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v3.0.1
+  branch: feature/pchakrab/integrate-lis-into-v11
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
