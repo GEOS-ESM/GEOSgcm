@@ -173,7 +173,7 @@ ACHEM:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v3.12.0
+  tag: v3.13.0
   develop: develop
 
 mom:
@@ -181,6 +181,12 @@ mom:
   remote: ../MOM5.git
   tag: geos/5.1.0+2.1.0
   develop: geos5
+
+stochastic_physics:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@stochastic_physics
+  remote: ../stochastic_physics.git
+  tag: geos/v1.0.0
+  develop: geos/master
 
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
