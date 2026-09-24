@@ -11,13 +11,13 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v4.41.0
+  tag: v4.44.0
   develop: develop
 
 ecbuild:
   local: ./@cmake/@ecbuild
   remote: ../ecbuild.git
-  tag: geos/v3.13.1
+  tag: geos/v3.15.2
 
 NCEP_Shared:
   local: ./src/Shared/@NCEP_Shared
@@ -29,14 +29,14 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v3.0.1
+  tag: v3.0.2
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: v3.0.1
+  tag: v3.0.2
   develop: main
 
 GMAO_perllib:
@@ -45,18 +45,20 @@ GMAO_perllib:
   tag: v1.1.0
   develop: main
 
-# When updating the MAPL version, also update the MAPL version in the
-# CMakeLists.txt file for non-Baselibs builds
+# When updating the MAPL version, if it's a breaking
+# change, remember to update the MAPL version in
+# ESMA_cmake/external_libraries/ConfigureExternalLibraries.cmake
+# for MAPL-as-a-library builds
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.70.0
+  tag: v2.71.0
   develop: release/v2
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: v3.0.1
+  tag: v3.0.2
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -105,7 +107,7 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: v2.6.5
+  tag: v2.6.6
   develop: develop
 
 QuickChem:
@@ -171,7 +173,7 @@ ACHEM:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  #tag: v3.10.0
+  #tag: v3.12.0
   branch: feature/add-mom6-stoch
   develop: develop
 
@@ -249,7 +251,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v3.0.1
+  tag: v3.0.2
   develop: develop
 
 UMD_Etc:
