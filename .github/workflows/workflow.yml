@@ -42,4 +42,5 @@ jobs:
       BUILDCACHE_TOKEN: ${{ secrets.BUILDCACHE_TOKEN }}
     with:
       load-fms: true
+      fms-version: '2026'
 
