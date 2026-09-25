@@ -42,6 +42,7 @@ endforeach ()
 # We need to find MPI before we go into esma
 # for the MPI stack detection to work
 set(MPI_DETERMINE_LIBRARY_VERSION TRUE)
+
 find_package(MPI)
 
 include (esma)
