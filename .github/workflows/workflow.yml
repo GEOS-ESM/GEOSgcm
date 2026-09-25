@@ -43,4 +43,6 @@ jobs:
     with:
       load-fms: true
       fms-version: '2026'
+      run-mepo-develop: false
+      update-other-branches: false
 
