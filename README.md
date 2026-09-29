@@ -22,7 +22,7 @@
 | [GAAS](https://github.com/GEOS-ESM/GAAS)                                       | [v1.1.0](https://github.com/GEOS-ESM/GAAS/releases/tag/v1.1.0)                                        |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)             |
 | [GenCast-GEOS_FP](https://github.com/GEOS-ESM/GenCast_GEOS-FP)                 | [geos/v0.3.1](https://github.com/GEOS-ESM/GenCast_GEOS-FP/releases/tag/geos%2Fv0.3.1)                 |
-| [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v3.12.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v3.12.0)                        |
+| [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v3.13.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v3.13.0)                        |
 | [GEOS_Util](https://github.com/GEOS-ESM/GEOS_Util)                             | [v3.0.2](https://github.com/GEOS-ESM/GEOS_Util/releases/tag/v3.0.2)                                   |
 | [geos_state_bias](https://github.com/GEOS-ESM/geos_state_bias)                 | [geos/v1.0.0](https://github.com/GEOS-ESM/geos_state_bias/releases/tag/geos/v1.0.0)                   |
 | [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v2.0.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v2.0.0)                           |
@@ -49,6 +49,7 @@
 | [RRTMGP](https://github.com/GEOS-ESM/rte-rrtmgp)                               | [geos/v1.7+1.0.0](https://github.com/GEOS-ESM/rte-rrtmgp/releases/tag/geos%2Fv1.7%2B1.0.0)            |
 | [SIS2](https://github.com/GEOS-ESM/SIS2)                                       | [geos/v0.0.1](https://github.com/GEOS-ESM/SIS2/releases/tag/geos%2Fv0.0.1)                            |
 | [StratChem](https://github.com/GEOS-ESM/StratChem)                             | [v1.1.0](https://github.com/GEOS-ESM/StratChem/releases/tag/v1.1.0)                                   |
+| [stochastic_physics](https://github.com/GEOS-ESM/stochastic_physics)           | [geos/v1.0.0](https://github.com/GEOS-ESM/stochastic_physics/releases/tag/geos%2Fv1.0.0)              |
 | [Topo](https://github.com/GEOS-ESM/Topo)                                       | [geos/v2.2.1](https://github.com/GEOS-ESM/Topo/releases/tag/geos%2Fv2.2.1)                            |
 | [TR](https://github.com/GEOS-ESM/TR)                                           | [v1.2.1](https://github.com/GEOS-ESM/TR/releases/tag/v1.2.1)                                          |
 | [UMD_Etc](https://github.com/GEOS-ESM/UMD_Etc)                                 | [v1.5.0](https://github.com/GEOS-ESM/UMD_Etc/releases/tag/v1.5.0)                                     |
