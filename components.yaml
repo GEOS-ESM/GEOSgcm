@@ -56,7 +56,7 @@ MAPL:
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
-  tag: GEOSgcm_GridComp_v3.0.0+CFv2.0.2
+  tag: GEOSgcm_GridComp_v3.0.0+CFv2.0.3
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -87,7 +87,7 @@ fvdycore:
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: GEOSchem_GridComp_v2.0.0+CFv2.0.2
+  tag: GEOSchem_GridComp_v2.0.0+CFv2.0.3
   develop: develop
 
 HEMCO:
@@ -99,7 +99,7 @@ HEMCO:
 geos-chem:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/GEOSCHEMchem_GridComp/@geos-chem
   remote: ../geos-chem.git
-  tag: geos-chem_v14.0.0+CFv2.0.2
+  tag: geos-chem_v14.0.0+CFv2.0.3
   develop: geos/develop
 
 GOCART:
@@ -242,7 +242,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: GEOSgcm_App_v3.0.0+CFv2.0.2_r1
+  tag: GEOSgcm_App_v3.0.0+CFv2.0.3
   develop: develop
 
 UMD_Etc:
