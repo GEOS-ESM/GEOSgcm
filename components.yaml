@@ -275,5 +275,6 @@ GenCast_GEOS-FP:
 LISF:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/LIS_GridComp/@LISF
   remote: https://github.com/NASA-LIS/LISF.git
-  tag: v7.8.0-public
+  branch: master
   develop: master
+  recurse_submodules: true
