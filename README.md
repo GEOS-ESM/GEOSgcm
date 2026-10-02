@@ -18,7 +18,7 @@
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v3.15.2](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv3.15.2)                       |
 | [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v4.51.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v4.51.0)                                |
 | [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v5.26.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v5.26.0)                                  |
-| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v3.0.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v3.0.1)                      |
+| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v3.1.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v3.1.0)                      |
 | [GAAS](https://github.com/GEOS-ESM/GAAS)                                       | [v1.1.0](https://github.com/GEOS-ESM/GAAS/releases/tag/v1.1.0)                                        |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)             |
 | [GenCast-GEOS_FP](https://github.com/GEOS-ESM/GenCast_GEOS-FP)                 | [geos/v0.3.1](https://github.com/GEOS-ESM/GenCast_GEOS-FP/releases/tag/geos%2Fv0.3.1)                 |
@@ -28,8 +28,8 @@
 | [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v2.1.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v2.1.0)                           |
 | [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v3.0.2](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v3.0.2)                                 |
 | [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v3.0.2](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v3.0.2)                            |
-| [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v2.0.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v2.0.0)                      |
-| [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v3.0.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv3.0.0)         |
+| [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v2.1.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v2.1.0)                      |
+| [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v3.1.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv3.1.0)         |
 | [gigatraj](https://github.com/GEOS-ESM/gigatraj)                               | [geos/v1.0.0](https://github.com/GEOS-ESM/gigatraj/releases/tag/geos%2Fv1.0.0)                        |
 | [GMI](https://github.com/GEOS-ESM/GMI)                                         | [v1.6.0](https://github.com/GEOS-ESM/GMI/releases/tag/v1.6.0)                                         |
 | [GMAO_perllib](https://github.com/GEOS-ESM/GMAO_perllib)                       | [v1.1.0](https://github.com/GEOS-ESM/GMAO_perllib/releases/tag/v1.1.0)                                |
