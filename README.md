@@ -23,7 +23,7 @@
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)             |
 | [GenCast-GEOS_FP](https://github.com/GEOS-ESM/GenCast_GEOS-FP)                 | [geos/v0.3.1](https://github.com/GEOS-ESM/GenCast_GEOS-FP/releases/tag/geos%2Fv0.3.1)                 |
 | [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v3.13.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v3.13.0)                        |
-| [GEOS_Util](https://github.com/GEOS-ESM/GEOS_Util)                             | [v3.0.2](https://github.com/GEOS-ESM/GEOS_Util/releases/tag/v3.0.2)                                   |
+| [GEOS_Util](https://github.com/GEOS-ESM/GEOS_Util)                             | [v3.0.4](https://github.com/GEOS-ESM/GEOS_Util/releases/tag/v3.0.4)                                   |
 | [geos_state_bias](https://github.com/GEOS-ESM/geos_state_bias)                 | [geos/v1.0.0](https://github.com/GEOS-ESM/geos_state_bias/releases/tag/geos/v1.0.0)                   |
 | [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v2.1.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v2.1.0)                           |
 | [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v3.0.2](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v3.0.2)                                 |
@@ -33,7 +33,7 @@
 | [gigatraj](https://github.com/GEOS-ESM/gigatraj)                               | [geos/v1.0.0](https://github.com/GEOS-ESM/gigatraj/releases/tag/geos%2Fv1.0.0)                        |
 | [GMI](https://github.com/GEOS-ESM/GMI)                                         | [v1.6.0](https://github.com/GEOS-ESM/GMI/releases/tag/v1.6.0)                                         |
 | [GMAO_perllib](https://github.com/GEOS-ESM/GMAO_perllib)                       | [v1.1.0](https://github.com/GEOS-ESM/GMAO_perllib/releases/tag/v1.1.0)                                |
-| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v3.0.2](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v3.0.2)                                 |
+| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v3.0.3](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v3.0.3)                                 |
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.6.8](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.6.8)                                      |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.3.0](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.3.0)                           |
 | [Icepack](https://github.com/GEOS-ESM/Icepack)                                 | [geos/v0.3.0](https://github.com/GEOS-ESM/Icepack/releases/tag/geos%2Fv0.3.0)                         |
