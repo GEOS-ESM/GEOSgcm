@@ -2,6 +2,67 @@
 
 ## Unreleased
 
+## [11.11.0] - 2026-10-05
+
+### Zero-diff to Previous Release: NO
+### Restart Changes: NO
+
+### Overview of v12 Configuration Changes
+
+* 25+ new GWD/convection/microphysics tunable parameters exposed as resources
+* Switched from UW shallow cumulus to the new SHOC-MF scheme
+* Switched from Land v12 to Land v14 BCS
+
+NCAR Gravity Wave Drag (GWD) Parameterization Updates
+* **New flux diagnostics framework** with separation of eastward vs westward propagating waves
+* **Direction-dependent critical level filtering** for better wave penetration tuning
+* **Dynamic source regime decoupling** for convection vs. frontal wave forcing
+* **Separated `tau_0_ubc`** (upper boundary condition) parameters for convective, frontal, and orographic sources
+* **Guard against divisions by zero** for Monin-Obukhov length
+* **Bugfix** for directional flux arguments in wrong order
+
+Convection Scheme (Grell-Freitas) Enhancements
+* **Congestus clouds**: Mid-level convection now coexists with deep/shallow (no longer mutually exclusive)
+* **Improved parameterization**: LAMBAU_MID added, C1_* parameters separated by convection type (deep/mid/shallow)
+* **Phase-aware autoconversion**: Temperature-dependent precipitation efficiency with ice/liquid splitting
+* **Land-ocean trigger separation**: Lower thermodynamic barriers over oceans, higher over land (fixes Philippine bias)
+
+Microphysics & Cloud Parameterization
+* **GFDL 1-Moment scheme updates**: Revised RHCRIT profile with dynamic height-dependent transitions
+* **Aerosol activation bounds**: NN_MIN_LIQ/LIQ, NN_MIN_ICE/ICE with scaling factors
+* **Effective radius tuning**: MAX_RI increased (100→150 μm), MIN_RL doubled (2.5→5 μm)
+* **Phase-weighted cloud optics**: Maximum-random overlap for radiation
+
+### Overview of v11 Configuration Changes
+
+PCHEM Changes
+* **Revert behavior** back to GCM v10/Jason because of unintended changes
+* **Reworked relaxation constraints** for H2O and OX
+* **Smoothed vertical transition** in the water-vapor/plume loss term
+
+### Overview of Other Changes
+ * **Extends MERRA2OX ozone dataset** from 197902–201706 to 197902–202608; updates the corresponding `pchem_clim_years` value from 39 to 48
+ * **GOCART updated** to latest release
+ * **Plots package updated**: additional plots, revised ISCCP plots, and new polar vortex plots
+ * **Set `PLOT_STATUS: OFF`** in `post/plot.rc` to prevent automatic spawning of plot jobs as model runs
+ * **Changed post-processing workflow** in `post/gcmpost.script` so climatology files are now batched as separate background jobs
+
+### Fixture Changes:
+* ESMA_env  [v5.25.2 => v5.26.0](https://github.com/GEOS-ESM/ESMA_env/compare/v5.25.2...v5.26.0)
+* ESMA_cmake  [v4.44.0 => v4.51.0](https://github.com/GEOS-ESM/ESMA_cmake/compare/v4.44.0...v4.51.0)
+* GMAO_Shared  [v3.0.2 => v3.0.3](https://github.com/GEOS-ESM/GMAO_Shared/compare/v3.0.2...v3.0.3)
+* GEOS_Util  [v3.0.2 => v3.0.4](https://github.com/GEOS-ESM/GEOS_Util/compare/v3.0.2...v3.0.4)
+* GEOSgcm_GridComp  [v3.0.2 => v3.1.0](https://github.com/GEOS-ESM/GEOSgcm_GridComp/compare/v3.0.2...v3.1.0)
+* FVdycoreCubed_GridComp  [v3.0.1 => v3.1.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/compare/v3.0.1...v3.1.0)
+* fvdycore  [v3.0.0 => v3.1.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/compare/geos/v3.0.0...geos/v3.1.0)
+* GEOSchem_GridComp  [v2.0.0 => v2.1.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/compare/v2.0.0...v2.1.0)
+* GOCART  [v2.6.6 => v2.6.8](https://github.com/GEOS-ESM/GOCART/compare/v2.6.6...v2.6.8)
+* GEOS_OceanGridComp  [v3.11.0 => v3.13.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/compare/v3.11.0...v3.13.0)
+* stochastic_physics  [**NEW: geos/v1.0.0**](https://github.com/GEOS-ESM/stochastic_physics/releases/tag/geos%2Fv1.0.0)
+* GEOSradiation_GridComp  [v2.0.0 => v2.1.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/compare/v2.0.0...v2.1.0)
+* GEOSgcm_App  [v3.0.2 => v3.1.0](https://github.com/GEOS-ESM/GEOSgcm_App/compare/v3.0.2...v3.1.0)
+
+
 ## [11.10.2] - 2026-09-03
 
 ### Zero-diff to Previous Release: YES for default L72
