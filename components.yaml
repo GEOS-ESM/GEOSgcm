@@ -173,8 +173,7 @@ ACHEM:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  branch: feature/update-mom6-3.10
-  #tag: v3.13.0
+  tag: v3.14.0
   develop: develop
 
 mom:
