@@ -211,11 +211,11 @@ While `parallel_build.csh` has many options, it does not cover all possible CMak
 pass additional CMake options to `parallel_build.csh`, you can do so by using `--` and then the CMake options. Note that *anything*
 after the `--` will be interpreted as a CMake option, which could lead to build issues if not careful.
 
-For example, if you want to build a develop Debug build on Cascade Lake while turning on StratChem reduced mechanism and the CODATA
+For example, if you want to build a develop Debug build while turning on StratChem reduced mechanism and the CODATA
 2018 options:
 
 ```
-parallel_build.csh -develop -debug -cas -- -DSTRATCHEM_REDUCED_MECHANISM=ON -DUSE_CODATA_2018_CONSTANTS=ON
+parallel_build.csh -develop -debug -- -DSTRATCHEM_REDUCED_MECHANISM=ON -DUSE_CODATA_2018_CONSTANTS=ON
 ```
 
 As noted above all the "regular" `parallel_build.csh` options must be listed before the `--` flag.
