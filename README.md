@@ -18,7 +18,7 @@
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v3.15.2](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv3.15.2)                       |
 | [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v4.51.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v4.51.0)                                |
 | [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v5.26.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v5.26.0)                                  |
-| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v3.1.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v3.1.0)                      |
+| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v3.1.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v3.1.1)                      |
 | [GAAS](https://github.com/GEOS-ESM/GAAS)                                       | [v1.1.0](https://github.com/GEOS-ESM/GAAS/releases/tag/v1.1.0)                                        |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)             |
 | [GenCast-GEOS_FP](https://github.com/GEOS-ESM/GenCast_GEOS-FP)                 | [geos/v0.3.1](https://github.com/GEOS-ESM/GenCast_GEOS-FP/releases/tag/geos%2Fv0.3.1)                 |
