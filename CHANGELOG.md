@@ -4,7 +4,7 @@
 
 Added
 * RPMARES thermodynamic module in the Process Library: added safety checks for NaN ammonium and nitrate conc.
-
+  ([GOCART@c4891fc](https://github.com/GEOS-ESM/GOCART/commit/c4891fc))
 
 ## [11.11.0] - 2026-10-05
 
