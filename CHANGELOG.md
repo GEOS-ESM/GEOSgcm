@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Added
+* RPMARES thermodynamic module in the Process Library: added safety checks for NaN ammonium and nitrate conc.
+
+
 ## [11.11.0] - 2026-10-05
 
 ### Zero-diff to Previous Release: NO
