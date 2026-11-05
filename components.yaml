@@ -76,8 +76,8 @@ GigaTraj:
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
-  remote: ../FVdycoreCubed_GridComp.git
-  tag: v3.1.0
+  remote: git@github.com:GEOS-ESM/FVdycoreCubed_GridComp.git
+  tag: dsl/update/pyFV3_interface
   develop: develop
 
 fvdycore:
@@ -85,6 +85,12 @@ fvdycore:
   remote: ../GFDL_atmos_cubed_sphere.git
   tag: geos/v3.1.0
   develop: geos/develop
+
+pyFV3:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/python/@pyFV3
+  remote: https://github.com/NOAA-GFDL/PyFV3.git
+  tag: GEOS-FP_rc8
+  develop: develop__GEOSv_11_4_2
 
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
@@ -249,8 +255,8 @@ umwm:
 
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
-  remote: ../GEOSgcm_App.git
-  tag: v3.1.0
+  remote: git@github.com:CharlesKrop/GEOSgcm_App.git
+  tag: feature/charleskrop/gcm_run_dsl_requirements
   develop: develop
 
 UMD_Etc:
