@@ -22,6 +22,11 @@ context.
 - Question for maintainers: is the nesting depth (for example `GOCART`,
   `QuickChem` and `HEMCO` inside `GEOSchem_GridComp` inside
   `GEOSgcm_GridComp`) a deliberate choice or history?
+  The GOCART side of this nesting is described in the
+  [GOCART architecture](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART/docs/ARCHITECTURE.md) and
+  [GOCART decisions](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART/docs/decisions.md); the Chemistry parent in the
+  [GEOSchem_GridComp architecture](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/docs/ARCHITECTURE.md) and
+  [decisions](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/docs/decisions.md).
 
 ### Leading `@` in nested directory names, found by CMake
 - Pattern: nested repositories sit in `@name` directories; CMake looks for
