@@ -3,7 +3,7 @@
 **Audience:** coding agents and developers working on the GEOSgcm fixture or arriving at the top of the GEOS atmosphere-ocean model source tree.
 **Describes:** the MAPL2 line, branch `main`.
 **Verified against:** `GEOSgcm` @ `0f2e0fb` (2026-11-04). Nested repositories were read as `mepo clone` left them: development-branch heads, not the tags `components.yaml` pins (except `@env`, `@cmake`, `@cmake/@ecbuild`, which were on tags). Cited nested repositories and heads:
-`GEOSgcm_GridComp` @ `45e1f86f` (base `develop`), `GEOSchem_GridComp` @ `d6ad829` (`develop`), `GEOSradiation_GridComp` @ `0b402f6` (`develop`), `FVdycoreCubed_GridComp` @ `4deed15` (`develop`), `GEOS_OceanGridComp` @ `8d91ab7` (`develop`), `GEOSgcm_App` @ `0985d54` (`develop`), `MAPL` @ `dc0eec14` (`release/v2`), `GMAO_Shared` @ `b0ebdca` (`main`), `GEOS_Util` @ `5b87f93` (`main`), `NCEP_Shared` @ `9b837cb` (`main`), `@cmake` (ESMA_cmake) @ `9833af5`, `@env` (ESMA_env) @ `d94be5e`, `@cmake/@ecbuild` @ `a34a9f4`.
+`GEOSgcm_GridComp` @ `45e1f86f` (base `develop`), `GEOSchem_GridComp` @ `d6ad829` (`develop`), `GEOSradiation_GridComp` @ `0b402f6` (`develop`), `FVdycoreCubed_GridComp` @ `4deed15` (`develop`), `GEOS_OceanGridComp` @ `8d91ab7` (`develop`), `GEOSgcm_App` @ `9ef207f` (`develop`), `MAPL` @ `dc0eec14` (`release/v2`), `GMAO_Shared` @ `b0ebdca` (`main`), `GEOS_Util` @ `5b87f93` (`main`), `NCEP_Shared` @ `9b837cb` (`main`), `@cmake` (ESMA_cmake) @ `9833af5`, `@env` (ESMA_env) @ `d94be5e`, `@cmake/@ecbuild` @ `a34a9f4`.
 **Placement:** as in the GEOSgcm fixture (`components.yaml` @ `0f2e0fb`).
 Other fixtures (for example GEOSadas, GEOSldas) may place this repository
 elsewhere; paths inside this repository do not change.
@@ -89,14 +89,14 @@ and the History, ExtData and Orbit gridded components
 | Repository | Local path | Role |
 |---|---|---|
 | GEOSgcm_GridComp | `GG` | root `GCM` component and most components; sparse (`config/GEOSgcm_GridComp.sparse`) |
-| FVdycoreCubed_GridComp | `GG/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp` | cubed-sphere finite-volume dynamical core (module `FVdycoreCubed_GridComp`, `DynCore_GridCompMod.F90`) |
-| GEOSchem_GridComp | `GG/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp` | `CHEMISTRY` component (`GEOS_ChemGridComp.F90`) |
-| GEOSradiation_GridComp | `GG/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp` | `RADIATION` with `SOLAR`, `IRRAD`, `SATSIM` (`GEOS_RadiationGridComp.F90`) |
-| GEOS_OceanGridComp | `GG/GEOSogcm_GridComp/@GEOS_OceanGridComp` | `OCEAN` component and ocean plug-ins (`GEOS_OceanGridComp.F90`) |
+| FVdycoreCubed_GridComp | `GG/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp` | cubed-sphere finite-volume dynamical core (module `FVdycoreCubed_GridComp`, `DynCore_GridCompMod.F90`); [architecture](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/docs/ARCHITECTURE.md) |
+| GEOSchem_GridComp | `GG/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp` | `CHEMISTRY` component (`GEOS_ChemGridComp.F90`); [architecture](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/docs/ARCHITECTURE.md) |
+| GEOSradiation_GridComp | `GG/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp` | `RADIATION` with `SOLAR`, `IRRAD`, `SATSIM` (`GEOS_RadiationGridComp.F90`); [architecture](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/docs/ARCHITECTURE.md) |
+| GEOS_OceanGridComp | `GG/GEOSogcm_GridComp/@GEOS_OceanGridComp` | `OCEAN` component and ocean plug-ins (`GEOS_OceanGridComp.F90`); [architecture](../src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/docs/ARCHITECTURE.md) |
 
 ### 2.5 Chemistry repositories (inside GEOSchem_GridComp)
 Path prefix `GG/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/`.
-`GOCART` (`@GOCART`; `GOCART`, `GOCART2G`), `ACHEM`, `CARMA`, `GAAS`, `GMI`,
+Chemistry architecture: [GEOSchem_GridComp](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/docs/ARCHITECTURE.md). `GOCART` (`@GOCART`; `GOCART`, `GOCART2G`; [architecture](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART/docs/ARCHITECTURE.md)), `ACHEM`, `CARMA`, `GAAS`, `GMI`,
 `MAM`, `MATRIX`, `RRG`, `StratChem`, `TR` (each `@<name>`) are Chemistry
 children, enabled by `ENABLE_*` keys (section 3). `HEMCO` (`Shared/HEMCO/@HEMCO`)
 is source for `HEMCO_GridComp`. `QuickChem` (`@QuickChem`) is cloned but is not
@@ -125,7 +125,7 @@ GEOS-ESM fork, nested inside the GEOS wrapper component that builds it. `PHYS` =
 ### 2.7 Applications and other
 | Repository | Local path | Role |
 |---|---|---|
-| GEOSgcm_App | `src/Applications/@GEOSgcm_App` | main program `GEOSgcm.F90`, setup scripts, run-time templates (section 5) |
+| GEOSgcm_App | `src/Applications/@GEOSgcm_App` | main program `GEOSgcm.F90`, setup scripts, run-time templates (section 5); [architecture](../src/Applications/@GEOSgcm_App/docs/ARCHITECTURE.md) |
 | UMD_Etc | `src/Applications/@UMD_Etc` | *Inferred:* University of Maryland tools (`UMD_oletkf`, `UMD_rc`) |
 | CPLFCST_Etc | `src/Applications/@CPLFCST_Etc` | *Inferred:* coupled forecast scripts |
 | GenCast_GEOS-FP | `src/FoundationModels/@GenCast_GEOS-FP` | *Inferred:* machine-learning forecast model; the directory is installed, not built (`src/FoundationModels/CMakeLists.txt`) |
@@ -161,7 +161,7 @@ GCM  (GG/GEOS_GcmGridComp.F90)
 |   |   `-- ADV    only DYCORE=FV3+ADV                     FVdycoreCubed_GridComp (AdvCore_GridCompMod)
 |   |-- PHYSICS                                            GG/.../GEOSphysics_GridComp
 |   |   |-- GWD, MOIST, TURBULENCE                         GG/.../GEOSgwd_, GEOSmoist_, GEOSturbulence_GridComp
-|   |   |-- CHEMISTRY                                      GEOSchem_GridComp
+|   |   |-- CHEMISTRY                                      GEOSchem_GridComp (architecture linked in 2.4)
 |   |   |     CHEMENV, HEMCO, PCHEM, ACHEM, GOCART, GOCART.data, GOCART2G, RRG, GAAS, H2O,
 |   |   |     STRATCHEM, GMICHEM, CARMA, GEOSCHEMCHEM, MATRIX, MAM, MAM.data, TR, DNA
 |   |   |     (all but CHEMENV only if ENABLE_<name> is true in GEOS_ChemGridComp.rc)
@@ -171,7 +171,7 @@ GCM  (GG/GEOS_GcmGridComp.F90)
 |   |   |       SALTWATER: SEAICETHERMO (variant by USE_CICE_Thermo), OPENWATER,
 |   |   |                  OBIOIMPORTS (if USE_OCEANOBIOGEOCHEM /= 0)
 |   |   `-- RADIATION                                      GEOSradiation_GridComp
-|   |         SOLAR, IRRAD, SATSIM (if any USE_SATSIM_* key is set)
+|   |         SOLAR, IRRAD, SATSIM (if the sum of USE_SATSIM and the USE_SATSIM_* keys > 0)
 |   `-- ORBIT                                              MAPL gridcomps/Orbit
 |-- GIGATRAJ  (not with DATAATM; only with HAS_GIGATRAJ)   GG/GEOSgigatraj_GridComp
 |-- AIAU      (not with DATAATM) incremental analysis update  GG/GEOSmkiau_GridComp
@@ -184,6 +184,7 @@ GCM  (GG/GEOS_GcmGridComp.F90)
 |   |     (SEAICE_NAME not read); else SEAICE_NAME = CICE4 | CICE6
 |   `-- OCEAN                                              GEOS_OceanGridComp
 |         USE_DATASEA /= 0: DATASEA. Else OCEAN_NAME = MOM | MOM6 | MIT (MIT only with BUILD_MIT_OCEAN)
+|         (the Ogcm composite itself reads OCEAN_NAME whatever USE_DATASEA is; see section 5)
 `-- WGCM           if USE_WAVES /= 0                       GG/GEOSwgcm_GridComp
       UMWM or WW3plug by wave_model in WGCM.rc (any other value raises an error)
 ```
@@ -222,8 +223,8 @@ Points that matter when reading the tree:
   dependency in `GEOSogcm_GridComp/CMakeLists.txt`).
 - `DUAL_OCEAN` adds a second `DATASEA` child (`OCEAN`) and a second
   `DATASEAICE` child (`SEAICE`) (`GEOS_OceanGridComp.F90`, `GEOS_SeaIceGridComp.F90`).
-- Chemistry and radiation repositories have no architecture document linked
-  from here.
+- Chemistry, radiation, dynamical-core and ocean repositories have their own
+  architecture documents, linked in section 2.4 ([Chemistry](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/docs/ARCHITECTURE.md), [Radiation](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/docs/ARCHITECTURE.md), [FVdycoreCubed](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/docs/ARCHITECTURE.md), [Ocean](../src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/docs/ARCHITECTURE.md); aerosols: [GOCART](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART/docs/ARCHITECTURE.md); application: [GEOSgcm_App](../src/Applications/@GEOSgcm_App/docs/ARCHITECTURE.md)).
 
 ## 4. Build structure
 
@@ -301,9 +302,10 @@ scripts; an experiment directory is generated from them.
   `*_setup` scripts before installing them to `bin/`.
 - `gcm_setup` (csh) prompts for the configuration, copies `$GEOSDIR/etc/*` to
   `$EXPDIR/RC`, deletes the `*.tmpl` there, and fills `@NAME` placeholders by
-  `sed` to produce `CAP.rc`, `AGCM.rc`, `HISTORY.rc` and `gcm_run.j`
-  (`gcm_setup`, sections "Copy Model Executable and RC Files" and "Produce
-  Final script and .rc files").
+  `sed` in a list of about 16 templates and scripts, including `CAP.rc`,
+  `AGCM.rc`, `HISTORY.rc` and `gcm_run.j` (`gcm_setup`, sections "Copy Model
+  Executable and RC Files" and "Produce Final script and .rc files"). The full
+  list, and the rest of setup, are in the [GEOSgcm_App architecture](../src/Applications/@GEOSgcm_App/docs/ARCHITECTURE.md), section 3.
 - `CAP.rc.tmpl`: `ROOT_NAME: GCM`, `ROOT_CF: AGCM.rc`, `HIST_CF: HISTORY.rc`,
   `HEARTBEAT_DT`, `USE_EXTDATA2G`. `AGCM.rc` is the main configuration the
   `GCM` tree reads through MAPL; some components also read their own files
@@ -311,7 +313,7 @@ scripts; an experiment directory is generated from them.
 - **Keys in `AGCM.rc.tmpl`** that change structure: `DYCORE`, `USE_WAVES`,
   `USE_DATA_ATM4OCN`, `OCEAN_NAME`, `USE_DATASEA`, `USE_DATASEAICE`,
   `USE_CICE_Thermo`, `SEAICE_NAME`, `CONVPAR_OPTION`, `AERO_PROVIDER`,
-  `LSM_CHOICE`, `USE_SATSIM_*`. Grid/layout: `NX`, `NY`, `AGCM_IM`, `AGCM_JM`,
+  `LSM_CHOICE`, `USE_SATSIM`, `USE_SATSIM_*`. `SATSIM` is added when `USE_SATSIM` plus the five `USE_SATSIM_*` keys sum to more than 0 (`GEOS_RadiationGridComp.F90`, `SetServices`). `gcm_setup` substitutes `@ISCCP_SATSIM` with 1 (`gcm_setup`, `sed` list), so `USE_SATSIM_ISCCP: 1` is set and `SATSIM` is on by default in new experiments. Grid/layout: `NX`, `NY`, `AGCM_IM`, `AGCM_JM`,
   `AGCM_LM`, prefixed keys such as `AGCM.GRID_TYPE`, `OGCM.IM_WORLD`. In the
   template `USE_DATASEA` and `USE_DATASEAICE` appear only on `@COUPLED` lines,
   and `DUAL_OCEAN` only as the commented hint `@MOM5#DUAL_OCEAN: 1`.
@@ -331,9 +333,17 @@ scripts; an experiment directory is generated from them.
 - **Defaults and checks in `SetServices`.** `GEOS_GcmGridComp.F90`: if
   `CONVPAR_OPTION` is `NULL` it is set to `RAS`, and if `AERO_PROVIDER` is
   `NULL` it is set to `GOCART.data`, both written back into the shared config,
-  so later children read the value. `GEOS_OceanGridComp.F90`: `USE_DATASEA`
+  so later children read the value. The `AERO_PROVIDER` defaults differ by
+  place: `GOCART.data` in `GEOS_GcmGridComp.F90` when the key is missing,
+  `GOCART2G` in `GEOS_ChemGridComp.F90` (`ESMF_ConfigGetAttribute`, `Default=`
+  and `GetProvider_`), and `gcm_setup` writes `GOCART2G` (`set AERO_PROVIDER`).
+  Chemistry's default applies when the key is absent from the configuration
+  Chemistry reads (*Unverified:* whether the Gcm's `MAPL_ConfigSetAttribute`
+  write-back in `GEOS_GcmGridComp.F90` reaches that configuration). Provider mechanism:
+  [GOCART architecture](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART/docs/ARCHITECTURE.md), section 5.2. `GEOS_OceanGridComp.F90`: `USE_DATASEA`
   and `USE_DATASEAICE` default to 1 (data ocean, data ice), `OCEAN_NAME` to
-  `MOM` (read only when `USE_DATASEA` is 0); `GEOS_SeaIceGridComp.F90`:
+  `MOM` (read there only when `USE_DATASEA` is 0; `GEOS_OgcmGridComp.F90`
+  reads `OCEAN_NAME`, default `MOM`, unconditionally); `GEOS_SeaIceGridComp.F90`:
   `SEAICE_NAME` defaults to `CICE4` (read only when not data ice and not
   `BUILD_MIT_OCEAN`). `GEOS_OgcmGridComp.F90` asserts: `USE_DATA_ATM4OCN` needs
   `USE_DATASEA=0`; `USE_DATASEA/=0` needs `USE_CICE_Thermo=0`,
@@ -368,7 +378,7 @@ scripts; an experiment directory is generated from them.
 
 1. `README.md` "Current State of GEOSgcm Subrepos" differs from
    `components.yaml` for MOM5 (`1.2.0` vs `2.1.0`), Icepack (`v0.3.0` vs
-   `v0.4.0`) and RRTMGP (`v1.7` vs `v1.8`).
+   `v0.4.0`) and RRTMGP (`v1.7` vs `v1.8`). The RRTMGP checkout read here is `git describe` `geos/v1.7+2.0.0-58-gabd4b1d` (58 commits after the tag `geos/v1.7+2.0.0`; `components.yaml` pins `geos/v1.8+1.0.0`), so neither README number names the code that was read.
 2. `QuickChem` is in `components.yaml`, but nothing in the `GEOSgcm_GridComp`
    tree outside `@QuickChem` mentions it and `@GEOSchem_GridComp/CMakeLists.txt`
    neither adds nor depends on it.
