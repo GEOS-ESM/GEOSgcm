@@ -72,7 +72,7 @@ Source of truth: `components.yaml`. `GG` below abbreviates
 ### 2.2 Shared libraries
 | Repository | Local path | Role |
 |---|---|---|
-| GMAO_Shared | `src/Shared/@GMAO_Shared` | shared Fortran libraries (`GEOS_Shared`, `GMAO_mpeu`, `GMAO_etc`, `LANL_Shared/CICE4`); sparse (`config/GMAO_Shared.sparse`; `src/Shared/@GMAO_Shared/CMakeLists.txt`) |
+| GMAO_Shared | `src/Shared/@GMAO_Shared` | shared libraries and tools (`GEOS_Shared`, `GMAO_mpeu`, `GMAO_gfio`, `GMAO_hermes`, `GMAO_transf`, `GMAO_etc`, `GMAO_stoch`, `LANL_Shared/CICE4`; see [its document](../src/Shared/@GMAO_Shared/docs/ARCHITECTURE.md)); sparse (`config/GMAO_Shared.sparse`; `src/Shared/@GMAO_Shared/CMakeLists.txt`) |
 | GEOS_Util | `src/Shared/@GMAO_Shared/@GEOS_Util` | *Inferred:* post-processing and plotting utilities (directories `post`, `pre`, `plots`) |
 | GMAO_perllib | `src/Shared/@GMAO_Shared/@GMAO_perllib` | Perl library |
 | NCEP_Shared | `src/Shared/@NCEP_Shared` | NCEP libraries (`NCEP_sp`, `NCEP_w3`, ...); sparse (`config/NCEP_Shared.sparse`) |
