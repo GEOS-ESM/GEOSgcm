@@ -11,10 +11,10 @@ elsewhere; paths inside this repository do not change.
 Paths are relative to the fixture root unless stated. Nested repositories use
 a leading `@` in their directory name (for example
 `src/Components/@GEOSgcm_GridComp`); the `@` is not part of the repository name.
-Detail below the fixture level: [GEOSgcm_GridComp architecture](../src/Components/@GEOSgcm_GridComp/docs/ARCHITECTURE.md),
-[its AGENTS.md](../src/Components/@GEOSgcm_GridComp/AGENTS.md), and, for the atmosphere composite
+Detail below the fixture level: GEOSgcm_GridComp architecture (`../src/Components/@GEOSgcm_GridComp/docs/ARCHITECTURE.md` in the fixture),
+its AGENTS.md (`../src/Components/@GEOSgcm_GridComp/AGENTS.md` in the fixture), and, for the atmosphere composite
 (dynamics, physics, IAU/replay) in depth,
-[GEOSagcm_GridComp architecture](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/ARCHITECTURE.md).
+GEOSagcm_GridComp architecture (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/ARCHITECTURE.md` in the fixture).
 Unlabelled statements are Verified and carry a citation.
 
 ## 0. Where to look for X
@@ -72,8 +72,8 @@ Source of truth: `components.yaml`. `GG` below abbreviates
 ### 2.2 Shared libraries
 | Repository | Local path | Role |
 |---|---|---|
-| GMAO_Shared | `src/Shared/@GMAO_Shared` | shared libraries and tools (`GEOS_Shared`, `GMAO_mpeu`, `GMAO_gfio`, `GMAO_hermes`, `GMAO_transf`, `GMAO_etc`, `GMAO_stoch`, `LANL_Shared/CICE4`; see [its document](../src/Shared/@GMAO_Shared/docs/ARCHITECTURE.md)); sparse (`config/GMAO_Shared.sparse`; `src/Shared/@GMAO_Shared/CMakeLists.txt`) |
-| GEOS_Util | `src/Shared/@GMAO_Shared/@GEOS_Util` | pre-processing, post-processing, plotting and coupled-diagnostics tools (`pre`, `post`, `plots`, `plots_v2`, `coupled_diagnostics`); see [its document](../src/Shared/@GMAO_Shared/@GEOS_Util/docs/ARCHITECTURE.md) |
+| GMAO_Shared | `src/Shared/@GMAO_Shared` | shared libraries and tools (`GEOS_Shared`, `GMAO_mpeu`, `GMAO_gfio`, `GMAO_hermes`, `GMAO_transf`, `GMAO_etc`, `GMAO_stoch`, `LANL_Shared/CICE4`; see its document (`../src/Shared/@GMAO_Shared/docs/ARCHITECTURE.md` in the fixture)); sparse (`config/GMAO_Shared.sparse`; `src/Shared/@GMAO_Shared/CMakeLists.txt`) |
+| GEOS_Util | `src/Shared/@GMAO_Shared/@GEOS_Util` | pre-processing, post-processing, plotting and coupled-diagnostics tools (`pre`, `post`, `plots`, `plots_v2`, `coupled_diagnostics`); see its document (`../src/Shared/@GMAO_Shared/@GEOS_Util/docs/ARCHITECTURE.md` in the fixture) |
 | GMAO_perllib | `src/Shared/@GMAO_Shared/@GMAO_perllib` | Perl library |
 | NCEP_Shared | `src/Shared/@NCEP_Shared` | NCEP libraries (`NCEP_sp`, `NCEP_w3`, ...); sparse (`config/NCEP_Shared.sparse`) |
 
@@ -83,21 +83,21 @@ framework over ESMF (Earth System Modeling Framework). `develop:` is
 `release/v2` (`components.yaml`). Built from source only when no external MAPL
 is found (`src/Shared/CMakeLists.txt`). Provides `MAPL_Cap` (the main driver)
 and the History, ExtData and Orbit gridded components
-(`src/Shared/@MAPL/gridcomps/`). Documented on the MAPL2 line: [its document](../src/Shared/@MAPL/docs/ARCHITECTURE.md)
-(and [`AGENTS.md`](../src/Shared/@MAPL/AGENTS.md)).
+(`src/Shared/@MAPL/gridcomps/`). Documented on the MAPL2 line: its document (`../src/Shared/@MAPL/docs/ARCHITECTURE.md` in the fixture)
+(and `AGENTS.md` (`../src/Shared/@MAPL/AGENTS.md` in the fixture)).
 
 ### 2.4 GEOS component repositories
 | Repository | Local path | Role |
 |---|---|---|
 | GEOSgcm_GridComp | `GG` | root `GCM` component and most components; sparse (`config/GEOSgcm_GridComp.sparse`) |
-| FVdycoreCubed_GridComp | `GG/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp` | cubed-sphere finite-volume dynamical core (module `FVdycoreCubed_GridComp`, `DynCore_GridCompMod.F90`); [architecture](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/docs/ARCHITECTURE.md) |
-| GEOSchem_GridComp | `GG/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp` | `CHEMISTRY` component (`GEOS_ChemGridComp.F90`); [architecture](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/docs/ARCHITECTURE.md) |
-| GEOSradiation_GridComp | `GG/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp` | `RADIATION` with `SOLAR`, `IRRAD`, `SATSIM` (`GEOS_RadiationGridComp.F90`); [architecture](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/docs/ARCHITECTURE.md) |
-| GEOS_OceanGridComp | `GG/GEOSogcm_GridComp/@GEOS_OceanGridComp` | `OCEAN` component and ocean plug-ins (`GEOS_OceanGridComp.F90`); [architecture](../src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/docs/ARCHITECTURE.md) |
+| FVdycoreCubed_GridComp | `GG/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp` | cubed-sphere finite-volume dynamical core (module `FVdycoreCubed_GridComp`, `DynCore_GridCompMod.F90`); architecture (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/docs/ARCHITECTURE.md` in the fixture) |
+| GEOSchem_GridComp | `GG/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp` | `CHEMISTRY` component (`GEOS_ChemGridComp.F90`); architecture (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/docs/ARCHITECTURE.md` in the fixture) |
+| GEOSradiation_GridComp | `GG/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp` | `RADIATION` with `SOLAR`, `IRRAD`, `SATSIM` (`GEOS_RadiationGridComp.F90`); architecture (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/docs/ARCHITECTURE.md` in the fixture) |
+| GEOS_OceanGridComp | `GG/GEOSogcm_GridComp/@GEOS_OceanGridComp` | `OCEAN` component and ocean plug-ins (`GEOS_OceanGridComp.F90`); architecture (`../src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/docs/ARCHITECTURE.md` in the fixture) |
 
 ### 2.5 Chemistry repositories (inside GEOSchem_GridComp)
 Path prefix `GG/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/`.
-Chemistry architecture: [GEOSchem_GridComp](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/docs/ARCHITECTURE.md). `GOCART` (`@GOCART`; `GOCART`, `GOCART2G`; [architecture](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART/docs/ARCHITECTURE.md)), `ACHEM`, `CARMA`, `GAAS`, `GMI`,
+Chemistry architecture: GEOSchem_GridComp (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/docs/ARCHITECTURE.md` in the fixture). `GOCART` (`@GOCART`; `GOCART`, `GOCART2G`; architecture (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART/docs/ARCHITECTURE.md` in the fixture)), `ACHEM`, `CARMA`, `GAAS`, `GMI`,
 `MAM`, `MATRIX`, `RRG`, `StratChem`, `TR` (each `@<name>`) are Chemistry
 children, enabled by `ENABLE_*` keys (section 3). `HEMCO` (`Shared/HEMCO/@HEMCO`)
 is source for `HEMCO_GridComp`. `QuickChem` (`@QuickChem`) is cloned but is not
@@ -126,7 +126,7 @@ GEOS-ESM fork, nested inside the GEOS wrapper component that builds it. `PHYS` =
 ### 2.7 Applications and other
 | Repository | Local path | Role |
 |---|---|---|
-| GEOSgcm_App | `src/Applications/@GEOSgcm_App` | main program `GEOSgcm.F90`, setup scripts, run-time templates (section 5); [architecture](../src/Applications/@GEOSgcm_App/docs/ARCHITECTURE.md) |
+| GEOSgcm_App | `src/Applications/@GEOSgcm_App` | main program `GEOSgcm.F90`, setup scripts, run-time templates (section 5); architecture (`../src/Applications/@GEOSgcm_App/docs/ARCHITECTURE.md` in the fixture) |
 | UMD_Etc | `src/Applications/@UMD_Etc` | *Inferred:* University of Maryland tools (`UMD_oletkf`, `UMD_rc`) |
 | CPLFCST_Etc | `src/Applications/@CPLFCST_Etc` | *Inferred:* coupled forecast scripts |
 | GenCast_GEOS-FP | `src/FoundationModels/@GenCast_GEOS-FP` | *Inferred:* machine-learning forecast model; the directory is installed, not built (`src/FoundationModels/CMakeLists.txt`) |
@@ -204,11 +204,11 @@ Points that matter when reading the tree:
   TURBULENCE phase 1; negative-water fill and stage 2 sync; SURFACE phase 2,
   TURBULENCE phase 2; negative-water fill and stage 3 sync (feeds RADIATION
   and CHEMISTRY phase 2); CHEMISTRY phase 2; RADIATION. This differs from the
-  `SetServices` child order. Detail: [physics architecture](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/ARCHITECTURE.md);
-  also [turbulence](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSturbulence_GridComp/ARCHITECTURE.md),
-  [gravity-wave drag](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSgwd_GridComp/ARCHITECTURE.md),
-  [moist](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSmoist_GridComp/ARCHITECTURE.md),
-  [surface](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSsurface_GridComp/ARCHITECTURE.md).
+  `SetServices` child order. Detail: physics architecture (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/ARCHITECTURE.md` in the fixture);
+  also turbulence (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSturbulence_GridComp/ARCHITECTURE.md` in the fixture),
+  gravity-wave drag (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSgwd_GridComp/ARCHITECTURE.md` in the fixture),
+  moist (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSmoist_GridComp/ARCHITECTURE.md` in the fixture),
+  surface (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSsurface_GridComp/ARCHITECTURE.md` in the fixture).
 - **Plug-ins loaded by name.** `MOM`, `MOM6` and `CICE6` are added with
   `MAPL_AddChild(name, 'setservices_', parentGC=GC, sharedObj=...)` from shared
   libraries named by resources `MOM_GEOS5PLUGMOD:`, `MOM6_GEOSPLUG:`,
@@ -225,7 +225,7 @@ Points that matter when reading the tree:
 - `DUAL_OCEAN` adds a second `DATASEA` child (`OCEAN`) and a second
   `DATASEAICE` child (`SEAICE`) (`GEOS_OceanGridComp.F90`, `GEOS_SeaIceGridComp.F90`).
 - Chemistry, radiation, dynamical-core and ocean repositories have their own
-  architecture documents, linked in section 2.4 ([Chemistry](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/docs/ARCHITECTURE.md), [Radiation](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/docs/ARCHITECTURE.md), [FVdycoreCubed](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/docs/ARCHITECTURE.md), [Ocean](../src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/docs/ARCHITECTURE.md); aerosols: [GOCART](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART/docs/ARCHITECTURE.md); application: [GEOSgcm_App](../src/Applications/@GEOSgcm_App/docs/ARCHITECTURE.md)).
+  architecture documents, linked in section 2.4 (Chemistry (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/docs/ARCHITECTURE.md` in the fixture), Radiation (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/docs/ARCHITECTURE.md` in the fixture), FVdycoreCubed (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/docs/ARCHITECTURE.md` in the fixture), Ocean (`../src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/docs/ARCHITECTURE.md` in the fixture); aerosols: GOCART (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART/docs/ARCHITECTURE.md` in the fixture); application: GEOSgcm_App (`../src/Applications/@GEOSgcm_App/docs/ARCHITECTURE.md` in the fixture)).
 
 ## 4. Build structure
 
@@ -306,7 +306,7 @@ scripts; an experiment directory is generated from them.
   `sed` in a list of about 16 templates and scripts, including `CAP.rc`,
   `AGCM.rc`, `HISTORY.rc` and `gcm_run.j` (`gcm_setup`, sections "Copy Model
   Executable and RC Files" and "Produce Final script and .rc files"). The full
-  list, and the rest of setup, are in the [GEOSgcm_App architecture](../src/Applications/@GEOSgcm_App/docs/ARCHITECTURE.md), section 3.
+  list, and the rest of setup, are in the GEOSgcm_App architecture (`../src/Applications/@GEOSgcm_App/docs/ARCHITECTURE.md` in the fixture), section 3.
 - `CAP.rc.tmpl`: `ROOT_NAME: GCM`, `ROOT_CF: AGCM.rc`, `HIST_CF: HISTORY.rc`,
   `HEARTBEAT_DT`, `USE_EXTDATA2G`. `AGCM.rc` is the main configuration the
   `GCM` tree reads through MAPL; some components also read their own files
@@ -341,7 +341,7 @@ scripts; an experiment directory is generated from them.
   Chemistry's default applies when the key is absent from the configuration
   Chemistry reads (*Unverified:* whether the Gcm's `MAPL_ConfigSetAttribute`
   write-back in `GEOS_GcmGridComp.F90` reaches that configuration). Provider mechanism:
-  [GOCART architecture](../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART/docs/ARCHITECTURE.md), section 5.2. `GEOS_OceanGridComp.F90`: `USE_DATASEA`
+  GOCART architecture (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART/docs/ARCHITECTURE.md` in the fixture), section 5.2. `GEOS_OceanGridComp.F90`: `USE_DATASEA`
   and `USE_DATASEAICE` default to 1 (data ocean, data ice), `OCEAN_NAME` to
   `MOM` (read there only when `USE_DATASEA` is 0; `GEOS_OgcmGridComp.F90`
   reads `OCEAN_NAME`, default `MOM`, unconditionally); `GEOS_SeaIceGridComp.F90`:

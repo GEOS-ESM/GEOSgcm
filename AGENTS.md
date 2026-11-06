@@ -22,14 +22,14 @@ sparse checkouts (`config/*.sparse`).
 - `docs/ARCHITECTURE.md`: repository tree, run-time component tree, build
   structure, run-time configuration, observations. Read first.
 - `docs/decisions.md`: why the fixture is arranged this way.
-- [`src/Components/@GEOSgcm_GridComp/AGENTS.md`](src/Components/@GEOSgcm_GridComp/AGENTS.md): start there for
+- `src/Components/@GEOSgcm_GridComp/AGENTS.md`: start there for
   any work on model components (needs `mepo clone`). Nested repositories with
   their own `AGENTS.md` (each needs `mepo clone`):
-  [GEOSchem_GridComp](src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/AGENTS.md) (Chemistry; contains GOCART),
-  [GEOSradiation_GridComp](src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/AGENTS.md),
-  [FVdycoreCubed_GridComp](src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/AGENTS.md),
-  [GEOS_OceanGridComp](src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/AGENTS.md),
-  [GEOSgcm_App](src/Applications/@GEOSgcm_App/AGENTS.md) (setup scripts and templates).
+  GEOSchem_GridComp (`src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/AGENTS.md` in the fixture) (Chemistry; contains GOCART),
+  GEOSradiation_GridComp (`src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/AGENTS.md` in the fixture),
+  FVdycoreCubed_GridComp (`src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/AGENTS.md` in the fixture),
+  GEOS_OceanGridComp (`src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/AGENTS.md` in the fixture),
+  GEOSgcm_App (`src/Applications/@GEOSgcm_App/AGENTS.md` in the fixture) (setup scripts and templates).
 
 ## Rules
 
