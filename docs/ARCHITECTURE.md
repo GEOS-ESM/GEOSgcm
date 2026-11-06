@@ -10,7 +10,7 @@ elsewhere; paths inside this repository do not change.
 Paths are relative to the fixture root unless stated. Nested repositories use
 a leading `@` in their directory name (for example
 `src/Components/@GEOSgcm_GridComp`); the `@` is not part of the repository name.
-Detail below the fixture level (on this line the documents of nested repositories are not all written yet; the MAPL2-line versions are on their `develop` branches): GEOSgcm_GridComp architecture (`../src/Components/@GEOSgcm_GridComp/docs/ARCHITECTURE.md` in the fixture),
+Detail below the fixture level: GEOSgcm_GridComp architecture (`../src/Components/@GEOSgcm_GridComp/docs/ARCHITECTURE.md` in the fixture),
 its AGENTS.md (`../src/Components/@GEOSgcm_GridComp/AGENTS.md` in the fixture), and, for the atmosphere composite
 (dynamics, physics, IAU/replay) in depth,
 GEOSagcm_GridComp architecture (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/ARCHITECTURE.md` in the fixture).
@@ -67,11 +67,8 @@ Unlabelled statements are Verified and carry a citation.
 >
 > Sections below describe the MAPL2-line architecture of the full tree unless
 > they say otherwise; subtrees that are not built are present as source only.
-> Documents of child repositories on this line: those for GAAS, ACHEM, MAM,
-> MATRIX, CARMA, RRG, GOCART, GMAO_Shared, GEOS_Util, GEOSgcm_GridComp and
-> GEOSgcm_App are in progress; those for FVdycoreCubed, Ocean, Radiation,
-> Chemistry, QuickChem, TR, StratChem, GMI and MAPL come later. Links below
-> point to the paths where they will be.
+> Child repositories have their own documents on this line; only MAPL's
+> are not yet combined. Links below point to the paths of those documents.
 
 ## 0. Where to look for X
 
@@ -147,7 +144,7 @@ of the MAPL2 line and are not re-verified here. MAPL3 documents in the checkout:
 `gridcomp-template.md`, `vertical-alignment.md`, `field_dictionary_developer.md`)
 and `src/Shared/@MAPL/docs/user_guide`; there is no `AGENTS.md` at
 `src/Shared/@MAPL/` in this checkout. MAPL's architecture documents for this
-line come later. `GEOS_FieldDictionary` is cloned into `src/Shared/@MAPL/@GEOS_FieldDictionary`.
+line are not yet combined. `GEOS_FieldDictionary` is cloned into `src/Shared/@MAPL/@GEOS_FieldDictionary`.
 
 ### 2.4 GEOS component repositories
 | Repository | Local path | Role |
