@@ -16,25 +16,25 @@
 | [CICE](https://github.com/GEOS-ESM/CICE)                                       | [geos/v0.2.0](https://github.com/GEOS-ESM/CICE/releases/tag/geos%2Fv0.2.0)                            |
 | [CPLFCST_Etc](https://github.com/GEOS-ESM/CPLFCST_Etc)                         | [v1.0.1](https://github.com/GEOS-ESM/CPLFCST_Etc/releases/tag/v1.0.1)                                 |
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v3.15.2](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv3.15.2)                       |
-| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v4.44.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v4.44.0)                                |
-| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v5.25.2](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v5.25.2)                                  |
-| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v3.0.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v3.0.1)                      |
+| [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v4.52.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v4.52.0)                                |
+| [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v5.26.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v5.26.0)                                  |
+| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v3.1.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v3.1.0)                      |
 | [GAAS](https://github.com/GEOS-ESM/GAAS)                                       | [v1.1.0](https://github.com/GEOS-ESM/GAAS/releases/tag/v1.1.0)                                        |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)             |
 | [GenCast-GEOS_FP](https://github.com/GEOS-ESM/GenCast_GEOS-FP)                 | [geos/v0.3.1](https://github.com/GEOS-ESM/GenCast_GEOS-FP/releases/tag/geos%2Fv0.3.1)                 |
-| [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v3.11.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v3.11.0)                        |
-| [GEOS_Util](https://github.com/GEOS-ESM/GEOS_Util)                             | [v3.0.1](https://github.com/GEOS-ESM/GEOS_Util/releases/tag/v3.0.1)                                   |
+| [GEOS_OceanGridComp](https://github.com/GEOS-ESM/GEOS_OceanGridComp)           | [v3.13.0](https://github.com/GEOS-ESM/GEOS_OceanGridComp/releases/tag/v3.13.0)                        |
+| [GEOS_Util](https://github.com/GEOS-ESM/GEOS_Util)                             | [v3.0.4](https://github.com/GEOS-ESM/GEOS_Util/releases/tag/v3.0.4)                                   |
 | [geos_state_bias](https://github.com/GEOS-ESM/geos_state_bias)                 | [geos/v1.0.0](https://github.com/GEOS-ESM/geos_state_bias/releases/tag/geos/v1.0.0)                   |
-| [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v2.0.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v2.0.0)                           |
-| [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v3.0.1](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v3.0.1)                                 |
-| [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v3.0.1](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v3.0.1)                            |
-| [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v2.0.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v2.0.0)                      |
-| [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v3.0.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv3.0.0)         |
+| [GEOSchem_GridComp](https://github.com/GEOS-ESM/GEOSchem_GridComp)             | [v2.1.0](https://github.com/GEOS-ESM/GEOSchem_GridComp/releases/tag/v2.1.0)                           |
+| [GEOSgcm_App](https://github.com/GEOS-ESM/GEOSgcm_App)                         | [v3.1.0](https://github.com/GEOS-ESM/GEOSgcm_App/releases/tag/v3.1.0)                                 |
+| [GEOSgcm_GridComp](https://github.com/GEOS-ESM/GEOSgcm_GridComp)               | [v3.1.0](https://github.com/GEOS-ESM/GEOSgcm_GridComp/releases/tag/v3.1.0)                            |
+| [GEOSradiation_GridComp](https://github.com/GEOS-ESM/GEOSradiation_GridComp)   | [v2.1.0](https://github.com/GEOS-ESM/GEOSradiation_GridComp/releases/tag/v2.1.0)                      |
+| [GFDL_atmos_cubed_sphere](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere) | [geos/v3.1.0](https://github.com/GEOS-ESM/GFDL_atmos_cubed_sphere/releases/tag/geos%2Fv3.1.0)         |
 | [gigatraj](https://github.com/GEOS-ESM/gigatraj)                               | [geos/v1.0.0](https://github.com/GEOS-ESM/gigatraj/releases/tag/geos%2Fv1.0.0)                        |
 | [GMI](https://github.com/GEOS-ESM/GMI)                                         | [v1.6.0](https://github.com/GEOS-ESM/GMI/releases/tag/v1.6.0)                                         |
 | [GMAO_perllib](https://github.com/GEOS-ESM/GMAO_perllib)                       | [v1.1.0](https://github.com/GEOS-ESM/GMAO_perllib/releases/tag/v1.1.0)                                |
-| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v3.0.1](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v3.0.1)                                 |
-| [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.6.6](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.6.6)                                      |
+| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v3.0.3](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v3.0.3)                                 |
+| [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.6.8](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.6.8)                                      |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.3.0](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.3.0)                           |
 | [Icepack](https://github.com/GEOS-ESM/Icepack)                                 | [geos/v0.3.0](https://github.com/GEOS-ESM/Icepack/releases/tag/geos%2Fv0.3.0)                         |
 | [MAM](https://github.com/GEOS-ESM/MAM)                                         | [v1.1.0](https://github.com/GEOS-ESM/MAM/releases/tag/v1.1.0)                                         |
@@ -49,6 +49,7 @@
 | [RRTMGP](https://github.com/GEOS-ESM/rte-rrtmgp)                               | [geos/v1.7+1.0.0](https://github.com/GEOS-ESM/rte-rrtmgp/releases/tag/geos%2Fv1.7%2B1.0.0)            |
 | [SIS2](https://github.com/GEOS-ESM/SIS2)                                       | [geos/v0.0.1](https://github.com/GEOS-ESM/SIS2/releases/tag/geos%2Fv0.0.1)                            |
 | [StratChem](https://github.com/GEOS-ESM/StratChem)                             | [v1.1.0](https://github.com/GEOS-ESM/StratChem/releases/tag/v1.1.0)                                   |
+| [stochastic_physics](https://github.com/GEOS-ESM/stochastic_physics)           | [geos/v1.0.0](https://github.com/GEOS-ESM/stochastic_physics/releases/tag/geos%2Fv1.0.0)              |
 | [Topo](https://github.com/GEOS-ESM/Topo)                                       | [geos/v2.2.1](https://github.com/GEOS-ESM/Topo/releases/tag/geos%2Fv2.2.1)                            |
 | [TR](https://github.com/GEOS-ESM/TR)                                           | [v1.2.1](https://github.com/GEOS-ESM/TR/releases/tag/v1.2.1)                                          |
 | [UMD_Etc](https://github.com/GEOS-ESM/UMD_Etc)                                 | [v1.5.0](https://github.com/GEOS-ESM/UMD_Etc/releases/tag/v1.5.0)                                     |
@@ -210,11 +211,11 @@ While `parallel_build.csh` has many options, it does not cover all possible CMak
 pass additional CMake options to `parallel_build.csh`, you can do so by using `--` and then the CMake options. Note that *anything*
 after the `--` will be interpreted as a CMake option, which could lead to build issues if not careful.
 
-For example, if you want to build a develop Debug build on Cascade Lake while turning on StratChem reduced mechanism and the CODATA
+For example, if you want to build a develop Debug build while turning on StratChem reduced mechanism and the CODATA
 2018 options:
 
 ```
-parallel_build.csh -develop -debug -cas -- -DSTRATCHEM_REDUCED_MECHANISM=ON -DUSE_CODATA_2018_CONSTANTS=ON
+parallel_build.csh -develop -debug -- -DSTRATCHEM_REDUCED_MECHANISM=ON -DUSE_CODATA_2018_CONSTANTS=ON
 ```
 
 As noted above all the "regular" `parallel_build.csh` options must be listed before the `--` flag.

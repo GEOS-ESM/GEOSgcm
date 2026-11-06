@@ -5,13 +5,13 @@ GEOSgcm:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v5.25.2
+  tag: v5.26.0
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v4.44.0
+  tag: v4.52.0
   develop: develop
 
 ecbuild:
@@ -29,14 +29,14 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v3.0.1
+  tag: v3.0.3
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: v3.0.1
+  tag: v3.0.4
   develop: main
 
 GMAO_perllib:
@@ -52,13 +52,14 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.70.0
+  tag: v2.71.0
   develop: release/v2
 
 GEOSgcm_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp
   remote: ../GEOSgcm_GridComp.git
   branch: feature/pchakrab/integrate-lis-into-v11
+  # tag: v3.1.0
   sparse: ./config/GEOSgcm_GridComp.sparse
   develop: develop
 
@@ -77,19 +78,19 @@ GigaTraj:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v3.0.1
+  tag: v3.1.0
   develop: develop
 
 fvdycore:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: geos/v3.0.0
+  tag: geos/v3.1.0
   develop: geos/develop
 
 GEOSchem_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp
   remote: ../GEOSchem_GridComp.git
-  tag: v2.0.0
+  tag: v2.1.0
   develop: develop
 
 HEMCO:
@@ -107,7 +108,7 @@ geos-chem:
 GOCART:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART
   remote: ../GOCART.git
-  tag: v2.6.6
+  tag: v2.6.8
   develop: develop
 
 QuickChem:
@@ -173,7 +174,7 @@ ACHEM:
 GEOS_OceanGridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp
   remote: ../GEOS_OceanGridComp.git
-  tag: v3.11.0
+  tag: v3.13.0
   develop: develop
 
 mom:
@@ -181,6 +182,12 @@ mom:
   remote: ../MOM5.git
   tag: geos/5.1.0+2.1.0
   develop: geos5
+
+stochastic_physics:
+  local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@stochastic_physics
+  remote: ../stochastic_physics.git
+  tag: geos/v1.0.0
+  develop: geos/master
 
 mom6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MOM6_GEOSPlug/@mom6
@@ -219,7 +226,7 @@ sis2:
 GEOSradiation_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp
   remote: ../GEOSradiation_GridComp.git
-  tag: v2.0.0
+  tag: v2.1.0
   develop: develop
 
 RRTMGP:
@@ -244,7 +251,7 @@ umwm:
 GEOSgcm_App:
   local: ./src/Applications/@GEOSgcm_App
   remote: ../GEOSgcm_App.git
-  tag: v3.0.1
+  tag: v3.1.0
   develop: develop
 
 UMD_Etc:
