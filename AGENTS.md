@@ -13,8 +13,8 @@ and `@cmake`; their directory names start with `@` (`components.yaml`).
 > **Build status on this line:** the component tree builds only partly, and
 > `GEOSgcm.x` is not built (`src/CMakeLists.txt` comments out
 > `add_subdirectory(Applications)`). What is built and what is not:
-> `docs/ARCHITECTURE.md`, top status block. Child repositories have their
-> own documents on this line; only MAPL's are not yet combined.
+> `docs/ARCHITECTURE.md`, top status block. Child repositories, MAPL included,
+> have their own documents on this line.
 
 ## Getting the full tree
 

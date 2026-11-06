@@ -67,8 +67,8 @@ Unlabelled statements are Verified and carry a citation.
 >
 > Sections below describe the MAPL2-line architecture of the full tree unless
 > they say otherwise; subtrees that are not built are present as source only.
-> Child repositories have their own documents on this line; only MAPL's
-> are not yet combined. Links below point to the paths of those documents.
+> Child repositories, MAPL included, have their own documents on this
+> line. Links below point to the paths of those documents.
 
 ## 0. Where to look for X
 
@@ -142,9 +142,8 @@ fixture's own claims about MAPL internals (`MAPL_Cap`) are those
 of the MAPL2 line and are not re-verified here. MAPL3 documents in the checkout:
 `src/Shared/@MAPL/docs/mapl3/` (`api-changes.md`, `diffs-from-mapl2.md`,
 `gridcomp-template.md`, `vertical-alignment.md`, `field_dictionary_developer.md`)
-and `src/Shared/@MAPL/docs/user_guide`; there is no `AGENTS.md` at
-`src/Shared/@MAPL/` in this checkout. MAPL's architecture documents for this
-line are not yet combined. `GEOS_FieldDictionary` is cloned into `src/Shared/@MAPL/@GEOS_FieldDictionary`.
+and `src/Shared/@MAPL/docs/user_guide`. Architecture documents: `src/Shared/@MAPL/AGENTS.md`
+and `src/Shared/@MAPL/docs/ARCHITECTURE.md`. `GEOS_FieldDictionary` is cloned into `src/Shared/@MAPL/@GEOS_FieldDictionary`.
 
 ### 2.4 GEOS component repositories
 | Repository | Local path | Role |
