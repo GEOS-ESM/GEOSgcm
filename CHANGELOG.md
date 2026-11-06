@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Added agent-oriented architecture documentation (`AGENTS.md`, `docs/ARCHITECTURE.md`, `docs/decisions.md`)
+
 ## [11.10.0] - 2026-05-29
 
 ### Zero-diff to Previous Release: NO
