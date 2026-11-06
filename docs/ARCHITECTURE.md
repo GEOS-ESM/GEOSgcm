@@ -83,7 +83,8 @@ framework over ESMF (Earth System Modeling Framework). `develop:` is
 `release/v2` (`components.yaml`). Built from source only when no external MAPL
 is found (`src/Shared/CMakeLists.txt`). Provides `MAPL_Cap` (the main driver)
 and the History, ExtData and Orbit gridded components
-(`src/Shared/@MAPL/gridcomps/`).
+(`src/Shared/@MAPL/gridcomps/`). Documented on the MAPL2 line: [its document](../src/Shared/@MAPL/docs/ARCHITECTURE.md)
+(and [`AGENTS.md`](../src/Shared/@MAPL/AGENTS.md)).
 
 ### 2.4 GEOS component repositories
 | Repository | Local path | Role |
