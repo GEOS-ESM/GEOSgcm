@@ -1,9 +1,9 @@
 # GEOSgcm fixture: previous architectural decisions
 
 **Audience:** coding agents and developers working on the GEOSgcm fixture.
-**Describes:** the MAPL2 line, branch `main`.
-**Verified against:** `GEOSgcm` @ `0f2e0fb` (2026-11-04); nested repositories as listed in [ARCHITECTURE.md](ARCHITECTURE.md) (development-branch heads, not the pinned tags).
-**Placement:** as in the GEOSgcm fixture (`components.yaml` @ `0f2e0fb`).
+**Describes:** the MAPL3 line, branch `release/MAPL-v3`.
+**Verified against:** `GEOSgcm` @ `f50622d` (2026-11-06); nested repositories as listed in [ARCHITECTURE.md](ARCHITECTURE.md) (on their `release/MAPL-v3` branches; `MAPL` on `develop`).
+**Placement:** as in the GEOSgcm fixture (`components.yaml` @ `f50622d`).
 Other fixtures (for example GEOSadas, GEOSldas) may place this repository
 elsewhere; paths inside this repository do not change.
 
@@ -45,8 +45,8 @@ context.
   `parallel_build.csh -develop` does this for four repositories only
   (`components.yaml`; `parallel_build.csh`; `README.md`, "Develop Version of
   GEOS GCM").
-  `MAPL` is pinned to a tag but its `develop:` is `release/v2`
-  (`components.yaml`, entry `MAPL`).
+  (MAPL2-line entry, kept.) On this line most entries use `branch:`
+  (`release/MAPL-v3`) and `MAPL` uses `branch: develop` (`components.yaml`).
 - Likely reason: *Inferred:* the fixture `main` should always name a tested
   set of versions; developers of the four repositories need their heads.
 - Question for maintainers: why are only these four in the `-develop` set?
@@ -97,3 +97,20 @@ context.
   `src/Applications/@GEOSgcm_App/CMakeLists.txt`).
 - Likely reason: *Inferred:* the number of options is large and one template
   family keeps coupled, atmosphere-only and data-ocean runs consistent.
+
+### Partial build until components are ported to MAPL3 (MAPL3 line)
+- Pattern: `release/MAPL-v3` comments out the directories not yet ported.
+  Wording per file: `src/CMakeLists.txt` "not yet ported to MAPL3 - restore
+  when ported" (Applications, FoundationModels); `src/Shared/CMakeLists.txt`
+  and `GMAO_Shared/CMakeLists.txt` "not yet ported to MAPL3 - restore ..." with
+  `GMAO_Shared` restricted to `HERMES_LIGHT`; `GEOSgcm_GridComp`,
+  `GEOSphysics_GridComp` and `GEOSchem_GridComp` carry "Temporarily bypass
+  <name> top-level library: ... USE-s non-ported components. Restore the block
+  below when all SUBCOMPONENTS are ported to MAPL3" (`GEOSagcm_GridComp`'s
+  bypass names the `GEOS_AgcmGridComp.F90` block likewise); `@GEOSchem_GridComp`
+  also "Restore subdirs as components are ported to MAPL3".
+- Likely reason: the comments in those files say the blocks are restored when
+  all subcomponents are ported to MAPL3.
+- Observation: the comment "restricted to IRRAD only" in
+  `GEOSphysics_GridComp/CMakeLists.txt` predates the Solar and SatSim ports;
+  `GEOSradiation_GridComp/CMakeLists.txt` builds `SOLAR`, `IRRAD` and `SATSIM`.

@@ -1,21 +1,77 @@
 # GEOSgcm fixture: system map
 
 **Audience:** coding agents and developers working on the GEOSgcm fixture or arriving at the top of the GEOS atmosphere-ocean model source tree.
-**Describes:** the MAPL2 line, branch `main`.
-**Verified against:** `GEOSgcm` @ `0f2e0fb` (2026-11-04). Nested repositories were read as `mepo clone` left them: development-branch heads, not the tags `components.yaml` pins (except `@env`, `@cmake`, `@cmake/@ecbuild`, which were on tags). Cited nested repositories and heads:
-`GEOSgcm_GridComp` @ `45e1f86f` (base `develop`), `GEOSchem_GridComp` @ `d6ad829` (`develop`), `GEOSradiation_GridComp` @ `0b402f6` (`develop`), `FVdycoreCubed_GridComp` @ `4deed15` (`develop`), `GEOS_OceanGridComp` @ `8d91ab7` (`develop`), `GEOSgcm_App` @ `9ef207f` (`develop`), `MAPL` @ `dc0eec14` (`release/v2`), `GMAO_Shared` @ `b0ebdca` (`main`), `GEOS_Util` @ `5b87f93` (`main`), `NCEP_Shared` @ `9b837cb` (`main`), `@cmake` (ESMA_cmake) @ `9833af5`, `@env` (ESMA_env) @ `d94be5e`, `@cmake/@ecbuild` @ `a34a9f4`.
-**Placement:** as in the GEOSgcm fixture (`components.yaml` @ `0f2e0fb`).
+**Describes:** the MAPL3 line, branch `release/MAPL-v3`.
+**Verified against:** `GEOSgcm` @ `f50622d` (2026-11-06). Nested repositories were read as `mepo clone` left them on their `release/MAPL-v3` branches (`GEOSradiation_GridComp` @ `13f8eb8`; `GEOSgcm_GridComp` @ `84f0aae3`, `GEOSgcm_App` @ `e65517a`, both as `origin/release/MAPL-v3`), `MAPL` on `develop`.
+**Placement:** as in the GEOSgcm fixture (`components.yaml` @ `f50622d`).
 Other fixtures (for example GEOSadas, GEOSldas) may place this repository
 elsewhere; paths inside this repository do not change.
 
 Paths are relative to the fixture root unless stated. Nested repositories use
 a leading `@` in their directory name (for example
 `src/Components/@GEOSgcm_GridComp`); the `@` is not part of the repository name.
-Detail below the fixture level: GEOSgcm_GridComp architecture (`../src/Components/@GEOSgcm_GridComp/docs/ARCHITECTURE.md` in the fixture),
+Detail below the fixture level (on this line the documents of nested repositories are not all written yet; the MAPL2-line versions are on their `develop` branches): GEOSgcm_GridComp architecture (`../src/Components/@GEOSgcm_GridComp/docs/ARCHITECTURE.md` in the fixture),
 its AGENTS.md (`../src/Components/@GEOSgcm_GridComp/AGENTS.md` in the fixture), and, for the atmosphere composite
 (dynamics, physics, IAU/replay) in depth,
 GEOSagcm_GridComp architecture (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/ARCHITECTURE.md` in the fixture).
 Unlabelled statements are Verified and carry a citation.
+
+> **Build status on this line:** the component tree builds only partly.
+> `release/MAPL-v3` builds these parts, and the rest is not yet ported to MAPL3
+> (each parent's `CMakeLists.txt` carries its own comment saying the entry or
+> block is to be restored when ported to MAPL3; the wording below is quoted per
+> file):
+>
+> - `src/CMakeLists.txt`: `Shared` and `Components` are added;
+>   `add_subdirectory(Applications)` and `add_subdirectory(FoundationModels)` are
+>   commented out. So `GEOSgcm_App`, `UMD_Etc`, `CPLFCST_Etc` and
+>   `GenCast_GEOS-FP` are not built, and no `GEOSgcm.x` is produced.
+> - `src/Shared/CMakeLists.txt`: only `GMAO_Shared` (not `NCEP_Shared`) and, if
+>   no external MAPL is found, `MAPL`.
+> - `src/Shared/@GMAO_Shared/CMakeLists.txt`: sets `HERMES_LIGHT ON` and adds
+>   only `GMAO_mpeu`, `GMAO_hermes` (light) and `GEOS_Shared`. The full list
+>   (`GMAO_pilgrim`, `GMAO_etc`, `GEOS_Util`, `GMAO_transf`, `GMAO_stoch`,
+>   `GMAO_gfio`, ...) is commented out.
+> - `src/Components/@GEOSgcm_GridComp/CMakeLists.txt`: only `GEOSagcm_GridComp`;
+>   `GEOSdataatm_`, `GEOSmkiau_`, `GEOSogcm_` and `GEOSwgcm_GridComp` are
+>   commented out, and the top `GEOS_GcmGridComp.F90` library block is commented
+>   out ("Temporarily bypass GEOSgcm_GridComp top-level library").
+> - `GEOSagcm_GridComp/CMakeLists.txt`: `components.yaml` gives `GEOSgcm_GridComp`
+>   `sparse: ./config/GEOSgcm_GridComp.sparse`, which excludes
+>   `GEOS_AgcmSimpleGridComp.F90`, `agcm-simple.yaml` and `GEOShs_GridComp`. In
+>   that default checkout the file takes its `else` branch and adds
+>   `GEOSsuperdyn_GridComp` and `GEOSphysics_GridComp` as plain subdirectories;
+>   no Agcm library is built (the `GEOS_AgcmGridComp.F90` library block is
+>   commented out). A checkout without that sparse file would build the
+>   Held-Suarez library (`SUBCOMPONENTS GEOSsuperdyn_GridComp GEOShs_GridComp`)
+>   instead.
+> - `GEOSsuperdyn_GridComp/CMakeLists.txt`: builds the library
+>   `GEOS_SuperdynGridComp.F90` (`esma_add_library`, inside
+>   `if (EXISTS ...)`) with `SUBCOMPONENTS FVdycoreCubed_GridComp`;
+>   `GEOSdatmodyn_GridComp` is commented out.
+> - `GEOSphysics_GridComp/CMakeLists.txt`: `GEOSchem_GridComp` (GOCART only,
+>   see below), `GEOSgwd_GridComp` and `GEOSradiation_GridComp`; `GEOSmoist_`,
+>   `GEOSsurface_` and `GEOSturbulence_GridComp` are commented out, as is the
+>   `GEOS_PhysicsGridComp.F90` library.
+> - `@GEOSchem_GridComp/CMakeLists.txt`: only `GOCART` (for `GOCART2G_GridComp`);
+>   `Shared` (`Chem_Base`, `Chem_Shared`, `HEMCO`), `TR`, `GMI`, `StratChem`,
+>   `MAM`, `MATRIX`, `CARMA`, `GAAS`, `ACHEM` and the Chemistry top-level
+>   library (`GEOS_ChemGridComp.F90`) are commented out ("Restore subdirs as
+>   components are ported to MAPL3").
+> - `@GEOSradiation_GridComp/CMakeLists.txt` (on its `release/MAPL-v3`) builds
+>   the Radiation parent library (`GEOS_RadiationGridComp.F90`) with
+>   `SUBCOMPONENTS` `GEOS_RadiationShared`, `GEOSsolar_GridComp`,
+>   `GEOSirrad_GridComp` and `GEOSsatsim_GridComp`; its log shows the Solar
+>   (`ebaed6e`) and SatSim (`13f8eb8`) ports. The comment "restricted to IRRAD
+>   only" in `GEOSphysics_GridComp/CMakeLists.txt` predates those ports.
+>
+> Sections below describe the MAPL2-line architecture of the full tree unless
+> they say otherwise; subtrees that are not built are present as source only.
+> Documents of child repositories on this line: those for GAAS, ACHEM, MAM,
+> MATRIX, CARMA, RRG, GOCART, GMAO_Shared, GEOS_Util, GEOSgcm_GridComp and
+> GEOSgcm_App are in progress; those for FVdycoreCubed, Ocean, Radiation,
+> Chemistry, QuickChem, TR, StratChem, GMI and MAPL come later. Links below
+> point to the paths where they will be.
 
 ## 0. Where to look for X
 
@@ -33,24 +89,27 @@ Unlabelled statements are Verified and carry a citation.
   top `CMakeLists.txt`, the `src/CMakeLists.txt` files that join the nested
   repositories, `config/*.sparse`, `parallel_build.csh`, CMake presets
   (`CMakePresets.json`, `presets/`) and CI files (`components.yaml`, entry
-  `GEOSgcm: fixture: true`).
+  `GEOSgcm: fixture: true`). On this line `components.yaml` also differs from the MAPL2 line as described in section 2 and the status block above.
 - **Fixture** means: a repository whose `components.yaml` lists other
   repositories to clone into it. The tool is `mepo` (multiple-repository
   manager), used instead of Git submodules (`README.md`, "Setting up `mepo`").
   `mepo clone` assembles the tree; `mepo status` shows each repository with its
   branch `(b)` or tag `(t)` (`README.md`, "Mepo").
 - `components.yaml` has 44 nested entries (count of `local:` keys). Each gives
-  `local` (path), `remote`, a pinned `tag`, and usually a `develop` branch;
+  `local` (path), `remote`, a `tag` or a `branch`, and usually a `develop` branch;
   optional keys are `sparse` (a pattern file under `config/`), `blobless`,
-  `recurse_submodules`, `ignore_submodules`. No entry uses a `branch:` key
-  (`components.yaml`).
+  `recurse_submodules`, `ignore_submodules`. On this line 26 entries use
+  `branch:` (24 of them `release/MAPL-v3` or `geos/release/MAPL-v3`; `cmake` uses
+  `release/v4`, `MAPL` uses `develop`) and 18 use `tag:` (`components.yaml`).
+  The `GEOS_FieldDictionary` entry (`src/Shared/@MAPL/@GEOS_FieldDictionary`, `tag: v0.2.1`) is new relative to the MAPL2 line.
 - `mepo develop <repos>` switches the named repositories to their `develop:`
   branch. The README and `parallel_build.csh -develop` do this for
   `GEOSgcm_GridComp`, `GEOSgcm_App`, `GMAO_Shared` and `GEOS_Util` only
   (`README.md`, "Develop Version of GEOS GCM"; `parallel_build.csh`).
 - Tag-pinned repositories show `(DH)`, detached HEAD, in `mepo status`.
   *Inferred:* an edit there belongs on a branch of that repository, followed by
-  a new `tag:` in `components.yaml`.
+  a new `tag:` in `components.yaml`. On this line most model repositories are
+  tracked by `branch:` and show a branch.
 - Other fixtures use their own `components.yaml` and may place the same
   repositories at other paths. *Unverified:* a comment in
   `GEOSland_GridComp/GEOS_LandGridComp.F90` ("includes GEOSldas ensemble
@@ -72,19 +131,23 @@ Source of truth: `components.yaml`. `GG` below abbreviates
 ### 2.2 Shared libraries
 | Repository | Local path | Role |
 |---|---|---|
-| GMAO_Shared | `src/Shared/@GMAO_Shared` | shared libraries and tools (`GEOS_Shared`, `GMAO_mpeu`, `GMAO_gfio`, `GMAO_hermes`, `GMAO_transf`, `GMAO_etc`, `GMAO_stoch`, `LANL_Shared/CICE4`; see its document (`../src/Shared/@GMAO_Shared/docs/ARCHITECTURE.md` in the fixture)); sparse (`config/GMAO_Shared.sparse`; `src/Shared/@GMAO_Shared/CMakeLists.txt`) |
-| GEOS_Util | `src/Shared/@GMAO_Shared/@GEOS_Util` | pre-processing, post-processing, plotting and coupled-diagnostics tools (`pre`, `post`, `plots`, `plots_v2`, `coupled_diagnostics`); see its document (`../src/Shared/@GMAO_Shared/@GEOS_Util/docs/ARCHITECTURE.md` in the fixture) |
+| GMAO_Shared | `src/Shared/@GMAO_Shared` | shared libraries and tools (`GEOS_Shared`, `GMAO_mpeu`, `GMAO_gfio`, `GMAO_hermes`, `GMAO_transf`, `GMAO_etc`, `GMAO_stoch`, `LANL_Shared/CICE4`; see its document (`../src/Shared/@GMAO_Shared/docs/ARCHITECTURE.md` in the fixture)); sparse (`config/GMAO_Shared.sparse`; `src/Shared/@GMAO_Shared/CMakeLists.txt`); on this line built restricted to `GMAO_mpeu`, `GMAO_hermes` (light) and `GEOS_Shared` (status block) |
+| GEOS_Util | `src/Shared/@GMAO_Shared/@GEOS_Util` (not built on this line) | pre-processing, post-processing, plotting and coupled-diagnostics tools (`pre`, `post`, `plots`, `plots_v2`, `coupled_diagnostics`); see its document (`../src/Shared/@GMAO_Shared/@GEOS_Util/docs/ARCHITECTURE.md` in the fixture) |
 | GMAO_perllib | `src/Shared/@GMAO_Shared/@GMAO_perllib` | Perl library |
-| NCEP_Shared | `src/Shared/@NCEP_Shared` | NCEP libraries (`NCEP_sp`, `NCEP_w3`, ...); sparse (`config/NCEP_Shared.sparse`) |
+| NCEP_Shared | `src/Shared/@NCEP_Shared` | NCEP libraries (`NCEP_sp`, `NCEP_w3`, ...); sparse (`config/NCEP_Shared.sparse`); not built on this line (`src/Shared/CMakeLists.txt` comment: not needed without the full GMAO_Shared cascade) |
 
 ### 2.3 MAPL
 `src/Shared/@MAPL`: MAPL (Modeling Analysis and Prediction Layer), the
-framework over ESMF (Earth System Modeling Framework). `develop:` is
-`release/v2` (`components.yaml`). Built from source only when no external MAPL
-is found (`src/Shared/CMakeLists.txt`). Provides `MAPL_Cap` (the main driver)
-and the History, ExtData and Orbit gridded components
-(`src/Shared/@MAPL/gridcomps/`). Documented on the MAPL2 line: its document (`../src/Shared/@MAPL/docs/ARCHITECTURE.md` in the fixture)
-(and `AGENTS.md` (`../src/Shared/@MAPL/AGENTS.md` in the fixture)).
+framework over ESMF (Earth System Modeling Framework). On this line the entry
+is `branch: develop`, `develop: develop` (`components.yaml`): MAPL3. Built from
+source only when no external MAPL is found (`src/Shared/CMakeLists.txt`). The
+fixture's own claims about MAPL internals (`MAPL_Cap`) are those
+of the MAPL2 line and are not re-verified here. MAPL3 documents in the checkout:
+`src/Shared/@MAPL/docs/mapl3/` (`api-changes.md`, `diffs-from-mapl2.md`,
+`gridcomp-template.md`, `vertical-alignment.md`, `field_dictionary_developer.md`)
+and `src/Shared/@MAPL/docs/user_guide`; there is no `AGENTS.md` at
+`src/Shared/@MAPL/` in this checkout. MAPL's architecture documents for this
+line come later. `GEOS_FieldDictionary` is cloned into `src/Shared/@MAPL/@GEOS_FieldDictionary`.
 
 ### 2.4 GEOS component repositories
 | Repository | Local path | Role |
@@ -126,18 +189,22 @@ GEOS-ESM fork, nested inside the GEOS wrapper component that builds it. `PHYS` =
 ### 2.7 Applications and other
 | Repository | Local path | Role |
 |---|---|---|
-| GEOSgcm_App | `src/Applications/@GEOSgcm_App` | main program `GEOSgcm.F90`, setup scripts, run-time templates (section 5); architecture (`../src/Applications/@GEOSgcm_App/docs/ARCHITECTURE.md` in the fixture) |
+| GEOSgcm_App | `src/Applications/@GEOSgcm_App` | setup scripts and run-time templates (the `GEOSgcm.F90` main program is deleted on this line) (section 5); architecture (`../src/Applications/@GEOSgcm_App/docs/ARCHITECTURE.md` in the fixture) |
 | UMD_Etc | `src/Applications/@UMD_Etc` | *Inferred:* University of Maryland tools (`UMD_oletkf`, `UMD_rc`) |
 | CPLFCST_Etc | `src/Applications/@CPLFCST_Etc` | *Inferred:* coupled forecast scripts |
 | GenCast_GEOS-FP | `src/FoundationModels/@GenCast_GEOS-FP` | *Inferred:* machine-learning forecast model; the directory is installed, not built (`src/FoundationModels/CMakeLists.txt`) |
 
 ## 3. Run-time component tree
 
-`GEOSgcm.x` runs `MAPL_Cap('GCM', ROOT_SetServices, ...)`, where
+This section describes the full tree as written in the source (the MAPL2-line
+structure). On this line only the parts listed in the status block are built;
+`GEOSgcm.x` is not built, so no run-time tree exists from this fixture.
+
+On the MAPL2 line (MAPL `release/v2`), `GEOSgcm.x` runs `MAPL_Cap('GCM', ROOT_SetServices, ...)`, where
 `ROOT_SetServices` is `SetServices` of `GEOS_GcmGridCompMod`
-(`src/Applications/@GEOSgcm_App/GEOSgcm.F90`, program `GEOS5_Main`). The cap
+(`GEOSgcm.F90`, program `GEOS5_Main`, in `GEOSgcm_App` on the MAPL2 line; deleted on this line). The cap
 adds the root, `HIST` (History) and `EXTDATA` (external data) as its children
-(`src/Shared/@MAPL/gridcomps/Cap/MAPL_CapGridComp.F90`, `MAPL_AddChild`). Every
+(MAPL2-line `MAPL_CapGridComp.F90`, `MAPL_AddChild`; nothing in MAPL `develop` is cited here). Every
 node below is a `MAPL_AddChild` in the `SetServices` of its parent's source file
 (`GEOS_<Parent>GridComp.F90`, in the parent's directory). Conditions are of two
 kinds: **resources** read in that `SetServices`, and **preprocessor guards**
@@ -233,13 +300,12 @@ Points that matter when reading the tree:
 CMakeLists.txt                  project GEOSgcm; finds ESMA_cmake; include(esma)
   |-- esma_add_subdirectory(env)    (@env)
   `-- src/CMakeLists.txt
-        |-- Shared/        GMAO_Shared, NCEP_Shared, then MAPL
-        |-- Components/    GEOSgcm_GridComp
-        |-- Applications/  GEOSgcm_App, UMD_Etc, CPLFCST_Etc
-        `-- FoundationModels/   installs GenCast_GEOS-FP (no build)
+        |-- Shared/        GMAO_Shared (HERMES_LIGHT), then MAPL  (NCEP_Shared not added)
+        |-- Components/    GEOSgcm_GridComp (partial; see status block)
+        |   (Applications/ and FoundationModels/ are commented out: not yet ported to MAPL3)
 ```
 
-- **Top `CMakeLists.txt`.** Walks the spellings `cmake`, `@cmake`, `cmake@`,
+- **Top `CMakeLists.txt`.** On this line the block that located NetCDF, HDF5, ESMF, GFTL_SHARED, ZLIB, FMS and MAPL when Baselibs is not found is removed (diff from the MAPL2 line); library discovery is left to `@cmake`. Walks the spellings `cmake`, `@cmake`, `cmake@`,
   puts the existing one on `CMAKE_MODULE_PATH` and `ESMA_CMAKE_PATH`, then
   `include (esma)`, `ecbuild_declare_project()`,
   `esma_mepo_style(env env_dir)` + `esma_add_subdirectory (${env_dir})`,
@@ -267,22 +333,27 @@ CMakeLists.txt                  project GEOSgcm; finds ESMA_cmake; include(esma)
   GEOSagcm_GridComp GEOSdataatm_GridComp GEOSmkiau_GridComp GEOSogcm_GridComp
   GEOSwgcm_GridComp` (+ `GEOSgigatraj_GridComp` with `BUILD_WITH_GIGATRAJ`). The
   pattern repeats down the tree.
-- **Held-Suarez switch.** `GEOSagcm_GridComp/CMakeLists.txt` builds the
-  Held-Suarez model if `GEOS_AgcmSimpleGridComp.F90` exists and the full AGCM if
-  `GEOS_AgcmGridComp.F90` exists. `config/GEOSgcm_GridComp.sparse` is three
-  lines: `/*`, then `!/GEOSagcm_GridComp/GEOS_AgcmSimpleGridComp.F90` and
-  `!/GEOSagcm_GridComp/GEOShs_GridComp` (`config/GEOSgcm_GridComp.sparse`).
-  *Inferred:* `/*` includes everything in the sparse checkout, and the two
-  `!` lines exclude the Held-Suarez file and directory from it, so the
-  default checkout has the full AGCM but not Held-Suarez, and the full AGCM
-  branch is taken.
+- **Held-Suarez switch.** On this line `GEOSagcm_GridComp/CMakeLists.txt` builds
+  the Held-Suarez model if `GEOS_AgcmSimpleGridComp.F90` exists; the
+  `GEOS_AgcmGridComp.F90` branch is commented out and the fallback adds
+  `GEOSsuperdyn_GridComp` and `GEOSphysics_GridComp` as subdirectories. `config/GEOSgcm_GridComp.sparse` lists `/*`, then
+  `!/GEOSagcm_GridComp/GEOS_AgcmSimpleGridComp.F90`,
+  `!/GEOSagcm_GridComp/agcm-simple.yaml` (new on this line),
+  `!/GEOSagcm_GridComp/GEOShs_GridComp` and two superdyn entries
+  (`config/GEOSgcm_GridComp.sparse`).
+  `/*` includes everything in the sparse checkout, and the `!` lines exclude the Held-Suarez file and directory from it, so the
+  default checkout lacks Held-Suarez and takes the `else` branch; a checkout
+  without the sparse file would build the Held-Suarez library instead.
 - **Options:** `BUILD_WITH_GIGATRAJ`, `BUILD_WITH_PYMLINC` (`GG/CMakeLists.txt`);
   `BUILD_MIT_OCEAN`; `FV_PRECISION`.
-- **Executables:** `GEOSgcm.x` (links `GEOSgcm_GridComp`) and `idfupd.x`
-  (`src/Applications/@GEOSgcm_App/CMakeLists.txt`).
+- **Executables:** none on this line: `src/CMakeLists.txt` does not add
+  `Applications`. `GEOSgcm_App/CMakeLists.txt` on this line defines only
+  `idfupd.x`; the `GEOSgcm.x` target and `GEOSgcm.F90` are removed.
 - **MAPL** is built from `src/Shared/@MAPL` unless an external one is found
-  (`src/Shared/CMakeLists.txt`). A comment in `components.yaml` says a breaking
-  MAPL change also needs an edit in `ESMA_cmake/external_libraries/ConfigureExternalLibraries.cmake`.
+  (`src/Shared/CMakeLists.txt`). `components.yaml` still has the comment "When
+  updating the MAPL version, also update the MAPL version in the CMakeLists.txt
+  file for non-Baselibs builds", while that block was removed from the top
+  `CMakeLists.txt` on this line.
 - **Build commands** (`README.md`): `./parallel_build.csh` (runs `mepo clone
   --partial blobless` if the tree is absent, then builds; `parallel_build.csh`),
   or `source @env/g5_modules`, `cmake -B build -S . -DCMAKE_INSTALL_PREFIX=install`,
@@ -306,7 +377,7 @@ scripts; an experiment directory is generated from them.
   `sed` in a list of about 16 templates and scripts, including `CAP.rc`,
   `AGCM.rc`, `HISTORY.rc` and `gcm_run.j` (`gcm_setup`, sections "Copy Model
   Executable and RC Files" and "Produce Final script and .rc files"). The full
-  list, and the rest of setup, are in the GEOSgcm_App architecture (`../src/Applications/@GEOSgcm_App/docs/ARCHITECTURE.md` in the fixture), section 3.
+  list, and the rest of setup, are in the GEOSgcm_App architecture (`../src/Applications/@GEOSgcm_App/docs/ARCHITECTURE.md` in the fixture).
 - `CAP.rc.tmpl`: `ROOT_NAME: GCM`, `ROOT_CF: AGCM.rc`, `HIST_CF: HISTORY.rc`,
   `HEARTBEAT_DT`, `USE_EXTDATA2G`. `AGCM.rc` is the main configuration the
   `GCM` tree reads through MAPL; some components also read their own files
@@ -341,7 +412,7 @@ scripts; an experiment directory is generated from them.
   Chemistry's default applies when the key is absent from the configuration
   Chemistry reads (*Unverified:* whether the Gcm's `MAPL_ConfigSetAttribute`
   write-back in `GEOS_GcmGridComp.F90` reaches that configuration). Provider mechanism:
-  GOCART architecture (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART/docs/ARCHITECTURE.md` in the fixture), section 5.2. `GEOS_OceanGridComp.F90`: `USE_DATASEA`
+  GOCART architecture (`../src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/@GOCART/docs/ARCHITECTURE.md` in the fixture). `GEOS_OceanGridComp.F90`: `USE_DATASEA`
   and `USE_DATASEAICE` default to 1 (data ocean, data ice), `OCEAN_NAME` to
   `MOM` (read there only when `USE_DATASEA` is 0; `GEOS_OgcmGridComp.F90`
   reads `OCEAN_NAME`, default `MOM`, unconditionally); `GEOS_SeaIceGridComp.F90`:

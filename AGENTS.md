@@ -1,14 +1,20 @@
 # AGENTS.md
 
 **Audience:** coding agents and developers working on the GEOSgcm fixture.
-**Describes:** the MAPL2 line, branch `main`.
-**Verified against:** `GEOSgcm` @ `0f2e0fb` (2026-11-04); nested repositories are listed in `docs/ARCHITECTURE.md`.
+**Describes:** the MAPL3 line, branch `release/MAPL-v3`.
+**Verified against:** `GEOSgcm` @ `f50622d` (2026-11-06); nested repositories are listed in `docs/ARCHITECTURE.md`.
 **Placement:** the fixture root; other fixtures (GEOSadas, GEOSldas) place repositories differently.
 
 `GEOSgcm` is the fixture repository of the GEOS atmosphere-ocean model: it
 holds `components.yaml`, the top `CMakeLists.txt` and build glue. The model
-code is in about 44 nested repositories that `mepo` clones into `src/`, `@env`
+code is in 44 nested repositories that `mepo` clones into `src/`, `@env`
 and `@cmake`; their directory names start with `@` (`components.yaml`).
+
+> **Build status on this line:** the component tree builds only partly, and
+> `GEOSgcm.x` is not built (`src/CMakeLists.txt` comments out
+> `add_subdirectory(Applications)`). What is built and what is not:
+> `docs/ARCHITECTURE.md`, top status block. Documents of nested repositories on
+> this line are partly in progress; the paths below are where they will be.
 
 ## Getting the full tree
 
@@ -37,8 +43,10 @@ sparse checkouts (`config/*.sparse`).
   `git status` here does not show its changes. Find the owner with
   `git -C <dir> rev-parse --show-toplevel` before editing or committing; a
   change there needs its own branch and pull request.
-- `components.yaml` pins `tag:` values. *Inferred:* changing a nested
-  repository's version means tagging it, then editing `components.yaml`.
+- `components.yaml` has 18 `tag:` and 26 `branch:` entries on this line, most
+  model repositories on `release/MAPL-v3` and `MAPL` on `develop`.
+  *Inferred:* changing a tag-pinned repository's version means tagging it, then
+  editing `components.yaml`; a branch-tracked one follows its branch.
 - Note bugs and surprises under "Observations" in `docs/ARCHITECTURE.md`; do
   not fix them unless asked. Keep documents current when a component tree,
   build option or `components.yaml` entry changes. Cite files and routines.
