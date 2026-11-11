@@ -89,7 +89,7 @@ fvdycore:
 pyFV3:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/python/@pyFV3
   remote: https://github.com/NOAA-GFDL/PyFV3.git
-  tag: GEOS-FP_rc8
+  tag: develop__GEOSv_11_4_2
   develop: develop__GEOSv_11_4_2
 
 GEOSchem_GridComp:
