@@ -18,7 +18,7 @@
 | [ecbuild](https://github.com/GEOS-ESM/ecbuild)                                 | [geos/v3.15.2](https://github.com/GEOS-ESM/ecbuild/releases/tag/geos%2Fv3.15.2)                       |
 | [ESMA_cmake](https://github.com/GEOS-ESM/ESMA_cmake)                           | [v5.25.0](https://github.com/GEOS-ESM/ESMA_cmake/releases/tag/v5.25.0)                                |
 | [ESMA_env](https://github.com/GEOS-ESM/ESMA_env)                               | [v6.11.0](https://github.com/GEOS-ESM/ESMA_env/releases/tag/v6.11.0)                                  |
-| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v3.1.0](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v3.1.0)                      |
+| [FVdycoreCubed_GridComp](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp)   | [v3.1.1](https://github.com/GEOS-ESM/FVdycoreCubed_GridComp/releases/tag/v3.1.1)                      |
 | [GAAS](https://github.com/GEOS-ESM/GAAS)                                       | [v1.1.0](https://github.com/GEOS-ESM/GAAS/releases/tag/v1.1.0)                                        |
 | [geos-chem](https://github.com/GEOS-ESM/geos-chem)                             | [geos/v13.0.0-rc1](https://github.com/GEOS-ESM/geos-chem/releases/tag/geos%2Fv13.0.0-rc1)             |
 | [GenCast-GEOS_FP](https://github.com/GEOS-ESM/GenCast_GEOS-FP)                 | [geos/v0.3.1](https://github.com/GEOS-ESM/GenCast_GEOS-FP/releases/tag/geos%2Fv0.3.1)                 |
@@ -33,12 +33,12 @@
 | [gigatraj](https://github.com/GEOS-ESM/gigatraj)                               | [geos/v1.0.0](https://github.com/GEOS-ESM/gigatraj/releases/tag/geos%2Fv1.0.0)                        |
 | [GMI](https://github.com/GEOS-ESM/GMI)                                         | [v1.6.0](https://github.com/GEOS-ESM/GMI/releases/tag/v1.6.0)                                         |
 | [GMAO_perllib](https://github.com/GEOS-ESM/GMAO_perllib)                       | [v1.1.0](https://github.com/GEOS-ESM/GMAO_perllib/releases/tag/v1.1.0)                                |
-| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v3.0.3](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v3.0.3)                                 |
+| [GMAO_Shared](https://github.com/GEOS-ESM/GMAO_Shared)                         | [v3.0.4](https://github.com/GEOS-ESM/GMAO_Shared/releases/tag/v3.0.4)                                 |
 | [GOCART](https://github.com/GEOS-ESM/GOCART)                                   | [v2.6.8](https://github.com/GEOS-ESM/GOCART/releases/tag/v2.6.8)                                      |
 | [HEMCO](https://github.com/GEOS-ESM/HEMCO)                                     | [geos/v2.3.0](https://github.com/GEOS-ESM/HEMCO/releases/tag/geos%2Fv2.3.0)                           |
 | [Icepack](https://github.com/GEOS-ESM/Icepack)                                 | [geos/v0.3.0](https://github.com/GEOS-ESM/Icepack/releases/tag/geos%2Fv0.3.0)                         |
 | [MAM](https://github.com/GEOS-ESM/MAM)                                         | [v1.1.0](https://github.com/GEOS-ESM/MAM/releases/tag/v1.1.0)                                         |
-| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.71.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.71.0)                                      |
+| [MAPL](https://github.com/GEOS-ESM/MAPL)                                       | [v2.74.0](https://github.com/GEOS-ESM/MAPL/releases/tag/v2.74.0)                                      |
 | [MATRIX](https://github.com/GEOS-ESM/MATRIX)                                   | [v1.0.0](https://github.com/GEOS-ESM/MATRIX/releases/tag/v1.0.0)                                      |
 | [MITgcm](https://github.com/GEOS-ESM/MITgcm)                                   | [checkpoint68o](https://github.com/GEOS-ESM/MITgcm/releases/tag/checkpoint68o)                        |
 | [MOM6](https://github.com/GEOS-ESM/MOM6)                                       | [geos/v3.10](https://github.com/GEOS-ESM/MOM6/tree/geos/v3.10)                                        |

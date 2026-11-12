@@ -29,7 +29,7 @@ NCEP_Shared:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v3.0.3
+  tag: v3.0.4
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -52,7 +52,7 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.71.0
+  tag: v2.74.0
   develop: release/v2
 
 GEOSgcm_GridComp:
@@ -78,7 +78,7 @@ GigaTraj:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  #tag: v3.1.0
+  #tag: v3.1.1
   branch: feature/v12-fms2025-useifdef
   develop: develop
 
