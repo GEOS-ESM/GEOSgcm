@@ -1,6 +1,6 @@
 # GEOSgcm: guide for agents
 
-**Describes:** the MAPL3 line, branch `release/MAPL-v3`; verified against `GEOSgcm` @ `56ce4e8` (2026-11-12).
+**Describes:** the MAPL3 line, branch `release/MAPL-v3`; verified against `GEOSgcm` @ `bda856a` (2026-11-13).
 **Placement:** the fixture root. Other fixtures (GEOSadas, GEOSldas) place the nested repositories differently. Paths below are relative to this repository.
 
 `GEOSgcm` is the fixture of the GEOS atmosphere-ocean model. It holds `components.yaml`, the top `CMakeLists.txt`, `src/**/CMakeLists.txt` glue, `config/*.sparse`, CMake presets and CI files, and almost no model code. The model code is in 44 nested repositories that `mepo clone` places in `@`-prefixed directories (`components.yaml`).
