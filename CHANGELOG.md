@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Added agent-oriented architecture documentation (`AGENTS.md`, `docs/ARCHITECTURE.md`, `docs/decisions.md`)
+- Condensed the agent documentation: `AGENTS.md` points to the nested repositories' own `AGENTS.md`, `docs/ARCHITECTURE.md` is one page, `docs/decisions.md` is removed
 
 ## [11.10.0] - 2026-05-29
 

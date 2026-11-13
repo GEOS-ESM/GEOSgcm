@@ -1,63 +1,45 @@
-# AGENTS.md
+# GEOSgcm: guide for agents
 
-**Audience:** coding agents and developers working on the GEOSgcm fixture.
-**Describes:** the MAPL3 line, branch `release/MAPL-v3`.
-**Verified against:** `GEOSgcm` @ `f50622d` (2026-11-06); nested repositories are listed in `docs/ARCHITECTURE.md`.
-**Placement:** the fixture root; other fixtures (GEOSadas, GEOSldas) place repositories differently.
+**Describes:** the MAPL3 line, branch `release/MAPL-v3`; verified against `GEOSgcm` @ `bda856a` (2026-11-13).
+**Placement:** the fixture root. Other fixtures (GEOSadas, GEOSldas) place the nested repositories differently. Paths below are relative to this repository.
 
-`GEOSgcm` is the fixture repository of the GEOS atmosphere-ocean model: it
-holds `components.yaml`, the top `CMakeLists.txt` and build glue. The model
-code is in 44 nested repositories that `mepo` clones into `src/`, `@env`
-and `@cmake`; their directory names start with `@` (`components.yaml`).
+`GEOSgcm` is the fixture of the GEOS atmosphere-ocean model. It holds `components.yaml`, the top `CMakeLists.txt`, `src/**/CMakeLists.txt` glue, `config/*.sparse`, CMake presets and CI files, and almost no model code. The model code is in 44 nested repositories that `mepo clone` places in `@`-prefixed directories (`components.yaml`).
 
-> **Build status on this line:** the component tree builds only partly, and
-> `GEOSgcm.x` is not built (`src/CMakeLists.txt` comments out
-> `add_subdirectory(Applications)`). What is built and what is not:
-> `docs/ARCHITECTURE.md`, top status block. Child repositories, MAPL included,
-> have their own documents on this line.
+> **Build status on this line:** the model is not built. `src/CMakeLists.txt` adds `Shared` and `Components`, while `Applications` and `FoundationModels` are commented out ("not yet ported to MAPL3"). So there is no `GEOSgcm.x`, and ported components run only in their repositories' standalone regression cases. `src/Shared/CMakeLists.txt` builds `GMAO_Shared` (restricted to `GMAO_mpeu`, `GMAO_hermes` and `GEOS_Shared` with `HERMES_LIGHT`) and MAPL (unless an external MAPL is found); `NCEP_Shared` is not built. Which components are built is recorded in each component repository's `AGENTS.md`, not here.
 
-## Getting the full tree
+## Rules for agents
 
-A bare `GEOSgcm` checkout has almost no model code. From the fixture root
-(`README.md`): `mepo clone` clones everything in `components.yaml`;
-`mepo status` lists each repository's branch or tag. Some repositories are
-sparse checkouts (`config/*.sparse`).
+- Read [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) (how the fixture is put together: repository tree, build mechanism, top of the run-time tree, where configuration lives) before changing `components.yaml`, the CMake glue or sparse files. Update it when one of those changes. It describes only what changes rarely, so keep status and to-dos out of it.
+- A nested repository is a separate Git repository and is gitignored here, so `git status` at the root does not show its changes. Find the owner with `git -C <dir> rev-parse --show-toplevel` before editing or committing. A change there needs its own branch and pull request in that repository.
+- Note bugs and oddities, but do not fix them unless asked. Record a bug or an open question as a GitHub issue in the repository that owns the code, not in a document. A document may link to the issue.
+- Keep this file current: update it when the status, a rule or a `components.yaml` entry it relies on changes, and update its "verified against" commit.
+- Cite files and routines, never line numbers. Label unchecked statements *Inferred:* or *Unverified:*.
 
-## Documents
+## Where to go next
 
-- `docs/ARCHITECTURE.md`: repository tree, run-time component tree, build
-  structure, run-time configuration, observations. Read first.
-- `docs/decisions.md`: why the fixture is arranged this way.
-- `src/Components/@GEOSgcm_GridComp/AGENTS.md`: start there for
-  any work on model components (needs `mepo clone`). Nested repositories with
-  their own `AGENTS.md` (each needs `mepo clone`):
-  GEOSchem_GridComp (`src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/AGENTS.md` in the fixture) (Chemistry; contains GOCART),
-  GEOSradiation_GridComp (`src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/AGENTS.md` in the fixture),
-  FVdycoreCubed_GridComp (`src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/AGENTS.md` in the fixture),
-  GEOS_OceanGridComp (`src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/AGENTS.md` in the fixture),
-  GEOSgcm_App (`src/Applications/@GEOSgcm_App/AGENTS.md` in the fixture) (setup scripts and templates).
+Each of these repositories has its own `AGENTS.md`, which exists after `mepo clone`. `GG` stands for `src/Components/@GEOSgcm_GridComp`.
 
-## Rules
+| Work on | Start at |
+|---|---|
+| any model component; the GCM, Agcm, Superdyn and Physics composites; Moist, GWD, Turbulence | `GG/AGENTS.md`, then `GG/GEOSagcm_GridComp/AGENTS.md` |
+| Chemistry; GOCART2G aerosols | `GG/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSchem_GridComp/AGENTS.md`; GOCART: its `@GOCART/AGENTS.md` |
+| Radiation (Solar, IRRAD, SatSim) | `GG/GEOSagcm_GridComp/GEOSphysics_GridComp/@GEOSradiation_GridComp/AGENTS.md` |
+| FV3 dynamical core | `GG/GEOSagcm_GridComp/GEOSsuperdyn_GridComp/@FVdycoreCubed_GridComp/AGENTS.md` |
+| Ocean and ocean plug-ins | `GG/GEOSogcm_GridComp/@GEOS_OceanGridComp/AGENTS.md` |
+| setup scripts, run-time templates | `src/Applications/@GEOSgcm_App/AGENTS.md` |
+| MAPL (framework) | `src/Shared/@MAPL/AGENTS.md` |
+| shared libraries; pre- and post-processing tools | `src/Shared/@GMAO_Shared/AGENTS.md`; `src/Shared/@GMAO_Shared/@GEOS_Util/AGENTS.md` |
 
-- A nested repository is a separate Git repository, gitignored by the fixture:
-  `git status` here does not show its changes. Find the owner with
-  `git -C <dir> rev-parse --show-toplevel` before editing or committing; a
-  change there needs its own branch and pull request.
-- `components.yaml` has 18 `tag:` and 26 `branch:` entries on this line, most
-  model repositories on `release/MAPL-v3` and `MAPL` on `develop`.
-  *Inferred:* changing a tag-pinned repository's version means tagging it, then
-  editing `components.yaml`; a branch-tracked one follows its branch.
-- Note bugs and surprises under "Observations" in `docs/ARCHITECTURE.md`; do
-  not fix them unless asked. Keep documents current when a component tree,
-  build option or `components.yaml` entry changes. Cite files and routines.
+## Known traps
+
+- **Branches, not tags, on this line.** `components.yaml` has 26 `branch:` entries (most on `release/MAPL-v3`, `MAPL` on `develop`, `cmake` on `release/v4`) and 18 `tag:` entries. A branch-tracked repository follows its branch. *Inferred:* changing a tag-pinned repository's version means tagging it and then editing `components.yaml`.
+- **A missing directory is not a build error.** CMake skips an absent nested directory and replaces an absent `SUBCOMPONENTS` entry with a generated stub (`@cmake/esma_support/esma_add_library.cmake`). A sparse or partial checkout therefore builds without a warning.
+- **The sparse file decides the Agcm build.** `config/GEOSgcm_GridComp.sparse` leaves out the Held-Suarez files, so `GEOSagcm_GridComp/CMakeLists.txt` takes its `else` branch. A checkout without that sparse file builds Held-Suarez instead.
+- **`@cmake` has two maintained lines.** The fixture tracks `release/v4` (`components.yaml`), while ESMA_cmake's `develop` is v5. A fix needed by both lines needs a pull request on each.
+- **`mepo develop` leaves the MAPL3 line.** The `develop:` keys in `components.yaml` name each repository's MAPL2 development branch (`develop`, `main` or `geos/develop`), not `release/MAPL-v3`. `mepo develop` and `parallel_build.csh -develop` (which runs `mepo develop GEOSgcm_GridComp GEOSgcm_App GMAO_Shared GEOS_Util`) therefore switch those repositories to MAPL2 code. Use `mepo status` to check what each repository is on.
 
 ## Build and test
 
-- `source @env/g5_modules.sh` (bash) or `@env/g5_modules` (tcsh), then
-  `cmake -B build -S . -DCMAKE_INSTALL_PREFIX=install`,
-  `cmake --build build -j N`, `cmake --install build`; or `./parallel_build.csh`
-  (`README.md`). `CMakePresets.json` and `presets/` hold CMake presets.
-- In-source builds are rejected (`CMakeLists.txt`).
-- No tests are defined by the fixture CMake files read here:
-  `esma_add_regression_tests` exists in `@cmake` but nothing in the fixture calls
-  it. CI builds with several compilers: `.github/workflows/workflow.yml`.
+- `source @env/g5_modules.sh` (bash) or `source @env/g5_modules` (tcsh), then `cmake -B build -S . -DCMAKE_INSTALL_PREFIX=install`, `cmake --build build -j N`, `cmake --install build`. Alternatively, `./parallel_build.csh` clones the tree if it is absent and then builds (`README.md`). `CMakePresets.json` and `presets/` hold presets. In-source builds are rejected (`CMakeLists.txt`).
+- The fixture defines no tests. The regression tests (`ctest -L REGRESSION`) come from component repositories, which call `esma_add_regression_tests` (`@cmake/esma_support/esma_regression_tests.cmake`); they read data from `$LOCAL_REGRESSION_DATA_DIR`, which is set at configure time. CI builds the fixture with several compilers (`.github/workflows/workflow.yml`).
+- Pull requests for this line target `release/MAPL-v3`, not `main`. They need a 0-diff/non-0-diff label (`.github/workflows/enforce-labels.yml`) and get an entry under "Unreleased" in `CHANGELOG.md` (by convention; no workflow checks it).
