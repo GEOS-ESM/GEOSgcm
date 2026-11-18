@@ -72,6 +72,7 @@ GigaTraj:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSgigatraj_GridComp/@GigaTraj
   remote: ../gigatraj.git
   tag: geos/v1.0.0
+  sparse: ./config/GigaTraj.sparse
   develop: develop-GSFC
 
 FVdycoreCubed_GridComp:
@@ -199,6 +200,7 @@ mit:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/@GEOS_OceanGridComp/MIT_GEOS5PlugMod/@mit
   remote: ../MITgcm.git
   tag: checkpoint68o
+  sparse: ./config/MITgcm.sparse
 
 cice6:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSogcm_GridComp/GEOSseaice_GridComp/CICE_GEOSPlug/@cice6
@@ -240,6 +242,7 @@ ww3:
   remote: ../WW3.git
   tag: v7.14-geos-r1
   develop: geos/develop
+  sparse: ./config/WW3.sparse
 
 umwm:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSwgcm_GridComp/GEOSumwm_GridComp/@umwm
