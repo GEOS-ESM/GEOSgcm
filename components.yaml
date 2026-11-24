@@ -276,5 +276,7 @@ LISF:
   local: ./src/Components/@GEOSgcm_GridComp/GEOSagcm_GridComp/GEOSphysics_GridComp/GEOSsurface_GridComp/LIS_GridComp/@LISF
   remote: https://github.com/NASA-LIS/LISF.git
   branch: master
-  develop: master
+  sparse: ./config/LISF.sparse
+  develop: feature/GEOS-LIS-cpl
   recurse_submodules: true
+  blobless: true
