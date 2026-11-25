@@ -123,6 +123,22 @@ GEOS-ESM fork, nested inside the GEOS wrapper component that builds it. `PHYS` =
 | geos_state_bias | `GG/GEOSmkiau_GridComp/pyMLINC/@geos_state_bias` | `GEOSmkiau_GridComp` (`BUILD_WITH_PYMLINC`) |
 | Topo (`ncar_topo`) | `PHYS/GEOSsurface_GridComp/Utils/Raster/preproc/topography/@ncar_topo` | surface preprocessing tool |
 
+Sparse checkout (`components.yaml`, `config/MITgcm.sparse`, `config/WW3.sparse`)
+omits MITgcm's `verification/` and `doc/` except `doc/tag-index`, which
+`tools/genmake2` reads for version information. WW3 omits `regtests/`,
+`manual/`, and `smc_docs/`; its GEOS wrapper's `ww3_multi_esmf/CMakeLists.txt`
+selects sources from `model/src/`. The excluded WW3 test `.rc` files are no
+longer included by the wrapper's recursive install glob. Build/run validation
+of these exclusions is pending.
+
+`config/GigaTraj.sparse` omits `test/` and the generated
+`doc/gigatraj_docs.tgz` archive; GigaTraj's GEOS `CMakeLists.txt` only adds
+`lib` and `geos_giga`. `config/GMAO_Shared.sparse` also omits
+`GMAO_etc/unittests` (needed for the standalone `check_obsysrc.py` tests) and
+`LANL_Shared/CICE4/doc`; neither is referenced by its directory's
+`CMakeLists.txt`. CICE4 sources and all CICE6 documentation remain included.
+Build/run validation of these exclusions is pending.
+
 ### 2.7 Applications and other
 | Repository | Local path | Role |
 |---|---|---|
